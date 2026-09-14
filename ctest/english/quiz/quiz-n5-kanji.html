@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌸%3C/text%3E%3C/svg%3E"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kanji Quiz — Sakura</title>
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#e8799a"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="Sakura"/>
+  <link rel="apple-touch-icon" href="icons/icon-192.png"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config={theme:{extend:{
+      fontFamily:{sans:['Outfit','sans-serif'],jp:['"Noto Sans JP"','sans-serif']},
+      colors:{blue:{DEFAULT:'#7eb8e4',deep:'#3a7cbf'},teal:{DEFAULT:'#6ecec8',deep:'#2a9d8f'},mint:{DEFAULT:'#80d4a8',deep:'#27ae72'},coral:{DEFAULT:'#f4a57a',deep:'#e0693a'},butter:{DEFAULT:'#f5da8a',deep:'#d4a017'},lilac:{DEFAULT:'#c4a8e0',deep:'#8b5cf6'},ink:{DEFAULT:'#1f2937',2:'#475569',muted:'#94a3b8'},bg:{DEFAULT:'#f5f8fc',surface:'#ffffff',s2:'#eef2f7'}},
+      borderRadius:{xl2:'1.25rem',xl3:'1.75rem',xl4:'2.25rem'},
+      boxShadow:{card:'0 2px 16px rgba(15,23,42,.07)',md2:'0 4px 24px rgba(15,23,42,.12)',lg2:'0 8px 40px rgba(15,23,42,.18)'}
+    }}}
+  </script>
+  <style>
+    body{font-family:'Outfit',sans-serif;}
+    .jp{font-family:'"Noto Sans JP"',sans-serif;}
+    .mesh-light{background:radial-gradient(ellipse at 18% 12%,#d8edf8 0%,transparent 52%),radial-gradient(ellipse at 82% 88%,#d2f1ec 0%,transparent 52%),#f4f7fb;}
+    .mesh-dark{background:radial-gradient(ellipse at 18% 12%,#0f2236 0%,transparent 52%),radial-gradient(ellipse at 82% 88%,#0b2120 0%,transparent 52%),#0c1220;}
+    @keyframes ring-pulse{0%,100%{box-shadow:0 0 0 0 rgba(110,206,200,.55);}50%{box-shadow:0 0 0 6px rgba(110,206,200,0);}}
+    .avatar-ring{background:conic-gradient(#6ecec8 0% 65%,#e2e8f0 65% 100%);border-radius:9999px;padding:2.5px;animation:ring-pulse 2.4s ease infinite;display:inline-block;flex-shrink:0;}
+    .drop{transition:opacity .15s ease,transform .15s ease;}
+    .drop.closed{opacity:0;transform:translateY(-6px);pointer-events:none;}
+    .drop.open{opacity:1;transform:translateY(0);pointer-events:all;}
+    .s-act{background:#eef5fc;color:#3a7cbf;font-weight:600;}
+    #prog-fill{transition:width .4s cubic-bezier(.4,0,.2,1);}
+    .opt{transition:all .15s ease;border:2px solid #e2e8f0;background:#fff;cursor:pointer;}
+    .opt:hover:not(.answered){border-color:#7eb8e4;background:#f0f8ff;transform:translateX(3px);}
+    .opt.correct{border-color:#27ae72!important;background:#e6f9f0!important;}
+    .opt.wrong{border-color:#e0693a!important;background:#fff0ea!important;}
+    .opt.reveal{border-color:#27ae72!important;background:#e6f9f0!important;}
+    .opt.disabled{pointer-events:none;}
+    @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+    .shake{animation:shake .32s ease;}
+    @keyframes popIn{from{opacity:0;transform:scale(.93)}to{opacity:1;transform:scale(1)}}
+    .pop{animation:popIn .28s cubic-bezier(.34,1.56,.64,1) both;}
+    .pd1{animation-delay:.05s}.pd2{animation-delay:.10s}.pd3{animation-delay:.15s}.pd4{animation-delay:.20s}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+    .fu{animation:fadeUp .45s ease both;}
+    @keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+    #exp-box{animation:slideDown .25s ease;}
+    @keyframes confDrop{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(160px) rotate(400deg);opacity:0}}
+    .conf{animation:confDrop 1s ease forwards;}
+    /* ── PC: Prev/Next as floating side arrows ── */
+    @media(min-width:1024px){
+      #nav-btns { display: none !important; }
+      #side-prev, #side-next {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 16px rgba(15,23,42,.15);
+        opacity: 0;
+        transition: transform .4s cubic-bezier(.34,1.56,.64,1), opacity .25s ease, box-shadow .18s ease;
+      }
+      #side-prev { left: 268px; background: #eef2f7; color: #475569; transform: translateY(-50%) translateX(-60px); }
+      #side-next { right: 24px; background: linear-gradient(135deg,#3a7cbf,#2a9d8f); color: #fff; transform: translateY(-50%) translateX(60px); }
+      #side-prev.visible { transform: translateY(-50%) translateX(0) !important; opacity: 1 !important; }
+      #side-next.visible { transform: translateY(-50%) translateX(0) !important; opacity: 1 !important; }
+      #side-prev.visible:disabled { opacity: .35 !important; cursor: default; }
+      #side-next:hover { box-shadow: 0 6px 20px rgba(58,124,191,.35); }
+    }
+    @media(max-width:1023px){
+      #side-prev, #side-next { display: none !important; }
+    }
+
+    /* ── Desktop: fixed screen, no scroll ── */
+    @media(min-width:1024px){
+      body { overflow: hidden; height: 100vh; }
+      .lg\:ml-60 { height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
+      #quiz-screen { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+      #quiz-inner {
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding-top: 10px;
+        padding-bottom: 16px;
+      }
+      /* Tighter question card on PC */
+      #q-card { padding: 10px 16px !important; }
+      #q-main { font-size: clamp(1.8rem,4vw,3rem) !important; margin-bottom:2px !important; }
+      #type-badge { font-size: 9px !important; padding: 3px 10px !important; }
+      #speak-btn { width:24px!important; height:24px!important; }
+      /* Tighter options */
+      #opts-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 8px !important; flex: unset !important; justify-content: unset !important; }
+      #opts-grid button { padding: 8px 12px !important; font-size: 13px !important; }
+      /* Tighter result/exp */
+      #result-banner { padding: 8px 12px !important; margin-bottom: 4px !important; font-size: 13px !important; }
+      #exp-box { padding: 8px 12px !important; margin-bottom: 4px !important; }
+      #exp-text { font-size: 12px !important; }
+      #exp-label { font-size: 9px !important; margin-bottom: 3px !important; }
+      /* Tighter nav */
+      #nav-btns button { padding: 8px 0 !important; font-size: 13px !important; border-radius: 10px !important; }
+      #nav-btns { margin-bottom: 0 !important; }
+      /* Stats row */
+      .flex.items-center.justify-between.mb-2 { margin-bottom: 4px !important; }
+    }
+    body.dark #topbar,body.dark #botnav,body.dark #sidebar-el{background:rgba(14,19,32,.96)!important;border-color:#1d2740!important;}
+    body.dark .surface{background:#151d2e!important;border-color:#1d2740!important;}
+    body.dark .t-ink{color:#e8eef6!important;} body.dark .t-ink2{color:#8da4c0!important;} body.dark .t-muted{color:#4a607a!important;}
+    body.dark .divider{border-color:#1d2740!important;}
+    body.dark .opt{background:#1d2740!important;border-color:#2a3d56!important;color:#e8eef6!important;}
+    body.dark .opt:hover:not(.answered){background:#243350!important;border-color:#7eb8e4!important;}
+    body.dark .opt.correct{background:#0d2e1e!important;border-color:#27ae72!important;}
+    body.dark .opt.wrong{background:#2e1206!important;border-color:#e0693a!important;}
+    body.dark .opt.reveal{background:#0d2e1e!important;border-color:#27ae72!important;}
+    body.dark #exp-box{background:#1d2740!important;border-color:#2a3d56!important;}
+    body.dark #q-card,body.dark #complete-card{background:#151d2e!important;}
+    body.dark #desk-prof-drop,body.dark #lang-drop,body.dark #desk-lang-drop{background:#151d2e!important;border-color:#1d2740!important;}
+    body.dark #desk-prof-drop a,body.dark #lang-drop button,body.dark #desk-lang-drop a{color:#8da4c0!important;}
+    ::-webkit-scrollbar{width:4px;} ::-webkit-scrollbar-thumb{background:#c2d3e3;border-radius:99px;}
+  </style>
+</head>
+<body class="mesh-light min-h-screen text-ink" id="body">
+
+<!-- ═══════════════ DESKTOP SIDEBAR ═══════════════ -->
+<aside id="sidebar-el" class="hidden lg:flex flex-col fixed top-0 left-0 h-full w-60 bg-bg-surface surface border-r border-slate-100 divider z-30 shadow-card">
+
+  <div class="px-4 py-4 flex items-center gap-3 border-b border-slate-100 divider">
+    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow-md flex-shrink-0">
+      <span class="jp text-white font-bold text-base">識</span>
+    </div>
+    <div class="min-w-0 flex-1">
+      <div class="font-bold text-base tracking-tight t-ink leading-tight">Shikaku</div>
+      <div class="text-xs t-muted">日本語 Learning</div>
+    </div>
+    <div class="relative flex-shrink-0" id="desk-lang-wrap">
+      <button onclick="toggleDeskLang()"
+        class="flex items-center gap-1 px-2 py-1.5 rounded-lg border border-slate-200 divider text-xs font-bold t-ink2 transition-all hover:border-blue/60 hover:text-blue-deep"
+        style="background:#f8fafc;">
+        <span id="desk-lang-flag">🇬🇧</span>
+        <span id="desk-lang-code" class="ml-0.5">EN</span>
+        <svg id="desk-lang-chev" class="w-3 h-3 t-muted transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div id="desk-lang-drop" class="drop closed absolute right-0 top-full mt-1.5 w-44 bg-white surface rounded-xl shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+        <a href="index.html" onclick="setDeskLang('EN','🇬🇧')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors">🇬🇧 English</a>
+        <a href="coming-soon.html" onclick="setDeskLang('NP','🇳🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇳🇵 नेपाली</a>
+        <a href="coming-soon.html" onclick="setDeskLang('HI','🇮🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇮🇳 हिन्दी</a>
+        <a href="coming-soon.html" onclick="setDeskLang('SI','🇱🇰')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇱🇰 සිංහල</a>
+        <a href="coming-soon.html" onclick="setDeskLang('BN','🇧🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇧🇩 বাংলা</a>
+        <a href="coming-soon.html" onclick="setDeskLang('VI','🇻🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇻🇳 Tiếng Việt</a>
+        <a href="coming-soon.html" onclick="setDeskLang('ID','🇮🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇮🇩 Indonesia</a>
+        <a href="coming-soon.html" onclick="setDeskLang('TH','🇹🇭')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇹🇭 ภาษาไทย</a>
+        <a href="coming-soon.html" onclick="setDeskLang('JP','🇯🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇯🇵 日本語</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="px-5 py-4 flex items-center gap-3 border-b border-slate-100 divider relative" id="desk-prof-wrap">
+    <button onclick="toggleDeskProf()" class="flex items-center gap-3 flex-1 min-w-0 focus:outline-none" aria-label="Profile">
+      <div class="avatar-ring flex-shrink-0">
+        <div id="sb-avatar" class="w-9 h-9 rounded-full bg-gradient-to-br from-blue to-teal flex items-center justify-center text-white font-bold text-sm overflow-hidden">S</div>
+      </div>
+      <div class="flex-1 min-w-0 text-left">
+        <div class="font-semibold text-sm t-ink leading-tight" id="sb-name">hye mate</div>
+      </div>
+      <svg id="desk-prof-chev" class="w-3.5 h-3.5 t-muted transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div id="desk-prof-drop" class="drop closed absolute left-3 right-3 top-full mt-1 bg-white surface rounded-xl2 shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+      <div class="px-4 py-3 bg-gradient-to-r from-blue/6 to-teal/6 border-b border-slate-100 divider">
+        <div class="font-bold text-sm t-ink" id="desk-drop-name">hye mate</div>
+      </div>
+      <a href="profile.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        My Profile
+      </a>
+
+      <button onclick="toggleNotification()" class="w-full flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors border-t border-slate-100 divider">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        <span class="flex-1 text-left" id="desk-notif-lbl">Notifications</span>
+        <div id="desk-notif-toggle" class="w-9 h-5 rounded-full relative flex-shrink-0 transition-colors" style="background:#e2e8f0;">
+          <div id="desk-notif-thumb" class="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white shadow transition-transform"></div>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <nav class="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
+    <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg>
+      Dashboard
+    </a>
+    <a href="learn.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      Learn
+    </a>
+    <a href="study.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 4v16M2 12h6"/></svg>
+      Study
+    </a>
+    <a href="quiz.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg>
+      Quiz
+    </a>
+    <div class="pt-4 pb-1 px-3 text-[10px] font-bold tracking-widest t-muted uppercase">Courses</div>
+    <a href="jlpt.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      JLPT
+    </a>
+    <a href="ssw.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-mint/20 text-mint-deep font-bold text-[10px] flex items-center justify-center">SSW</span> SSW</a>
+    <a href="bjt.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-butter/20 text-butter-deep font-bold text-[10px] flex items-center justify-center">BJT</span> BJT</a>
+  </nav>
+
+  <div class="px-4 py-4 border-t border-slate-100 divider flex items-center justify-between">
+    <button onclick="toggleDark()" class="flex items-center gap-2 text-xs t-muted hover:text-ink transition-colors">
+      <svg id="desk-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span id="desk-lbl">Dark mode</span>
+    </button>
+    <button onclick="toggleNotification()" class="flex items-center gap-1.5 text-xs t-muted hover:text-ink transition-colors focus:outline-none" title="Toggle notifications">
+      <svg id="notif-icon-desk" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+    </button>
+  </div>
+</aside>
+
+
+<!-- ═══════════════ MOBILE TOP BAR ═══════════════ -->
+
+<!-- PC Side Navigation Arrows -->
+<button id="side-prev" onclick="prevQuestion()" disabled>
+  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+</button>
+<button id="side-next" onclick="nextQuestion()">
+  <svg width="20" height="20" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+</button>
+
+<!-- MOBILE TOPBAR -->
+<header id="topbar" class="lg:hidden sticky top-0 z-40 bg-white/93 backdrop-blur-md border-b border-slate-100 shadow-sm px-4 py-2.5 flex items-center">
+  <a href="jlpt.html" class="t-ink2 flex-shrink-0">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+  </a>
+  <div class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 pointer-events-none select-none">
+    <span class="text-base">🎯</span>
+    <span class="font-extrabold text-base t-ink" id="page-title">Kanji Quiz</span>
+    <span id="level-badge" class="text-[10px] font-bold text-white px-2 py-0.5 rounded-full" style="background:#3a7cbf;">N5</span>
+  </div>
+  <div class="ml-auto flex items-center gap-2">
+    <button onclick="toggleLang()" id="lang-btn" class="px-2 py-1.5 rounded-lg border border-slate-200 text-xs font-bold t-ink2" style="background:#f8fafc;">🇳🇵 NP</button>
+    <button onclick="toggleDark()" class="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center t-muted" style="background:#f8fafc;">
+      <svg id="mob-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Progress bar -->
+<div class="lg:ml-60 h-1.5 bg-bg-s2">
+  <div id="prog-fill" class="h-full rounded-r-full" style="width:0%;background:linear-gradient(90deg,#3a7cbf,#6ecec8);"></div>
+</div>
+
+<div class="lg:ml-60">
+
+<!-- LOADING -->
+<div id="loading-screen" class="flex flex-col items-center justify-center gap-4" style="min-height:60vh;">
+  <div class="w-14 h-14 rounded-xl2 flex items-center justify-center shadow-md" style="background:linear-gradient(135deg,#7eb8e4,#3a7cbf);">
+    <span class="jp text-white font-bold text-2xl">漢</span>
+  </div>
+  <div class="text-sm font-semibold t-muted">Loading questions…</div>
+  <div class="w-32 h-1.5 bg-bg-s2 rounded-full overflow-hidden">
+    <div class="h-full bg-blue-deep rounded-full animate-pulse" style="width:60%"></div>
+  </div>
+</div>
+
+<!-- QUIZ SCREEN -->
+<div id="quiz-screen" class="hidden">
+  <!-- Mobile: normal scroll | Desktop: fixed height, no scroll -->
+  <div class="max-w-2xl mx-auto px-4 pt-3 pb-24 lg:pb-0 lg:flex lg:flex-col" style="height:auto;" id="quiz-inner">
+
+    <!-- Stats row -->
+    <div class="flex items-center justify-between mb-2 flex-shrink-0">
+      <div class="relative w-10 h-10 flex-shrink-0">
+        <svg class="w-10 h-10 -rotate-90" viewBox="0 0 44 44">
+          <circle cx="22" cy="22" r="20" fill="none" stroke="#eef2f7" stroke-width="3.5"/>
+          <circle id="timer-arc" cx="22" cy="22" r="20" fill="none" stroke="#7eb8e4" stroke-width="3.5"/>
+        </svg>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <span id="timer-label" class="text-xs font-extrabold t-ink">30</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 text-sm">
+        <span class="font-bold text-mint-deep" id="score-correct">✓ 0</span>
+        <span class="font-bold text-coral" id="score-wrong">✗ 0</span>
+        <span class="font-bold text-coral bg-coral/10 px-2 py-0.5 rounded-full text-xs" id="streak-badge">🔥 0</span>
+      </div>
+      <div class="text-xs font-bold t-muted" id="q-counter">1 / 10</div>
+    </div>
+
+    <!-- Question card -->
+    <div id="q-card" class="surface rounded-xl4 shadow-lg2 border border-slate-100 p-4 mb-2 text-center relative overflow-hidden fu flex-shrink-0" style="background:#fff;">
+      <div class="flex items-center justify-center gap-2 mb-1">
+        <span id="type-badge" class="text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full" style="background:#eef2f7;color:#475569;">Reading</span>
+        <button onclick="speakQuestion()" id="speak-btn" style="width:28px;height:28px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:rgba(126,184,228,.15);">
+          <svg id="speak-icon" width="14" height="14" fill="none" stroke="#3a7cbf" stroke-width="2.2" viewBox="0 0 24 24">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+          </svg>
+        </button>
+      </div>
+      <div class="jp font-bold t-ink leading-none mb-1" id="q-main" style="font-size:clamp(2.2rem,10vw,3.8rem);line-height:1.1;">漢</div>
+      <div class="text-xs t-muted font-medium" id="q-kana">—</div>
+    </div>
+
+    <!-- Options -->
+    <div id="opts-grid" class="space-y-1.5 mb-2 flex-shrink-0"></div>
+
+    <!-- Result banner -->
+    <div id="result-banner" class="hidden mb-2 rounded-xl2 flex items-center gap-3 px-3 py-2.5 flex-shrink-0"></div>
+
+    <!-- Explanation -->
+    <div id="exp-box" class="hidden rounded-xl2 border p-3 mb-2 flex-shrink-0" style="background:#f0f8ff;border-color:#7eb8e4;">
+      <div class="text-xs font-extrabold text-blue-deep uppercase tracking-wider mb-1" id="exp-label">Explanation</div>
+      <div class="text-sm t-ink font-medium" id="exp-text"></div>
+    </div>
+
+    <!-- Nav buttons — inline below explanation -->
+    <div id="nav-btns" style="display:none;gap:8px;margin-top:4px;" class="flex-shrink-0">
+      <button onclick="prevQuestion()" id="prev-btn" disabled style="display:flex;align-items:center;justify-content:center;gap:6px;flex:1;padding:12px 0;border-radius:14px;font-weight:700;font-size:15px;background:#eef2f7;color:#475569;border:none;cursor:pointer;opacity:.4;">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>Previous
+      </button>
+      <button onclick="nextQuestion()" id="next-btn" style="display:flex;align-items:center;justify-content:center;gap:6px;flex:1;padding:12px 0;border-radius:14px;font-weight:700;font-size:15px;background:linear-gradient(135deg,#3a7cbf,#2a9d8f);color:#fff;border:none;cursor:pointer;">
+        Next<svg width="16" height="16" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- COMPLETE SCREEN — centered between topbar and bottom nav -->
+<div id="complete-screen" class="hidden">
+  <div id="confetti-box" class="fixed inset-0 pointer-events-none overflow-hidden z-50"></div>
+  <div class="flex items-center justify-center px-4" style="min-height:calc(100vh - 120px);">
+    <div id="complete-card" class="surface rounded-xl4 shadow-lg2 border border-slate-100 p-7 w-full max-w-sm" style="background:#fff;">
+      <div class="text-5xl mb-3 text-center" id="trophy-icon">🏆</div>
+      <h2 class="text-xl font-extrabold t-ink mb-1 text-center">Quiz Complete!</h2>
+      <p class="text-sm t-muted mb-6 text-center" id="result-msg">Well done!</p>
+      <div class="mb-5">
+        <div class="flex justify-between text-xs t-muted mb-1.5"><span>Accuracy</span><span id="acc-pct" class="font-bold">0%</span></div>
+        <div class="h-2.5 bg-bg-s2 rounded-full overflow-hidden">
+          <div id="acc-bar" class="h-full rounded-full" style="width:0%;background:linear-gradient(90deg,#3a7cbf,#6ecec8);transition:width 1s ease;"></div>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 gap-3 mb-6">
+        <div class="rounded-xl2 py-3 text-center" style="background:rgba(128,212,168,.12);"><div class="text-xl font-extrabold text-mint-deep" id="fin-correct">0</div><div class="text-[10px] t-muted mt-0.5">Correct</div></div>
+        <div class="rounded-xl2 py-3 text-center" style="background:rgba(244,165,122,.12);"><div class="text-xl font-extrabold text-coral" id="fin-wrong">0</div><div class="text-[10px] t-muted mt-0.5">Wrong</div></div>
+        <div class="rounded-xl2 py-3 text-center" style="background:rgba(245,218,138,.15);"><div class="text-xl font-extrabold text-butter-deep" id="fin-xp">0</div><div class="text-[10px] t-muted mt-0.5">XP</div></div>
+      </div>
+      <div class="flex gap-3">
+        <button onclick="restartQuiz()" class="flex-1 py-3 rounded-xl font-bold text-sm t-ink2" style="background:#eef2f7;">Retry</button>
+        <button onclick="nextBatch()" class="flex-1 py-3 rounded-xl font-bold text-sm text-white" style="background:linear-gradient(135deg,#3a7cbf,#2a9d8f);">More Quiz →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ERROR -->
+<div id="error-screen" class="hidden flex flex-col items-center justify-center gap-4 px-6 text-center" style="min-height:60vh;">
+  <div class="text-4xl">⚠️</div>
+  <div class="font-bold t-ink">Could not load questions</div>
+  <div class="text-sm t-muted" id="error-msg">Make sure the JSON file is in the same folder.</div>
+  <a href="jlpt.html" class="px-5 py-2.5 rounded-xl text-sm font-bold text-white" style="background:#3a7cbf;">← Back to JLPT</a>
+</div>
+
+</div><!-- end lg:ml-60 -->
+
+<!-- BOTTOM NAV -->
+<nav id="botnav" class="lg:hidden fixed bottom-0 left-0 right-0 z-40" style="background:rgba(255,255,255,.98);backdrop-filter:blur(20px);box-shadow:0 -1px 0 rgba(0,0,0,.07),0 -6px 24px rgba(15,23,42,.08);">
+  <div class="flex items-center" style="height:60px;">
+    <a href="index.html" class="flex-1 flex flex-col items-center justify-center gap-1 py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:36px;height:26px;background:#eef2f7;"><svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg></div>
+      <span style="font-size:9px;font-weight:600;color:#94a3b8;">Home</span>
+    </a>
+    <a href="jlpt.html" class="flex-1 flex flex-col items-center justify-center gap-1 relative py-2">
+      <span class="absolute top-0 left-1/2 -translate-x-1/2 rounded-b-full" style="width:28px;height:3px;background:#3a7cbf;"></span>
+      <div class="flex items-center justify-center rounded-xl" style="width:36px;height:26px;background:rgba(58,124,191,.13);"><span style="font-size:9px;font-weight:800;color:#3a7cbf;">JLPT</span></div>
+      <span style="font-size:9px;font-weight:800;color:#3a7cbf;">JLPT</span>
+    </a>
+    <a href="ssw.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 py-1" style="margin-top:-16px;">
+      <div class="flex items-center justify-center rounded-xl2" style="width:46px;height:46px;background:linear-gradient(135deg,#6ecec8,#2a9d8f);box-shadow:0 5px 16px rgba(42,157,143,.32);"><span class="jp text-white font-bold" style="font-size:20px;line-height:1;">特</span></div>
+      <span style="font-size:8px;font-weight:700;color:#2a9d8f;margin-top:2px;">SSW</span>
+    </a>
+    <a href="bjt.html" class="flex-1 flex flex-col items-center justify-center gap-1 py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:36px;height:26px;background:#eef2f7;"><span style="font-size:9px;font-weight:800;color:#d4a017;">BJT</span></div>
+      <span style="font-size:9px;font-weight:600;color:#94a3b8;">BJT</span>
+    </a>
+    <a href="other.html" class="flex-1 flex flex-col items-center justify-center gap-1 py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:36px;height:26px;background:#eef2f7;"><svg width="14" height="14" fill="none" stroke="#94a3b8" stroke-width="2" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg></div>
+      <span style="font-size:9px;font-weight:600;color:#94a3b8;">Other</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+/* ── Desktop profile dropdown ── */
+let deskProfOpen = false;
+function toggleDeskProf() {
+  deskProfOpen = !deskProfOpen;
+  const drop = document.getElementById('desk-prof-drop');
+  const chev = document.getElementById('desk-prof-chev');
+  drop.className = drop.className.replace(/\b(open|closed)\b/, deskProfOpen ? 'open' : 'closed');
+  if(chev) chev.style.transform = deskProfOpen ? 'rotate(180deg)' : '';
+}
+
+/* ── Dark mode ── */
+let isDark = false;
+const MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+const SUN  = '<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/>';
+function toggleDark() {
+  isDark = !isDark;
+  document.body.className = isDark ? 'mesh-dark min-h-screen text-slate-100 dark' : 'mesh-light min-h-screen text-ink';
+  ['mob-icon','desk-icon'].forEach(id => { const el = document.getElementById(id); if(el) el.innerHTML = isDark ? SUN : MOON; });
+  const lbl = document.getElementById('desk-lbl'); if(lbl) lbl.textContent = isDark ? 'Light mode' : 'Dark mode';
+}
+
+/* ── Language ── */
+let deskLangOpen = false;
+function toggleDeskLang() {
+  deskLangOpen = !deskLangOpen;
+  const m = document.getElementById('desk-lang-drop'), c = document.getElementById('desk-lang-chev');
+  m.className = m.className.replace(/\b(open|closed)\b/, deskLangOpen ? 'open' : 'closed');
+  c.style.transform = deskLangOpen ? 'rotate(180deg)' : '';
+}
+function setDeskLang(code, flag) {
+  ['desk-lang-code','lang-code'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=code; });
+  ['desk-lang-flag','lang-flag'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=flag; });
+  deskLangOpen = false;
+  document.getElementById('desk-lang-drop').className = document.getElementById('desk-lang-drop').className.replace(/\b(open|closed)\b/,'closed');
+  document.getElementById('desk-lang-chev').style.transform = '';
+}
+const drops = { prof: false, lang: false };
+function toggleDrop(name) {
+  const other = name === 'prof' ? 'lang' : 'prof';
+  drops[other] = false;
+  const oel = document.getElementById(other === 'prof' ? 'prof-drop' : 'lang-drop');
+  if(oel) oel.className = oel.className.replace(/\bopen\b/,'closed');
+  drops[name] = !drops[name];
+  const el = document.getElementById(name === 'prof' ? 'prof-drop' : 'lang-drop');
+  if(el) el.className = el.className.replace(/\b(open|closed)\b/, drops[name] ? 'open' : 'closed');
+  if(name === 'lang') { const chev = document.getElementById('lang-chev'); if(chev) chev.style.transform = drops.lang ? 'rotate(180deg)' : ''; }
+}
+function setLang(code, flag) {
+  ['lang-code','desk-lang-code'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=code; });
+  ['lang-flag','desk-lang-flag'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=flag; });
+  drops.lang = false;
+  const el = document.getElementById('lang-drop'); if(el) el.className = el.className.replace(/\b(open|closed)\b/,'closed');
+  const chev = document.getElementById('lang-chev'); if(chev) chev.style.transform = '';
+}
+
+/* ── Outside click ── */
+document.addEventListener('click', e => {
+  const deskProfWrap = document.getElementById('desk-prof-wrap');
+  if(deskProfWrap && !deskProfWrap.contains(e.target) && deskProfOpen) {
+    deskProfOpen = false;
+    const drop = document.getElementById('desk-prof-drop'), chev = document.getElementById('desk-prof-chev');
+    if(drop) drop.className = drop.className.replace(/\b(open|closed)\b/,'closed');
+    if(chev) chev.style.transform = '';
+  }
+  const dlw = document.getElementById('desk-lang-wrap');
+  if(dlw && !dlw.contains(e.target) && deskLangOpen) {
+    deskLangOpen = false;
+    document.getElementById('desk-lang-drop').className = document.getElementById('desk-lang-drop').className.replace(/\b(open|closed)\b/,'closed');
+    document.getElementById('desk-lang-chev').style.transform = '';
+  }
+  const pb = document.getElementById('prof-wrap');
+  if(pb && !pb.contains(e.target) && drops.prof) { drops.prof = false; document.getElementById('prof-drop').className = document.getElementById('prof-drop').className.replace(/\b(open|closed)\b/,'closed'); }
+  const lb = document.getElementById('lang-wrap');
+  if(lb && !lb.contains(e.target) && drops.lang) { drops.lang = false; document.getElementById('lang-drop').className = document.getElementById('lang-drop').className.replace(/\b(open|closed)\b/,'closed'); document.getElementById('lang-chev').style.transform = ''; }
+});
+
+/* ── Notification toggle ── */
+(function(){
+  var KEY='sakura_notif_on', on=localStorage.getItem(KEY)!=='0';
+  function syncUI(){
+    ['desk','mob'].forEach(function(p){
+      var tg=document.getElementById(p+'-notif-toggle'),th=document.getElementById(p+'-notif-thumb'),lb=document.getElementById(p+'-notif-lbl');
+      if(tg) tg.style.background=on?'#3a7cbf':'#e2e8f0';
+      if(th) th.style.transform=on?'translateX(16px)':'';
+      if(lb) lb.textContent=on?'Notifications: ON':'Notifications: OFF';
+    });
+    // Sidebar bell icon color
+    var bell=document.getElementById('notif-icon-desk');
+    if(bell) bell.style.stroke=on?'#3a7cbf':'#94a3b8';
+  }
+  syncUI();
+  window.toggleNotification=function(){
+    on=!on; localStorage.setItem(KEY,on?'1':'0'); syncUI();
+    var t=document.createElement('div'); t.style.cssText='position:fixed;top:72px;left:50%;transform:translateX(-50%);z-index:9999;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:10px 18px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(15,23,42,.12);white-space:nowrap;'; t.style.color=on?'#27ae72':'#94a3b8'; t.textContent=on?'🔔 Notifications turned ON':'🔕 Notifications turned OFF'; document.body.appendChild(t); setTimeout(function(){ t.remove(); },2500);
+  };
+  if(on){ var lastShown=localStorage.getItem('sakura_notif_last'),today=new Date().toDateString(); if(lastShown!==today){ localStorage.setItem('sakura_notif_last',today); setTimeout(function(){ var msgs=['🌸 आज JLPT practice गर्नुस् — streak जोगाउनुस्!','📖 आजको Word of the Day हेर्नुभयो?','🎯 5 minute Quiz — आफ्नो level test गर्नुस्!','✨ नयाँ vocabulary सिक्न तयार हुनुस्!','🏆 Daily goal पूरा गर्नुस्!']; var msg=msgs[new Date().getDay()%msgs.length]; var banner=document.createElement('div'); banner.style.cssText='position:fixed;top:70px;left:50%;transform:translateX(-50%);z-index:9999;background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:14px 18px;display:flex;align-items:center;gap:12px;max-width:320px;width:calc(100% - 32px);box-shadow:0 8px 32px rgba(15,23,42,.15);'; banner.innerHTML='<div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#7eb8e4,#6ecec8);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;">🌸</div><div style="flex:1;min-width:0;font-size:13px;font-weight:600;color:#1f2937;">'+msg+'</div><button onclick="this.parentElement.remove()" style="background:none;border:none;cursor:pointer;color:#94a3b8;font-size:16px;flex-shrink:0;">✕</button>'; document.body.appendChild(banner); setTimeout(function(){ banner.remove(); },6000); },2000); } }
+})();
+
+/* ═══ KANJI QUIZ LOGIC ═══ */
+const params    = new URLSearchParams(location.search);
+const LEVEL     = (params.get('level') || 'n1').toUpperCase();
+const JSON_FILE = `kanji-${LEVEL.toLowerCase()}-quiz.json`;
+const TIMER_MAX = 30, TOTAL_Q = 10, TIMER_CIRC = 125.6;
+const LEVEL_COLORS = {N5:'#3a7cbf',N4:'#2a9d8f',N3:'#27ae72',N2:'#d4a017',N1:'#e0693a'};
+
+let allQuestions=[], questions=[], idx=0, correct=0, wrong=0, xp=0, streak=0;
+let answered=false, timerVal=TIMER_MAX, timerInterval;
+let lang='np', usedIndices=new Set(), answeredMap={};
+
+document.addEventListener('DOMContentLoaded', () => {
+  const color = LEVEL_COLORS[LEVEL] || '#3a7cbf';
+  const badge = document.getElementById('level-badge');
+  if(badge){ badge.textContent = LEVEL; badge.style.background = color; }
+  const title = document.getElementById('page-title');
+  if(title) title.textContent = `Kanji ${LEVEL} Quiz`;
+
+  fetch(JSON_FILE)
+    .then(r=>{ if(!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+    .then(data=>{
+      allQuestions = Array.isArray(data)?data:(data.questions||[]);
+      if(!allQuestions.length) throw new Error('No questions found.');
+      questions = shuffle([...allQuestions]).slice(0,TOTAL_Q);
+      questions.forEach(q=>{ const i=allQuestions.indexOf(q); if(i>=0) usedIndices.add(i); });
+      document.getElementById('loading-screen').classList.add('hidden');
+      document.getElementById('quiz-screen').classList.remove('hidden');
+      loadQuestion();
+    })
+    .catch(err=>{
+      document.getElementById('loading-screen').classList.add('hidden');
+      document.getElementById('error-screen').classList.remove('hidden');
+      document.getElementById('error-msg').textContent = err.message;
+    });
+});
+
+function loadQuestion() {
+  if(idx>=questions.length){ showComplete(); return; }
+  answered=false;
+  const q=questions[idx];
+  document.getElementById('prog-fill').style.width=(idx/questions.length*100)+'%';
+  document.getElementById('q-counter').textContent=`${idx+1} / ${questions.length}`;
+
+  const typeMap={reading:'Reading 読み方',meaning_en:'Meaning 意味',example:'Example 例文',meaning_np:'Meaning अर्थ'};
+  const badge=document.getElementById('type-badge');
+  badge.textContent=typeMap[q.type]||q.type;
+  const typeColors={reading:['rgba(126,184,228,.15)','#3a7cbf'],meaning_en:['rgba(110,206,200,.15)','#2a9d8f'],example:['rgba(245,218,138,.20)','#d4a017'],meaning_np:['rgba(196,168,224,.18)','#8b5cf6']};
+  const [bgC,textC]=typeColors[q.type]||['#eef2f7','#475569'];
+  badge.style.background=bgC; badge.style.color=textC;
+
+  const qMain=document.getElementById('q-main');
+  if(q.type==='example'){ qMain.style.fontSize='clamp(1.4rem,5vw,2rem)'; qMain.style.lineHeight='1.4'; }
+  else { qMain.style.fontSize='clamp(2.5rem,12vw,5rem)'; qMain.style.lineHeight='1'; }
+  qMain.textContent=q.q;
+  document.getElementById('q-kana').textContent=q.kana||'';
+
+  document.getElementById('exp-box').classList.add('hidden');
+  document.getElementById('nav-btns').style.display='none';
+
+  const banner=document.getElementById('result-banner');
+  banner.classList.add('hidden'); banner.style.display='none';
+
+  const grid=document.getElementById('opts-grid');
+  grid.innerHTML='';
+  const letters=['A','B','C','D'];
+  q.opts.forEach((opt,i)=>{
+    const btn=document.createElement('button');
+    btn.className='opt w-full text-left px-3.5 py-2.5 rounded-xl2 flex items-center gap-3 font-semibold text-sm t-ink pop pd'+(i+1);
+    btn.innerHTML=`<span class="w-8 h-8 rounded-lg border-2 border-current flex items-center justify-center text-sm font-extrabold flex-shrink-0 t-muted">${letters[i]}</span><span class="flex-1 jp font-bold" style="font-size:1.15rem;">${opt}</span>`;
+    btn.onclick=()=>handleAnswer(i);
+    grid.appendChild(btn);
+  });
+
+  const card=document.getElementById('q-card');
+  card.classList.remove('fu'); void card.offsetWidth; card.classList.add('fu');
+  if(answeredMap[idx]!==undefined) setTimeout(()=>restoreState(idx,answeredMap[idx]),60);
+  else startTimer();
+}
+
+function handleAnswer(selected) {
+  if(answered) return;
+  answered=true; clearInterval(timerInterval);
+  const q=questions[idx], isCorrect=selected===q.ans;
+  answeredMap[idx]={selected,wasCorrect:isCorrect};
+  document.querySelectorAll('.opt').forEach((b,i)=>{
+    b.classList.add('disabled','answered');
+    if(i===q.ans) b.classList.add(isCorrect&&i===selected?'correct':'reveal');
+    else if(i===selected&&!isCorrect) b.classList.add('wrong');
+  });
+  if(isCorrect){ correct++; streak++; xp+=10+(streak>=3?5:0)+(timerVal>15?5:0); spawnConfetti(true); }
+  else{ wrong++; streak=0; document.getElementById('q-card').classList.add('shake'); setTimeout(()=>document.getElementById('q-card').classList.remove('shake'),350); spawnConfetti(false); }
+  updateStats(); showResultBanner(isCorrect,q); showExplanation(q);
+  showNavBtns();
+  // Scroll to result
+  setTimeout(function(){
+    if(window.innerWidth >= 1024){
+      const inner = document.getElementById('quiz-inner') || document.querySelector('#quiz-screen > div');
+      if(inner) inner.scrollTo({ top: inner.scrollHeight, behavior: 'smooth' });
+    } else {
+      // Mobile: scroll page all the way to bottom
+      setTimeout(function(){
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      }, 50);
+    }
+  }, 80);
+}
+
+function restoreState(qIdx,saved) {
+  answered=true; clearInterval(timerInterval);
+  const q=questions[qIdx];
+  document.querySelectorAll('.opt').forEach((b,i)=>{
+    b.classList.add('disabled','answered');
+    if(i===q.ans) b.classList.add(saved.wasCorrect&&i===saved.selected?'correct':'reveal');
+    else if(i===saved.selected&&!saved.wasCorrect) b.classList.add('wrong');
+  });
+  showResultBanner(saved.wasCorrect,q); showExplanation(q); showNavBtns();
+}
+
+function showResultBanner(ok,q) {
+  const b=document.getElementById('result-banner');
+  if(ok){
+    b.style.cssText='display:flex;background:rgba(39,174,114,.12);border:2px solid rgba(39,174,114,.35);border-radius:1.25rem;align-items:center;gap:12px;padding:12px 16px;margin-bottom:12px;';
+    b.innerHTML=`<span style="font-size:1.5rem;">✅</span><div><div style="font-weight:800;font-size:.875rem;color:#27ae72;">Correct! सही छ!</div><div style="font-size:.75rem;opacity:.8;color:#27ae72;">${streak>=3?'🔥 '+streak+' streak — bonus XP!':'Great job!'}</div></div>`;
+  } else {
+    b.style.cssText='display:flex;background:rgba(224,105,58,.08);border:2px solid rgba(224,105,58,.28);border-radius:1.25rem;align-items:center;gap:12px;padding:12px 16px;margin-bottom:12px;';
+    b.innerHTML=`<span style="font-size:1.5rem;">❌</span><div><div style="font-weight:800;font-size:.875rem;color:#e0693a;">Wrong! गलत छ!</div><div style="font-size:.75rem;opacity:.8;color:#e0693a;">Answer: ${q.opts[q.ans]}</div></div>`;
+  }
+}
+
+function showExplanation(q) {
+  const box=document.getElementById('exp-box'),lbl=document.getElementById('exp-label'),txt=document.getElementById('exp-text');
+  const expText=lang==='np'?(q.exp_np||q.exp_en):(q.exp_en||q.exp_np);
+  if(!expText) return;
+  lbl.textContent=lang==='np'?'解説 (व्याख्या)':'解説 (Explanation)';
+  txt.textContent=expText;
+  box.classList.remove('hidden');
+}
+
+function showNavBtns() {
+  const isFirst=idx===0, isLast=idx>=questions.length-1;
+  // Mobile bottom nav buttons
+  const wrap=document.getElementById('nav-btns'); if(wrap) wrap.style.display='flex';
+  const prev=document.getElementById('prev-btn'), next=document.getElementById('next-btn');
+  if(prev){ prev.disabled=isFirst; prev.style.opacity=isFirst?'.4':'1'; }
+  if(next) next.textContent=isLast?'Finish ✓':'Next →';
+  // PC side arrows
+  const sp=document.getElementById('side-prev'), sn=document.getElementById('side-next');
+  if(sp){ sp.style.display='flex'; sp.disabled=isFirst; requestAnimationFrame(()=>sp.classList.add('visible')); }
+  if(sn){
+    sn.style.display='flex';
+    sn.innerHTML=isLast
+      ? '<svg width="20" height="20" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>'
+      : '<svg width="20" height="20" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>';
+    requestAnimationFrame(()=>sn.classList.add('visible'));
+  }
+}
+
+function scrollTop(){
+  if(window.innerWidth >= 1024){
+    const inner = document.getElementById('quiz-inner') || document.querySelector('#quiz-screen > div');
+    if(inner) inner.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+function nextQuestion(){
+  if(idx<questions.length-1){ idx++; loadQuestion(); scrollTop(); }
+  else showComplete();
+}
+function prevQuestion(){ if(idx>0){ idx--; loadQuestion(); scrollTop(); } }
+
+function startTimer() {
+  timerVal=TIMER_MAX; updateTimerUI(); clearInterval(timerInterval);
+  timerInterval=setInterval(()=>{
+    timerVal--; updateTimerUI();
+    if(timerVal<=0){
+      clearInterval(timerInterval);
+      if(!answered){
+        answered=true; wrong++; streak=0;
+        const q=questions[idx];
+        document.querySelectorAll('.opt').forEach((b,i)=>{ b.classList.add('disabled','answered'); if(i===q.ans) b.classList.add('reveal'); });
+        answeredMap[idx]={selected:-1,wasCorrect:false};
+        updateStats(); setTimeout(()=>showNavBtns(),500);
+      }
+    }
+  },1000);
+}
+
+function updateTimerUI(){
+  const ratio=timerVal/TIMER_MAX, offset=125.6*(1-ratio);
+  const arc=document.getElementById('timer-arc');
+  if(arc){ arc.style.strokeDashoffset=offset; arc.style.stroke=timerVal>15?'#7eb8e4':timerVal>8?'#f5da8a':'#f4a57a'; }
+  document.getElementById('timer-label').textContent=timerVal;
+}
+
+function updateStats(){
+  document.getElementById('score-correct').textContent=`✓ ${correct}`;
+  document.getElementById('score-wrong').textContent=`✗ ${wrong}`;
+  document.getElementById('streak-badge').textContent=`🔥 ${streak}`;
+}
+
+function showComplete(){
+  clearInterval(timerInterval);
+  window.speechSynthesis&&window.speechSynthesis.cancel();
+  document.getElementById('prog-fill').style.width='100%';
+  document.getElementById('quiz-screen').classList.add('hidden');
+  document.getElementById('complete-screen').classList.remove('hidden');
+  ['side-prev','side-next'].forEach(id=>{ const el=document.getElementById(id); if(el){ el.style.display='none'; el.classList.remove('visible'); } });
+
+  const total=correct+wrong, pct=total?Math.round(correct/total*100):0;
+  document.getElementById('fin-correct').textContent=correct;
+  document.getElementById('fin-wrong').textContent=wrong;
+  document.getElementById('fin-xp').textContent=xp;
+  document.getElementById('acc-pct').textContent=pct+'%';
+  document.getElementById('trophy-icon').textContent=pct>=90?'🏆':pct>=70?'🥈':pct>=50?'📖':'💪';
+  document.getElementById('result-msg').textContent=pct>=90?'Outstanding! 素晴らしい！':pct>=70?'Great work!':pct>=50?'Keep practicing!':'Try again!';
+  setTimeout(()=>{ document.getElementById('acc-bar').style.width=pct+'%'; },200);
+  spawnConfetti(pct>=60);
+  try{
+    const acts=JSON.parse(localStorage.getItem('sakura_activity')||'[]');
+    acts.unshift({title:`Kanji ${LEVEL} Quiz — ${pct}%`,sub:`${correct}/${total} correct`,icon:pct>=70?'✅':'🎯',iconBg:'rgba(128,212,168,.15)',xp,xpColor:'#27ae72',xpBg:'rgba(128,212,168,.12)',ts:Date.now()});
+    localStorage.setItem('sakura_activity',JSON.stringify(acts.slice(0,30)));
+  }catch(e){}
+}
+
+function restartQuiz(){
+  idx=0;correct=0;wrong=0;xp=0;streak=0;answered=false;answeredMap={};usedIndices.clear();
+  questions=shuffle([...allQuestions]).slice(0,TOTAL_Q);
+  questions.forEach(q=>usedIndices.add(allQuestions.indexOf(q)));
+  document.getElementById('complete-screen').classList.add('hidden');
+  document.getElementById('quiz-screen').classList.remove('hidden');
+  document.getElementById('prog-fill').style.width='0%';
+  updateStats();loadQuestion();
+}
+
+function nextBatch(){
+  idx=0;correct=0;wrong=0;xp=0;streak=0;answered=false;answeredMap={};
+  const rem=allQuestions.map((q,i)=>({q,i})).filter(x=>!usedIndices.has(x.i));
+  const pool=rem.length>=TOTAL_Q?rem:(()=>{ usedIndices.clear(); return allQuestions.map((q,i)=>({q,i})); })();
+  const picked=shuffle([...pool]).slice(0,TOTAL_Q);
+  picked.forEach(x=>usedIndices.add(x.i));
+  questions=picked.map(x=>x.q);
+  document.getElementById('complete-screen').classList.add('hidden');
+  document.getElementById('quiz-screen').classList.remove('hidden');
+  document.getElementById('prog-fill').style.width='0%';
+  updateStats();loadQuestion();
+}
+
+function spawnConfetti(good){
+  const box=document.getElementById('confetti-box'); if(!box) return;
+  const colors=good?['#80d4a8','#6ecec8','#7eb8e4','#f5da8a','#c4a8e0']:['#f4a57a','#e0693a'];
+  for(let i=0;i<(good?24:6);i++){
+    const d=document.createElement('div'); d.className='conf absolute rounded-sm';
+    d.style.cssText=`width:${5+Math.random()*8}px;height:${5+Math.random()*8}px;background:${colors[Math.floor(Math.random()*colors.length)]};left:${10+Math.random()*80}%;top:-10px;animation-delay:${Math.random()*.4}s;animation-duration:${.7+Math.random()*.6}s;`;
+    box.appendChild(d); setTimeout(()=>d.remove(),1400);
+  }
+}
+
+function speakQuestion(){
+  if(!window.speechSynthesis) return;
+  const q=questions[idx]; if(!q) return;
+  window.speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(q.q.replace(/＿＿/g,''));
+  u.lang='ja-JP'; u.rate=0.85;
+  const voices=window.speechSynthesis.getVoices();
+  const jpV=voices.find(v=>v.lang.startsWith('ja')); if(jpV) u.voice=jpV;
+  const btn=document.getElementById('speak-btn');
+  u.onstart=()=>{if(btn)btn.style.background='rgba(58,124,191,.3)';};
+  u.onend=u.onerror=()=>{if(btn)btn.style.background='rgba(126,184,228,.15)';};
+  window.speechSynthesis.speak(u);
+}
+if(window.speechSynthesis){window.speechSynthesis.getVoices();if(window.speechSynthesis.onvoiceschanged!==undefined)window.speechSynthesis.onvoiceschanged=()=>window.speechSynthesis.getVoices();}
+
+function toggleLang(){
+  lang=lang==='np'?'en':'np';
+  document.getElementById('lang-btn').textContent=lang==='np'?'🇳🇵 NP':'🇬🇧 EN';
+  if(answered&&idx<questions.length) showExplanation(questions[idx]);
+}
+
+function shuffle(arr){ return arr.sort(()=>Math.random()-.5); }
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));}</script>
+</body>
+</html>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌸%3C/text%3E%3C/svg%3E"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vocabulary List (N5) — Shikaku</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans:['Outfit','sans-serif'], jp:['"Noto Sans JP"','sans-serif'] },
+          colors: {
+            blue:   { DEFAULT:'#7eb8e4', deep:'#3a7cbf' },
+            teal:   { DEFAULT:'#6ecec8', deep:'#2a9d8f' },
+            mint:   { DEFAULT:'#80d4a8', deep:'#27ae72' },
+            coral:  { DEFAULT:'#f4a57a', deep:'#e0693a' },
+            butter: { DEFAULT:'#f5da8a', deep:'#d4a017' },
+            lilac:  { DEFAULT:'#c4a8e0', deep:'#8b5cf6' },
+            ink:    { DEFAULT:'#1f2937', 2:'#475569', muted:'#94a3b8' },
+            bg:     { DEFAULT:'#f5f8fc', surface:'#ffffff', s2:'#eef2f7' },
+          },
+          borderRadius: { xl2:'1.25rem', xl3:'1.75rem', xl4:'2.25rem' },
+          boxShadow: {
+            card: '0 2px 16px rgba(15,23,42,.07)',
+            md2:  '0 4px 24px rgba(15,23,42,.12)',
+            lg2:  '0 8px 40px rgba(15,23,42,.16)',
+          },
+        }
+      }
+    }
+  </script>
+  <!-- Vocabulary data embedded directly (avoids fetch/CORS issues when opened locally) -->
+  <!-- Vocabulary data loaded from vocab-n5-data.json at runtime (fetch) -->
+  <style>
+    body { font-family:'Outfit',sans-serif; transition:background .3s,color .3s; }
+    .jp  { font-family:'"Noto Sans JP"',sans-serif; }
+
+    .mesh-light {
+      background: radial-gradient(ellipse at 18% 12%,#d8edf8 0%,transparent 52%),
+                  radial-gradient(ellipse at 82% 88%,#d2f1ec 0%,transparent 52%),
+                  radial-gradient(ellipse at 58% 32%,#e6e2f6 0%,transparent 38%),
+                  #f4f7fb;
+    }
+    .mesh-dark {
+      background: radial-gradient(ellipse at 18% 12%,#0f2236 0%,transparent 52%),
+                  radial-gradient(ellipse at 82% 88%,#0b2120 0%,transparent 52%),
+                  #0c1220;
+    }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:none} }
+    .fu { animation:fadeUp .35s ease both; }
+
+    .s-act { background:#eef5fc; color:#3a7cbf; font-weight:600; }
+
+    .drop { transition:opacity .15s ease,transform .15s ease; }
+    .drop.closed { opacity:0; transform:translateY(-6px); pointer-events:none; }
+    .drop.open   { opacity:1; transform:translateY(0);    pointer-events:all; }
+    @keyframes ring-pulse {
+      0%,100% { box-shadow:0 0 0 0 rgba(110,206,200,.55); }
+      50%      { box-shadow:0 0 0 6px rgba(110,206,200,0); }
+    }
+    .avatar-ring {
+      background: conic-gradient(#6ecec8 0% 65%,#e2e8f0 65% 100%);
+      border-radius:9999px; padding:2.5px;
+      animation:ring-pulse 2.4s ease infinite;
+      display:inline-block; flex-shrink:0;
+    }
+    body.dark #prof-drop, body.dark #desk-prof-drop { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark #prof-drop a, body.dark #desk-prof-drop a { color:#8da4c0 !important; }
+    body.dark .avatar-ring { background:conic-gradient(#6ecec8 0% 65%,#1d2740 65% 100%); }
+
+    body.dark #topbar,
+    body.dark #botnav,
+    body.dark #sidebar-el { background:rgba(14,19,32,.96) !important; border-color:#1d2740 !important; }
+    body.dark .surface  { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark .t-ink    { color:#e8eef6 !important; }
+    body.dark .t-ink2   { color:#8da4c0 !important; }
+    body.dark .t-muted  { color:#4a607a !important; }
+    body.dark .divider  { border-color:#1d2740 !important; }
+    body.dark .word-card { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark .np-line { color:#8da4c0 !important; }
+
+    ::-webkit-scrollbar { width:4px; }
+    ::-webkit-scrollbar-thumb { background:#c2d3e3; border-radius:99px; }
+
+    /* Word card — matches reference screenshot */
+    .word-card { background:#fff; border:1px solid #eef2f7; border-radius:1.25rem; box-shadow:0 2px 12px rgba(15,23,42,.05); padding:16px 18px; }
+    .word-head { font-weight:800; font-size:19px; color:#1f2937; }
+    .word-kana { font-weight:700; font-size:16px; color:#1f2937; }
+    .word-meaning { font-weight:700; color:#1e9e83; }
+    .speak-btn { width:34px; height:34px; border-radius:9999px; background:#e3f6ef; color:#1e9e83; display:flex; align-items:center; justify-content:center; flex-shrink:0; border:none; cursor:pointer; transition:transform .15s ease; }
+    .speak-btn:active { transform:scale(.9); }
+    body.dark .speak-btn { background:rgba(30,158,131,.18); }
+    .example-jp { font-size:17px; font-weight:600; color:#1f2937; line-height:1.9; }
+    .example-jp ruby { margin-right:1px; }
+    .example-jp rt { font-size:0.5em; font-weight:700; color:#1e9e83; }
+    body.dark .example-jp { color:#e8eef6; }
+    body.dark .example-jp rt { color:#4fc9a8; }
+    .np-line { font-size:14px; color:#374151; margin-top:2px; }
+
+    .lang-pill { transition:all .15s ease; }
+  </style>
+  <meta name="theme-color" content="#e8799a"/>
+</head>
+
+<body class="mesh-light min-h-screen text-ink" id="body">
+
+
+<!-- ═══════════════ DESKTOP SIDEBAR (matches homepage) ═══════════════ -->
+<aside id="sidebar-el" class="hidden lg:flex flex-col fixed top-0 left-0 h-full w-60 bg-bg-surface surface border-r border-slate-100 divider z-30 shadow-card">
+
+  <div class="px-4 py-4 flex items-center gap-3 border-b border-slate-100 divider">
+    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow-md flex-shrink-0">
+      <span class="jp text-white font-bold text-base">識</span>
+    </div>
+    <div class="min-w-0 flex-1">
+      <div class="font-bold text-base tracking-tight t-ink leading-tight">Sakura</div>
+      <div class="text-xs t-muted">日本語 Learning</div>
+    </div>
+    <button onclick="toggleSiteLang()" id="desk-lang-btn" class="flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-200 divider transition-all" style="background:#eef5fc;color:#3a7cbf;border-color:rgba(58,124,191,.3);">
+      <span id="desk-lang-btn-label">NP</span>
+    </button>
+  </div>
+
+  <!-- Profile -->
+  <div class="px-5 py-4 flex items-center gap-3 border-b border-slate-100 divider relative" id="desk-prof-wrap">
+    <button onclick="toggleDeskProf()" class="flex items-center gap-3 flex-1 min-w-0 focus:outline-none" aria-label="Profile">
+      <div class="avatar-ring flex-shrink-0">
+        <div id="sb-avatar" class="w-9 h-9 rounded-full bg-gradient-to-br from-blue to-teal flex items-center justify-center text-white font-bold text-sm overflow-hidden">S</div>
+      </div>
+      <div class="flex-1 min-w-0 text-left">
+        <div class="font-semibold text-sm t-ink leading-tight" id="sb-name">Learner</div>
+      </div>
+      <svg id="desk-prof-chev" class="w-3.5 h-3.5 t-muted transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div id="desk-prof-drop" class="drop closed absolute left-3 right-3 top-full mt-1 bg-white surface rounded-xl2 shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+      <div class="px-4 py-3 bg-gradient-to-r from-blue/6 to-teal/6 border-b border-slate-100 divider">
+        <div class="font-bold text-sm t-ink" id="desk-drop-name">Learner</div>
+      </div>
+      <a href="../../../profile/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        My Profile
+      </a>
+      <a href="../../../download/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors border-t border-slate-100 divider">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16l-4-4h3V4h2v8h3l-4 4z"/><path d="M4 20h16"/></svg>
+        Download App
+      </a>
+    </div>
+  </div>
+
+  <nav class="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
+    <a href="../../../index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg>
+      Home
+    </a>
+    <a href="../../../quiz/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg>
+      Quiz
+    </a>
+    <div class="pt-4 pb-1 px-3 text-[10px] font-bold tracking-widest t-muted uppercase">Courses</div>
+    <a href="../../../jlpt/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      JLPT
+    </a>
+    <a href="../../../ssw/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-mint/20 text-mint-deep font-bold text-[10px] flex items-center justify-center">SSW</span> SSW</a>
+    <a href="index.html" class="s-act flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>
+      Vocabulary
+    </a>
+    <div class="pt-4 pb-1 px-3 text-[10px] font-bold tracking-widest t-muted uppercase">General</div>
+    <a href="../../../other/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+      More
+    </a>
+  </nav>
+
+  <div class="px-4 py-4 border-t border-slate-100 divider flex items-center justify-between">
+    <button onclick="toggleDark()" class="flex items-center gap-2 text-xs t-muted hover:text-ink transition-colors">
+      <svg id="desk-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span id="desk-lbl">Dark mode</span>
+    </button>
+  </div>
+</aside>
+
+
+<!-- ═══════════════ MOBILE TOP BAR (matches homepage) ═══════════════ -->
+<header id="topbar" class="lg:hidden fixed top-0 left-0 right-0 z-40 px-4 py-2.5 flex items-center transition-transform duration-300"
+        style="background:rgba(255,255,255,.72);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:0.5px solid rgba(0,0,0,.08);">
+  <div class="relative flex-shrink-0" id="prof-wrap">
+    <button id="prof-btn" onclick="toggleDrop('prof')" class="block focus:outline-none" aria-label="Profile">
+      <div class="avatar-ring">
+        <div id="mob-avatar" class="w-9 h-9 rounded-full bg-gradient-to-br from-blue to-teal flex items-center justify-center text-white font-bold text-sm select-none overflow-hidden">S</div>
+      </div>
+    </button>
+    <div id="prof-drop" class="drop closed absolute top-full left-0 mt-2 w-52 bg-white surface rounded-xl2 shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+      <div class="px-4 py-3 bg-gradient-to-r from-blue/6 to-teal/6 border-b border-slate-100 divider">
+        <div class="font-bold text-sm t-ink" id="mob-drop-name">Learner</div>
+      </div>
+      <a href="../../../profile/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        My Profile
+      </a>
+      <a href="../../../download/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors border-t border-slate-100 divider">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16l-4-4h3V4h2v8h3l-4 4z"/><path d="M4 20h16"/></svg>
+        Download App
+      </a>
+    </div>
+  </div>
+
+  <div class="flex items-center gap-1.5 ml-2.5 min-w-0 flex-1">
+    <span class="text-base flex-shrink-0">📗</span>
+    <span class="font-extrabold text-sm t-ink tracking-tight truncate">Vocabulary</span>
+  </div>
+
+  <div class="flex items-center gap-2 flex-shrink-0">
+    <!-- EN / NP toggle — switches both site UI and word-meaning language -->
+    <button onclick="toggleSiteLang()" id="mob-lang-btn" class="flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-200 divider transition-all" style="background:#eef5fc;color:#3a7cbf;border-color:rgba(58,124,191,.3);">
+      <span id="mob-lang-btn-label">NP</span>
+    </button>
+    <button onclick="toggleDark()" class="w-8 h-8 rounded-lg bg-bg-s2 surface2 border border-slate-200 divider flex items-center justify-center t-muted hover:text-blue-deep hover:border-blue/50 transition-all">
+      <svg id="mob-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+
+<!-- ═══════════════ MAIN CONTENT ═══════════════ -->
+<main class="lg:ml-60 min-h-screen pb-28 lg:pb-10 pt-16 lg:pt-8">
+
+  <!-- Header -->
+  <section class="px-5 lg:px-8 mb-4">
+    <h1 class="text-2xl font-extrabold t-ink leading-tight fu" id="page-title">All</h1>
+    <p class="text-sm t-muted mt-0.5 fu"><span id="word-count">0</span> words</p>
+  </section>
+
+  <!-- Word list -->
+  <section class="px-5 lg:px-8">
+    <div id="word-list" class="space-y-3 max-w-2xl lg:max-w-3xl"></div>
+    <div id="list-empty" class="hidden text-center py-12">
+      <div class="text-3xl mb-2">🔍</div>
+      <div class="text-sm t-muted">No words found.</div>
+    </div>
+    <div id="list-loading" class="text-center py-16 t-muted text-sm">Loading words…</div>
+
+    <!-- Pagination -->
+    <div id="pagination" class="hidden max-w-2xl lg:max-w-3xl flex items-center justify-between gap-3 mt-5 pb-4">
+      <button onclick="goPrevPage()" id="prev-btn" class="flex items-center gap-1.5 px-4 py-2.5 rounded-xl font-bold text-sm border border-slate-200 divider t-ink2 disabled:opacity-40 disabled:cursor-not-allowed transition-all" style="background:#fff;">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+        Previous
+      </button>
+      <span id="page-indicator" class="text-xs font-semibold t-muted">Page 1 of 1</span>
+      <button onclick="goNextPage()" id="next-btn" class="flex items-center gap-1.5 px-4 py-2.5 rounded-xl font-bold text-sm text-white disabled:opacity-40 disabled:cursor-not-allowed transition-all" style="background:linear-gradient(135deg,#3a7cbf,#2a9d8f);">
+        Next
+        <svg width="16" height="16" fill="none" stroke="white" stroke-width="2.3" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ═══════════ MOBILE BOTTOM NAV (matches homepage) ═══════════ -->
+<nav id="botnav" class="lg:hidden fixed bottom-3 left-3 right-3 z-40 transition-transform duration-300 rounded-full shadow-lg2"
+     style="background:rgba(255,255,255,.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);">
+  <div class="flex items-center" style="height:66px;">
+    <a href="../../../index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Home</span>
+    </a>
+    <a href="../../../jlpt/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 4h6a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2z"/><path d="M22 4h-6a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">JLPT</span>
+    </a>
+    <a href="../../../ssw/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3 10 5.5-10 5.5L2 8.5 12 3Z"/><path d="M6 11v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">SSW</span>
+    </a>
+    <a href="../../../quiz/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M4 20h2.5L18 8.5a1.8 1.8 0 0 0-2.5-2.5L4 17.5V20Z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Quiz</span>
+    </a>
+    <a href="../../../other/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+      <span class="text-[11px] font-semibold t-muted">More</span>
+    </a>
+  </div>
+</nav>
+
+
+<!-- ═══════════════ SCRIPTS ═══════════════ -->
+<script>
+/* ── Dark mode ── */
+let isDark = false;
+const MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+const SUN  = '<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/>';
+function toggleDark() {
+  isDark = !isDark;
+  document.body.className = isDark ? 'mesh-dark min-h-screen text-slate-100 dark' : 'mesh-light min-h-screen text-ink';
+  ['mob-icon','desk-icon'].forEach(id => { const el = document.getElementById(id); if(el) el.innerHTML = isDark ? SUN : MOON; });
+  const lbl = document.getElementById('desk-lbl'); if(lbl) lbl.textContent = isDark ? 'Light mode' : 'Dark mode';
+}
+
+/* ── Scroll-direction nav show/hide ── */
+(function(){
+  let lastY = window.scrollY;
+  const topbar = document.getElementById('topbar');
+  const botnav = document.getElementById('botnav');
+  window.addEventListener('scroll', function(){
+    const y = window.scrollY;
+    const goingDown = y > lastY;
+    if (y < 10) { if (topbar) topbar.style.transform='translateY(0)'; if (botnav) botnav.style.transform='translateY(0)'; }
+    else if (goingDown) { if (botnav) botnav.style.transform='translateY(150%)'; if (topbar) topbar.style.transform='translateY(0)'; }
+    else { if (topbar) topbar.style.transform='translateY(-100%)'; if (botnav) botnav.style.transform='translateY(0)'; }
+    lastY = y;
+  }, { passive: true });
+})();
+
+/* ── Cached user name/avatar (matches homepage) ── */
+(function(){
+  var cachedName = localStorage.getItem('sakura_user_name');
+  if (cachedName) {
+    ['sb-name','mob-drop-name','desk-drop-name'].forEach(function(id){ var el=document.getElementById(id); if(el) el.textContent=cachedName; });
+  }
+})();
+
+/* ── Desktop profile dropdown ── */
+let deskProfOpen = false;
+function toggleDeskProf() {
+  deskProfOpen = !deskProfOpen;
+  const drop = document.getElementById('desk-prof-drop');
+  const chev = document.getElementById('desk-prof-chev');
+  drop.className = drop.className.replace(/\b(open|closed)\b/, deskProfOpen ? 'open' : 'closed');
+  if(chev) chev.style.transform = deskProfOpen ? 'rotate(180deg)' : '';
+}
+
+/* ── Site language — single-button toggle (click to switch EN ↔ NP).
+   Also drives which language word meanings show in, since this page
+   doesn't need two separate language switches. ── */
+var vocabLang = 'np';
+function toggleSiteLang() {
+  vocabLang = (vocabLang === 'np') ? 'en' : 'np';
+  var label = vocabLang === 'np' ? 'NP' : 'EN';
+  ['desk-lang-btn-label','mob-lang-btn-label'].forEach(function(id){ var el=document.getElementById(id); if(el) el.textContent=label; });
+  renderPage();
+}
+
+/* ── Mobile profile dropdown ── */
+const drops = { prof: false };
+function toggleDrop(name) {
+  drops[name] = !drops[name];
+  const el = document.getElementById(name === 'prof' ? 'prof-drop' : null);
+  if(el) el.className = el.className.replace(/\b(open|closed)\b/, drops[name] ? 'open' : 'closed');
+}
+document.addEventListener('click', e => {
+  const deskProfWrap = document.getElementById('desk-prof-wrap');
+  if(deskProfWrap && !deskProfWrap.contains(e.target) && deskProfOpen) {
+    deskProfOpen = false;
+    const drop = document.getElementById('desk-prof-drop'), chev = document.getElementById('desk-prof-chev');
+    if(drop) drop.className = drop.className.replace(/\b(open|closed)\b/,'closed');
+    if(chev) chev.style.transform = '';
+  }
+  const pb = document.getElementById('prof-wrap');
+  if(pb && !pb.contains(e.target) && drops.prof) { drops.prof = false; const el=document.getElementById('prof-drop'); if(el) el.className = el.className.replace(/\b(open|closed)\b/,'closed'); }
+});
+
+/* ══════════════════════════════════════════════════════════
+   Category classification — same 4-bucket logic as index.html
+   (All / Noun / Adjective / Verb)
+   ══════════════════════════════════════════════════════════ */
+var VOCAB_ADJECTIVE_MATCH = /i-Adjectives|na-Adjectives/i;
+var VOCAB_VERB_MATCH = /Verbs Group 1|Verbs Group 5|Irregular Verbs/i;
+var BUCKET_META = {
+  all:       { label:'All' },
+  noun:      { label:'Noun' },
+  adjective: { label:'Adjective' },
+  verb:      { label:'Verb' },
+};
+
+var allWords = [];
+var currentWords = [];
+
+function getBucketFor(categoryName){
+  if (VOCAB_ADJECTIVE_MATCH.test(categoryName)) return 'adjective';
+  if (VOCAB_VERB_MATCH.test(categoryName)) return 'verb';
+  return 'noun';
+}
+function getParam(name){ return new URLSearchParams(window.location.search).get(name); }
+
+function loadWords(){
+  var cat = (getParam('cat') || 'all').toLowerCase();
+  fetch('vocab-n5-data.json')
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function(data){
+      (data.categories || []).forEach(function(c){
+        var bucket = getBucketFor(c.name);
+        (c.words || []).forEach(function(w){
+          allWords.push(Object.assign({}, w, { bucket: bucket }));
+        });
+      });
+
+      var meta = BUCKET_META[cat] || BUCKET_META.all;
+      document.getElementById('page-title').textContent = meta.label;
+      document.title = meta.label + ' Vocabulary (N5) — Shikaku';
+
+      currentWords = (cat === 'all') ? allWords.slice() : allWords.filter(function(w){ return w.bucket === cat; });
+      renderList(currentWords);
+      document.getElementById('list-loading').classList.add('hidden');
+    })
+    .catch(function(err){
+      document.getElementById('list-loading').textContent = 'Could not load vocab-n5-data.json.';
+      console.warn('Vocab list load failed:', err);
+    });
+}
+
+function escapeHtml(s){
+  return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+var PAGE_SIZE = 20;
+var currentPage = 0;
+var filteredWords = [];
+
+function renderList(words){
+  filteredWords = words;
+  currentPage = 0;
+  renderPage();
+}
+
+function renderPage(){
+  var listEl = document.getElementById('word-list');
+  var emptyEl = document.getElementById('list-empty');
+  var pagEl = document.getElementById('pagination');
+  document.getElementById('word-count').textContent = filteredWords.length;
+
+  if (!filteredWords.length){
+    listEl.innerHTML = '';
+    emptyEl.classList.remove('hidden');
+    pagEl.classList.add('hidden');
+    return;
+  }
+  emptyEl.classList.add('hidden');
+
+  var totalPages = Math.max(1, Math.ceil(filteredWords.length / PAGE_SIZE));
+  currentPage = Math.min(currentPage, totalPages - 1);
+  var start = currentPage * PAGE_SIZE;
+  var pageWords = filteredWords.slice(start, start + PAGE_SIZE);
+
+  listEl.innerHTML = pageWords.map(function(w, i){
+    var absIndex = start + i;
+    var meaning = vocabLang === 'np' ? (w.meaning_np || w.english || '') : (w.english || w.meaning_np || '');
+    var exampleTranslated = vocabLang === 'np' ? (w.example_np || w.example_en || '') : (w.example_en || w.example_np || '');
+    return '' +
+      '<div class="word-card fu" style="animation-delay:' + Math.min(i*0.015, 0.3) + 's;">' +
+        '<div class="flex items-start justify-between gap-3 mb-2.5">' +
+          '<div class="flex-1 min-w-0 flex flex-wrap items-baseline gap-x-1.5">' +
+            '<span class="jp word-head">' + escapeHtml(w.kanji || w.kana) + '</span>' +
+            (w.kanji ? '<span class="jp word-kana">（' + escapeHtml(w.kana) + '）</span>' : '') +
+            '<span class="t-muted font-bold">—</span>' +
+            '<span class="word-meaning">' + escapeHtml(meaning) + '</span>' +
+          '</div>' +
+          '<button class="speak-btn" onclick="speakWord(' + absIndex + ')" aria-label="Play pronunciation">' +
+            '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>' +
+          '</button>' +
+        '</div>' +
+        '<div class="example-jp">' + (w.example || '') + '</div>' +
+        (exampleTranslated ? '<div class="np-line">' + escapeHtml(exampleTranslated) + '</div>' : '') +
+      '</div>';
+  }).join('');
+
+  /* Pagination controls */
+  if (totalPages > 1){
+    pagEl.classList.remove('hidden');
+    document.getElementById('page-indicator').textContent = 'Page ' + (currentPage+1) + ' of ' + totalPages;
+    document.getElementById('prev-btn').disabled = currentPage === 0;
+    document.getElementById('next-btn').disabled = currentPage === totalPages - 1;
+  } else {
+    pagEl.classList.add('hidden');
+  }
+
+  window.scrollTo({ top: document.getElementById('word-list').offsetTop - 80, behavior: 'smooth' });
+}
+
+function goNextPage(){
+  var totalPages = Math.max(1, Math.ceil(filteredWords.length / PAGE_SIZE));
+  if (currentPage < totalPages - 1){ currentPage++; renderPage(); }
+}
+function goPrevPage(){
+  if (currentPage > 0){ currentPage--; renderPage(); }
+}
+
+/* ── Text-to-speech playback (uses the browser's Japanese voice if available) ── */
+function speakWord(i){
+  var w = filteredWords[i];
+  if (!w) return;
+  try {
+    var utter = new SpeechSynthesisUtterance((w.kanji || w.kana));
+    utter.lang = 'ja-JP';
+    speechSynthesis.cancel();
+    speechSynthesis.speak(utter);
+  } catch(e) { console.warn('Speech synthesis not available:', e); }
+}
+
+loadWords();
+</script>
+
+<script>
+(function(){
+  var PAGE='vocab/n5/list.html'; var PROG=0;
+  try {
+    var list = JSON.parse(localStorage.getItem('Sakura_recent') || '[]');
+    list = list.filter(function(x){ return x.url !== PAGE; });
+    list.unshift({ url: PAGE, ts: Date.now(), prog: PROG });
+    if(list.length > 10) list = list.slice(0, 10);
+    localStorage.setItem('Sakura_recent', JSON.stringify(list));
+  } catch(e) {}
+})();
+</script>
+</body>
+</html>

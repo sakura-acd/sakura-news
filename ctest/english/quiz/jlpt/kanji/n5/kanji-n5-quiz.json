@@ -1,0 +1,4504 @@
+[
+  {
+    "type": "fill",
+    "q": "傘を＿＿って行きます。",
+    "kana": "かさをもっていきます。",
+    "answer": "持",
+    "opts": [
+      "働",
+      "言",
+      "持",
+      "来"
+    ],
+    "eng": "I will take an umbrella.",
+    "nepali": "म छाता लिएर जान्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "来 の読み方は？",
+    "kana": "EN: come | NP: आउनु",
+    "answer": "くる",
+    "opts": [
+      "あめ",
+      "くる",
+      "あう",
+      "とし"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "この部屋は＿＿るいです。",
+    "kana": "このへやはあかるいです。",
+    "answer": "明",
+    "opts": [
+      "時",
+      "近",
+      "明",
+      "食"
+    ],
+    "eng": "This room is bright.",
+    "nepali": "यो कोठा उज्यालो छ。"
+  },
+  {
+    "type": "fill",
+    "q": "この本は＿＿円です。",
+    "kana": "このほんはひゃくえんです。",
+    "answer": "百",
+    "opts": [
+      "中",
+      "歩",
+      "百",
+      "駅"
+    ],
+    "eng": "This book is 100 yen.",
+    "nepali": "यो पुस्तक १०० येन हो。"
+  },
+  {
+    "type": "fill",
+    "q": "父は会＿＿員です。",
+    "kana": "ちちはかいしゃいんです。",
+    "answer": "社",
+    "opts": [
+      "社",
+      "強",
+      "作",
+      "五"
+    ],
+    "eng": "My father is a company employee.",
+    "nepali": "मेरो बुबा कम्पनी कर्मचारी हुन्。"
+  },
+  {
+    "type": "reading",
+    "q": "木 の読み方は？",
+    "kana": "EN: tree, wood | NP: रूख, काठ",
+    "answer": "き",
+    "opts": [
+      "みせ",
+      "のむ",
+      "き",
+      "はしる"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "火 の読み方は？",
+    "kana": "EN: fire | NP: आगो",
+    "answer": "ひ",
+    "opts": [
+      "はは",
+      "ひ",
+      "ふた",
+      "はしる"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "書 の読み方は？",
+    "kana": "EN: write | NP: लेख्नु",
+    "answer": "かく",
+    "opts": [
+      "よむ",
+      "かく",
+      "なか",
+      "きく"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿月に学校が始まります。",
+    "kana": "くがつにがっこうがはじまります。",
+    "answer": "九",
+    "opts": [
+      "九",
+      "行",
+      "兄",
+      "少"
+    ],
+    "eng": "School starts in September.",
+    "nepali": "सेप्टेम्बरमा स्कूल सुरु हुन्छ。"
+  },
+  {
+    "type": "fill",
+    "q": "日本はいい国だと＿＿います。",
+    "kana": "にほんはいいくにだとおもいます。",
+    "answer": "思",
+    "opts": [
+      "長",
+      "思",
+      "使",
+      "明"
+    ],
+    "eng": "I think Japan is a good country.",
+    "nepali": "म जापान राम्रो देश हो भन्ने सोच्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "手紙を＿＿しました。",
+    "kana": "てがみをだしました。",
+    "answer": "出",
+    "opts": [
+      "半",
+      "買",
+      "出",
+      "飲"
+    ],
+    "eng": "I sent a letter.",
+    "nepali": "मैले पत्र पठाएँ。"
+  },
+  {
+    "type": "fill",
+    "q": "風が＿＿いです。",
+    "kana": "かぜがつよいです。",
+    "answer": "強",
+    "opts": [
+      "百",
+      "見",
+      "強",
+      "止"
+    ],
+    "eng": "The wind is strong.",
+    "nepali": "हावा बलियो छ。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿曜日に友達と遊びます。",
+    "kana": "どようびにともだちとあそびます。",
+    "answer": "土",
+    "opts": [
+      "考",
+      "土",
+      "社",
+      "長"
+    ],
+    "eng": "I will hang out with friends on Saturday.",
+    "nepali": "म शनिबार साथीहरूसँग खेल्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "言 の読み方は？",
+    "kana": "EN: say, word | NP: भन्नु, शब्द",
+    "answer": "いう",
+    "opts": [
+      "しめる",
+      "くる",
+      "いう",
+      "おんな"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "金 の読み方は？",
+    "kana": "EN: gold, money, Friday | NP: सुन, पैसा, शुक्रबार",
+    "answer": "かね",
+    "opts": [
+      "ちち",
+      "とし",
+      "かね",
+      "かたる"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "止 の読み方は？",
+    "kana": "EN: stop | NP: रोकिनु",
+    "answer": "とまる",
+    "opts": [
+      "ちかい",
+      "おとうと",
+      "にし",
+      "とまる"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "この＿＿はとても面白いです。",
+    "kana": "このほんはとてもおもしろいです。",
+    "answer": "本",
+    "opts": [
+      "下",
+      "行",
+      "本",
+      "暗"
+    ],
+    "eng": "This book is very interesting.",
+    "nepali": "यो पुस्तक धेरै रोचक छ।"
+  },
+  {
+    "type": "fill",
+    "q": "駅の＿＿に待ち合わせましょう。",
+    "kana": "えきのまえにまちあわせましょう。",
+    "answer": "前",
+    "opts": [
+      "十",
+      "持",
+      "考",
+      "前"
+    ],
+    "eng": "Let's meet in front of the station.",
+    "nepali": "हामी स्टेशन अगाडि भेटौं。"
+  },
+  {
+    "type": "fill",
+    "q": "夏＿＿みに旅行に行きます。",
+    "kana": "なつやすみにりょこうにいきます。",
+    "answer": "休",
+    "opts": [
+      "見",
+      "男",
+      "開",
+      "休"
+    ],
+    "eng": "I will go on a trip during summer vacation.",
+    "nepali": "म गर्मी बिदामा यात्रामा जान्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "地＿＿鉄で行きます。",
+    "kana": "ちかてつでいきます。",
+    "answer": "下",
+    "opts": [
+      "下",
+      "電",
+      "小",
+      "左"
+    ],
+    "eng": "I will go by subway.",
+    "nepali": "म मेट्रोबाट जान्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "下 の読み方は？",
+    "kana": "EN: down, below, under | NP: तल, मुनि",
+    "answer": "した",
+    "opts": [
+      "いく",
+      "した",
+      "き",
+      "みる"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿事に気をつけてください。",
+    "kana": "かじにきをつけてください。",
+    "answer": "火",
+    "opts": [
+      "父",
+      "火",
+      "駅",
+      "二"
+    ],
+    "eng": "Please be careful of fire.",
+    "nepali": "कृपया आगोबाट सावधान रहनुहोस्。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿の子が生まれました。",
+    "kana": "おんなのこがうまれました。",
+    "answer": "女",
+    "opts": [
+      "買",
+      "走",
+      "女",
+      "来"
+    ],
+    "eng": "A baby girl was born.",
+    "nepali": "एउटी छोरी जन्मिइन्。"
+  },
+  {
+    "type": "reading",
+    "q": "先 の読み方は？",
+    "kana": "EN: previous, ahead, future | NP: अघिल्लो, अगाडि",
+    "answer": "さき",
+    "opts": [
+      "あめ",
+      "デン",
+      "すむ",
+      "さき"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "富士＿＿に登りたいです。",
+    "kana": "ふじさんにのぼりたいです。",
+    "answer": "山",
+    "opts": [
+      "待",
+      "山",
+      "千",
+      "明"
+    ],
+    "eng": "I want to climb Mount Fuji.",
+    "nepali": "म फुजी पर्वत चढ्न चाहन्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "六 の読み方は？",
+    "kana": "EN: six | NP: छ",
+    "answer": "む",
+    "opts": [
+      "む",
+      "かんがえる",
+      "つち",
+      "たべる"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿を描いてください。",
+    "kana": "えんをかいてください。",
+    "answer": "円",
+    "opts": [
+      "川",
+      "下",
+      "短",
+      "円"
+    ],
+    "eng": "Please draw a circle.",
+    "nepali": "कृपया गोलो कोर्नुहोस्。"
+  },
+  {
+    "type": "reading",
+    "q": "近 の読み方は？",
+    "kana": "EN: near | NP: नजिक",
+    "answer": "ちかい",
+    "opts": [
+      "ここの",
+      "みる",
+      "わかる",
+      "ちかい"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿月は紅葉がきれいです。",
+    "kana": "じゅうがつはこうようがきれいです。",
+    "answer": "十",
+    "opts": [
+      "五",
+      "百",
+      "十",
+      "万"
+    ],
+    "eng": "The autumn leaves are beautiful in October.",
+    "nepali": "अक्टोबरमा शरद ऋतुका पातहरू सुन्दर हुन्छन्。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿曜日に映画を見ます。",
+    "kana": "すいようびにえいがをみます。",
+    "answer": "水",
+    "opts": [
+      "閉",
+      "十",
+      "本",
+      "水"
+    ],
+    "eng": "I will watch a movie on Wednesday.",
+    "nepali": "म बुधबार चलचित्र हेर्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "友達がケーキを＿＿りました。",
+    "kana": "ともだちがケーキをつくりました。",
+    "answer": "作",
+    "opts": [
+      "出",
+      "生",
+      "円",
+      "作"
+    ],
+    "eng": "My friend made a cake.",
+    "nepali": "मेरो साथीले केक बनायो。"
+  },
+  {
+    "type": "reading",
+    "q": "七 の読み方は？",
+    "kana": "EN: seven | NP: सात",
+    "answer": "なな",
+    "opts": [
+      "なな",
+      "とし",
+      "たつ",
+      "ひ"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿時に寝ます。",
+    "kana": "はちじにねます。",
+    "answer": "八",
+    "opts": [
+      "時",
+      "四",
+      "後",
+      "八"
+    ],
+    "eng": "I go to sleep at 8 o'clock.",
+    "nepali": "म ८ बजे सुत्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "東 の読み方は？",
+    "kana": "EN: east | NP: पूर्व",
+    "answer": "ひがし",
+    "opts": [
+      "はなす",
+      "そと",
+      "ひがし",
+      "した"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿は会社員です。",
+    "kana": "ちちはかいしゃいんです。",
+    "answer": "父",
+    "opts": [
+      "千",
+      "閉",
+      "父",
+      "今"
+    ],
+    "eng": "My father is a company employee.",
+    "nepali": "मेरो बुबा कम्पनी कर्मचारी हुनुहुन्छ。"
+  },
+  {
+    "type": "fill",
+    "q": "駅で友達に＿＿います。",
+    "kana": "えきでともだちにあいます。",
+    "answer": "会",
+    "opts": [
+      "書",
+      "会",
+      "走",
+      "男"
+    ],
+    "eng": "I will meet my friend at the station.",
+    "nepali": "म स्टेशनमा साथीलाई भेट्नेछु。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿議は三時からです。",
+    "kana": "かいぎはさんじからです。",
+    "answer": "会",
+    "opts": [
+      "大",
+      "会",
+      "年",
+      "本"
+    ],
+    "eng": "The meeting starts at 3 o'clock.",
+    "nepali": "बैठक ३ बजेदेखि सुरु हुन्छ。"
+  },
+  {
+    "type": "reading",
+    "q": "時 の読み方は？",
+    "kana": "EN: time, hour | NP: समय, घण्टा",
+    "answer": "とき",
+    "opts": [
+      "とき",
+      "あに",
+      "はいる",
+      "とも"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "西 の読み方は？",
+    "kana": "EN: west | NP: पश्चिम",
+    "answer": "にし",
+    "opts": [
+      "のむ",
+      "にし",
+      "とき",
+      "いま"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "日本＿＿を話します。",
+    "kana": "にほんごをはなします。",
+    "answer": "語",
+    "opts": [
+      "見",
+      "語",
+      "中",
+      "暗"
+    ],
+    "eng": "I speak Japanese.",
+    "nepali": "म जापानी बोल्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "英＿＿ができますか。",
+    "kana": "えいごができますか。",
+    "answer": "語",
+    "opts": [
+      "日",
+      "語",
+      "使",
+      "話"
+    ],
+    "eng": "Can you speak English?",
+    "nepali": "तपाईं अंग्रेजी बोल्न सक्नुहुन्छ?"
+  },
+  {
+    "type": "reading",
+    "q": "九 の読み方は？",
+    "kana": "EN: nine | NP: नौ",
+    "answer": "ここの",
+    "opts": [
+      "ここの",
+      "まるい",
+      "いきる",
+      "もも"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "見 の読み方は？",
+    "kana": "EN: see, look, watch | NP: देख्नु, हेर्नु",
+    "answer": "みる",
+    "opts": [
+      "みる",
+      "あるく",
+      "おんな",
+      "あく"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "家に＿＿ります。",
+    "kana": "いえにかえります。",
+    "answer": "帰",
+    "opts": [
+      "三",
+      "帰",
+      "強",
+      "雨"
+    ],
+    "eng": "I go back home.",
+    "nepali": "म घर फर्कन्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "新しい車を＿＿いたいです。",
+    "kana": "あたらしいくるまをかいたいです。",
+    "answer": "買",
+    "opts": [
+      "大",
+      "今",
+      "買",
+      "聞"
+    ],
+    "eng": "I want to buy a new car.",
+    "nepali": "म नयाँ कार किन्न चाहन्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "食 の読み方は？",
+    "kana": "EN: eat, food | NP: खानु, खाना",
+    "answer": "たべる",
+    "opts": [
+      "たべる",
+      "や",
+      "しる",
+      "ちかい"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿をつけてください。",
+    "kana": "きをつけてください。",
+    "answer": "気",
+    "opts": [
+      "気",
+      "水",
+      "天",
+      "南"
+    ],
+    "eng": "Please be careful.",
+    "nepali": "कृपया सावधान हुनुहोस्。"
+  },
+  {
+    "type": "fill",
+    "q": "一人＿＿です。",
+    "kana": "ひとりごです。",
+    "answer": "子",
+    "opts": [
+      "生",
+      "一",
+      "六",
+      "子"
+    ],
+    "eng": "I am an only child.",
+    "nepali": "म एक्लो सन्तान हुँ。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿の子が二人います。",
+    "kana": "おとこのこがふたりいます。",
+    "answer": "男",
+    "opts": [
+      "南",
+      "五",
+      "父",
+      "男"
+    ],
+    "eng": "I have two sons.",
+    "nepali": "मेरा दुई छोरा छन्。"
+  },
+  {
+    "type": "reading",
+    "q": "住 の読み方は？",
+    "kana": "EN: live, reside | NP: बस्नु",
+    "answer": "すむ",
+    "opts": [
+      "とおい",
+      "すむ",
+      "みず",
+      "はは"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "旅＿＿に行きたいです。",
+    "kana": "りょこうにいきたいです。",
+    "answer": "行",
+    "opts": [
+      "持",
+      "小",
+      "行",
+      "言"
+    ],
+    "eng": "I want to go on a trip.",
+    "nepali": "म यात्रामा जान चाहन्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "会社＿＿です。",
+    "kana": "かいしゃいんです。",
+    "answer": "員",
+    "opts": [
+      "暗",
+      "先",
+      "田",
+      "員"
+    ],
+    "eng": "I am a company employee.",
+    "nepali": "म कम्पनी कर्मचारी हुँ。"
+  },
+  {
+    "type": "fill",
+    "q": "テレビを＿＿ます。",
+    "kana": "テレビをみます。",
+    "answer": "見",
+    "opts": [
+      "中",
+      "兄",
+      "見",
+      "来"
+    ],
+    "eng": "I watch TV.",
+    "nepali": "म टिभी हेर्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "公園にたくさん＿＿がいます。",
+    "kana": "こうえんにたくさんひとがいます。",
+    "answer": "人",
+    "opts": [
+      "人",
+      "東",
+      "百",
+      "話"
+    ],
+    "eng": "There are many people in the park.",
+    "nepali": "पार्कमा धेरै मानिसहरू छन्।"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿は高校生です。",
+    "kana": "おとうとはこうこうせいです。",
+    "answer": "弟",
+    "opts": [
+      "短",
+      "弟",
+      "休",
+      "年"
+    ],
+    "eng": "My younger brother is a high school student.",
+    "nepali": "मेरो भाइ हाईस्कूल विद्यार्थी हो。"
+  },
+  {
+    "type": "fill",
+    "q": "あの人を＿＿っていますか。",
+    "kana": "あのひとをしっていますか。",
+    "answer": "知",
+    "opts": [
+      "名",
+      "中",
+      "知",
+      "店"
+    ],
+    "eng": "Do you know that person?",
+    "nepali": "तपाईं त्यो मानिसलाई चिन्नुहुन्छ?"
+  },
+  {
+    "type": "reading",
+    "q": "強 の読み方は？",
+    "kana": "EN: strong | NP: बलियो",
+    "answer": "つよい",
+    "opts": [
+      "つち",
+      "なかば",
+      "つよい",
+      "くに"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿の方角がわかります。",
+    "kana": "にしのほうがわかります。",
+    "answer": "西",
+    "opts": [
+      "時",
+      "西",
+      "右",
+      "長"
+    ],
+    "eng": "I know the west direction.",
+    "nepali": "मलाई पश्चिम दिशा थाहा छ。"
+  },
+  {
+    "type": "reading",
+    "q": "社 の読み方は？",
+    "kana": "EN: company, society | NP: कम्पनी, समाज",
+    "answer": "やしろ",
+    "opts": [
+      "はたらく",
+      "き",
+      "みなみ",
+      "やしろ"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "日本は美しい＿＿です。",
+    "kana": "にほんはうつくしいくにです。",
+    "answer": "国",
+    "opts": [
+      "本",
+      "国",
+      "休",
+      "人"
+    ],
+    "eng": "Japan is a beautiful country.",
+    "nepali": "जापान एक सुन्दर देश हो。"
+  },
+  {
+    "type": "fill",
+    "q": "高＿＿生です。",
+    "kana": "こうこうせいです。",
+    "answer": "校",
+    "opts": [
+      "父",
+      "立",
+      "話",
+      "校"
+    ],
+    "eng": "I am a high school student.",
+    "nepali": "म हाईस्कूल विद्यार्थी हुँ。"
+  },
+  {
+    "type": "fill",
+    "q": "関＿＿弁が難しいです。",
+    "kana": "かんさいべんがむずかしいです。",
+    "answer": "西",
+    "opts": [
+      "取",
+      "何",
+      "員",
+      "西"
+    ],
+    "eng": "Kansai dialect is difficult.",
+    "nepali": "कानसाई बोली गाह्रो छ。"
+  },
+  {
+    "type": "fill",
+    "q": "何時に＿＿りますか。",
+    "kana": "なんじにかえりますか。",
+    "answer": "帰",
+    "opts": [
+      "十",
+      "帰",
+      "車",
+      "電"
+    ],
+    "eng": "What time will you return?",
+    "nepali": "तपाईं कति बजे फर्कनुहुन्छ?"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿話番号を教えてください。",
+    "kana": "でんわばんごうをおしえてください。",
+    "answer": "電",
+    "opts": [
+      "待",
+      "働",
+      "習",
+      "電"
+    ],
+    "eng": "Please tell me your phone number.",
+    "nepali": "कृपया मलाई तपाईंको फोन नम्बर दिनुहोस्。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿学生です。",
+    "kana": "しょうがくせいです。",
+    "answer": "小",
+    "opts": [
+      "知",
+      "一",
+      "来",
+      "小"
+    ],
+    "eng": "I am an elementary school student.",
+    "nepali": "म प्राथमिक विद्यालयको विद्यार्थी हुँ。"
+  },
+  {
+    "type": "reading",
+    "q": "大 の読み方は？",
+    "kana": "EN: big, large | NP: ठूलो",
+    "answer": "おおきい",
+    "opts": [
+      "もと",
+      "よむ",
+      "おおきい",
+      "た"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿を飲みたいです。",
+    "kana": "みずをのみたいです。",
+    "answer": "水",
+    "opts": [
+      "中",
+      "水",
+      "会",
+      "一"
+    ],
+    "eng": "I want to drink water.",
+    "nepali": "म पानी पिउन चाहन्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "中 の読み方は？",
+    "kana": "EN: inside, middle | NP: भित्र, मध्य",
+    "answer": "なか",
+    "opts": [
+      "なか",
+      "デン",
+      "みぎ",
+      "た"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "前 の読み方は？",
+    "kana": "EN: front, before | NP: अगाडि, पहिले",
+    "answer": "まえ",
+    "opts": [
+      "やすむ",
+      "つかう",
+      "まるい",
+      "まえ"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "短 の読み方は？",
+    "kana": "EN: short | NP: छोटो",
+    "answer": "みじかい",
+    "opts": [
+      "かね",
+      "みじかい",
+      "きく",
+      "ながい"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "部屋に＿＿ります。",
+    "kana": "へやにはいります。",
+    "answer": "入",
+    "opts": [
+      "開",
+      "入",
+      "水",
+      "男"
+    ],
+    "eng": "I will enter the room.",
+    "nepali": "म कोठामा पस्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿車で学校に行きます。",
+    "kana": "でんしゃでがっこうにいきます。",
+    "answer": "電",
+    "opts": [
+      "来",
+      "語",
+      "弟",
+      "電"
+    ],
+    "eng": "I go to school by train.",
+    "nepali": "म रेलमा स्कूल जान्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "毎日本を＿＿んでいます。",
+    "kana": "まいにちほんをよんでいます。",
+    "answer": "読",
+    "opts": [
+      "長",
+      "生",
+      "読",
+      "木"
+    ],
+    "eng": "I read books every day.",
+    "nepali": "म हरेक दिन पुस्तक पढ्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "日本語を＿＿えます。",
+    "kana": "にほんごをおしえます。",
+    "answer": "教",
+    "opts": [
+      "前",
+      "話",
+      "教",
+      "閉"
+    ],
+    "eng": "I teach Japanese.",
+    "nepali": "म जापानी सिकाउँछु。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿の方角がわかりません。",
+    "kana": "ひがしのほうがわかりません。",
+    "answer": "東",
+    "opts": [
+      "百",
+      "国",
+      "後",
+      "東"
+    ],
+    "eng": "I don't know the east direction.",
+    "nepali": "मलाई पूर्व दिशा थाहा छैन。"
+  },
+  {
+    "type": "fill",
+    "q": "水を＿＿みたいです。",
+    "kana": "みずをのみたいです。",
+    "answer": "飲",
+    "opts": [
+      "歩",
+      "飲",
+      "使",
+      "読"
+    ],
+    "eng": "I want to drink water.",
+    "nepali": "म पानी पिउन चाहन्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "お金を＿＿れました。",
+    "kana": "おかねをいれました。",
+    "answer": "入",
+    "opts": [
+      "入",
+      "年",
+      "山",
+      "父"
+    ],
+    "eng": "I put money in.",
+    "nepali": "मैले पैसा हालें。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿しだけ食べます。",
+    "kana": "すこしだけたべます。",
+    "answer": "少",
+    "opts": [
+      "万",
+      "右",
+      "少",
+      "友"
+    ],
+    "eng": "I will eat just a little.",
+    "nepali": "म अलिकति मात्र खान्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "年 の読み方は？",
+    "kana": "EN: year | NP: वर्ष",
+    "answer": "とし",
+    "opts": [
+      "とし",
+      "ながい",
+      "かね",
+      "とまる"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿きい犬がいます。",
+    "kana": "おおきいいぬがいます。",
+    "answer": "大",
+    "opts": [
+      "大",
+      "学",
+      "田",
+      "書"
+    ],
+    "eng": "There is a big dog.",
+    "nepali": "एउटा ठूलो कुकुर छ。"
+  },
+  {
+    "type": "reading",
+    "q": "聞 の読み方は？",
+    "kana": "EN: listen, hear, ask | NP: सुन्नु, सोध्नु",
+    "answer": "きく",
+    "opts": [
+      "あね",
+      "きく",
+      "ひ",
+      "あと"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "銀行は五時に＿＿まります。",
+    "kana": "ぎんこうはごじにしまります。",
+    "answer": "閉",
+    "opts": [
+      "閉",
+      "妹",
+      "休",
+      "母"
+    ],
+    "eng": "The bank closes at 5 o'clock.",
+    "nepali": "बैंक ५ बजे बन्द हुन्छ。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿の方角がわかりません。",
+    "kana": "みなみのほうがわかりません。",
+    "answer": "南",
+    "opts": [
+      "南",
+      "一",
+      "立",
+      "食"
+    ],
+    "eng": "I don't know the south direction.",
+    "nepali": "मलाई दक्षिण दिशा थाहा छैन。"
+  },
+  {
+    "type": "fill",
+    "q": "いすの＿＿に猫がいます。",
+    "kana": "いすのしたにねこがいます。",
+    "answer": "下",
+    "opts": [
+      "閉",
+      "日",
+      "下",
+      "二"
+    ],
+    "eng": "There is a cat under the chair.",
+    "nepali": "कुर्सीमुनि बिरालो छ。"
+  },
+  {
+    "type": "fill",
+    "q": "来＿＿日本へ行きます。",
+    "kana": "らいねんにほんへいきます。",
+    "answer": "年",
+    "opts": [
+      "前",
+      "使",
+      "待",
+      "年"
+    ],
+    "eng": "I will go to Japan next year.",
+    "nepali": "म अर्को वर्ष जापान जान्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "小 の読み方は？",
+    "kana": "EN: small, little | NP: सानो",
+    "answer": "ちいさい",
+    "opts": [
+      "もと",
+      "まるい",
+      "ちいさい",
+      "ならう"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "姉 の読み方は？",
+    "kana": "EN: older sister | NP: दिदी",
+    "answer": "あね",
+    "opts": [
+      "おしえる",
+      "はいる",
+      "あね",
+      "いき"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "公園に＿＿っています。",
+    "kana": "こうえんにたっています。",
+    "answer": "立",
+    "opts": [
+      "店",
+      "立",
+      "多",
+      "四"
+    ],
+    "eng": "I am standing in the park.",
+    "nepali": "म पार्कमा उभिरहेको छु。"
+  },
+  {
+    "type": "fill",
+    "q": "毎日＿＿きます。",
+    "kana": "まいにちはたらきます。",
+    "answer": "働",
+    "opts": [
+      "本",
+      "男",
+      "働",
+      "万"
+    ],
+    "eng": "I work every day.",
+    "nepali": "म हरेक दिन काम गर्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "名 の読み方は？",
+    "kana": "EN: name | NP: नाम",
+    "answer": "な",
+    "opts": [
+      "あう",
+      "な",
+      "イン",
+      "ひ"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "箱の＿＿に何がありますか。",
+    "kana": "はこのなかになにがありますか。",
+    "answer": "中",
+    "opts": [
+      "読",
+      "中",
+      "六",
+      "社"
+    ],
+    "eng": "What is inside the box?",
+    "nepali": "बाकसभित्र के छ?"
+  },
+  {
+    "type": "fill",
+    "q": "かばんを＿＿っています。",
+    "kana": "かばんをもっています。",
+    "answer": "持",
+    "opts": [
+      "大",
+      "水",
+      "持",
+      "教"
+    ],
+    "eng": "I have a bag.",
+    "nepali": "मसँग झोला छ。"
+  },
+  {
+    "type": "reading",
+    "q": "後 の読み方は？",
+    "kana": "EN: after, behind | NP: पछि, पछाडि",
+    "answer": "あと",
+    "opts": [
+      "あと",
+      "かたる",
+      "つき",
+      "やま"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "学校の＿＿に遊びます。",
+    "kana": "がっこうのあとにあそびます。",
+    "answer": "後",
+    "opts": [
+      "六",
+      "多",
+      "後",
+      "近"
+    ],
+    "eng": "I will play after school.",
+    "nepali": "म स्कूलपछि खेल्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "入 の読み方は？",
+    "kana": "EN: enter | NP: पस्नु",
+    "answer": "はいる",
+    "opts": [
+      "おとこ",
+      "みじかい",
+      "はいる",
+      "とき"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿い時間待ちました。",
+    "kana": "ながいじかんまちました。",
+    "answer": "長",
+    "opts": [
+      "長",
+      "思",
+      "話",
+      "何"
+    ],
+    "eng": "I waited for a long time.",
+    "nepali": "मैले लामो समय पर्खें。"
+  },
+  {
+    "type": "reading",
+    "q": "休 の読み方は？",
+    "kana": "EN: rest, holiday | NP: आराम, बिदा",
+    "answer": "やすむ",
+    "opts": [
+      "もも",
+      "とも",
+      "かう",
+      "やすむ"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "子供の＿＿、日本に住んでいました。",
+    "kana": "こどものとき、にほんにすんでいました。",
+    "answer": "時",
+    "opts": [
+      "飲",
+      "使",
+      "時",
+      "上"
+    ],
+    "eng": "I lived in Japan when I was a child.",
+    "nepali": "म बाल्यकालमा जापानमा बस्थें।"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿月は天気がいいです。",
+    "kana": "ごがつはてんきがいいです。",
+    "answer": "五",
+    "opts": [
+      "来",
+      "土",
+      "教",
+      "五"
+    ],
+    "eng": "The weather is nice in May.",
+    "nepali": "मेमा मौसम राम्रो हुन्छ。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿時に帰ります。",
+    "kana": "しちじにかえります。",
+    "answer": "七",
+    "opts": [
+      "明",
+      "持",
+      "七",
+      "開"
+    ],
+    "eng": "I will return at 7 o'clock.",
+    "nepali": "म ७ बजे फर्किन्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "友 の読み方は？",
+    "kana": "EN: friend | NP: साथी",
+    "answer": "とも",
+    "opts": [
+      "つかう",
+      "とも",
+      "なな",
+      "こ"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "ちょっと＿＿ってください。",
+    "kana": "ちょっとまってください。",
+    "answer": "待",
+    "opts": [
+      "帰",
+      "暗",
+      "待",
+      "教"
+    ],
+    "eng": "Please wait a moment.",
+    "nepali": "कृपया एकछिन पर्खनुहोस्。"
+  },
+  {
+    "type": "fill",
+    "q": "東京に＿＿んでいます。",
+    "kana": "とうきょうにすんでいます。",
+    "answer": "住",
+    "opts": [
+      "天",
+      "下",
+      "住",
+      "見"
+    ],
+    "eng": "I live in Tokyo.",
+    "nepali": "म टोकियोमा बस्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "日曜日は＿＿みます。",
+    "kana": "にちようびはやすみます。",
+    "answer": "休",
+    "opts": [
+      "四",
+      "知",
+      "休",
+      "人"
+    ],
+    "eng": "I will rest on Sunday.",
+    "nepali": "म आइतबार आराम गर्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "私は＿＿いです。",
+    "kana": "わたしはつよいです。",
+    "answer": "強",
+    "opts": [
+      "出",
+      "強",
+      "員",
+      "働"
+    ],
+    "eng": "I am strong.",
+    "nepali": "म बलियो छु。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿まで歩いて五分です。",
+    "kana": "えきまであるいてごふんです。",
+    "answer": "駅",
+    "opts": [
+      "働",
+      "日",
+      "気",
+      "駅"
+    ],
+    "eng": "It's a 5-minute walk to the station.",
+    "nepali": "स्टेशनसम्म पैदल ५ मिनेट छ。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿つだけお願いがあります。",
+    "kana": "ひとつだけおねがいがあります。",
+    "answer": "一",
+    "opts": [
+      "一",
+      "四",
+      "東",
+      "住"
+    ],
+    "eng": "I have only one request.",
+    "nepali": "मसँग एउटा मात्र अनुरोध छ।"
+  },
+  {
+    "type": "fill",
+    "q": "机の＿＿に本があります。",
+    "kana": "つくえのうえにほんがあります。",
+    "answer": "上",
+    "opts": [
+      "少",
+      "長",
+      "上",
+      "時"
+    ],
+    "eng": "There is a book on the desk.",
+    "nepali": "टेबलमाथि पुस्तक छ。"
+  },
+  {
+    "type": "reading",
+    "q": "母 の読み方は？",
+    "kana": "EN: mother | NP: आमा",
+    "answer": "はは",
+    "opts": [
+      "はは",
+      "やしろ",
+      "イン",
+      "さき"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "車 の読み方は？",
+    "kana": "EN: car, vehicle | NP: गाडी, कार",
+    "answer": "くるま",
+    "opts": [
+      "かね",
+      "いもうと",
+      "くるま",
+      "くらい"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿曜日にパーティーがあります。",
+    "kana": "きんようびにパーティーがあります。",
+    "answer": "金",
+    "opts": [
+      "帰",
+      "人",
+      "取",
+      "金"
+    ],
+    "eng": "There is a party on Friday.",
+    "nepali": "शुक्रबार पार्टी छ。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿国に行きたいです。",
+    "kana": "なんごくにいきたいです。",
+    "answer": "南",
+    "opts": [
+      "使",
+      "川",
+      "南",
+      "止"
+    ],
+    "eng": "I want to go to a southern country.",
+    "nepali": "म दक्षिणी देश जान चाहन्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "妹 の読み方は？",
+    "kana": "EN: younger sister | NP: बहिनी",
+    "answer": "いもうと",
+    "opts": [
+      "かえる",
+      "ながい",
+      "かね",
+      "いもうと"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "何と＿＿いましたか。",
+    "kana": "なんといいましたか。",
+    "answer": "言",
+    "opts": [
+      "長",
+      "少",
+      "六",
+      "言"
+    ],
+    "eng": "What did you say?",
+    "nepali": "तपाईंले के भन्नुभयो?"
+  },
+  {
+    "type": "reading",
+    "q": "万 の読み方は？",
+    "kana": "EN: ten thousand | NP: दस हजार",
+    "answer": "よろず",
+    "opts": [
+      "おおい",
+      "よろず",
+      "とき",
+      "よむ"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "先生が漢字を＿＿えてくれました。",
+    "kana": "せんせいがかんじをおしえてくれました。",
+    "answer": "教",
+    "opts": [
+      "火",
+      "七",
+      "教",
+      "二"
+    ],
+    "eng": "The teacher taught me kanji.",
+    "nepali": "शिक्षकले मलाई कान्जी सिकाउनुभयो。"
+  },
+  {
+    "type": "fill",
+    "q": "日本から＿＿ました。",
+    "kana": "にほんからきました。",
+    "answer": "来",
+    "opts": [
+      "弟",
+      "大",
+      "来",
+      "円"
+    ],
+    "eng": "I came from Japan.",
+    "nepali": "म जापानबाट आएँ。"
+  },
+  {
+    "type": "reading",
+    "q": "待 の読み方は？",
+    "kana": "EN: wait | NP: पर्खनु",
+    "answer": "まつ",
+    "opts": [
+      "デン",
+      "すむ",
+      "まつ",
+      "む"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿は先生です。",
+    "kana": "あねはせんせいです。",
+    "answer": "姉",
+    "opts": [
+      "千",
+      "中",
+      "来",
+      "姉"
+    ],
+    "eng": "My older sister is a teacher.",
+    "nepali": "मेरी दिदी शिक्षिका हुन्。"
+  },
+  {
+    "type": "fill",
+    "q": "お茶を＿＿みます。",
+    "kana": "おちゃをのみます。",
+    "answer": "飲",
+    "opts": [
+      "学",
+      "飲",
+      "社",
+      "友"
+    ],
+    "eng": "I drink tea.",
+    "nepali": "म चिया पिउँछु。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿日はいい天気です。",
+    "kana": "きょうはいいてんきです。",
+    "answer": "今",
+    "opts": [
+      "少",
+      "明",
+      "今",
+      "電"
+    ],
+    "eng": "Today is nice weather.",
+    "nepali": "आज मौसम राम्रो छ。"
+  },
+  {
+    "type": "reading",
+    "q": "飲 の読み方は？",
+    "kana": "EN: drink | NP: पिउनु",
+    "answer": "のむ",
+    "opts": [
+      "ながい",
+      "よむ",
+      "きた",
+      "のむ"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿は大学院生です。",
+    "kana": "あにはだいがくいんせいです。",
+    "answer": "兄",
+    "opts": [
+      "兄",
+      "一",
+      "近",
+      "三"
+    ],
+    "eng": "My older brother is a graduate student.",
+    "nepali": "मेरो दाइ स्नातकोत्तर विद्यार्थी हुन्。"
+  },
+  {
+    "type": "reading",
+    "q": "水 の読み方は？",
+    "kana": "EN: water | NP: पानी",
+    "answer": "みず",
+    "opts": [
+      "はしる",
+      "にし",
+      "や",
+      "みず"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "駅まで＿＿きました。",
+    "kana": "えきまであるきました。",
+    "answer": "歩",
+    "opts": [
+      "待",
+      "今",
+      "歩",
+      "行"
+    ],
+    "eng": "I walked to the station.",
+    "nepali": "म स्टेशनसम्म हिंडें。"
+  },
+  {
+    "type": "fill",
+    "q": "窓を＿＿めてください。",
+    "kana": "まどをしめてください。",
+    "answer": "閉",
+    "opts": [
+      "止",
+      "閉",
+      "南",
+      "右"
+    ],
+    "eng": "Please close the window.",
+    "nepali": "कृपया झ्याल बन्द गर्नुहोस्。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿い部屋で寝ます。",
+    "kana": "くらいへやでねます。",
+    "answer": "暗",
+    "opts": [
+      "二",
+      "暗",
+      "取",
+      "母"
+    ],
+    "eng": "I sleep in a dark room.",
+    "nepali": "म अँध्यारो कोठामा सुत्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "辞書を＿＿います。",
+    "kana": "じしょをつかいます。",
+    "answer": "使",
+    "opts": [
+      "南",
+      "短",
+      "火",
+      "使"
+    ],
+    "eng": "I use a dictionary.",
+    "nepali": "म शब्दकोश प्रयोग गर्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿分だけ食べました。",
+    "kana": "はんぶんだけたべました。",
+    "answer": "半",
+    "opts": [
+      "木",
+      "半",
+      "土",
+      "西"
+    ],
+    "eng": "I ate only half.",
+    "nepali": "मैले आधा मात्र खाएँ。"
+  },
+  {
+    "type": "fill",
+    "q": "手紙を＿＿きます。",
+    "kana": "てがみをかきます。",
+    "answer": "書",
+    "opts": [
+      "後",
+      "店",
+      "書",
+      "雨"
+    ],
+    "eng": "I write a letter.",
+    "nepali": "म पत्र लेख्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "半 の読み方は？",
+    "kana": "EN: half | NP: आधा",
+    "answer": "なかば",
+    "opts": [
+      "かわ",
+      "きた",
+      "なかば",
+      "みず"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿何をしていますか。",
+    "kana": "いまなにをしていますか。",
+    "answer": "今",
+    "opts": [
+      "持",
+      "明",
+      "中",
+      "今"
+    ],
+    "eng": "What are you doing now?",
+    "nepali": "तपाईं अहिले के गर्दै हुनुहुन्छ?"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿国に行きたいです。",
+    "kana": "がいこくにいきたいです。",
+    "answer": "外",
+    "opts": [
+      "母",
+      "北",
+      "教",
+      "外"
+    ],
+    "eng": "I want to go abroad.",
+    "nepali": "म विदेश जान चाहन्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿月に卒業します。",
+    "kana": "さんがつにそつぎょうします。",
+    "answer": "三",
+    "opts": [
+      "働",
+      "走",
+      "三",
+      "分"
+    ],
+    "eng": "I will graduate in March.",
+    "nepali": "म मार्चमा स्नातक गर्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "学校は＿＿いです。",
+    "kana": "がっこうはとおいです。",
+    "answer": "遠",
+    "opts": [
+      "時",
+      "知",
+      "遠",
+      "社"
+    ],
+    "eng": "School is far.",
+    "nepali": "स्कूल टाढा छ。"
+  },
+  {
+    "type": "fill",
+    "q": "大＿＿で経済を学びます。",
+    "kana": "だいがくでけいざいをまなびます。",
+    "answer": "学",
+    "opts": [
+      "学",
+      "兄",
+      "帰",
+      "父"
+    ],
+    "eng": "I study economics at university.",
+    "nepali": "म विश्वविद्यालयमा अर्थशास्त्र पढ्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "外 の読み方は？",
+    "kana": "EN: outside | NP: बाहिर",
+    "answer": "そと",
+    "opts": [
+      "なに",
+      "ひがし",
+      "そと",
+      "ちいさい"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿に曲がってください。",
+    "kana": "みぎにまがってください。",
+    "answer": "右",
+    "opts": [
+      "左",
+      "姉",
+      "右",
+      "三"
+    ],
+    "eng": "Please turn right.",
+    "nepali": "कृपया दायाँ मोड्नुहोस्。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿人で映画を見に行きました。",
+    "kana": "ふたりでえいがをみにいきました。",
+    "answer": "二",
+    "opts": [
+      "二",
+      "百",
+      "大",
+      "何"
+    ],
+    "eng": "Two of us went to watch a movie.",
+    "nepali": "हामी दुई जना चलचित्र हेर्न गयौं।"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿に日本に住んでいました。",
+    "kana": "まえににほんにすんでいました。",
+    "answer": "前",
+    "opts": [
+      "右",
+      "火",
+      "前",
+      "入"
+    ],
+    "eng": "I lived in Japan before.",
+    "nepali": "म पहिले जापानमा बस्थें。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿人家族です。",
+    "kana": "よにんかぞくです。",
+    "answer": "四",
+    "opts": [
+      "考",
+      "九",
+      "思",
+      "四"
+    ],
+    "eng": "We are a family of four.",
+    "nepali": "हामी चार जनाको परिवार हौं।"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿は料理が上手です。",
+    "kana": "はははりょうりがじょうずです。",
+    "answer": "母",
+    "opts": [
+      "車",
+      "半",
+      "母",
+      "分"
+    ],
+    "eng": "My mother is good at cooking.",
+    "nepali": "मेरी आमा खाना पकाउन निपुण हुनुहुन्छ。"
+  },
+  {
+    "type": "fill",
+    "q": "どこに＿＿んでいますか。",
+    "kana": "どこにすんでいますか。",
+    "answer": "住",
+    "opts": [
+      "住",
+      "西",
+      "話",
+      "書"
+    ],
+    "eng": "Where do you live?",
+    "nepali": "तपाईं कहाँ बस्नुहुन्छ?"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿週テストがあります。",
+    "kana": "らいしゅうテストがあります。",
+    "answer": "来",
+    "opts": [
+      "北",
+      "来",
+      "止",
+      "六"
+    ],
+    "eng": "There is a test next week.",
+    "nepali": "अर्को हप्ता परीक्षा छ。"
+  },
+  {
+    "type": "reading",
+    "q": "南 の読み方は？",
+    "kana": "EN: south | NP: दक्षिण",
+    "answer": "みなみ",
+    "opts": [
+      "かせ",
+      "みなみ",
+      "やま",
+      "いもうと"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿日は休みです。",
+    "kana": "あしたはやすみです。",
+    "answer": "明",
+    "opts": [
+      "書",
+      "休",
+      "北",
+      "明"
+    ],
+    "eng": "Tomorrow is a holiday.",
+    "nepali": "भोलि बिदा छ。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿週京都へ行きました。",
+    "kana": "せんしゅうきょうとへいきました。",
+    "answer": "先",
+    "opts": [
+      "東",
+      "待",
+      "近",
+      "先"
+    ],
+    "eng": "I went to Kyoto last week.",
+    "nepali": "म गएको हप्ता क्योटो गएँ。"
+  },
+  {
+    "type": "reading",
+    "q": "三 の読み方は？",
+    "kana": "EN: three | NP: तीन",
+    "answer": "み",
+    "opts": [
+      "うえ",
+      "ち",
+      "み",
+      "いう"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "何 の読み方は？",
+    "kana": "EN: what | NP: के",
+    "answer": "なに",
+    "opts": [
+      "なに",
+      "ちち",
+      "まつ",
+      "こ"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "男 の読み方は？",
+    "kana": "EN: man, male | NP: पुरुष",
+    "answer": "おとこ",
+    "opts": [
+      "デン",
+      "もも",
+      "な",
+      "おとこ"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿供が公園で遊んでいます。",
+    "kana": "こどもがこうえんであそんでいます。",
+    "answer": "子",
+    "opts": [
+      "子",
+      "年",
+      "閉",
+      "電"
+    ],
+    "eng": "Children are playing in the park.",
+    "nepali": "बच्चाहरू पार्कमा खेल्दै छन्。"
+  },
+  {
+    "type": "fill",
+    "q": "あの＿＿は日本人ですか。",
+    "kana": "あのひとはにほんじんですか。",
+    "answer": "人",
+    "opts": [
+      "妹",
+      "入",
+      "人",
+      "店"
+    ],
+    "eng": "Is that person Japanese?",
+    "nepali": "त्यो मानिस जापानी हो?"
+  },
+  {
+    "type": "fill",
+    "q": "富士山が＿＿えます。",
+    "kana": "ふじさんがみえます。",
+    "answer": "見",
+    "opts": [
+      "分",
+      "見",
+      "百",
+      "名"
+    ],
+    "eng": "I can see Mount Fuji.",
+    "nepali": "म फुजी पर्वत देख्न सक्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿学に行きたいです。",
+    "kana": "だいがくにいきたいです。",
+    "answer": "大",
+    "opts": [
+      "大",
+      "立",
+      "駅",
+      "三"
+    ],
+    "eng": "I want to go to university.",
+    "nepali": "म विश्वविद्यालय जान चाहन्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "お金が＿＿ないです。",
+    "kana": "おかねがすくないです。",
+    "answer": "少",
+    "opts": [
+      "九",
+      "中",
+      "半",
+      "少"
+    ],
+    "eng": "I have little money.",
+    "nepali": "मसँग थोरै पैसा छ。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿でキャンプをしました。",
+    "kana": "やまでキャンプをしました。",
+    "answer": "山",
+    "opts": [
+      "小",
+      "山",
+      "作",
+      "社"
+    ],
+    "eng": "We camped in the mountains.",
+    "nepali": "हामीले पहाडमा क्याम्प गर्यौं。"
+  },
+  {
+    "type": "fill",
+    "q": "彼は私の親＿＿です。",
+    "kana": "かれはわたしのしんゆうです。",
+    "answer": "友",
+    "opts": [
+      "友",
+      "教",
+      "開",
+      "月"
+    ],
+    "eng": "He is my best friend.",
+    "nepali": "ऊ मेरो मिल्ने साथी हो。"
+  },
+  {
+    "type": "fill",
+    "q": "毎＿＿日本語を勉強します。",
+    "kana": "まいにちにほんごをべんきょうします。",
+    "answer": "日",
+    "opts": [
+      "多",
+      "姉",
+      "言",
+      "日"
+    ],
+    "eng": "I study Japanese every day.",
+    "nepali": "म हरेक दिन जापानी भाषा पढ्छु।"
+  },
+  {
+    "type": "fill",
+    "q": "この＿＿はとてもきれいです。",
+    "kana": "このかわはとてもきれいです。",
+    "answer": "川",
+    "opts": [
+      "木",
+      "食",
+      "左",
+      "川"
+    ],
+    "eng": "This river is very clean.",
+    "nepali": "यो नदी धेरै सफा छ。"
+  },
+  {
+    "type": "fill",
+    "q": "雨が＿＿みました。",
+    "kana": "あめがやみました。",
+    "answer": "止",
+    "opts": [
+      "十",
+      "学",
+      "三",
+      "止"
+    ],
+    "eng": "The rain stopped.",
+    "nepali": "पानी रोकियो。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿月は暑いです。",
+    "kana": "しちがつはあついです。",
+    "answer": "七",
+    "opts": [
+      "七",
+      "入",
+      "一",
+      "川"
+    ],
+    "eng": "July is hot.",
+    "nepali": "जुलाईमा गर्मी हुन्छ。"
+  },
+  {
+    "type": "reading",
+    "q": "話 の読み方は？",
+    "kana": "EN: talk, speak, story | NP: कुरा गर्नु, बोल्नु",
+    "answer": "はなす",
+    "opts": [
+      "いつ",
+      "なかば",
+      "もも",
+      "はなす"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿時に授業が始まります。",
+    "kana": "くじにじゅぎょうがはじまります。",
+    "answer": "九",
+    "opts": [
+      "働",
+      "九",
+      "後",
+      "天"
+    ],
+    "eng": "Class starts at 9 o'clock.",
+    "nepali": "९ बजे कक्षा सुरु हुन्छ。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿で人形を作りました。",
+    "kana": "つちでにんぎょうをつくりました。",
+    "answer": "土",
+    "opts": [
+      "左",
+      "土",
+      "一",
+      "小"
+    ],
+    "eng": "I made a doll from clay.",
+    "nepali": "मैले माटोबाट पुतली बनाएँ。"
+  },
+  {
+    "type": "fill",
+    "q": "本を＿＿いました。",
+    "kana": "ほんをかいました。",
+    "answer": "買",
+    "opts": [
+      "日",
+      "千",
+      "子",
+      "買"
+    ],
+    "eng": "I bought a book.",
+    "nepali": "मैले पुस्तक किनें。"
+  },
+  {
+    "type": "reading",
+    "q": "暗 の読み方は？",
+    "kana": "EN: dark | NP: अँध्यारो",
+    "answer": "くらい",
+    "opts": [
+      "おおい",
+      "くる",
+      "くらい",
+      "くるま"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "面白い＿＿を聞きました。",
+    "kana": "おもしろいはなしをききました。",
+    "answer": "話",
+    "opts": [
+      "本",
+      "行",
+      "二",
+      "話"
+    ],
+    "eng": "I heard an interesting story.",
+    "nepali": "मैले एउटा रोचक कथा सुनें。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿時に駅で待ち合わせましょう。",
+    "kana": "じゅうじにえきでまちあわせましょう。",
+    "answer": "十",
+    "opts": [
+      "聞",
+      "前",
+      "十",
+      "歩"
+    ],
+    "eng": "Let's meet at the station at 10 o'clock.",
+    "nepali": "हामी १० बजे स्टेशनमा भेटौं。"
+  },
+  {
+    "type": "fill",
+    "q": "お＿＿さんと一緒に来ますか。",
+    "kana": "おにいさんといっしょにきますか。",
+    "answer": "兄",
+    "opts": [
+      "止",
+      "八",
+      "兄",
+      "名"
+    ],
+    "eng": "Will you come with your older brother?",
+    "nepali": "तपाईं दाइसंग आउनुहुन्छ?"
+  },
+  {
+    "type": "reading",
+    "q": "取 の読み方は？",
+    "kana": "EN: take | NP: लिनु",
+    "answer": "とる",
+    "opts": [
+      "あめ",
+      "いつ",
+      "かんがえる",
+      "とる"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿曜日に会いましょう。",
+    "kana": "げつようびにあいましょう。",
+    "answer": "月",
+    "opts": [
+      "気",
+      "月",
+      "開",
+      "六"
+    ],
+    "eng": "Let's meet on Monday.",
+    "nepali": "हामी सोमबार भेटौं。"
+  },
+  {
+    "type": "reading",
+    "q": "生 の読み方は？",
+    "kana": "EN: life, birth, raw | NP: जीवन, जन्म, काँचो",
+    "answer": "いきる",
+    "opts": [
+      "みず",
+      "とも",
+      "いきる",
+      "かね"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "立 の読み方は？",
+    "kana": "EN: stand | NP: उभिनु",
+    "answer": "たつ",
+    "opts": [
+      "よろず",
+      "たつ",
+      "たべる",
+      "かね"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "外は＿＿いです。",
+    "kana": "そとはくらいです。",
+    "answer": "暗",
+    "opts": [
+      "何",
+      "短",
+      "暗",
+      "上"
+    ],
+    "eng": "It's dark outside.",
+    "nepali": "बाहिर अँध्यारो छ。"
+  },
+  {
+    "type": "reading",
+    "q": "行 の読み方は？",
+    "kana": "EN: go, conduct | NP: जानु, गर्नु",
+    "answer": "いく",
+    "opts": [
+      "ひだり",
+      "なかば",
+      "あかるい",
+      "いく"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "あの＿＿の人は誰ですか。",
+    "kana": "あのおんなのひとはだれですか。",
+    "answer": "女",
+    "opts": [
+      "入",
+      "下",
+      "女",
+      "住"
+    ],
+    "eng": "Who is that woman?",
+    "nepali": "त्यो महिला को हो?"
+  },
+  {
+    "type": "reading",
+    "q": "月 の読み方は？",
+    "kana": "EN: moon, month | NP: चन्द्रमा, महिना",
+    "answer": "つき",
+    "opts": [
+      "かんがえる",
+      "ひと",
+      "こ",
+      "つき"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "店 の読み方は？",
+    "kana": "EN: shop, store | NP: पसल",
+    "answer": "みせ",
+    "opts": [
+      "あかるい",
+      "みせ",
+      "ちいさい",
+      "はたらく"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "公園に大きい＿＿があります。",
+    "kana": "こうえんにおおきいきがあります。",
+    "answer": "木",
+    "opts": [
+      "中",
+      "木",
+      "立",
+      "開"
+    ],
+    "eng": "There is a big tree in the park.",
+    "nepali": "पार्कमा एउटा ठूलो रूख छ。"
+  },
+  {
+    "type": "reading",
+    "q": "長 の読み方は？",
+    "kana": "EN: long | NP: लामो",
+    "answer": "ながい",
+    "opts": [
+      "はは",
+      "ながい",
+      "しる",
+      "ひと"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "毎日＿＿っています。",
+    "kana": "まいにちはしっています。",
+    "answer": "走",
+    "opts": [
+      "走",
+      "天",
+      "本",
+      "少"
+    ],
+    "eng": "I run every day.",
+    "nepali": "म हरेक दिन दौडन्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "将来のことを＿＿えています。",
+    "kana": "しょうらいのことをかんがえています。",
+    "answer": "考",
+    "opts": [
+      "天",
+      "十",
+      "中",
+      "考"
+    ],
+    "eng": "I'm thinking about the future.",
+    "nepali": "म भविष्यको बारेमा सोच्दै छु。"
+  },
+  {
+    "type": "reading",
+    "q": "二 の読み方は？",
+    "kana": "EN: two | NP: दुई",
+    "answer": "ふた",
+    "opts": [
+      "ひだり",
+      "しめる",
+      "なか",
+      "ふた"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿月は寒いです。",
+    "kana": "にがつはさむいです。",
+    "answer": "二",
+    "opts": [
+      "二",
+      "開",
+      "止",
+      "長"
+    ],
+    "eng": "February is cold.",
+    "nepali": "फेब्रुअरीमा जाडो हुन्छ।"
+  },
+  {
+    "type": "reading",
+    "q": "四 の読み方は？",
+    "kana": "EN: four | NP: चार",
+    "answer": "よ",
+    "opts": [
+      "よ",
+      "つかう",
+      "あに",
+      "あめ"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "読 の読み方は？",
+    "kana": "EN: read | NP: पढ्नु",
+    "answer": "よむ",
+    "opts": [
+      "かく",
+      "かたる",
+      "よむ",
+      "まるい"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿時に起きます。",
+    "kana": "ろくじにおきます。",
+    "answer": "六",
+    "opts": [
+      "六",
+      "書",
+      "今",
+      "千"
+    ],
+    "eng": "I wake up at 6 o'clock.",
+    "nepali": "म ६ बजे उठ्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "父 の読み方は？",
+    "kana": "EN: father | NP: बुबा",
+    "answer": "ちち",
+    "opts": [
+      "いもうと",
+      "まなぶ",
+      "ちち",
+      "とも"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "出 の読み方は？",
+    "kana": "EN: exit, go out | NP: बाहिर निस्कनु",
+    "answer": "でる",
+    "opts": [
+      "つよい",
+      "した",
+      "くに",
+      "でる"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿丼を食べました。",
+    "kana": "てんどんをたべました。",
+    "answer": "天",
+    "opts": [
+      "天",
+      "会",
+      "先",
+      "働"
+    ],
+    "eng": "I ate tempura bowl.",
+    "nepali": "मैले तेन्दोन खाएँ。"
+  },
+  {
+    "type": "reading",
+    "q": "走 の読み方は？",
+    "kana": "EN: run | NP: दौडनु",
+    "answer": "はしる",
+    "opts": [
+      "きく",
+      "こ",
+      "はしる",
+      "みる"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "習 の読み方は？",
+    "kana": "EN: learn | NP: सिक्नु",
+    "answer": "ならう",
+    "opts": [
+      "あに",
+      "いく",
+      "な",
+      "ならう"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿中さんと食事をします。",
+    "kana": "たなかさんとしょくじをします。",
+    "answer": "田",
+    "opts": [
+      "会",
+      "今",
+      "二",
+      "田"
+    ],
+    "eng": "I will have a meal with Mr. Tanaka.",
+    "nepali": "म तानाका सँग खाना खान्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "知 の読み方は？",
+    "kana": "EN: know | NP: जान्नु",
+    "answer": "しる",
+    "opts": [
+      "みず",
+      "かう",
+      "しる",
+      "こ"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "晩ごはんを＿＿ります。",
+    "kana": "ばんごはんをつくります。",
+    "answer": "作",
+    "opts": [
+      "中",
+      "作",
+      "三",
+      "山"
+    ],
+    "eng": "I will make dinner.",
+    "nepali": "म रातको खाना बनाउँछु。"
+  },
+  {
+    "type": "reading",
+    "q": "国 の読み方は？",
+    "kana": "EN: country | NP: देश",
+    "answer": "くに",
+    "opts": [
+      "かたる",
+      "ながい",
+      "あに",
+      "くに"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "語 の読み方は？",
+    "kana": "EN: language, word | NP: भाषा, शब्द",
+    "answer": "かたる",
+    "opts": [
+      "すくない",
+      "とる",
+      "いく",
+      "かたる"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿人が賛成しました。",
+    "kana": "ばんにんがさんせいしました。",
+    "answer": "万",
+    "opts": [
+      "書",
+      "食",
+      "万",
+      "時"
+    ],
+    "eng": "Ten thousand people agreed.",
+    "nepali": "दस हजार मानिस सहमत भए。"
+  },
+  {
+    "type": "reading",
+    "q": "考 の読み方は？",
+    "kana": "EN: think, consider | NP: सोच्नु, विचार गर्नु",
+    "answer": "かんがえる",
+    "opts": [
+      "いま",
+      "かえる",
+      "かね",
+      "かんがえる"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "思 の読み方は？",
+    "kana": "EN: think | NP: सोच्नु",
+    "answer": "おもう",
+    "opts": [
+      "エキ",
+      "ち",
+      "おもう",
+      "とる"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "弟 の読み方は？",
+    "kana": "EN: younger brother | NP: भाइ",
+    "answer": "おとうと",
+    "opts": [
+      "おとうと",
+      "なな",
+      "とおい",
+      "のむ"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "夏休みは＿＿いです。",
+    "kana": "なつやすみはみじかいです。",
+    "answer": "短",
+    "opts": [
+      "妹",
+      "短",
+      "兄",
+      "先"
+    ],
+    "eng": "Summer vacation is short.",
+    "nepali": "गर्मी बिदा छोटो छ。"
+  },
+  {
+    "type": "reading",
+    "q": "人 の読み方は？",
+    "kana": "EN: person | NP: मानिस",
+    "answer": "ひと",
+    "opts": [
+      "いく",
+      "おとうと",
+      "ひと",
+      "とお"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿の国は寒いです。",
+    "kana": "きたのくにはさむいです。",
+    "answer": "北",
+    "opts": [
+      "父",
+      "北",
+      "兄",
+      "出"
+    ],
+    "eng": "Northern countries are cold.",
+    "nepali": "उत्तरी देशहरूमा जाडो हुन्छ。"
+  },
+  {
+    "type": "reading",
+    "q": "使 の読み方は？",
+    "kana": "EN: use | NP: प्रयोग गर्नु",
+    "answer": "つかう",
+    "opts": [
+      "はしる",
+      "まるい",
+      "おんな",
+      "つかう"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿海道に行きました。",
+    "kana": "ほっかいどうにいきました。",
+    "answer": "北",
+    "opts": [
+      "読",
+      "北",
+      "先",
+      "土"
+    ],
+    "eng": "I went to Hokkaido.",
+    "nepali": "म होक्काइदो गएँ。"
+  },
+  {
+    "type": "fill",
+    "q": "今日は＿＿気がいいです。",
+    "kana": "きょうはてんきがいいです。",
+    "answer": "天",
+    "opts": [
+      "天",
+      "子",
+      "妹",
+      "社"
+    ],
+    "eng": "The weather is nice today.",
+    "nepali": "आज मौसम राम्रो छ。"
+  },
+  {
+    "type": "fill",
+    "q": "ここに＿＿ってください。",
+    "kana": "ここにたってください。",
+    "answer": "立",
+    "opts": [
+      "会",
+      "作",
+      "立",
+      "万"
+    ],
+    "eng": "Please stand here.",
+    "nepali": "कृपया यहाँ उभिनुहोस्。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿曜日に友達と映画を見ます。",
+    "kana": "にちようびにともだちとえいがをみます。",
+    "answer": "日",
+    "opts": [
+      "日",
+      "働",
+      "教",
+      "何"
+    ],
+    "eng": "I will watch a movie with my friend on Sunday.",
+    "nepali": "म आइतबार साथीसंग चलचित्र हेर्छु।"
+  },
+  {
+    "type": "fill",
+    "q": "父は銀行で＿＿いています。",
+    "kana": "ちちはぎんこうではたらいています。",
+    "answer": "働",
+    "opts": [
+      "二",
+      "食",
+      "働",
+      "考"
+    ],
+    "eng": "My father works at a bank.",
+    "nepali": "मेरो बुबा बैंकमा काम गर्नुहुन्छ。"
+  },
+  {
+    "type": "fill",
+    "q": "学校へ＿＿きます。",
+    "kana": "がっこうへいきます。",
+    "answer": "行",
+    "opts": [
+      "行",
+      "国",
+      "八",
+      "姉"
+    ],
+    "eng": "I go to school.",
+    "nepali": "म स्कूल जान्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿とサッカーをします。",
+    "kana": "おとサッカーをします。",
+    "answer": "弟",
+    "opts": [
+      "二",
+      "弟",
+      "来",
+      "本"
+    ],
+    "eng": "I play soccer with my younger brother.",
+    "nepali": "म भाइसंग फुटबल खेल्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "日 の読み方は？",
+    "kana": "EN: day, sun, Japan | NP: दिन, सूर्य, जापान",
+    "answer": "ひ",
+    "opts": [
+      "イン",
+      "とる",
+      "ひ",
+      "いく"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "よく＿＿えてください。",
+    "kana": "よくかんがえてください。",
+    "answer": "考",
+    "opts": [
+      "近",
+      "行",
+      "考",
+      "弟"
+    ],
+    "eng": "Please think carefully.",
+    "nepali": "कृपया राम्रोसँग सोच्नुहोस्。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿んぼで稲が育っています。",
+    "kana": "たんぼでいねがそだっています。",
+    "answer": "田",
+    "opts": [
+      "西",
+      "食",
+      "田",
+      "左"
+    ],
+    "eng": "Rice is growing in the paddy field.",
+    "nepali": "धान खेतमा धान उम्रिरहेको छ。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿に曲がってください。",
+    "kana": "ひだりにまがってください。",
+    "answer": "左",
+    "opts": [
+      "人",
+      "店",
+      "左",
+      "先"
+    ],
+    "eng": "Please turn left.",
+    "nepali": "कृपया बायाँ मोड्नुहोस्。"
+  },
+  {
+    "type": "reading",
+    "q": "遠 の読み方は？",
+    "kana": "EN: far | NP: टाढा",
+    "answer": "とおい",
+    "opts": [
+      "つかう",
+      "かせ",
+      "あに",
+      "とおい"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "私は学＿＿です。",
+    "kana": "わたしはがくせいです。",
+    "answer": "生",
+    "opts": [
+      "帰",
+      "気",
+      "生",
+      "車"
+    ],
+    "eng": "I am a student.",
+    "nepali": "म विद्यार्थी हुँ。"
+  },
+  {
+    "type": "reading",
+    "q": "少 の読み方は？",
+    "kana": "EN: few, little | NP: थोरै",
+    "answer": "すくない",
+    "opts": [
+      "いつ",
+      "すくない",
+      "きく",
+      "くるま"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "十 の読み方は？",
+    "kana": "EN: ten | NP: दस",
+    "answer": "とお",
+    "opts": [
+      "のむ",
+      "みせ",
+      "くに",
+      "とお"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "店は九時に＿＿きます。",
+    "kana": "みせはくじにあきます。",
+    "answer": "開",
+    "opts": [
+      "東",
+      "開",
+      "雨",
+      "暗"
+    ],
+    "eng": "The store opens at 9 o'clock.",
+    "nepali": "पसल ९ बजे खुल्छ。"
+  },
+  {
+    "type": "fill",
+    "q": "駅で友達を＿＿ちます。",
+    "kana": "えきでともだちをまちます。",
+    "answer": "待",
+    "opts": [
+      "話",
+      "待",
+      "火",
+      "山"
+    ],
+    "eng": "I will wait for my friend at the station.",
+    "nepali": "म स्टेशनमा साथीलाई पर्खनेछु。"
+  },
+  {
+    "type": "reading",
+    "q": "校 の読み方は？",
+    "kana": "EN: school | NP: स्कूल, विद्यालय",
+    "answer": "かせ",
+    "opts": [
+      "イン",
+      "みせ",
+      "とも",
+      "かせ"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "開 の読み方は？",
+    "kana": "EN: open | NP: खोल्नु",
+    "answer": "あく",
+    "opts": [
+      "む",
+      "ひと",
+      "あかるい",
+      "あく"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿で遊びます。",
+    "kana": "そとであそびます。",
+    "answer": "外",
+    "opts": [
+      "外",
+      "書",
+      "人",
+      "走"
+    ],
+    "eng": "I play outside.",
+    "nepali": "म बाहिर खेल्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "このペンを＿＿ってもいいですか。",
+    "kana": "このペンをつかってもいいですか。",
+    "answer": "使",
+    "opts": [
+      "社",
+      "遠",
+      "近",
+      "使"
+    ],
+    "eng": "May I use this pen?",
+    "nepali": "के म यो कलम प्रयोग गर्न सक्छु?"
+  },
+  {
+    "type": "reading",
+    "q": "百 の読み方は？",
+    "kana": "EN: hundred | NP: सय",
+    "answer": "もも",
+    "opts": [
+      "のむ",
+      "なな",
+      "いく",
+      "もも"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "五 の読み方は？",
+    "kana": "EN: five | NP: पाँच",
+    "answer": "いつ",
+    "opts": [
+      "なに",
+      "おもう",
+      "いつ",
+      "おおきい"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "左 の読み方は？",
+    "kana": "EN: left | NP: बायाँ",
+    "answer": "ひだり",
+    "opts": [
+      "かたる",
+      "もと",
+      "よろず",
+      "ひだり"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "外＿＿に行ったことがありますか。",
+    "kana": "がいこくにいったことがありますか。",
+    "answer": "国",
+    "opts": [
+      "男",
+      "山",
+      "国",
+      "店"
+    ],
+    "eng": "Have you ever been abroad?",
+    "nepali": "तपाईं कहिल्यै विदेश जानुभएको छ?"
+  },
+  {
+    "type": "reading",
+    "q": "円 の読み方は？",
+    "kana": "EN: yen, circle | NP: येन, गोलो",
+    "answer": "まるい",
+    "opts": [
+      "おおきい",
+      "まるい",
+      "や",
+      "まえ"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿月に雨が多いです。",
+    "kana": "ろくがつにあめがおおいです。",
+    "answer": "六",
+    "opts": [
+      "六",
+      "明",
+      "語",
+      "年"
+    ],
+    "eng": "It rains a lot in June.",
+    "nepali": "जुनमा धेरै पानी पर्छ。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿で学校に行きます。",
+    "kana": "くるまでがっこうにいきます。",
+    "answer": "車",
+    "opts": [
+      "閉",
+      "水",
+      "百",
+      "車"
+    ],
+    "eng": "I go to school by car.",
+    "nepali": "म गाडीमा स्कूल जान्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "今何＿＿ですか。",
+    "kana": "いまなんじですか。",
+    "answer": "時",
+    "opts": [
+      "社",
+      "言",
+      "時",
+      "今"
+    ],
+    "eng": "What time is it now?",
+    "nepali": "अहिले कति बज्यो?"
+  },
+  {
+    "type": "fill",
+    "q": "お＿＿がありません。",
+    "kana": "おかねがありません。",
+    "answer": "金",
+    "opts": [
+      "友",
+      "天",
+      "金",
+      "学"
+    ],
+    "eng": "I don't have money.",
+    "nepali": "मसँग पैसा छैन。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿京に行きたいです。",
+    "kana": "とうきょうにいきたいです。",
+    "answer": "東",
+    "opts": [
+      "止",
+      "川",
+      "働",
+      "東"
+    ],
+    "eng": "I want to go to Tokyo.",
+    "nepali": "म टोकियो जान चाहन्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿時にお会いしましょう。",
+    "kana": "ごじにおあいしましょう。",
+    "answer": "五",
+    "opts": [
+      "子",
+      "五",
+      "出",
+      "母"
+    ],
+    "eng": "Let's meet at 5 o'clock.",
+    "nepali": "हामी ५ बजे भेटौं。"
+  },
+  {
+    "type": "fill",
+    "q": "お＿＿さんと買い物に行きました。",
+    "kana": "おねえさんとかいものにいきました。",
+    "answer": "姉",
+    "opts": [
+      "水",
+      "姉",
+      "百",
+      "知"
+    ],
+    "eng": "I went shopping with my older sister.",
+    "nepali": "म दिदीसंग किनमेल गएँ。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿葉を覚えました。",
+    "kana": "ことばをおぼえました。",
+    "answer": "言",
+    "opts": [
+      "右",
+      "南",
+      "兄",
+      "言"
+    ],
+    "eng": "I memorized the words.",
+    "nepali": "मैले शब्दहरू याद गरें。"
+  },
+  {
+    "type": "fill",
+    "q": "学＿＿は八時からです。",
+    "kana": "がっこうははちじからです。",
+    "answer": "校",
+    "opts": [
+      "校",
+      "書",
+      "出",
+      "行"
+    ],
+    "eng": "School starts from 8 o'clock.",
+    "nepali": "स्कूल ८ बजेदेखि सुरु हुन्छ。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿らない人には気をつけて。",
+    "kana": "しらないひとにはきをつけて。",
+    "answer": "知",
+    "opts": [
+      "思",
+      "長",
+      "知",
+      "開"
+    ],
+    "eng": "Be careful of strangers.",
+    "nepali": "अपरिचित मानिसहरूसँग सावधान रहनुहोस्。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿月に日本へ行きます。",
+    "kana": "いちがつににほんへいきます。",
+    "answer": "一",
+    "opts": [
+      "知",
+      "一",
+      "思",
+      "月"
+    ],
+    "eng": "I will go to Japan in January.",
+    "nepali": "म जनवरीमा जापान जान्छु।"
+  },
+  {
+    "type": "reading",
+    "q": "作 の読み方は？",
+    "kana": "EN: make | NP: बनाउनु",
+    "answer": "つくる",
+    "opts": [
+      "あかるい",
+      "あく",
+      "つくる",
+      "あるく"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "土 の読み方は？",
+    "kana": "EN: soil, earth, Saturday | NP: माटो, शनिबार",
+    "answer": "つち",
+    "opts": [
+      "あめ",
+      "つち",
+      "とお",
+      "みぎ"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "雨 の読み方は？",
+    "kana": "EN: rain | NP: वर्षा, पानी",
+    "answer": "あめ",
+    "opts": [
+      "みず",
+      "あめ",
+      "しる",
+      "かわ"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "有＿＿な歌手です。",
+    "kana": "ゆうめいなかしゅです。",
+    "answer": "名",
+    "opts": [
+      "食",
+      "天",
+      "止",
+      "名"
+    ],
+    "eng": "He/She is a famous singer.",
+    "nepali": "उहाँ प्रसिद्ध गायक/गायिका हुन्。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿さい猫が三匹います。",
+    "kana": "ちいさいねこがさんびきいます。",
+    "answer": "小",
+    "opts": [
+      "小",
+      "車",
+      "短",
+      "左"
+    ],
+    "eng": "There are three small cats.",
+    "nepali": "तीन वटा साना बिरालो छन्。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿国に行きたいです。",
+    "kana": "ちゅうごくにいきたいです。",
+    "answer": "中",
+    "opts": [
+      "四",
+      "中",
+      "姉",
+      "多"
+    ],
+    "eng": "I want to go to China.",
+    "nepali": "म चीन जान चाहन्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "車が＿＿まりました。",
+    "kana": "くるまがとまりました。",
+    "answer": "止",
+    "opts": [
+      "外",
+      "買",
+      "閉",
+      "止"
+    ],
+    "eng": "The car stopped.",
+    "nepali": "गाडी रोकियो。"
+  },
+  {
+    "type": "fill",
+    "q": "新しい＿＿を買いました。",
+    "kana": "あたらしいくるまをかいました。",
+    "answer": "車",
+    "opts": [
+      "言",
+      "天",
+      "止",
+      "車"
+    ],
+    "eng": "I bought a new car.",
+    "nepali": "मैले नयाँ गाडी किनें。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿くから来ました。",
+    "kana": "とおくからきました。",
+    "answer": "遠",
+    "opts": [
+      "社",
+      "遠",
+      "少",
+      "歩"
+    ],
+    "eng": "I came from far away.",
+    "nepali": "म टाढाबाट आएँ。"
+  },
+  {
+    "type": "fill",
+    "q": "漢字を＿＿けますか。",
+    "kana": "かんじをかけますか。",
+    "answer": "書",
+    "opts": [
+      "書",
+      "人",
+      "習",
+      "話"
+    ],
+    "eng": "Can you write kanji?",
+    "nepali": "तपाईं कान्जी लेख्न सक्नुहुन्छ?"
+  },
+  {
+    "type": "fill",
+    "q": "朝ごはんを＿＿べます。",
+    "kana": "あさごはんをたべます。",
+    "answer": "食",
+    "opts": [
+      "妹",
+      "分",
+      "読",
+      "食"
+    ],
+    "eng": "I eat breakfast.",
+    "nepali": "म बिहानको खाना खान्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "私は日＿＿語の本を読みます。",
+    "kana": "わたしはにほんごのほんをよみます。",
+    "answer": "本",
+    "opts": [
+      "五",
+      "本",
+      "九",
+      "百"
+    ],
+    "eng": "I read a Japanese book.",
+    "nepali": "म जापानी पुस्तक पढ्छु।"
+  },
+  {
+    "type": "fill",
+    "q": "私はそう＿＿いません。",
+    "kana": "わたしはそうおもいません。",
+    "answer": "思",
+    "opts": [
+      "百",
+      "外",
+      "今",
+      "思"
+    ],
+    "eng": "I don't think so.",
+    "nepali": "म त्यस्तो सोच्दिन。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿曜日にテストがあります。",
+    "kana": "かようびにテストがあります。",
+    "answer": "火",
+    "opts": [
+      "後",
+      "火",
+      "持",
+      "食"
+    ],
+    "eng": "There is a test on Tuesday.",
+    "nepali": "मंगलबार परीक्षा छ。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿で友達を待ちます。",
+    "kana": "えきでともだちをまちます。",
+    "answer": "駅",
+    "opts": [
+      "二",
+      "開",
+      "来",
+      "駅"
+    ],
+    "eng": "I will wait for my friend at the station.",
+    "nepali": "म स्टेशनमा साथीलाई पर्खनेछु。"
+  },
+  {
+    "type": "fill",
+    "q": "この川は＿＿いです。",
+    "kana": "このかわはながいです。",
+    "answer": "長",
+    "opts": [
+      "国",
+      "百",
+      "長",
+      "買"
+    ],
+    "eng": "This river is long.",
+    "nepali": "यो नदी लामो छ。"
+  },
+  {
+    "type": "reading",
+    "q": "分 の読み方は？",
+    "kana": "EN: minute, part, understand | NP: मिनेट, भाग, बुझ्नु",
+    "answer": "わかる",
+    "opts": [
+      "わかる",
+      "はなす",
+      "いつ",
+      "みず"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "あの＿＿の人は私の先生です。",
+    "kana": "あのおとこのひとはわたしのせんせいです。",
+    "answer": "男",
+    "opts": [
+      "男",
+      "立",
+      "本",
+      "西"
+    ],
+    "eng": "That man is my teacher.",
+    "nepali": "त्यो पुरुष मेरो शिक्षक हुन्。"
+  },
+  {
+    "type": "fill",
+    "q": "人が＿＿いです。",
+    "kana": "ひとがおおいです。",
+    "answer": "多",
+    "opts": [
+      "多",
+      "聞",
+      "今",
+      "明"
+    ],
+    "eng": "There are many people.",
+    "nepali": "धेरै मानिस छन्。"
+  },
+  {
+    "type": "reading",
+    "q": "気 の読み方は？",
+    "kana": "EN: spirit, mood, air | NP: मनोभाव, हावा",
+    "answer": "いき",
+    "opts": [
+      "よむ",
+      "たつ",
+      "いき",
+      "ひ"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "今五時十＿＿です。",
+    "kana": "いまごじじっぷんです。",
+    "answer": "分",
+    "opts": [
+      "分",
+      "外",
+      "使",
+      "子"
+    ],
+    "eng": "It's 5:10 now.",
+    "nepali": "अहिले ५ बजेर १० मिनेट भयो。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿生は親切です。",
+    "kana": "せんせいはしんせつです。",
+    "answer": "先",
+    "opts": [
+      "先",
+      "電",
+      "読",
+      "万"
+    ],
+    "eng": "The teacher is kind.",
+    "nepali": "शिक्षक दयालु हुनुहुन्छ。"
+  },
+  {
+    "type": "fill",
+    "q": "本を＿＿ってください。",
+    "kana": "ほんをとってください。",
+    "answer": "取",
+    "opts": [
+      "取",
+      "弟",
+      "外",
+      "年"
+    ],
+    "eng": "Please take the book.",
+    "nepali": "कृपया पुस्तक लिनुहोस्。"
+  },
+  {
+    "type": "reading",
+    "q": "川 の読み方は？",
+    "kana": "EN: river | NP: नदी",
+    "answer": "かわ",
+    "opts": [
+      "かわ",
+      "いま",
+      "はは",
+      "まえ"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "働 の読み方は？",
+    "kana": "EN: work | NP: काम गर्नु",
+    "answer": "はたらく",
+    "opts": [
+      "ちち",
+      "かう",
+      "あく",
+      "はたらく"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿月に海へ行きます。",
+    "kana": "はちがつにうみへいきます。",
+    "answer": "八",
+    "opts": [
+      "開",
+      "八",
+      "大",
+      "本"
+    ],
+    "eng": "I will go to the sea in August.",
+    "nepali": "म अगस्तमा समुद्रमा जान्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "兄 の読み方は？",
+    "kana": "EN: older brother | NP: दाइ",
+    "answer": "あに",
+    "opts": [
+      "あに",
+      "みせ",
+      "すむ",
+      "いもうと"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿が降っています。",
+    "kana": "あめがふっています。",
+    "answer": "雨",
+    "opts": [
+      "駅",
+      "土",
+      "何",
+      "雨"
+    ],
+    "eng": "It is raining.",
+    "nepali": "पानी परिरहेको छ。"
+  },
+  {
+    "type": "reading",
+    "q": "持 の読み方は？",
+    "kana": "EN: hold, have | NP: बोक्नु, राख्नु",
+    "answer": "もつ",
+    "opts": [
+      "いつ",
+      "かく",
+      "かせ",
+      "もつ"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿達と映画を見ます。",
+    "kana": "ともだちとえいがをみます。",
+    "answer": "友",
+    "opts": [
+      "学",
+      "教",
+      "友",
+      "外"
+    ],
+    "eng": "I will watch a movie with my friend.",
+    "nepali": "म साथीसंग चलचित्र हेर्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "会 の読み方は？",
+    "kana": "EN: meet, meeting | NP: भेट्नु, सभा",
+    "answer": "あう",
+    "opts": [
+      "おおい",
+      "あう",
+      "おもう",
+      "とる"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "田 の読み方は？",
+    "kana": "EN: rice field | NP: धान खेत",
+    "answer": "た",
+    "opts": [
+      "はしる",
+      "た",
+      "かえる",
+      "かく"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿側に銀行があります。",
+    "kana": "ひだりがわにぎんこうがあります。",
+    "answer": "左",
+    "opts": [
+      "半",
+      "右",
+      "中",
+      "左"
+    ],
+    "eng": "There is a bank on the left side.",
+    "nepali": "बायाँतिर बैंक छ。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿の日は家で本を読みます。",
+    "kana": "あめのひはいえでほんをよみます。",
+    "answer": "雨",
+    "opts": [
+      "気",
+      "電",
+      "兄",
+      "雨"
+    ],
+    "eng": "On rainy days, I read books at home.",
+    "nepali": "वर्षाको दिनमा म घरमा पुस्तक पढ्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿手に日本語を話します。",
+    "kana": "じょうずににほんごをはなします。",
+    "answer": "上",
+    "opts": [
+      "前",
+      "土",
+      "取",
+      "上"
+    ],
+    "eng": "He speaks Japanese well.",
+    "nepali": "ऊ राम्रो जापानी बोल्छ。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿い時間で帰ります。",
+    "kana": "みじかいじかんでかえります。",
+    "answer": "短",
+    "opts": [
+      "短",
+      "働",
+      "語",
+      "本"
+    ],
+    "eng": "I will return in a short time.",
+    "nepali": "म छोटो समयमा फर्कन्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "学 の読み方は？",
+    "kana": "EN: study, learning | NP: पढाइ, सिकाइ",
+    "answer": "まなぶ",
+    "opts": [
+      "まなぶ",
+      "ながい",
+      "ち",
+      "イン"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿月に桜が咲きます。",
+    "kana": "しがつにさくらがさきます。",
+    "answer": "四",
+    "opts": [
+      "四",
+      "七",
+      "時",
+      "近"
+    ],
+    "eng": "Cherry blossoms bloom in April.",
+    "nepali": "अप्रिलमा चेरी फूल फुल्छ।"
+  },
+  {
+    "type": "reading",
+    "q": "教 の読み方は？",
+    "kana": "EN: teach | NP: सिकाउनु",
+    "answer": "おしえる",
+    "opts": [
+      "やすむ",
+      "やま",
+      "いう",
+      "おしえる"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿人が集まりました。",
+    "kana": "せんにんがあつまりました。",
+    "answer": "千",
+    "opts": [
+      "千",
+      "来",
+      "歩",
+      "聞"
+    ],
+    "eng": "A thousand people gathered.",
+    "nepali": "हजार मानिस जम्मा भए。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿で魚を釣りました。",
+    "kana": "かわでさかなをつりました。",
+    "answer": "川",
+    "opts": [
+      "火",
+      "中",
+      "生",
+      "川"
+    ],
+    "eng": "I fished in the river.",
+    "nepali": "मैले नदीमा माछा मारें。"
+  },
+  {
+    "type": "fill",
+    "q": "今日は元＿＿ですか。",
+    "kana": "きょうはげんきですか。",
+    "answer": "気",
+    "opts": [
+      "出",
+      "中",
+      "気",
+      "国"
+    ],
+    "eng": "How are you today?",
+    "nepali": "आज तपाईंलाई कस्तो छ?"
+  },
+  {
+    "type": "reading",
+    "q": "山 の読み方は？",
+    "kana": "EN: mountain | NP: पहाड",
+    "answer": "やま",
+    "opts": [
+      "ここの",
+      "やま",
+      "わかる",
+      "ひと"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "これは千＿＿です。",
+    "kana": "これはせんえんです。",
+    "answer": "円",
+    "opts": [
+      "東",
+      "知",
+      "少",
+      "円"
+    ],
+    "eng": "This is 1000 yen.",
+    "nepali": "यो १००० येन हो。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿つのりんごを買いました。",
+    "kana": "みっつのりんごをかいました。",
+    "answer": "三",
+    "opts": [
+      "三",
+      "入",
+      "右",
+      "今"
+    ],
+    "eng": "I bought three apples.",
+    "nepali": "मैले तीन वटा स्याउ किनें।"
+  },
+  {
+    "type": "fill",
+    "q": "今七時＿＿です。",
+    "kana": "いましちじはんです。",
+    "answer": "半",
+    "opts": [
+      "聞",
+      "金",
+      "立",
+      "半"
+    ],
+    "eng": "It's 7:30 now.",
+    "nepali": "अहिले साढे सात बज्यो。"
+  },
+  {
+    "type": "fill",
+    "q": "お＿＿さんにプレゼントをあげます。",
+    "kana": "おかあさんにプレゼントをあげます。",
+    "answer": "母",
+    "opts": [
+      "火",
+      "母",
+      "左",
+      "女"
+    ],
+    "eng": "I will give a present to my mother.",
+    "nepali": "म आमालाई उपहार दिनेछु。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿と映画を見ました。",
+    "kana": "いもうととえいがをみました。",
+    "answer": "妹",
+    "opts": [
+      "妹",
+      "国",
+      "一",
+      "電"
+    ],
+    "eng": "I watched a movie with my younger sister.",
+    "nepali": "म बहिनीसंग चलचित्र हेरेँ。"
+  },
+  {
+    "type": "reading",
+    "q": "帰 の読み方は？",
+    "kana": "EN: return, go back | NP: फर्कनु",
+    "answer": "かえる",
+    "opts": [
+      "みる",
+      "かえる",
+      "ひだり",
+      "ここの"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "店＿＿に聞いてください。",
+    "kana": "てんいんにきいてください。",
+    "answer": "員",
+    "opts": [
+      "四",
+      "暗",
+      "思",
+      "員"
+    ],
+    "eng": "Please ask the shop clerk.",
+    "nepali": "कृपया पसल कर्मचारीलाई सोध्नुहोस्。"
+  },
+  {
+    "type": "reading",
+    "q": "歩 の読み方は？",
+    "kana": "EN: walk | NP: हिँड्नु",
+    "answer": "あるく",
+    "opts": [
+      "イン",
+      "あるく",
+      "おとこ",
+      "のむ"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "公園を＿＿りました。",
+    "kana": "こうえんをはしりました。",
+    "answer": "走",
+    "opts": [
+      "半",
+      "長",
+      "走",
+      "田"
+    ],
+    "eng": "I ran in the park.",
+    "nepali": "म पार्कमा दौडें。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿会人になりました。",
+    "kana": "しゃかいじんになりました。",
+    "answer": "社",
+    "opts": [
+      "社",
+      "知",
+      "弟",
+      "考"
+    ],
+    "eng": "I became a working member of society.",
+    "nepali": "म समाजको कार्यरत सदस्य भएँ。"
+  },
+  {
+    "type": "reading",
+    "q": "員 の読み方は？",
+    "kana": "EN: member, employee | NP: सदस्य, कर्मचारी",
+    "answer": "イン",
+    "opts": [
+      "イン",
+      "まなぶ",
+      "はしる",
+      "くに"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "家を＿＿ます。",
+    "kana": "いえをでます。",
+    "answer": "出",
+    "opts": [
+      "取",
+      "出",
+      "十",
+      "七"
+    ],
+    "eng": "I leave home.",
+    "nepali": "म घरबाट निस्कन्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "音楽を＿＿きます。",
+    "kana": "おんがくをききます。",
+    "answer": "聞",
+    "opts": [
+      "聞",
+      "上",
+      "九",
+      "分"
+    ],
+    "eng": "I listen to music.",
+    "nepali": "म संगीत सुन्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "買 の読み方は？",
+    "kana": "EN: buy | NP: किन्नु",
+    "answer": "かう",
+    "opts": [
+      "あと",
+      "まつ",
+      "かう",
+      "あめ"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "駅は＿＿いです。",
+    "kana": "えきはちかいです。",
+    "answer": "近",
+    "opts": [
+      "校",
+      "来",
+      "近",
+      "帰"
+    ],
+    "eng": "The station is near.",
+    "nepali": "स्टेशन नजिक छ。"
+  },
+  {
+    "type": "fill",
+    "q": "新聞を＿＿みます。",
+    "kana": "しんぶんをよみます。",
+    "answer": "読",
+    "opts": [
+      "北",
+      "読",
+      "話",
+      "分"
+    ],
+    "eng": "I read the newspaper.",
+    "nepali": "म समाचारपत्र पढ्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "上 の読み方は？",
+    "kana": "EN: up, above, top | NP: माथि",
+    "answer": "うえ",
+    "opts": [
+      "うえ",
+      "もも",
+      "のむ",
+      "ひと"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "明 の読み方は？",
+    "kana": "EN: bright, light | NP: उज्यालो",
+    "answer": "あかるい",
+    "opts": [
+      "あかるい",
+      "やすむ",
+      "よむ",
+      "な"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "千 の読み方は？",
+    "kana": "EN: thousand | NP: हजार",
+    "answer": "ち",
+    "opts": [
+      "ひと",
+      "おおきい",
+      "ち",
+      "うえ"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "先生に質問を＿＿きました。",
+    "kana": "せんせいにしつもんをききました。",
+    "answer": "聞",
+    "opts": [
+      "待",
+      "北",
+      "万",
+      "聞"
+    ],
+    "eng": "I asked the teacher a question.",
+    "nepali": "मैले शिक्षकलाई प्रश्न सोधें。"
+  },
+  {
+    "type": "fill",
+    "q": "この時計は＿＿円です。",
+    "kana": "このとけいはせんえんです。",
+    "answer": "千",
+    "opts": [
+      "半",
+      "千",
+      "二",
+      "習"
+    ],
+    "eng": "This watch is 1000 yen.",
+    "nepali": "यो घडी १००० येन हो。"
+  },
+  {
+    "type": "reading",
+    "q": "一 の読み方は？",
+    "kana": "EN: one | NP: एक",
+    "answer": "ひと",
+    "opts": [
+      "みる",
+      "かわ",
+      "ひと",
+      "おとうと"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿メートル走ります。",
+    "kana": "ひゃくメートルはしります。",
+    "answer": "百",
+    "opts": [
+      "先",
+      "百",
+      "働",
+      "習"
+    ],
+    "eng": "I will run 100 meters.",
+    "nepali": "म १०० मिटर दौडिन्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "日本で＿＿まれました。",
+    "kana": "にほんでうまれました。",
+    "answer": "生",
+    "opts": [
+      "会",
+      "語",
+      "書",
+      "生"
+    ],
+    "eng": "I was born in Japan.",
+    "nepali": "म जापानमा जन्मिएँ。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿を食べますか。",
+    "kana": "なにをたべますか。",
+    "answer": "何",
+    "opts": [
+      "国",
+      "何",
+      "車",
+      "歩"
+    ],
+    "eng": "What will you eat?",
+    "nepali": "तपाईं के खानुहुन्छ?"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿くにスーパーがあります。",
+    "kana": "ちかくにスーパーがあります。",
+    "answer": "近",
+    "opts": [
+      "近",
+      "気",
+      "時",
+      "使"
+    ],
+    "eng": "There is a supermarket nearby.",
+    "nepali": "नजिकै सुपरमार्केट छ。"
+  },
+  {
+    "type": "reading",
+    "q": "北 の読み方は？",
+    "kana": "EN: north | NP: उत्तर",
+    "answer": "きた",
+    "opts": [
+      "きた",
+      "あに",
+      "かせ",
+      "ふた"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "お＿＿さんは元気ですか。",
+    "kana": "おとうさんはげんきですか。",
+    "answer": "父",
+    "opts": [
+      "父",
+      "社",
+      "員",
+      "考"
+    ],
+    "eng": "How is your father?",
+    "nepali": "तपाईंको बुबालाई कस्तो छ?"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿はピアノが上手です。",
+    "kana": "いもうとはピアノがじょうずです。",
+    "answer": "妹",
+    "opts": [
+      "妹",
+      "女",
+      "万",
+      "上"
+    ],
+    "eng": "My younger sister is good at piano.",
+    "nepali": "मेरी बहिनी पियानोमा निपुण छिन्。"
+  },
+  {
+    "type": "reading",
+    "q": "多 の読み方は？",
+    "kana": "EN: many, much | NP: धेरै",
+    "answer": "おおい",
+    "opts": [
+      "エキ",
+      "くる",
+      "いく",
+      "おおい"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "毎朝＿＿きます。",
+    "kana": "まいあさあるきます。",
+    "answer": "歩",
+    "opts": [
+      "車",
+      "来",
+      "取",
+      "歩"
+    ],
+    "eng": "I walk every morning.",
+    "nepali": "म हरेक बिहान हिंड्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "本 の読み方は？",
+    "kana": "EN: book, origin, true | NP: पुस्तक, उत्पत्ति, वास्तविक",
+    "answer": "もと",
+    "opts": [
+      "やすむ",
+      "ふた",
+      "もと",
+      "かう"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿手で書きます。",
+    "kana": "みぎてでかきます。",
+    "answer": "右",
+    "opts": [
+      "円",
+      "男",
+      "知",
+      "右"
+    ],
+    "eng": "I write with my right hand.",
+    "nepali": "म दायाँ हातले लेख्छु。"
+  },
+  {
+    "type": "fill",
+    "q": "ピアノを＿＿っています。",
+    "kana": "ピアノをならっています。",
+    "answer": "習",
+    "opts": [
+      "習",
+      "小",
+      "見",
+      "子"
+    ],
+    "eng": "I am learning piano.",
+    "nepali": "म पियानो सिक्दै छु。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿ったことを復習します。",
+    "kana": "ならったことをふくします。",
+    "answer": "習",
+    "opts": [
+      "習",
+      "学",
+      "言",
+      "一"
+    ],
+    "eng": "I review what I learned.",
+    "nepali": "मैले सिकेको कुरा दोहोर्याउँछु。"
+  },
+  {
+    "type": "fill",
+    "q": "この＿＿のラーメンは美味しいです。",
+    "kana": "このみせのラーメンはおいしいです。",
+    "answer": "店",
+    "opts": [
+      "天",
+      "店",
+      "下",
+      "上"
+    ],
+    "eng": "The ramen at this shop is delicious.",
+    "nepali": "यस पसलको रामेन स्वादिष्ट छ。"
+  },
+  {
+    "type": "reading",
+    "q": "電 の読み方は？",
+    "kana": "EN: electricity | NP: बिजुली",
+    "answer": "デン",
+    "opts": [
+      "かわ",
+      "いつ",
+      "くる",
+      "デン"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "閉 の読み方は？",
+    "kana": "EN: close | NP: बन्द गर्नु",
+    "answer": "しめる",
+    "opts": [
+      "ひ",
+      "しめる",
+      "おもう",
+      "すくない"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "ドアを＿＿けます。",
+    "kana": "ドアをあけます。",
+    "answer": "開",
+    "opts": [
+      "日",
+      "開",
+      "三",
+      "語"
+    ],
+    "eng": "I open the door.",
+    "nepali": "म ढोका खोल्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "子 の読み方は？",
+    "kana": "EN: child | NP: बच्चा",
+    "answer": "こ",
+    "opts": [
+      "かう",
+      "くる",
+      "あう",
+      "こ"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "女 の読み方は？",
+    "kana": "EN: woman, female | NP: महिला, स्त्री",
+    "answer": "おんな",
+    "opts": [
+      "あね",
+      "おんな",
+      "いつ",
+      "ちち"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "＿＿曜日に勉強します。",
+    "kana": "もくようびにべんきょうします。",
+    "answer": "木",
+    "opts": [
+      "木",
+      "待",
+      "社",
+      "歩"
+    ],
+    "eng": "I will study on Thursday.",
+    "nepali": "म बिहीबार पढ्छु。"
+  },
+  {
+    "type": "reading",
+    "q": "八 の読み方は？",
+    "kana": "EN: eight | NP: आठ",
+    "answer": "や",
+    "opts": [
+      "あめ",
+      "や",
+      "みず",
+      "くる"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "これは＿＿ですか。",
+    "kana": "これはなんですか。",
+    "answer": "何",
+    "opts": [
+      "習",
+      "水",
+      "何",
+      "取"
+    ],
+    "eng": "What is this?",
+    "nepali": "यो के हो?"
+  },
+  {
+    "type": "reading",
+    "q": "今 の読み方は？",
+    "kana": "EN: now | NP: अहिले",
+    "answer": "いま",
+    "opts": [
+      "いま",
+      "おとこ",
+      "よろず",
+      "あるく"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "この車は百＿＿円です。",
+    "kana": "このくるまはひゃくまんえんです。",
+    "answer": "万",
+    "opts": [
+      "万",
+      "走",
+      "三",
+      "土"
+    ],
+    "eng": "This car is 1,000,000 yen.",
+    "nepali": "यो कार १० लाख येन हो。"
+  },
+  {
+    "type": "fill",
+    "q": "＿＿ろに気をつけてください。",
+    "kana": "うしろにきをつけてください。",
+    "answer": "後",
+    "opts": [
+      "木",
+      "外",
+      "後",
+      "子"
+    ],
+    "eng": "Please be careful behind you.",
+    "nepali": "कृपया पछाडि सावधान हुनुहोस्。"
+  },
+  {
+    "type": "reading",
+    "q": "天 の読み方は？",
+    "kana": "EN: heaven, sky | NP: आकाश, स्वर्ग",
+    "answer": "あめ",
+    "opts": [
+      "な",
+      "あめ",
+      "おしえる",
+      "とおい"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "お＿＿前は何ですか。",
+    "kana": "おなまえはなんですか。",
+    "answer": "名",
+    "opts": [
+      "名",
+      "天",
+      "母",
+      "中"
+    ],
+    "eng": "What is your name?",
+    "nepali": "तपाईंको नाम के हो?"
+  },
+  {
+    "type": "fill",
+    "q": "日本語で＿＿しましょう。",
+    "kana": "にほんごではなしましょう。",
+    "answer": "話",
+    "opts": [
+      "話",
+      "駅",
+      "暗",
+      "見"
+    ],
+    "eng": "Let's speak in Japanese.",
+    "nepali": "हामी जापानीमा कुरा गरौं。"
+  },
+  {
+    "type": "reading",
+    "q": "駅 の読み方は？",
+    "kana": "EN: station | NP: स्टेशन",
+    "answer": "エキ",
+    "opts": [
+      "エキ",
+      "いう",
+      "な",
+      "いき"
+    ]
+  },
+  {
+    "type": "reading",
+    "q": "右 の読み方は？",
+    "kana": "EN: right | NP: दायाँ",
+    "answer": "みぎ",
+    "opts": [
+      "はしる",
+      "でる",
+      "おんな",
+      "みぎ"
+    ]
+  },
+  {
+    "type": "fill",
+    "q": "今＿＿は忙しいです。",
+    "kana": "こんげつはいそがしいです。",
+    "answer": "月",
+    "opts": [
+      "天",
+      "月",
+      "兄",
+      "行"
+    ],
+    "eng": "I am busy this month.",
+    "nepali": "म यो महिना व्यस्त छु。"
+  }
+]

@@ -1,0 +1,6462 @@
+[
+  {
+    "kanji": "与",
+    "yomikata": "ヨ, あた(える)",
+    "onyomi": "ヨ",
+    "kunyomi": "あた(える)",
+    "english_meaning": "give, bestow, award",
+    "nepali_meaning": "दिनु, प्रदान गर्नु",
+    "examples": [
+      {
+        "example": "<ruby>賞<rt>しょう</rt></ruby>を<ruby>与<rt>あた</rt></ruby>えます。",
+        "eng": "I give an award.",
+        "nepali": "म पुरस्कार दिन्छु।"
+      },
+      {
+        "example": "チャンスを<ruby>与<rt>あた</rt></ruby>えてください。",
+        "eng": "Please give me a chance.",
+        "nepali": "कृपया मलाई मौका दिनुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "両",
+    "yomikata": "リョウ",
+    "onyomi": "リョウ",
+    "kunyomi": "",
+    "english_meaning": "both, two",
+    "nepali_meaning": "दुवै",
+    "examples": [
+      {
+        "example": "<ruby>両方<rt>りょうほう</rt></ruby>とも<ruby>好<rt>す</rt></ruby>きです。",
+        "eng": "I like both.",
+        "nepali": "मलाई दुवै मन पर्छ।"
+      },
+      {
+        "example": "<ruby>両親<rt>りょうしん</rt></ruby>と<ruby>住<rt>す</rt></ruby>んでいます。",
+        "eng": "I live with my parents.",
+        "nepali": "म आमाबुबासँग बस्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "予",
+    "yomikata": "ヨ",
+    "onyomi": "ヨ",
+    "kunyomi": "あらかじ(め)",
+    "english_meaning": "beforehand, future",
+    "nepali_meaning": "पहिले देखि, पूर्व",
+    "examples": [
+      {
+        "example": "<ruby>予約<rt>よやく</rt></ruby>します。",
+        "eng": "I make a reservation.",
+        "nepali": "म आरक्षण गर्छु।"
+      },
+      {
+        "example": "<ruby>天気予報<rt>てんきよほう</rt></ruby>を<ruby>見<rt>み</rt></ruby>ます。",
+        "eng": "I watch the weather forecast.",
+        "nepali": "म मौसम पूर्वानुमान हेर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "争",
+    "yomikata": "ソウ, あらそ(う)",
+    "onyomi": "ソウ",
+    "kunyomi": "あらそ(う)",
+    "english_meaning": "conflict, dispute",
+    "nepali_meaning": "झगडा, विवाद",
+    "examples": [
+      {
+        "example": "<ruby>争<rt>あらそ</rt></ruby>いはやめましょう。",
+        "eng": "Let's stop the dispute.",
+        "nepali": "झगडा रोकौं।"
+      },
+      {
+        "example": "<ruby>競争<rt>きょうそう</rt></ruby>が<ruby>激<rt>はげ</rt></ruby>しいです。",
+        "eng": "The competition is fierce.",
+        "nepali": "प्रतिस्पर्धा कडा छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "互",
+    "yomikata": "ゴ, たが(い)",
+    "onyomi": "ゴ",
+    "kunyomi": "たが(い)",
+    "english_meaning": "mutual, together",
+    "nepali_meaning": "पारस्परिक, एकअर्का",
+    "examples": [
+      {
+        "example": "<ruby>互<rt>たが</rt></ruby>いに<ruby>助<rt>たす</rt></ruby>け<ruby>合<rt>あ</rt></ruby>います。",
+        "eng": "We help each other.",
+        "nepali": "हामी एकअर्कालाई मद्दत गर्छौं।"
+      },
+      {
+        "example": "<ruby>互換性<rt>ごかんせい</rt></ruby>があります。",
+        "eng": "There is compatibility.",
+        "nepali": "अनुकूलता छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "亡",
+    "yomikata": "ボウ, な(くなる)",
+    "onyomi": "ボウ",
+    "kunyomi": "な(くなる)",
+    "english_meaning": "deceased, die",
+    "nepali_meaning": "मृत्यु, बित्नु",
+    "examples": [
+      {
+        "example": "<ruby>祖父<rt>そふ</rt></ruby>はもう<ruby>亡<rt>な</rt></ruby>くなりました。",
+        "eng": "My grandfather has passed away.",
+        "nepali": "मेरो हजुरबुबा बित्नुभयो।"
+      },
+      {
+        "example": "<ruby>亡命<rt>ぼうめい</rt></ruby>します。",
+        "eng": "I go into exile.",
+        "nepali": "म निर्वासनमा जान्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "交",
+    "yomikata": "コウ, ま(じる)",
+    "onyomi": "コウ",
+    "kunyomi": "ま(じる), か(わす)",
+    "english_meaning": "mix, exchange",
+    "nepali_meaning": "मिसाउनु, आदानप्रदान",
+    "examples": [
+      {
+        "example": "<ruby>友達<rt>ともだち</rt></ruby>と<ruby>交流<rt>こうりゅう</rt></ruby>します。",
+        "eng": "I interact with friends.",
+        "nepali": "म साथीहरूसँग अन्तरक्रिया गर्छु।"
+      },
+      {
+        "example": "<ruby>交通<rt>こうつう</rt></ruby>が<ruby>便利<rt>べんり</rt></ruby>です。",
+        "eng": "Transportation is convenient.",
+        "nepali": "यातायात सुविधाजनक छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "他",
+    "yomikata": "タ, ほか",
+    "onyomi": "タ",
+    "kunyomi": "ほか",
+    "english_meaning": "other, another",
+    "nepali_meaning": "अन्य, अर्को",
+    "examples": [
+      {
+        "example": "<ruby>他<rt>ほか</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>をお<ruby>願<rt>ねが</rt></ruby>いします。",
+        "eng": "Please call someone else.",
+        "nepali": "कृपया अर्को व्यक्तिलाई बोलाउनुहोस्।"
+      },
+      {
+        "example": "その<ruby>他<rt>た</rt></ruby>はありません。",
+        "eng": "There are no others.",
+        "nepali": "अरू छैनन्।"
+      }
+    ]
+  },
+  {
+    "kanji": "付",
+    "yomikata": "フ, つ(ける)",
+    "onyomi": "フ",
+    "kunyomi": "つ(ける), つ(く)",
+    "english_meaning": "attach, affix",
+    "nepali_meaning": "जोड्नु, संलग्न गर्नु",
+    "examples": [
+      {
+        "example": "<ruby>名前<rt>なまえ</rt></ruby>を<ruby>付<rt>つ</rt></ruby>けてください。",
+        "eng": "Please attach a name.",
+        "nepali": "कृपया नाम जोड्नुहोस्।"
+      },
+      {
+        "example": "<ruby>荷物<rt>にもつ</rt></ruby>に<ruby>札<rt>ふだ</rt></ruby>が<ruby>付<rt>つ</rt></ruby>いています。",
+        "eng": "A tag is attached to the luggage.",
+        "nepali": "सामानमा ट्याग जोडिएको छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "件",
+    "yomikata": "ケン",
+    "onyomi": "ケン",
+    "kunyomi": "",
+    "english_meaning": "matter, affair",
+    "nepali_meaning": "कुरा, विषय",
+    "examples": [
+      {
+        "example": "<ruby>用件<rt>ようけん</rt></ruby>は<ruby>何<rt>なん</rt></ruby>ですか。",
+        "eng": "What is your business?",
+        "nepali": "तपाईंको काम के हो?"
+      },
+      {
+        "example": "<ruby>事件<rt>じけん</rt></ruby>がありました。",
+        "eng": "There was an incident.",
+        "nepali": "घटना भयो।"
+      }
+    ]
+  },
+  {
+    "kanji": "任",
+    "yomikata": "ニン, まか(せる)",
+    "onyomi": "ニン",
+    "kunyomi": "まか(せる), まか(す)",
+    "english_meaning": "duty, responsibility",
+    "nepali_meaning": "जिम्मेवारी",
+    "examples": [
+      {
+        "example": "<ruby>責任<rt>せきにん</rt></ruby>があります。",
+        "eng": "I have responsibility.",
+        "nepali": "मेरो जिम्मेवारी छ।"
+      },
+      {
+        "example": "<ruby>任<rt>まか</rt></ruby>せてください。",
+        "eng": "Leave it to me.",
+        "nepali": "मलाई जिम्मा दिनुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "伝",
+    "yomikata": "デン, つた(える)",
+    "onyomi": "デン",
+    "kunyomi": "つた(える), つた(わる)",
+    "english_meaning": "transmit, convey",
+    "nepali_meaning": "सुनाउनु, हस्तान्तरण",
+    "examples": [
+      {
+        "example": "<ruby>伝<rt>つた</rt></ruby>えてください。",
+        "eng": "Please convey it.",
+        "nepali": "कृपया सुनाउनुहोस्।"
+      },
+      {
+        "example": "<ruby>伝統<rt>でんとう</rt></ruby>があります。",
+        "eng": "There is tradition.",
+        "nepali": "परम्परा छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "似",
+    "yomikata": "ジ, に(る)",
+    "onyomi": "ジ",
+    "kunyomi": "に(る)",
+    "english_meaning": "resemble, similar",
+    "nepali_meaning": "मिल्दोजुल्दो",
+    "examples": [
+      {
+        "example": "<ruby>父<rt>ちち</rt></ruby>に<ruby>似<rt>に</rt></ruby>ています。",
+        "eng": "I resemble my father.",
+        "nepali": "म बुबा जस्तो छु।"
+      },
+      {
+        "example": "<ruby>類似<rt>るいじ</rt></ruby>しています。",
+        "eng": "They are similar.",
+        "nepali": "तिनीहरू समान छन्।"
+      }
+    ]
+  },
+  {
+    "kanji": "位",
+    "yomikata": "イ, くらい",
+    "onyomi": "イ",
+    "kunyomi": "くらい",
+    "english_meaning": "rank, position",
+    "nepali_meaning": "स्थान, पद",
+    "examples": [
+      {
+        "example": "<ruby>第一位<rt>だいいちい</rt></ruby>です。",
+        "eng": "It's first place.",
+        "nepali": "यो पहिलो स्थान हो।"
+      },
+      {
+        "example": "<ruby>位置<rt>いち</rt></ruby>についてください。",
+        "eng": "Please take your positions.",
+        "nepali": "कृपया आ-आफ्नो स्थानमा बस्नुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "余",
+    "yomikata": "ヨ, あま(る)",
+    "onyomi": "ヨ",
+    "kunyomi": "あま(る), あま(り)",
+    "english_meaning": "extra, surplus",
+    "nepali_meaning": "बाँकी, अतिरिक्त",
+    "examples": [
+      {
+        "example": "<ruby>余裕<rt>よゆう</rt></ruby>があります。",
+        "eng": "I have room/leeway.",
+        "nepali": "मसँग सुविधा छ।"
+      },
+      {
+        "example": "<ruby>残<rt>のこ</rt></ruby>り<ruby>時間<rt>じかん</rt></ruby>が<ruby>少<rt>すく</rt></ruby>ないです。",
+        "eng": "There is little time left.",
+        "nepali": "बाँकी समय थोरै छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "例",
+    "yomikata": "レイ, ためし",
+    "onyomi": "レイ",
+    "kunyomi": "ためし",
+    "english_meaning": "example",
+    "nepali_meaning": "उदाहरण",
+    "examples": [
+      {
+        "example": "<ruby>例<rt>たと</rt></ruby>えば…",
+        "eng": "For example...",
+        "nepali": "उदाहरणको लागि..."
+      },
+      {
+        "example": "<ruby>例<rt>れい</rt></ruby>をあげてください。",
+        "eng": "Please give an example.",
+        "nepali": "कृपया उदाहरण दिनुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "供",
+    "yomikata": "キョウ, そな(える)",
+    "onyomi": "キョウ, ク",
+    "kunyomi": "そな(える), とも",
+    "english_meaning": "offer, provide, child",
+    "nepali_meaning": "प्रदान गर्नु, बच्चा",
+    "examples": [
+      {
+        "example": "<ruby>子供<rt>こども</rt></ruby>が<ruby>遊<rt>あそ</rt></ruby>んでいます。",
+        "eng": "Children are playing.",
+        "nepali": "बच्चाहरू खेलिरहेका छन्।"
+      },
+      {
+        "example": "<ruby>供給<rt>きょうきゅう</rt></ruby>します。",
+        "eng": "I supply.",
+        "nepali": "म आपूर्ति गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "係",
+    "yomikata": "ケイ, かか(る)",
+    "onyomi": "ケイ",
+    "kunyomi": "かか(る), かかり",
+    "english_meaning": "person in charge, connection",
+    "nepali_meaning": "जिम्मेवार व्यक्ति, सम्बन्ध",
+    "examples": [
+      {
+        "example": "<ruby>係<rt>かかり</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>が<ruby>教<rt>おし</rt></ruby>えてくれます。",
+        "eng": "The person in charge will teach me.",
+        "nepali": "जिम्मेवार व्यक्तिले सिकाउनुहुनेछ।"
+      },
+      {
+        "example": "<ruby>関係<rt>かんけい</rt></ruby>があります。",
+        "eng": "There is a relationship.",
+        "nepali": "सम्बन्ध छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "信",
+    "yomikata": "シン",
+    "onyomi": "シン",
+    "kunyomi": "",
+    "english_meaning": "believe, trust",
+    "nepali_meaning": "विश्वास",
+    "examples": [
+      {
+        "example": "<ruby>彼<rt>かれ</rt></ruby>を<ruby>信<rt>しん</rt></ruby>じています。",
+        "eng": "I trust him.",
+        "nepali": "म उसलाई विश्वास गर्छु।"
+      },
+      {
+        "example": "<ruby>信号<rt>しんごう</rt></ruby>を<ruby>渡<rt>わた</rt></ruby>ります。",
+        "eng": "I cross at the traffic light.",
+        "nepali": "म ट्राफिक बत्तीबाट क्रस गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "倒",
+    "yomikata": "トウ, たお(れる)",
+    "onyomi": "トウ",
+    "kunyomi": "たお(れる), たお(す)",
+    "english_meaning": "fall, collapse",
+    "nepali_meaning": "ढल्नु, लड्नु",
+    "examples": [
+      {
+        "example": "<ruby>木<rt>き</rt></ruby>が<ruby>倒<rt>たお</rt></ruby>れました。",
+        "eng": "The tree fell.",
+        "nepali": "रूख ढल्यो।"
+      },
+      {
+        "example": "<ruby>倒産<rt>とうさん</rt></ruby>しました。",
+        "eng": "The company went bankrupt.",
+        "nepali": "कम्पनी दिवालिया भयो।"
+      }
+    ]
+  },
+  {
+    "kanji": "候",
+    "yomikata": "コウ, そうろう",
+    "onyomi": "コウ",
+    "kunyomi": "そうろう",
+    "english_meaning": "weather, season, condition",
+    "nepali_meaning": "मौसम, अवस्था",
+    "examples": [
+      {
+        "example": "<ruby>天候<rt>てんこう</rt></ruby>が<ruby>悪<rt>わる</rt></ruby>いです。",
+        "eng": "The weather is bad.",
+        "nepali": "मौसम खराब छ।"
+      },
+      {
+        "example": "<ruby>候補者<rt>こうほしゃ</rt></ruby>を<ruby>選<rt>えら</rt></ruby>びます。",
+        "eng": "I choose a candidate.",
+        "nepali": "म उम्मेदवार छान्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "値",
+    "yomikata": "チ, ね, あたい",
+    "onyomi": "チ",
+    "kunyomi": "ね, あたい",
+    "english_meaning": "price, value",
+    "nepali_meaning": "मूल्य, किमत",
+    "examples": [
+      {
+        "example": "<ruby>値段<rt>ねだん</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いです。",
+        "eng": "The price is high.",
+        "nepali": "मूल्य महँगो छ।"
+      },
+      {
+        "example": "<ruby>価値<rt>かち</rt></ruby>があります。",
+        "eng": "It has value.",
+        "nepali": "यसको मूल्य छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "偉",
+    "yomikata": "イ, えら(い)",
+    "onyomi": "イ",
+    "kunyomi": "えら(い)",
+    "english_meaning": "great, eminent",
+    "nepali_meaning": "महान",
+    "examples": [
+      {
+        "example": "<ruby>偉<rt>えら</rt></ruby>い<ruby>人<rt>ひと</rt></ruby>です。",
+        "eng": "He is a great person.",
+        "nepali": "ऊ महान व्यक्ति हो।"
+      },
+      {
+        "example": "<ruby>偉大<rt>いだい</rt></ruby>な<ruby>業績<rt>ぎょうせき</rt></ruby>です。",
+        "eng": "It's a great achievement.",
+        "nepali": "यो महान उपलब्धि हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "側",
+    "yomikata": "ソク, がわ",
+    "onyomi": "ソク",
+    "kunyomi": "がわ",
+    "english_meaning": "side, beside",
+    "nepali_meaning": "छेउ, तर्फ",
+    "examples": [
+      {
+        "example": "<ruby>右側<rt>みぎがわ</rt></ruby>にあります。",
+        "eng": "It's on the right side.",
+        "nepali": "यो दायाँ छेउमा छ।"
+      },
+      {
+        "example": "<ruby>窓側<rt>まどがわ</rt></ruby>の<ruby>席<rt>せき</rt></ruby>です。",
+        "eng": "It's a window seat.",
+        "nepali": "यो झ्याल छेउको सिट हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "偶",
+    "yomikata": "グウ, たま",
+    "onyomi": "グウ",
+    "kunyomi": "たま",
+    "english_meaning": "accidentally, even number",
+    "nepali_meaning": "संयोगवश, जोर संख्या",
+    "examples": [
+      {
+        "example": "<ruby>偶然会<rt>ぐうぜんあ</rt></ruby>いました。",
+        "eng": "I met him by chance.",
+        "nepali": "संयोगवश भेट भयो।"
+      },
+      {
+        "example": "<ruby>偶数<rt>ぐうすう</rt></ruby>です。",
+        "eng": "It's an even number.",
+        "nepali": "यो जोर संख्या हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "備",
+    "yomikata": "ビ, そな(える)",
+    "onyomi": "ビ",
+    "kunyomi": "そな(える), そな(わる)",
+    "english_meaning": "prepare, provide",
+    "nepali_meaning": "तयारी गर्नु, प्रदान गर्नु",
+    "examples": [
+      {
+        "example": "<ruby>準備<rt>じゅんび</rt></ruby>をします。",
+        "eng": "I prepare.",
+        "nepali": "म तयारी गर्छु।"
+      },
+      {
+        "example": "<ruby>備<rt>そな</rt></ruby>えがあります。",
+        "eng": "There is preparation.",
+        "nepali": "तयारी छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "優",
+    "yomikata": "ユウ, やさ(しい)",
+    "onyomi": "ユウ",
+    "kunyomi": "やさ(しい), すぐ(れる)",
+    "english_meaning": "gentle, superior",
+    "nepali_meaning": "दयालु, उत्कृष्ट",
+    "examples": [
+      {
+        "example": "<ruby>優<rt>やさ</rt></ruby>しい<ruby>人<rt>ひと</rt></ruby>です。",
+        "eng": "He is a kind person.",
+        "nepali": "ऊ दयालु व्यक्ति हो।"
+      },
+      {
+        "example": "<ruby>優秀<rt>ゆうしゅう</rt></ruby>な<ruby>学生<rt>がくせい</rt></ruby>です。",
+        "eng": "He is an excellent student.",
+        "nepali": "ऊ उत्कृष्ट विद्यार्थी हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "全",
+    "yomikata": "ゼン, まった(く)",
+    "onyomi": "ゼン",
+    "kunyomi": "まった(く)",
+    "english_meaning": "whole, entire",
+    "nepali_meaning": "सम्पूर्ण, पूरा",
+    "examples": [
+      {
+        "example": "<ruby>全部<rt>ぜんぶ</rt></ruby>で<ruby>千円<rt>せんえん</rt></ruby>です。",
+        "eng": "It's 1000 yen in total.",
+        "nepali": "जम्मा १००० येन हो।"
+      },
+      {
+        "example": "<ruby>安全<rt>あんぜん</rt></ruby>です。",
+        "eng": "It's safe.",
+        "nepali": "यो सुरक्षित छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "共",
+    "yomikata": "キョウ, とも",
+    "onyomi": "キョウ",
+    "kunyomi": "とも",
+    "english_meaning": "together, both",
+    "nepali_meaning": "सँगै, दुवै",
+    "examples": [
+      {
+        "example": "<ruby>友達<rt>ともだち</rt></ruby>と<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>来<rt>き</rt></ruby>ました。",
+        "eng": "I came with my friend.",
+        "nepali": "म साथीसँगै आएँ।"
+      },
+      {
+        "example": "<ruby>共通<rt>きょうつう</rt></ruby>の<ruby>趣味<rt>しゅみ</rt></ruby>があります。",
+        "eng": "We have common hobbies.",
+        "nepali": "हाम्रो साझा रुचि छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "具",
+    "yomikata": "グ",
+    "onyomi": "グ",
+    "kunyomi": "そな(える)",
+    "english_meaning": "tool, ingredient",
+    "nepali_meaning": "औजार, सामग्री",
+    "examples": [
+      {
+        "example": "<ruby>道具<rt>どうぐ</rt></ruby>を<ruby>貸<rt>か</rt></ruby>してください。",
+        "eng": "Please lend me the tools.",
+        "nepali": "कृपया मलाई औजार सापटी दिनुहोस्।"
+      },
+      {
+        "example": "ラーメンの<ruby>具<rt>ぐ</rt></ruby>が<ruby>美味<rt>おい</rt></ruby>しい。",
+        "eng": "The ramen toppings are delicious.",
+        "nepali": "रामेनको सामग्री मिठो छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "内",
+    "yomikata": "ナイ, うち",
+    "onyomi": "ナイ",
+    "kunyomi": "うち",
+    "english_meaning": "inside, within",
+    "nepali_meaning": "भित्र",
+    "examples": [
+      {
+        "example": "<ruby>部屋<rt>へや</rt></ruby>の<ruby>中<rt>なか</rt></ruby>にあります。",
+        "eng": "It's inside the room.",
+        "nepali": "यो कोठा भित्र छ।"
+      },
+      {
+        "example": "<ruby>国内旅行<rt>こくないりょこう</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。",
+        "eng": "I like domestic travel.",
+        "nepali": "मलाई आन्तरिक यात्रा मन पर्छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "最",
+    "yomikata": "サイ, もっとも",
+    "onyomi": "サイ",
+    "kunyomi": "もっとも",
+    "english_meaning": "most, utmost",
+    "nepali_meaning": "सबैभन्दा",
+    "examples": [
+      {
+        "example": "<ruby>最後<rt>さいご</rt></ruby>まで<ruby>頑張<rt>がんば</rt></ruby>ります。",
+        "eng": "I will do my best until the end.",
+        "nepali": "म अन्त्यसम्म प्रयास गर्नेछु।"
+      },
+      {
+        "example": "<ruby>最近<rt>さいきん</rt></ruby>どうですか。",
+        "eng": "How have you been lately?",
+        "nepali": "हिजोआज कस्तो छ?"
+      }
+    ]
+  },
+  {
+    "kanji": "冷",
+    "yomikata": "レイ, つめ(たい)",
+    "onyomi": "レイ",
+    "kunyomi": "つめ(たい), さ(める)",
+    "english_meaning": "cold",
+    "nepali_meaning": "चिसो",
+    "examples": [
+      {
+        "example": "<ruby>冷<rt>つめ</rt></ruby>たい<ruby>飲<rt>の</rt></ruby>み<ruby>物<rt>もの</rt></ruby>が<ruby>欲<rt>ほ</rt></ruby>しいです。",
+        "eng": "I want a cold drink.",
+        "nepali": "मलाई चिसो पेय चाहियो।"
+      },
+      {
+        "example": "<ruby>冷蔵庫<rt>れいぞうこ</rt></ruby>に<ruby>入<rt>い</rt></ruby>れます。",
+        "eng": "I put it in the refrigerator.",
+        "nepali": "म फ्रिजमा राख्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "処",
+    "yomikata": "ショ",
+    "onyomi": "ショ",
+    "kunyomi": "ところ",
+    "english_meaning": "place, deal with",
+    "nepali_meaning": "स्थान, व्यवहार",
+    "examples": [
+      {
+        "example": "<ruby>処理<rt>しょり</rt></ruby>します。",
+        "eng": "I process.",
+        "nepali": "म प्रक्रिया गर्छु।"
+      },
+      {
+        "example": "<ruby>処方箋<rt>しょほうせん</rt></ruby>をもらいました。",
+        "eng": "I got a prescription.",
+        "nepali": "मैले पर्ची पाएँ।"
+      }
+    ]
+  },
+  {
+    "kanji": "列",
+    "yomikata": "レツ",
+    "onyomi": "レツ",
+    "kunyomi": "",
+    "english_meaning": "row, line",
+    "nepali_meaning": "पङ्क्ति, लाइन",
+    "examples": [
+      {
+        "example": "<ruby>列<rt>れつ</rt></ruby>に<ruby>並<rt>なら</rt></ruby>びます。",
+        "eng": "I stand in line.",
+        "nepali": "म लाइनमा उभिन्छु।"
+      },
+      {
+        "example": "<ruby>行列<rt>ぎょうれつ</rt></ruby>ができています。",
+        "eng": "There is a queue.",
+        "nepali": "लाइन लागेको छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "初",
+    "yomikata": "ショ, はじ(め)",
+    "onyomi": "ショ",
+    "kunyomi": "はじ(め), はつ",
+    "english_meaning": "first, beginning",
+    "nepali_meaning": "पहिलो, सुरु",
+    "examples": [
+      {
+        "example": "<ruby>初<rt>はじ</rt></ruby>めまして。",
+        "eng": "Nice to meet you.",
+        "nepali": "तपाईंलाई भेटेर खुशी लाग्यो।"
+      },
+      {
+        "example": "<ruby>初恋<rt>はつこい</rt></ruby>です。",
+        "eng": "It's my first love.",
+        "nepali": "यो पहिलो प्रेम हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "判",
+    "yomikata": "ハン, バン",
+    "onyomi": "ハン, バン",
+    "kunyomi": "",
+    "english_meaning": "judge, stamp",
+    "nepali_meaning": "निर्णय, छाप",
+    "examples": [
+      {
+        "example": "<ruby>判断<rt>はんだん</rt></ruby>します。",
+        "eng": "I judge.",
+        "nepali": "म निर्णय गर्छु।"
+      },
+      {
+        "example": "<ruby>判子<rt>はんこ</rt></ruby>を<ruby>押<rt>お</rt></ruby>します。",
+        "eng": "I stamp my seal.",
+        "nepali": "म छाप लगाउँछु।"
+      }
+    ]
+  },
+  {
+    "kanji": "利",
+    "yomikata": "リ, き(く)",
+    "onyomi": "リ",
+    "kunyomi": "き(く)",
+    "english_meaning": "profit, benefit",
+    "nepali_meaning": "फाइदा, लाभ",
+    "examples": [
+      {
+        "example": "<ruby>利用<rt>りよう</rt></ruby>します。",
+        "eng": "I use.",
+        "nepali": "म प्रयोग गर्छु।"
+      },
+      {
+        "example": "<ruby>便利<rt>べんり</rt></ruby>ですね。",
+        "eng": "It's convenient, isn't it?",
+        "nepali": "सुविधाजनक छ है।"
+      }
+    ]
+  },
+  {
+    "kanji": "到",
+    "yomikata": "トウ",
+    "onyomi": "トウ",
+    "kunyomi": "いた(る)",
+    "english_meaning": "arrive, reach",
+    "nepali_meaning": "पुग्नु",
+    "examples": [
+      {
+        "example": "<ruby>到着<rt>とうちゃく</rt></ruby>しました。",
+        "eng": "I have arrived.",
+        "nepali": "म आइपुगें।"
+      },
+      {
+        "example": "<ruby>北海道<rt>ほっかいどう</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to Hokkaido.",
+        "nepali": "म होक्काइदो जान्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "制",
+    "yomikata": "セイ",
+    "onyomi": "セイ",
+    "kunyomi": "",
+    "english_meaning": "control, system",
+    "nepali_meaning": "नियन्त्रण, प्रणाली",
+    "examples": [
+      {
+        "example": "<ruby>制限<rt>せいげん</rt></ruby>があります。",
+        "eng": "There is a restriction.",
+        "nepali": "सीमा छ।"
+      },
+      {
+        "example": "<ruby>制度<rt>せいど</rt></ruby>が<ruby>変<rt>か</rt></ruby>わりました。",
+        "eng": "The system has changed.",
+        "nepali": "प्रणाली परिवर्तन भयो।"
+      }
+    ]
+  },
+  {
+    "kanji": "刻",
+    "yomikata": "コク, きざ(む)",
+    "onyomi": "コク",
+    "kunyomi": "きざ(む)",
+    "english_meaning": "engrave, carve, time",
+    "nepali_meaning": "कुँद्नु, समय",
+    "examples": [
+      {
+        "example": "<ruby>時間<rt>じかん</rt></ruby>を<ruby>刻<rt>きざ</rt></ruby>みます。",
+        "eng": "I mark the time.",
+        "nepali": "म समय अंकित गर्छु।"
+      },
+      {
+        "example": "<ruby>深刻<rt>しんこく</rt></ruby>な<ruby>問題<rt>もんだい</rt></ruby>です。",
+        "eng": "It's a serious problem.",
+        "nepali": "यो गम्भीर समस्या हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "割",
+    "yomikata": "カツ, わ(る)",
+    "onyomi": "カツ",
+    "kunyomi": "わ(る), わり",
+    "english_meaning": "divide, cut, proportion",
+    "nepali_meaning": "भाग लगाउनु, चिर्नु",
+    "examples": [
+      {
+        "example": "ケーキを<ruby>割<rt>わ</rt></ruby>ります。",
+        "eng": "I divide the cake.",
+        "nepali": "म केक भाग लगाउँछु।"
+      },
+      {
+        "example": "<ruby>割引<rt>わりびき</rt></ruby>があります。",
+        "eng": "There is a discount.",
+        "nepali": "छुट छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "加",
+    "yomikata": "カ, くわ(える)",
+    "onyomi": "カ",
+    "kunyomi": "くわ(える), くわ(わる)",
+    "english_meaning": "add, join",
+    "nepali_meaning": "थप्नु, जोड्नु",
+    "examples": [
+      {
+        "example": "<ruby>砂糖<rt>さとう</rt></ruby>を<ruby>加<rt>くわ</rt></ruby>えます。",
+        "eng": "I add sugar.",
+        "nepali": "म चिनी थप्छु।"
+      },
+      {
+        "example": "<ruby>参加<rt>さんか</rt></ruby>します。",
+        "eng": "I participate.",
+        "nepali": "म सहभागी हुन्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "助",
+    "yomikata": "ジョ, たす(ける)",
+    "onyomi": "ジョ",
+    "kunyomi": "たす(ける), す(ける)",
+    "english_meaning": "help, assist",
+    "nepali_meaning": "मद्दत गर्नु",
+    "examples": [
+      {
+        "example": "<ruby>助<rt>たす</rt></ruby>けてください。",
+        "eng": "Please help me.",
+        "nepali": "कृपया मलाई मद्दत गर्नुहोस्।"
+      },
+      {
+        "example": "<ruby>助手<rt>じょしゅ</rt></ruby>がいます。",
+        "eng": "I have an assistant.",
+        "nepali": "मसँग सहायक छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "努",
+    "yomikata": "ド, つと(める)",
+    "onyomi": "ド",
+    "kunyomi": "つと(める)",
+    "english_meaning": "exert, strive",
+    "nepali_meaning": "प्रयास गर्नु",
+    "examples": [
+      {
+        "example": "<ruby>努力<rt>どりょく</rt></ruby>します。",
+        "eng": "I make an effort.",
+        "nepali": "म प्रयास गर्छु।"
+      },
+      {
+        "example": "<ruby>努<rt>つと</rt></ruby>めて<ruby>明<rt>あか</rt></ruby>るくします。",
+        "eng": "I try to be cheerful.",
+        "nepali": "म हँसमुख हुन प्रयास गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "労",
+    "yomikata": "ロウ, ねぎら(う)",
+    "onyomi": "ロウ",
+    "kunyomi": "ねぎら(う)",
+    "english_meaning": "labor, effort",
+    "nepali_meaning": "मेहनत, श्रम",
+    "examples": [
+      {
+        "example": "<ruby>労働者<rt>ろうどうしゃ</rt></ruby>が<ruby>働<rt>はたら</rt></ruby>いています。",
+        "eng": "Workers are working.",
+        "nepali": "मजदुरहरू काम गरिरहेका छन्।"
+      },
+      {
+        "example": "ご<ruby>苦労様<rt>くろうさま</rt></ruby>です。",
+        "eng": "Thank you for your hard work.",
+        "nepali": "तपाईंको मेहनतको लागि धन्यवाद।"
+      }
+    ]
+  },
+  {
+    "kanji": "務",
+    "yomikata": "ム, つと(める)",
+    "onyomi": "ム",
+    "kunyomi": "つと(める)",
+    "english_meaning": "duty, task",
+    "nepali_meaning": "कर्तव्य, काम",
+    "examples": [
+      {
+        "example": "<ruby>任務<rt>にんむ</rt></ruby>があります。",
+        "eng": "I have a duty.",
+        "nepali": "मेरो कर्तव्य छ।"
+      },
+      {
+        "example": "<ruby>務<rt>つと</rt></ruby>めます。",
+        "eng": "I serve/work.",
+        "nepali": "म सेवा गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "勝",
+    "yomikata": "ショウ, か(つ)",
+    "onyomi": "ショウ",
+    "kunyomi": "か(つ), まさ(る)",
+    "english_meaning": "win, victory",
+    "nepali_meaning": "जित्नु",
+    "examples": [
+      {
+        "example": "<ruby>試合<rt>しあい</rt></ruby>に<ruby>勝<rt>か</rt></ruby>ちました。",
+        "eng": "I won the match.",
+        "nepali": "म खेल जितें।"
+      },
+      {
+        "example": "<ruby>勝利<rt>しょうり</rt></ruby>を<ruby>祈<rt>いの</rt></ruby>ります。",
+        "eng": "I pray for victory.",
+        "nepali": "म जितको कामना गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "勤",
+    "yomikata": "キン, つと(める)",
+    "onyomi": "キン",
+    "kunyomi": "つと(める)",
+    "english_meaning": "work, serve",
+    "nepali_meaning": "काम गर्नु, सेवा गर्नु",
+    "examples": [
+      {
+        "example": "<ruby>会社<rt>かいしゃ</rt></ruby>に<ruby>勤<rt>つと</rt></ruby>めています。",
+        "eng": "I work at a company.",
+        "nepali": "म कम्पनीमा काम गर्छु।"
+      },
+      {
+        "example": "<ruby>勤勉<rt>きんべん</rt></ruby>な<ruby>学生<rt>がくせい</rt></ruby>です。",
+        "eng": "He is a diligent student.",
+        "nepali": "ऊ मेहनती विद्यार्थी हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "化",
+    "yomikata": "カ, ケ, ば(ける)",
+    "onyomi": "カ, ケ",
+    "kunyomi": "ば(ける), か(わる)",
+    "english_meaning": "change, transform",
+    "nepali_meaning": "परिवर्तन",
+    "examples": [
+      {
+        "example": "<ruby>科学<rt>か</rt></ruby>が<ruby>好<rt>くがす</rt></ruby>きです。",
+        "eng": "I like science.",
+        "nepali": "मलाई विज्ञान मन पर्छ।"
+      },
+      {
+        "example": "<ruby>国際化<rt>こくさいか</rt></ruby>が<ruby>進<rt>すす</rt></ruby>んでいる。",
+        "eng": "Internationalization is progressing.",
+        "nepali": "अन्तर्राष्ट्रियकरण अगाडि बढिरहेको छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "単",
+    "yomikata": "タン",
+    "onyomi": "タン",
+    "kunyomi": "ひとえ",
+    "english_meaning": "simple, single",
+    "nepali_meaning": "सरल, एकल",
+    "examples": [
+      {
+        "example": "<ruby>簡単<rt>かんたん</rt></ruby>です。",
+        "eng": "It's easy.",
+        "nepali": "यो सजिलो छ।"
+      },
+      {
+        "example": "<ruby>単語<rt>たんご</rt></ruby>を<ruby>覚<rt>おぼ</rt></ruby>えます。",
+        "eng": "I memorize words.",
+        "nepali": "म शब्दहरू याद गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "危",
+    "yomikata": "キ, あぶ(ない)",
+    "onyomi": "キ",
+    "kunyomi": "あぶ(ない), あया(うい)",
+    "english_meaning": "dangerous, risky",
+    "nepali_meaning": "खतरनाक",
+    "examples": [
+      {
+        "example": "<ruby>危<rt>あぶ</rt></ruby>ない<ruby>場所<rt>ばしょ</rt></ruby>です。",
+        "eng": "It's a dangerous place.",
+        "nepali": "यो खतरनाक ठाउँ हो।"
+      },
+      {
+        "example": "<ruby>危険<rt>きけん</rt></ruby>ですから、<ruby>止<rt>や</rt></ruby>めてください。",
+        "eng": "It's dangerous, so please stop.",
+        "nepali": "खतरनाक छ, कृपया रोक्नुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "原",
+    "yomikata": "ゲン, はら",
+    "onyomi": "ゲン",
+    "kunyomi": "はら",
+    "english_meaning": "origin, field",
+    "nepali_meaning": "मूल, उत्पत्ति",
+    "examples": [
+      {
+        "example": "<ruby>原因<rt>げんいん</rt></ruby>がわかりません。",
+        "eng": "I don't know the cause.",
+        "nepali": "म कारण जान्दिन।"
+      },
+      {
+        "example": "<ruby>原<rt>はら</rt></ruby>っぱで<ruby>遊<rt>あそ</rt></ruby>びます。",
+        "eng": "I play in the field.",
+        "nepali": "म मैदानमा खेल्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "参",
+    "yomikata": "サン, まい(る)",
+    "onyomi": "サン",
+    "kunyomi": "まい(る)",
+    "english_meaning": "participate, go (humble)",
+    "nepali_meaning": "सहभागी हुनु",
+    "examples": [
+      {
+        "example": "<ruby>会議<rt>かいぎ</rt></ruby>に<ruby>参加<rt>さんか</rt></ruby>します。",
+        "eng": "I participate in the meeting.",
+        "nepali": "म बैठकमा सहभागी हुन्छु।"
+      },
+      {
+        "example": "<ruby>参<rt>まい</rt></ruby>りましょう。",
+        "eng": "Let's go (humble).",
+        "nepali": "जाऔं।"
+      }
+    ]
+  },
+  {
+    "kanji": "反",
+    "yomikata": "ハン, ホン, そ(る)",
+    "onyomi": "ハン, ホン",
+    "kunyomi": "そ(る), かえ(す)",
+    "english_meaning": "anti-, opposite",
+    "nepali_meaning": "विपरीत, विरोध",
+    "examples": [
+      {
+        "example": "<ruby>反対<rt>はんたい</rt></ruby>です。",
+        "eng": "I oppose.",
+        "nepali": "म विरोध गर्छु।"
+      },
+      {
+        "example": "<ruby>反省<rt>はんせい</rt></ruby>します。",
+        "eng": "I reflect on my actions.",
+        "nepali": "म आत्मसमीक्षा गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "収",
+    "yomikata": "シュウ, おさ(める)",
+    "onyomi": "シュウ",
+    "kunyomi": "おさ(める), おさ(まる)",
+    "english_meaning": "obtain, collect",
+    "nepali_meaning": "सङ्कलन गर्नु, प्राप्त गर्नु",
+    "examples": [
+      {
+        "example": "<ruby>収入<rt>しゅうにゅう</rt></ruby>があります。",
+        "eng": "I have income.",
+        "nepali": "मसँग आम्दानी छ।"
+      },
+      {
+        "example": "<ruby>収集<rt>しゅう</rt></ruby>します。",
+        "eng": "I collect.",
+        "nepali": "म सङ्कलन गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "取",
+    "yomikata": "シュ, と(る)",
+    "onyomi": "シュ",
+    "kunyomi": "と(る)",
+    "english_meaning": "take, get",
+    "nepali_meaning": "लिनु",
+    "examples": [
+      {
+        "example": "<ruby>席<rt>せき</rt></ruby>を<ruby>取<rt>と</rt></ruby>ります。",
+        "eng": "I take a seat.",
+        "nepali": "म सिट लिन्छु।"
+      },
+      {
+        "example": "<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>ります。",
+        "eng": "I take a picture.",
+        "nepali": "म फोटो खिच्छु。"
+      }
+    ]
+  },
+  {
+    "kanji": "受",
+    "yomikata": "ジュ, う(ける)",
+    "onyomi": "ジュ",
+    "kunyomi": "う(ける), う(かる)",
+    "english_meaning": "receive, accept",
+    "nepali_meaning": "प्राप्त गर्नु",
+    "examples": [
+      {
+        "example": "プレゼントを<ruby>受<rt>う</rt></ruby>けました。",
+        "eng": "I received a present.",
+        "nepali": "मैले उपहार प्राप्त गरें।"
+      },
+      {
+        "example": "<ruby>試験<rt>しけん</rt></ruby>を<ruby>受<rt>う</rt></ruby>けます。",
+        "eng": "I take an exam.",
+        "nepali": "म परीक्षा दिन्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "号",
+    "yomikata": "ゴウ",
+    "onyomi": "ゴウ",
+    "kunyomi": "",
+    "english_meaning": "number, issue",
+    "nepali_meaning": "नम्बर, अंक",
+    "examples": [
+      {
+        "example": "<ruby>三番線<rt>さんばんせん</rt></ruby>に<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>来<rt>き</rt></ruby>ます。",
+        "eng": "The train will come to platform 3.",
+        "nepali": "रेल तेस्रो प्लेटफर्ममा आउनेछ।"
+      },
+      {
+        "example": "<ruby>雑誌<rt>ざっし</rt></ruby>の<ruby>最新号<rt>さいしんごう</rt></ruby>を<ruby>買<rt>か</rt></ruby>いました。",
+        "eng": "I bought the latest issue.",
+        "nepali": "मैले पत्रिकाको नयाँ अंक किनें।"
+      }
+    ]
+  },
+  {
+    "kanji": "向",
+    "yomikata": "コウ, む(かう)",
+    "onyomi": "コウ",
+    "kunyomi": "む(かう), む(ける)",
+    "english_meaning": "facing, towards",
+    "nepali_meaning": "तर्फ, दिशा",
+    "examples": [
+      {
+        "example": "<ruby>駅<rt>えき</rt></ruby>に<ruby>向<rt>む</rt></ruby>かっています。",
+        "eng": "I am heading towards the station.",
+        "nepali": "म स्टेसनतर्फ जाँदै छु।"
+      },
+      {
+        "example": "<ruby>向<rt>む</rt></ruby>こう<ruby>側<rt>がわ</rt></ruby>にあります。",
+        "eng": "It's on the other side.",
+        "nepali": "यो अर्को तर्फ छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "君",
+    "yomikata": "クン, きみ",
+    "onyomi": "クン",
+    "kunyomi": "きみ",
+    "english_meaning": "you, lord",
+    "nepali_meaning": "तिमी, शासक",
+    "examples": [
+      {
+        "example": "<ruby>君<rt>きみ</rt></ruby>は<ruby>学生<rt>がくせい</rt></ruby>ですか。",
+        "eng": "Are you a student?",
+        "nepali": "तिमी विद्यार्थी हौ?"
+      },
+      {
+        "example": "<ruby>松本君<rt>まつもとくん</rt></ruby>は<ruby>来<rt>き</rt></ruby>ますか。",
+        "eng": "Is Matsumoto-kun coming?",
+        "nepali": "मात्सुमोटो साथी आउँदै छ?"
+      }
+    ]
+  },
+  {
+    "kanji": "否",
+    "yomikata": "ヒ, いな",
+    "onyomi": "ヒ",
+    "kunyomi": "いな",
+    "english_meaning": "no, negative",
+    "nepali_meaning": "होइन, अस्वीकार",
+    "examples": [
+      {
+        "example": "<ruby>否定<rt>ひてい</rt></ruby>します。",
+        "eng": "I deny.",
+        "nepali": "म अस्वीकार गर्छु।"
+      },
+      {
+        "example": "<ruby>賛否両論<rt>さんぴりょうろん</rt></ruby>あります。",
+        "eng": "There are pros and cons.",
+        "nepali": "पक्ष र विपक्ष दुवै छन्।"
+      }
+    ]
+  },
+  {
+    "kanji": "吸",
+    "yomikata": "キュウ, す(う)",
+    "onyomi": "キュウ",
+    "kunyomi": "す(う)",
+    "english_meaning": "inhale, suck",
+    "nepali_meaning": "सास फेर्नु, तान्नु",
+    "examples": [
+      {
+        "example": "タバコを<ruby>吸<rt>す</rt></ruby>います。",
+        "eng": "I smoke.",
+        "nepali": "म चुरोट तान्छु।"
+      },
+      {
+        "example": "<ruby>空気<rt>くうき</rt></ruby>を<ruby>吸<rt>す</rt></ruby>います。",
+        "eng": "I breathe air.",
+        "nepali": "म हावा सास फेर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "吹",
+    "yomikata": "スイ, ふ(く)",
+    "onyomi": "スイ",
+    "kunyomi": "ふ(く)",
+    "english_meaning": "blow",
+    "nepali_meaning": "फुक्नु, बजाउनु",
+    "examples": [
+      {
+        "example": "<ruby>風<rt>かぜ</rt></ruby>が<ruby>吹<rt>ふ</rt></ruby>いています。",
+        "eng": "The wind is blowing.",
+        "nepali": "हावा चलिरहेको छ।"
+      },
+      {
+        "example": "<ruby>笛<rt>ふえ</rt></ruby>を<ruby>吹<rt>ふ</rt></ruby>きます。",
+        "eng": "I play the flute.",
+        "nepali": "म बाँसुरी बजाउँछु।"
+      }
+    ]
+  },
+  {
+    "kanji": "告",
+    "yomikata": "コク, つ(げる)",
+    "onyomi": "コク",
+    "kunyomi": "つ(げる)",
+    "english_meaning": "tell, inform",
+    "nepali_meaning": "बताउनु, सूचना दिनु",
+    "examples": [
+      {
+        "example": "<ruby>結果<rt>けっか</rt></ruby>を<ruby>報告<rt>ほうこく</rt></ruby>します。",
+        "eng": "I will report the results.",
+        "nepali": "म परिणाम रिपोर्ट गर्नेछु।"
+      },
+      {
+        "example": "<ruby>広告<rt>こうこく</rt></ruby>を<ruby>見<rt>み</rt></ruby>ました。",
+        "eng": "I saw the advertisement.",
+        "nepali": "मैले विज्ञापन देखें।"
+      }
+    ]
+  },
+  {
+    "kanji": "呼",
+    "yomikata": "コ, よ(ぶ)",
+    "onyomi": "コ",
+    "kunyomi": "よ(ぶ)",
+    "english_meaning": "call, invite",
+    "nepali_meaning": "बोलाउनु",
+    "examples": [
+      {
+        "example": "<ruby>名前<rt>なまえ</rt></ruby>を<ruby>呼<rt>よ</rt></ruby>びます。",
+        "eng": "I call your name.",
+        "nepali": "म नाम बोलाउँछु।"
+      },
+      {
+        "example": "<ruby>呼<rt>よ</rt></ruby>び<ruby>出<rt>だ</rt></ruby>します。",
+        "eng": "I call out.",
+        "nepali": "म बोलाउँछु।"
+      }
+    ]
+  },
+  {
+    "kanji": "命",
+    "yomikata": "メイ, いのち",
+    "onyomi": "メイ, ミョウ",
+    "kunyomi": "いのち",
+    "english_meaning": "life, command",
+    "nepali_meaning": "जीवन, आदेश",
+    "examples": [
+      {
+        "example": "<ruby>命<rt>いのち</rt></ruby>が<ruby>大切<rt>たいせつ</rt></ruby>です。",
+        "eng": "Life is precious.",
+        "nepali": "जीवन बहुमूल्य छ।"
+      },
+      {
+        "example": "<ruby>命令<rt>めいれい</rt></ruby>を<ruby>守<rt>まも</rt></ruby>ります。",
+        "eng": "I follow orders.",
+        "nepali": "म आदेश पालन गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "和",
+    "yomikata": "ワ, なご(む)",
+    "onyomi": "ワ, オ",
+    "kunyomi": "なご(む), やわ(らぐ)",
+    "english_meaning": "harmony, Japanese",
+    "nepali_meaning": "शान्ति, जापानी",
+    "examples": [
+      {
+        "example": "<ruby>平和<rt>へいわ</rt></ruby>が<ruby>大切<rt>たいせつ</rt></ruby>です。",
+        "eng": "Peace is important.",
+        "nepali": "शान्ति महत्त्वपूर्ण छ।"
+      },
+      {
+        "example": "<ruby>和食<rt>わしょく</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。",
+        "eng": "I like Japanese food.",
+        "nepali": "मलाई जापानी खाना मन पर्छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "商",
+    "yomikata": "ショウ, あきな(う)",
+    "onyomi": "ショウ",
+    "kunyomi": "あきな(う)",
+    "english_meaning": "trade, business",
+    "nepali_meaning": "व्यापार",
+    "examples": [
+      {
+        "example": "<ruby>商店<rt>しょうてん</rt></ruby>で<ruby>買<rt>か</rt></ruby>い<ruby>物<rt>もの</rt></ruby>します。",
+        "eng": "I shop at the store.",
+        "nepali": "म पसलमा किनमेल गर्छु।"
+      },
+      {
+        "example": "<ruby>商業地区<rt>しょうぎょうちく</rt></ruby>です。",
+        "eng": "It's a commercial area.",
+        "nepali": "यो व्यापारिक क्षेत्र हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "喜",
+    "yomikata": "キ, よろこ(ぶ)",
+    "onyomi": "キ",
+    "kunyomi": "よろこ(ぶ)",
+    "english_meaning": "rejoice, be glad",
+    "nepali_meaning": "खुशी हुनु",
+    "examples": [
+      {
+        "example": "<ruby>喜<rt>よろこ</rt></ruby>んで<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I'll gladly go.",
+        "nepali": "म खुशीसाथ जान्छु।"
+      },
+      {
+        "example": "<ruby>喜<rt>よろこ</rt></ruby>びを<ruby>感<rt>かん</rt></ruby>じます。",
+        "eng": "I feel joy.",
+        "nepali": "म खुशी महसुस गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "因",
+    "yomikata": "イン, よ(る)",
+    "onyomi": "イン",
+    "kunyomi": "よ(る)",
+    "english_meaning": "cause, depend on",
+    "nepali_meaning": "कारण, आधारित",
+    "examples": [
+      {
+        "example": "<ruby>原因<rt>げんいん</rt></ruby>がわかりません。",
+        "eng": "I don't know the cause.",
+        "nepali": "म कारण जान्दिन।"
+      },
+      {
+        "example": "<ruby>状況<rt>じょうきょう</rt></ruby>によって<ruby>変<rt>か</rt></ruby>わります。",
+        "eng": "It depends on the situation.",
+        "nepali": "यो अवस्थामा भर पर्छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "困",
+    "yomikata": "コン, こま(る)",
+    "onyomi": "コン",
+    "kunyomi": "こま(る)",
+    "english_meaning": "trouble, distress",
+    "nepali_meaning": "समस्या, दुःख",
+    "examples": [
+      {
+        "example": "<ruby>困<rt>こま</rt></ruby>っています。",
+        "eng": "I am in trouble.",
+        "nepali": "म समस्यामा छु।"
+      },
+      {
+        "example": "<ruby>困<rt>こま</rt></ruby>った<ruby>問題<rt>もんだい</rt></ruby>です。",
+        "eng": "It's a difficult problem.",
+        "nepali": "यो समस्याग्रस्त मुद्दा हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "園",
+    "yomikata": "エン, その",
+    "onyomi": "エン",
+    "kunyomi": "その",
+    "english_meaning": "garden, park",
+    "nepali_meaning": "बगैंचा, पार्क",
+    "examples": [
+      {
+        "example": "<ruby>動物園<rt>どうぶつえん</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to the zoo.",
+        "nepali": "म चिडियाखाना जान्छु।"
+      },
+      {
+        "example": "<ruby>幼稚園<rt>ようちえん</rt></ruby>で<ruby>遊<rt>あそ</rt></ruby>びます。",
+        "eng": "I play at kindergarten.",
+        "nepali": "म बालवाडीमा खेल्छु。"
+      }
+    ]
+  },
+  {
+    "kanji": "在",
+    "yomikata": "ザイ, あ(る)",
+    "onyomi": "ザイ",
+    "kunyomi": "あ(る)",
+    "english_meaning": "exist, be located",
+    "nepali_meaning": "हुनु, अवस्थित",
+    "examples": [
+      {
+        "example": "<ruby>現在<rt>げんざい</rt></ruby>、<ruby>東京<rt>とうきょう</rt></ruby>にいます。",
+        "eng": "I am currently in Tokyo.",
+        "nepali": "हाल म टोकियोमा छु।"
+      },
+      {
+        "example": "<ruby>在庫<rt>ざいこ</rt></ruby>があります。",
+        "eng": "It's in stock.",
+        "nepali": "स्टकमा छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "報",
+    "yomikata": "ホウ",
+    "onyomi": "ホウ",
+    "kunyomi": "むく(いる)",
+    "english_meaning": "report, reward",
+    "nepali_meaning": "रिपोर्ट, समाचार",
+    "examples": [
+      {
+        "example": "<ruby>新聞<rt>しんぶん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>みます。",
+        "eng": "I read the newspaper.",
+        "nepali": "म समाचारपत्र पढ्छु।"
+      },
+      {
+        "example": "<ruby>報告<rt>ほうこく</rt></ruby>します。",
+        "eng": "I report.",
+        "nepali": "म रिपोर्ट गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "増",
+    "yomikata": "ゾウ, ま(す)",
+    "onyomi": "ゾウ",
+    "kunyomi": "ま(す), ふ(える)",
+    "english_meaning": "increase",
+    "nepali_meaning": "बढ्नु",
+    "examples": [
+      {
+        "example": "<ruby>人口<rt>じんこう</rt></ruby>が<ruby>増<rt>ふ</rt></ruby>えました。",
+        "eng": "The population increased.",
+        "nepali": "जनसंख्या बढ्यो।"
+      },
+      {
+        "example": "<ruby>増加<rt>ぞうか</rt></ruby>しています。",
+        "eng": "It is increasing.",
+        "nepali": "यो बढ्दै छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "変",
+    "yomikata": "ヘン, か(わる)",
+    "onyomi": "ヘン",
+    "kunyomi": "か(わる), か(える)",
+    "english_meaning": "change, strange",
+    "nepali_meaning": "परिवर्तन, अनौठो",
+    "examples": [
+      {
+        "example": "<ruby>天気<rt>てんき</rt></ruby>が<ruby>変<rt>か</rt></ruby>わりました。",
+        "eng": "The weather changed.",
+        "nepali": "मौसम परिवर्तन भयो।"
+      },
+      {
+        "example": "<ruby>変<rt>へん</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>ですね。",
+        "eng": "He is a strange person.",
+        "nepali": "ऊ अनौठो व्यक्ति हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "夢",
+    "yomikata": "ム, ゆめ",
+    "onyomi": "ム",
+    "kunyomi": "ゆめ",
+    "english_meaning": "dream",
+    "nepali_meaning": "सपना",
+    "examples": [
+      {
+        "example": "<ruby>夢<rt>ゆめ</rt></ruby>を<ruby>見<rt>み</rt></ruby>ました。",
+        "eng": "I had a dream.",
+        "nepali": "मैले सपना देखें।"
+      },
+      {
+        "example": "<ruby>将来<rt>しょうらい</rt></ruby>の<ruby>夢<rt>ゆめ</rt></ruby>は<ruby>医者<rt>いしゃ</rt></ruby>です。",
+        "eng": "My future dream is to become a doctor.",
+        "nepali": "मेरो भविष्यको सपना डाक्टर बन्ने हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "夫",
+    "yomikata": "フ, フウ, おっと",
+    "onyomi": "フ, フウ",
+    "kunyomi": "おっと",
+    "english_meaning": "husband",
+    "nepali_meaning": "पति",
+    "examples": [
+      {
+        "example": "<ruby>私<rt>わたし</rt></ruby>の<ruby>夫<rt>おっと</rt></ruby>は<ruby>会社員<rt>かいしゃいん</rt></ruby>です。",
+        "eng": "My husband is a company employee.",
+        "nepali": "मेरो पति कम्पनी कर्मचारी हुन्।"
+      },
+      {
+        "example": "<ruby>夫婦<rt>ふうふ</rt></ruby>で<ruby>旅行<rt>りょこう</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "We go on a trip as a couple.",
+        "nepali": "हामी दम्पती यात्रामा जान्छौं।"
+      }
+    ]
+  },
+  {
+    "kanji": "失",
+    "yomikata": "シツ, うしな(う)",
+    "onyomi": "シツ",
+    "kunyomi": "うしな(う)",
+    "english_meaning": "lose, miss",
+    "nepali_meaning": "हराउनु",
+    "examples": [
+      {
+        "example": "<ruby>時間<rt>じかん</rt></ruby>を<ruby>失<rt>うしな</rt></ruby>いました。",
+        "eng": "I lost time.",
+        "nepali": "मैले समय गुमाएँ。"
+      },
+      {
+        "example": "<ruby>失礼<rt>しつれい</rt></ruby>します。",
+        "eng": "Excuse me.",
+        "nepali": "क्षमा गर्नुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "妻",
+    "yomikata": "サイ, つま",
+    "onyomi": "サイ",
+    "kunyomi": "つま",
+    "english_meaning": "wife",
+    "nepali_meaning": "पत्नी",
+    "examples": [
+      {
+        "example": "<ruby>妻<rt>つま</rt></ruby>と<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>来<rt>き</rt></ruby>ました。",
+        "eng": "I came with my wife.",
+        "nepali": "म श्रीमतीसँगै आएँ।"
+      },
+      {
+        "example": "<ruby>彼<rt>かれ</rt></ruby>の<ruby>妻<rt>つま</rt></ruby>は<ruby>医者<rt>いしゃ</rt></ruby>です。",
+        "eng": "His wife is a doctor.",
+        "nepali": "उसकी श्रीमती डाक्टर हुन्।"
+      }
+    ]
+  },
+  {
+    "kanji": "娘",
+    "yomikata": "ジョウ, むすめ",
+    "onyomi": "ジョウ",
+    "kunyomi": "むすめ",
+    "english_meaning": "daughter",
+    "nepali_meaning": "छोरी",
+    "examples": [
+      {
+        "example": "<ruby>私<rt>わたし</rt></ruby>の<ruby>娘<rt>むすめ</rt></ruby>は<ruby>学生<rt>がくせい</rt></ruby>です。",
+        "eng": "My daughter is a student.",
+        "nepali": "मेरी छोरी विद्यार्थी हुन्।"
+      },
+      {
+        "example": "<ruby>娘<rt>むすめ</rt></ruby>さんはおいくつですか。",
+        "eng": "How old is your daughter?",
+        "nepali": "तपाईंकी छोरी कति वर्षकी हुन्?"
+      }
+    ]
+  },
+  {
+    "kanji": "婚",
+    "yomikata": "コン",
+    "onyomi": "コン",
+    "kunyomi": "",
+    "english_meaning": "marriage",
+    "nepali_meaning": "विवाह",
+    "examples": [
+      {
+        "example": "<ruby>結婚<rt>けっこん</rt></ruby>します。",
+        "eng": "I will get married.",
+        "nepali": "म विवाह गर्दैछु।"
+      },
+      {
+        "example": "<ruby>新婚旅行<rt>しんこんりょこう</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I will go on a honeymoon.",
+        "nepali": "म हनिमुन जाँदै छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "婦",
+    "yomikata": "フ",
+    "onyomi": "フ",
+    "kunyomi": "",
+    "english_meaning": "wife, woman",
+    "nepali_meaning": "पत्नी, महिला",
+    "examples": [
+      {
+        "example": "<ruby>彼<rt>かれ</rt></ruby>の<ruby>婦人<rt>ふじん</rt></ruby>は<ruby>医者<rt>いしゃ</rt></ruby>です。",
+        "eng": "His wife is a doctor.",
+        "nepali": "उनकी पत्नी डाक्टर हुन्।"
+      },
+      {
+        "example": "<ruby>婦人服売<rt>ふじんふくう</rt></ruby>り<ruby>場<rt>ば</rt></ruby>はどこですか。",
+        "eng": "Where is the women's clothing section?",
+        "nepali": "महिला पोशाक विभाग कहाँ छ?"
+      }
+    ]
+  },
+  {
+    "kanji": "存",
+    "yomikata": "ソン, ゾン",
+    "onyomi": "ソン, ゾン",
+    "kunyomi": "",
+    "english_meaning": "exist, suppose",
+    "nepali_meaning": "अस्तित्व, हुनु",
+    "examples": [
+      {
+        "example": "<ruby>存<rt>ぞん</rt></ruby>じません。",
+        "eng": "I don't know (humble).",
+        "nepali": "मलाई थाहा छैन।"
+      },
+      {
+        "example": "<ruby>保存<rt>ほぞん</rt></ruby>します。",
+        "eng": "I save (a file).",
+        "nepali": "म सेभ गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "宅",
+    "yomikata": "タク",
+    "onyomi": "タク",
+    "kunyomi": "うち",
+    "english_meaning": "house, home",
+    "nepali_meaning": "घर",
+    "examples": [
+      {
+        "example": "お<ruby>宅<rt>たく</rt></ruby>はどこですか。",
+        "eng": "Where is your house?",
+        "nepali": "तपाईंको घर कहाँ छ?"
+      },
+      {
+        "example": "<ruby>宅配便<rt>たくはいびん</rt></ruby>が<ruby>来<rt>き</rt></ruby>ました。",
+        "eng": "The delivery service came.",
+        "nepali": "होम डेलिभरी आयो।"
+      }
+    ]
+  },
+  {
+    "kanji": "守",
+    "yomikata": "シュ, まも(る)",
+    "onyomi": "シュ, ス",
+    "kunyomi": "まも(る)",
+    "english_meaning": "protect, guard",
+    "nepali_meaning": "रक्षा गर्नु",
+    "examples": [
+      {
+        "example": "<ruby>規則<rt>きそく</rt></ruby>を<ruby>守<rt>まも</rt></ruby>ります。",
+        "eng": "I follow the rules.",
+        "nepali": "म नियम पालन गर्छु।"
+      },
+      {
+        "example": "<ruby>約束<rt>やくそく</rt></ruby>を<ruby>守<rt>まも</rt></ruby>ってください。",
+        "eng": "Please keep your promise.",
+        "nepali": "कृपया वाचा पालन गर्नुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "完",
+    "yomikata": "カン",
+    "onyomi": "カン",
+    "kunyomi": "",
+    "english_meaning": "perfect, complete",
+    "nepali_meaning": "पूरा",
+    "examples": [
+      {
+        "example": "<ruby>完了<rt>かんりょう</rt></ruby>しました。",
+        "eng": "Completed.",
+        "nepali": "पूरा भयो।"
+      },
+      {
+        "example": "<ruby>完全<rt>かんぜん</rt></ruby>です。",
+        "eng": "It's perfect.",
+        "nepali": "यो पूर्ण छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "官",
+    "yomikata": "カン",
+    "onyomi": "カン",
+    "kunyomi": "",
+    "english_meaning": "government official",
+    "nepali_meaning": "सरकारी अधिकारी",
+    "examples": [
+      {
+        "example": "<ruby>警官<rt>けいかん</rt></ruby>がいます。",
+        "eng": "There is a police officer.",
+        "nepali": "प्रहरी अधिकारी छ।"
+      },
+      {
+        "example": "<ruby>官僚<rt>かんりょう</rt></ruby>です。",
+        "eng": "He is a bureaucrat.",
+        "nepali": "ऊ नोकरशाह हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "定",
+    "yomikata": "テイ, ジョウ, さだ(める)",
+    "onyomi": "テイ, ジョウ",
+    "kunyomi": "さだ(める), さだ(まる)",
+    "english_meaning": "decide, fix",
+    "nepali_meaning": "निर्धारित",
+    "examples": [
+      {
+        "example": "<ruby>予定<rt>よてい</rt></ruby>があります。",
+        "eng": "I have a plan.",
+        "nepali": "मसँग योजना छ।"
+      },
+      {
+        "example": "<ruby>時間<rt>じかん</rt></ruby>を<ruby>決<rt>き</rt></ruby>めました。",
+        "eng": "I decided the time.",
+        "nepali": "मैले समय तय गरें।"
+      }
+    ]
+  },
+  {
+    "kanji": "実",
+    "yomikata": "ジツ, み, みの(る)",
+    "onyomi": "ジツ",
+    "kunyomi": "み, みの(る)",
+    "english_meaning": "truth, reality",
+    "nepali_meaning": "सत्य",
+    "examples": [
+      {
+        "example": "<ruby>本当<rt>ほんとう</rt></ruby>のことを<ruby>言<rt>い</rt></ruby>います。",
+        "eng": "I tell the truth.",
+        "nepali": "म सत्य बोल्छु।"
+      },
+      {
+        "example": "<ruby>実験<rt>じっけん</rt></ruby>をします。",
+        "eng": "I do an experiment.",
+        "nepali": "म प्रयोग गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "客",
+    "yomikata": "キャク, カク",
+    "onyomi": "キャク, カク",
+    "kunyomi": "",
+    "english_meaning": "guest, customer",
+    "nepali_meaning": "पाहुना",
+    "examples": [
+      {
+        "example": "お<ruby>客<rt>きゃく</rt></ruby>さんが<ruby>来<rt>き</rt></ruby>ます。",
+        "eng": "A guest will come.",
+        "nepali": "पाहुना आउँदै हुनुहुन्छ।"
+      },
+      {
+        "example": "<ruby>客室<rt>きゃくしつ</rt></ruby>はあちらです。",
+        "eng": "The guest room is over there.",
+        "nepali": "पाहुना कोठा त्यता छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "害",
+    "yomikata": "ガイ",
+    "onyomi": "ガイ",
+    "kunyomi": "",
+    "english_meaning": "harm, damage",
+    "nepali_meaning": "हानि",
+    "examples": [
+      {
+        "example": "<ruby>有害<rt>ゆうがい</rt></ruby>です。",
+        "eng": "It's harmful.",
+        "nepali": "यो हानिकारक छ।"
+      },
+      {
+        "example": "<ruby>災害<rt>さい</rt></ruby>がありました。",
+        "eng": "There was a disaster.",
+        "nepali": "प्रकोप भयो।"
+      }
+    ]
+  },
+  {
+    "kanji": "容",
+    "yomikata": "ヨウ",
+    "onyomi": "ヨウ",
+    "kunyomi": "",
+    "english_meaning": "contain, form",
+    "nepali_meaning": "समावेश",
+    "examples": [
+      {
+        "example": "<ruby>内容<rt>ないよう</rt></ruby>を<ruby>説明<rt>せつめい</rt></ruby>します。",
+        "eng": "I explain the contents.",
+        "nepali": "म सामग्री व्याख्या गर्छु।"
+      },
+      {
+        "example": "<ruby>簡単<rt>かんたん</rt></ruby>です。",
+        "eng": "It's easy.",
+        "nepali": "यो सजिलो छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "宿",
+    "yomikata": "シュク, やど",
+    "onyomi": "シュク",
+    "kunyomi": "やど, やど(る)",
+    "english_meaning": "lodge, inn",
+    "nepali_meaning": "होटल, बास",
+    "examples": [
+      {
+        "example": "<ruby>宿題<rt>しゅくだい</rt></ruby>があります。",
+        "eng": "I have homework.",
+        "nepali": "मसँग गृहकार्य छ।"
+      },
+      {
+        "example": "<ruby>民宿<rt>みんしゅく</rt></ruby>に<ruby>泊<rt>と</rt></ruby>まります。",
+        "eng": "I stay at a guesthouse.",
+        "nepali": "म होमस्टेमा बस्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "寄",
+    "yomikata": "キ, よ(る)",
+    "onyomi": "キ",
+    "kunyomi": "よ(る), よ(せる)",
+    "english_meaning": "approach, contribute",
+    "nepali_meaning": "नजिकिनु, दान",
+    "examples": [
+      {
+        "example": "<ruby>友達<rt>ともだち</rt></ruby>の<ruby>家<rt>いえ</rt></ruby>に<ruby>寄<rt>よ</rt></ruby>ります。",
+        "eng": "I stop by my friend's house.",
+        "nepali": "म साथीको घरमा जान्छु।"
+      },
+      {
+        "example": "<ruby>寄付<rt>きふ</rt></ruby>します。",
+        "eng": "I donate.",
+        "nepali": "म दान गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "富",
+    "yomikata": "フ, フウ, とみ",
+    "onyomi": "フ, フウ",
+    "kunyomi": "とみ",
+    "english_meaning": "wealth, rich",
+    "nepali_meaning": "धन",
+    "examples": [
+      {
+        "example": "<ruby>富<rt>とみ</rt></ruby>を<ruby>持<rt>も</rt></ruby>っています。",
+        "eng": "He has wealth.",
+        "nepali": "उसँग धन छ।"
+      },
+      {
+        "example": "<ruby>豊富<rt>ほうふ</rt></ruby>です。",
+        "eng": "It's abundant.",
+        "nepali": "यो प्रशस्त छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "寝",
+    "yomikata": "シン, ね(る)",
+    "onyomi": "シン",
+    "kunyomi": "ね(る), ね(かす)",
+    "english_meaning": "sleep, lie down",
+    "nepali_meaning": "सुत्नु",
+    "examples": [
+      {
+        "example": "<ruby>毎晩早<rt>まいばんはや</rt></ruby>く<ruby>寝<rt>ね</rt></ruby>ます。",
+        "eng": "I sleep early every night.",
+        "nepali": "म हरेक रात चाँडै सुत्छु।"
+      },
+      {
+        "example": "<ruby>寝室<rt>しんしつ</rt></ruby>は<ruby>二階<rt>にかい</rt></ruby>です。",
+        "eng": "The bedroom is on the second floor.",
+        "nepali": "सुत्ने कोठा दोस्रो तलामा छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "察",
+    "yomikata": "サツ",
+    "onyomi": "サツ",
+    "kunyomi": "",
+    "english_meaning": "guess, police",
+    "nepali_meaning": "अनुमान",
+    "examples": [
+      {
+        "example": "<ruby>警察<rt>けいさつ</rt></ruby>を<ruby>呼<rt>よ</rt></ruby>びます。",
+        "eng": "I call the police.",
+        "nepali": "म प्रहरी बोलाउँछु।"
+      },
+      {
+        "example": "お<ruby>察<rt>さっ</rt></ruby>しします。",
+        "eng": "I sympathize.",
+        "nepali": "म समवेदना प्रकट गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "対",
+    "yomikata": "タイ, ツイ",
+    "onyomi": "タイ, ツイ",
+    "kunyomi": "あいて",
+    "english_meaning": "opposite, against",
+    "nepali_meaning": "विपरीत",
+    "examples": [
+      {
+        "example": "<ruby>対話<rt>たいわ</rt></ruby>します。",
+        "eng": "I have a dialogue.",
+        "nepali": "म संवाद गर्छु।"
+      },
+      {
+        "example": "<ruby>反対<rt>はんたい</rt></ruby>です。",
+        "eng": "I oppose it.",
+        "nepali": "म विरोध गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "局",
+    "yomikata": "キョク",
+    "onyomi": "キョク",
+    "kunyomi": "",
+    "english_meaning": "office, bureau",
+    "nepali_meaning": "कार्यालय",
+    "examples": [
+      {
+        "example": "<ruby>郵便局<rt>ゆうびんきょく</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to the post office.",
+        "nepali": "म हुलाक कार्यालय जान्छु।"
+      },
+      {
+        "example": "<ruby>局長<rt>きょくちょう</rt></ruby>と<ruby>話<rt>はな</rt></ruby>しました。",
+        "eng": "I spoke with the bureau chief.",
+        "nepali": "मैले विभाग प्रमुखसँग कुरा गरें।"
+      }
+    ]
+  },
+  {
+    "kanji": "居",
+    "yomikata": "キョ, い(る)",
+    "onyomi": "キョ",
+    "kunyomi": "い(る)",
+    "english_meaning": "reside, be",
+    "nepali_meaning": "बस्नु",
+    "examples": [
+      {
+        "example": "<ruby>日本<rt>にほん</rt></ruby>に<ruby>住<rt>す</rt></ruby>んでいます。",
+        "eng": "I live in Japan.",
+        "nepali": "म जापानमा बस्छु।"
+      },
+      {
+        "example": "<ruby>居間<rt>いま</rt></ruby>でテレビを<ruby>見<rt>み</rt></ruby>ます。",
+        "eng": "I watch TV in the living room.",
+        "nepali": "म बैठक कोठामा टिभी हेर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "差",
+    "yomikata": "サ, さ(す)",
+    "onyomi": "サ",
+    "kunyomi": "さ(す)",
+    "english_meaning": "difference, distinction",
+    "nepali_meaning": "फरक",
+    "examples": [
+      {
+        "example": "<ruby>違<rt>ちが</rt></ruby>いがあります。",
+        "eng": "There is a difference.",
+        "nepali": "फरक छ।"
+      },
+      {
+        "example": "<ruby>時間差<rt>じかんさ</rt></ruby>があります。",
+        "eng": "There is a time difference.",
+        "nepali": "समयको फरक छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "師",
+    "yomikata": "シ",
+    "onyomi": "シ",
+    "kunyomi": "",
+    "english_meaning": "teacher, master",
+    "nepali_meaning": "शिक्षक, गुरु",
+    "examples": [
+      {
+        "example": "<ruby>医者<rt>いしゃ</rt></ruby>になりたいです。",
+        "eng": "I want to become a doctor.",
+        "nepali": "म डाक्टर बन्न चाहन्छु।"
+      },
+      {
+        "example": "<ruby>教師<rt>きょうし</rt></ruby>です。",
+        "eng": "I am a teacher.",
+        "nepali": "म शिक्षक हुँ।"
+      }
+    ]
+  },
+  {
+    "kanji": "席",
+    "yomikata": "セキ",
+    "onyomi": "セキ",
+    "kunyomi": "",
+    "english_meaning": "seat",
+    "nepali_meaning": "सिट",
+    "examples": [
+      {
+        "example": "<ruby>席<rt>せき</rt></ruby>に<ruby>座<rt>すわ</rt></ruby>ってください。",
+        "eng": "Please take a seat.",
+        "nepali": "कृपया सिटमा बस्नुहोस्।"
+      },
+      {
+        "example": "<ruby>空<rt>あ</rt></ruby>いている<ruby>席<rt>せき</rt></ruby>はありますか。",
+        "eng": "Are there any empty seats?",
+        "nepali": "खाली सिटहरू छन्?"
+      }
+    ]
+  },
+  {
+    "kanji": "常",
+    "yomikata": "ジョウ",
+    "onyomi": "ジョウ",
+    "kunyomi": "つね",
+    "english_meaning": "usual, normal",
+    "nepali_meaning": "सामान्य",
+    "examples": [
+      {
+        "example": "いつも<ruby>同<rt>おな</rt></ruby>じです。",
+        "eng": "It's always the same.",
+        "nepali": "सधैं उस्तै छ।"
+      },
+      {
+        "example": "<ruby>日常会話<rt>にちじょうかいわ</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>します。",
+        "eng": "I study daily conversation.",
+        "nepali": "म दैनिक कुराकानी पढ्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "平",
+    "yomikata": "ヘイ, ビョウ, たい(ら)",
+    "onyomi": "ヘイ, ビョウ",
+    "kunyomi": "たい(ら), ひら",
+    "english_meaning": "flat, peace",
+    "nepali_meaning": "समतल, शान्ति",
+    "examples": [
+      {
+        "example": "<ruby>平和<rt>へいわ</rt></ruby>が<ruby>大切<rt>たいせつ</rt></ruby>です。",
+        "eng": "Peace is important.",
+        "nepali": "शान्ति महत्त्वपूर्ण छ।"
+      },
+      {
+        "example": "<ruby>平均点<rt>へいきんてん</rt></ruby>です。",
+        "eng": "It's the average score.",
+        "nepali": "यो औसत अंक हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "幸",
+    "yomikata": "コウ, さいわ(い)",
+    "onyomi": "コウ",
+    "kunyomi": "さいわ(い), しあわ(せ)",
+    "english_meaning": "happiness",
+    "nepali_meaning": "खुशी",
+    "examples": [
+      {
+        "example": "<ruby>幸<rt>しあわ</rt></ruby>せです。",
+        "eng": "I am happy.",
+        "nepali": "म खुशी छु।"
+      },
+      {
+        "example": "<ruby>幸運<rt>こううん</rt></ruby>でした。",
+        "eng": "It was lucky.",
+        "nepali": "यो भाग्यले भयो।"
+      }
+    ]
+  },
+  {
+    "kanji": "幾",
+    "yomikata": "キ, いく",
+    "onyomi": "キ",
+    "kunyomi": "いく",
+    "english_meaning": "how many, how much",
+    "nepali_meaning": "कति",
+    "examples": [
+      {
+        "example": "<ruby>幾<rt>いく</rt></ruby>つですか。",
+        "eng": "How many?",
+        "nepali": "कति वटा?"
+      },
+      {
+        "example": "<ruby>幾度<rt>いくど</rt></ruby>も<ruby>言<rt>い</rt></ruby>いました。",
+        "eng": "I said it many times.",
+        "nepali": "मैले धेरै पटक भनें।"
+      }
+    ]
+  },
+  {
+    "kanji": "座",
+    "yomikata": "ザ, すわ(る)",
+    "onyomi": "ザ",
+    "kunyomi": "すわ(る)",
+    "english_meaning": "sit, seat",
+    "nepali_meaning": "बस्नु",
+    "examples": [
+      {
+        "example": "<ruby>椅子<rt>いす</rt></ruby>に<ruby>座<rt>すわ</rt></ruby>ります。",
+        "eng": "I sit on the chair.",
+        "nepali": "म कुर्सीमा बस्छु।"
+      },
+      {
+        "example": "<ruby>座席<rt>ざせき</rt></ruby>を<ruby>予約<rt>よやく</rt></ruby>します。",
+        "eng": "I reserve a seat.",
+        "nepali": "म सिट आरक्षण गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "庭",
+    "yomikata": "テイ, にわ",
+    "onyomi": "テイ",
+    "kunyomi": "にわ",
+    "english_meaning": "garden, yard",
+    "nepali_meaning": "बगैंचा",
+    "examples": [
+      {
+        "example": "<ruby>庭<rt>にわ</rt></ruby>に<ruby>花<rt>はな</rt></ruby>を<ruby>植<rt>う</rt></ruby>えます。",
+        "eng": "I plant flowers in the garden.",
+        "nepali": "म बगैंचामा फूल रोप्छु।"
+      },
+      {
+        "example": "<ruby>家庭<rt>かてい</rt></ruby>が<ruby>大切<rt>たいせつ</rt></ruby>です。",
+        "eng": "Family is important.",
+        "nepali": "परिवार महत्त्वपूर्ण छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "式",
+    "yomikata": "シキ",
+    "onyomi": "シキ",
+    "kunyomi": "",
+    "english_meaning": "ceremony, style",
+    "nepali_meaning": "समारोह, शैली",
+    "examples": [
+      {
+        "example": "<ruby>結婚式<rt>けっこんしき</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I will go to a wedding ceremony.",
+        "nepali": "म विवाह समारोहमा जान्छु।"
+      },
+      {
+        "example": "<ruby>新<rt>あたら</rt></ruby>しい<ruby>方式<rt>ほうしき</rt></ruby>を<ruby>採用<rt>さいよう</rt></ruby>しました。",
+        "eng": "We adopted a new method.",
+        "nepali": "हामीले नयाँ विधि अपनायौं।"
+      }
+    ]
+  },
+  {
+    "kanji": "当",
+    "yomikata": "トウ, あ(たる)",
+    "onyomi": "トウ",
+    "kunyomi": "あ(たる), あ(てる)",
+    "english_meaning": "hit, appropriate",
+    "nepali_meaning": "हिट, उपयुक्त",
+    "examples": [
+      {
+        "example": "<ruby>当<rt>あ</rt></ruby>たりますように。",
+        "eng": "I hope I win (a lottery).",
+        "nepali": "म जित्न चाहन्छु।"
+      },
+      {
+        "example": "<ruby>当日<rt>とうじつ</rt></ruby>は<ruby>晴<rt>は</rt></ruby>れました。",
+        "eng": "It was sunny on that day.",
+        "nepali": "त्यो दिन घाम लागेको थियो।"
+      }
+    ]
+  },
+  {
+    "kanji": "形",
+    "yomikata": "ケイ, ギョウ, かたち",
+    "onyomi": "ケイ, ギョウ",
+    "kunyomi": "かたち",
+    "english_meaning": "shape, form",
+    "nepali_meaning": "आकार",
+    "examples": [
+      {
+        "example": "<ruby>形<rt>かたち</rt></ruby>が<ruby>面白<rt>おもしろ</rt></ruby>いです。",
+        "eng": "The shape is interesting.",
+        "nepali": "आकार रोचक छ।"
+      },
+      {
+        "example": "<ruby>人形<rt>にんぎょう</rt></ruby>を<ruby>買<rt>か</rt></ruby>いました。",
+        "eng": "I bought a doll.",
+        "nepali": "मैले पुतली किनें।"
+      }
+    ]
+  },
+  {
+    "kanji": "役",
+    "yomikata": "ヤク, エキ",
+    "onyomi": "ヤク, エキ",
+    "kunyomi": "",
+    "english_meaning": "role, duty",
+    "nepali_meaning": "भूमिका",
+    "examples": [
+      {
+        "example": "<ruby>役<rt>やく</rt></ruby>に<ruby>立<rt>た</rt></ruby>ちます。",
+        "eng": "It's useful.",
+        "nepali": "यो उपयोगी छ।"
+      },
+      {
+        "example": "<ruby>主役<rt>しゅやく</rt></ruby>です。",
+        "eng": "He is the main character.",
+        "nepali": "ऊ मुख्य पात्र हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "彼",
+    "yomikata": "ヒ, かれ",
+    "onyomi": "ヒ",
+    "kunyomi": "かれ",
+    "english_meaning": "he, that",
+    "nepali_meaning": "ऊ",
+    "examples": [
+      {
+        "example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>学生<rt>がくせい</rt></ruby>です。",
+        "eng": "He is a student.",
+        "nepali": "ऊ विद्यार्थी हो।"
+      },
+      {
+        "example": "<ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>医者<rt>いしゃ</rt></ruby>です。",
+        "eng": "She is a doctor.",
+        "nepali": "उनी डाक्टर हुन्।"
+      }
+    ]
+  },
+  {
+    "kanji": "徒",
+    "yomikata": "ト",
+    "onyomi": "ト",
+    "kunyomi": "いたずら",
+    "english_meaning": "follower, pupil",
+    "nepali_meaning": "अनुयायी",
+    "examples": [
+      {
+        "example": "<ruby>徒歩<rt>とほ</rt></ruby>で<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go on foot.",
+        "nepali": "म पैदल जान्छु।"
+      },
+      {
+        "example": "<ruby>生徒<rt>せいと</rt></ruby>が<ruby>集<rt>あつ</rt></ruby>まっています。",
+        "eng": "Students are gathering.",
+        "nepali": "विद्यार्थीहरू जम्मा भइरहेका छन्।"
+      }
+    ]
+  },
+  {
+    "kanji": "得",
+    "yomikata": "トク, え(る)",
+    "onyomi": "トク",
+    "kunyomi": "え(る), う(る)",
+    "english_meaning": "gain, acquire",
+    "nepali_meaning": "प्राप्त गर्नु",
+    "examples": [
+      {
+        "example": "<ruby>得<rt>とく</rt></ruby>をしました。",
+        "eng": "I gained profit.",
+        "nepali": "मैले फाइदा पाएँ।"
+      },
+      {
+        "example": "<ruby>資格<rt>しかく</rt></ruby>を<ruby>得<rt>え</rt></ruby>ます。",
+        "eng": "I obtain a qualification.",
+        "nepali": "म योग्यता प्राप्त गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "御",
+    "yomikata": "ギョ, ゴ, おん",
+    "onyomi": "ギョ, ゴ",
+    "kunyomi": "おん",
+    "english_meaning": "honorable, polite prefix",
+    "nepali_meaning": "सम्मानसूचक उपसर्ग",
+    "examples": [
+      {
+        "example": "お<ruby>金<rt>かね</rt></ruby>をください。",
+        "eng": "Please give me money.",
+        "nepali": "कृपया मलाई पैसा दिनुहोस्।"
+      },
+      {
+        "example": "ご<ruby>飯<rt>はん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べます。",
+        "eng": "I eat a meal.",
+        "nepali": "म खाना खान्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "必",
+    "yomikata": "ヒツ, かなら(ず)",
+    "onyomi": "ヒツ",
+    "kunyomi": "かなら(ず)",
+    "english_meaning": "necessary, certain",
+    "nepali_meaning": "आवश्यक",
+    "examples": [
+      {
+        "example": "<ruby>必<rt>かなら</rt></ruby>ず<ruby>来<rt>き</rt></ruby>てください。",
+        "eng": "Please be sure to come.",
+        "nepali": "कृपया अवश्य आउनुहोस्।"
+      },
+      {
+        "example": "<ruby>必要<rt>ひつよう</rt></ruby>ですか。",
+        "eng": "Is it necessary?",
+        "nepali": "के यो आवश्यक छ?"
+      }
+    ]
+  },
+  {
+    "kanji": "忘",
+    "yomikata": "ボウ, わす(れる)",
+    "onyomi": "ボウ",
+    "kunyomi": "わす(れる)",
+    "english_meaning": "forget",
+    "nepali_meaning": "बिर्सनु",
+    "examples": [
+      {
+        "example": "<ruby>名前<rt>なまえ</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れました。",
+        "eng": "I forgot the name.",
+        "nepali": "मैले नाम बिर्सें।"
+      },
+      {
+        "example": "<ruby>忘<rt>わす</rt></ruby>れ<ruby>物<rt>もの</rt></ruby>をしました。",
+        "eng": "I forgot something.",
+        "nepali": "मैले केही बिर्सें।"
+      }
+    ]
+  },
+  {
+    "kanji": "忙",
+    "yomikata": "ボウ, いそが(しい)",
+    "onyomi": "ボウ",
+    "kunyomi": "いそが(しい)",
+    "english_meaning": "busy",
+    "nepali_meaning": "व्यस्त",
+    "examples": [
+      {
+        "example": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>忙<rt>いそが</rt></ruby>しいです。",
+        "eng": "I am busy today.",
+        "nepali": "आज म व्यस्त छु।"
+      },
+      {
+        "example": "お<ruby>忙<rt>いそが</rt></ruby>しいところすみません。",
+        "eng": "Sorry to bother you when you're busy.",
+        "nepali": "व्यस्त समयमा दुःख दिएकोमा क्षमा।"
+      }
+    ]
+  },
+  {
+    "kanji": "念",
+    "yomikata": "ネン",
+    "onyomi": "ネン",
+    "kunyomi": "",
+    "english_meaning": "thought, concern",
+    "nepali_meaning": "विचार, चिन्ता",
+    "examples": [
+      {
+        "example": "<ruby>残念<rt>ざんねん</rt></ruby>です。",
+        "eng": "That's unfortunate.",
+        "nepali": "दुःखद छ।"
+      },
+      {
+        "example": "<ruby>記念<rt>きねん</rt></ruby><ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>ります。",
+        "eng": "I take a commemorative photo.",
+        "nepali": "म स्मृतिको फोटो खिच्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "怒",
+    "yomikata": "ド, いか(る)",
+    "onyomi": "ド",
+    "kunyomi": "いか(る), おこ(る)",
+    "english_meaning": "angry",
+    "nepali_meaning": "रिसाउनु",
+    "examples": [
+      {
+        "example": "<ruby>怒<rt>おこ</rt></ruby>っています。",
+        "eng": "I am angry.",
+        "nepali": "म रिसाएको छु।"
+      },
+      {
+        "example": "<ruby>怒<rt>おこ</rt></ruby>らないでください。",
+        "eng": "Please don't be angry.",
+        "nepali": "कृपया रिस नगर्नुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "怖",
+    "yomikata": "フ, こわ(い)",
+    "onyomi": "フ",
+    "kunyomi": "こわ(い)",
+    "english_meaning": "scary, frightened",
+    "nepali_meaning": "डरलाग्दो",
+    "examples": [
+      {
+        "example": "<ruby>怖<rt>こわ</rt></ruby>い<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ました。",
+        "eng": "I watched a scary movie.",
+        "nepali": "मैले डरलाग्दो चलचित्र हेरें।"
+      },
+      {
+        "example": "<ruby>暗<rt>くら</rt></ruby>いのが<ruby>怖<rt>こわ</rt></ruby>いです。",
+        "eng": "I'm scared of the dark.",
+        "nepali": "म अँध्यारोसँग डराउँछु।"
+      }
+    ]
+  },
+  {
+    "kanji": "性",
+    "yomikata": "セイ, ショウ",
+    "onyomi": "セイ, ショウ",
+    "kunyomi": "さが",
+    "english_meaning": "nature, gender",
+    "nepali_meaning": "प्रकृति, लिङ्ग",
+    "examples": [
+      {
+        "example": "<ruby>性格<rt>せいかく</rt></ruby>がいいです。",
+        "eng": "He has a good personality.",
+        "nepali": "उसको व्यक्तित्व राम्रो छ।"
+      },
+      {
+        "example": "<ruby>男性<rt>だんせい</rt></ruby>が<ruby>集<rt>あつ</rt></ruby>まっています。",
+        "eng": "Men are gathering.",
+        "nepali": "पुरुषहरू जम्मा भइरहेका छन्।"
+      }
+    ]
+  },
+  {
+    "kanji": "恐",
+    "yomikata": "キョウ, おそ(れる)",
+    "onyomi": "キョウ",
+    "kunyomi": "おそ(れる), こわ(い)",
+    "english_meaning": "fear, frighten",
+    "nepali_meaning": "डर",
+    "examples": [
+      {
+        "example": "<ruby>恐<rt>おそ</rt></ruby>ろしい<ruby>事故<rt>じこ</rt></ruby>でした。",
+        "eng": "It was a terrible accident.",
+        "nepali": "यो भयानक दुर्घटना थियो।"
+      },
+      {
+        "example": "<ruby>恐竜<rt>きょうりゅう</rt></ruby>を<ruby>見<rt>み</rt></ruby>ました。",
+        "eng": "I saw a dinosaur.",
+        "nepali": "मैले डायनासोर देखें।"
+      }
+    ]
+  },
+  {
+    "kanji": "恥",
+    "yomikata": "チ, は(じる)",
+    "onyomi": "チ",
+    "kunyomi": "は(じる), はじ",
+    "english_meaning": "shame",
+    "nepali_meaning": "लाज",
+    "examples": [
+      {
+        "example": "<ruby>恥<rt>は</rt></ruby>ずかしいです。",
+        "eng": "I'm embarrassed.",
+        "nepali": "मलाई लाज लाग्यो।"
+      },
+      {
+        "example": "<ruby>恥<rt>はじ</rt></ruby>をかきました。",
+        "eng": "I was disgraced.",
+        "nepali": "म लज्जित भएँ।"
+      }
+    ]
+  },
+  {
+    "kanji": "息",
+    "yomikata": "ソク, いき",
+    "onyomi": "ソク",
+    "kunyomi": "いき",
+    "english_meaning": "breath",
+    "nepali_meaning": "सास",
+    "examples": [
+      {
+        "example": "<ruby>息<rt>いき</rt></ruby>を<ruby>吸<rt>す</rt></ruby>います。",
+        "eng": "I breathe in.",
+        "nepali": "म सास लिन्छु।"
+      },
+      {
+        "example": "<ruby>子供<rt>こども</rt></ruby>は<ruby>元気<rt>げんき</rt></ruby>です。",
+        "eng": "The child is energetic.",
+        "nepali": "बच्चा स्वस्थ छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "悲",
+    "yomikata": "ヒ, かな(しい)",
+    "onyomi": "ヒ",
+    "kunyomi": "かな(しい)",
+    "english_meaning": "sad",
+    "nepali_meaning": "दुःखी",
+    "examples": [
+      {
+        "example": "<ruby>悲<rt>かな</rt></ruby>しいニュースです。",
+        "eng": "It's sad news.",
+        "nepali": "यो दुःखद समाचार हो।"
+      },
+      {
+        "example": "<ruby>悲劇<rt>ひげき</rt></ruby>でした。",
+        "eng": "It was a tragedy.",
+        "nepali": "यो त्रासदी थियो।"
+      }
+    ]
+  },
+  {
+    "kanji": "情",
+    "yomikata": "ジョウ, なさ(け)",
+    "onyomi": "ジョウ",
+    "kunyomi": "なさ(け)",
+    "english_meaning": "feeling, emotion",
+    "nepali_meaning": "भावना",
+    "examples": [
+      {
+        "example": "<ruby>情報<rt>じょうほう</rt></ruby>をください。",
+        "eng": "Please give me information.",
+        "nepali": "कृपया मलाई जानकारी दिनुहोस्।"
+      },
+      {
+        "example": "<ruby>感情<rt>かんじょう</rt></ruby>が<ruby>豊<rt>ゆた</rt></ruby>かです。",
+        "eng": "He is emotional.",
+        "nepali": "उहाँ भावुक हुनुहुन्छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "想",
+    "yomikata": "ソウ, おも(う)",
+    "onyomi": "ソウ",
+    "kunyomi": "おも(う)",
+    "english_meaning": "think, imagine",
+    "nepali_meaning": "सोच्नु",
+    "examples": [
+      {
+        "example": "<ruby>想像<rt>そうぞう</rt></ruby>できます。",
+        "eng": "I can imagine.",
+        "nepali": "म कल्पना गर्न सक्छु।"
+      },
+      {
+        "example": "<ruby>感想<rt>かんそう</rt></ruby>を<ruby>聞<rt>き</rt></ruby>かせてください。",
+        "eng": "Please tell me your impressions.",
+        "nepali": "कृपया आफ्नो प्रतिक्रिया दिनुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "愛",
+    "yomikata": "アイ",
+    "onyomi": "アイ",
+    "kunyomi": "",
+    "english_meaning": "love",
+    "nepali_meaning": "प्रेम",
+    "examples": [
+      {
+        "example": "<ruby>愛<rt>あい</rt></ruby>しています。",
+        "eng": "I love you.",
+        "nepali": "म तिमीलाई माया गर्छु।"
+      },
+      {
+        "example": "<ruby>可愛<rt>かわい</rt></ruby>いですね。",
+        "eng": "It's cute, isn't it?",
+        "nepali": "यो प्यारो छ है।"
+      }
+    ]
+  },
+  {
+    "kanji": "感",
+    "yomikata": "カン",
+    "onyomi": "カン",
+    "kunyomi": "",
+    "english_meaning": "feel, sense",
+    "nepali_meaning": "महसुस",
+    "examples": [
+      {
+        "example": "<ruby>感動<rt>かんどう</rt></ruby>しました。",
+        "eng": "I was moved.",
+        "nepali": "म भावुक भएँ।"
+      },
+      {
+        "example": "<ruby>感<rt>かん</rt></ruby>じがいいです。",
+        "eng": "It feels good.",
+        "nepali": "राम्रो लाग्छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "慣",
+    "yomikata": "カン, な(れる)",
+    "onyomi": "カン",
+    "kunyomi": "な(れる), な(らす)",
+    "english_meaning": "accustomed, used to",
+    "nepali_meaning": "बानी पर्नु",
+    "examples": [
+      {
+        "example": "<ruby>日本<rt>にほん</rt></ruby>の<ruby>生活<rt>せいかつ</rt></ruby>に<ruby>慣<rt>な</rt></ruby>れました。",
+        "eng": "I got used to Japanese life.",
+        "nepali": "म जापानी जीवनमा बानी परें।"
+      },
+      {
+        "example": "<ruby>習慣<rt>しゅうかん</rt></ruby>が<ruby>違<rt>ちが</rt></ruby>います。",
+        "eng": "Customs are different.",
+        "nepali": "चलन फरक छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "成",
+    "yomikata": "セイ, な(る)",
+    "onyomi": "セイ, ジョウ",
+    "kunyomi": "な(る), な(す)",
+    "english_meaning": "become, form",
+    "nepali_meaning": "हुनु, बन्नु",
+    "examples": [
+      {
+        "example": "<ruby>大人<rt>おとな</rt></ruby>になりたいです。",
+        "eng": "I want to become an adult.",
+        "nepali": "म वयस्क हुन चाहन्छु।"
+      },
+      {
+        "example": "<ruby>成功<rt>せいこう</rt></ruby>しました。",
+        "eng": "I succeeded.",
+        "nepali": "म सफल भएँ।"
+      }
+    ]
+  },
+  {
+    "kanji": "戦",
+    "yomikata": "セン, たたか(う)",
+    "onyomi": "セン",
+    "kunyomi": "たたか(う)",
+    "english_meaning": "war, fight",
+    "nepali_meaning": "युद्ध",
+    "examples": [
+      {
+        "example": "<ruby>戦争<rt>せんそう</rt></ruby>は<ruby>嫌<rt>きら</rt></ruby>いです。",
+        "eng": "I hate war.",
+        "nepali": "मलाई युद्ध मन पर्दैन।"
+      },
+      {
+        "example": "<ruby>試合<rt>しあい</rt></ruby>で<ruby>戦<rt>たたか</rt></ruby>います。",
+        "eng": "I fight in the match.",
+        "nepali": "म खेलमा लड्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "戻",
+    "yomikata": "レイ, もど(る)",
+    "onyomi": "レイ",
+    "kunyomi": "もど(る), もど(す)",
+    "english_meaning": "return",
+    "nepali_meaning": "फर्कनु",
+    "examples": [
+      {
+        "example": "<ruby>家<rt>いえ</rt></ruby>に<ruby>戻<rt>もど</rt></ruby>ります。",
+        "eng": "I return home.",
+        "nepali": "म घर फर्कन्छु।"
+      },
+      {
+        "example": "<ruby>元<rt>もと</rt></ruby>の<ruby>場所<rt>ばしょ</rt></ruby>に<ruby>戻<rt>もど</rt></ruby>してください。",
+        "eng": "Please put it back in its original place.",
+        "nepali": "कृपया यसलाई पुरानो ठाउँमा फर्काउनुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "才",
+    "yomikata": "サイ",
+    "onyomi": "サイ",
+    "kunyomi": "",
+    "english_meaning": "age, talent",
+    "nepali_meaning": "उमेर, प्रतिभा",
+    "examples": [
+      {
+        "example": "<ruby>私<rt>わたし</rt></ruby>は18<ruby>才<rt>さい</rt></ruby>です。",
+        "eng": "I am 18 years old.",
+        "nepali": "म १८ वर्षको छु।"
+      },
+      {
+        "example": "<ruby>才能<rt>さいのう</rt></ruby>があります。",
+        "eng": "He has talent.",
+        "nepali": "उसँग प्रतिभा छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "打",
+    "yomikata": "ダ, う(つ)",
+    "onyomi": "ダ",
+    "kunyomi": "う(つ)",
+    "english_meaning": "hit, strike",
+    "nepali_meaning": "हिर्काउनु",
+    "examples": [
+      {
+        "example": "ボールを<ruby>打<rt>う</rt></ruby>ちます。",
+        "eng": "I hit the ball.",
+        "nepali": "म बल हिर्काउँछु।"
+      },
+      {
+        "example": "<ruby>電話<rt>でんわ</rt></ruby>をかけます。",
+        "eng": "I make a phone call.",
+        "nepali": "म फोन गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "昨",
+    "yomikata": "サク",
+    "onyomi": "サク",
+    "kunyomi": "",
+    "english_meaning": "last, previous",
+    "nepali_meaning": "हिजो, गत",
+    "examples": [
+      {
+        "example": "<ruby>昨日<rt>きのう</rt></ruby>、<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ました。",
+        "eng": "I watched a movie yesterday.",
+        "nepali": "हिजो मैले चलचित्र हेरें।"
+      },
+      {
+        "example": "<ruby>去年<rt>きょねん</rt></ruby>、<ruby>日本<rt>にほん</rt></ruby>に<ruby>行<rt>い</rt></ruby>きました。",
+        "eng": "I went to Japan last year.",
+        "nepali": "गत वर्ष म जापान गएँ।"
+      }
+    ]
+  },
+  {
+    "kanji": "晩",
+    "yomikata": "バン",
+    "onyomi": "バン",
+    "kunyomi": "",
+    "english_meaning": "evening, night",
+    "nepali_meaning": "साँझ, रात",
+    "examples": [
+      {
+        "example": "<ruby>毎晩<rt>まいばん</rt></ruby>、<ruby>勉強<rt>べんきょう</rt></ruby>します。",
+        "eng": "I study every evening.",
+        "nepali": "म हरेक साँझ पढ्छु।"
+      },
+      {
+        "example": "<ruby>今晩<rt>こんばん</rt></ruby>は<ruby>何<rt>なに</rt></ruby>を<ruby>食<rt>た</rt></ruby>べますか。",
+        "eng": "What will you eat tonight?",
+        "nepali": "आज राती के खानुहुन्छ?"
+      }
+    ]
+  },
+  {
+    "kanji": "景",
+    "yomikata": "ケイ",
+    "onyomi": "ケイ",
+    "kunyomi": "",
+    "english_meaning": "scenery, view",
+    "nepali_meaning": "दृश्य",
+    "examples": [
+      {
+        "example": "<ruby>景色<rt>けしき</rt></ruby>がきれいです。",
+        "eng": "The scenery is beautiful.",
+        "nepali": "दृश्य सुन्दर छ।"
+      },
+      {
+        "example": "<ruby>風景<rt>ふうけい</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。",
+        "eng": "I like landscapes.",
+        "nepali": "मलाई प्राकृतिक दृश्य मन पर्छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "晴",
+    "yomikata": "セイ, は(れる)",
+    "onyomi": "セイ",
+    "kunyomi": "は(れる), は(らす)",
+    "english_meaning": "clear up",
+    "nepali_meaning": "घाम लाग्नु",
+    "examples": [
+      {
+        "example": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>晴<rt>は</rt></ruby>れです。",
+        "eng": "Today is sunny.",
+        "nepali": "आज घाम लागेको छ।"
+      },
+      {
+        "example": "<ruby>天気<rt>てんき</rt></ruby>が<ruby>晴<rt>は</rt></ruby>れました。",
+        "eng": "The weather cleared up.",
+        "nepali": "मौसम सफा भयो।"
+      }
+    ]
+  },
+  {
+    "kanji": "暮",
+    "yomikata": "ボ, く(らす)",
+    "onyomi": "ボ",
+    "kunyomi": "く(らす), く(れる)",
+    "english_meaning": "live, livelihood",
+    "nepali_meaning": "बिताउनु",
+    "examples": [
+      {
+        "example": "<ruby>毎日<rt>まいにち</rt></ruby>を<ruby>楽<rt>たの</rt></ruby>しく<ruby>暮<rt>く</rt></ruby>らします。",
+        "eng": "I live each day happily.",
+        "nepali": "म हरेक दिन खुशीले बिताउँछु।"
+      },
+      {
+        "example": "<ruby>日<rt>ひ</rt></ruby>が<ruby>暮<rt>く</rt></ruby>れました。",
+        "eng": "The sun has set.",
+        "nepali": "घाम अस्तायो।"
+      }
+    ]
+  },
+  {
+    "kanji": "曲",
+    "yomikata": "キョク, ま(がる)",
+    "onyomi": "キョク",
+    "kunyomi": "ま(がる), ま(げる)",
+    "english_meaning": "melody, curve",
+    "nepali_meaning": "धुन, मोड",
+    "examples": [
+      {
+        "example": "この<ruby>曲<rt>きょく</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。",
+        "eng": "I like this song.",
+        "nepali": "मलाई यो गीत मन पर्छ।"
+      },
+      {
+        "example": "<ruby>道<rt>みち</rt></ruby>が<ruby>曲<rt>ま</rt></ruby>がっています。",
+        "eng": "The road is curving.",
+        "nepali": "बाटो मोडिएको छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "更",
+    "yomikata": "コウ, さら",
+    "onyomi": "コウ",
+    "kunyomi": "さら, ふ(ける)",
+    "english_meaning": "renew, further",
+    "nepali_meaning": "थप, परिवर्तन",
+    "examples": [
+      {
+        "example": "<ruby>更<rt>さら</rt></ruby>に<ruby>勉強<rt>べんきょう</rt></ruby>します。",
+        "eng": "I will study further.",
+        "nepali": "म अझ धेरै पढ्छु।"
+      },
+      {
+        "example": "<ruby>更新<rt>こうしん</rt></ruby>しました。",
+        "eng": "I renewed it.",
+        "nepali": "मैले नवीकरण गरें।"
+      }
+    ]
+  },
+  {
+    "kanji": "望",
+    "yomikata": "ボウ, のぞ(む)",
+    "onyomi": "ボウ",
+    "kunyomi": "のぞ(む)",
+    "english_meaning": "hope, wish",
+    "nepali_meaning": "आशा",
+    "examples": [
+      {
+        "example": "<ruby>望<rt>のぞ</rt></ruby>みがあります。",
+        "eng": "There is hope.",
+        "nepali": "आशा छ।"
+      },
+      {
+        "example": "<ruby>望<rt>のぞ</rt></ruby>み<ruby>通<rt>どお</rt></ruby>りになりました。",
+        "eng": "It turned out as I wished.",
+        "nepali": "मेरो इच्छा अनुसार भयो।"
+      }
+    ]
+  },
+  {
+    "kanji": "期",
+    "yomikata": "キ, ゴ",
+    "onyomi": "キ, ゴ",
+    "kunyomi": "",
+    "english_meaning": "period, time",
+    "nepali_meaning": "अवधि",
+    "examples": [
+      {
+        "example": "<ruby>期間<rt>きかん</rt></ruby>があります。",
+        "eng": "There is a period.",
+        "nepali": "अवधि छ।"
+      },
+      {
+        "example": "<ruby>期待<rt>きたい</rt></ruby>しています。",
+        "eng": "I am expecting.",
+        "nepali": "म आशा गर्दै छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "未",
+    "yomikata": "ミ",
+    "onyomi": "ミ",
+    "kunyomi": "いま(だ)",
+    "english_meaning": "not yet",
+    "nepali_meaning": "अझै",
+    "examples": [
+      {
+        "example": "<ruby>未来<rt>みらい</rt></ruby>が<ruby>楽<rt>たの</rt></ruby>しみです。",
+        "eng": "I look forward to the future.",
+        "nepali": "भविष्य रोमाञ्चक छ।"
+      },
+      {
+        "example": "まだ<ruby>来<rt>き</rt></ruby>ていません。",
+        "eng": "He hasn't come yet.",
+        "nepali": "ऊ अझै आएको छैन।"
+      }
+    ]
+  },
+  {
+    "kanji": "末",
+    "yomikata": "マツ, すえ",
+    "onyomi": "マツ",
+    "kunyomi": "すえ",
+    "english_meaning": "end, future",
+    "nepali_meaning": "अन्त्य",
+    "examples": [
+      {
+        "example": "<ruby>月末<rt>げつまつ</rt></ruby>に<ruby>給料<rt>きゅうりょう</rt></ruby>をもらいます。",
+        "eng": "I receive my salary at the end of the month.",
+        "nepali": "महिनाको अन्त्यमा तलब पाउँछु।"
+      },
+      {
+        "example": "<ruby>週末<rt>しゅうまつ</rt></ruby>に<ruby>会<rt>あ</rt></ruby>いましょう。",
+        "eng": "Let's meet on the weekend.",
+        "nepali": "हप्ताको अन्त्यमा भेटौं।"
+      }
+    ]
+  },
+  {
+    "kanji": "束",
+    "yomikata": "ソク, たば",
+    "onyomi": "ソク",
+    "kunyomi": "たば",
+    "english_meaning": "bundle, bind",
+    "nepali_meaning": "मुठा",
+    "examples": [
+      {
+        "example": "<ruby>花<rt>はな</rt></ruby>の<ruby>束<rt>たば</rt></ruby>をもらいました。",
+        "eng": "I received a bouquet of flowers.",
+        "nepali": "मैले फूलको मुठा पाएँ।"
+      },
+      {
+        "example": "<ruby>約束<rt>やくそく</rt></ruby>を<ruby>守<rt>まも</rt></ruby>ります。",
+        "eng": "I keep my promise.",
+        "nepali": "म वाचा पालन गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "杯",
+    "yomikata": "ハイ",
+    "onyomi": "ハイ",
+    "kunyomi": "さかずき",
+    "english_meaning": "cup, counter for drinks",
+    "nepali_meaning": "गिलास, कप",
+    "examples": [
+      {
+        "example": "コーヒーを<ruby>一杯<rt>いっぱい</rt></ruby>ください。",
+        "eng": "One cup of coffee, please.",
+        "nepali": "कृपया एक कप कफी दिनुहोस्।"
+      },
+      {
+        "example": "<ruby>乾杯<rt>かんぱい</rt></ruby>しましょう。",
+        "eng": "Let's toast.",
+        "nepali": "चिअर्स गरौं।"
+      }
+    ]
+  },
+  {
+    "kanji": "果",
+    "yomikata": "カ, は(たす)",
+    "onyomi": "カ",
+    "kunyomi": "は(たす), くだもの",
+    "english_meaning": "fruit, result",
+    "nepali_meaning": "फल, परिणाम",
+    "examples": [
+      {
+        "example": "<ruby>果物<rt>くだもの</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。",
+        "eng": "I like fruits.",
+        "nepali": "मलाई फलफूल मन पर्छ।"
+      },
+      {
+        "example": "<ruby>結果<rt>けっか</rt></ruby>が<ruby>出<rt>で</rt></ruby>ました。",
+        "eng": "The results came out.",
+        "nepali": "नतिजा आयो।"
+      }
+    ]
+  },
+  {
+    "kanji": "格",
+    "yomikata": "カク",
+    "onyomi": "カク",
+    "kunyomi": "",
+    "english_meaning": "status, character",
+    "nepali_meaning": "स्थिति, स्तर",
+    "examples": [
+      {
+        "example": "<ruby>性格<rt>せいかく</rt></ruby>がいいです。",
+        "eng": "He has a good personality.",
+        "nepali": "उसको व्यक्तित्व राम्रो छ।"
+      },
+      {
+        "example": "<ruby>価格<rt>かかく</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いです。",
+        "eng": "The price is high.",
+        "nepali": "मूल्य महँगो छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "構",
+    "yomikata": "コウ, かま(える)",
+    "onyomi": "コウ",
+    "kunyomi": "かま(える), かま(う)",
+    "english_meaning": "construct, care",
+    "nepali_meaning": "निर्माण, वास्ता",
+    "examples": [
+      {
+        "example": "<ruby>結構<rt>けっこう</rt></ruby>です。",
+        "eng": "That's fine.",
+        "nepali": "ठिक छ।"
+      },
+      {
+        "example": "<ruby>構<rt>かま</rt></ruby>いません。",
+        "eng": "I don't mind.",
+        "nepali": "मतलब छैन।"
+      }
+    ]
+  },
+  {
+    "kanji": "様",
+    "yomikata": "ヨウ, さま",
+    "onyomi": "ヨウ",
+    "kunyomi": "さま",
+    "english_meaning": "Mr./Ms., way",
+    "nepali_meaning": "श्री/श्रीमती, तरिका",
+    "examples": [
+      {
+        "example": "お<ruby>元気<rt>げんき</rt></ruby>ですか。",
+        "eng": "How are you?",
+        "nepali": "तपाईं कस्तो हुनुहुन्छ?"
+      },
+      {
+        "example": "<ruby>様子<rt>ようす</rt></ruby>を<ruby>見<rt>み</rt></ruby>ます。",
+        "eng": "I check the situation.",
+        "nepali": "म अवस्था हेर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "権",
+    "yomikata": "ケン",
+    "onyomi": "ケン",
+    "kunyomi": "",
+    "english_meaning": "right, authority",
+    "nepali_meaning": "अधिकार",
+    "examples": [
+      {
+        "example": "<ruby>権利<rt>けんり</rt></ruby>があります。",
+        "eng": "I have a right.",
+        "nepali": "मसँग अधिकार छ।"
+      },
+      {
+        "example": "<ruby>選挙権<rt>せんきょけん</rt></ruby>があります。",
+        "eng": "I have the right to vote.",
+        "nepali": "मसँग मतदान गर्ने अधिकार छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "横",
+    "yomikata": "オウ, よこ",
+    "onyomi": "オウ",
+    "kunyomi": "よこ",
+    "english_meaning": "side, horizontal",
+    "nepali_meaning": "छेउ",
+    "examples": [
+      {
+        "example": "<ruby>横<rt>よこ</rt></ruby>に<ruby>並<rt>なら</rt></ruby>びます。",
+        "eng": "We line up side by side.",
+        "nepali": "हामी छेउमा पङ्क्तिबद्ध हुन्छौं।"
+      },
+      {
+        "example": "<ruby>横断歩道<rt>おうだんほどう</rt></ruby>を<ruby>渡<rt>わた</rt></ruby>ります。",
+        "eng": "I cross the pedestrian crossing.",
+        "nepali": "म पैदल यात्रु क्रसिङ पार गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "機",
+    "yomikata": "キ, はた",
+    "onyomi": "キ",
+    "kunyomi": "はた",
+    "english_meaning": "machine, opportunity",
+    "nepali_meaning": "मेसिन, अवसर",
+    "examples": [
+      {
+        "example": "<ruby>飛行機<rt>ひこうき</rt></ruby>に<ruby>乗<rt>の</rt></ruby>ります。",
+        "eng": "I board an airplane.",
+        "nepali": "म हवाइजहाज चढ्छु।"
+      },
+      {
+        "example": "<ruby>機会<rt>きかい</rt></ruby>があれば<ruby>行<rt>い</rt></ruby>きたいです。",
+        "eng": "If I have an opportunity, I want to go.",
+        "nepali": "अवसर भए जान चाहन्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "欠",
+    "yomikata": "ケツ, か(ける)",
+    "onyomi": "ケツ",
+    "kunyomi": "か(ける), あくび",
+    "english_meaning": "lack, gap",
+    "nepali_meaning": "कमी, कमजोरी",
+    "examples": [
+      {
+        "example": "お<ruby>金<rt>かね</rt></ruby>が<ruby>欠<rt>か</rt></ruby>けています。",
+        "eng": "I lack money.",
+        "nepali": "मसँग पैसा कम छ।"
+      },
+      {
+        "example": "<ruby>欠席<rt>けっせき</rt></ruby>します。",
+        "eng": "I will be absent.",
+        "nepali": "म अनुपस्थित हुनेछु।"
+      }
+    ]
+  },
+  {
+    "kanji": "次",
+    "yomikata": "ジ, シ, つぎ",
+    "onyomi": "ジ, シ",
+    "kunyomi": "つぎ, つ(ぐ)",
+    "english_meaning": "next",
+    "nepali_meaning": "अर्को",
+    "examples": [
+      {
+        "example": "<ruby>次<rt>つぎ</rt></ruby>はあなたの<ruby>番<rt>ばん</rt></ruby>です。",
+        "eng": "Next is your turn.",
+        "nepali": "अर्को पालो तपाईंको हो।"
+      },
+      {
+        "example": "<ruby>次回<rt>じかい</rt></ruby>、<ruby>会<rt>あ</rt></ruby>いましょう。",
+        "eng": "Let's meet next time.",
+        "nepali": "अर्को पटक भेटौं।"
+      }
+    ]
+  },
+  {
+    "kanji": "欲",
+    "yomikata": "ヨク, ほ(しい)",
+    "onyomi": "ヨク",
+    "kunyomi": "ほ(しい)",
+    "english_meaning": "want, desire",
+    "nepali_meaning": "चाहनु",
+    "examples": [
+      {
+        "example": "<ruby>新<rt>あたら</rt></ruby>しい<ruby>車<rt>くるま</rt></ruby>が<ruby>欲<rt>ほ</rt></ruby>しいです。",
+        "eng": "I want a new car.",
+        "nepali": "मलाई नयाँ कार चाहियो।"
+      },
+      {
+        "example": "<ruby>欲望<rt>よくぼう</rt></ruby>が<ruby>強<rt>つよ</rt></ruby>いです。",
+        "eng": "He has strong desires.",
+        "nepali": "उसको इच्छा शक्ति छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "歯",
+    "yomikata": "シ, は",
+    "onyomi": "シ",
+    "kunyomi": "は",
+    "english_meaning": "tooth",
+    "nepali_meaning": "दाँत",
+    "examples": [
+      {
+        "example": "<ruby>歯<rt>は</rt></ruby>を<ruby>磨<rt>みが</rt></ruby>きます。",
+        "eng": "I brush my teeth.",
+        "nepali": "म दाँत माझ्छु।"
+      },
+      {
+        "example": "<ruby>歯医者<rt>はいしゃ</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to the dentist.",
+        "nepali": "म दन्त चिकित्सक जान्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "歳",
+    "yomikata": "サイ, せい",
+    "onyomi": "サイ, セイ",
+    "kunyomi": "とし",
+    "english_meaning": "years old, age",
+    "nepali_meaning": "उमेर",
+    "examples": [
+      {
+        "example": "<ruby>私<rt>わたし</rt></ruby>は20<ruby>歳<rt>さい</rt></ruby>です。",
+        "eng": "I am 20 years old.",
+        "nepali": "म २० वर्षको छु।"
+      },
+      {
+        "example": "お<ruby>歳<rt>とし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてもいいですか。",
+        "eng": "May I ask your age?",
+        "nepali": "के म उमेर सोध्न सक्छु?"
+      }
+    ]
+  },
+  {
+    "kanji": "残",
+    "yomikata": "ザン, のこ(る)",
+    "onyomi": "ザン",
+    "kunyomi": "のこ(る), のこ(す)",
+    "english_meaning": "remain, leftover",
+    "nepali_meaning": "बाँकी",
+    "examples": [
+      {
+        "example": "<ruby>残<rt>のこ</rt></ruby>り<ruby>物<rt>もの</rt></ruby>があります。",
+        "eng": "There are leftovers.",
+        "nepali": "बाँकी खानेकुरा छ।"
+      },
+      {
+        "example": "<ruby>残念<rt>ざんねん</rt></ruby>です。",
+        "eng": "That's unfortunate.",
+        "nepali": "दुःखद छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "段",
+    "yomikata": "ダン",
+    "onyomi": "ダン",
+    "kunyomi": "",
+    "english_meaning": "step, level",
+    "nepali_meaning": "चरण, स्तर",
+    "examples": [
+      {
+        "example": "<ruby>階段<rt>かいだん</rt></ruby>を<ruby>上<rt>あ</rt></ruby>がります。",
+        "eng": "I go up the stairs.",
+        "nepali": "म भर्याङ चढ्छु।"
+      },
+      {
+        "example": "<ruby>段々<rt>だんだん</rt></ruby><ruby>上手<rt>じょうず</rt></ruby>になります。",
+        "eng": "I gradually get better.",
+        "nepali": "म बिस्तारै राम्रो हुँदै छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "殺",
+    "yomikata": "サツ, ころ(す)",
+    "onyomi": "サツ",
+    "kunyomi": "ころ(す)",
+    "english_meaning": "kill",
+    "nepali_meaning": "मार्नु",
+    "examples": [
+      {
+        "example": "<ruby>時間<rt>じかん</rt></ruby>を<ruby>殺<rt>ころ</rt></ruby>します。",
+        "eng": "I kill time.",
+        "nepali": "म समय बिताउँछु।"
+      },
+      {
+        "example": "<ruby>殺人<rt>さつじん</rt></ruby><ruby>事件<rt>じけん</rt></ruby>がありました。",
+        "eng": "There was a murder case.",
+        "nepali": "एउटा हत्या घटना भयो।"
+      }
+    ]
+  },
+  {
+    "kanji": "求",
+    "yomikata": "キュウ, もと(める)",
+    "onyomi": "キュウ",
+    "kunyomi": "もと(める)",
+    "english_meaning": "request, seek",
+    "nepali_meaning": "माग्नु, खोज्नु",
+    "examples": [
+      {
+        "example": "<ruby>仕事<rt>しごと</rt></ruby>を<ruby>求<rt>もと</rt></ruby>めています。",
+        "eng": "I am looking for a job.",
+        "nepali": "म काम खोज्दै छु।"
+      },
+      {
+        "example": "<ruby>要求<rt>ようきゅう</rt></ruby>します。",
+        "eng": "I demand.",
+        "nepali": "म माग गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "決",
+    "yomikata": "ケツ, き(める)",
+    "onyomi": "ケツ",
+    "kunyomi": "き(める), き(まる)",
+    "english_meaning": "decide, determine",
+    "nepali_meaning": "निर्णय गर्नु",
+    "examples": [
+      {
+        "example": "<ruby>旅行<rt>りょこう</rt></ruby>の<ruby>日<rt>ひ</rt></ruby>を<ruby>決<rt>き</rt></ruby>めました。",
+        "eng": "I decided the date of the trip.",
+        "nepali": "मैले यात्राको मिति तय गरें।"
+      },
+      {
+        "example": "<ruby>決心<rt>けっしん</rt></ruby>しました。",
+        "eng": "I made up my mind.",
+        "nepali": "मैले निर्णय गरें।"
+      }
+    ]
+  },
+  {
+    "kanji": "治",
+    "yomikata": "ジ, チ, なお(る)",
+    "onyomi": "ジ, チ",
+    "kunyomi": "なお(る), おさ(める)",
+    "english_meaning": "cure, govern",
+    "nepali_meaning": "उपचार, शासन",
+    "examples": [
+      {
+        "example": "<ruby>病気<rt>びょうき</rt></ruby>が<ruby>治<rt>なお</rt></ruby>りました。",
+        "eng": "My illness is cured.",
+        "nepali": "मेरो रोग निको भयो।"
+      },
+      {
+        "example": "<ruby>政治<rt>せいじ</rt></ruby>に<ruby>興味<rt>きょうみ</rt></ruby>があります。",
+        "eng": "I am interested in politics.",
+        "nepali": "मलाई राजनीतिमा रुचि छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "法",
+    "yomikata": "ホウ",
+    "onyomi": "ホウ",
+    "kunyomi": "",
+    "english_meaning": "law, method",
+    "nepali_meaning": "कानून, विधि",
+    "examples": [
+      {
+        "example": "<ruby>法律<rt>ほうりつ</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>します。",
+        "eng": "I study law.",
+        "nepali": "म कानून पढ्छु।"
+      },
+      {
+        "example": "<ruby>方法<rt>ほうほう</rt></ruby>がわかりません。",
+        "eng": "I don't know the method.",
+        "nepali": "म विधि जान्दिन।"
+      }
+    ]
+  },
+  {
+    "kanji": "泳",
+    "yomikata": "エイ, およ(ぐ)",
+    "onyomi": "エイ",
+    "kunyomi": "およ(ぐ)",
+    "english_meaning": "swim",
+    "nepali_meaning": "पौडी खेल्नु",
+    "examples": [
+      {
+        "example": "<ruby>海<rt>うみ</rt></ruby>で<ruby>泳<rt>およ</rt></ruby>ぎます。",
+        "eng": "I swim in the sea.",
+        "nepali": "म समुद्रमा पौडी खेल्छु।"
+      },
+      {
+        "example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>泳<rt>およ</rt></ruby>ぐのが<ruby>上手<rt>じょうず</rt></ruby>です。",
+        "eng": "He is good at swimming.",
+        "nepali": "ऊ पौडी खेल्न निपुण छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "活",
+    "yomikata": "カツ",
+    "onyomi": "カツ",
+    "kunyomi": "",
+    "english_meaning": "active, lively",
+    "nepali_meaning": "सक्रिय",
+    "examples": [
+      {
+        "example": "<ruby>生活<rt>せいかつ</rt></ruby>が<ruby>楽<rt>たの</rt></ruby>しいです。",
+        "eng": "Life is fun.",
+        "nepali": "जीवन रमाइलो छ।"
+      },
+      {
+        "example": "<ruby>活動<rt>かつどう</rt></ruby>しています。",
+        "eng": "I am active.",
+        "nepali": "म सक्रिय छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "流",
+    "yomikata": "リュウ, なが(れる)",
+    "onyomi": "リュウ",
+    "kunyomi": "なが(れる), なが(す)",
+    "english_meaning": "flow, stream",
+    "nepali_meaning": "बग्नु, प्रवाह",
+    "examples": [
+      {
+        "example": "<ruby>川<rt>かわ</rt></ruby>が<ruby>流<rt>なが</rt></ruby>れています。",
+        "eng": "The river is flowing.",
+        "nepali": "नदी बगिरहेको छ।"
+      },
+      {
+        "example": "<ruby>流行<rt>りゅうこう</rt></ruby>しています。",
+        "eng": "It's trendy.",
+        "nepali": "यो चलनमा छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "浮",
+    "yomikata": "フ, う(く)",
+    "onyomi": "フ",
+    "kunyomi": "う(く), う(かぶ)",
+    "english_meaning": "float",
+    "nepali_meaning": "उत्रिनु",
+    "examples": [
+      {
+        "example": "<ruby>木<rt>き</rt></ruby>が<ruby>水<rt>みず</rt></ruby>に<ruby>浮<rt>う</rt></ruby>かんでいます。",
+        "eng": "Wood floats on water.",
+        "nepali": "काठ पानीमा उत्रिएको छ।"
+      },
+      {
+        "example": "<ruby>雲<rt>くも</rt></ruby>が<ruby>浮<rt>う</rt></ruby>かんでいます。",
+        "eng": "Clouds are floating.",
+        "nepali": "बादल तैरिरहेको छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "消",
+    "yomikata": "ショウ, き(える)",
+    "onyomi": "ショウ",
+    "kunyomi": "き(える), け(す)",
+    "english_meaning": "extinguish, erase",
+    "nepali_meaning": "निभाउनु, मेटाउनु",
+    "examples": [
+      {
+        "example": "<ruby>火<rt>ひ</rt></ruby>が<ruby>消<rt>き</rt></ruby>えました。",
+        "eng": "The fire went out.",
+        "nepali": "आगो निभ्यो।"
+      },
+      {
+        "example": "テレビを<ruby>消<rt>け</rt></ruby>します。",
+        "eng": "I turn off the TV.",
+        "nepali": "म टिभी बन्द गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "深",
+    "yomikata": "シン, ふか(い)",
+    "onyomi": "シン",
+    "kunyomi": "ふか(い)",
+    "english_meaning": "deep",
+    "nepali_meaning": "गहिरो",
+    "examples": [
+      {
+        "example": "この<ruby>川<rt>かわ</rt></ruby>は<ruby>深<rt>ふか</rt></ruby>いです。",
+        "eng": "This river is deep.",
+        "nepali": "यो नदी गहिरो छ।"
+      },
+      {
+        "example": "<ruby>深<rt>ふか</rt></ruby>く<ruby>考<rt>かんが</rt></ruby>えすぎないでください。",
+        "eng": "Please don't think too deeply.",
+        "nepali": "कृपया धेरै गहिरो नसोच्नुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "済",
+    "yomikata": "サイ, す(む)",
+    "onyomi": "サイ",
+    "kunyomi": "す(む), す(ます)",
+    "english_meaning": "finish, settle",
+    "nepali_meaning": "सक्नु, टुङ्गिनु",
+    "examples": [
+      {
+        "example": "<ruby>宿題<rt>しゅくだい</rt></ruby>が<ruby>済<rt>す</rt></ruby>みました。",
+        "eng": "I finished my homework.",
+        "nepali": "मैले गृहकार्य सके।"
+      },
+      {
+        "example": "<ruby>経済<rt>けいざい</rt></ruby>が<ruby>大事<rt>だいじ</rt></ruby>です。",
+        "eng": "Economy is important.",
+        "nepali": "अर्थव्यवस्था महत्त्वपूर्ण छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "渡",
+    "yomikata": "ト, わた(る)",
+    "onyomi": "ト",
+    "kunyomi": "わた(る), わた(す)",
+    "english_meaning": "cross, hand over",
+    "nepali_meaning": "पार गर्नु, दिनु",
+    "examples": [
+      {
+        "example": "<ruby>橋<rt>はし</rt></ruby>を<ruby>渡<rt>わた</rt></ruby>ります。",
+        "eng": "I cross the bridge.",
+        "nepali": "म पुल पार गर्छु।"
+      },
+      {
+        "example": "<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>渡<rt>わた</rt></ruby>します。",
+        "eng": "I hand over the luggage.",
+        "nepali": "म सामान दिन्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "港",
+    "yomikata": "コウ, みなと",
+    "onyomi": "コウ",
+    "kunyomi": "みなと",
+    "english_meaning": "harbor, port",
+    "nepali_meaning": "बन्दरगाह",
+    "examples": [
+      {
+        "example": "<ruby>船<rt>ふね</rt></ruby>が<ruby>港<rt>みなと</rt></ruby>に<ruby>着<rt>つ</rt></ruby>きました。",
+        "eng": "The ship arrived at the port.",
+        "nepali": "जहाज बन्दरगाहमा आइपुग्यो।"
+      },
+      {
+        "example": "<ruby>横浜港<rt>よこはまこう</rt></ruby>は<ruby>有名<rt>ゆうめい</rt></ruby>です。",
+        "eng": "Yokohama Port is famous.",
+        "nepali": "योकोहामा बन्दरगाह प्रसिद्ध छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "満",
+    "yomikata": "マン, み(ちる)",
+    "onyomi": "マン",
+    "kunyomi": "み(ちる), み(たす)",
+    "english_meaning": "full, satisfied",
+    "nepali_meaning": "भरिएको",
+    "examples": [
+      {
+        "example": "お<ruby>客様<rt>きゃくさま</rt></ruby>で<ruby>満員<rt>まんいん</rt></ruby>です。",
+        "eng": "It's full of customers.",
+        "nepali": "ग्राहकले भरिएको छ।"
+      },
+      {
+        "example": "<ruby>満足<rt>まんぞく</rt></ruby>しています。",
+        "eng": "I am satisfied.",
+        "nepali": "म सन्तुष्ट छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "演",
+    "yomikata": "エン",
+    "onyomi": "エン",
+    "kunyomi": "",
+    "english_meaning": "perform, play",
+    "nepali_meaning": "प्रदर्शन",
+    "examples": [
+      {
+        "example": "<ruby>映画<rt>えいが</rt></ruby>を<ruby>演<rt>えん</rt></ruby>じます。",
+        "eng": "I act in a movie.",
+        "nepali": "म चलचित्रमा अभिनय गर्छु।"
+      },
+      {
+        "example": "<ruby>演奏<rt>えんそう</rt></ruby>が<ruby>上手<rt>じょうず</rt></ruby>です。",
+        "eng": "He is good at playing music.",
+        "nepali": "उसको वादन कला राम्रो छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "点",
+    "yomikata": "テン",
+    "onyomi": "テン",
+    "kunyomi": "つ(ける)",
+    "english_meaning": "point, dot",
+    "nepali_meaning": "बिन्दु",
+    "examples": [
+      {
+        "example": "<ruby>点数<rt>てんすう</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いです。",
+        "eng": "The score is high.",
+        "nepali": "अंक उच्च छ।"
+      },
+      {
+        "example": "<ruby>出発点<rt>しゅっぱつてん</rt></ruby>に<ruby>戻<rt>もど</rt></ruby>ります。",
+        "eng": "I return to the starting point.",
+        "nepali": "म सुरुवात बिन्दुमा फर्कन्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "然",
+    "yomikata": "ゼン, ネン",
+    "onyomi": "ゼン, ネン",
+    "kunyomi": "しか",
+    "english_meaning": "so, thus",
+    "nepali_meaning": "त्यसरी",
+    "examples": [
+      {
+        "example": "<ruby>自然<rt>しぜん</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。",
+        "eng": "I like nature.",
+        "nepali": "मलाई प्रकृति मन पर्छ।"
+      },
+      {
+        "example": "<ruby>当然<rt>とうぜん</rt></ruby>です。",
+        "eng": "It's natural.",
+        "nepali": "यो स्वाभाविक हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "煙",
+    "yomikata": "エン, けむり",
+    "onyomi": "エン",
+    "kunyomi": "けむり, けむ(る)",
+    "english_meaning": "smoke",
+    "nepali_meaning": "धुवाँ",
+    "examples": [
+      {
+        "example": "<ruby>煙<rt>けむり</rt></ruby>が<ruby>出<rt>で</rt></ruby>ています。",
+        "eng": "Smoke is coming out.",
+        "nepali": "धुवाँ निस्किरहेको छ।"
+      },
+      {
+        "example": "<ruby>煙草<rt>たばこ</rt></ruby>を<ruby>吸<rt>す</rt></ruby>います。",
+        "eng": "I smoke.",
+        "nepali": "म चुरोट तान्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "熱",
+    "yomikata": "ネツ, あつ(い)",
+    "onyomi": "ネツ",
+    "kunyomi": "あつ(い)",
+    "english_meaning": "heat, fever",
+    "nepali_meaning": "गर्मी, ज्वरो",
+    "examples": [
+      {
+        "example": "<ruby>熱<rt>ねつ</rt></ruby>があります。",
+        "eng": "I have a fever.",
+        "nepali": "मलाई ज्वरो छ।"
+      },
+      {
+        "example": "<ruby>今日<rt>きょう</rt></ruby>はとても<ruby>暑<rt>あつ</rt></ruby>いです。",
+        "eng": "It's very hot today.",
+        "nepali": "आज धेरै गर्मी छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "犯",
+    "yomikata": "ハン, おか(す)",
+    "onyomi": "ハン",
+    "kunyomi": "おか(す)",
+    "english_meaning": "crime, commit",
+    "nepali_meaning": "अपराध",
+    "examples": [
+      {
+        "example": "<ruby>犯罪<rt>はんざい</rt></ruby>がありました。",
+        "eng": "There was a crime.",
+        "nepali": "अपराध भयो।"
+      },
+      {
+        "example": "<ruby>犯人<rt>はんにん</rt></ruby>を<ruby>見<rt>み</rt></ruby>ましたか。",
+        "eng": "Did you see the criminal?",
+        "nepali": "तपाईंले अपराधी देख्नुभयो?"
+      }
+    ]
+  },
+  {
+    "kanji": "状",
+    "yomikata": "ジョウ",
+    "onyomi": "ジョウ",
+    "kunyomi": "",
+    "english_meaning": "condition, letter",
+    "nepali_meaning": "अवस्था",
+    "examples": [
+      {
+        "example": "<ruby>状態<rt>じょうたい</rt></ruby>はどうですか。",
+        "eng": "How is the condition?",
+        "nepali": "अवस्था कस्तो छ?"
+      },
+      {
+        "example": "<ruby>紹介状<rt>しょうかいじょう</rt></ruby>を<ruby>書<rt>か</rt></ruby>きます。",
+        "eng": "I write a letter of introduction.",
+        "nepali": "म सिफारिस पत्र लेख्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "猫",
+    "yomikata": "ビョウ, ねこ",
+    "onyomi": "ビョウ",
+    "kunyomi": "ねこ",
+    "english_meaning": "cat",
+    "nepali_meaning": "बिरालो",
+    "examples": [
+      {
+        "example": "<ruby>猫<rt>ねこ</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。",
+        "eng": "I like cats.",
+        "nepali": "मलाई बिरालो मन पर्छ।"
+      },
+      {
+        "example": "<ruby>猫<rt>ねこ</rt></ruby>を<ruby>飼<rt>か</rt></ruby>っています。",
+        "eng": "I have a cat.",
+        "nepali": "मसँग बिरालो छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "王",
+    "yomikata": "オウ",
+    "onyomi": "オウ",
+    "kunyomi": "",
+    "english_meaning": "king",
+    "nepali_meaning": "राजा",
+    "examples": [
+      {
+        "example": "<ruby>王様<rt>おうさま</rt></ruby>が<ruby>住<rt>す</rt></ruby>んでいます。",
+        "eng": "The king lives there.",
+        "nepali": "राजा त्यहाँ बस्छन्।"
+      },
+      {
+        "example": "<ruby>王国<rt>おうこく</rt></ruby>です。",
+        "eng": "It's a kingdom.",
+        "nepali": "यो राज्य हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "現",
+    "yomikata": "ゲン, あらわ(れる)",
+    "onyomi": "ゲン",
+    "kunyomi": "あらわ(れる)",
+    "english_meaning": "present, appear",
+    "nepali_meaning": "वर्तमान",
+    "examples": [
+      {
+        "example": "<ruby>現在<rt>げんざい</rt></ruby>、<ruby>東京<rt>とうきょう</rt></ruby>にいます。",
+        "eng": "I am currently in Tokyo.",
+        "nepali": "हाल म टोकियोमा छु।"
+      },
+      {
+        "example": "<ruby>現<rt>あらわ</rt></ruby>れました。",
+        "eng": "He appeared.",
+        "nepali": "ऊ देखियो।"
+      }
+    ]
+  },
+  {
+    "kanji": "球",
+    "yomikata": "キュウ, たま",
+    "onyomi": "キュウ",
+    "kunyomi": "たま",
+    "english_meaning": "ball, sphere",
+    "nepali_meaning": "बल, गोला",
+    "examples": [
+      {
+        "example": "<ruby>野球<rt>やきゅう</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。",
+        "eng": "I like baseball.",
+        "nepali": "मलाई बेसबल मन पर्छ।"
+      },
+      {
+        "example": "<ruby>地球<rt>ちきゅう</rt></ruby>は<ruby>丸<rt>まる</rt></ruby>いです。",
+        "eng": "The earth is round.",
+        "nepali": "पृथ्वी गोलो छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "由",
+    "yomikata": "ユ, ユウ, よし",
+    "onyomi": "ユ, ユウ",
+    "kunyomi": "よし",
+    "english_meaning": "reason, cause",
+    "nepali_meaning": "कारण",
+    "examples": [
+      {
+        "example": "<ruby>理由<rt>りゆう</rt></ruby>があります。",
+        "eng": "There is a reason.",
+        "nepali": "कारण छ।"
+      },
+      {
+        "example": "<ruby>自由<rt>じゆう</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。",
+        "eng": "I like freedom.",
+        "nepali": "मलाई स्वतन्त्रता मन पर्छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "申",
+    "yomikata": "シン, もう(す)",
+    "onyomi": "シン",
+    "kunyomi": "もう(す)",
+    "english_meaning": "say, tell (humble)",
+    "nepali_meaning": "भन्नु",
+    "examples": [
+      {
+        "example": "<ruby>申<rt>もう</rt></ruby>し<ruby>訳<rt>わけ</rt></ruby>ありません。",
+        "eng": "I am very sorry.",
+        "nepali": "म धेरै क्षमा प्रार्थी छु।"
+      },
+      {
+        "example": "<ruby>私<rt>わたし</rt></ruby>は<ruby>田中<rt>たなか</rt></ruby>と<ruby>申<rt>もう</rt></ruby>します。",
+        "eng": "I am Tanaka (humble).",
+        "nepali": "म तनाका हुँ।"
+      }
+    ]
+  },
+  {
+    "kanji": "留",
+    "yomikata": "リュウ, ル, と(める)",
+    "onyomi": "リュウ, ル",
+    "kunyomi": "と(める), とど(まる)",
+    "english_meaning": "stay, detain",
+    "nepali_meaning": "बस्नु",
+    "examples": [
+      {
+        "example": "<ruby>留学<rt>りゅうがく</rt></ruby>します。",
+        "eng": "I study abroad.",
+        "nepali": "म विदेशमा पढ्न जान्छु।"
+      },
+      {
+        "example": "<ruby>気<rt>き</rt></ruby>を<ruby>留<rt>と</rt></ruby>めてください。",
+        "eng": "Please pay attention.",
+        "nepali": "कृपया ध्यान दिनुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "番",
+    "yomikata": "バン",
+    "onyomi": "バン",
+    "kunyomi": "",
+    "english_meaning": "number, turn",
+    "nepali_meaning": "नम्बर, पालो",
+    "examples": [
+      {
+        "example": "あなたの<ruby>番<rt>ばん</rt></ruby>です。",
+        "eng": "It's your turn.",
+        "nepali": "तपाईंको पालो हो।"
+      },
+      {
+        "example": "<ruby>番号<rt>ばんごう</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えてください。",
+        "eng": "Please tell me the number.",
+        "nepali": "कृपया नम्बर बताउनुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "疑",
+    "yomikata": "ギ, うたが(う)",
+    "onyomi": "ギ",
+    "kunyomi": "うたが(う)",
+    "english_meaning": "doubt, suspect",
+    "nepali_meaning": "शंका",
+    "examples": [
+      {
+        "example": "<ruby>疑<rt>うたが</rt></ruby>っています。",
+        "eng": "I doubt it.",
+        "nepali": "मलाई शंका छ।"
+      },
+      {
+        "example": "<ruby>疑問<rt>ぎもん</rt></ruby>があります。",
+        "eng": "I have a question/doubt.",
+        "nepali": "मसँग प्रश्न छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "幸",
+    "yomikata": "コウ, さいわ(い)",
+    "onyomi": "コウ",
+    "kunyomi": "さいわ(い), しあわ(せ)",
+    "english_meaning": "happiness",
+    "nepali_meaning": "खुशी",
+    "examples": [
+      {
+        "example": "<ruby>幸<rt>しあわ</rt></ruby>せです。",
+        "eng": "I am happy.",
+        "nepali": "म खुशी छु।"
+      },
+      {
+        "example": "<ruby>幸運<rt>こううん</rt></ruby>でした。",
+        "eng": "It was lucky.",
+        "nepali": "यो भाग्यले भयो।"
+    }
+    ]
+  },
+  {
+    "kanji": "疑",
+    "yomikata": "ギ, うたが(う)",
+    "onyomi": "ギ",
+    "kunyomi": "うたが(う)",
+    "english_meaning": "doubt, suspect",
+    "nepali_meaning": "शंका",
+    "examples": [
+      {
+        "example": "<ruby>疑<rt>うたが</rt></ruby>っています。",
+        "eng": "I doubt it.",
+        "nepali": "मलाई शंका छ।"
+      },
+      {
+        "example": "<ruby>疑問<rt>ぎもん</rt></ruby>があります。",
+        "eng": "I have a question/doubt.",
+        "nepali": "मसँग प्रश्न छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "疲",
+    "yomikata": "ヒ, つか(れる)",
+    "onyomi": "ヒ",
+    "kunyomi": "つか(れる)",
+    "english_meaning": "tired",
+    "nepali_meaning": "थाक्नु",
+    "examples": [
+      {
+        "example": "<ruby>疲<rt>つか</rt></ruby>れました。",
+        "eng": "I'm tired.",
+        "nepali": "म थाकें।"
+      },
+      {
+        "example": "<ruby>疲労<rt>ひろう</rt></ruby>がたまっています。",
+        "eng": "Fatigue is accumulating.",
+        "nepali": "थकान जम्मा भएको छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "痛",
+    "yomikata": "ツウ, いた(い)",
+    "onyomi": "ツウ",
+    "kunyomi": "いた(い)",
+    "english_meaning": "pain, hurt",
+    "nepali_meaning": "दुखाइ",
+    "examples": [
+      {
+        "example": "<ruby>頭<rt>あたま</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>いです。",
+        "eng": "I have a headache.",
+        "nepali": "मेरो टाउको दुखेको छ।"
+      },
+      {
+        "example": "<ruby>痛<rt>いた</rt></ruby>みを<ruby>感<rt>かん</rt></ruby>じます。",
+        "eng": "I feel pain.",
+        "nepali": "मलाई पीडा महसुस हुन्छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "登",
+    "yomikata": "トウ, のぼ(る)",
+    "onyomi": "トウ",
+    "kunyomi": "のぼ(る)",
+    "english_meaning": "climb, register",
+    "nepali_meaning": "चढ्नु, दर्ता गर्नु",
+    "examples": [
+      {
+        "example": "<ruby>山<rt>やま</rt></ruby>に<ruby>登<rt>のぼ</rt></ruby>ります。",
+        "eng": "I climb a mountain.",
+        "nepali": "म पहाड चढ्छु।"
+      },
+      {
+        "example": "<ruby>名前<rt>なまえ</rt></ruby>を<ruby>登録<rt>とうろく</rt></ruby>します。",
+        "eng": "I register my name.",
+        "nepali": "म नाम दर्ता गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "皆",
+    "yomikata": "カイ, みな",
+    "onyomi": "カイ",
+    "kunyomi": "みな",
+    "english_meaning": "all, everyone",
+    "nepali_meaning": "सबै",
+    "examples": [
+      {
+        "example": "<ruby>皆<rt>みな</rt></ruby>さん、こんにちは。",
+        "eng": "Hello everyone.",
+        "nepali": "सबैलाई नमस्ते।"
+      },
+      {
+        "example": "<ruby>皆<rt>みんな</rt></ruby>で<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "Everyone goes.",
+        "nepali": "सबै जान्छौं।"
+      }
+    ]
+  },
+  {
+    "kanji": "盗",
+    "yomikata": "トウ, ぬす(む)",
+    "onyomi": "トウ",
+    "kunyomi": "ぬす(む)",
+    "english_meaning": "steal",
+    "nepali_meaning": "चोर्नु",
+    "examples": [
+      {
+        "example": "お<ruby>金<rt>かね</rt></ruby>を<ruby>盗<rt>ぬす</rt></ruby>まれました。",
+        "eng": "My money was stolen.",
+        "nepali": "मेरो पैसा चोरियो।"
+      },
+      {
+        "example": "<ruby>盗難<rt>とうなん</rt></ruby>に<ruby>注意<rt>ちゅうい</rt></ruby>してください。",
+        "eng": "Please beware of theft.",
+        "nepali": "कृपया चोरीबाट सावधान रहनुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "直",
+    "yomikata": "チョク, ジキ, ただ(ちに)",
+    "onyomi": "チョク, ジキ",
+    "kunyomi": "ただ(ちに), なお(す)",
+    "english_meaning": "direct, repair",
+    "nepali_meaning": "सीधा, मर्मत",
+    "examples": [
+      {
+        "example": "<ruby>直<rt>なお</rt></ruby>してください。",
+        "eng": "Please fix it.",
+        "nepali": "कृपया मर्मत गर्नुहोस्।"
+      },
+      {
+        "example": "<ruby>正直<rt>しょうじき</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>です。",
+        "eng": "He is an honest person.",
+        "nepali": "ऊ इमानदार व्यक्ति हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "相",
+    "yomikata": "ソウ, ショウ, あい",
+    "onyomi": "ソウ, ショウ",
+    "kunyomi": "あい",
+    "english_meaning": "mutual, together",
+    "nepali_meaning": "पारस्परिक",
+    "examples": [
+      {
+        "example": "<ruby>相談<rt>そうだん</rt></ruby>します。",
+        "eng": "I consult/discuss.",
+        "nepali": "म परामर्श गर्छु।"
+      },
+      {
+        "example": "<ruby>相手<rt>あいて</rt></ruby>がいます。",
+        "eng": "There is a partner.",
+        "nepali": "साथी छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "眠",
+    "yomikata": "ミン, ねむ(る)",
+    "onyomi": "ミン",
+    "kunyomi": "ねむ(る), ねむ(い)",
+    "english_meaning": "sleep",
+    "nepali_meaning": "सुत्नु",
+    "examples": [
+      {
+        "example": "よく<ruby>眠<rt>ねむ</rt></ruby>れましたか。",
+        "eng": "Did you sleep well?",
+        "nepali": "तपाईं राम्रो सुत्नुभयो?"
+      },
+      {
+        "example": "<ruby>眠<rt>ねむ</rt></ruby>いです。",
+        "eng": "I'm sleepy.",
+        "nepali": "मलाई निद्रा लाग्यो।"
+      }
+    ]
+  },
+  {
+    "kanji": "石",
+    "yomikata": "セキ, シャク, いし",
+    "onyomi": "セキ, シャク",
+    "kunyomi": "いし",
+    "english_meaning": "stone",
+    "nepali_meaning": "ढुङ्गा",
+    "examples": [
+      {
+        "example": "<ruby>石<rt>いし</rt></ruby>を<ruby>投<rt>な</rt></ruby>げます。",
+        "eng": "I throw a stone.",
+        "nepali": "म ढुङ्गा फाल्छु।"
+      },
+      {
+        "example": "<ruby>石油<rt>せきゆ</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いです。",
+        "eng": "Oil is expensive.",
+        "nepali": "तेल महँगो छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "破",
+    "yomikata": "ハ, やぶ(る)",
+    "onyomi": "ハ",
+    "kunyomi": "やぶ(る), やぶ(れる)",
+    "english_meaning": "tear, break",
+    "nepali_meaning": "च्यात्नु",
+    "examples": [
+      {
+        "example": "<ruby>紙<rt>かみ</rt></ruby>を<ruby>破<rt>やぶ</rt></ruby>りました。",
+        "eng": "I tore the paper.",
+        "nepali": "मैले कागज च्यातें।"
+      },
+      {
+        "example": "<ruby>記録<rt>きろく</rt></ruby>を<ruby>破<rt>やぶ</rt></ruby>りました。",
+        "eng": "I broke the record.",
+        "nepali": "मैले रेकर्ड तोडें।"
+      }
+    ]
+  },
+  {
+    "kanji": "確",
+    "yomikata": "カク, たし(か)",
+    "onyomi": "カク",
+    "kunyomi": "たし(か), たし(かめる)",
+    "english_meaning": "certain, sure",
+    "nepali_meaning": "निश्चित",
+    "examples": [
+      {
+        "example": "<ruby>確<rt>たし</rt></ruby>かにそうです。",
+        "eng": "It's certainly so.",
+        "nepali": "यो निश्चित रूपमा हो।"
+      },
+      {
+        "example": "<ruby>確認<rt>かくにん</rt></ruby>します。",
+        "eng": "I confirm.",
+        "nepali": "म पुष्टि गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "示",
+    "yomikata": "ジ, シ, しめ(す)",
+    "onyomi": "ジ, シ",
+    "kunyomi": "しめ(す)",
+    "english_meaning": "show, indicate",
+    "nepali_meaning": "देखाउनु",
+    "examples": [
+      {
+        "example": "<ruby>道<rt>みち</rt></ruby>を<ruby>示<rt>しめ</rt></ruby>します。",
+        "eng": "I show the way.",
+        "nepali": "म बाटो देखाउँछु।"
+      },
+      {
+        "example": "<ruby>示<rt>しめ</rt></ruby>してください。",
+        "eng": "Please show me.",
+        "nepali": "कृपया देखाउनुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "礼",
+    "yomikata": "レイ, ライ",
+    "onyomi": "レイ, ライ",
+    "kunyomi": "",
+    "english_meaning": "bow, thanks",
+    "nepali_meaning": "धन्यवाद, प्रणाम",
+    "examples": [
+      {
+        "example": "お<ruby>礼<rt>れい</rt></ruby>を<ruby>言<rt>い</rt></ruby>います。",
+        "eng": "I express my thanks.",
+        "nepali": "म धन्यवाद दिन्छु।"
+      },
+      {
+        "example": "<ruby>失礼<rt>しつれい</rt></ruby>します。",
+        "eng": "Excuse me.",
+        "nepali": "क्षमा गर्नुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "祖",
+    "yomikata": "ソ",
+    "onyomi": "ソ",
+    "kunyomi": "",
+    "english_meaning": "ancestor",
+    "nepali_meaning": "पुर्खा",
+    "examples": [
+      {
+        "example": "<ruby>祖父<rt>そふ</rt></ruby>は<ruby>元気<rt>げんき</rt></ruby>です。",
+        "eng": "My grandfather is healthy.",
+        "nepali": "मेरो हजुरबुबा स्वस्थ हुनुहुन्छ।"
+      },
+      {
+        "example": "<ruby>祖先<rt>そせん</rt></ruby>を<ruby>大切<rt>たいせつ</rt></ruby>にします。",
+        "eng": "I respect my ancestors.",
+        "nepali": "म पुर्खालाई सम्मान गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "神",
+    "yomikata": "シン, ジン, かみ",
+    "onyomi": "シン, ジン",
+    "kunyomi": "かみ",
+    "english_meaning": "god",
+    "nepali_meaning": "भगवान्",
+    "examples": [
+      {
+        "example": "<ruby>神社<rt>じんじゃ</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to a Shinto shrine.",
+        "nepali": "म जिन्जा जान्छु।"
+      },
+      {
+        "example": "<ruby>神様<rt>かみさま</rt></ruby>をお<ruby>祈<rt>いの</rt></ruby>りします。",
+        "eng": "I pray to God.",
+        "nepali": "म भगवानलाई प्रार्थना गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "福",
+    "yomikata": "フク",
+    "onyomi": "フク",
+    "kunyomi": "",
+    "english_meaning": "good fortune",
+    "nepali_meaning": "सुख, समृद्धि",
+    "examples": [
+      {
+        "example": "<ruby>幸福<rt>こうふく</rt></ruby>です。",
+        "eng": "I am happy.",
+        "nepali": "म सुखी छु।"
+      },
+      {
+        "example": "<ruby>福<rt>ふく</rt></ruby>が<ruby>来<rt>き</rt></ruby>ますように。",
+        "eng": "May fortune come.",
+        "nepali": "सुख आओस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "科",
+    "yomikata": "カ",
+    "onyomi": "カ",
+    "kunyomi": "",
+    "english_meaning": "section, course",
+    "nepali_meaning": "विभाग",
+    "examples": [
+      {
+        "example": "<ruby>科学<rt>かがく</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。",
+        "eng": "I like science.",
+        "nepali": "मलाई विज्ञान मन पर्छ।"
+      },
+      {
+        "example": "<ruby>内科<rt>ないか</rt></ruby>の<ruby>医者<rt>いしゃ</rt></ruby>です。",
+        "eng": "He is a physician.",
+        "nepali": "उहाँ आन्तरिक चिकित्सक हुन्।"
+      }
+    ]
+  },
+  {
+    "kanji": "程",
+    "yomikata": "テイ, ほど",
+    "onyomi": "テイ",
+    "kunyomi": "ほど",
+    "english_meaning": "extent, degree",
+    "nepali_meaning": "हद, मात्रा",
+    "examples": [
+      {
+        "example": "どのくらいですか。",
+        "eng": "How much?",
+        "nepali": "कति?"
+      },
+      {
+        "example": "<ruby>過程<rt>かてい</rt></ruby>が<ruby>大事<rt>だいじ</rt></ruby>です。",
+        "eng": "The process is important.",
+        "nepali": "प्रक्रिया महत्त्वपूर्ण छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "種",
+    "yomikata": "シュ, たね",
+    "onyomi": "シュ",
+    "kunyomi": "たね",
+    "english_meaning": "kind, seed",
+    "nepali_meaning": "प्रकार, बीउ",
+    "examples": [
+      {
+        "example": "どんな<ruby>種類<rt>しゅるい</rt></ruby>ですか。",
+        "eng": "What kind is it?",
+        "nepali": "यो कस्तो प्रकारको हो?"
+      },
+      {
+        "example": "<ruby>種<rt>たね</rt></ruby>をまきます。",
+        "eng": "I sow seeds.",
+        "nepali": "म बीउ रोप्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "積",
+    "yomikata": "セキ, つ(む)",
+    "onyomi": "セキ",
+    "kunyomi": "つ(む), つ(もる)",
+    "english_meaning": "pile up, accumulate",
+    "nepali_meaning": "थुपार्नु",
+    "examples": [
+      {
+        "example": "<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>積<rt>つ</rt></ruby>みます。",
+        "eng": "I pile up luggage.",
+        "nepali": "म सामान थुपार्छु।"
+      },
+      {
+        "example": "<ruby>経験<rt>けいけん</rt></ruby>を<ruby>積<rt>つ</rt></ruby>みます。",
+        "eng": "I gain experience.",
+        "nepali": "म अनुभव जम्मा गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "突",
+    "yomikata": "トツ, つ(く)",
+    "onyomi": "トツ",
+    "kunyomi": "つ(く)",
+    "english_meaning": "stab, thrust",
+    "nepali_meaning": "ठोक्नु",
+    "examples": [
+      {
+        "example": "<ruby>問題<rt>もんだい</rt></ruby>が<ruby>突然<rt>とつぜん</rt></ruby><ruby>起<rt>お</rt></ruby>こりました。",
+        "eng": "A problem suddenly occurred.",
+        "nepali": "अचानक समस्या आयो।"
+      },
+      {
+        "example": "<ruby>壁<rt>かべ</rt></ruby>に<ruby>突<rt>つ</rt></ruby>き<ruby>当<rt>あ</rt></ruby>たります。",
+        "eng": "I hit a wall.",
+        "nepali": "म पर्खालमा ठोक्किएँ।"
+      }
+    ]
+  },
+  {
+    "kanji": "窓",
+    "yomikata": "ソウ, まど",
+    "onyomi": "ソウ",
+    "kunyomi": "まど",
+    "english_meaning": "window",
+    "nepali_meaning": "झ्याल",
+    "examples": [
+      {
+        "example": "<ruby>窓<rt>まど</rt></ruby>を<ruby>開<rt>あ</rt></ruby>けます。",
+        "eng": "I open the window.",
+        "nepali": "म झ्याल खोल्छु।"
+      },
+      {
+        "example": "<ruby>窓側<rt>まどがわ</rt></ruby>の<ruby>席<rt>せき</rt></ruby>です。",
+        "eng": "It's a window seat.",
+        "nepali": "यो झ्याल छेउको सिट हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "笑",
+    "yomikata": "ショウ, わら(う)",
+    "onyomi": "ショウ",
+    "kunyomi": "わら(う), え(む)",
+    "english_meaning": "laugh, smile",
+    "nepali_meaning": "हाँस्नु",
+    "examples": [
+      {
+        "example": "<ruby>笑<rt>わら</rt></ruby>っています。",
+        "eng": "I am laughing.",
+        "nepali": "म हाँस्दै छु।"
+      },
+      {
+        "example": "<ruby>笑顔<rt>えがお</rt></ruby>が<ruby>素敵<rt>すてき</rt></ruby>です。",
+        "eng": "Your smile is lovely.",
+        "nepali": "तपाईंको मुस्कान सुन्दर छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "等",
+    "yomikata": "トウ, など",
+    "onyomi": "トウ",
+    "kunyomi": "ひと(しい), など",
+    "english_meaning": "equal, etc.",
+    "nepali_meaning": "बराबर, आदि",
+    "examples": [
+      {
+        "example": "<ruby>私<rt>わたし</rt></ruby>も<ruby>同<rt>おな</rt></ruby>じです。",
+        "eng": "I'm the same.",
+        "nepali": "म पनि उस्तै छु।"
+      },
+      {
+        "example": "<ruby>本<rt>ほん</rt></ruby>などを<ruby>見<rt>み</rt></ruby>ます。",
+        "eng": "I look at books, etc.",
+        "nepali": "म किताब आदि हेर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "箱",
+    "yomikata": "ソウ, はこ",
+    "onyomi": "ソウ",
+    "kunyomi": "はこ",
+    "english_meaning": "box",
+    "nepali_meaning": "बाकस",
+    "examples": [
+      {
+        "example": "<ruby>箱<rt>はこ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>にあります。",
+        "eng": "It's inside the box.",
+        "nepali": "यो बाकसभित्र छ।"
+      },
+      {
+        "example": "プレゼントの<ruby>箱<rt>はこ</rt></ruby>です。",
+        "eng": "It's a gift box.",
+        "nepali": "यो उपहारको बाकस हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "米",
+    "yomikata": "ベイ, マイ, こめ",
+    "onyomi": "ベイ, マイ",
+    "kunyomi": "こめ",
+    "english_meaning": "rice, America",
+    "nepali_meaning": "चामल",
+    "examples": [
+      {
+        "example": "ご<ruby>飯<rt>はん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べます。",
+        "eng": "I eat rice.",
+        "nepali": "म भात खान्छु।"
+      },
+      {
+        "example": "<ruby>米国<rt>べいこく</rt></ruby>に<ruby>行<rt>い</rt></ruby>きました。",
+        "eng": "I went to America.",
+        "nepali": "म अमेरिका गएँ।"
+      }
+    ]
+  },
+  {
+    "kanji": "精",
+    "yomikata": "セイ, ショウ",
+    "onyomi": "セイ, ショウ",
+    "kunyomi": "",
+    "english_meaning": "spirit, energy",
+    "nepali_meaning": "ऊर्जा, शक्ति",
+    "examples": [
+      {
+        "example": "<ruby>元気<rt>げんき</rt></ruby>です。",
+        "eng": "I am energetic.",
+        "nepali": "म ऊर्जावान छु।"
+      },
+      {
+        "example": "<ruby>精神<rt>せいしん</rt></ruby>が<ruby>大事<rt>だいじ</rt></ruby>です。",
+        "eng": "Spirit is important.",
+        "nepali": "मानसिक शक्ति महत्त्वपूर्ण छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "約",
+    "yomikata": "ヤク",
+    "onyomi": "ヤク",
+    "kunyomi": "",
+    "english_meaning": "promise, approx.",
+    "nepali_meaning": "वाचा, लगभग",
+    "examples": [
+      {
+        "example": "<ruby>約束<rt>やくそく</rt></ruby>を<ruby>守<rt>まも</rt></ruby>ります。",
+        "eng": "I keep my promise.",
+        "nepali": "म वाचा पालन गर्छु।"
+      },
+      {
+        "example": "<ruby>約<rt>やく</rt></ruby>100<ruby>人<rt>にん</rt></ruby>が<ruby>来<rt>き</rt></ruby>ました。",
+        "eng": "Approximately 100 people came.",
+        "nepali": "लगभग १०० मानिस आए।"
+      }
+    ]
+  },
+  {
+    "kanji": "組",
+    "yomikata": "ソ, く(む)",
+    "onyomi": "ソ",
+    "kunyomi": "く(む), くみ",
+    "english_meaning": "group, team",
+    "nepali_meaning": "समूह",
+    "examples": [
+      {
+        "example": "グループで<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "We go as a group.",
+        "nepali": "हामी समूहमा जान्छौं।"
+      },
+      {
+        "example": "<ruby>組織<rt>そしき</rt></ruby>が<ruby>大<rt>おお</rt></ruby>きいです。",
+        "eng": "The organization is large.",
+        "nepali": "संगठन ठूलो छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "経",
+    "yomikata": "ケイ, キョウ, へ(る)",
+    "onyomi": "ケイ, キョウ",
+    "kunyomi": "へ(る)",
+    "english_meaning": "pass through, manage",
+    "nepali_meaning": "पार गर्नु",
+    "examples": [
+      {
+        "example": "<ruby>経験<rt>けいけん</rt></ruby>が<ruby>大切<rt>たいせつ</rt></ruby>です。",
+        "eng": "Experience is important.",
+        "nepali": "अनुभव महत्त्वपूर्ण छ।"
+      },
+      {
+        "example": "<ruby>経済<rt>けいざい</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>します。",
+        "eng": "I study economics.",
+        "nepali": "म अर्थशास्त्र पढ्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "給",
+    "yomikata": "キュウ",
+    "onyomi": "キュウ",
+    "kunyomi": "たま(う)",
+    "english_meaning": "salary, supply",
+    "nepali_meaning": "तलब",
+    "examples": [
+      {
+        "example": "<ruby>給料<rt>きゅうりょう</rt></ruby>をもらいます。",
+        "eng": "I receive a salary.",
+        "nepali": "म तलब पाउँछु।"
+      },
+      {
+        "example": "<ruby>給食<rt>きゅうしょく</rt></ruby>が<ruby>美味<rt>おい</rt></ruby>しいです。",
+        "eng": "The school lunch is delicious.",
+        "nepali": "स्कुलको खाना मिठो छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "絵",
+    "yomikata": "カイ, エ",
+    "onyomi": "カイ, エ",
+    "kunyomi": "",
+    "english_meaning": "picture, drawing",
+    "nepali_meaning": "चित्र",
+    "examples": [
+      {
+        "example": "<ruby>絵<rt>え</rt></ruby>を<ruby>描<rt>か</rt></ruby>きます。",
+        "eng": "I draw a picture.",
+        "nepali": "म चित्र कोर्छु।"
+      },
+      {
+        "example": "<ruby>絵本<rt>えほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>みます。",
+        "eng": "I read a picture book.",
+        "nepali": "म चित्र पुस्तक पढ्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "絶",
+    "yomikata": "ゼツ, た(える)",
+    "onyomi": "ゼツ",
+    "kunyomi": "た(える)",
+    "english_meaning": "discontinue, cut off",
+    "nepali_meaning": "अन्त्य, बन्द",
+    "examples": [
+      {
+        "example": "<ruby>絶対<rt>ぜったい</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I will definitely go.",
+        "nepali": "म पक्कै जान्छु।"
+      },
+      {
+        "example": "<ruby>絶望<rt>ぜつぼう</rt></ruby>しました。",
+        "eng": "I despaired.",
+        "nepali": "म निराश भएँ।"
+      }
+    ]
+  },
+  {
+    "kanji": "続",
+    "yomikata": "ゾク, つづ(く)",
+    "onyomi": "ゾク",
+    "kunyomi": "つづ(く), つづ(ける)",
+    "english_meaning": "continue",
+    "nepali_meaning": "जारी रहनु",
+    "examples": [
+      {
+        "example": "<ruby>続<rt>つづ</rt></ruby>けてください。",
+        "eng": "Please continue.",
+        "nepali": "कृपया जारी राख्नुहोस्।"
+      },
+      {
+        "example": "<ruby>連続<rt>れんぞく</rt></ruby>で<ruby>見<rt>み</rt></ruby>ます。",
+        "eng": "I watch continuously.",
+        "nepali": "म निरन्तर हेर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "緒",
+    "yomikata": "ショ, チョ, お",
+    "onyomi": "ショ, チョ",
+    "kunyomi": "お",
+    "english_meaning": "thread, together",
+    "nepali_meaning": "धागो, सँगै",
+    "examples": [
+      {
+        "example": "<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>行<rt>い</rt></ruby>きましょう。",
+        "eng": "Let's go together.",
+        "nepali": "सँगै जाऔं।"
+      },
+      {
+        "example": "<ruby>情緒<rt>じょうちょ</rt></ruby>があります。",
+        "eng": "It has emotion.",
+        "nepali": "यसमा भावना छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "罪",
+    "yomikata": "ザイ, つみ",
+    "onyomi": "ザイ",
+    "kunyomi": "つみ",
+    "english_meaning": "crime, sin",
+    "nepali_meaning": "अपराध, पाप",
+    "examples": [
+      {
+        "example": "<ruby>罪<rt>つみ</rt></ruby>を<ruby>犯<rt>おか</rt></ruby>しました。",
+        "eng": "I committed a crime.",
+        "nepali": "मैले अपराध गरें।"
+      },
+      {
+        "example": "<ruby>有罪<rt>ゆうざい</rt></ruby>です。",
+        "eng": "He is guilty.",
+        "nepali": "ऊ दोषी छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "置",
+    "yomikata": "チ, お(く)",
+    "onyomi": "チ",
+    "kunyomi": "お(く)",
+    "english_meaning": "put, place",
+    "nepali_meaning": "राख्नु",
+    "examples": [
+      {
+        "example": "ここに<ruby>置<rt>お</rt></ruby>いてください。",
+        "eng": "Please put it here.",
+        "nepali": "कृपया यहाँ राख्नुहोस्।"
+      },
+      {
+        "example": "<ruby>位置<rt>いち</rt></ruby>を<ruby>変<rt>か</rt></ruby>えます。",
+        "eng": "I change the position.",
+        "nepali": "म स्थान परिवर्तन गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "美",
+    "yomikata": "ビ, うつく(しい)",
+    "onyomi": "ビ",
+    "kunyomi": "うつく(しい)",
+    "english_meaning": "beautiful",
+    "nepali_meaning": "सुन्दर",
+    "examples": [
+      {
+        "example": "<ruby>美<rt>うつく</rt></ruby>しい<ruby>花<rt>はな</rt></ruby>ですね。",
+        "eng": "It's a beautiful flower, isn't it?",
+        "nepali": "सुन्दर फूल छ है।"
+      },
+      {
+        "example": "<ruby>美術館<rt>びじゅつかん</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to the art museum.",
+        "nepali": "म कला सङ्ग्रहालय जान्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "老",
+    "yomikata": "ロウ, お(いる)",
+    "onyomi": "ロウ",
+    "kunyomi": "お(いる), ふ(ける)",
+    "english_meaning": "old, aged",
+    "nepali_meaning": "बुढो",
+    "examples": [
+      {
+        "example": "<ruby>老人<rt>ろうじん</rt></ruby>が<ruby>歩<rt>ある</rt></ruby>いています。",
+        "eng": "An old person is walking.",
+        "nepali": "बुढो मानिस हिँड्दै छ।"
+      },
+      {
+        "example": "<ruby>老化<rt>ろうか</rt></ruby>を<ruby>防<rt>ふせ</rt></ruby>ぎます。",
+        "eng": "I prevent aging.",
+        "nepali": "म बुढ्यौली रोक्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "職",
+    "yomikata": "ショク",
+    "onyomi": "ショク",
+    "kunyomi": "",
+    "english_meaning": "employment, job",
+    "nepali_meaning": "रोजगारी",
+    "examples": [
+      {
+        "example": "<ruby>仕事<rt>しごと</rt></ruby>を<ruby>探<rt>さが</rt></ruby>しています。",
+        "eng": "I am looking for a job.",
+        "nepali": "म काम खोज्दै छु।"
+      },
+      {
+        "example": "<ruby>職業<rt>しょくぎょう</rt></ruby>は<ruby>何<rt>なん</rt></ruby>ですか。",
+        "eng": "What is your occupation?",
+        "nepali": "तपाईंको पेशा के हो?"
+      }
+    ]
+  },
+  {
+    "kanji": "育",
+    "yomikata": "イク, そだ(つ)",
+    "onyomi": "イク",
+    "kunyomi": "そだ(つ), はぐく(む)",
+    "english_meaning": "raise, bring up",
+    "nepali_meaning": "हुर्काउनु",
+    "examples": [
+      {
+        "example": "<ruby>子供<rt>こども</rt></ruby>を<ruby>育<rt>そだ</rt></ruby>てます。",
+        "eng": "I raise children.",
+        "nepali": "म बच्चा हुर्काउँछु।"
+      },
+      {
+        "example": "<ruby>教育<rt>きょういく</rt></ruby>が<ruby>大切<rt>たいせつ</rt></ruby>です。",
+        "eng": "Education is important.",
+        "nepali": "शिक्षा महत्त्वपूर्ण छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "背",
+    "yomikata": "ハイ, せ",
+    "onyomi": "ハイ",
+    "kunyomi": "せ, そむ(く)",
+    "english_meaning": "back, height",
+    "nepali_meaning": "पिठिउँ, उचाइ",
+    "examples": [
+      {
+        "example": "<ruby>背<rt>せ</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いです。",
+        "eng": "He is tall.",
+        "nepali": "ऊ अग्लो छ।"
+      },
+      {
+        "example": "<ruby>背中<rt>せなか</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>いです。",
+        "eng": "My back hurts.",
+        "nepali": "मेरो पिठिउँ दुखेको छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "能",
+    "yomikata": "ノウ",
+    "onyomi": "ノウ",
+    "kunyomi": "",
+    "english_meaning": "ability, talent",
+    "nepali_meaning": "क्षमता",
+    "examples": [
+      {
+        "example": "<ruby>能力<rt>のうりょく</rt></ruby>があります。",
+        "eng": "I have ability.",
+        "nepali": "मसँग क्षमता छ।"
+      },
+      {
+        "example": "<ruby>可能<rt>かのう</rt></ruby>ですか。",
+        "eng": "Is it possible?",
+        "nepali": "के यो सम्भव छ?"
+      }
+    ]
+  },
+  {
+    "kanji": "腹",
+    "yomikata": "フク, はら",
+    "onyomi": "フク",
+    "kunyomi": "はら",
+    "english_meaning": "belly, stomach",
+    "nepali_meaning": "पेट",
+    "examples": [
+      {
+        "example": "お<ruby>腹<rt>なか</rt></ruby>が<ruby>空<rt>す</rt></ruby>きました。",
+        "eng": "I am hungry.",
+        "nepali": "म भोकाएँ।"
+      },
+      {
+        "example": "<ruby>腹<rt>はら</rt></ruby>が<ruby>立<rt>た</rt></ruby>ちます。",
+        "eng": "I get angry.",
+        "nepali": "म रिसाउँछु।"
+      }
+    ]
+  },
+  {
+    "kanji": "舞",
+    "yomikata": "ブ, ま(う)",
+    "onyomi": "ブ",
+    "kunyomi": "ま(う)",
+    "english_meaning": "dance",
+    "nepali_meaning": "नाच्नु",
+    "examples": [
+      {
+        "example": "<ruby>踊<rt>おど</rt></ruby>りを<ruby>舞<rt>ま</rt></ruby>います。",
+        "eng": "I perform a dance.",
+        "nepali": "म नाच नाच्छु।"
+      },
+      {
+        "example": "<ruby>舞台<rt>ぶたい</rt></ruby>で<ruby>踊<rt>おど</rt></ruby>ります。",
+        "eng": "I dance on stage.",
+        "nepali": "म मञ्चमा नाच्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "船",
+    "yomikata": "セン, ふね",
+    "onyomi": "セン",
+    "kunyomi": "ふね, ふな",
+    "english_meaning": "ship, boat",
+    "nepali_meaning": "जहाज",
+    "examples": [
+      {
+        "example": "<ruby>船<rt>ふね</rt></ruby>に<ruby>乗<rt>の</rt></ruby>ります。",
+        "eng": "I board a ship.",
+        "nepali": "म जहाज चढ्छु।"
+      },
+      {
+        "example": "<ruby>船便<rt>ふなびん</rt></ruby>で<ruby>送<rt>おく</rt></ruby>ります。",
+        "eng": "I send it by sea mail.",
+        "nepali": "म जहाज मार्फत पठाउँछु।"
+      }
+    ]
+  },
+  {
+    "kanji": "良",
+    "yomikata": "リョウ, よ(い)",
+    "onyomi": "リョウ",
+    "kunyomi": "よ(い)",
+    "english_meaning": "good",
+    "nepali_meaning": "राम्रो",
+    "examples": [
+      {
+        "example": "この<ruby>本<rt>ほん</rt></ruby>は<ruby>内容<rt>ないよう</rt></ruby>が<ruby>良<rt>よ</rt></ruby>いです。",
+        "eng": "This book has good content.",
+        "nepali": "यस पुस्तकको सामग्री राम्रो छ।"
+      },
+      {
+        "example": "<ruby>良<rt>よ</rt></ruby>かったですね。",
+        "eng": "I'm glad to hear that.",
+        "nepali": "राम्रो भयो।"
+      }
+    ]
+  },
+  {
+    "kanji": "若",
+    "yomikata": "ジャク, わか(い)",
+    "onyomi": "ジャク, ニャク",
+    "kunyomi": "わか(い)",
+    "english_meaning": "young",
+    "nepali_meaning": "जवान",
+    "examples": [
+      {
+        "example": "<ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>若<rt>わか</rt></ruby>いです。",
+        "eng": "She is young.",
+        "nepali": "उनी जवान छिन्।"
+      },
+      {
+        "example": "<ruby>若者<rt>わかもの</rt></ruby>たちが<ruby>集<rt>あつ</rt></ruby>まっています。",
+        "eng": "Young people are gathering.",
+        "nepali": "युवाहरू जम्मा भइरहेका छन्।"
+      }
+    ]
+  },
+  {
+    "kanji": "苦",
+    "yomikata": "ク, くる(しい)",
+    "onyomi": "ク",
+    "kunyomi": "くる(しい), にが(い)",
+    "english_meaning": "suffering, bitter",
+    "nepali_meaning": "पीडा, गाह्रो",
+    "examples": [
+      {
+        "example": "<ruby>苦<rt>くる</rt></ruby>しいです。",
+        "eng": "It's painful.",
+        "nepali": "यो पीडादायक छ।"
+      },
+      {
+        "example": "この<ruby>薬<rt>くすり</rt></ruby>は<ruby>苦<rt>にが</rt></ruby>いです。",
+        "eng": "This medicine is bitter.",
+        "nepali": "यो औषधि पीरो छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "草",
+    "yomikata": "ソウ, くさ",
+    "onyomi": "ソウ",
+    "kunyomi": "くさ",
+    "english_meaning": "grass",
+    "nepali_meaning": "घाँस",
+    "examples": [
+      {
+        "example": "<ruby>草<rt>くさ</rt></ruby>が<ruby>生<rt>は</rt></ruby>えています。",
+        "eng": "Grass is growing.",
+        "nepali": "घाँस उम्रिरहेको छ।"
+      },
+      {
+        "example": "<ruby>草<rt>くさ</rt></ruby>むしりをします。",
+        "eng": "I weed.",
+        "nepali": "म घाँस उखेल्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "落",
+    "yomikata": "ラク, お(ちる)",
+    "onyomi": "ラク",
+    "kunyomi": "お(ちる), お(とす)",
+    "english_meaning": "fall, drop",
+    "nepali_meaning": "खस्नु",
+    "examples": [
+      {
+        "example": "<ruby>葉<rt>は</rt></ruby>っぱが<ruby>落<rt>お</rt></ruby>ちました。",
+        "eng": "The leaf fell.",
+        "nepali": "पात खस्यो।"
+      },
+      {
+        "example": "<ruby>財布<rt>さいふ</rt></ruby>を<ruby>落<rt>お</rt></ruby>としました。",
+        "eng": "I dropped my wallet.",
+        "nepali": "मैले पर्स झारें।"
+      }
+    ]
+  },
+  {
+    "kanji": "葉",
+    "yomikata": "ヨウ, は",
+    "onyomi": "ヨウ",
+    "kunyomi": "は",
+    "english_meaning": "leaf",
+    "nepali_meaning": "पात",
+    "examples": [
+      {
+        "example": "<ruby>葉<rt>は</rt></ruby>っぱが<ruby>落<rt>お</rt></ruby>ちています。",
+        "eng": "Leaves are falling.",
+        "nepali": "पातहरू खसिरहेका छन्।"
+      },
+      {
+        "example": "<ruby>紅葉<rt>こうよう</rt></ruby>がきれいです。",
+        "eng": "The autumn leaves are beautiful.",
+        "nepali": "शरद ऋतुका पातहरू सुन्दर छन्।"
+      }
+    ]
+  },
+  {
+    "kanji": "術",
+    "yomikata": "ジュツ",
+    "onyomi": "ジュツ",
+    "kunyomi": "",
+    "english_meaning": "art, technique",
+    "nepali_meaning": "कला",
+    "examples": [
+      {
+        "example": "<ruby>技術<rt>ぎじゅつ</rt></ruby>が<ruby>進<rt>すす</rt></ruby>んでいます。",
+        "eng": "Technology is advancing.",
+        "nepali": "प्रविधि उन्नत हुँदै छ।"
+      },
+      {
+        "example": "<ruby>美術館<rt>びじゅつかん</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to the art museum.",
+        "nepali": "म कला सङ्ग्रहालय जान्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "表",
+    "yomikata": "ヒョウ, おもて",
+    "onyomi": "ヒョウ",
+    "kunyomi": "おもて, あらわ(す)",
+    "english_meaning": "surface, express",
+    "nepali_meaning": "सतह",
+    "examples": [
+      {
+        "example": "<ruby>名前<rt>なまえ</rt></ruby>を<ruby>表<rt>ひょう</rt></ruby>に<ruby>書<rt>か</rt></ruby>いてください。",
+        "eng": "Please write your name on the table.",
+        "nepali": "कृपया तालिकामा नाम लेख्नुहोस्।"
+      },
+      {
+        "example": "<ruby>気持<rt>きも</rt></ruby>ちを<ruby>表<rt>あらわ</rt></ruby>します。",
+        "eng": "I express my feelings.",
+        "nepali": "म भावना व्यक्त गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "要",
+    "yomikata": "ヨウ, い(る)",
+    "onyomi": "ヨウ",
+    "kunyomi": "い(る)",
+    "english_meaning": "need, essential",
+    "nepali_meaning": "आवश्यक",
+    "examples": [
+      {
+        "example": "<ruby>必要<rt>ひつよう</rt></ruby>ですか。",
+        "eng": "Is it necessary?",
+        "nepali": "के यो आवश्यक छ?"
+      },
+      {
+        "example": "<ruby>重要<rt>じゅうよう</rt></ruby>なことです。",
+        "eng": "It's important.",
+        "nepali": "यो महत्त्वपूर्ण कुरा हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "規",
+    "yomikata": "キ",
+    "onyomi": "キ",
+    "kunyomi": "",
+    "english_meaning": "rule, standard",
+    "nepali_meaning": "नियम",
+    "examples": [
+      {
+        "example": "<ruby>規則<rt>きそく</rt></ruby>を<ruby>守<rt>まも</rt></ruby>ります。",
+        "eng": "I follow the rules.",
+        "nepali": "म नियम पालन गर्छु।"
+      },
+      {
+        "example": "<ruby>規定<rt>きてい</rt></ruby>があります。",
+        "eng": "There is a regulation.",
+        "nepali": "नियम छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "覚",
+    "yomikata": "カク, おぼ(える)",
+    "onyomi": "カク",
+    "kunyomi": "おぼ(える), さ(ます)",
+    "english_meaning": "remember, wake up",
+    "nepali_meaning": "याद गर्नु",
+    "examples": [
+      {
+        "example": "<ruby>単語<rt>たんご</rt></ruby>を<ruby>覚<rt>おぼ</rt></ruby>えます。",
+        "eng": "I memorize words.",
+        "nepali": "म शब्दहरू याद गर्छु।"
+      },
+      {
+        "example": "<ruby>目<rt>め</rt></ruby>が<ruby>覚<rt>さ</rt></ruby>めました。",
+        "eng": "I woke up.",
+        "nepali": "म बिउँझिएँ।"
+      }
+    ]
+  },
+  {
+    "kanji": "観",
+    "yomikata": "カン",
+    "onyomi": "カン",
+    "kunyomi": "",
+    "english_meaning": "view, observe",
+    "nepali_meaning": "अवलोकन",
+    "examples": [
+      {
+        "example": "テレビを<ruby>見<rt>み</rt></ruby>ます。",
+        "eng": "I watch TV.",
+        "nepali": "म टिभी हेर्छु।"
+      },
+      {
+        "example": "<ruby>観光客<rt>かんこうきゃく</rt></ruby>が<ruby>来<rt>き</rt></ruby>ます。",
+        "eng": "Tourists come.",
+        "nepali": "पर्यटकहरू आउँछन्।"
+      }
+    ]
+  },
+  {
+    "kanji": "解",
+    "yomikata": "カイ, と(く)",
+    "onyomi": "カイ",
+    "kunyomi": "と(く), わか(る)",
+    "english_meaning": "solve, untie",
+    "nepali_meaning": "समाधान गर्नु",
+    "examples": [
+      {
+        "example": "<ruby>問題<rt>もんだい</rt></ruby>を<ruby>解<rt>と</rt></ruby>きます。",
+        "eng": "I solve the problem.",
+        "nepali": "म समस्या समाधान गर्छु।"
+      },
+      {
+        "example": "<ruby>理解<rt>りかい</rt></ruby>しました。",
+        "eng": "I understood.",
+        "nepali": "मैले बुझें।"
+      }
+    ]
+  },
+  {
+    "kanji": "記",
+    "yomikata": "キ, しる(す)",
+    "onyomi": "キ",
+    "kunyomi": "しる(す)",
+    "english_meaning": "write down, record",
+    "nepali_meaning": "लेख्नु",
+    "examples": [
+      {
+        "example": "<ruby>日記<rt>にっき</rt></ruby>を<ruby>書<rt>か</rt></ruby>きます。",
+        "eng": "I write a diary.",
+        "nepali": "म डायरी लेख्छु।"
+      },
+      {
+        "example": "<ruby>記念<rt>きねん</rt></ruby><ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>ります。",
+        "eng": "I take a commemorative photo.",
+        "nepali": "म स्मृतिको फोटो खिच्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "訪",
+    "yomikata": "ホウ, おとず(れる)",
+    "onyomi": "ホウ",
+    "kunyomi": "おとず(れる), たず(ねる)",
+    "english_meaning": "visit",
+    "nepali_meaning": "भेट्नु",
+    "examples": [
+      {
+        "example": "<ruby>友達<rt>ともだち</rt></ruby>を<ruby>訪<rt>たず</rt></ruby>ねます。",
+        "eng": "I visit my friend.",
+        "nepali": "म साथीलाई भेट्न जान्छु।"
+      },
+      {
+        "example": "<ruby>訪問<rt>ほうもん</rt></ruby>します。",
+        "eng": "I make a visit.",
+        "nepali": "म भेट गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "許",
+    "yomikata": "キョ, ゆる(す)",
+    "onyomi": "キョ",
+    "kunyomi": "ゆる(す)",
+    "english_meaning": "permit, allow",
+    "nepali_meaning": "अनुमति दिनु",
+    "examples": [
+      {
+        "example": "<ruby>許<rt>ゆる</rt></ruby>してください。",
+        "eng": "Please forgive me.",
+        "nepali": "कृपया मलाई माफ गर्नुहोस्।"
+      },
+      {
+        "example": "<ruby>許可<rt>きょか</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>です。",
+        "eng": "Permission is required.",
+        "nepali": "अनुमति आवश्यक छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "認",
+    "yomikata": "ニン, みと(める)",
+    "onyomi": "ニン",
+    "kunyomi": "みと(める)",
+    "english_meaning": "recognize, admit",
+    "nepali_meaning": "स्वीकार गर्नु",
+    "examples": [
+      {
+        "example": "<ruby>認<rt>みと</rt></ruby>められました。",
+        "eng": "I was recognized.",
+        "nepali": "म स्वीकार गरिएँ।"
+      },
+      {
+        "example": "<ruby>確認<rt>かくにん</rt></ruby>します。",
+        "eng": "I confirm.",
+        "nepali": "म पुष्टि गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "誤",
+    "yomikata": "ゴ, あやま(る)",
+    "onyomi": "ゴ",
+    "kunyomi": "あやま(る)",
+    "english_meaning": "mistake, error",
+    "nepali_meaning": "गल्ती",
+    "examples": [
+      {
+        "example": "<ruby>誤解<rt>ごかい</rt></ruby>しないでください。",
+        "eng": "Please don't misunderstand.",
+        "nepali": "कृपया गलत नबुझ्नुहोस्।"
+      },
+      {
+        "example": "<ruby>間違<rt>まちが</rt></ruby>いがありました。",
+        "eng": "There was a mistake.",
+        "nepali": "गल्ती भयो।"
+      }
+    ]
+  },
+  {
+    "kanji": "調",
+    "yomikata": "チョウ, しら(べる)",
+    "onyomi": "チョウ",
+    "kunyomi": "しら(べる)",
+    "english_meaning": "investigate, tune",
+    "nepali_meaning": "अनुसन्धान गर्नु",
+    "examples": [
+      {
+        "example": "<ruby>辞書<rt>じしょ</rt></ruby>で<ruby>調<rt>しら</rt></ruby>べます。",
+        "eng": "I look it up in a dictionary.",
+        "nepali": "म शब्दकोशमा हेर्छु।"
+      },
+      {
+        "example": "<ruby>天気予報<rt>てんきよほう</rt></ruby>を<ruby>調<rt>しら</rt></ruby>べました。",
+        "eng": "I checked the weather forecast.",
+        "nepali": "मैले मौसम पूर्वानुमान जाँचें।"
+      }
+    ]
+  },
+  {
+    "kanji": "談",
+    "yomikata": "ダン",
+    "onyomi": "ダン",
+    "kunyomi": "",
+    "english_meaning": "talk, discuss",
+    "nepali_meaning": "कुराकानी",
+    "examples": [
+      {
+        "example": "<ruby>相談<rt>そうだん</rt></ruby>があります。",
+        "eng": "I have something to discuss.",
+        "nepali": "मसँग परामर्श गर्ने विषय छ।"
+      },
+      {
+        "example": "<ruby>面談<rt>めんだん</rt></ruby>をします。",
+        "eng": "I have an interview.",
+        "nepali": "म अन्तर्वार्ता गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "論",
+    "yomikata": "ロン",
+    "onyomi": "ロン",
+    "kunyomi": "",
+    "english_meaning": "argument, theory",
+    "nepali_meaning": "तर्क",
+    "examples": [
+      {
+        "example": "<ruby>議論<rt>ぎろん</rt></ruby>します。",
+        "eng": "I discuss.",
+        "nepali": "म बहस गर्छु।"
+      },
+      {
+        "example": "<ruby>論文<rt>ろんぶん</rt></ruby>を<ruby>書<rt>か</rt></ruby>きます。",
+        "eng": "I write a thesis.",
+        "nepali": "म शोधपत्र लेख्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "識",
+    "yomikata": "シキ",
+    "onyomi": "シキ",
+    "kunyomi": "",
+    "english_meaning": "knowledge, awareness",
+    "nepali_meaning": "ज्ञान",
+    "examples": [
+      {
+        "example": "<ruby>知識<rt>ちしき</rt></ruby>があります。",
+        "eng": "I have knowledge.",
+        "nepali": "मसँग ज्ञान छ।"
+      },
+      {
+        "example": "<ruby>意識<rt>いしき</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いです。",
+        "eng": "Awareness is high.",
+        "nepali": "चेतना उच्च छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "警",
+    "yomikata": "ケイ",
+    "onyomi": "ケイ",
+    "kunyomi": "",
+    "english_meaning": "warn, police",
+    "nepali_meaning": "सावधान, प्रहरी",
+    "examples": [
+      {
+        "example": "<ruby>警察<rt>けいさつ</rt></ruby>を<ruby>呼<rt>よ</rt></ruby>びます。",
+        "eng": "I call the police.",
+        "nepali": "म प्रहरी बोलाउँछु।"
+      },
+      {
+        "example": "<ruby>警告<rt>けいこく</rt></ruby>します。",
+        "eng": "I warn.",
+        "nepali": "म चेतावनी दिन्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "議",
+    "yomikata": "ギ",
+    "onyomi": "ギ",
+    "kunyomi": "",
+    "english_meaning": "deliberation, discuss",
+    "nepali_meaning": "छलफल",
+    "examples": [
+      {
+        "example": "<ruby>会議<rt>かいぎ</rt></ruby>があります。",
+        "eng": "There is a meeting.",
+        "nepali": "बैठक छ।"
+      },
+      {
+        "example": "<ruby>議論<rt>ぎろん</rt></ruby>するのは<ruby>大事<rt>だいじ</rt></ruby>です。",
+        "eng": "It's important to discuss.",
+        "nepali": "बहस गर्नु महत्त्वपूर्ण छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "負",
+    "yomikata": "フ, ま(ける)",
+    "onyomi": "フ",
+    "kunyomi": "ま(ける), お(う)",
+    "english_meaning": "defeat, bear",
+    "nepali_meaning": "हार, बोक्नु",
+    "examples": [
+      {
+        "example": "<ruby>試合<rt>しあい</rt></ruby>に<ruby>負<rt>ま</rt></ruby>けました。",
+        "eng": "I lost the game.",
+        "nepali": "म खेलमा हारें।"
+      },
+      {
+        "example": "<ruby>責任<rt>せきにん</rt></ruby>を<ruby>負<rt>お</rt></ruby>います。",
+        "eng": "I bear responsibility.",
+        "nepali": "म जिम्मेवारी लिन्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "財",
+    "yomikata": "ザイ, サイ",
+    "onyomi": "ザイ, サイ",
+    "kunyomi": "",
+    "english_meaning": "wealth, property",
+    "nepali_meaning": "सम्पत्ति",
+    "examples": [
+      {
+        "example": "<ruby>財布<rt>さいふ</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れました。",
+        "eng": "I forgot my wallet.",
+        "nepali": "मैले पर्स बिर्सें।"
+      },
+      {
+        "example": "<ruby>財政<rt>ざいせい</rt></ruby>が<ruby>厳<rt>きび</rt></ruby>しいです。",
+        "eng": "The finances are tight.",
+        "nepali": "आर्थिक अवस्था कठिन छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "貧",
+    "yomikata": "ヒン, ビン, まず(しい)",
+    "onyomi": "ヒン, ビン",
+    "kunyomi": "まず(しい)",
+    "english_meaning": "poor",
+    "nepali_meaning": "गरिब",
+    "examples": [
+      {
+        "example": "<ruby>貧<rt>まず</rt></ruby>しい<ruby>生活<rt>せいかつ</rt></ruby>です。",
+        "eng": "It's a poor life.",
+        "nepali": "गरिब जीवन हो।"
+      },
+      {
+        "example": "<ruby>貧乏<rt>びんぼう</rt></ruby>です。",
+        "eng": "I am poor.",
+        "nepali": "म गरिब छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "責",
+    "yomikata": "セキ, せ(める)",
+    "onyomi": "セキ",
+    "kunyomi": "せ(める)",
+    "english_meaning": "responsibility, blame",
+    "nepali_meaning": "जिम्मेवारी",
+    "examples": [
+      {
+        "example": "<ruby>責任<rt>せきにん</rt></ruby>があります。",
+        "eng": "I have responsibility.",
+        "nepali": "मेरो जिम्मेवारी छ।"
+      },
+      {
+        "example": "<ruby>責<rt>せ</rt></ruby>めないでください。",
+        "eng": "Please don't blame me.",
+        "nepali": "कृपया मलाई दोष नदिनुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "費",
+    "yomikata": "ヒ, つい(やす)",
+    "onyomi": "ヒ",
+    "kunyomi": "つい(やす), つい(える)",
+    "english_meaning": "expense, cost",
+    "nepali_meaning": "खर्च",
+    "examples": [
+      {
+        "example": "<ruby>時間<rt>じかん</rt></ruby>を<ruby>費<rt>つい</rt></ruby>やしました。",
+        "eng": "I spent time.",
+        "nepali": "मैले समय खर्च गरें।"
+      },
+      {
+        "example": "<ruby>生活費<rt>せいかつひ</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いです。",
+        "eng": "Living expenses are high.",
+        "nepali": "जीवनयापन खर्च धेरै छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "資",
+    "yomikata": "シ",
+    "onyomi": "シ",
+    "kunyomi": "",
+    "english_meaning": "resources, capital",
+    "nepali_meaning": "स्रोत",
+    "examples": [
+      {
+        "example": "<ruby>資料<rt>しりょう</rt></ruby>を<ruby>集<rt>あつ</rt></ruby>めます。",
+        "eng": "I collect materials.",
+        "nepali": "म सामग्री सङ्कलन गर्छु।"
+      },
+      {
+        "example": "<ruby>資格<rt>しかく</rt></ruby>を<ruby>取<rt>と</rt></ruby>ります。",
+        "eng": "I get a qualification.",
+        "nepali": "म योग्यता लिन्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "賛",
+    "yomikata": "サン",
+    "onyomi": "サン",
+    "kunyomi": "",
+    "english_meaning": "agree, praise",
+    "nepali_meaning": "सहमत, प्रशंसा",
+    "examples": [
+      {
+        "example": "<ruby>賛成<rt>さんせい</rt></ruby>です。",
+        "eng": "I agree.",
+        "nepali": "म सहमत छु।"
+      },
+      {
+        "example": "<ruby>賛美<rt>さんび</rt></ruby>します。",
+        "eng": "I praise.",
+        "nepali": "म प्रशंसा गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "越",
+    "yomikata": "エツ, こ(す)",
+    "onyomi": "エツ",
+    "kunyomi": "こ(す), こ(える)",
+    "english_meaning": "cross over, exceed",
+    "nepali_meaning": "पार गर्नु",
+    "examples": [
+      {
+        "example": "<ruby>山<rt>やま</rt></ruby>を<ruby>越<rt>こ</rt></ruby>えます。",
+        "eng": "I cross the mountain.",
+        "nepali": "म पहाड पार गर्छु।"
+      },
+      {
+        "example": "<ruby>優越<rt>ゆうえつ</rt></ruby>しています。",
+        "eng": "He is superior.",
+        "nepali": "ऊ श्रेष्ठ छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "路",
+    "yomikata": "ロ, じ",
+    "onyomi": "ロ",
+    "kunyomi": "じ",
+    "english_meaning": "road, path",
+    "nepali_meaning": "बाटो",
+    "examples": [
+      {
+        "example": "<ruby>道<rt>みち</rt></ruby>がわかりません。",
+        "eng": "I don't know the way.",
+        "nepali": "म बाटो जान्दिन।"
+      },
+      {
+        "example": "<ruby>線路<rt>せんろ</rt></ruby>を<ruby>渡<rt>わた</rt></ruby>ります。",
+        "eng": "I cross the railway.",
+        "nepali": "म रेल लाइन पार गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "辞",
+    "yomikata": "ジ, や(める)",
+    "onyomi": "ジ",
+    "kunyomi": "や(める)",
+    "english_meaning": "resign, word",
+    "nepali_meaning": "राजीनामा, शब्द",
+    "examples": [
+      {
+        "example": "<ruby>辞書<rt>じしょ</rt></ruby>を<ruby>引<rt>ひ</rt></ruby>きます。",
+        "eng": "I look it up in a dictionary.",
+        "nepali": "म शब्दकोश हेर्छु।"
+      },
+      {
+        "example": "<ruby>会社<rt>かいしゃ</rt></ruby>を<ruby>辞<rt>や</rt></ruby>めました。",
+        "eng": "I quit the company.",
+        "nepali": "मैले कम्पनी छोडें।"
+      }
+    ]
+  },
+  {
+    "kanji": "込",
+    "yomikata": "こ(む)",
+    "onyomi": "",
+    "kunyomi": "こ(む)",
+    "english_meaning": "crowded, into",
+    "nepali_meaning": "भित्र, भिडभाड",
+    "examples": [
+      {
+        "example": "<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>込<rt>こ</rt></ruby>んでいます。",
+        "eng": "The train is crowded.",
+        "nepali": "रेल भिडभाड छ।"
+      },
+      {
+        "example": "<ruby>申<rt>もう</rt></ruby>し<ruby>込<rt>こ</rt></ruby>みます。",
+        "eng": "I apply.",
+        "nepali": "म आवेदन गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "迎",
+    "yomikata": "ゲイ, むか(える)",
+    "onyomi": "ゲイ",
+    "kunyomi": "むか(える)",
+    "english_meaning": "welcome, meet",
+    "nepali_meaning": "स्वागत गर्नु",
+    "examples": [
+      {
+        "example": "<ruby>友達<rt>ともだち</rt></ruby>を<ruby>迎<rt>むか</rt></ruby>えに<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to pick up my friend.",
+        "nepali": "म साथीलाई लिन जान्छु।"
+      },
+      {
+        "example": "<ruby>歓迎<rt>かんげい</rt></ruby>します。",
+        "eng": "I welcome.",
+        "nepali": "म स्वागत गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "返",
+    "yomikata": "ヘン, かえ(す)",
+    "onyomi": "ヘン",
+    "kunyomi": "かえ(す), かえ(る)",
+    "english_meaning": "return, reply",
+    "nepali_meaning": "फर्काउनु",
+    "examples": [
+      {
+        "example": "<ruby>本<rt>ほん</rt></ruby>を<ruby>返<rt>かえ</rt></ruby>します。",
+        "eng": "I return the book.",
+        "nepali": "म किताब फर्काउँछु।"
+      },
+      {
+        "example": "<ruby>返事<rt>へんじ</rt></ruby>を<ruby>書<rt>か</rt></ruby>いてください。",
+        "eng": "Please write a reply.",
+        "nepali": "कृपया जवाफ लेख्नुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "迷",
+    "yomikata": "メイ, まよ(う)",
+    "onyomi": "メイ",
+    "kunyomi": "まよ(う)",
+    "english_meaning": "lose way, hesitate",
+    "nepali_meaning": "हराउनु, अलमल",
+    "examples": [
+      {
+        "example": "<ruby>道<rt>みち</rt></ruby>に<ruby>迷<rt>まよ</rt></ruby>いました。",
+        "eng": "I got lost.",
+        "nepali": "म बाटो हराएँ।"
+      },
+      {
+        "example": "<ruby>迷<rt>まよ</rt></ruby>っています。",
+        "eng": "I am hesitating.",
+        "nepali": "म अलमलमा छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "追",
+    "yomikata": "ツイ, お(う)",
+    "onyomi": "ツイ",
+    "kunyomi": "お(う)",
+    "english_meaning": "follow, chase",
+    "nepali_meaning": "पछ्याउनु",
+    "examples": [
+      {
+        "example": "<ruby>後<rt>うしろ</rt></ruby>を<ruby>追<rt>お</rt></ruby>います。",
+        "eng": "I follow behind.",
+        "nepali": "म पछाडि पछ्याउँछु।"
+      },
+      {
+        "example": "<ruby>追加<rt>ついか</rt></ruby>します。",
+        "eng": "I add.",
+        "nepali": "म थप गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "退",
+    "yomikata": "タイ, しりぞ(く)",
+    "onyomi": "タイ",
+    "kunyomi": "しりぞ(く), ひ(く)",
+    "english_meaning": "retreat, withdraw",
+    "nepali_meaning": "पछि हट्नु",
+    "examples": [
+      {
+        "example": "<ruby>会社<rt>かいしゃ</rt></ruby>を<ruby>退職<rt>たいしょく</rt></ruby>します。",
+        "eng": "I will retire from the company.",
+        "nepali": "म कम्पनीबाट अवकाश लिन्छु।"
+      },
+      {
+        "example": "<ruby>後退<rt>こうたい</rt></ruby>します。",
+        "eng": "Move backward.",
+        "nepali": "पछि हट्नुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "逃",
+    "yomikata": "トウ, に(げる)",
+    "onyomi": "トウ",
+    "kunyomi": "に(げる), のが(す)",
+    "english_meaning": "escape, run away",
+    "nepali_meaning": "भाग्नु",
+    "examples": [
+      {
+        "example": "<ruby>逃<rt>に</rt></ruby>げます。",
+        "eng": "I run away.",
+        "nepali": "म भाग्छु।"
+      },
+      {
+        "example": "<ruby>逃走<rt>とうそう</rt></ruby>中です。",
+        "eng": "He is on the run.",
+        "nepali": "ऊ फरार छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "途",
+    "yomikata": "ト",
+    "onyomi": "ト",
+    "kunyomi": "",
+    "english_meaning": "way, route",
+    "nepali_meaning": "बाटो",
+    "examples": [
+      {
+        "example": "<ruby>途中<rt>とちゅう</rt></ruby>で<ruby>会<rt>あ</rt></ruby>いました。",
+        "eng": "I met him on the way.",
+        "nepali": "बाटोमा भेट भयो।"
+      },
+      {
+        "example": "<ruby>途方<rt>とほう</rt></ruby>に<ruby>暮<rt>く</rt></ruby>れました。",
+        "eng": "I was at a loss.",
+        "nepali": "म के गर्ने नसोच्ने भएँ।"
+      }
+    ]
+  },
+  {
+    "kanji": "速",
+    "yomikata": "ソク, はや(い)",
+    "onyomi": "ソク",
+    "kunyomi": "はや(い)",
+    "english_meaning": "fast, speed",
+    "nepali_meaning": "छिटो",
+    "examples": [
+      {
+        "example": "<ruby>速<rt>はや</rt></ruby>い<ruby>車<rt>くるま</rt></ruby>です。",
+        "eng": "It's a fast car.",
+        "nepali": "यो छिटो कार हो।"
+      },
+      {
+        "example": "<ruby>速度<rt>そくど</rt></ruby>を<ruby>上<rt>あ</rt></ruby>げます。",
+        "eng": "I increase speed.",
+        "nepali": "म गति बढाउँछु।"
+      }
+    ]
+  },
+  {
+    "kanji": "連",
+    "yomikata": "レン, つ(れる)",
+    "onyomi": "レン",
+    "kunyomi": "つ(れる), つら(なる)",
+    "english_meaning": "take along, connect",
+    "nepali_meaning": "सँगै लानु",
+    "examples": [
+      {
+        "example": "<ruby>子供<rt>こども</rt></ruby>を<ruby>連<rt>つ</rt></ruby>れて<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I take my child along.",
+        "nepali": "म बच्चालाई सँगै लान्छु।"
+      },
+      {
+        "example": "<ruby>連絡<rt>れんらく</rt></ruby>します。",
+        "eng": "I contact.",
+        "nepali": "म सम्पर्क गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "遅",
+    "yomikata": "チ, おく(れる)",
+    "onyomi": "チ",
+    "kunyomi": "おく(れる), おそ(い)",
+    "english_meaning": "slow, late",
+    "nepali_meaning": "ढिलो",
+    "examples": [
+      {
+        "example": "<ruby>遅<rt>おく</rt></ruby>れました。",
+        "eng": "I am late.",
+        "nepali": "म ढिलो भएँ।"
+      },
+      {
+        "example": "<ruby>遅<rt>おそ</rt></ruby>いですね。",
+        "eng": "It's slow, isn't it?",
+        "nepali": "ढिलो छ है।"
+      }
+    ]
+  },
+  {
+    "kanji": "遊",
+    "yomikata": "ユウ, あそ(ぶ)",
+    "onyomi": "ユウ",
+    "kunyomi": "あそ(ぶ)",
+    "english_meaning": "play",
+    "nepali_meaning": "खेल्नु",
+    "examples": [
+      {
+        "example": "<ruby>公園<rt>こうえん</rt></ruby>で<ruby>遊<rt>あそ</rt></ruby>びます。",
+        "eng": "I play in the park.",
+        "nepali": "म पार्कमा खेल्छु।"
+      },
+      {
+        "example": "<ruby>遊<rt>あそ</rt></ruby>びに<ruby>行<rt>い</rt></ruby>きませんか。",
+        "eng": "Would you like to go out?",
+        "nepali": "खेल्न जानुहुन्छ?"
+      }
+    ]
+  },
+  {
+    "kanji": "過",
+    "yomikata": "カ, す(ぎる)",
+    "onyomi": "カ",
+    "kunyomi": "す(ぎる), あやま(ち)",
+    "english_meaning": "exceed, pass",
+    "nepali_meaning": "बित्नु, नाघ्नु",
+    "examples": [
+      {
+        "example": "<ruby>時間<rt>じかん</rt></ruby>が<ruby>過<rt>す</rt></ruby>ぎました。",
+        "eng": "Time passed.",
+        "nepali": "समय बित्यो।"
+      },
+      {
+        "example": "<ruby>過去<rt>かこ</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れましょう。",
+        "eng": "Let's forget the past.",
+        "nepali": "विगत बिर्सौं।"
+      }
+    ]
+  },
+  {
+    "kanji": "達",
+    "yomikata": "タツ, ダ",
+    "onyomi": "タツ",
+    "kunyomi": "たち",
+    "english_meaning": "reach, plural suffix",
+    "nepali_meaning": "पुग्नु",
+    "examples": [
+      {
+        "example": "<ruby>友達<rt>ともだち</rt></ruby>が<ruby>来<rt>き</rt></ruby>ます。",
+        "eng": "My friend comes.",
+        "nepali": "मेरो साथी आउँदै छ।"
+      },
+      {
+        "example": "<ruby>目的地<rt>もくてきち</rt></ruby>に<ruby>達<rt>たっ</rt></ruby>しました。",
+        "eng": "I have reached the destination.",
+        "nepali": "म गन्तव्यमा पुगें।"
+      }
+    ]
+  },
+  {
+    "kanji": "違",
+    "yomikata": "イ, ちが(う)",
+    "onyomi": "イ",
+    "kunyomi": "ちが(う)",
+    "english_meaning": "differ, wrong",
+    "nepali_meaning": "फरक, गलत",
+    "examples": [
+      {
+        "example": "<ruby>間違<rt>まちが</rt></ruby>えました。",
+        "eng": "I made a mistake.",
+        "nepali": "मैले गल्ती गरें।"
+      },
+      {
+        "example": "<ruby>違<rt>ちが</rt></ruby>います。",
+        "eng": "That's different/wrong.",
+        "nepali": "यो फरक छ/गलत छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "適",
+    "yomikata": "テキ",
+    "onyomi": "テキ",
+    "kunyomi": "かな(う)",
+    "english_meaning": "suitable, appropriate",
+    "nepali_meaning": "उपयुक्त",
+    "examples": [
+      {
+        "example": "<ruby>適当<rt>てきとう</rt></ruby>な<ruby>言葉<rt>ことば</rt></ruby>が<ruby>見<rt>み</rt></ruby>つかりません。",
+        "eng": "I can't find the appropriate words.",
+        "nepali": "म उपयुक्त शब्द फेला पार्न सक्दिन।"
+      },
+      {
+        "example": "この<ruby>仕事<rt>しごと</rt></ruby>に<ruby>適<rt>てき</rt></ruby>しています。",
+        "eng": "I am suitable for this job.",
+        "nepali": "म यो कामको लागि उपयुक्त छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "選",
+    "yomikata": "セン, えら(ぶ)",
+    "onyomi": "セン",
+    "kunyomi": "えら(ぶ)",
+    "english_meaning": "choose, select",
+    "nepali_meaning": "छान्नु",
+    "examples": [
+      {
+        "example": "これを<ruby>選<rt>えら</rt></ruby>びます。",
+        "eng": "I choose this.",
+        "nepali": "म यो छान्छु।"
+      },
+      {
+        "example": "<ruby>選択<rt>せんたく</rt></ruby>してください。",
+        "eng": "Please select.",
+        "nepali": "कृपया चयन गर्नुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "部",
+    "yomikata": "ブ",
+    "onyomi": "ブ",
+    "kunyomi": "",
+    "english_meaning": "section, department",
+    "nepali_meaning": "विभाग",
+    "examples": [
+      {
+        "example": "<ruby>全部<rt>ぜんぶ</rt></ruby>で<ruby>千円<rt>せんえん</rt></ruby>です。",
+        "eng": "It's 1000 yen in total.",
+        "nepali": "जम्मा १००० येन हो।"
+      },
+      {
+        "example": "<ruby>部屋<rt>へや</rt></ruby>がきれいです。",
+        "eng": "The room is clean.",
+        "nepali": "कोठा सफा छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "配",
+    "yomikata": "ハイ, くば(る)",
+    "onyomi": "ハイ",
+    "kunyomi": "くば(る)",
+    "english_meaning": "distribute, arrange",
+    "nepali_meaning": "बाँड्नु",
+    "examples": [
+      {
+        "example": "<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>配<rt>くば</rt></ruby>ります。",
+        "eng": "I distribute the packages.",
+        "nepali": "म सामान बाँड्छु।"
+      },
+      {
+        "example": "<ruby>心配<rt>しんぱい</rt></ruby>しないでください。",
+        "eng": "Please don't worry.",
+        "nepali": "कृपया चिन्ता नलिनुहोस्।"
+      }
+    ]
+  },
+  {
+    "kanji": "酒",
+    "yomikata": "シュ, さけ",
+    "onyomi": "シュ",
+    "kunyomi": "さけ",
+    "english_meaning": "alcohol, sake",
+    "nepali_meaning": "मदिरा",
+    "examples": [
+      {
+        "example": "お<ruby>酒<rt>さけ</rt></ruby>を<ruby>飲<rt>の</rt></ruby>みます。",
+        "eng": "I drink alcohol.",
+        "nepali": "म मदिरा पिउँछु।"
+      },
+      {
+        "example": "<ruby>酒屋<rt>さかや</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to the liquor store.",
+        "nepali": "म मदिरा पसल जान्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "閉",
+    "yomikata": "ヘイ, と(じる)",
+    "onyomi": "ヘイ",
+    "kunyomi": "と(じる), し(める)",
+    "english_meaning": "close, shut",
+    "nepali_meaning": "बन्द गर्नु",
+    "examples": [
+      {
+        "example": "ドアを<ruby>閉<rt>し</rt></ruby>めます。",
+        "eng": "I close the door.",
+        "nepali": "म ढोका बन्द गर्छु।"
+      },
+      {
+        "example": "<ruby>店<rt>みせ</rt></ruby>は<ruby>閉<rt>し</rt></ruby>まっています。",
+        "eng": "The store is closed.",
+        "nepali": "पसल बन्द छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "関",
+    "yomikata": "カン, せき",
+    "onyomi": "カン",
+    "kunyomi": "せき, かか(わる)",
+    "english_meaning": "related, connection",
+    "nepali_meaning": "सम्बन्धित",
+    "examples": [
+      {
+        "example": "<ruby>関係<rt>かんけい</rt></ruby>があります。",
+        "eng": "There is a relationship.",
+        "nepali": "सम्बन्ध छ।"
+      },
+      {
+        "example": "<ruby>関西地方<rt>かんさいちほう</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to the Kansai region.",
+        "nepali": "म कान्साइ क्षेत्र जान्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "降",
+    "yomikata": "コウ, お(りる)",
+    "onyomi": "コウ",
+    "kunyomi": "お(りる), ふ(る)",
+    "english_meaning": "descend, get off",
+    "nepali_meaning": "झर्नु",
+    "examples": [
+      {
+        "example": "<ruby>電車<rt>でんしゃ</rt></ruby>を<ruby>降<rt>お</rt></ruby>ります。",
+        "eng": "I get off the train.",
+        "nepali": "म रेलबाट झर्छु।"
+      },
+      {
+        "example": "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>っています。",
+        "eng": "It's raining.",
+        "nepali": "पानी परिरहेको छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "限",
+    "yomikata": "ゲン, かぎ(る)",
+    "onyomi": "ゲン",
+    "kunyomi": "かぎ(る)",
+    "english_meaning": "limit, restrict",
+    "nepali_meaning": "सीमित",
+    "examples": [
+      {
+        "example": "<ruby>時間<rt>じかん</rt></ruby>に<ruby>限<rt>かぎ</rt></ruby>りがあります。",
+        "eng": "Time is limited.",
+        "nepali": "समय सीमित छ।"
+      },
+      {
+        "example": "<ruby>限界<rt>げんかい</rt></ruby>です。",
+        "eng": "It's the limit.",
+        "nepali": "यो सीमा हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "除",
+    "yomikata": "ジョ, のぞ(く)",
+    "onyomi": "ジョ, ジ",
+    "kunyomi": "のぞ(く)",
+    "english_meaning": "remove, exclude",
+    "nepali_meaning": "हटाउनु",
+    "examples": [
+      {
+        "example": "<ruby>危険<rt>きけん</rt></ruby>を<ruby>除<rt>のぞ</rt></ruby>きます。",
+        "eng": "I remove the danger.",
+        "nepali": "म खतरा हटाउँछु।"
+      },
+      {
+        "example": "<ruby>掃除<rt>そうじ</rt></ruby>します。",
+        "eng": "I clean.",
+        "nepali": "म सफा गर्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "険",
+    "yomikata": "ケン, けわ(しい)",
+    "onyomi": "ケン",
+    "kunyomi": "けわ(しい)",
+    "english_meaning": "steep, dangerous",
+    "nepali_meaning": "ठाडो, खतरनाक",
+    "examples": [
+      {
+        "example": "<ruby>険<rt>けわ</rt></ruby>しい<ruby>山道<rt>やまみち</rt></ruby>です。",
+        "eng": "It's a steep mountain path.",
+        "nepali": "यो ठाडो पहाडी बाटो हो।"
+      },
+      {
+        "example": "<ruby>危険<rt>きけん</rt></ruby>です。",
+        "eng": "It's dangerous.",
+        "nepali": "यो खतरनाक छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "陽",
+    "yomikata": "ヨウ",
+    "onyomi": "ヨウ",
+    "kunyomi": "ひ",
+    "english_meaning": "sun, positive",
+    "nepali_meaning": "सूर्य, सकारात्मक",
+    "examples": [
+      {
+        "example": "<ruby>太陽<rt>たいよう</rt></ruby>が<ruby>明<rt>あか</rt></ruby>るいです。",
+        "eng": "The sun is bright.",
+        "nepali": "सूर्य उज्यालो छ।"
+      },
+      {
+        "example": "<ruby>陽気<rt>ようき</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>です。",
+        "eng": "He is a cheerful person.",
+        "nepali": "ऊ हँसमुख व्यक्ति हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "際",
+    "yomikata": "サイ, きわ",
+    "onyomi": "サイ",
+    "kunyomi": "きわ",
+    "english_meaning": "occasion, edge",
+    "nepali_meaning": "अवसर, छेउ",
+    "examples": [
+      {
+        "example": "この<ruby>際<rt>さい</rt></ruby>、<ruby>決<rt>き</rt></ruby>めましょう。",
+        "eng": "Let's decide on this occasion.",
+        "nepali": "यस अवसरमा निर्णय गरौं।"
+      },
+      {
+        "example": "<ruby>国際<rt>こくさい</rt></ruby>的な<ruby>問題<rt>もんだい</rt></ruby>です。",
+        "eng": "It's an international problem.",
+        "nepali": "यो अन्तर्राष्ट्रिय समस्या हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "雑",
+    "yomikata": "ザツ, ゾウ",
+    "onyomi": "ザツ, ゾウ",
+    "kunyomi": "",
+    "english_meaning": "miscellaneous",
+    "nepali_meaning": "विविध",
+    "examples": [
+      {
+        "example": "<ruby>雑誌<rt>ざっし</rt></ruby>を<ruby>読<rt>よ</rt></ruby>みます。",
+        "eng": "I read a magazine.",
+        "nepali": "म पत्रिका पढ्छु।"
+      },
+      {
+        "example": "<ruby>雑談<rt>ざつだん</rt></ruby>しましょう。",
+        "eng": "Let's chat.",
+        "nepali": "कुराकानी गरौं।"
+      }
+    ]
+  },
+  {
+    "kanji": "難",
+    "yomikata": "ナン, むずか(しい)",
+    "onyomi": "ナン",
+    "kunyomi": "むずか(しい)",
+    "english_meaning": "difficult",
+    "nepali_meaning": "गाह्रो",
+    "examples": [
+      {
+        "example": "<ruby>日本語<rt>にほんご</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>しいですか。",
+        "eng": "Is Japanese difficult?",
+        "nepali": "जापानी भाषा गाह्रो छ?"
+      },
+      {
+        "example": "<ruby>難<rt>むずか</rt></ruby>しかったです。",
+        "eng": "It was difficult.",
+        "nepali": "यो गाह्रो थियो।"
+      }
+    ]
+  },
+  {
+    "kanji": "雪",
+    "yomikata": "セツ, ゆき",
+    "onyomi": "セツ",
+    "kunyomi": "ゆき",
+    "english_meaning": "snow",
+    "nepali_meaning": "हिउँ",
+    "examples": [
+      {
+        "example": "<ruby>雪<rt>ゆき</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>っています。",
+        "eng": "It's snowing.",
+        "nepali": "हिउँ परिरहेको छ।"
+      },
+      {
+        "example": "<ruby>雪<rt>ゆき</rt></ruby>だるまを<ruby>作<rt>つく</rt></ruby>ります。",
+        "eng": "I make a snowman.",
+        "nepali": "म हिउँको मान्छे बनाउँछु।"
+      }
+    ]
+  },
+  {
+    "kanji": "静",
+    "yomikata": "セイ, しず(か)",
+    "onyomi": "セイ",
+    "kunyomi": "しず(か)",
+    "english_meaning": "quiet, still",
+    "nepali_meaning": "शान्त",
+    "examples": [
+      {
+        "example": "<ruby>静<rt>しず</rt></ruby>かにしてください。",
+        "eng": "Please be quiet.",
+        "nepali": "कृपया शान्त रहनुहोस्।"
+      },
+      {
+        "example": "<ruby>静<rt>しず</rt></ruby>かな<ruby>場所<rt>ばしょ</rt></ruby>です。",
+        "eng": "It's a quiet place.",
+        "nepali": "यो शान्त ठाउँ हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "非",
+    "yomikata": "ヒ",
+    "onyomi": "ヒ",
+    "kunyomi": "",
+    "english_meaning": "negative, wrong",
+    "nepali_meaning": "नकारात्मक",
+    "examples": [
+      {
+        "example": "<ruby>非常口<rt>ひじょうぐち</rt></ruby>はこちらです。",
+        "eng": "The emergency exit is this way.",
+        "nepali": "आपतकालीन निकास यता छ।"
+      },
+      {
+        "example": "<ruby>非日常<rt>ひにちじょう</rt></ruby>的な<ruby>体験<rt>たいけん</rt></ruby>です。",
+        "eng": "It's an extraordinary experience.",
+        "nepali": "यो असाधारण अनुभव हो।"
+      }
+    ]
+  },
+  {
+    "kanji": "面",
+    "yomikata": "メン, おもて",
+    "onyomi": "メン",
+    "kunyomi": "おもて, つら",
+    "english_meaning": "face, surface",
+    "nepali_meaning": "अनुहार",
+    "examples": [
+      {
+        "example": "<ruby>面白<rt>おもしろ</rt></ruby>い<ruby>映画<rt>えいが</rt></ruby>ですね。",
+        "eng": "It's an interesting movie, isn't it?",
+        "nepali": "रोचक चलचित्र छ है।"
+      },
+      {
+        "example": "<ruby>洗面所<rt>せんめんじょ</rt></ruby>はどこですか。",
+        "eng": "Where is the washroom?",
+        "nepali": "शौचालय कहाँ छ?"
+      }
+    ]
+  },
+  {
+    "kanji": "靴",
+    "yomikata": "カ, くつ",
+    "onyomi": "カ",
+    "kunyomi": "くつ",
+    "english_meaning": "shoes",
+    "nepali_meaning": "जुत्ता",
+    "examples": [
+      {
+        "example": "<ruby>靴<rt>くつ</rt></ruby>を<ruby>履<rt>は</rt></ruby>きます。",
+        "eng": "I put on shoes.",
+        "nepali": "म जुत्ता लगाउँछु।"
+      },
+      {
+        "example": "<ruby>靴屋<rt>くつや</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to a shoe store.",
+        "nepali": "म जुत्ता पसल जान्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "頂",
+    "yomikata": "チョウ, いただ(く)",
+    "onyomi": "チョウ",
+    "kunyomi": "いただ(く)",
+    "english_meaning": "top, receive",
+    "nepali_meaning": "शीर्ष, पाउनु",
+    "examples": [
+      {
+        "example": "<ruby>山<rt>やま</rt></ruby>の<ruby>頂上<rt>ちょうじょう</rt></ruby>に<ruby>着<rt>つ</rt></ruby>きました。",
+        "eng": "I reached the mountain top.",
+        "nepali": "म पहाडको शीर्षमा पुगें।"
+      },
+      {
+        "example": "お<ruby>土産<rt>みやげ</rt></ruby>を<ruby>頂<rt>いただ</rt></ruby>きました。",
+        "eng": "I received a souvenir.",
+        "nepali": "मैले उपहार पाएँ।"
+      }
+    ]
+  },
+  {
+    "kanji": "頼",
+    "yomikata": "ライ, たの(む)",
+    "onyomi": "ライ",
+    "kunyomi": "たの(む), たよ(る)",
+    "english_meaning": "trust, request",
+    "nepali_meaning": "अनुरोध",
+    "examples": [
+      {
+        "example": "<ruby>友達<rt>ともだち</rt></ruby>に<ruby>頼<rt>たの</rt></ruby>みました。",
+        "eng": "I asked my friend.",
+        "nepali": "मैले साथीलाई अनुरोध गरें।"
+      },
+      {
+        "example": "<ruby>頼<rt>たよ</rt></ruby>りになります。",
+        "eng": "You can rely on me.",
+        "nepali": "म भरपर्दो छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "願",
+    "yomikata": "ガン, ねが(う)",
+    "onyomi": "ガン",
+    "kunyomi": "ねが(う)",
+    "english_meaning": "wish, request",
+    "nepali_meaning": "चाहना, प्रार्थना",
+    "examples": [
+      {
+        "example": "お<ruby>願<rt>ねが</rt></ruby>いします。",
+        "eng": "Please.",
+        "nepali": "कृपया।"
+      },
+      {
+        "example": "<ruby>願<rt>ねが</rt></ruby>いが<ruby>叶<rt>かな</rt></ruby>いました。",
+        "eng": "My wish came true.",
+        "nepali": "मेरो चाहना पूरा भयो।"
+      }
+    ]
+  },
+  {
+    "kanji": "類",
+    "yomikata": "ルイ",
+    "onyomi": "ルイ",
+    "kunyomi": "たぐ(い)",
+    "english_meaning": "kind, sort",
+    "nepali_meaning": "प्रकार",
+    "examples": [
+      {
+        "example": "どんな<ruby>種類<rt>しゅるい</rt></ruby>ですか。",
+        "eng": "What kind is it?",
+        "nepali": "यो कस्तो प्रकारको हो?"
+      },
+      {
+        "example": "<ruby>類似<rt>るいじ</rt></ruby>しています。",
+        "eng": "They are similar.",
+        "nepali": "तिनीहरू समान छन्।"
+      }
+    ]
+  },
+  {
+    "kanji": "飛",
+    "yomikata": "ヒ, と(ぶ)",
+    "onyomi": "ヒ",
+    "kunyomi": "と(ぶ)",
+    "english_meaning": "fly",
+    "nepali_meaning": "उड्नु",
+    "examples": [
+      {
+        "example": "<ruby>飛行機<rt>ひこうき</rt></ruby>が<ruby>飛<rt>と</rt></ruby>んでいます。",
+        "eng": "An airplane is flying.",
+        "nepali": "हवाइजहाज उडिरहेको छ।"
+      },
+      {
+        "example": "<ruby>飛<rt>と</rt></ruby>びます。",
+        "eng": "I jump/fly.",
+        "nepali": "म उफ्रन्छु/उड्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "馬",
+    "yomikata": "バ, うま",
+    "onyomi": "バ",
+    "kunyomi": "うま",
+    "english_meaning": "horse",
+    "nepali_meaning": "घोडा",
+    "examples": [
+      {
+        "example": "<ruby>馬<rt>うま</rt></ruby>に<ruby>乗<rt>の</rt></ruby>ります。",
+        "eng": "I ride a horse.",
+        "nepali": "म घोडा चढ्छु।"
+      },
+      {
+        "example": "<ruby>競馬<rt>けいば</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。",
+        "eng": "I like horse racing.",
+        "nepali": "मलाई घोडा दौड मन पर्छ।"
+      }
+    ]
+  },
+  {
+    "kanji": "髪",
+    "yomikata": "ハツ, かみ",
+    "onyomi": "ハツ",
+    "kunyomi": "かみ",
+    "english_meaning": "hair",
+    "nepali_meaning": "कपाल",
+    "examples": [
+      {
+        "example": "<ruby>髪<rt>かみ</rt></ruby>が<ruby>長<rt>なが</rt></ruby>いです。",
+        "eng": "My hair is long.",
+        "nepali": "मेरो कपाल लामो छ।"
+      },
+      {
+        "example": "<ruby>髪<rt>かみ</rt></ruby>を<ruby>切<rt>き</rt></ruby>ります。",
+        "eng": "I cut my hair.",
+        "nepali": "म कपाल काट्छु।"
+      }
+    ]
+  },
+  {
+    "kanji": "鳴",
+    "yomikata": "メイ, な(く)",
+    "onyomi": "メイ",
+    "kunyomi": "な(く), な(る)",
+    "english_meaning": "chirp, ring",
+    "nepali_meaning": "आवाज निकाल्नु",
+    "examples": [
+      {
+        "example": "<ruby>鳥<rt>とり</rt></ruby>が<ruby>鳴<rt>な</rt></ruby>いています。",
+        "eng": "A bird is singing.",
+        "nepali": "चरा कराइरहेको छ।"
+      },
+      {
+        "example": "<ruby>電話<rt>でんわ</rt></ruby>が<ruby>鳴<rt>な</rt></ruby>っています。",
+        "eng": "The phone is ringing.",
+        "nepali": "फोन बजिरहेको छ।"
+      }
+    ]
+  }
+]

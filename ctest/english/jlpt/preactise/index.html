@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/fab.svg"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Practice — Sakura</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans:['Outfit','sans-serif'], jp:['"Noto Sans JP"','sans-serif'] },
+          colors: {
+            blue:   { DEFAULT:'#7eb8e4', deep:'#3a7cbf' },
+            teal:   { DEFAULT:'#6ecec8', deep:'#2a9d8f' },
+            mint:   { DEFAULT:'#80d4a8', deep:'#27ae72' },
+            coral:  { DEFAULT:'#f4a57a', deep:'#e0693a' },
+            butter: { DEFAULT:'#f5da8a', deep:'#d4a017' },
+            lilac:  { DEFAULT:'#c4a8e0', deep:'#8b5cf6' },
+            ink:    { DEFAULT:'#1f2937', 2:'#475569', muted:'#94a3b8' },
+            bg:     { DEFAULT:'#f5f8fc', surface:'#ffffff', s2:'#eef2f7' },
+          },
+          borderRadius: { xl2:'1.25rem', xl3:'1.75rem', xl4:'2.25rem' },
+          boxShadow: {
+            card: '0 2px 16px rgba(15,23,42,.07)',
+            md2:  '0 4px 24px rgba(15,23,42,.12)',
+            lg2:  '0 8px 40px rgba(15,23,42,.16)',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family:'Outfit',sans-serif; transition:background .3s,color .3s; }
+    .jp  { font-family:'"Noto Sans JP"',sans-serif; }
+
+    .mesh-light {
+      background: radial-gradient(ellipse at 18% 12%,#d8edf8 0%,transparent 52%),
+                  radial-gradient(ellipse at 82% 88%,#d2f1ec 0%,transparent 52%),
+                  radial-gradient(ellipse at 58% 32%,#e6e2f6 0%,transparent 38%),
+                  #f4f7fb;
+    }
+    .mesh-dark {
+      background: radial-gradient(ellipse at 18% 12%,#0f2236 0%,transparent 52%),
+                  radial-gradient(ellipse at 82% 88%,#0b2120 0%,transparent 52%),
+                  #0c1220;
+    }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:none} }
+    .fu  { animation:fadeUp .5s ease both; }
+    .d1  { animation-delay:.07s; } .d2 { animation-delay:.14s; }
+    .d3  { animation-delay:.21s; } .d4 { animation-delay:.28s; }
+    .d5  { animation-delay:.35s; } .d6 { animation-delay:.42s; }
+
+    .card-lift { transition:transform .18s ease,box-shadow .18s ease; }
+    .card-lift:hover { transform:translateY(-3px); box-shadow:0 10px 32px rgba(15,23,42,.13); }
+
+    .ring-track { stroke:#e2e8f0; }
+    .ring-fill  { stroke:#8b5cf6; stroke-linecap:round;
+                  transition:stroke-dashoffset .9s cubic-bezier(.4,0,.2,1); }
+
+    .s-act { background:#f4f0fc; color:#8b5cf6; font-weight:600; }
+
+    .drop { transition:opacity .15s ease,transform .15s ease; }
+    .drop.closed { opacity:0; transform:translateY(-6px); pointer-events:none; }
+    .drop.open   { opacity:1; transform:translateY(0);    pointer-events:all; }
+
+    /* Level button active state */
+    .level-btn { transition:all .2s ease; }
+    .level-btn.active { transform:translateY(-2px); }
+
+    @keyframes ring-pulse {
+      0%,100% { box-shadow:0 0 0 0 rgba(139,92,246,.55); }
+      50%      { box-shadow:0 0 0 6px rgba(139,92,246,0); }
+    }
+    .avatar-ring {
+      background: conic-gradient(#8b5cf6 0% 65%,#e2e8f0 65% 100%);
+      border-radius:9999px; padding:2.5px;
+      animation:ring-pulse 2.4s ease infinite;
+      display:inline-block; flex-shrink:0;
+    }
+
+    /* Dark mode */
+    body.dark #sidebar-el { background:rgba(14,19,32,.96) !important; border-color:#1d2740 !important; }
+    body.dark #topbar,
+    body.dark #botnav { background:rgba(12,18,32,.68) !important; border-color:rgba(255,255,255,.08) !important; }
+    body.dark .surface  { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark .surface2 { background:#1d2740 !important; }
+    body.dark .t-ink    { color:#e8eef6 !important; }
+    body.dark .t-ink2   { color:#8da4c0 !important; }
+    body.dark .t-muted  { color:#4a607a !important; }
+    body.dark .divider  { border-color:#1d2740 !important; }
+    body.dark .ring-track { stroke:#1d2740; }
+    body.dark .avatar-ring { background:conic-gradient(#8b5cf6 0% 65%,#1d2740 65% 100%); }
+    body.dark #prof-drop, body.dark #desk-prof-drop { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark #prof-drop a, body.dark #desk-prof-drop a { color:#8da4c0 !important; }
+    body.dark #prof-drop a:hover, body.dark #desk-prof-drop a:hover { background:rgba(126,184,228,.08) !important; }
+
+    ::-webkit-scrollbar { width:4px; }
+    ::-webkit-scrollbar-thumb { background:#c2d3e3; border-radius:99px; }
+
+    .prog-bar { height:5px; border-radius:99px; background:#eef2f7; overflow:hidden; }
+    body.dark .prog-bar { background:#1d2740; }
+    .prog-bar > span { display:block; height:100%; border-radius:99px; }
+    .pill-btn { transition:transform .15s ease, box-shadow .15s ease; }
+    .pill-btn:hover { transform:translateY(-1px); }
+    .badge-check { box-shadow:0 0 0 3px #fff; }
+    body.dark .badge-check { box-shadow:0 0 0 3px #151d2e; }
+
+    /* ── Hero banner background ──
+       To use your own image: replace the url('') below with your image path
+       (e.g. url('images/hero-bg.jpg')) and re-upload/host it alongside this file.
+       The gradient stays underneath as a fallback + tint so text stays readable. */
+    .hero-banner {
+      background-image: url('/english/Gemini_Generated_Image_u4pkssu4pkssu4pk.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #dcedfa;
+      background-blend-mode: normal;
+    }
+    .hero-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg,rgba(220,237,250,.88) 0%,rgba(227,236,251,.72) 45%,rgba(236,227,248,.55) 100%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* ── Subject icon boxes ── */
+    .subj-ic { width:2.75rem; height:2.75rem; border-radius:1rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+
+    /* ── New level-panel layout (progress bar / skills / quick practice / goal / tips) ── */
+    .practice-row { transition:transform .15s ease, box-shadow .15s ease; }
+    .practice-row:hover { transform:translateX(2px); box-shadow:0 4px 18px rgba(15,23,42,.08); }
+    .goal-ring-ic { width:2.75rem; height:2.75rem; border-radius:9999px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .tip-illustration { position:absolute; right:-10px; bottom:-10px; opacity:.9; pointer-events:none; }
+  </style>
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#e8799a"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="Sakura"/>
+  <link rel="apple-touch-icon" href="icons/icon-192.png"/>
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VK64G24LYX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VK64G24LYX');
+  </script>
+</head>
+
+<body class="mesh-light min-h-screen text-ink" id="body">
+
+<!-- ═══════════ DESKTOP SIDEBAR ═══════════ -->
+<aside id="sidebar-el" class="hidden lg:flex flex-col fixed top-0 left-0 h-full w-60 bg-bg-surface surface border-r border-slate-100 divider z-30 shadow-card">
+
+  <!-- Logo -->
+  <div class="px-4 py-4 flex items-center gap-3 border-b border-slate-100 divider">
+    <div class="w-9 h-9 rounded-xl flex items-center justify-center shadow-md flex-shrink-0" style="background:linear-gradient(135deg,#c4a8e0,#8b5cf6);">
+      <span class="jp text-white font-bold text-base">識</span>
+    </div>
+    <div class="min-w-0 flex-1">
+      <div class="font-bold text-base tracking-tight t-ink leading-tight">Sakura</div>
+      <div class="text-xs t-muted">日本語 Learning</div>
+    </div>
+  </div>
+
+  <!-- Profile -->
+  <div class="px-5 py-4 flex items-center gap-3 border-b border-slate-100 divider relative" id="desk-prof-wrap">
+    <button onclick="toggleDeskProf()" class="flex items-center gap-3 flex-1 min-w-0 focus:outline-none" aria-label="Profile">
+      <div class="avatar-ring flex-shrink-0">
+        <div id="sb-avatar" class="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm overflow-hidden" style="background:linear-gradient(135deg,#c4a8e0,#8b5cf6);">S</div>
+      </div>
+      <div class="flex-1 min-w-0 text-left">
+        <div class="font-semibold text-sm t-ink leading-tight" id="sb-name">Learner</div>
+      </div>
+      <svg id="desk-prof-chev" class="w-3.5 h-3.5 t-muted transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div id="desk-prof-drop" class="drop closed absolute left-3 right-3 top-full mt-1 bg-white surface rounded-xl2 shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+      <div class="px-4 py-3 bg-gradient-to-r from-blue/6 to-teal/6 border-b border-slate-100 divider">
+        <div class="font-bold text-sm t-ink" id="desk-drop-name">Learner</div>
+      </div>
+      <a href="../profile/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        My Profile
+      </a>
+      <a href="../download/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors border-t border-slate-100 divider">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16l-4-4h3V4h2v8h3l-4 4z"/><path d="M4 20h16"/></svg>
+        Download App
+      </a>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <nav class="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
+    <a href="../index.html"  class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg>home
+    </a>
+    <a href="../learn.html"  class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Learn
+    </a>
+    <a href="../study.html"  class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 4v16M2 12h6"/></svg>Study
+    </a>
+    <a href="../quiz/index.html"   class="s-act flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg>Practice
+    </a>
+    <div class="pt-4 pb-1 px-3 text-[10px] font-bold tracking-widest t-muted uppercase">Courses</div>
+    <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>JLPT
+    </a>
+    <a href="../ssw/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-mint/20 text-mint-deep font-bold text-[10px] flex items-center justify-center">SSW</span> SSW</a>
+
+    <div class="pt-4 pb-1 px-3 text-[10px] font-bold tracking-widest t-muted uppercase">JLPT Levels</div>
+    <a href="#n5"  class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-blue/20 text-blue-deep font-bold text-[10px] flex items-center justify-center">N5</span> JLPT N5</a>
+    <a href="#n4" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-teal/20 text-teal-deep font-bold text-[10px] flex items-center justify-center">N4</span> JLPT N4</a>
+    <a href="#n3" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-mint/20 text-mint-deep font-bold text-[10px] flex items-center justify-center">N3</span> JLPT N3</a>
+    <a href="#n2" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-butter/20 text-butter-deep font-bold text-[10px] flex items-center justify-center">N2</span> JLPT N2</a>
+    <a href="#n1" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-coral/20 text-coral-deep font-bold text-[10px] flex items-center justify-center">N1</span> JLPT N1</a>
+  </nav>
+
+  <!-- Footer -->
+  <div class="px-4 py-4 border-t border-slate-100 divider flex items-center justify-between">
+    <button onclick="toggleDark()" class="flex items-center gap-2 text-xs t-muted hover:text-ink transition-colors">
+      <svg id="desk-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span id="desk-lbl">Dark mode</span>
+    </button>
+  </div>
+</aside>
+
+
+<!-- ═══════════ MOBILE TOPBAR ═══════════ -->
+<header id="topbar" class="lg:hidden fixed top-0 left-0 right-0 z-40 px-4 py-2.5 flex items-center transition-transform duration-300"
+        style="background:rgba(255,255,255,.72);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:0.5px solid rgba(0,0,0,.08);">
+  <div class="relative flex-shrink-0" id="prof-wrap">
+    <button id="prof-btn" onclick="toggleDrop('prof')" class="block focus:outline-none" aria-label="Profile">
+      <div class="avatar-ring">
+        <div id="mob-avatar" class="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm select-none overflow-hidden" style="background:linear-gradient(135deg,#c4a8e0,#8b5cf6);">S</div>
+      </div>
+    </button>
+    <div id="prof-drop" class="drop closed absolute top-full left-0 mt-2 w-52 bg-white surface rounded-xl2 shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+      <div class="px-4 py-3 bg-gradient-to-r from-blue/6 to-teal/6 border-b border-slate-100 divider">
+        <div class="font-bold text-sm t-ink" id="mob-drop-name">Learner</div>
+      </div>
+      <a href="../profile/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        My Profile
+      </a>
+      <a href="../download/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors border-t border-slate-100 divider">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16l-4-4h3V4h2v8h3l-4 4z"/><path d="M4 20h16"/></svg>
+        Download App
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 pointer-events-none select-none">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+    <span class="font-extrabold text-base t-ink tracking-tight">JLPT</span>
+  </div>
+
+  <div class="ml-auto flex items-center gap-2 flex-shrink-0">
+    <button onclick="toggleDark()" class="w-8 h-8 rounded-lg bg-bg-s2 surface2 border border-slate-200 divider flex items-center justify-center t-muted hover:text-blue-deep hover:border-blue/50 transition-all">
+      <svg id="mob-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+
+<!-- ═══════════ MAIN CONTENT ═══════════ -->
+<main id="main-content" class="lg:ml-60 min-h-screen pb-28 lg:pb-10 pt-14 lg:pt-8 lg:px-8">
+
+  <!-- Mode Switch: JLPT / SSW -->
+  <section class="px-5 lg:px-0 pt-5 lg:pt-0 fu">
+    <div class="inline-flex p-1 rounded-full bg-bg-s2 surface2 border border-slate-200 divider">
+      <button onclick="setMode('jlpt')" id="mode-btn-jlpt" class="px-5 py-2 rounded-full text-sm font-bold transition-all" style="background:#fff;color:#8b5cf6;box-shadow:0 2px 8px rgba(15,23,42,.08);">JLPT</button>
+      <button onclick="setMode('ssw')" id="mode-btn-ssw" class="px-5 py-2 rounded-full text-sm font-bold transition-all" style="color:#64748b;">SSW</button>
+    </div>
+  </section>
+
+  <div id="mode-jlpt">
+
+  <!-- Level Selector (dropdown) -->
+  <section class="px-5 lg:px-0 pt-5 lg:pt-0 fu relative" style="z-index:40;">
+    <div class="flex items-center justify-between mb-4">
+      <div class="relative" id="level-pill-wrap">
+        <button onclick="toggleLevelMenu()" id="level-pill-btn" class="flex items-center gap-2 pl-4 pr-3 py-2.5 rounded-full border-2 bg-bg-surface surface font-extrabold text-sm t-ink shadow-card transition-all" style="border-color:#8b5cf6;">
+          <span id="level-pill-label">JLPT N5</span>
+          <svg id="level-pill-chev" class="w-4 h-4 t-muted transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div id="level-menu" class="drop closed absolute left-0 top-full mt-2 w-52 bg-white surface rounded-xl2 shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+          <button onclick="selectLevel('n5')" data-menu-item="n5" class="w-full flex items-center justify-between gap-2 px-4 py-2.5 text-sm t-ink2 hover:bg-slate-50 transition-colors">
+            <span><span class="font-bold" style="color:#8b5cf6;">N5</span> — Beginner</span>
+            <span data-menu-check style="display:inline;color:#8b5cf6;">✓</span>
+          </button>
+          <button onclick="selectLevel('n4')" data-menu-item="n4" class="w-full flex items-center justify-between gap-2 px-4 py-2.5 text-sm t-ink2 hover:bg-slate-50 transition-colors">
+            <span><span class="font-bold" style="color:#2a9d8f;">N4</span> — Elementary</span>
+            <span data-menu-check style="display:none;color:#2a9d8f;">✓</span>
+          </button>
+          <button onclick="selectLevel('n3')" data-menu-item="n3" class="w-full flex items-center justify-between gap-2 px-4 py-2.5 text-sm t-ink2 hover:bg-slate-50 transition-colors">
+            <span><span class="font-bold" style="color:#27ae72;">N3</span> — Intermediate</span>
+            <span data-menu-check style="display:none;color:#27ae72;">✓</span>
+          </button>
+          <button onclick="selectLevel('n2')" data-menu-item="n2" class="w-full flex items-center justify-between gap-2 px-4 py-2.5 text-sm t-ink2 hover:bg-slate-50 transition-colors">
+            <span><span class="font-bold" style="color:#d4a017;">N2</span> — Upper-Intermediate</span>
+            <span data-menu-check style="display:none;color:#d4a017;">✓</span>
+          </button>
+          <button onclick="selectLevel('n1')" data-menu-item="n1" class="w-full flex items-center justify-between gap-2 px-4 py-2.5 text-sm t-ink2 hover:bg-slate-50 transition-colors">
+            <span><span class="font-bold" style="color:#e0693a;">N1</span> — Advanced</span>
+            <span data-menu-check style="display:none;color:#e0693a;">✓</span>
+          </button>
+
+        </div>
+      </div>
+      <button onclick="toggleLevelMenu()" id="change-level-btn" class="text-sm font-bold" style="color:#8b5cf6;">Change Level</button>
+    </div>
+  </section>
+
+  <section id="n5" data-level-panel="n5" class="px-5 lg:px-0 fu" style="display:block;">
+    <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-5 lg:p-6 mb-5">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-sm font-bold t-ink">Overall Progress</h3>
+        <span class="text-sm font-extrabold" style="color:#8b5cf6;">25%</span>
+      </div>
+      <div class="prog-bar"><span style="width:25%;background:linear-gradient(90deg,#c4a8e0,#8b5cf6);"></span></div>
+      <div class="grid grid-cols-3 gap-3 mt-5">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#27ae72;">✓</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">20</div><div class="text-[10px] t-muted leading-tight">Lessons</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#d4a017;">★</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">180</div><div class="text-[10px] t-muted leading-tight">Points</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#8b5cf6;">🔥</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">3</div><div class="text-[10px] t-muted leading-tight">Day Streak</div></div>
+        </div>
+      </div>
+      <button class="pill-btn w-full flex items-center justify-center gap-2 rounded-full py-3 text-white text-sm font-bold shadow-md2 mt-5" style="background:linear-gradient(90deg,#c4a8e0,#8b5cf6);">
+        Continue Learning
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Skills to Practice</h2>
+    <div class="grid grid-cols-2 gap-3 mb-6">
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#f4f0fc;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Vocabulary</span>
+        <span class="text-[11px] t-muted -mt-1">800+ Words</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n5-vocab-bar" style="width:0%;background:#8b5cf6;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n5-vocab-txt">0 / 0</span>
+        <a href="../vocab/n5/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#f4f0fc;color:#8b5cf6;border-color:#8b5cf633;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eafaf1;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#27ae72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h7M7 3v2c0 4.4-1.8 8-5 8"/><path d="M3 13c2.3 0 5-1.7 6-4M13 21l4-9 4 9M14.5 18h5"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Grammar</span>
+        <span class="text-[11px] t-muted -mt-1">95+ Patterns</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n5-grammar-bar" style="width:0%;background:#27ae72;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n5-grammar-txt">0 / 0</span>
+        <a href="../grammar/n5/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eafaf1;color:#27ae72;border-color:#27ae7233;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eaf2fc;"><span class="jp font-bold" style="color:#3a7cbf;font-size:20px;">漢</span></div>
+        <span class="text-sm font-bold t-ink leading-tight">Kanji</span>
+        <span class="text-[11px] t-muted -mt-1">80+ Kanji</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n5-kanji-bar" style="width:0%;background:#3a7cbf;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n5-kanji-txt">0 / 0</span>
+        <a href="../kanji/n5/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eaf2fc;color:#3a7cbf;border-color:#3a7cbf33;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#fdeaf0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Reading &amp; Listening</span>
+        <span class="text-[11px] t-muted -mt-1">Combined</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n5-rw-bar" style="width:0%;background:#e8517a;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n5-rw-txt">0 / 0</span>
+        <a href="../readwrite/n5/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#fdeaf0;color:#e8517a;border-color:#e8517a33;">Practice</a>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Quick Practice</h2>
+    <div class="space-y-2.5 mb-6">
+      <a href="../quiz/n5/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#8b5cf614;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Mixed Quiz</div>
+          <div class="text-[11px] t-muted">All skills • 10 Questions</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../readwrite/n5/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#fdeaf0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Mock Test</div>
+          <div class="text-[11px] t-muted">Full JLPT N5 Test</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="flex items-center justify-between mb-3">
+      <h2 class="text-sm lg:text-base font-bold t-ink">Today's Goal</h2>
+      <a href="#" class="text-xs font-bold" style="color:#8b5cf6;">Edit</a>
+    </div>
+    <div class="bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card mb-6">
+      <div class="flex items-center gap-3">
+        <div class="goal-ring-ic" style="background:#8b5cf614;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="#8b5cf6"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-sm font-bold t-ink">Study 20 new words</span>
+            <span class="text-xs font-bold t-muted whitespace-nowrap">12 / 20</span>
+          </div>
+          <div class="prog-bar mt-2"><span style="width:60%;background:linear-gradient(90deg,#c4a8e0,#8b5cf6);"></span></div>
+        </div>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Study Tips</h2>
+    <div class="relative overflow-hidden rounded-xl2 p-5 mb-2" style="background:linear-gradient(135deg,#8b5cf614,transparent);border:1px solid #8b5cf64d;">
+      <div class="flex items-start gap-3 max-w-[75%]">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#8b5cf622;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.5.4.6 1 .6 1.6V16h6v-.6c0-.6.1-1.2.6-1.6A6 6 0 0 0 12 3z"/></svg></div>
+        <p class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Practice a little every day and you will improve steadily!</p>
+      </div>
+      <svg class="tip-illustration" width="120" height="90" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="20,90 55,30 90,90" fill="#c4a8e0" opacity="0.45"/>
+      <polygon points="50,90 75,45 100,90" fill="#8b5cf6" opacity="0.30"/>
+      <rect x="52" y="72" width="5" height="16" fill="#8b5cf6" opacity="0.6"/>
+      <rect x="46" y="66" width="17" height="4" fill="#8b5cf6" opacity="0.6"/>
+      <polygon points="54,55 62,66 47,66" fill="#8b5cf6" opacity="0.6"/>
+    </svg>
+    </div>
+  </section>
+  <section id="n4" data-level-panel="n4" class="px-5 lg:px-0 fu" style="display:none;">
+    <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-5 lg:p-6 mb-5">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-sm font-bold t-ink">Overall Progress</h3>
+        <span class="text-sm font-extrabold" style="color:#2a9d8f;">10%</span>
+      </div>
+      <div class="prog-bar"><span style="width:10%;background:linear-gradient(90deg,#6ecec8,#2a9d8f);"></span></div>
+      <div class="grid grid-cols-3 gap-3 mt-5">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#27ae72;">✓</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">8</div><div class="text-[10px] t-muted leading-tight">Lessons</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#d4a017;">★</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">95</div><div class="text-[10px] t-muted leading-tight">Points</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#2a9d8f;">🔥</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">1</div><div class="text-[10px] t-muted leading-tight">Day Streak</div></div>
+        </div>
+      </div>
+      <button class="pill-btn w-full flex items-center justify-center gap-2 rounded-full py-3 text-white text-sm font-bold shadow-md2 mt-5" style="background:linear-gradient(90deg,#6ecec8,#2a9d8f);">
+        Continue Learning
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Skills to Practice</h2>
+    <div class="grid grid-cols-2 gap-3 mb-6">
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#f4f0fc;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Vocabulary</span>
+        <span class="text-[11px] t-muted -mt-1">1500+ Words</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n4-vocab-bar" style="width:0%;background:#8b5cf6;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n4-vocab-txt">0 / 0</span>
+        <a href="../vocab/n4/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#f4f0fc;color:#8b5cf6;border-color:#8b5cf633;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eafaf1;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#27ae72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h7M7 3v2c0 4.4-1.8 8-5 8"/><path d="M3 13c2.3 0 5-1.7 6-4M13 21l4-9 4 9M14.5 18h5"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Grammar</span>
+        <span class="text-[11px] t-muted -mt-1">150+ Patterns</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n4-grammar-bar" style="width:0%;background:#27ae72;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n4-grammar-txt">0 / 0</span>
+        <a href="../grammar/n4/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eafaf1;color:#27ae72;border-color:#27ae7233;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eaf2fc;"><span class="jp font-bold" style="color:#3a7cbf;font-size:20px;">漢</span></div>
+        <span class="text-sm font-bold t-ink leading-tight">Kanji</span>
+        <span class="text-[11px] t-muted -mt-1">166+ Kanji</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n4-kanji-bar" style="width:0%;background:#3a7cbf;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n4-kanji-txt">0 / 0</span>
+        <a href="../kanji/n4/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eaf2fc;color:#3a7cbf;border-color:#3a7cbf33;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#fdeaf0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Reading &amp; Listening</span>
+        <span class="text-[11px] t-muted -mt-1">Combined</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n4-rw-bar" style="width:0%;background:#e8517a;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n4-rw-txt">0 / 0</span>
+        <a href="../readwrite/n4/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#fdeaf0;color:#e8517a;border-color:#e8517a33;">Practice</a>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Quick Practice</h2>
+    <div class="space-y-2.5 mb-6">
+      <a href="../quiz/n4/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#2a9d8f14;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Mixed Quiz</div>
+          <div class="text-[11px] t-muted">All skills • 10 Questions</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../readwrite/n4/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#fdeaf0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Mock Test</div>
+          <div class="text-[11px] t-muted">Full JLPT N4 Test</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="flex items-center justify-between mb-3">
+      <h2 class="text-sm lg:text-base font-bold t-ink">Today's Goal</h2>
+      <a href="#" class="text-xs font-bold" style="color:#2a9d8f;">Edit</a>
+    </div>
+    <div class="bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card mb-6">
+      <div class="flex items-center gap-3">
+        <div class="goal-ring-ic" style="background:#2a9d8f14;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="#2a9d8f"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-sm font-bold t-ink">Review 15 grammar patterns</span>
+            <span class="text-xs font-bold t-muted whitespace-nowrap">4 / 15</span>
+          </div>
+          <div class="prog-bar mt-2"><span style="width:27%;background:linear-gradient(90deg,#6ecec8,#2a9d8f);"></span></div>
+        </div>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Study Tips</h2>
+    <div class="relative overflow-hidden rounded-xl2 p-5 mb-2" style="background:linear-gradient(135deg,#2a9d8f14,transparent);border:1px solid #2a9d8f4d;">
+      <div class="flex items-start gap-3 max-w-[75%]">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#2a9d8f22;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.5.4.6 1 .6 1.6V16h6v-.6c0-.6.1-1.2.6-1.6A6 6 0 0 0 12 3z"/></svg></div>
+        <p class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Revisit N5 vocabulary often — N4 builds directly on it!</p>
+      </div>
+      <svg class="tip-illustration" width="120" height="90" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="20,90 55,30 90,90" fill="#6ecec8" opacity="0.45"/>
+      <polygon points="50,90 75,45 100,90" fill="#2a9d8f" opacity="0.30"/>
+      <rect x="52" y="72" width="5" height="16" fill="#2a9d8f" opacity="0.6"/>
+      <rect x="46" y="66" width="17" height="4" fill="#2a9d8f" opacity="0.6"/>
+      <polygon points="54,55 62,66 47,66" fill="#2a9d8f" opacity="0.6"/>
+    </svg>
+    </div>
+  </section>
+  <section id="n3" data-level-panel="n3" class="px-5 lg:px-0 fu" style="display:none;">
+    <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-5 lg:p-6 mb-5">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-sm font-bold t-ink">Overall Progress</h3>
+        <span class="text-sm font-extrabold" style="color:#27ae72;">0%</span>
+      </div>
+      <div class="prog-bar"><span style="width:0%;background:linear-gradient(90deg,#80d4a8,#27ae72);"></span></div>
+      <div class="grid grid-cols-3 gap-3 mt-5">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#27ae72;">✓</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Lessons</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#d4a017;">★</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Points</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#27ae72;">🔥</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Day Streak</div></div>
+        </div>
+      </div>
+      <button class="pill-btn w-full flex items-center justify-center gap-2 rounded-full py-3 text-white text-sm font-bold shadow-md2 mt-5" style="background:linear-gradient(90deg,#80d4a8,#27ae72);">
+        Continue Learning
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Skills to Practice</h2>
+    <div class="grid grid-cols-2 gap-3 mb-6">
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#f4f0fc;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Vocabulary</span>
+        <span class="text-[11px] t-muted -mt-1">3750+ Words</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n3-vocab-bar" style="width:0%;background:#8b5cf6;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n3-vocab-txt">0 / 0</span>
+        <a href="../vocab/n3/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#f4f0fc;color:#8b5cf6;border-color:#8b5cf633;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eafaf1;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#27ae72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h7M7 3v2c0 4.4-1.8 8-5 8"/><path d="M3 13c2.3 0 5-1.7 6-4M13 21l4-9 4 9M14.5 18h5"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Grammar</span>
+        <span class="text-[11px] t-muted -mt-1">245+ Patterns</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n3-grammar-bar" style="width:0%;background:#27ae72;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n3-grammar-txt">0 / 0</span>
+        <a href="../grammar/n3/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eafaf1;color:#27ae72;border-color:#27ae7233;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eaf2fc;"><span class="jp font-bold" style="color:#3a7cbf;font-size:20px;">漢</span></div>
+        <span class="text-sm font-bold t-ink leading-tight">Kanji</span>
+        <span class="text-[11px] t-muted -mt-1">367+ Kanji</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n3-kanji-bar" style="width:0%;background:#3a7cbf;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n3-kanji-txt">0 / 0</span>
+        <a href="../kanji/n3/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eaf2fc;color:#3a7cbf;border-color:#3a7cbf33;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#fdeaf0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Reading &amp; Listening</span>
+        <span class="text-[11px] t-muted -mt-1">Combined</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n3-rw-bar" style="width:0%;background:#e8517a;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n3-rw-txt">0 / 0</span>
+        <a href="../readwrite/n3/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#fdeaf0;color:#e8517a;border-color:#e8517a33;">Practice</a>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Quick Practice</h2>
+    <div class="space-y-2.5 mb-6">
+      <a href="../quiz/n3/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#27ae7214;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#27ae72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Mixed Quiz</div>
+          <div class="text-[11px] t-muted">All skills • 10 Questions</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../readwrite/n3/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#fdeaf0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Mock Test</div>
+          <div class="text-[11px] t-muted">Full JLPT N3 Test</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="flex items-center justify-between mb-3">
+      <h2 class="text-sm lg:text-base font-bold t-ink">Today's Goal</h2>
+      <a href="#" class="text-xs font-bold" style="color:#27ae72;">Edit</a>
+    </div>
+    <div class="bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card mb-6">
+      <div class="flex items-center gap-3">
+        <div class="goal-ring-ic" style="background:#27ae7214;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#27ae72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="#27ae72"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-sm font-bold t-ink">Read one short passage</span>
+            <span class="text-xs font-bold t-muted whitespace-nowrap">0 / 1</span>
+          </div>
+          <div class="prog-bar mt-2"><span style="width:0%;background:linear-gradient(90deg,#80d4a8,#27ae72);"></span></div>
+        </div>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Study Tips</h2>
+    <div class="relative overflow-hidden rounded-xl2 p-5 mb-2" style="background:linear-gradient(135deg,#27ae7214,transparent);border:1px solid #27ae724d;">
+      <div class="flex items-start gap-3 max-w-[75%]">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#27ae7222;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#27ae72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.5.4.6 1 .6 1.6V16h6v-.6c0-.6.1-1.2.6-1.6A6 6 0 0 0 12 3z"/></svg></div>
+        <p class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Try reading a little every day — even one paragraph helps!</p>
+      </div>
+      <svg class="tip-illustration" width="120" height="90" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="20,90 55,30 90,90" fill="#80d4a8" opacity="0.45"/>
+      <polygon points="50,90 75,45 100,90" fill="#27ae72" opacity="0.30"/>
+      <rect x="52" y="72" width="5" height="16" fill="#27ae72" opacity="0.6"/>
+      <rect x="46" y="66" width="17" height="4" fill="#27ae72" opacity="0.6"/>
+      <polygon points="54,55 62,66 47,66" fill="#27ae72" opacity="0.6"/>
+    </svg>
+    </div>
+  </section>
+  <section id="n2" data-level-panel="n2" class="px-5 lg:px-0 fu" style="display:none;">
+    <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-5 lg:p-6 mb-5">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-sm font-bold t-ink">Overall Progress</h3>
+        <span class="text-sm font-extrabold" style="color:#d4a017;">0%</span>
+      </div>
+      <div class="prog-bar"><span style="width:0%;background:linear-gradient(90deg,#f5da8a,#d4a017);"></span></div>
+      <div class="grid grid-cols-3 gap-3 mt-5">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#27ae72;">✓</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Lessons</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#d4a017;">★</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Points</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#d4a017;">🔥</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Day Streak</div></div>
+        </div>
+      </div>
+      <button class="pill-btn w-full flex items-center justify-center gap-2 rounded-full py-3 text-white text-sm font-bold shadow-md2 mt-5" style="background:linear-gradient(90deg,#f5da8a,#d4a017);">
+        Continue Learning
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Skills to Practice</h2>
+    <div class="grid grid-cols-2 gap-3 mb-6">
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#f4f0fc;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Vocabulary</span>
+        <span class="text-[11px] t-muted -mt-1">6000+ Words</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n2-vocab-bar" style="width:0%;background:#8b5cf6;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n2-vocab-txt">0 / 0</span>
+        <a href="../vocab/n2/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#f4f0fc;color:#8b5cf6;border-color:#8b5cf633;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eafaf1;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#27ae72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h7M7 3v2c0 4.4-1.8 8-5 8"/><path d="M3 13c2.3 0 5-1.7 6-4M13 21l4-9 4 9M14.5 18h5"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Grammar</span>
+        <span class="text-[11px] t-muted -mt-1">370+ Patterns</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n2-grammar-bar" style="width:0%;background:#27ae72;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n2-grammar-txt">0 / 0</span>
+        <a href="../grammar/n2/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eafaf1;color:#27ae72;border-color:#27ae7233;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eaf2fc;"><span class="jp font-bold" style="color:#3a7cbf;font-size:20px;">漢</span></div>
+        <span class="text-sm font-bold t-ink leading-tight">Kanji</span>
+        <span class="text-[11px] t-muted -mt-1">367+ Kanji</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n2-kanji-bar" style="width:0%;background:#3a7cbf;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n2-kanji-txt">0 / 0</span>
+        <a href="../kanji/n2/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eaf2fc;color:#3a7cbf;border-color:#3a7cbf33;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#fdeaf0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Reading &amp; Listening</span>
+        <span class="text-[11px] t-muted -mt-1">Combined</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n2-rw-bar" style="width:0%;background:#e8517a;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n2-rw-txt">0 / 0</span>
+        <a href="../readwrite/n2/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#fdeaf0;color:#e8517a;border-color:#e8517a33;">Practice</a>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Quick Practice</h2>
+    <div class="space-y-2.5 mb-6">
+      <a href="../quiz/n2/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#d4a01714;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Mixed Quiz</div>
+          <div class="text-[11px] t-muted">All skills • 10 Questions</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../readwrite/n2/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#fdeaf0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Mock Test</div>
+          <div class="text-[11px] t-muted">Full JLPT N2 Test</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="flex items-center justify-between mb-3">
+      <h2 class="text-sm lg:text-base font-bold t-ink">Today's Goal</h2>
+      <a href="#" class="text-xs font-bold" style="color:#d4a017;">Edit</a>
+    </div>
+    <div class="bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card mb-6">
+      <div class="flex items-center gap-3">
+        <div class="goal-ring-ic" style="background:#d4a01714;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="#d4a017"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-sm font-bold t-ink">Study 30 new words</span>
+            <span class="text-xs font-bold t-muted whitespace-nowrap">0 / 30</span>
+          </div>
+          <div class="prog-bar mt-2"><span style="width:0%;background:linear-gradient(90deg,#f5da8a,#d4a017);"></span></div>
+        </div>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Study Tips</h2>
+    <div class="relative overflow-hidden rounded-xl2 p-5 mb-2" style="background:linear-gradient(135deg,#d4a01714,transparent);border:1px solid #d4a0174d;">
+      <div class="flex items-start gap-3 max-w-[75%]">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#d4a01722;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4a017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.5.4.6 1 .6 1.6V16h6v-.6c0-.6.1-1.2.6-1.6A6 6 0 0 0 12 3z"/></svg></div>
+        <p class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Mix listening practice with reading for faster progress!</p>
+      </div>
+      <svg class="tip-illustration" width="120" height="90" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="20,90 55,30 90,90" fill="#f5da8a" opacity="0.45"/>
+      <polygon points="50,90 75,45 100,90" fill="#d4a017" opacity="0.30"/>
+      <rect x="52" y="72" width="5" height="16" fill="#d4a017" opacity="0.6"/>
+      <rect x="46" y="66" width="17" height="4" fill="#d4a017" opacity="0.6"/>
+      <polygon points="54,55 62,66 47,66" fill="#d4a017" opacity="0.6"/>
+    </svg>
+    </div>
+  </section>
+  <section id="n1" data-level-panel="n1" class="px-5 lg:px-0 fu" style="display:none;">
+    <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-5 lg:p-6 mb-5">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-sm font-bold t-ink">Overall Progress</h3>
+        <span class="text-sm font-extrabold" style="color:#e0693a;">0%</span>
+      </div>
+      <div class="prog-bar"><span style="width:0%;background:linear-gradient(90deg,#f4a57a,#e0693a);"></span></div>
+      <div class="grid grid-cols-3 gap-3 mt-5">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#27ae72;">✓</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Lessons</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#d4a017;">★</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Points</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#e0693a;">🔥</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Day Streak</div></div>
+        </div>
+      </div>
+      <button class="pill-btn w-full flex items-center justify-center gap-2 rounded-full py-3 text-white text-sm font-bold shadow-md2 mt-5" style="background:linear-gradient(90deg,#f4a57a,#e0693a);">
+        Continue Learning
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Skills to Practice</h2>
+    <div class="grid grid-cols-2 gap-3 mb-6">
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#f4f0fc;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Vocabulary</span>
+        <span class="text-[11px] t-muted -mt-1">10000+ Words</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n1-vocab-bar" style="width:0%;background:#8b5cf6;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n1-vocab-txt">0 / 0</span>
+        <a href="../vocab/n1/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#f4f0fc;color:#8b5cf6;border-color:#8b5cf633;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eafaf1;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#27ae72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h7M7 3v2c0 4.4-1.8 8-5 8"/><path d="M3 13c2.3 0 5-1.7 6-4M13 21l4-9 4 9M14.5 18h5"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Grammar</span>
+        <span class="text-[11px] t-muted -mt-1">450+ Patterns</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n1-grammar-bar" style="width:0%;background:#27ae72;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n1-grammar-txt">0 / 0</span>
+        <a href="../grammar/n1/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eafaf1;color:#27ae72;border-color:#27ae7233;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eaf2fc;"><span class="jp font-bold" style="color:#3a7cbf;font-size:20px;">漢</span></div>
+        <span class="text-sm font-bold t-ink leading-tight">Kanji</span>
+        <span class="text-[11px] t-muted -mt-1">1000+ Kanji</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n1-kanji-bar" style="width:0%;background:#3a7cbf;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n1-kanji-txt">0 / 0</span>
+        <a href="../kanji/n1/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eaf2fc;color:#3a7cbf;border-color:#3a7cbf33;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#fdeaf0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Reading &amp; Listening</span>
+        <span class="text-[11px] t-muted -mt-1">Combined</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-n1-rw-bar" style="width:0%;background:#e8517a;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-n1-rw-txt">0 / 0</span>
+        <a href="../readwrite/n1/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#fdeaf0;color:#e8517a;border-color:#e8517a33;">Practice</a>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Quick Practice</h2>
+    <div class="space-y-2.5 mb-6">
+      <a href="../quiz/n1/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#e0693a14;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e0693a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Mixed Quiz</div>
+          <div class="text-[11px] t-muted">All skills • 10 Questions</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../readwrite/n1/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#fdeaf0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Mock Test</div>
+          <div class="text-[11px] t-muted">Full JLPT N1 Test</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="flex items-center justify-between mb-3">
+      <h2 class="text-sm lg:text-base font-bold t-ink">Today's Goal</h2>
+      <a href="#" class="text-xs font-bold" style="color:#e0693a;">Edit</a>
+    </div>
+    <div class="bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card mb-6">
+      <div class="flex items-center gap-3">
+        <div class="goal-ring-ic" style="background:#e0693a14;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e0693a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="#e0693a"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-sm font-bold t-ink">Complete one mock test</span>
+            <span class="text-xs font-bold t-muted whitespace-nowrap">0 / 1</span>
+          </div>
+          <div class="prog-bar mt-2"><span style="width:0%;background:linear-gradient(90deg,#f4a57a,#e0693a);"></span></div>
+        </div>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Study Tips</h2>
+    <div class="relative overflow-hidden rounded-xl2 p-5 mb-2" style="background:linear-gradient(135deg,#e0693a14,transparent);border:1px solid #e0693a4d;">
+      <div class="flex items-start gap-3 max-w-[75%]">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#e0693a22;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e0693a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.5.4.6 1 .6 1.6V16h6v-.6c0-.6.1-1.2.6-1.6A6 6 0 0 0 12 3z"/></svg></div>
+        <p class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Time yourself on mock tests to build real exam stamina!</p>
+      </div>
+      <svg class="tip-illustration" width="120" height="90" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="20,90 55,30 90,90" fill="#f4a57a" opacity="0.45"/>
+      <polygon points="50,90 75,45 100,90" fill="#e0693a" opacity="0.30"/>
+      <rect x="52" y="72" width="5" height="16" fill="#e0693a" opacity="0.6"/>
+      <rect x="46" y="66" width="17" height="4" fill="#e0693a" opacity="0.6"/>
+      <polygon points="54,55 62,66 47,66" fill="#e0693a" opacity="0.6"/>
+    </svg>
+    </div>
+  </section>
+
+  </div><!-- /#mode-jlpt -->
+
+  <!-- ═══════════ SSW MODE CONTENT (JLPT-style dropdown + panels) ═══════════ -->
+  <div id="mode-ssw" style="display:none;">
+
+  <!-- Industry Selector (dropdown) -->
+  <section class="px-5 lg:px-0 pt-5 lg:pt-0 fu relative" style="z-index:40;">
+    <div class="flex items-center justify-between mb-4">
+      <div class="relative" id="industry-pill-wrap">
+        <button onclick="toggleIndustryMenu()" id="industry-pill-btn" class="flex items-center gap-2 pl-4 pr-3 py-2.5 rounded-full border-2 bg-bg-surface surface font-extrabold text-sm t-ink shadow-card transition-all" style="border-color:#2a9d8f;">
+          <span id="industry-pill-icon" class="jp" style="color:#2a9d8f;">介</span>
+          <span id="industry-pill-label">Caregiver</span>
+          <svg id="industry-pill-chev" class="w-4 h-4 t-muted transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div id="industry-menu" class="drop closed absolute left-0 top-full mt-2 w-60 bg-white surface rounded-xl2 shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+          <button onclick="selectIndustry('caregiver')" data-industry-item="caregiver" class="w-full flex items-center justify-between gap-2 px-4 py-2.5 text-sm t-ink2 hover:bg-slate-50 transition-colors">
+            <span class="flex items-center gap-2"><span class="jp font-bold w-5 text-center" style="color:#2a9d8f;">介</span> Caregiver</span>
+            <span data-industry-check style="display:inline;color:#2a9d8f;">✓</span>
+          </button>
+          <button onclick="selectIndustry('food')" data-industry-item="food" class="w-full flex items-center justify-between gap-2 px-4 py-2.5 text-sm t-ink2 hover:bg-slate-50 transition-colors">
+            <span class="flex items-center gap-2"><span class="jp font-bold w-5 text-center" style="color:#e0693a;">外</span> Food Service</span>
+            <span data-industry-check style="display:none;color:#e0693a;">✓</span>
+          </button>
+          <button onclick="selectIndustry('agriculture')" data-industry-item="agriculture" class="w-full flex items-center justify-between gap-2 px-4 py-2.5 text-sm t-ink2 hover:bg-slate-50 transition-colors">
+            <span class="flex items-center gap-2"><span class="jp font-bold w-5 text-center" style="color:#d4a017;">農</span> Agriculture</span>
+            <span data-industry-check style="display:none;color:#d4a017;">✓</span>
+          </button>
+          <button onclick="selectIndustry('construction')" data-industry-item="construction" class="w-full flex items-center justify-between gap-2 px-4 py-2.5 text-sm t-ink2 hover:bg-slate-50 transition-colors">
+            <span class="flex items-center gap-2"><span class="jp font-bold w-5 text-center" style="color:#3a7cbf;">建</span> Construction</span>
+            <span data-industry-check style="display:none;color:#3a7cbf;">✓</span>
+          </button>
+          <button onclick="selectIndustry('manufacturing')" data-industry-item="manufacturing" class="w-full flex items-center justify-between gap-2 px-4 py-2.5 text-sm t-ink2 hover:bg-slate-50 transition-colors">
+            <span class="flex items-center gap-2"><span class="jp font-bold w-5 text-center" style="color:#8b5cf6;">製</span> Manufacturing</span>
+            <span data-industry-check style="display:none;color:#8b5cf6;">✓</span>
+          </button>
+        </div>
+      </div>
+      <button onclick="toggleIndustryMenu()" id="change-industry-btn" class="text-sm font-bold" style="color:#2a9d8f;">Change Industry</button>
+    </div>
+  </section>
+
+    <section id="ind-caregiver" data-industry-panel="caregiver" class="px-5 lg:px-0 fu" style="display:block;">
+    <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-5 lg:p-6 mb-5">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-sm font-bold t-ink">Overall Progress</h3>
+        <span class="text-sm font-extrabold" style="color:#2a9d8f;">18%</span>
+      </div>
+      <div class="prog-bar"><span style="width:18%;background:linear-gradient(90deg,#6ecec8,#2a9d8f);"></span></div>
+      <div class="grid grid-cols-3 gap-3 mt-5">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#27ae72;">✓</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">14</div><div class="text-[10px] t-muted leading-tight">Lessons</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#d4a017;">★</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">110</div><div class="text-[10px] t-muted leading-tight">Points</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#2a9d8f;">🔥</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">2</div><div class="text-[10px] t-muted leading-tight">Day Streak</div></div>
+        </div>
+      </div>
+      <button class="pill-btn w-full flex items-center justify-center gap-2 rounded-full py-3 text-white text-sm font-bold shadow-md2 mt-5" style="background:linear-gradient(90deg,#6ecec8,#2a9d8f);">
+        Continue Learning
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Skills to Practice</h2>
+    <div class="grid grid-cols-2 gap-3 mb-6">
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#f4f0fc;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Vocabulary</span>
+        <span class="text-[11px] t-muted -mt-1">120+ Words</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-caregiver-vocab-bar" style="width:0%;background:#8b5cf6;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-caregiver-vocab-txt">0 / 0</span>
+        <a href="../vocab/caregiver/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#f4f0fc;color:#8b5cf6;border-color:#8b5cf633;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eafaf1;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#27ae72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-4.6 7.6A8.5 8.5 0 0 1 3 12.5 8.38 8.38 0 0 1 10.6 4a8.5 8.5 0 0 1 8.9 7.5Z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Key Phrases</span>
+        <span class="text-[11px] t-muted -mt-1">60+ Phrases</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-caregiver-phrases-bar" style="width:0%;background:#27ae72;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-caregiver-phrases-txt">0 / 0</span>
+        <a href="../phrases/caregiver/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eafaf1;color:#27ae72;border-color:#27ae7233;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eaf2fc;"><span class="jp font-bold" style="color:#3a7cbf;font-size:20px;">語</span></div>
+        <span class="text-sm font-bold t-ink leading-tight">Terminology</span>
+        <span class="text-[11px] t-muted -mt-1">90+ Terms</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-caregiver-terms-bar" style="width:0%;background:#3a7cbf;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-caregiver-terms-txt">0 / 0</span>
+        <a href="../terms/caregiver/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eaf2fc;color:#3a7cbf;border-color:#3a7cbf33;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#fdeaf0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="#e8517a"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Scenarios</span>
+        <span class="text-[11px] t-muted -mt-1">25+ Scenarios</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-caregiver-scenarios-bar" style="width:0%;background:#e8517a;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-caregiver-scenarios-txt">0 / 0</span>
+        <a href="../scenarios/caregiver/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#fdeaf0;color:#e8517a;border-color:#e8517a33;">Practice</a>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Quick Practice</h2>
+    <div class="space-y-2.5 mb-6">
+      <a href="../quiz/caregiver/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#2a9d8f14;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Quiz</div>
+          <div class="text-[11px] t-muted">10 Questions</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../practice/caregiver/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#f4f0fc;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1M12 18v3M9 21h6"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Practice</div>
+          <div class="text-[11px] t-muted">Speaking &amp; listening drills</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../mockinterview/caregiver/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eafaf1;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#27ae72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Mock Interview</div>
+          <div class="text-[11px] t-muted">Simulated Caregiver interview</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../fulltest/caregiver/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#fdf0ea;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e0693a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22V15"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Full Test</div>
+          <div class="text-[11px] t-muted">Full Caregiver skills test</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="flex items-center justify-between mb-3">
+      <h2 class="text-sm lg:text-base font-bold t-ink">Today's Goal</h2>
+      <a href="#" class="text-xs font-bold" style="color:#2a9d8f;">Edit</a>
+    </div>
+    <div class="bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card mb-6">
+      <div class="flex items-center gap-3">
+        <div class="goal-ring-ic" style="background:#2a9d8f14;"><span class="jp font-bold" style="color:#2a9d8f;font-size:18px;">介</span></div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-sm font-bold t-ink">Learn 10 caregiver phrases</span>
+            <span class="text-xs font-bold t-muted whitespace-nowrap">4 / 10</span>
+          </div>
+          <div class="prog-bar mt-2"><span style="width:40%;background:linear-gradient(90deg,#6ecec8,#2a9d8f);"></span></div>
+        </div>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Study Tips</h2>
+    <div class="relative overflow-hidden rounded-xl2 p-5 mb-2" style="background:linear-gradient(135deg,#2a9d8f14,transparent);border:1px solid #2a9d8f4d;">
+      <div class="flex items-start gap-3 max-w-[75%]">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#2a9d8f22;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.5.4.6 1 .6 1.6V16h6v-.6c0-.6.1-1.2.6-1.6A6 6 0 0 0 12 3z"/></svg></div>
+        <p class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Shadow real caregiver dialogues out loud to build confidence!</p>
+      </div>
+      <svg class="tip-illustration" width="120" height="90" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="20,90 55,30 90,90" fill="#6ecec8" opacity="0.45"/>
+      <polygon points="50,90 75,45 100,90" fill="#2a9d8f" opacity="0.30"/>
+      <rect x="52" y="72" width="5" height="16" fill="#2a9d8f" opacity="0.6"/>
+      <rect x="46" y="66" width="17" height="4" fill="#2a9d8f" opacity="0.6"/>
+      <polygon points="54,55 62,66 47,66" fill="#2a9d8f" opacity="0.6"/>
+    </svg>
+    </div>
+  </section>
+    <section id="ind-food" data-industry-panel="food" class="px-5 lg:px-0 fu" style="display:none;">
+    <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-5 lg:p-6 mb-5">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-sm font-bold t-ink">Overall Progress</h3>
+        <span class="text-sm font-extrabold" style="color:#e0693a;">0%</span>
+      </div>
+      <div class="prog-bar"><span style="width:0%;background:linear-gradient(90deg,#f4a57a,#e0693a);"></span></div>
+      <div class="grid grid-cols-3 gap-3 mt-5">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#27ae72;">✓</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Lessons</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#d4a017;">★</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Points</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#e0693a;">🔥</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Day Streak</div></div>
+        </div>
+      </div>
+      <button class="pill-btn w-full flex items-center justify-center gap-2 rounded-full py-3 text-white text-sm font-bold shadow-md2 mt-5" style="background:linear-gradient(90deg,#f4a57a,#e0693a);">
+        Continue Learning
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Skills to Practice</h2>
+    <div class="grid grid-cols-2 gap-3 mb-6">
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#f4f0fc;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Vocabulary</span>
+        <span class="text-[11px] t-muted -mt-1">100+ Words</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-food-vocab-bar" style="width:0%;background:#8b5cf6;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-food-vocab-txt">0 / 0</span>
+        <a href="../vocab/food/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#f4f0fc;color:#8b5cf6;border-color:#8b5cf633;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eafaf1;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#27ae72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-4.6 7.6A8.5 8.5 0 0 1 3 12.5 8.38 8.38 0 0 1 10.6 4a8.5 8.5 0 0 1 8.9 7.5Z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Key Phrases</span>
+        <span class="text-[11px] t-muted -mt-1">55+ Phrases</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-food-phrases-bar" style="width:0%;background:#27ae72;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-food-phrases-txt">0 / 0</span>
+        <a href="../phrases/food/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eafaf1;color:#27ae72;border-color:#27ae7233;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eaf2fc;"><span class="jp font-bold" style="color:#3a7cbf;font-size:20px;">語</span></div>
+        <span class="text-sm font-bold t-ink leading-tight">Terminology</span>
+        <span class="text-[11px] t-muted -mt-1">70+ Terms</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-food-terms-bar" style="width:0%;background:#3a7cbf;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-food-terms-txt">0 / 0</span>
+        <a href="../terms/food/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eaf2fc;color:#3a7cbf;border-color:#3a7cbf33;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#fdeaf0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="#e8517a"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Scenarios</span>
+        <span class="text-[11px] t-muted -mt-1">20+ Scenarios</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-food-scenarios-bar" style="width:0%;background:#e8517a;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-food-scenarios-txt">0 / 0</span>
+        <a href="../scenarios/food/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#fdeaf0;color:#e8517a;border-color:#e8517a33;">Practice</a>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Quick Practice</h2>
+    <div class="space-y-2.5 mb-6">
+      <a href="../quiz/food/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#e0693a14;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e0693a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Quiz</div>
+          <div class="text-[11px] t-muted">10 Questions</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../practice/food/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#f4f0fc;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1M12 18v3M9 21h6"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Practice</div>
+          <div class="text-[11px] t-muted">Speaking &amp; listening drills</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../mockinterview/food/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eafaf1;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#27ae72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Mock Interview</div>
+          <div class="text-[11px] t-muted">Simulated Food Service interview</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../fulltest/food/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#fdf0ea;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e0693a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22V15"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Full Test</div>
+          <div class="text-[11px] t-muted">Full Food Service skills test</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="flex items-center justify-between mb-3">
+      <h2 class="text-sm lg:text-base font-bold t-ink">Today's Goal</h2>
+      <a href="#" class="text-xs font-bold" style="color:#e0693a;">Edit</a>
+    </div>
+    <div class="bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card mb-6">
+      <div class="flex items-center gap-3">
+        <div class="goal-ring-ic" style="background:#e0693a14;"><span class="jp font-bold" style="color:#e0693a;font-size:18px;">外</span></div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-sm font-bold t-ink">Learn 10 food-service phrases</span>
+            <span class="text-xs font-bold t-muted whitespace-nowrap">0 / 10</span>
+          </div>
+          <div class="prog-bar mt-2"><span style="width:0%;background:linear-gradient(90deg,#f4a57a,#e0693a);"></span></div>
+        </div>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Study Tips</h2>
+    <div class="relative overflow-hidden rounded-xl2 p-5 mb-2" style="background:linear-gradient(135deg,#e0693a14,transparent);border:1px solid #e0693a4d;">
+      <div class="flex items-start gap-3 max-w-[75%]">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#e0693a22;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e0693a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.5.4.6 1 .6 1.6V16h6v-.6c0-.6.1-1.2.6-1.6A6 6 0 0 0 12 3z"/></svg></div>
+        <p class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Practice greeting and order-taking phrases every shift!</p>
+      </div>
+      <svg class="tip-illustration" width="120" height="90" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="20,90 55,30 90,90" fill="#f4a57a" opacity="0.45"/>
+      <polygon points="50,90 75,45 100,90" fill="#e0693a" opacity="0.30"/>
+      <rect x="52" y="72" width="5" height="16" fill="#e0693a" opacity="0.6"/>
+      <rect x="46" y="66" width="17" height="4" fill="#e0693a" opacity="0.6"/>
+      <polygon points="54,55 62,66 47,66" fill="#e0693a" opacity="0.6"/>
+    </svg>
+    </div>
+  </section>
+    <section id="ind-agriculture" data-industry-panel="agriculture" class="px-5 lg:px-0 fu" style="display:none;">
+    <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-5 lg:p-6 mb-5">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-sm font-bold t-ink">Overall Progress</h3>
+        <span class="text-sm font-extrabold" style="color:#d4a017;">0%</span>
+      </div>
+      <div class="prog-bar"><span style="width:0%;background:linear-gradient(90deg,#f5da8a,#d4a017);"></span></div>
+      <div class="grid grid-cols-3 gap-3 mt-5">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#27ae72;">✓</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Lessons</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#d4a017;">★</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Points</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#d4a017;">🔥</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Day Streak</div></div>
+        </div>
+      </div>
+      <button class="pill-btn w-full flex items-center justify-center gap-2 rounded-full py-3 text-white text-sm font-bold shadow-md2 mt-5" style="background:linear-gradient(90deg,#f5da8a,#d4a017);">
+        Continue Learning
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Skills to Practice</h2>
+    <div class="grid grid-cols-2 gap-3 mb-6">
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#f4f0fc;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Vocabulary</span>
+        <span class="text-[11px] t-muted -mt-1">90+ Words</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-agriculture-vocab-bar" style="width:0%;background:#8b5cf6;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-agriculture-vocab-txt">0 / 0</span>
+        <a href="../vocab/agriculture/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#f4f0fc;color:#8b5cf6;border-color:#8b5cf633;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eafaf1;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#27ae72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-4.6 7.6A8.5 8.5 0 0 1 3 12.5 8.38 8.38 0 0 1 10.6 4a8.5 8.5 0 0 1 8.9 7.5Z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Key Phrases</span>
+        <span class="text-[11px] t-muted -mt-1">45+ Phrases</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-agriculture-phrases-bar" style="width:0%;background:#27ae72;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-agriculture-phrases-txt">0 / 0</span>
+        <a href="../phrases/agriculture/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eafaf1;color:#27ae72;border-color:#27ae7233;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eaf2fc;"><span class="jp font-bold" style="color:#3a7cbf;font-size:20px;">語</span></div>
+        <span class="text-sm font-bold t-ink leading-tight">Terminology</span>
+        <span class="text-[11px] t-muted -mt-1">60+ Terms</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-agriculture-terms-bar" style="width:0%;background:#3a7cbf;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-agriculture-terms-txt">0 / 0</span>
+        <a href="../terms/agriculture/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eaf2fc;color:#3a7cbf;border-color:#3a7cbf33;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#fdeaf0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="#e8517a"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Scenarios</span>
+        <span class="text-[11px] t-muted -mt-1">18+ Scenarios</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-agriculture-scenarios-bar" style="width:0%;background:#e8517a;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-agriculture-scenarios-txt">0 / 0</span>
+        <a href="../scenarios/agriculture/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#fdeaf0;color:#e8517a;border-color:#e8517a33;">Practice</a>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Quick Practice</h2>
+    <div class="space-y-2.5 mb-6">
+      <a href="../quiz/agriculture/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#d4a01714;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Quiz</div>
+          <div class="text-[11px] t-muted">10 Questions</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../practice/agriculture/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#f4f0fc;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1M12 18v3M9 21h6"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Practice</div>
+          <div class="text-[11px] t-muted">Speaking &amp; listening drills</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../mockinterview/agriculture/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eafaf1;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#27ae72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Mock Interview</div>
+          <div class="text-[11px] t-muted">Simulated Agriculture interview</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../fulltest/agriculture/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#fdf0ea;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e0693a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22V15"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Full Test</div>
+          <div class="text-[11px] t-muted">Full Agriculture skills test</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="flex items-center justify-between mb-3">
+      <h2 class="text-sm lg:text-base font-bold t-ink">Today's Goal</h2>
+      <a href="#" class="text-xs font-bold" style="color:#d4a017;">Edit</a>
+    </div>
+    <div class="bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card mb-6">
+      <div class="flex items-center gap-3">
+        <div class="goal-ring-ic" style="background:#d4a01714;"><span class="jp font-bold" style="color:#d4a017;font-size:18px;">農</span></div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-sm font-bold t-ink">Learn 10 farm terms</span>
+            <span class="text-xs font-bold t-muted whitespace-nowrap">0 / 10</span>
+          </div>
+          <div class="prog-bar mt-2"><span style="width:0%;background:linear-gradient(90deg,#f5da8a,#d4a017);"></span></div>
+        </div>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Study Tips</h2>
+    <div class="relative overflow-hidden rounded-xl2 p-5 mb-2" style="background:linear-gradient(135deg,#d4a01714,transparent);border:1px solid #d4a0174d;">
+      <div class="flex items-start gap-3 max-w-[75%]">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#d4a01722;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4a017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.5.4.6 1 .6 1.6V16h6v-.6c0-.6.1-1.2.6-1.6A6 6 0 0 0 12 3z"/></svg></div>
+        <p class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Pair each new term with a picture of the actual tool or crop!</p>
+      </div>
+      <svg class="tip-illustration" width="120" height="90" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="20,90 55,30 90,90" fill="#f5da8a" opacity="0.45"/>
+      <polygon points="50,90 75,45 100,90" fill="#d4a017" opacity="0.30"/>
+      <rect x="52" y="72" width="5" height="16" fill="#d4a017" opacity="0.6"/>
+      <rect x="46" y="66" width="17" height="4" fill="#d4a017" opacity="0.6"/>
+      <polygon points="54,55 62,66 47,66" fill="#d4a017" opacity="0.6"/>
+    </svg>
+    </div>
+  </section>
+    <section id="ind-construction" data-industry-panel="construction" class="px-5 lg:px-0 fu" style="display:none;">
+    <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-5 lg:p-6 mb-5">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-sm font-bold t-ink">Overall Progress</h3>
+        <span class="text-sm font-extrabold" style="color:#3a7cbf;">0%</span>
+      </div>
+      <div class="prog-bar"><span style="width:0%;background:linear-gradient(90deg,#7eb8e4,#3a7cbf);"></span></div>
+      <div class="grid grid-cols-3 gap-3 mt-5">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#27ae72;">✓</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Lessons</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#d4a017;">★</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Points</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#3a7cbf;">🔥</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Day Streak</div></div>
+        </div>
+      </div>
+      <button class="pill-btn w-full flex items-center justify-center gap-2 rounded-full py-3 text-white text-sm font-bold shadow-md2 mt-5" style="background:linear-gradient(90deg,#7eb8e4,#3a7cbf);">
+        Continue Learning
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Skills to Practice</h2>
+    <div class="grid grid-cols-2 gap-3 mb-6">
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#f4f0fc;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Vocabulary</span>
+        <span class="text-[11px] t-muted -mt-1">110+ Words</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-construction-vocab-bar" style="width:0%;background:#8b5cf6;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-construction-vocab-txt">0 / 0</span>
+        <a href="../vocab/construction/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#f4f0fc;color:#8b5cf6;border-color:#8b5cf633;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eafaf1;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#27ae72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-4.6 7.6A8.5 8.5 0 0 1 3 12.5 8.38 8.38 0 0 1 10.6 4a8.5 8.5 0 0 1 8.9 7.5Z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Key Phrases</span>
+        <span class="text-[11px] t-muted -mt-1">50+ Phrases</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-construction-phrases-bar" style="width:0%;background:#27ae72;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-construction-phrases-txt">0 / 0</span>
+        <a href="../phrases/construction/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eafaf1;color:#27ae72;border-color:#27ae7233;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eaf2fc;"><span class="jp font-bold" style="color:#3a7cbf;font-size:20px;">語</span></div>
+        <span class="text-sm font-bold t-ink leading-tight">Terminology</span>
+        <span class="text-[11px] t-muted -mt-1">85+ Terms</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-construction-terms-bar" style="width:0%;background:#3a7cbf;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-construction-terms-txt">0 / 0</span>
+        <a href="../terms/construction/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eaf2fc;color:#3a7cbf;border-color:#3a7cbf33;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#fdeaf0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="#e8517a"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Scenarios</span>
+        <span class="text-[11px] t-muted -mt-1">22+ Scenarios</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-construction-scenarios-bar" style="width:0%;background:#e8517a;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-construction-scenarios-txt">0 / 0</span>
+        <a href="../scenarios/construction/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#fdeaf0;color:#e8517a;border-color:#e8517a33;">Practice</a>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Quick Practice</h2>
+    <div class="space-y-2.5 mb-6">
+      <a href="../quiz/construction/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#3a7cbf14;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3a7cbf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Quiz</div>
+          <div class="text-[11px] t-muted">10 Questions</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../practice/construction/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#f4f0fc;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1M12 18v3M9 21h6"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Practice</div>
+          <div class="text-[11px] t-muted">Speaking &amp; listening drills</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../mockinterview/construction/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eafaf1;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#27ae72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Mock Interview</div>
+          <div class="text-[11px] t-muted">Simulated Construction interview</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../fulltest/construction/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#fdf0ea;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e0693a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22V15"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Full Test</div>
+          <div class="text-[11px] t-muted">Full Construction skills test</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="flex items-center justify-between mb-3">
+      <h2 class="text-sm lg:text-base font-bold t-ink">Today's Goal</h2>
+      <a href="#" class="text-xs font-bold" style="color:#3a7cbf;">Edit</a>
+    </div>
+    <div class="bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card mb-6">
+      <div class="flex items-center gap-3">
+        <div class="goal-ring-ic" style="background:#3a7cbf14;"><span class="jp font-bold" style="color:#3a7cbf;font-size:18px;">建</span></div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-sm font-bold t-ink">Learn 10 safety terms</span>
+            <span class="text-xs font-bold t-muted whitespace-nowrap">0 / 10</span>
+          </div>
+          <div class="prog-bar mt-2"><span style="width:0%;background:linear-gradient(90deg,#7eb8e4,#3a7cbf);"></span></div>
+        </div>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Study Tips</h2>
+    <div class="relative overflow-hidden rounded-xl2 p-5 mb-2" style="background:linear-gradient(135deg,#3a7cbf14,transparent);border:1px solid #3a7cbf4d;">
+      <div class="flex items-start gap-3 max-w-[75%]">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#3a7cbf22;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3a7cbf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.5.4.6 1 .6 1.6V16h6v-.6c0-.6.1-1.2.6-1.6A6 6 0 0 0 12 3z"/></svg></div>
+        <p class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Safety terms come up fast on site — drill them daily!</p>
+      </div>
+      <svg class="tip-illustration" width="120" height="90" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="20,90 55,30 90,90" fill="#7eb8e4" opacity="0.45"/>
+      <polygon points="50,90 75,45 100,90" fill="#3a7cbf" opacity="0.30"/>
+      <rect x="52" y="72" width="5" height="16" fill="#3a7cbf" opacity="0.6"/>
+      <rect x="46" y="66" width="17" height="4" fill="#3a7cbf" opacity="0.6"/>
+      <polygon points="54,55 62,66 47,66" fill="#3a7cbf" opacity="0.6"/>
+    </svg>
+    </div>
+  </section>
+    <section id="ind-manufacturing" data-industry-panel="manufacturing" class="px-5 lg:px-0 fu" style="display:none;">
+    <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-5 lg:p-6 mb-5">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-sm font-bold t-ink">Overall Progress</h3>
+        <span class="text-sm font-extrabold" style="color:#8b5cf6;">0%</span>
+      </div>
+      <div class="prog-bar"><span style="width:0%;background:linear-gradient(90deg,#c4a8e0,#8b5cf6);"></span></div>
+      <div class="grid grid-cols-3 gap-3 mt-5">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#27ae72;">✓</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Lessons</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#d4a017;">★</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Points</div></div>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#8b5cf6;">🔥</div>
+          <div><div class="font-extrabold text-sm t-ink leading-tight">0</div><div class="text-[10px] t-muted leading-tight">Day Streak</div></div>
+        </div>
+      </div>
+      <button class="pill-btn w-full flex items-center justify-center gap-2 rounded-full py-3 text-white text-sm font-bold shadow-md2 mt-5" style="background:linear-gradient(90deg,#c4a8e0,#8b5cf6);">
+        Continue Learning
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Skills to Practice</h2>
+    <div class="grid grid-cols-2 gap-3 mb-6">
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#f4f0fc;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Vocabulary</span>
+        <span class="text-[11px] t-muted -mt-1">95+ Words</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-manufacturing-vocab-bar" style="width:0%;background:#8b5cf6;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-manufacturing-vocab-txt">0 / 0</span>
+        <a href="../vocab/manufacturing/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#f4f0fc;color:#8b5cf6;border-color:#8b5cf633;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eafaf1;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#27ae72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-4.6 7.6A8.5 8.5 0 0 1 3 12.5 8.38 8.38 0 0 1 10.6 4a8.5 8.5 0 0 1 8.9 7.5Z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Key Phrases</span>
+        <span class="text-[11px] t-muted -mt-1">48+ Phrases</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-manufacturing-phrases-bar" style="width:0%;background:#27ae72;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-manufacturing-phrases-txt">0 / 0</span>
+        <a href="../phrases/manufacturing/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eafaf1;color:#27ae72;border-color:#27ae7233;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#eaf2fc;"><span class="jp font-bold" style="color:#3a7cbf;font-size:20px;">語</span></div>
+        <span class="text-sm font-bold t-ink leading-tight">Terminology</span>
+        <span class="text-[11px] t-muted -mt-1">75+ Terms</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-manufacturing-terms-bar" style="width:0%;background:#3a7cbf;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-manufacturing-terms-txt">0 / 0</span>
+        <a href="../terms/manufacturing/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#eaf2fc;color:#3a7cbf;border-color:#3a7cbf33;">Practice</a>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-4 lg:p-5 shadow-card flex flex-col items-center text-center gap-2">
+        <div class="subj-ic" style="background:#fdeaf0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="#e8517a"/></svg></div>
+        <span class="text-sm font-bold t-ink leading-tight">Scenarios</span>
+        <span class="text-[11px] t-muted -mt-1">20+ Scenarios</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-manufacturing-scenarios-bar" style="width:0%;background:#e8517a;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-manufacturing-scenarios-txt">0 / 0</span>
+        <a href="../scenarios/manufacturing/index.html" class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold border" style="background:#fdeaf0;color:#e8517a;border-color:#e8517a33;">Practice</a>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Quick Practice</h2>
+    <div class="space-y-2.5 mb-6">
+      <a href="../quiz/manufacturing/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#8b5cf614;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Quiz</div>
+          <div class="text-[11px] t-muted">10 Questions</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../practice/manufacturing/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#f4f0fc;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1M12 18v3M9 21h6"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Practice</div>
+          <div class="text-[11px] t-muted">Speaking &amp; listening drills</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../mockinterview/manufacturing/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eafaf1;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#27ae72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Mock Interview</div>
+          <div class="text-[11px] t-muted">Simulated Manufacturing interview</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a href="../fulltest/manufacturing/index.html" class="practice-row flex items-center gap-3 bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#fdf0ea;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e0693a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22V15"/></svg></div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-bold t-ink">Full Test</div>
+          <div class="text-[11px] t-muted">Full Manufacturing skills test</div>
+        </div>
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="flex items-center justify-between mb-3">
+      <h2 class="text-sm lg:text-base font-bold t-ink">Today's Goal</h2>
+      <a href="#" class="text-xs font-bold" style="color:#8b5cf6;">Edit</a>
+    </div>
+    <div class="bg-bg-surface surface rounded-xl2 border border-slate-100 divider p-4 shadow-card mb-6">
+      <div class="flex items-center gap-3">
+        <div class="goal-ring-ic" style="background:#8b5cf614;"><span class="jp font-bold" style="color:#8b5cf6;font-size:18px;">製</span></div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-sm font-bold t-ink">Learn 10 factory-floor terms</span>
+            <span class="text-xs font-bold t-muted whitespace-nowrap">0 / 10</span>
+          </div>
+          <div class="prog-bar mt-2"><span style="width:0%;background:linear-gradient(90deg,#c4a8e0,#8b5cf6);"></span></div>
+        </div>
+      </div>
+    </div>
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3">Study Tips</h2>
+    <div class="relative overflow-hidden rounded-xl2 p-5 mb-2" style="background:linear-gradient(135deg,#8b5cf614,transparent);border:1px solid #8b5cf64d;">
+      <div class="flex items-start gap-3 max-w-[75%]">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#8b5cf622;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.5.4.6 1 .6 1.6V16h6v-.6c0-.6.1-1.2.6-1.6A6 6 0 0 0 12 3z"/></svg></div>
+        <p class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Review machine and safety labels — real exposure sticks best!</p>
+      </div>
+      <svg class="tip-illustration" width="120" height="90" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="20,90 55,30 90,90" fill="#c4a8e0" opacity="0.45"/>
+      <polygon points="50,90 75,45 100,90" fill="#8b5cf6" opacity="0.30"/>
+      <rect x="52" y="72" width="5" height="16" fill="#8b5cf6" opacity="0.6"/>
+      <rect x="46" y="66" width="17" height="4" fill="#8b5cf6" opacity="0.6"/>
+      <polygon points="54,55 62,66 47,66" fill="#8b5cf6" opacity="0.6"/>
+    </svg>
+    </div>
+  </section>
+
+  </div><!-- /#mode-ssw -->
+
+</main>
+
+
+
+<!-- ═══════════ MOBILE BOTTOM NAV ═══════════ -->
+<nav id="botnav" class="lg:hidden fixed bottom-3 left-3 right-3 z-40 transition-transform duration-300 rounded-full shadow-lg2"
+     style="background:rgba(255,255,255,.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);">
+  <div class="flex items-center" style="height:66px;">
+    <a href="../index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Home</span>
+    </a>
+    <a href="index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 4h6a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2z"/><path d="M22 4h-6a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">JLPT</span>
+    </a>
+    <a href="../ssw/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3 10 5.5-10 5.5L2 8.5 12 3Z"/><path d="M6 11v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">SSW</span>
+    </a>
+    <a href="../quiz/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#8b5cf6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M4 20h2.5L18 8.5a1.8 1.8 0 0 0-2.5-2.5L4 17.5V20Z"/></svg>
+      <span class="text-[11px] font-bold" style="color:#8b5cf6;">Practice</span>
+      <span class="absolute -bottom-1.5 w-5 h-[3px] rounded-full" style="background:#8b5cf6;"></span>
+    </a>
+    <a href="../other/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+      <span class="text-[11px] font-semibold t-muted">More</span>
+    </a>
+  </div>
+</nav>
+
+
+<!-- ═══════════ SCRIPTS ═══════════ -->
+<script>
+let isDark = false;
+const MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+const SUN  = '<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/>';
+
+function toggleDark() {
+  isDark = !isDark;
+  document.body.className = isDark
+    ? 'mesh-dark min-h-screen text-slate-100 dark'
+    : 'mesh-light min-h-screen text-ink';
+  ['mob-icon','desk-icon'].forEach(id => { const el = document.getElementById(id); if(el) el.innerHTML = isDark ? SUN : MOON; });
+  const l = document.getElementById('desk-lbl'); if(l) l.textContent = isDark ? 'Light mode' : 'Dark mode';
+}
+
+/* ── Scroll-direction nav show/hide (mobile only) ──
+   Scrolling down: bottom nav hides, top nav stays visible.
+   Scrolling up: top nav hides, bottom nav stays visible. */
+(function(){
+  let lastY = window.scrollY;
+  const topbar = document.getElementById('topbar');
+  const botnav = document.getElementById('botnav');
+  window.addEventListener('scroll', function(){
+    const y = window.scrollY;
+    const goingDown = y > lastY;
+    if (y < 10) {
+      if (topbar) topbar.style.transform = 'translateY(0)';
+      if (botnav) botnav.style.transform = 'translateY(0)';
+    } else if (goingDown) {
+      if (botnav) botnav.style.transform = 'translateY(100%)';
+      if (topbar) topbar.style.transform = 'translateY(0)';
+    } else {
+      if (topbar) topbar.style.transform = 'translateY(-100%)';
+      if (botnav) botnav.style.transform = 'translateY(0)';
+    }
+    lastY = y;
+  }, { passive: true });
+})();
+
+/* ── Mode switch: JLPT / SSW ── */
+function setMode(mode) {
+  const jlptWrap = document.getElementById('mode-jlpt');
+  const sswWrap = document.getElementById('mode-ssw');
+  const btnJlpt = document.getElementById('mode-btn-jlpt');
+  const btnSsw = document.getElementById('mode-btn-ssw');
+  if (mode === 'ssw') {
+    if (jlptWrap) jlptWrap.style.display = 'none';
+    if (sswWrap) sswWrap.style.display = '';
+    if (btnSsw) { btnSsw.style.background = '#fff'; btnSsw.style.color = '#27ae72'; btnSsw.style.boxShadow = '0 2px 8px rgba(15,23,42,.08)'; }
+    if (btnJlpt) { btnJlpt.style.background = 'transparent'; btnJlpt.style.color = '#64748b'; btnJlpt.style.boxShadow = 'none'; }
+  } else {
+    if (jlptWrap) jlptWrap.style.display = '';
+    if (sswWrap) sswWrap.style.display = 'none';
+    if (btnJlpt) { btnJlpt.style.background = '#fff'; btnJlpt.style.color = '#8b5cf6'; btnJlpt.style.boxShadow = '0 2px 8px rgba(15,23,42,.08)'; }
+    if (btnSsw) { btnSsw.style.background = 'transparent'; btnSsw.style.color = '#64748b'; btnSsw.style.boxShadow = 'none'; }
+  }
+}
+
+/* ── Industry selector (dropdown, SSW mode) ── */
+const INDUSTRY_COLORS = {
+  caregiver: '#2a9d8f', food: '#e0693a', agriculture: '#d4a017', construction: '#3a7cbf', manufacturing: '#8b5cf6'
+};
+const INDUSTRY_LABELS = {
+  caregiver: 'Caregiver', food: 'Food Service', agriculture: 'Agriculture', construction: 'Construction', manufacturing: 'Manufacturing'
+};
+const INDUSTRY_ICONS = {
+  caregiver: '介', food: '外', agriculture: '農', construction: '建', manufacturing: '製'
+};
+let industryMenuOpen = false;
+function toggleIndustryMenu() {
+  industryMenuOpen = !industryMenuOpen;
+  const menu = document.getElementById('industry-menu');
+  const chev = document.getElementById('industry-pill-chev');
+  if (menu) menu.className = menu.className.replace(/\b(open|closed)\b/, industryMenuOpen ? 'open' : 'closed');
+  if (chev) chev.style.transform = industryMenuOpen ? 'rotate(180deg)' : '';
+}
+function selectIndustry(industry) {
+  document.querySelectorAll('[data-industry-panel]').forEach(function(panel){
+    panel.style.display = (panel.getAttribute('data-industry-panel') === industry) ? '' : 'none';
+  });
+  document.querySelectorAll('[data-industry-item]').forEach(function(item){
+    const check = item.querySelector('[data-industry-check]');
+    if (check) check.style.display = (item.getAttribute('data-industry-item') === industry) ? 'inline' : 'none';
+  });
+  const color = INDUSTRY_COLORS[industry];
+  const pillBtn = document.getElementById('industry-pill-btn');
+  const pillLabel = document.getElementById('industry-pill-label');
+  const pillIcon = document.getElementById('industry-pill-icon');
+  const changeBtn = document.getElementById('change-industry-btn');
+  if (pillBtn) pillBtn.style.borderColor = color;
+  if (pillLabel) pillLabel.textContent = INDUSTRY_LABELS[industry];
+  if (pillIcon) { pillIcon.textContent = INDUSTRY_ICONS[industry]; pillIcon.style.color = color; }
+  if (changeBtn) changeBtn.style.color = color;
+  industryMenuOpen = false;
+  const menu = document.getElementById('industry-menu');
+  if (menu) menu.className = menu.className.replace(/\b(open|closed)\b/, 'closed');
+  const chev = document.getElementById('industry-pill-chev');
+  if (chev) chev.style.transform = '';
+  const target = document.getElementById('ind-' + industry);
+  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* ── Level selector (dropdown) ── */
+const LEVEL_COLORS = {
+  n5: '#8b5cf6', n4: '#2a9d8f', n3: '#27ae72', n2: '#d4a017', n1: '#e0693a'
+};
+const LEVEL_LABELS = {
+  n5: 'JLPT N5', n4: 'JLPT N4', n3: 'JLPT N3', n2: 'JLPT N2', n1: 'JLPT N1'
+};
+let levelMenuOpen = false;
+function toggleLevelMenu() {
+  levelMenuOpen = !levelMenuOpen;
+  const menu = document.getElementById('level-menu');
+  const chev = document.getElementById('level-pill-chev');
+  if (menu) menu.className = menu.className.replace(/\b(open|closed)\b/, levelMenuOpen ? 'open' : 'closed');
+  if (chev) chev.style.transform = levelMenuOpen ? 'rotate(180deg)' : '';
+}
+function selectLevel(level) {
+  document.querySelectorAll('[data-level-panel]').forEach(function(panel){
+    panel.style.display = (panel.getAttribute('data-level-panel') === level) ? '' : 'none';
+  });
+  document.querySelectorAll('[data-menu-item]').forEach(function(item){
+    const check = item.querySelector('[data-menu-check]');
+    if (check) check.style.display = (item.getAttribute('data-menu-item') === level) ? 'inline' : 'none';
+  });
+  const color = LEVEL_COLORS[level];
+  const pillBtn = document.getElementById('level-pill-btn');
+  const pillLabel = document.getElementById('level-pill-label');
+  const changeBtn = document.getElementById('change-level-btn');
+  if (pillBtn) pillBtn.style.borderColor = color;
+  if (pillLabel) pillLabel.textContent = LEVEL_LABELS[level];
+  if (changeBtn) changeBtn.style.color = color;
+  levelMenuOpen = false;
+  const menu = document.getElementById('level-menu');
+  if (menu) menu.className = menu.className.replace(/\b(open|closed)\b/, 'closed');
+  const chev = document.getElementById('level-pill-chev');
+  if (chev) chev.style.transform = '';
+  const target = document.getElementById(level);
+  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+/* Sidebar quick-links (desktop) also switch the panel instead of relying on anchor alone */
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('a[href^="#n"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      selectLevel(a.getAttribute('href').substring(1));
+    });
+  });
+});
+
+/* ── Desktop profile dropdown ── */
+let deskProfOpen = false;
+function toggleDeskProf() {
+  deskProfOpen = !deskProfOpen;
+  const drop = document.getElementById('desk-prof-drop');
+  const chev = document.getElementById('desk-prof-chev');
+  drop.className = drop.className.replace(/\b(open|closed)\b/, deskProfOpen ? 'open' : 'closed');
+  if(chev) chev.style.transform = deskProfOpen ? 'rotate(180deg)' : '';
+}
+
+const drops = { prof: false };
+function toggleDrop(name) {
+  drops[name] = !drops[name];
+  const el = document.getElementById('prof-drop');
+  if(el) el.className = el.className.replace(/\b(open|closed)\b/, drops[name] ? 'open' : 'closed');
+}
+
+/* ── Outside click ── */
+document.addEventListener('click', e => {
+  const deskProfWrap = document.getElementById('desk-prof-wrap');
+  if(deskProfWrap && !deskProfWrap.contains(e.target) && deskProfOpen) {
+    deskProfOpen = false;
+    const drop = document.getElementById('desk-prof-drop'), chev = document.getElementById('desk-prof-chev');
+    if(drop) drop.className = drop.className.replace(/\b(open|closed)\b/,'closed');
+    if(chev) chev.style.transform = '';
+  }
+  const pb = document.getElementById('prof-wrap');
+  if(pb && !pb.contains(e.target) && drops.prof) { drops.prof = false; document.getElementById('prof-drop').className = document.getElementById('prof-drop').className.replace(/\b(open|closed)\b/,'closed'); }
+  const lvw = document.getElementById('level-pill-wrap');
+  if(lvw && !lvw.contains(e.target) && levelMenuOpen) {
+    levelMenuOpen = false;
+    const menu = document.getElementById('level-menu'); if(menu) menu.className = menu.className.replace(/\b(open|closed)\b/,'closed');
+    const chev = document.getElementById('level-pill-chev'); if(chev) chev.style.transform = '';
+  }
+  const iw = document.getElementById('industry-pill-wrap');
+  if(iw && !iw.contains(e.target) && industryMenuOpen) {
+    industryMenuOpen = false;
+    const menu = document.getElementById('industry-menu'); if(menu) menu.className = menu.className.replace(/\b(open|closed)\b/,'closed');
+    const chev = document.getElementById('industry-pill-chev'); if(chev) chev.style.transform = '';
+  }
+});
+
+/* ── Firebase dynamic name/avatar + REAL progress tracking ──
+   Reads the same "engagement/{uid}/monthly/{month}" node the homepage uses
+   for overall stats, and a "progress/{uid}/jlpt/{level}/{subject}" node
+   ({ completed, total }) for each subject's bar on this page. Nothing here
+   is hardcoded — every number starts at 0 and only fills in once real data
+   comes back from the database. If your actual DB uses different field
+   names/paths, just adjust the strings marked below. */
+(function(){
+  var cachedName=localStorage.getItem('sakura_user_name');
+  if(cachedName){ ['sb-name','mob-drop-name','desk-drop-name'].forEach(function(id){ var el=document.getElementById(id); if(el) el.textContent=cachedName; }); }
+  function applyUser(user){
+    if(!user) return;
+    var name=user.displayName||cachedName||'Learner', localPic=localStorage.getItem('sakura-avatar-'+user.uid), photo=localPic||user.photoURL||'';
+    localStorage.setItem('sakura_user_name',name);
+    ['sb-name','mob-drop-name','desk-drop-name'].forEach(function(id){ var el=document.getElementById(id); if(el) el.textContent=name; });
+    ['sb-avatar','mob-avatar'].forEach(function(id){ var el=document.getElementById(id); if(!el) return; if(photo){ el.innerHTML='<img src="'+photo+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt=""/>'; } else { el.textContent=(name[0]||'S').toUpperCase(); } });
+    loadProgress(user);
+  }
+
+  function setBar(id, completed, total){
+    var bar = document.getElementById(id+'-bar'), txt = document.getElementById(id+'-txt');
+    var pct = total > 0 ? Math.min(100, Math.round(completed/total*100)) : 0;
+    if(bar) bar.style.width = pct+'%';
+    if(txt) txt.textContent = completed+' / '+total;
+  }
+
+  function loadProgress(user){
+    var db = firebase.database();
+    var month = (function(){ var d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'); })();
+
+    /* Overall card: Lessons Completed / Points / Day Streak / ring % */
+    db.ref('engagement/'+user.uid).once('value').then(function(snap){
+      var e = snap.val() || {};
+      var streak = e.streak || e.dayStreak || 0;
+      var points = e.totalPoints || e.points || 0;
+      var pointsMax = e.pointsGoal || 0;
+      var lessons = e.lessonsCompleted || 0;
+
+      db.ref('engagement/'+user.uid+'/monthly/'+month).once('value').then(function(mSnap){
+        var m = mSnap.val() || {};
+        var qs = m.quizStats || {};
+        var acc = qs.accuracyPct || 0;
+        var quizzes = m.quizzesCompleted || 0;
+        lessons = lessons || quizzes;
+
+        var ringPct = Math.round((acc)||0);
+        var offset = 301.6 - (ringPct/100)*301.6;
+        var ringEl = document.getElementById('ov-ring-fill');
+        if(ringEl) setTimeout(function(){ ringEl.style.strokeDashoffset = offset; }, 200);
+        var pctEl = document.getElementById('ov-ring-pct'); if(pctEl) pctEl.textContent = ringPct+'%';
+
+        var lEl = document.getElementById('ov-lessons'); if(lEl) lEl.textContent = lessons;
+        var pEl = document.getElementById('ov-points'); if(pEl) pEl.textContent = points+(pointsMax?(' / '+pointsMax):'');
+        var sEl = document.getElementById('ov-streak'); if(sEl) sEl.textContent = streak;
+      }).catch(function(){});
+    }).catch(function(){});
+
+    /* Per-level, per-subject bars: progress/{uid}/jlpt/{level}/{subject} = { completed, total } */
+    var levels = ['n5','n4','n3','n2','n1'];
+    var subjects = ['vocab','grammar','kanji','rw'];
+    levels.forEach(function(level){
+      db.ref('progress/'+user.uid+'/jlpt/'+level).once('value').then(function(snap){
+        var data = snap.val() || {};
+        subjects.forEach(function(subject){
+          var s = data[subject] || {};
+          setBar('pb-'+level+'-'+subject, s.completed||0, s.total||0);
+        });
+      }).catch(function(){});
+    });
+  }
+
+  function loadScript(src,cb){ var s=document.createElement('script'); s.src=src; s.onload=cb; document.head.appendChild(s); }
+  function initFirebase(){
+    if(!firebase.apps.length){ firebase.initializeApp({apiKey:"AIzaSyB-5EgDmpPYpdYoRpX9pXst5fPr2ICOai4",authDomain:"learnwith-sakura.firebaseapp.com",databaseURL:"https://learnwith-sakura-default-rtdb.firebaseio.com",projectId:"learnwith-sakura",storageBucket:"learnwith-sakura.firebasestorage.app",messagingSenderId:"524809202868",appId:"1:524809202868:web:8d4f47a122d542e285bbe1"}); }
+    firebase.auth().onAuthStateChanged(applyUser);
+  }
+  loadScript('https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js',function(){ loadScript('https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js',function(){ loadScript('https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js',initFirebase); }); });
+})();
+</script>
+
+<script>
+(function(){
+  var PAGE='jlpt/index.html'; var PROG=65;
+  try {
+    var list = JSON.parse(localStorage.getItem('Sakura_recent') || '[]');
+    list = list.filter(function(x){ return x.url !== PAGE; });
+    list.unshift({ url: PAGE, ts: Date.now(), prog: PROG });
+    if(list.length > 10) list = list.slice(0, 10);
+    localStorage.setItem('Sakura_recent', JSON.stringify(list));
+  } catch(e) {}
+})();
+</script>
+
+  <script>
+    if('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .catch(e => console.log('SW error:', e));
+      });
+    }
+  </script>
+</body>
+</html>

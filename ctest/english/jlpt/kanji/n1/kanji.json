@@ -1,0 +1,7108 @@
+[
+  {
+    "kanji": "丁",
+    "yomikata": "チョウ, テイ",
+    "onyomi": "チョウ, テイ",
+    "kunyomi": "",
+    "english_meaning": "block, counter",
+    "examples": [
+      {
+        "example": "<ruby>丁寧<rt>ていねい</rt></ruby>に<ruby>書<rt>か</rt></ruby>きます。",
+        "eng": "I write politely."
+      },
+      {
+        "example": "<ruby>三丁目<rt>さんちょうめ</rt></ruby>に<ruby>住<rt>す</rt></ruby>んでいます。",
+        "eng": "I live in block 3."
+      }
+    ]
+  },
+  {
+    "kanji": "丈",
+    "yomikata": "ジョウ, たけ",
+    "onyomi": "ジョウ",
+    "kunyomi": "たけ",
+    "english_meaning": "height, stature",
+    "examples": [
+      {
+        "example": "<ruby>丈夫<rt>じょうぶ</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>です。",
+        "eng": "He is a sturdy person."
+      },
+      {
+        "example": "<ruby>背丈<rt>せたけ</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いです。",
+        "eng": "He is tall."
+      }
+    ]
+  },
+  {
+    "kanji": "丑",
+    "yomikata": "チュウ",
+    "onyomi": "チュウ",
+    "kunyomi": "うし",
+    "english_meaning": "ox (zodiac)",
+    "examples": [
+      {
+        "example": "<ruby>丑年<rt>うしどし</rt></ruby>です。",
+        "eng": "It's the year of the ox."
+      },
+      {
+        "example": "<ruby>丑三<rt>うしみ</rt></ruby>つ<ruby>時<rt>どき</rt></ruby>です。",
+        "eng": "It's the dead of night."
+      }
+    ]
+  },
+  {
+    "kanji": "且",
+    "yomikata": "ショ, か(つ)",
+    "onyomi": "ショ",
+    "kunyomi": "か(つ)",
+    "english_meaning": "moreover, also",
+    "examples": [
+      {
+        "example": "<ruby>且<rt>か</rt></ruby>つ<ruby>安全<rt>あんぜん</rt></ruby>です。",
+        "eng": "Moreover, it's safe."
+      },
+      {
+        "example": "<ruby>且<rt>か</rt></ruby>つ<ruby>迅速<rt>じんそく</rt></ruby>に<ruby>処理<rt>しょり</rt></ruby>します。",
+        "eng": "Also, I will process it quickly."
+      }
+    ]
+  },
+  {
+    "kanji": "丘",
+    "yomikata": "キュウ, おか",
+    "onyomi": "キュウ",
+    "kunyomi": "おか",
+    "english_meaning": "hill",
+    "examples": [
+      {
+        "example": "<ruby>丘<rt>おか</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>家<rt>いえ</rt></ruby>があります。",
+        "eng": "There is a house on the hill."
+      },
+      {
+        "example": "<ruby>丘<rt>おか</rt></ruby>を<ruby>登<rt>のぼ</rt></ruby>ります。",
+        "eng": "I climb the hill."
+      }
+    ]
+  },
+  {
+    "kanji": "丙",
+    "yomikata": "ヘイ",
+    "onyomi": "ヘイ",
+    "kunyomi": "",
+    "english_meaning": "third class",
+    "examples": [
+      {
+        "example": "<ruby>丙種<rt>へいしゅ</rt></ruby>です。",
+        "eng": "It's class C."
+      },
+      {
+        "example": "<ruby>甲乙丙<rt>こうおつへい</rt></ruby>です。",
+        "eng": "A, B, C."
+      }
+    ]
+  },
+  {
+    "kanji": "丞",
+    "yomikata": "ジョウ",
+    "onyomi": "ジョウ",
+    "kunyomi": "",
+    "english_meaning": "assistant",
+    "examples": [
+      {
+        "example": "<ruby>丞相<rt>じょうしょう</rt></ruby>です。",
+        "eng": "He is a prime minister (old)."
+      },
+      {
+        "example": "<ruby>右大臣<rt>うだいじん</rt></ruby>です。",
+        "eng": "He is a minister of the right."
+      }
+    ]
+  },
+  {
+    "kanji": "丹",
+    "yomikata": "タン",
+    "onyomi": "タン",
+    "kunyomi": "",
+    "english_meaning": "red, sincere",
+    "examples": [
+      {
+        "example": "<ruby>丹念<rt>たんねん</rt></ruby>に<ruby>調<rt>しら</rt></ruby>べます。",
+        "eng": "I examine carefully."
+      },
+      {
+        "example": "<ruby>丹精<rt>たんせい</rt></ruby>込めて<ruby>作<rt>つく</rt></ruby>りました。",
+        "eng": "I made it with great care."
+      }
+    ]
+  },
+  {
+    "kanji": "乃",
+    "yomikata": "ナイ, ダイ",
+    "onyomi": "ナイ, ダイ",
+    "kunyomi": "の",
+    "english_meaning": "from, of",
+    "examples": [
+      {
+        "example": "<ruby>乃木坂<rt>のぎざか</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to Nogizaka."
+      },
+      {
+        "example": "<ruby>乃公<rt>たいこう</rt></ruby><ruby>出<rt>い</rt></ruby>でずんば。",
+        "eng": "If I don't go out."
+      }
+    ]
+  },
+  {
+    "kanji": "之",
+    "yomikata": "シ",
+    "onyomi": "シ",
+    "kunyomi": "の, ゆく",
+    "english_meaning": "of, this",
+    "examples": [
+      {
+        "example": "<ruby>愛之助<rt>あいのすけ</rt></ruby>という<ruby>名前<rt>なまえ</rt></ruby>です。",
+        "eng": "His name is Ainosuke."
+      },
+      {
+        "example": "これより<ruby>先<rt>さき</rt></ruby>へ<ruby>進<rt>すす</rt></ruby>む。",
+        "eng": "Proceed beyond this point."
+      }
+    ]
+  },
+  {
+    "kanji": "乏",
+    "yomikata": "ボウ, とぼ(しい)",
+    "onyomi": "ボウ",
+    "kunyomi": "とぼ(しい)",
+    "english_meaning": "scarce, lacking",
+    "examples": [
+      {
+        "example": "<ruby>資源<rt>しげん</rt></ruby>が<ruby>乏<rt>とぼ</rt></ruby>しいです。",
+        "eng": "Resources are scarce."
+      },
+      {
+        "example": "<ruby>経験<rt>けいけん</rt></ruby>が<ruby>乏<rt>とぼ</rt></ruby>しいです。",
+        "eng": "I lack experience."
+      }
+    ]
+  },
+  {
+    "kanji": "乙",
+    "yomikata": "オツ, イツ",
+    "onyomi": "オツ, イツ",
+    "kunyomi": "きのと",
+    "english_meaning": "second, odd",
+    "examples": [
+      {
+        "example": "<ruby>甲乙<rt>こうおつ</rt></ruby>つけがたい。",
+        "eng": "Hard to say which is better."
+      },
+      {
+        "example": "<ruby>乙女心<rt>おとめごころ</rt></ruby>です。",
+        "eng": "It's a maiden's heart."
+      }
+    ]
+  },
+  {
+    "kanji": "也",
+    "yomikata": "ヤ, エ",
+    "onyomi": "ヤ, エ",
+    "kunyomi": "なり",
+    "english_meaning": "to be (archaic)",
+    "examples": [
+      {
+        "example": "<ruby>吾輩<rt>わがはい</rt></ruby>は<ruby>猫<rt>ねこ</rt></ruby>也。",
+        "eng": "I am a cat."
+      },
+      {
+        "example": "也という<ruby>名前<rt>なまえ</rt></ruby>です。",
+        "eng": "His name is Nari."
+      }
+    ]
+  },
+  {
+    "kanji": "亀",
+    "yomikata": "キ, かめ",
+    "onyomi": "キ",
+    "kunyomi": "かめ",
+    "english_meaning": "turtle",
+    "examples": [
+      {
+        "example": "<ruby>亀<rt>かめ</rt></ruby>が<ruby>泳<rt>およ</rt></ruby>いでいます。",
+        "eng": "The turtle is swimming."
+      },
+      {
+        "example": "<ruby>亀<rt>かめ</rt></ruby>のように<ruby>遅<rt>おそ</rt></ruby>いです。",
+        "eng": "It's as slow as a turtle."
+      }
+    ]
+  },
+  {
+    "kanji": "井",
+    "yomikata": "セイ, い",
+    "onyomi": "セイ",
+    "kunyomi": "い",
+    "english_meaning": "well",
+    "examples": [
+      {
+        "example": "<ruby>井戸水<rt>いどみず</rt></ruby>を<ruby>飲<rt>の</rt></ruby>みます。",
+        "eng": "I drink well water."
+      },
+      {
+        "example": "<ruby>天井<rt>てんじょう</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いです。",
+        "eng": "The ceiling is high."
+      }
+    ]
+  },
+  {
+    "kanji": "亘",
+    "yomikata": "コウ, カン",
+    "onyomi": "コウ, カン",
+    "kunyomi": "わた(る)",
+    "english_meaning": "span, extend",
+    "examples": [
+      {
+        "example": "<ruby>長期<rt>ちょうき</rt></ruby>に<ruby>亘<rt>わた</rt></ruby>る<ruby>計画<rt>けいかく</rt></ruby>です。",
+        "eng": "It's a long-term plan."
+      },
+      {
+        "example": "<ruby>亘理<rt>わたり</rt></ruby>という<ruby>名前<rt>なまえ</rt></ruby>です。",
+        "eng": "His name is Watari."
+      }
+    ]
+  },
+  {
+    "kanji": "亜",
+    "yomikata": "ア",
+    "onyomi": "ア",
+    "kunyomi": "",
+    "english_meaning": "Asia, sub-",
+    "examples": [
+      {
+        "example": "<ruby>亜細亜<rt>あじあ</rt></ruby>です。",
+        "eng": "It's Asia."
+      },
+      {
+        "example": "<ruby>亜熱帯気候<rt>あねったいきこう</rt></ruby>です。",
+        "eng": "It's a subtropical climate."
+      }
+    ]
+  },
+  {
+    "kanji": "亥",
+    "yomikata": "ガイ, カイ",
+    "onyomi": "ガイ, カイ",
+    "kunyomi": "い",
+    "english_meaning": "boar (zodiac)",
+    "examples": [
+      {
+        "example": "<ruby>亥年<rt>いのししどし</rt></ruby>です。",
+        "eng": "It's the year of the boar."
+      },
+      {
+        "example": "<ruby>亥<rt>い</rt></ruby>の<ruby>子餅<rt>こもち</rt></ruby>を<ruby>食<rt>た</rt></ruby>べます。",
+        "eng": "I eat inoko mochi."
+      }
+    ]
+  },
+  {
+    "kanji": "亦",
+    "yomikata": "エキ, ヤク",
+    "onyomi": "エキ, ヤク",
+    "kunyomi": "また",
+    "english_meaning": "also, again",
+    "examples": [
+      {
+        "example": "<ruby>亦<rt>また</rt></ruby>た<ruby>良<rt>よ</rt></ruby>し。",
+        "eng": "Also good."
+      },
+      {
+        "example": "<ruby>亦<rt>また</rt></ruby>たのむ。",
+        "eng": "I ask again."
+      }
+    ]
+  },
+  {
+    "kanji": "亨",
+    "yomikata": "コウ, キョウ",
+    "onyomi": "コウ, キョウ",
+    "kunyomi": "とお(る)",
+    "english_meaning": "go smoothly",
+    "examples": [
+      {
+        "example": "<ruby>亨通<rt>こうつう</rt></ruby>を<ruby>祈<rt>いの</rt></ruby>ります。",
+        "eng": "I wish you success."
+      },
+      {
+        "example": "<ruby>運<rt>うん</rt></ruby>が<ruby>亨<rt>とお</rt></ruby>ける。",
+        "eng": "Luck is coming."
+      }
+    ]
+  },
+  {
+    "kanji": "享",
+    "yomikata": "キョウ, コウ",
+    "onyomi": "キョウ, コウ",
+    "kunyomi": "う(ける)",
+    "english_meaning": "receive, enjoy",
+    "examples": [
+      {
+        "example": "<ruby>享受<rt>きょうじゅ</rt></ruby>します。",
+        "eng": "I enjoy."
+      },
+      {
+        "example": "<ruby>享年<rt>きょうねん</rt></ruby>80<ruby>歳<rt>さい</rt></ruby>でした。",
+        "eng": "He died at age 80."
+      }
+    ]
+  },
+  {
+    "kanji": "亭",
+    "yomikata": "テイ, チン",
+    "onyomi": "テイ, チン",
+    "kunyomi": "",
+    "english_meaning": "pavilion, restaurant",
+    "examples": [
+      {
+        "example": "お<ruby>弁当屋<rt>べんとうや</rt></ruby>さんです。",
+        "eng": "It's a lunch box shop."
+      },
+      {
+        "example": "<ruby>亭主関白<rt>ていしゅかんぱく</rt></ruby>です。",
+        "eng": "He's a domineering husband."
+      }
+    ]
+  },
+  {
+    "kanji": "亮",
+    "yomikata": "リョウ",
+    "onyomi": "リョウ",
+    "kunyomi": "あき(らか)",
+    "english_meaning": "clear, bright",
+    "examples": [
+      {
+        "example": "<ruby>亮<rt>りょう</rt></ruby>といいます。",
+        "eng": "My name is Ryo."
+      },
+      {
+        "example": "<ruby>亮光<rt>りょうこう</rt></ruby>があります。",
+        "eng": "There is bright light."
+      }
+    ]
+  },
+  {
+    "kanji": "仁",
+    "yomikata": "ジン, ニ",
+    "onyomi": "ジン, ニ",
+    "kunyomi": "",
+    "english_meaning": "benevolence",
+    "examples": [
+      {
+        "example": "<ruby>仁義<rt>じんぎ</rt></ruby>を<ruby>切<rt>き</rt></ruby>ります。",
+        "eng": "I show loyalty."
+      },
+      {
+        "example": "<ruby>仁王像<rt>におうぞう</rt></ruby>です。",
+        "eng": "It's a Deva king statue."
+      }
+    ]
+  },
+  {
+    "kanji": "仙",
+    "yomikata": "セン",
+    "onyomi": "セン",
+    "kunyomi": "",
+    "english_meaning": "hermit, wizard",
+    "examples": [
+      {
+        "example": "<ruby>仙人<rt>せんにん</rt></ruby>になりたいです。",
+        "eng": "I want to become a hermit."
+      },
+      {
+        "example": "<ruby>仙台<rt>せんだい</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to Sendai."
+      }
+    ]
+  },
+  {
+    "kanji": "仰",
+    "yomikata": "ギョウ, あお(ぐ)",
+    "onyomi": "ギョウ, コウ",
+    "kunyomi": "あお(ぐ)",
+    "english_meaning": "look up, respect",
+    "examples": [
+      {
+        "example": "<ruby>天<rt>てん</rt></ruby>を<ruby>仰<rt>あお</rt></ruby>ぎます。",
+        "eng": "I look up at the sky."
+      },
+      {
+        "example": "<ruby>信頼<rt>しんらい</rt></ruby>しています。",
+        "eng": "I trust."
+      }
+    ]
+  },
+  {
+    "kanji": "企",
+    "yomikata": "キ, くわだ(てる)",
+    "onyomi": "キ",
+    "kunyomi": "くわだ(てる)",
+    "english_meaning": "plan, project",
+    "examples": [
+      {
+        "example": "<ruby>企画<rt>きかく</rt></ruby>します。",
+        "eng": "I plan."
+      },
+      {
+        "example": "<ruby>企業<rt>きぎょう</rt></ruby>に<ruby>勤<rt>つと</rt></ruby>めています。",
+        "eng": "I work for a company."
+      }
+    ]
+  },
+  {
+    "kanji": "伊",
+    "yomikata": "イ",
+    "onyomi": "イ",
+    "kunyomi": "",
+    "english_meaning": "Italy, that",
+    "examples": [
+      {
+        "example": "<ruby>伊勢神宮<rt>いせじんぐう</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to Ise Shrine."
+      },
+      {
+        "example": "<ruby>伊語<rt>いご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>します。",
+        "eng": "I study Italian."
+      }
+    ]
+  },
+  {
+    "kanji": "伍",
+    "yomikata": "ゴ",
+    "onyomi": "ゴ",
+    "kunyomi": "",
+    "english_meaning": "five, squad",
+    "examples": [
+      {
+        "example": "<ruby>伍長<rt>ごちょう</rt></ruby>です。",
+        "eng": "He is a corporal."
+      },
+      {
+        "example": "<ruby>仲間<rt>なかま</rt></ruby>と<ruby>伍<rt>ご</rt></ruby>する。",
+        "eng": "To keep up with friends."
+      }
+    ]
+  },
+  {
+    "kanji": "伎",
+    "yomikata": "ギ, キ",
+    "onyomi": "ギ, キ",
+    "kunyomi": "わざ",
+    "english_meaning": "deed, skill",
+    "examples": [
+      {
+        "example": "<ruby>伎倆<rt>ぎりょう</rt></ruby>があります。",
+        "eng": "He has skill."
+      },
+      {
+        "example": "<ruby>歌舞伎<rt>かぶき</rt></ruby>を<ruby>見<rt>み</rt></ruby>ます。",
+        "eng": "I watch Kabuki."
+      }
+    ]
+  },
+  {
+    "kanji": "伏",
+    "yomikata": "フク, ふ(せる)",
+    "onyomi": "フク",
+    "kunyomi": "ふ(せる)",
+    "english_meaning": "bow, lie down",
+    "examples": [
+      {
+        "example": "<ruby>伏<rt>ふ</rt></ruby>せてください。",
+        "eng": "Please lie down."
+      },
+      {
+        "example": "<ruby>起伏<rt>きふく</rt></ruby>があります。",
+        "eng": "There are ups and downs."
+      }
+    ]
+  },
+  {
+    "kanji": "伐",
+    "yomikata": "バツ, き(る)",
+    "onyomi": "バツ",
+    "kunyomi": "き(る)",
+    "english_meaning": "cut down, attack",
+    "examples": [
+      {
+        "example": "<ruby>木<rt>き</rt></ruby>を<ruby>伐<rt>き</rt></ruby>ります。",
+        "eng": "I cut down a tree."
+      },
+      {
+        "example": "<ruby>伐採<rt>ばっさい</rt></ruby>します。",
+        "eng": "I log."
+      }
+    ]
+  },
+  {
+    "kanji": "伯",
+    "yomikata": "ハク",
+    "onyomi": "ハク",
+    "kunyomi": "",
+    "english_meaning": "chief, count",
+    "examples": [
+      {
+        "example": "<ruby>伯爵<rt>はくしゃく</rt></ruby>です。",
+        "eng": "He is a count."
+      },
+      {
+        "example": "<ruby>伯父<rt>おじ</rt></ruby>さんが<ruby>来<rt>き</rt></ruby>ました。",
+        "eng": "My uncle came."
+      }
+    ]
+  },
+  {
+    "kanji": "伴",
+    "yomikata": "ハン, バン, ともな(う)",
+    "onyomi": "ハン, バン",
+    "kunyomi": "ともな(う)",
+    "english_meaning": "accompany",
+    "examples": [
+      {
+        "example": "<ruby>伴<rt>ともな</rt></ruby>って<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go along with."
+      },
+      {
+        "example": "<ruby>同伴者<rt>どうはんしゃ</rt></ruby>です。",
+        "eng": "He is a companion."
+      }
+    ]
+  },
+  {
+    "kanji": "伶",
+    "yomikata": "レイ",
+    "onyomi": "レイ",
+    "kunyomi": "",
+    "english_meaning": "actor, musician",
+    "examples": [
+      {
+        "example": "<ruby>伶人<rt>れいじん</rt></ruby>です。",
+        "eng": "He is a musician."
+      },
+      {
+        "example": "<ruby>伶倫<rt>れいりん</rt></ruby>という<ruby>名前<rt>なまえ</rt></ruby>です。",
+        "eng": "His name is Reirin."
+      }
+    ]
+  },
+  {
+    "kanji": "伽",
+    "yomikata": "カ, キャ, とぎ",
+    "onyomi": "カ, キャ",
+    "kunyomi": "とぎ",
+    "english_meaning": "nursing, entertainment",
+    "examples": [
+      {
+        "example": "<ruby>伽話<rt>とぎばなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>かせます。",
+        "eng": "I tell a fairy tale."
+      },
+      {
+        "example": "お<ruby>伽噺<rt>とぎばなし</rt></ruby>です。",
+        "eng": "It's a fairy tale."
+      }
+    ]
+  },
+  {
+    "kanji": "但",
+    "yomikata": "タン, ただ(し)",
+    "onyomi": "タン",
+    "kunyomi": "ただ(し)",
+    "english_meaning": "however, but",
+    "examples": [
+      {
+        "example": "ただし、<ruby>条件<rt>じょうけん</rt></ruby>があります。",
+        "eng": "However, there are conditions."
+      },
+      {
+        "example": "<ruby>但<rt>ただ</rt></ruby>し<ruby>書<rt>が</rt></ruby>きを<ruby>読<rt>よ</rt></ruby>んでください。",
+        "eng": "Please read the proviso."
+      }
+    ]
+  },
+  {
+    "kanji": "佐",
+    "yomikata": "サ",
+    "onyomi": "サ",
+    "kunyomi": "",
+    "english_meaning": "assistant, help",
+    "examples": [
+      {
+        "example": "<ruby>佐藤<rt>さとう</rt></ruby>さんに<ruby>会<rt>あ</rt></ruby>います。",
+        "eng": "I meet Mr. Sato."
+      },
+      {
+        "example": "<ruby>補佐<rt>ほさ</rt></ruby>します。",
+        "eng": "I assist."
+      }
+    ]
+  },
+  {
+    "kanji": "佑",
+    "yomikata": "ユウ",
+    "onyomi": "ユウ",
+    "kunyomi": "たす(ける)",
+    "english_meaning": "help, assist",
+    "examples": [
+      {
+        "example": "<ruby>天佑<rt>てんゆう</rt></ruby>があります。",
+        "eng": "There is divine help."
+      },
+      {
+        "example": "<ruby>佑介<rt>ゆうすけ</rt></ruby>といいます。",
+        "eng": "My name is Yusuke."
+      }
+    ]
+  },
+  {
+    "kanji": "佳",
+    "yomikata": "カ",
+    "onyomi": "カ",
+    "kunyomi": "",
+    "english_meaning": "excellent, beautiful",
+    "examples": [
+      {
+        "example": "<ruby>佳<rt>よ</rt></ruby>い<ruby>日<rt>ひ</rt></ruby>です。",
+        "eng": "It's a nice day."
+      },
+      {
+        "example": "<ruby>佳子<rt>よしこ</rt></ruby>さんです。",
+        "eng": "She is Yoshiko."
+      }
+    ]
+  },
+  {
+    "kanji": "併",
+    "yomikata": "ヘイ, あわ(せる)",
+    "onyomi": "ヘイ",
+    "kunyomi": "あわ(せる)",
+    "english_meaning": "join, combine",
+    "examples": [
+      {
+        "example": "<ruby>併<rt>あわ</rt></ruby>せてください。",
+        "eng": "Please combine."
+      },
+      {
+        "example": "<ruby>併用<rt>へいよう</rt></ruby>します。",
+        "eng": "I use together."
+      }
+    ]
+  },
+  {
+    "kanji": "侃",
+    "yomikata": "カン",
+    "onyomi": "カン",
+    "kunyomi": "",
+    "english_meaning": "strong, just",
+    "examples": [
+      {
+        "example": "<ruby>侃侃諤諤<rt>かんかんがくがく</rt></ruby>と<ruby>議論<rt>ぎろん</rt></ruby>します。",
+        "eng": "They argue heatedly."
+      },
+      {
+        "example": "<ruby>侃直<rt>かんちょく</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>です。",
+        "eng": "He is an honest person."
+      }
+    ]
+  },
+  {
+    "kanji": "侍",
+    "yomikata": "ジ, さむらい",
+    "onyomi": "ジ",
+    "kunyomi": "さむらい",
+    "english_meaning": "samurai",
+    "examples": [
+      {
+        "example": "<ruby>侍<rt>さむらい</rt></ruby>になりたいです。",
+        "eng": "I want to become a samurai."
+      },
+      {
+        "example": "お<ruby>侍<rt>さむらい</rt></ruby>さんがいます。",
+        "eng": "There is a samurai."
+      }
+    ]
+  },
+  {
+    "kanji": "侑",
+    "yomikata": "ユウ",
+    "onyomi": "ユウ",
+    "kunyomi": "すす(める)",
+    "english_meaning": "urge, help",
+    "examples": [
+      {
+        "example": "<ruby>侑<rt>すす</rt></ruby>められます。",
+        "eng": "I am urged."
+      },
+      {
+        "example": "<ruby>侑子<rt>ゆうこ</rt></ruby>さんです。",
+        "eng": "She is Yuko."
+      }
+    ]
+  },
+  {
+    "kanji": "侮",
+    "yomikata": "ブ, あなど(る)",
+    "onyomi": "ブ",
+    "kunyomi": "あなど(る)",
+    "english_meaning": "despise",
+    "examples": [
+      {
+        "example": "<ruby>侮<rt>あなど</rt></ruby>ってはいけません。",
+        "eng": "Don't underestimate."
+      },
+      {
+        "example": "<ruby>侮辱<rt>ぶじょく</rt></ruby>しました。",
+        "eng": "I insulted."
+      }
+    ]
+  },
+  {
+    "kanji": "侯",
+    "yomikata": "コウ",
+    "onyomi": "コウ",
+    "kunyomi": "",
+    "english_meaning": "marquis",
+    "examples": [
+      {
+        "example": "<ruby>侯爵<rt>こうしゃく</rt></ruby>です。",
+        "eng": "He is a marquis."
+      },
+      {
+        "example": "<ruby>王侯貴族<rt>おうこうきぞく</rt></ruby>です。",
+        "eng": "They are royalty and nobility."
+      }
+    ]
+  },
+  {
+    "kanji": "侵",
+    "yomikata": "シン, おか(す)",
+    "onyomi": "シン",
+    "kunyomi": "おか(す)",
+    "english_meaning": "invade",
+    "examples": [
+      {
+        "example": "<ruby>侵略<rt>しんりゃく</rt></ruby>します。",
+        "eng": "I invade."
+      },
+      {
+        "example": "<ruby>権利<rt>けんり</rt></ruby>を<ruby>侵<rt>おか</rt></ruby>します。",
+        "eng": "I infringe on rights."
+      }
+    ]
+  },
+  {
+    "kanji": "促",
+    "yomikata": "ソク, うなが(す)",
+    "onyomi": "ソク",
+    "kunyomi": "うなが(す)",
+    "english_meaning": "urge, promote",
+    "examples": [
+      {
+        "example": "<ruby>注意<rt>ちゅうい</rt></ruby>を<ruby>促<rt>うなが</rt></ruby>します。",
+        "eng": "I urge attention."
+      },
+      {
+        "example": "<ruby>促進<rt>そくしん</rt></ruby>します。",
+        "eng": "I promote."
+      }
+    ]
+  },
+  {
+    "kanji": "俊",
+    "yomikata": "シュン",
+    "onyomi": "シュン",
+    "kunyomi": "",
+    "english_meaning": "talented",
+    "examples": [
+      {
+        "example": "<ruby>俊才<rt>しゅんさい</rt></ruby>です。",
+        "eng": "He is a genius."
+      },
+      {
+        "example": "<ruby>俊輔<rt>しゅんすけ</rt></ruby>といいます。",
+        "eng": "My name is Shunsuke."
+      }
+    ]
+  },
+  {
+    "kanji": "俗",
+    "yomikata": "ゾク",
+    "onyomi": "ゾク",
+    "kunyomi": "",
+    "english_meaning": "common, lay",
+    "examples": [
+      {
+        "example": "<ruby>俗語<rt>ぞくご</rt></ruby>を<ruby>覚<rt>おぼ</rt></ruby>えます。",
+        "eng": "I learn slang."
+      },
+      {
+        "example": "<ruby>世俗的<rt>せぞくてき</rt></ruby>です。",
+        "eng": "It's worldly."
+      }
+    ]
+  },
+  {
+    "kanji": "俳",
+    "yomikata": "ハイ",
+    "onyomi": "ハイ",
+    "kunyomi": "",
+    "english_meaning": "haiku, actor",
+    "examples": [
+      {
+        "example": "<ruby>俳句<rt>はいく</rt></ruby>を<ruby>作<rt>つく</rt></ruby>ります。",
+        "eng": "I write haiku."
+      },
+      {
+        "example": "<ruby>俳優<rt>はいゆう</rt></ruby>です。",
+        "eng": "He is an actor."
+      }
+    ]
+  },
+  {
+    "kanji": "俵",
+    "yomikata": "ヒョウ, たわら",
+    "onyomi": "ヒョウ",
+    "kunyomi": "たわら",
+    "english_meaning": "straw bag",
+    "examples": [
+      {
+        "example": "<ruby>米俵<rt>こめだわら</rt></ruby>です。",
+        "eng": "It's a rice bale."
+      },
+      {
+        "example": "<ruby>土俵<rt>どひょう</rt></ruby>に<ruby>上<rt>あ</rt></ruby>がります。",
+        "eng": "I enter the sumo ring."
+      }
+    ]
+  },
+  {
+    "kanji": "俸",
+    "yomikata": "ホウ",
+    "onyomi": "ホウ",
+    "kunyomi": "",
+    "english_meaning": "salary",
+    "examples": [
+      {
+        "example": "<ruby>俸給<rt>ほうきゅう</rt></ruby>をもらいます。",
+        "eng": "I receive a salary."
+      },
+      {
+        "example": "<ruby>年俸<rt>ねんぽう</rt></ruby>です。",
+        "eng": "It's an annual salary."
+      }
+    ]
+  },
+  {
+    "kanji": "倉",
+    "yomikata": "ソウ, くら",
+    "onyomi": "ソウ",
+    "kunyomi": "くら",
+    "english_meaning": "warehouse",
+    "examples": [
+      {
+        "example": "<ruby>倉庫<rt>そうこ</rt></ruby>にしまします。",
+        "eng": "I store it in the warehouse."
+      },
+      {
+        "example": "<ruby>穀倉地帯<rt>こくそうちたい</rt></ruby>です。",
+        "eng": "It's a granary area."
+      }
+    ]
+  },
+  {
+    "kanji": "倖",
+    "yomikata": "コウ",
+    "onyomi": "コウ",
+    "kunyomi": "",
+    "english_meaning": "happiness, luck",
+    "examples": [
+      {
+        "example": "<ruby>幸福<rt>こうふく</rt></ruby>です。",
+        "eng": "I am happy."
+      },
+      {
+        "example": "<ruby>倖<rt>しあわ</rt></ruby>せを<ruby>祈<rt>いの</rt></ruby>ります。",
+        "eng": "I wish you happiness."
+      }
+    ]
+  },
+  {
+    "kanji": "倣",
+    "yomikata": "ホウ, なら(う)",
+    "onyomi": "ホウ",
+    "kunyomi": "なら(う)",
+    "english_meaning": "imitate",
+    "examples": [
+      {
+        "example": "<ruby>手本<rt>てほん</rt></ruby>に<ruby>倣<rt>なら</rt></ruby>います。",
+        "eng": "I follow the example."
+      },
+      {
+        "example": "<ruby>模倣<rt>もほう</rt></ruby>します。",
+        "eng": "I imitate."
+      }
+    ]
+  },
+  {
+    "kanji": "倫",
+    "yomikata": "リン",
+    "onyomi": "リン",
+    "kunyomi": "",
+    "english_meaning": "ethics, companion",
+    "examples": [
+      {
+        "example": "<ruby>倫理<rt>りんり</rt></ruby>を<ruby>学<rt>まな</rt></ruby>びます。",
+        "eng": "I study ethics."
+      },
+      {
+        "example": "<ruby>人倫<rt>じんりん</rt></ruby>に<ruby>反<rt>はん</rt></ruby>します。",
+        "eng": "It's against humanity."
+      }
+    ]
+  },
+  {
+    "kanji": "倭",
+    "yomikata": "ワ",
+    "onyomi": "ワ",
+    "kunyomi": "",
+    "english_meaning": "ancient Japan",
+    "examples": [
+      {
+        "example": "<ruby>倭国<rt>わこく</rt></ruby>です。",
+        "eng": "It's ancient Japan."
+      },
+      {
+        "example": "<ruby>倭人<rt>わじん</rt></ruby>です。",
+        "eng": "He is an ancient Japanese."
+      }
+    ]
+  },
+  {
+    "kanji": "倹",
+    "yomikata": "ケン",
+    "onyomi": "ケン",
+    "kunyomi": "つま(しい)",
+    "english_meaning": "frugal",
+    "examples": [
+      {
+        "example": "<ruby>倹約<rt>けんやく</rt></ruby>します。",
+        "eng": "I save money."
+      },
+      {
+        "example": "<ruby>質素倹約<rt>しっそけんやく</rt></ruby>です。",
+        "eng": "It's simple and frugal."
+      }
+    ]
+  },
+  {
+    "kanji": "偏",
+    "yomikata": "ヘン, かたよ(る)",
+    "onyomi": "ヘン",
+    "kunyomi": "かたよ(る)",
+    "english_meaning": "biased, side",
+    "examples": [
+      {
+        "example": "<ruby>偏見<rt>へんけん</rt></ruby>を<ruby>持<rt>も</rt></ruby>っています。",
+        "eng": "I have prejudice."
+      },
+      {
+        "example": "<ruby>偏<rt>かたよ</rt></ruby>っています。",
+        "eng": "It's biased."
+      }
+    ]
+  },
+  {
+    "kanji": "偲",
+    "yomikata": "シ, しの(ぶ)",
+    "onyomi": "シ",
+    "kunyomi": "しの(ぶ)",
+    "english_meaning": "recall, reminisce",
+    "examples": [
+      {
+        "example": "<ruby>故人<rt>こじん</rt></ruby>を<ruby>偲<rt>しの</rt></ruby>びます。",
+        "eng": "I remember the deceased."
+      },
+      {
+        "example": "<ruby>偲<rt>しの</rt></ruby>ぶ<ruby>会<rt>かい</rt></ruby>があります。",
+        "eng": "There is a memorial gathering."
+      }
+    ]
+  },
+  {
+    "kanji": "偵",
+    "yomikata": "テイ",
+    "onyomi": "テイ",
+    "kunyomi": "",
+    "english_meaning": "spy, investigate",
+    "examples": [
+      {
+        "example": "<ruby>探偵<rt>たんてい</rt></ruby>です。",
+        "eng": "I am a detective."
+      },
+      {
+        "example": "<ruby>偵察<rt>ていさつ</rt></ruby>します。",
+        "eng": "I reconnoiter."
+      }
+    ]
+  },
+  {
+    "kanji": "偽",
+    "yomikata": "ギ, いつわ(る)",
+    "onyomi": "ギ",
+    "kunyomi": "いつわ(る)",
+    "english_meaning": "fake, false",
+    "examples": [
+      {
+        "example": "<ruby>偽物<rt>にせもの</rt></ruby>です。",
+        "eng": "It's fake."
+      },
+      {
+        "example": "<ruby>詐欺<rt>さぎ</rt></ruby>に<ruby>注意<rt>ちゅうい</rt></ruby>してください。",
+        "eng": "Please beware of fraud."
+      }
+    ]
+  },
+  {
+    "kanji": "傍",
+    "yomikata": "ボウ, かたわ(ら)",
+    "onyomi": "ボウ",
+    "kunyomi": "かたわ(ら)",
+    "english_meaning": "beside, nearby",
+    "examples": [
+      {
+        "example": "<ruby>傍<rt>そば</rt></ruby>に<ruby>座<rt>すわ</rt></ruby>ります。",
+        "eng": "I sit beside."
+      },
+      {
+        "example": "<ruby>傍観<rt>ぼうかん</rt></ruby>します。",
+        "eng": "I stand by and watch."
+      }
+    ]
+  },
+  {
+    "kanji": "傑",
+    "yomikata": "ケツ",
+    "onyomi": "ケツ",
+    "kunyomi": "",
+    "english_meaning": "excellence",
+    "examples": [
+      {
+        "example": "<ruby>傑作<rt>けっさく</rt></ruby>です。",
+        "eng": "It's a masterpiece."
+      },
+      {
+        "example": "<ruby>傑出<rt>けっしゅつ</rt></ruby>しています。",
+        "eng": "He is outstanding."
+      }
+    ]
+  },
+  {
+    "kanji": "傘",
+    "yomikata": "サン, かさ",
+    "onyomi": "サン",
+    "kunyomi": "かさ",
+    "english_meaning": "umbrella",
+    "examples": [
+      {
+        "example": "<ruby>傘<rt>かさ</rt></ruby>をさします。",
+        "eng": "I put up an umbrella."
+      },
+      {
+        "example": "<ruby>傘<rt>かさ</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れました。",
+        "eng": "I forgot my umbrella."
+      }
+    ]
+  },
+  {
+    "kanji": "催",
+    "yomikata": "サイ, もよお(す)",
+    "onyomi": "サイ",
+    "kunyomi": "もよお(す)",
+    "english_meaning": "sponsor, hold",
+    "examples": [
+      {
+        "example": "<ruby>催<rt>もよお</rt></ruby>し<ruby>物<rt>もの</rt></ruby>があります。",
+        "eng": "There is an event."
+      },
+      {
+        "example": "<ruby>開催<rt>かいさい</rt></ruby>します。",
+        "eng": "I hold (an event)."
+      }
+    ]
+  },
+  {
+    "kanji": "債",
+    "yomikata": "サイ",
+    "onyomi": "サイ",
+    "kunyomi": "",
+    "english_meaning": "bond, debt",
+    "examples": [
+      {
+        "example": "<ruby>債券<rt>さいけん</rt></ruby>を<ruby>買<rt>か</rt></ruby>います。",
+        "eng": "I buy bonds."
+      },
+      {
+        "example": "<ruby>債務<rt>さいむ</rt></ruby>があります。",
+        "eng": "I have a debt."
+      }
+    ]
+  },
+  {
+    "kanji": "傷",
+    "yomikata": "ショウ, きず",
+    "onyomi": "ショウ",
+    "kunyomi": "きず",
+    "english_meaning": "wound, hurt",
+    "examples": [
+      {
+        "example": "<ruby>傷<rt>きず</rt></ruby>があります。",
+        "eng": "There is a wound."
+      },
+      {
+        "example": "<ruby>傷<rt>きず</rt></ruby>つけました。",
+        "eng": "I hurt (someone)."
+      }
+    ]
+  },
+  {
+    "kanji": "僕",
+    "yomikata": "ボク",
+    "onyomi": "ボク",
+    "kunyomi": "",
+    "english_meaning": "I (male), servant",
+    "examples": [
+      {
+        "example": "<ruby>僕<rt>ぼく</rt></ruby>は<ruby>学生<rt>がくせい</rt></ruby>です。",
+        "eng": "I am a student (male)."
+      },
+      {
+        "example": "<ruby>僕<rt>ぼく</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>は<ruby>田中<rt>たなか</rt></ruby>です。",
+        "eng": "My name is Tanaka."
+      }
+    ]
+  },
+  {
+    "kanji": "僚",
+    "yomikata": "リョウ",
+    "onyomi": "リョウ",
+    "kunyomi": "",
+    "english_meaning": "colleague",
+    "examples": [
+      {
+        "example": "<ruby>同僚<rt>どうりょう</rt></ruby>です。",
+        "eng": "He is my colleague."
+      },
+      {
+        "example": "<ruby>僚友<rt>りょうゆう</rt></ruby>と<ruby>会<rt>あ</rt></ruby>います。",
+        "eng": "I meet with colleagues."
+      }
+    ]
+  },
+  {
+    "kanji": "僧",
+    "yomikata": "ソウ",
+    "onyomi": "ソウ",
+    "kunyomi": "",
+    "english_meaning": "monk, priest",
+    "examples": [
+      {
+        "example": "お<ruby>坊<rt>ぼう</rt></ruby>さんです。",
+        "eng": "He is a monk."
+      },
+      {
+        "example": "<ruby>僧侶<rt>そうりょ</rt></ruby>になります。",
+        "eng": "I become a priest."
+      }
+    ]
+  },
+  {
+    "kanji": "儀",
+    "yomikata": "ギ",
+    "onyomi": "ギ",
+    "kunyomi": "",
+    "english_meaning": "ceremony, affair",
+    "examples": [
+      {
+        "example": "<ruby>儀式<rt>ぎしき</rt></ruby>があります。",
+        "eng": "There is a ceremony."
+      },
+      {
+        "example": "<ruby>結婚式<rt>けっこんしき</rt></ruby>の<ruby>儀<rt>ぎ</rt></ruby>です。",
+        "eng": "It's a wedding ceremony."
+      }
+    ]
+  },
+  {
+    "kanji": "儒",
+    "yomikata": "ジュ",
+    "onyomi": "ジュ",
+    "kunyomi": "",
+    "english_meaning": "Confucianism",
+    "examples": [
+      {
+        "example": "<ruby>儒教<rt>じゅきょう</rt></ruby>を<ruby>学<rt>まな</rt></ruby>びます。",
+        "eng": "I study Confucianism."
+      },
+      {
+        "example": "<ruby>儒家<rt>じゅか</rt></ruby>です。",
+        "eng": "He is a Confucianist."
+      }
+    ]
+  },
+  {
+    "kanji": "償",
+    "yomikata": "ショウ, つぐな(う)",
+    "onyomi": "ショウ",
+    "kunyomi": "つぐな(う)",
+    "english_meaning": "compensate",
+    "examples": [
+      {
+        "example": "<ruby>弁償<rt>べんしょう</rt></ruby>します。",
+        "eng": "I compensate."
+      },
+      {
+        "example": "<ruby>償<rt>つぐな</rt></ruby>いをします。",
+        "eng": "I make amends."
+      }
+    ]
+  },
+  {
+    "kanji": "允",
+    "yomikata": "イン",
+    "onyomi": "イン",
+    "kunyomi": "",
+    "english_meaning": "permit, allow",
+    "examples": [
+      {
+        "example": "<ruby>許可<rt>きょか</rt></ruby>します。",
+        "eng": "I permit."
+      },
+      {
+        "example": "<ruby>允<rt>まこと</rt></ruby>といいます。",
+        "eng": "My name is Makoto."
+      }
+    ]
+  },
+  {
+    "kanji": "充",
+    "yomikata": "ジュウ, あ(たる)",
+    "onyomi": "ジュウ",
+    "kunyomi": "あ(たる)",
+    "english_meaning": "fill, assign",
+    "examples": [
+      {
+        "example": "<ruby>充実<rt>じゅうじつ</rt></ruby>しています。",
+        "eng": "It's fulfilling."
+      },
+      {
+        "example": "<ruby>充電<rt>じゅうでん</rt></ruby>します。",
+        "eng": "I charge."
+      }
+    ]
+  },
+  {
+    "kanji": "克",
+    "yomikata": "コク",
+    "onyomi": "コク",
+    "kunyomi": "か(つ)",
+    "english_meaning": "overcome",
+    "examples": [
+      {
+        "example": "<ruby>克服<rt>こくふく</rt></ruby>しました。",
+        "eng": "I overcame."
+      },
+      {
+        "example": "<ruby>克明<rt>こくめい</rt></ruby>に<ruby>書<rt>か</rt></ruby>きます。",
+        "eng": "I write in detail."
+      }
+    ]
+  },
+  {
+    "kanji": "免",
+    "yomikata": "メン, まぬか(れる)",
+    "onyomi": "メン",
+    "kunyomi": "まぬか(れる)",
+    "english_meaning": "excuse, avoid",
+    "examples": [
+      {
+        "example": "<ruby>免許<rt>めんきょ</rt></ruby>を<ruby>持<rt>も</rt></ruby>っています。",
+        "eng": "I have a license."
+      },
+      {
+        "example": "<ruby>責任<rt>せきにん</rt></ruby>を<ruby>免<rt>まぬか</rt></ruby>れます。",
+        "eng": "I avoid responsibility."
+      }
+    ]
+  },
+  {
+    "kanji": "典",
+    "yomikata": "テン",
+    "onyomi": "テン",
+    "kunyomi": "",
+    "english_meaning": "code, ceremony",
+    "examples": [
+      {
+        "example": "<ruby>辞典<rt>じてん</rt></ruby>を<ruby>引<rt>ひ</rt></ruby>きます。",
+        "eng": "I look it up in the dictionary."
+      },
+      {
+        "example": "<ruby>式典<rt>しきてん</rt></ruby>があります。",
+        "eng": "There is a ceremony."
+      }
+    ]
+  },
+  {
+    "kanji": "兼",
+    "yomikata": "ケン, か(ねる)",
+    "onyomi": "ケン",
+    "kunyomi": "か(ねる)",
+    "english_meaning": "concurrently",
+    "examples": [
+      {
+        "example": "<ruby>兼任<rt>けんにん</rt></ruby>します。",
+        "eng": "I serve concurrently."
+      },
+      {
+        "example": "<ruby>兼<rt>かね</rt></ruby>てから<ruby>会<rt>あ</rt></ruby>いたかったです。",
+        "eng": "I've wanted to meet you for a while."
+      }
+    ]
+  },
+  {
+    "kanji": "冒",
+    "yomikata": "ボウ, おか(す)",
+    "onyomi": "ボウ",
+    "kunyomi": "おか(す)",
+    "english_meaning": "risk, dare",
+    "examples": [
+      {
+        "example": "<ruby>冒険<rt>ぼうけん</rt></ruby>します。",
+        "eng": "I take a risk."
+      },
+      {
+        "example": "<ruby>名前<rt>なまえ</rt></ruby>を<ruby>冒<rt>おか</rt></ruby>します。",
+        "eng": "I misuse a name."
+      }
+    ]
+  },
+  {
+    "kanji": "冗",
+    "yomikata": "ジョウ",
+    "onyomi": "ジョウ",
+    "kunyomi": "",
+    "english_meaning": "superfluous",
+    "examples": [
+      {
+        "example": "<ruby>冗談<rt>じょうだん</rt></ruby>です。",
+        "eng": "It's a joke."
+      },
+      {
+        "example": "<ruby>冗長<rt>じょうちょう</rt></ruby>です。",
+        "eng": "It's verbose."
+      }
+    ]
+  },
+  {
+    "kanji": "冠",
+    "yomikata": "カン, かんむり",
+    "onyomi": "カン",
+    "kunyomi": "かんむり",
+    "english_meaning": "crown",
+    "examples": [
+      {
+        "example": "<ruby>冠<rt>かんむり</rt></ruby>をかぶります。",
+        "eng": "I wear a crown."
+      },
+      {
+        "example": "<ruby>栄冠<rt>えいかん</rt></ruby>を<ruby>手<rt>て</rt></ruby>にしました。",
+        "eng": "I won the championship."
+      }
+    ]
+  },
+  {
+    "kanji": "冴",
+    "yomikata": "ゴ, さ(える)",
+    "onyomi": "ゴ",
+    "kunyomi": "さ(える)",
+    "english_meaning": "clear, cold",
+    "examples": [
+      {
+        "example": "<ruby>冴<rt>さ</rt></ruby>えています。",
+        "eng": "It's clear/bright."
+      },
+      {
+        "example": "<ruby>頭<rt>あたま</rt></ruby>が<ruby>冴<rt>さ</rt></ruby>えます。",
+        "eng": "My mind is clear."
+      }
+    ]
+  },
+  {
+    "kanji": "冶",
+    "yomikata": "ヤ",
+    "onyomi": "ヤ",
+    "kunyomi": "",
+    "english_meaning": "smelt, refine",
+    "examples": [
+      {
+        "example": "<ruby>冶金学<rt>やきんがく</rt></ruby>を<ruby>研究<rt>けんきゅう</rt></ruby>します。",
+        "eng": "I study metallurgy."
+      },
+      {
+        "example": "<ruby>鍛冶屋<rt>かじや</rt></ruby>です。",
+        "eng": "He is a blacksmith."
+      }
+    ]
+  },
+  {
+    "kanji": "准",
+    "yomikata": "ジュン",
+    "onyomi": "ジュン",
+    "kunyomi": "",
+    "english_meaning": "associate, semi-",
+    "examples": [
+      {
+        "example": "<ruby>准教授<rt>じゅんきょうじゅ</rt></ruby>です。",
+        "eng": "He is an associate professor."
+      },
+      {
+        "example": "<ruby>準備<rt>じゅんび</rt></ruby>します。",
+        "eng": "I prepare."
+      }
+    ]
+  },
+  {
+    "kanji": "凌",
+    "yomikata": "リョウ, しの(ぐ)",
+    "onyomi": "リョウ",
+    "kunyomi": "しの(ぐ)",
+    "english_meaning": "endure, surpass",
+    "examples": [
+      {
+        "example": "<ruby>寒<rt>さむ</rt></ruby>さを<ruby>凌<rt>しの</rt></ruby>ぎます。",
+        "eng": "I endure the cold."
+      },
+      {
+        "example": "<ruby>凌駕<rt>りょうが</rt></ruby>します。",
+        "eng": "I surpass."
+      }
+    ]
+  },
+  {
+    "kanji": "凜",
+    "yomikata": "リン",
+    "onyomi": "リン",
+    "kunyomi": "",
+    "english_meaning": "cold, dignified",
+    "examples": [
+      {
+        "example": "<ruby>凛<rt>りん</rt></ruby>とした<ruby>態度<rt>たいど</rt></ruby>です。",
+        "eng": "He has a dignified attitude."
+      },
+      {
+        "example": "<ruby>凛子<rt>りんこ</rt></ruby>といいます。",
+        "eng": "My name is Rinko."
+      }
+    ]
+  },
+  {
+    "kanji": "凝",
+    "yomikata": "ギョウ, こ(る)",
+    "onyomi": "ギョウ",
+    "kunyomi": "こ(る)",
+    "english_meaning": "congeal, focus",
+    "examples": [
+      {
+        "example": "<ruby>凝<rt>こ</rt></ruby>っています。",
+        "eng": "It's concentrated."
+      },
+      {
+        "example": "<ruby>凝<rt>こ</rt></ruby>り<ruby>性<rt>しょう</rt></ruby>です。",
+        "eng": "He is a perfectionist."
+      }
+    ]
+  },
+  {
+    "kanji": "凡",
+    "yomikata": "ボン, およ(そ)",
+    "onyomi": "ボン",
+    "kunyomi": "およ(そ)",
+    "english_meaning": "common, ordinary",
+    "examples": [
+      {
+        "example": "<ruby>凡<rt>およ</rt></ruby>そわかりました。",
+        "eng": "I roughly understand."
+      },
+      {
+        "example": "<ruby>凡人<rt>ぼんじん</rt></ruby>です。",
+        "eng": "I'm an ordinary person."
+      }
+    ]
+  },
+  {
+    "kanji": "凪",
+    "yomikata": "なぎ",
+    "onyomi": "",
+    "kunyomi": "なぎ",
+    "english_meaning": "calm, lull",
+    "examples": [
+      {
+        "example": "<ruby>海<rt>うみ</rt></ruby>が<ruby>凪<rt>なぎ</rt></ruby>です。",
+        "eng": "The sea is calm."
+      },
+      {
+        "example": "<ruby>風<rt>かぜ</rt></ruby>が<ruby>凪<rt>な</rt></ruby>ぎました。",
+        "eng": "The wind calmed down."
+      }
+    ]
+  },
+  {
+    "kanji": "凱",
+    "yomikata": "ガイ",
+    "onyomi": "ガイ",
+    "kunyomi": "",
+    "english_meaning": "triumph",
+    "examples": [
+      {
+        "example": "<ruby>凱旋<rt>がいせん</rt></ruby>します。",
+        "eng": "I return in triumph."
+      },
+      {
+        "example": "<ruby>凱歌<rt>がいか</rt></ruby>をあげます。",
+        "eng": "I sing a song of triumph."
+      }
+    ]
+  },
+  {
+    "kanji": "凶",
+    "yomikata": "キョウ",
+    "onyomi": "キョウ",
+    "kunyomi": "",
+    "english_meaning": "bad luck, evil",
+    "examples": [
+      {
+        "example": "<ruby>凶悪<rt>きょうあく</rt></ruby>な<ruby>事件<rt>じけん</rt></ruby>です。",
+        "eng": "It's a heinous crime."
+      },
+      {
+        "example": "<ruby>吉凶<rt>きっきょう</rt></ruby>があります。",
+        "eng": "There is good and bad luck."
+      }
+    ]
+  },
+  {
+    "kanji": "凸",
+    "yomikata": "トツ",
+    "onyomi": "トツ",
+    "kunyomi": "",
+    "english_meaning": "convex",
+    "examples": [
+      {
+        "example": "<ruby>凸凹<rt>でこぼこ</rt></ruby>な<ruby>道<rt>みち</rt></ruby>です。",
+        "eng": "It's a bumpy road."
+      },
+      {
+        "example": "<ruby>凸<rt>とつ</rt></ruby>レンズです。",
+        "eng": "It's a convex lens."
+      }
+    ]
+  },
+  {
+    "kanji": "凹",
+    "yomikata": "オウ",
+    "onyomi": "オウ",
+    "kunyomi": "",
+    "english_meaning": "concave",
+    "examples": [
+      {
+        "example": "<ruby>凹<rt>へこ</rt></ruby>んだ<ruby>場所<rt>ばしょ</rt></ruby>です。",
+        "eng": "It's a dented place."
+      },
+      {
+        "example": "<ruby>凹<rt>おう</rt></ruby>レンズです。",
+        "eng": "It's a concave lens."
+      }
+    ]
+  },
+  {
+    "kanji": "刀",
+    "yomikata": "トウ, かたな",
+    "onyomi": "トウ",
+    "kunyomi": "かたな",
+    "english_meaning": "sword",
+    "examples": [
+      {
+        "example": "<ruby>刀<rt>かたな</rt></ruby>を<ruby>抜<rt>ぬ</rt></ruby>きます。",
+        "eng": "I draw a sword."
+      },
+      {
+        "example": "<ruby>日本刀<rt>にほんとう</rt></ruby>です。",
+        "eng": "It's a Japanese sword."
+      }
+    ]
+  },
+  {
+    "kanji": "刃",
+    "yomikata": "ジン, は",
+    "onyomi": "ジン",
+    "kunyomi": "は",
+    "english_meaning": "blade",
+    "examples": [
+      {
+        "example": "<ruby>刃<rt>は</rt></ruby>が<ruby>鋭<rt>するど</rt></ruby>いです。",
+        "eng": "The blade is sharp."
+      },
+      {
+        "example": "<ruby>刃物<rt>はもの</rt></ruby>を<ruby>使<rt>つか</rt></ruby>います。",
+        "eng": "I use a sharp tool."
+      }
+    ]
+  },
+  {
+    "kanji": "刈",
+    "yomikata": "カイ, か(る)",
+    "onyomi": "カイ",
+    "kunyomi": "か(る)",
+    "english_meaning": "mow, cut",
+    "examples": [
+      {
+        "example": "<ruby>草<rt>くさ</rt></ruby>を<ruby>刈<rt>か</rt></ruby>ります。",
+        "eng": "I mow the grass."
+      },
+      {
+        "example": "<ruby>稲<rt>いね</rt></ruby>を<ruby>刈<rt>か</rt></ruby>ります。",
+        "eng": "I harvest rice."
+      }
+    ]
+  },
+  {
+    "kanji": "刑",
+    "yomikata": "ケイ",
+    "onyomi": "ケイ",
+    "kunyomi": "",
+    "english_meaning": "punishment",
+    "examples": [
+      {
+        "example": "<ruby>刑罰<rt>けいばつ</rt></ruby>があります。",
+        "eng": "There is punishment."
+      },
+      {
+        "example": "<ruby>死刑<rt>しけい</rt></ruby>です。",
+        "eng": "It's the death penalty."
+      }
+    ]
+  },
+  {
+    "kanji": "削",
+    "yomikata": "サク, けず(る)",
+    "onyomi": "サク",
+    "kunyomi": "けず(る)",
+    "english_meaning": "shave, reduce",
+    "examples": [
+      {
+        "example": "<ruby>鉛筆<rt>えんぴつ</rt></ruby>を<ruby>削<rt>けず</rt></ruby>ります。",
+        "eng": "I sharpen a pencil."
+      },
+      {
+        "example": "<ruby>予算<rt>よさん</rt></ruby>を<ruby>削減<rt>さくげん</rt></ruby>します。",
+        "eng": "I cut the budget."
+      }
+    ]
+  },
+  {
+    "kanji": "剖",
+    "yomikata": "ボウ",
+    "onyomi": "ボウ",
+    "kunyomi": "",
+    "english_meaning": "dissect",
+    "examples": [
+      {
+        "example": "<ruby>解剖<rt>かいぼう</rt></ruby>します。",
+        "eng": "I dissect."
+      },
+      {
+        "example": "<ruby>剖検<rt>ぼうけん</rt></ruby>します。",
+        "eng": "I perform an autopsy."
+      }
+    ]
+  },
+  {
+    "kanji": "剛",
+    "yomikata": "ゴウ",
+    "onyomi": "ゴウ",
+    "kunyomi": "",
+    "english_meaning": "strong, sturdy",
+    "examples": [
+      {
+        "example": "<ruby>剛健<rt>ごうけん</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>です。",
+        "eng": "He is a robust person."
+      },
+      {
+        "example": "<ruby>剛直<rt>ごうちょく</rt></ruby>な<ruby>性格<rt>せいかく</rt></ruby>です。",
+        "eng": "He has an upright character."
+      }
+    ]
+  },
+  {
+    "kanji": "剣",
+    "yomikata": "ケン, つるぎ",
+    "onyomi": "ケン",
+    "kunyomi": "つるぎ",
+    "english_meaning": "sword",
+    "examples": [
+      {
+        "example": "<ruby>剣道<rt>けんどう</rt></ruby>をします。",
+        "eng": "I do kendo."
+      },
+      {
+        "example": "<ruby>剣<rt>つるぎ</rt></ruby>を<ruby>持<rt>も</rt></ruby>っています。",
+        "eng": "I have a sword."
+      }
+    ]
+  },
+  {
+    "kanji": "剤",
+    "yomikata": "ザイ",
+    "onyomi": "ザイ",
+    "kunyomi": "",
+    "english_meaning": "medicine, dose",
+    "examples": [
+      {
+        "example": "<ruby>薬剤師<rt>やくざいし</rt></ruby>です。",
+        "eng": "He is a pharmacist."
+      },
+      {
+        "example": "<ruby>一剤<rt>いちざい</rt></ruby><ruby>処方<rt>しょほう</rt></ruby>します。",
+        "eng": "I prescribe one dose."
+      }
+    ]
+  },
+  {
+    "kanji": "剰",
+    "yomikata": "ジョウ",
+    "onyomi": "ジョウ",
+    "kunyomi": "",
+    "english_meaning": "surplus",
+    "examples": [
+      {
+        "example": "<ruby>剰余金<rt>じょうよきん</rt></ruby>があります。",
+        "eng": "There is surplus money."
+      },
+      {
+        "example": "<ruby>過剰<rt>かじょう</rt></ruby>です。",
+        "eng": "It's excessive."
+      }
+    ]
+  },
+  {
+    "kanji": "創",
+    "yomikata": "ソウ, つく(る)",
+    "onyomi": "ソウ",
+    "kunyomi": "つく(る)",
+    "english_meaning": "create, wound",
+    "examples": [
+      {
+        "example": "<ruby>創造<rt>そうぞう</rt></ruby>します。",
+        "eng": "I create."
+      },
+      {
+        "example": "<ruby>創立<rt>そうりつ</rt></ruby>しました。",
+        "eng": "I established."
+      }
+    ]
+  },
+  {
+    "kanji": "功",
+    "yomikata": "コウ",
+    "onyomi": "コウ",
+    "kunyomi": "",
+    "english_meaning": "achievement",
+    "examples": [
+      {
+        "example": "<ruby>成功<rt>せいこう</rt></ruby>しました。",
+        "eng": "I succeeded."
+      },
+      {
+        "example": "<ruby>功績<rt>こうせき</rt></ruby>を<ruby>残<rt>のこ</rt></ruby>しました。",
+        "eng": "He left achievements."
+      }
+    ]
+  },
+  {
+    "kanji": "劣",
+    "yomikata": "レツ, おと(る)",
+    "onyomi": "レツ",
+    "kunyomi": "おと(る)",
+    "english_meaning": "inferior",
+    "examples": [
+      {
+        "example": "<ruby>劣等感<rt>れっとうかん</rt></ruby>があります。",
+        "eng": "I have an inferiority complex."
+      },
+      {
+        "example": "<ruby>劣<rt>おと</rt></ruby>っています。",
+        "eng": "It's inferior."
+      }
+    ]
+  },
+  {
+    "kanji": "励",
+    "yomikata": "レイ, はげ(む)",
+    "onyomi": "レイ",
+    "kunyomi": "はげ(む)",
+    "english_meaning": "encourage",
+    "examples": [
+      {
+        "example": "<ruby>励<rt>はげ</rt></ruby>みになります。",
+        "eng": "It's encouraging."
+      },
+      {
+        "example": "<ruby>励<rt>はげ</rt></ruby>まします。",
+        "eng": "I encourage."
+      }
+    ]
+  },
+  {
+    "kanji": "劾",
+    "yomikata": "ガイ",
+    "onyomi": "ガイ",
+    "kunyomi": "",
+    "english_meaning": "impeach",
+    "examples": [
+      {
+        "example": "<ruby>弾劾<rt>だんがい</rt></ruby>されます。",
+        "eng": "He is impeached."
+      },
+      {
+        "example": "<ruby>劾状<rt>がいじょう</rt></ruby>を<ruby>出<rt>だ</rt></ruby>します。",
+        "eng": "I issue a writ of impeachment."
+      }
+    ]
+  },
+  {
+    "kanji": "勁",
+    "yomikata": "ケイ",
+    "onyomi": "ケイ",
+    "kunyomi": "",
+    "english_meaning": "strong",
+    "examples": [
+      {
+        "example": "<ruby>勁力<rt>けいりょく</rt></ruby>があります。",
+        "eng": "He has strong power."
+      },
+      {
+        "example": "<ruby>勁敵<rt>けいてき</rt></ruby>です。",
+        "eng": "He is a strong rival."
+      }
+    ]
+  },
+  {
+    "kanji": "勅",
+    "yomikata": "チョク",
+    "onyomi": "チョク",
+    "kunyomi": "",
+    "english_meaning": "imperial edict",
+    "examples": [
+      {
+        "example": "<ruby>勅令<rt>ちょくれい</rt></ruby>です。",
+        "eng": "It's an imperial edict."
+      },
+      {
+        "example": "<ruby>勅語<rt>ちょくご</rt></ruby>を<ruby>聞<rt>き</rt></ruby>きます。",
+        "eng": "I listen to the imperial rescript."
+      }
+    ]
+  },
+  {
+    "kanji": "勘",
+    "yomikata": "カン",
+    "onyomi": "カン",
+    "kunyomi": "",
+    "english_meaning": "intuition, perceive",
+    "examples": [
+      {
+        "example": "<ruby>勘<rt>かん</rt></ruby>がいいです。",
+        "eng": "I have good intuition."
+      },
+      {
+        "example": "<ruby>勘違<rt>かんちが</rt></ruby>いしました。",
+        "eng": "I misunderstood."
+      }
+    ]
+  },
+  {
+    "kanji": "勧",
+    "yomikata": "カン, すす(める)",
+    "onyomi": "カン",
+    "kunyomi": "すす(める)",
+    "english_meaning": "recommend",
+    "examples": [
+      {
+        "example": "<ruby>勧<rt>すす</rt></ruby>めます。",
+        "eng": "I recommend."
+      },
+      {
+        "example": "<ruby>勧誘<rt>かんゆう</rt></ruby>します。",
+        "eng": "I invite."
+      }
+    ]
+  },
+  {
+    "kanji": "勲",
+    "yomikata": "クン",
+    "onyomi": "クン",
+    "kunyomi": "",
+    "english_meaning": "merit, decoration",
+    "examples": [
+      {
+        "example": "<ruby>勲章<rt>くんしょう</rt></ruby>をもらいました。",
+        "eng": "I received a medal."
+      },
+      {
+        "example": "<ruby>勲功<rt>くんこう</rt></ruby>を<ruby>立<rt>た</rt></ruby>てました。",
+        "eng": "He performed meritorious deeds."
+      }
+    ]
+  },
+  {
+    "kanji": "勺",
+    "yomikata": "シャク",
+    "onyomi": "シャク",
+    "kunyomi": "",
+    "english_meaning": "ladle, unit of volume",
+    "examples": [
+      {
+        "example": "<ruby>一勺<rt>いっしゃく</rt></ruby>の<ruby>酒<rt>さけ</rt></ruby>です。",
+        "eng": "It's one shaku of sake."
+      },
+      {
+        "example": "<ruby>勺<rt>しゃく</rt></ruby>で<ruby>量<rt>はか</rt></ruby>ります。",
+        "eng": "I measure with a ladle."
+      }
+    ]
+  },
+  {
+    "kanji": "匁",
+    "yomikata": "もんめ",
+    "onyomi": "",
+    "kunyomi": "もんめ",
+    "english_meaning": "monme (unit of weight)",
+    "examples": [
+      {
+        "example": "<ruby>十匁<rt>じゅうもんめ</rt></ruby>です。",
+        "eng": "It's ten monme."
+      },
+      {
+        "example": "<ruby>匁<rt>もんめ</rt></ruby>で<ruby>量<rt>はか</rt></ruby>ります。",
+        "eng": "I weigh by monme."
+      }
+    ]
+  },
+  {
+    "kanji": "匠",
+    "yomikata": "ショウ, たくみ",
+    "onyomi": "ショウ",
+    "kunyomi": "たくみ",
+    "english_meaning": "artisan, craftsman",
+    "examples": [
+      {
+        "example": "<ruby>大工<rt>だいく</rt></ruby>の<ruby>匠<rt>たくみ</rt></ruby>です。",
+        "eng": "He is a skilled carpenter."
+      },
+      {
+        "example": "<ruby>匠<rt>たくみ</rt></ruby>の<ruby>技<rt>わざ</rt></ruby>です。",
+        "eng": "It's a craftsman's skill."
+      }
+    ]
+  },
+  {
+    "kanji": "匡",
+    "yomikata": "キョウ",
+    "onyomi": "キョウ",
+    "kunyomi": "すく(う)",
+    "english_meaning": "correct, save",
+    "examples": [
+      {
+        "example": "<ruby>匡<rt>すく</rt></ruby>すことができます。",
+        "eng": "I can correct."
+      },
+      {
+        "example": "<ruby>匡正<rt>きょうせい</rt></ruby>します。",
+        "eng": "I correct."
+      }
+    ]
+  },
+  {
+    "kanji": "匿",
+    "yomikata": "トク, かくま(う)",
+    "onyomi": "トク",
+    "kunyomi": "かくま(う)",
+    "english_meaning": "hide, conceal",
+    "examples": [
+      {
+        "example": "<ruby>匿名<rt>とくめい</rt></ruby>で<ruby>送<rt>おく</rt></ruby>ります。",
+        "eng": "I send it anonymously."
+      },
+      {
+        "example": "<ruby>匿<rt>かくま</rt></ruby>います。",
+        "eng": "I hide (someone)."
+      }
+    ]
+  },
+  {
+    "kanji": "升",
+    "yomikata": "ショウ, ます",
+    "onyomi": "ショウ",
+    "kunyomi": "ます",
+    "english_meaning": "measuring box",
+    "examples": [
+      {
+        "example": "<ruby>一升瓶<rt>いっしょうびん</rt></ruby>です。",
+        "eng": "It's a one-liter bottle."
+      },
+      {
+        "example": "<ruby>升<rt>ます</rt></ruby>で<ruby>量<rt>はか</rt></ruby>ります。",
+        "eng": "I measure with a measuring box."
+      }
+    ]
+  },
+  {
+    "kanji": "卑",
+    "yomikata": "ヒ, いや(しい)",
+    "onyomi": "ヒ",
+    "kunyomi": "いや(しい)",
+    "english_meaning": "low, humble",
+    "examples": [
+      {
+        "example": "<ruby>卑怯<rt>ひきょう</rt></ruby>です。",
+        "eng": "It's cowardly."
+      },
+      {
+        "example": "<ruby>卑<rt>いや</rt></ruby>しい<ruby>人<rt>ひと</rt></ruby>です。",
+        "eng": "He is a mean person."
+      }
+    ]
+  },
+  {
+    "kanji": "卓",
+    "yomikata": "タク",
+    "onyomi": "タク",
+    "kunyomi": "",
+    "english_meaning": "table, excellent",
+    "examples": [
+      {
+        "example": "テーブルに<ruby>置<rt>お</rt></ruby>きます。",
+        "eng": "I put it on the table."
+      },
+      {
+        "example": "<ruby>卓越<rt>たくえつ</rt></ruby>しています。",
+        "eng": "He is excellent."
+      }
+    ]
+  },
+  {
+    "kanji": "博",
+    "yomikata": "ハク, バク",
+    "onyomi": "ハク, バク",
+    "kunyomi": "",
+    "english_meaning": "wide, doctorate",
+    "examples": [
+      {
+        "example": "<ruby>博士号<rt>はくせごう</rt></ruby>を<ruby>取<rt>と</rt></ruby>りました。",
+        "eng": "I got a doctorate."
+      },
+      {
+        "example": "<ruby>博物館<rt>はくぶつかん</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to the museum."
+      }
+    ]
+  },
+  {
+    "kanji": "卯",
+    "yomikata": "ボウ, う",
+    "onyomi": "ボウ",
+    "kunyomi": "う",
+    "english_meaning": "rabbit (zodiac)",
+    "examples": [
+      {
+        "example": "<ruby>卯年<rt>うどし</rt></ruby>です。",
+        "eng": "It's the year of the rabbit."
+      },
+      {
+        "example": "<ruby>卯月<rt>うづき</rt></ruby>です。",
+        "eng": "It's April."
+      }
+    ]
+  },
+  {
+    "kanji": "即",
+    "yomikata": "ソク, すなわ(ち)",
+    "onyomi": "ソク",
+    "kunyomi": "すなわ(ち)",
+    "english_meaning": "immediate",
+    "examples": [
+      {
+        "example": "<ruby>即座<rt>そくざ</rt></ruby>に<ruby>返事<rt>へんじ</rt></ruby>します。",
+        "eng": "I reply immediately."
+      },
+      {
+        "example": "<ruby>即日発送<rt>そくじつはっそう</rt></ruby>します。",
+        "eng": "I ship same day."
+      }
+    ]
+  },
+  {
+    "kanji": "却",
+    "yomikata": "キャク",
+    "onyomi": "キャク",
+    "kunyomi": "かえ(って)",
+    "english_meaning": "instead, remove",
+    "examples": [
+      {
+        "example": "<ruby>却<rt>かえ</rt></ruby>って<ruby>良<rt>よ</rt></ruby>かったです。",
+        "eng": "It turned out better."
+      },
+      {
+        "example": "<ruby>却下<rt>きゃっか</rt></ruby>します。",
+        "eng": "I reject."
+      }
+    ]
+  },
+  {
+    "kanji": "卸",
+    "yomikata": "シャ, おろ(す)",
+    "onyomi": "シャ",
+    "kunyomi": "おろ(す)",
+    "english_meaning": "wholesale",
+    "examples": [
+      {
+        "example": "<ruby>卸売<rt>おろしうり</rt></ruby>りをします。",
+        "eng": "I do wholesale."
+      },
+      {
+        "example": "<ruby>問屋<rt>とんや</rt></ruby>です。",
+        "eng": "He is a wholesaler."
+      }
+    ]
+  },
+  {
+    "kanji": "厄",
+    "yomikata": "ヤク",
+    "onyomi": "ヤク",
+    "kunyomi": "",
+    "english_meaning": "misfortune",
+    "examples": [
+      {
+        "example": "<ruby>厄介<rt>やっかい</rt></ruby>です。",
+        "eng": "It's troublesome."
+      },
+      {
+        "example": "<ruby>厄年<rt>やくどし</rt></ruby>です。",
+        "eng": "It's an unlucky year."
+      }
+    ]
+  },
+  {
+    "kanji": "厘",
+    "yomikata": "リン",
+    "onyomi": "リン",
+    "kunyomi": "",
+    "english_meaning": "rin, unit",
+    "examples": [
+      {
+        "example": "<ruby>一厘<rt>いちりん</rt></ruby>です。",
+        "eng": "It's one rin."
+      },
+      {
+        "example": "<ruby>厘毛単位<rt>りんもうたんい</rt></ruby>です。",
+        "eng": "It's a small unit."
+      }
+    ]
+  },
+  {
+    "kanji": "厳",
+    "yomikata": "ゲン, きび(しい)",
+    "onyomi": "ゲン",
+    "kunyomi": "きび(しい)",
+    "english_meaning": "strict, severe",
+    "examples": [
+      {
+        "example": "<ruby>厳<rt>きび</rt></ruby>しい<ruby>先生<rt>せんせい</rt></ruby>です。",
+        "eng": "He is a strict teacher."
+      },
+      {
+        "example": "<ruby>厳重<rt>げんじゅう</rt></ruby>に<ruby>注意<rt>ちゅうい</rt></ruby>します。",
+        "eng": "I strictly warn."
+       }
+    ]
+  },
+  {
+    "kanji": "又",
+    "yomikata": "ユウ, また",
+    "onyomi": "ユウ",
+    "kunyomi": "また",
+    "english_meaning": "again, also",
+    "examples": [
+      {
+        "example": "<ruby>又<rt>また</rt></ruby><ruby>明日<rt>あした</rt></ruby><ruby>会<rt>あ</rt></ruby>いましょう。",
+        "eng": "Let's meet again tomorrow."
+      },
+      {
+        "example": "<ruby>又<rt>また</rt></ruby>の<ruby>機会<rt>きかい</rt></ruby>に。",
+        "eng": "Another time."
+      }
+    ]
+  },
+  {
+    "kanji": "及",
+    "yomikata": "キュウ, およ(ぶ)",
+    "onyomi": "キュウ",
+    "kunyomi": "およ(ぶ)",
+    "english_meaning": "reach, extend",
+    "examples": [
+      {
+        "example": "<ruby>及<rt>およ</rt></ruby>びます。",
+        "eng": "It reaches."
+      },
+      {
+        "example": "<ruby>追<rt>お</rt></ruby>いつくことができません。",
+        "eng": "I cannot catch up."
+      }
+    ]
+  },
+  {
+    "kanji": "叔",
+    "yomikata": "シュク",
+    "onyomi": "シュク",
+    "kunyomi": "",
+    "english_meaning": "uncle, aunt",
+    "examples": [
+      {
+        "example": "<ruby>叔父<rt>おじ</rt></ruby>さんが<ruby>来<rt>き</rt></ruby>ました。",
+        "eng": "My uncle came."
+      },
+      {
+        "example": "<ruby>叔母<rt>おば</rt></ruby>さんです。",
+        "eng": "She is my aunt."
+      }
+    ]
+  },
+  {
+    "kanji": "叙",
+    "yomikata": "ジョ",
+    "onyomi": "ジョ",
+    "kunyomi": "",
+    "english_meaning": "narrate, confer",
+    "examples": [
+      {
+        "example": "<ruby>叙述<rt>じょじゅつ</rt></ruby>します。",
+        "eng": "I narrate."
+      },
+      {
+        "example": "<ruby>叙勲<rt>じょくん</rt></ruby>されました。",
+        "eng": "He was decorated."
+      }
+    ]
+  },
+  {
+    "kanji": "叡",
+    "yomikata": "エイ",
+    "onyomi": "エイ",
+    "kunyomi": "",
+    "english_meaning": "wisdom, imperial",
+    "examples": [
+      {
+        "example": "<ruby>叡智<rt>えいち</rt></ruby>があります。",
+        "eng": "He has wisdom."
+      },
+      {
+        "example": "<ruby>叡山<rt>えいざん</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to Mount Hiei."
+      }
+    ]
+  },
+  {
+    "kanji": "句",
+    "yomikata": "ク",
+    "onyomi": "ク",
+    "kunyomi": "",
+    "english_meaning": "phrase",
+    "examples": [
+      {
+        "example": "<ruby>一句<rt>いっく</rt></ruby>を<ruby>覚<rt>おぼ</rt></ruby>えます。",
+        "eng": "I memorize a phrase."
+      },
+      {
+        "example": "<ruby>俳句<rt>はいく</rt></ruby>を<ruby>作<rt>つく</rt></ruby>ります。",
+        "eng": "I write haiku."
+      }
+    ]
+  },
+  {
+    "kanji": "只",
+    "yomikata": "シ, ただ",
+    "onyomi": "シ",
+    "kunyomi": "ただ",
+    "english_meaning": "only, free",
+    "examples": [
+      {
+        "example": "<ruby>只今<rt>ただいま</rt></ruby><ruby>帰<rt>かえ</rt></ruby>りました。",
+        "eng": "I just got home."
+      },
+      {
+        "example": "<ruby>只<rt>ただ</rt></ruby>でさしあげます。",
+        "eng": "I give it for free."
+      }
+    ]
+  },
+  {
+    "kanji": "叶",
+    "yomikata": "キョウ, かな(う)",
+    "onyomi": "キョウ",
+    "kunyomi": "かな(う)",
+    "english_meaning": "come true",
+    "examples": [
+      {
+        "example": "<ruby>夢<rt>ゆめ</rt></ruby>が<ruby>叶<rt>かな</rt></ruby>いました。",
+        "eng": "My dream came true."
+      },
+      {
+        "example": "<ruby>願<rt>ねが</rt></ruby>いを<ruby>叶<rt>かな</rt></ruby>えます。",
+        "eng": "I fulfill a wish."
+      }
+    ]
+  },
+  {
+    "kanji": "吉",
+    "yomikata": "キチ, キツ",
+    "onyomi": "キチ, キツ",
+    "kunyomi": "",
+    "english_meaning": "good luck",
+    "examples": [
+      {
+        "example": "<ruby>吉日<rt>きちじつ</rt></ruby>です。",
+        "eng": "It's a lucky day."
+      },
+      {
+        "example": "<ruby>不吉<rt>ふきつ</rt></ruby>です。",
+        "eng": "It's ominous."
+      }
+    ]
+  },
+  {
+    "kanji": "后",
+    "yomikata": "コウ, ゴ, きさき",
+    "onyomi": "コウ, ゴ",
+    "kunyomi": "きさき",
+    "english_meaning": "empress",
+    "examples": [
+      {
+        "example": "<ruby>皇后陛下<rt>こうごうへいか</rt></ruby>です。",
+        "eng": "Her Majesty the Empress."
+      },
+      {
+        "example": "<ruby>后妃<rt>こうひ</rt></ruby>です。",
+        "eng": "She is an empress."
+      }
+    ]
+  },
+  {
+    "kanji": "吏",
+    "yomikata": "リ",
+    "onyomi": "リ",
+    "kunyomi": "",
+    "english_meaning": "official",
+    "examples": [
+      {
+        "example": "<ruby>官吏<rt>かんり</rt></ruby>です。",
+        "eng": "He is a government official."
+      },
+      {
+        "example": "<ruby>吏員<rt>りいん</rt></ruby>がいます。",
+        "eng": "There is an official."
+      }
+    ]
+  },
+  {
+    "kanji": "吐",
+    "yomikata": "ト, は(く)",
+    "onyomi": "ト",
+    "kunyomi": "は(く)",
+    "english_meaning": "vomit, spew",
+    "examples": [
+      {
+        "example": "<ruby>吐<rt>は</rt></ruby>き<ruby>気<rt>け</rt></ruby>がします。",
+        "eng": "I feel nauseous."
+      },
+      {
+        "example": "<ruby>血<rt>ち</rt></ruby>を<ruby>吐<rt>は</rt></ruby>きました。",
+        "eng": "I vomited blood."
+      }
+    ]
+  },
+  {
+    "kanji": "吟",
+    "yomikata": "ギン",
+    "onyomi": "ギン",
+    "kunyomi": "",
+    "english_meaning": "recite, compose",
+    "examples": [
+      {
+        "example": "<ruby>吟味<rt>ぎんみ</rt></ruby>します。",
+        "eng": "I examine carefully."
+      },
+      {
+        "example": "<ruby>詩<rt>し</rt></ruby>を<ruby>吟<rt>ぎん</rt></ruby>じます。",
+        "eng": "I recite a poem."
+      }
+    ]
+  },
+  {
+    "kanji": "吾",
+    "yomikata": "ゴ, われ",
+    "onyomi": "ゴ",
+    "kunyomi": "われ",
+    "english_meaning": "I, my",
+    "examples": [
+      {
+        "example": "<ruby>吾輩<rt>わがはい</rt></ruby>は<ruby>猫<rt>ねこ</rt></ruby>です。",
+        "eng": "I am a cat."
+      },
+      {
+        "example": "<ruby>吾妻<rt>あづま</rt></ruby>です。",
+        "eng": "It's Azuma."
+      }
+    ]
+  },
+  {
+    "kanji": "呂",
+    "yomikata": "ロ",
+    "onyomi": "ロ",
+    "kunyomi": "",
+    "english_meaning": "spine, tone",
+    "examples": [
+      {
+        "example": "<ruby>呂律<rt>ろれつ</rt></ruby>が<ruby>回<rt>まわ</rt></ruby>りません。",
+        "eng": "My speech is slurred."
+      },
+      {
+        "example": "<ruby>風呂<rt>ふろ</rt></ruby>に<ruby>入<rt>はい</rt></ruby>ります。",
+        "eng": "I take a bath."
+      }
+    ]
+  },
+  {
+    "kanji": "呈",
+    "yomikata": "テイ",
+    "onyomi": "テイ",
+    "kunyomi": "",
+    "english_meaning": "offer, present",
+    "examples": [
+      {
+        "example": "<ruby>呈上<rt>ていじょう</rt></ruby>します。",
+        "eng": "I present."
+      },
+      {
+        "example": "<ruby>花<rt>はな</rt></ruby>を<ruby>呈<rt>てい</rt></ruby>します。",
+        "eng": "I offer flowers."
+      }
+    ]
+  },
+  {
+    "kanji": "呉",
+    "yomikata": "ゴ, く(れる)",
+    "onyomi": "ゴ",
+    "kunyomi": "く(れる)",
+    "english_meaning": "give, do for",
+    "examples": [
+      {
+        "example": "<ruby>教<rt>おし</rt></ruby>えてくれますか。",
+        "eng": "Will you teach me?"
+      },
+      {
+        "example": "<ruby>呉市<rt>くれし</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to Kure city."
+      }
+    ]
+  },
+  {
+    "kanji": "哀",
+    "yomikata": "アイ, あわ(れむ)",
+    "onyomi": "アイ",
+    "kunyomi": "あわ(れむ)",
+    "english_meaning": "sad, pathetic",
+    "examples": [
+      {
+        "example": "<ruby>哀<rt>あわ</rt></ruby>れな<ruby>話<rt>はなし</rt></ruby>です。",
+        "eng": "It's a sad story."
+      },
+      {
+        "example": "<ruby>哀愁<rt>あいしゅう</rt></ruby>があります。",
+        "eng": "There is pathos."
+      }
+    ]
+  },
+  {
+    "kanji": "哉",
+    "yomikata": "サイ, かな",
+    "onyomi": "サイ",
+    "kunyomi": "かな",
+    "english_meaning": "exclamation, question",
+    "examples": [
+      {
+        "example": "<ruby>快哉<rt>かいさい</rt></ruby>を<ruby>叫<rt>さけ</rt></ruby>びます。",
+        "eng": "I shout for joy."
+      },
+      {
+        "example": "かな、<ruby>美<rt>うつく</rt></ruby>しい<ruby>花<rt>はな</rt></ruby>よ。",
+        "eng": "Ah, beautiful flower."
+      }
+    ]
+  },
+  {
+    "kanji": "哲",
+    "yomikata": "テツ",
+    "onyomi": "テツ",
+    "kunyomi": "",
+    "english_meaning": "wise, philosophy",
+    "examples": [
+      {
+        "example": "<ruby>哲学<rt>てつがく</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>します。",
+        "eng": "I study philosophy."
+      },
+      {
+        "example": "<ruby>賢哲<rt>けんてつ</rt></ruby>です。",
+        "eng": "He is a wise person."
+      }
+    ]
+  },
+  {
+    "kanji": "唄",
+    "yomikata": "バイ, うた",
+    "onyomi": "バイ",
+    "kunyomi": "うた",
+    "english_meaning": "song, ballad",
+    "examples": [
+      {
+        "example": "<ruby>民謡<rt>みんよう</rt></ruby>を<ruby>唄<rt>うた</rt></ruby>います。",
+        "eng": "I sing a folk song."
+      },
+      {
+        "example": "<ruby>唄<rt>うた</rt></ruby>が<ruby>上手<rt>じょうず</rt></ruby>です。",
+        "eng": "He is good at singing."
+      }
+    ]
+  },
+  {
+    "kanji": "唆",
+    "yomikata": "サ, そそのか(す)",
+    "onyomi": "サ",
+    "kunyomi": "そそのか(す)",
+    "english_meaning": "instigate, tempt",
+    "examples": [
+      {
+        "example": "<ruby>唆<rt>そそのか</rt></ruby>されました。",
+        "eng": "I was instigated."
+      },
+      {
+        "example": "<ruby>教唆<rt>きょうさ</rt></ruby>します。",
+        "eng": "I instigate."
+      }
+    ]
+  },
+  {
+    "kanji": "唇",
+    "yomikata": "シン, くちびる",
+    "onyomi": "シン",
+    "kunyomi": "くちびる",
+    "english_meaning": "lips",
+    "examples": [
+      {
+        "example": "<ruby>唇<rt>くちびる</rt></ruby>が<ruby>乾<rt>かわ</rt></ruby>いています。",
+        "eng": "My lips are dry."
+      },
+      {
+        "example": "<ruby>唇<rt>くちびる</rt></ruby>を<ruby>噛<rt>か</rt></ruby>みます。",
+        "eng": "I bite my lip."
+      }
+    ]
+  },
+  {
+    "kanji": "唐",
+    "yomikata": "トウ",
+    "onyomi": "トウ",
+    "kunyomi": "",
+    "english_meaning": "Tang dynasty, foreign",
+    "examples": [
+      {
+        "example": "<ruby>唐辛子<rt>とうがらし</rt></ruby>を<ruby>入<rt>い</rt></ruby>れます。",
+        "eng": "I put red pepper."
+      },
+      {
+        "example": "<ruby>唐突<rt>とうとつ</rt></ruby>です。",
+        "eng": "It's abrupt."
+      }
+    ]
+  },
+  {
+    "kanji": "唯",
+    "yomikata": "ユイ, イ, ただ",
+    "onyomi": "ユイ, イ",
+    "kunyomi": "ただ",
+    "english_meaning": "only, merely",
+    "examples": [
+      {
+        "example": "<ruby>唯一<rt>ゆいいつ</rt></ruby>の<ruby>方法<rt>ほうほう</rt></ruby>です。",
+        "eng": "It's the only way."
+      },
+      {
+        "example": "<ruby>唯我独尊<rt>ゆいがどくそん</rt></ruby>です。",
+        "eng": "He is egotistical."
+      }
+    ]
+  },
+  {
+    "kanji": "唱",
+    "yomikata": "ショウ, とな(える)",
+    "onyomi": "ショウ",
+    "kunyomi": "とな(える)",
+    "english_meaning": "chant, recite",
+    "examples": [
+      {
+        "example": "<ruby>歌<rt>うた</rt></ruby>を<ruby>唱<rt>とな</rt></ruby>えます。",
+        "eng": "I sing a song."
+      },
+      {
+        "example": "<ruby>合唱<rt>がっしょう</rt></ruby>します。",
+        "eng": "We sing in chorus."
+      }
+    ]
+  },
+  {
+    "kanji": "啄",
+    "yomikata": "タク, ついば(む)",
+    "onyomi": "タク",
+    "kunyomi": "ついば(む)",
+    "english_meaning": "peck",
+    "examples": [
+      {
+        "example": "<ruby>鳥<rt>とり</rt></ruby>が<ruby>餌<rt>えさ</rt></ruby>を<ruby>啄<rt>ついば</rt></ruby>みます。",
+        "eng": "The bird pecks at food."
+      },
+      {
+        "example": "<ruby>啄木鳥<rt>きつつき</rt></ruby>です。",
+        "eng": "It's a woodpecker."
+      }
+    ]
+  },
+  {
+    "kanji": "啓",
+    "yomikata": "ケイ",
+    "onyomi": "ケイ",
+    "kunyomi": "",
+    "english_meaning": "enlighten, open",
+    "examples": [
+      {
+        "example": "<ruby>啓発<rt>けいはつ</rt></ruby>されます。",
+        "eng": "I am enlightened."
+      },
+      {
+        "example": "<ruby>啓示<rt>けいじ</rt></ruby>を<ruby>受<rt>う</rt></ruby>けます。",
+        "eng": "I receive a revelation."
+      }
+    ]
+  },
+  {
+    "kanji": "喚",
+    "yomikata": "カン, わめ(く)",
+    "onyomi": "カン",
+    "kunyomi": "わめ(く)",
+    "english_meaning": "scream, call out",
+    "examples": [
+      {
+        "example": "<ruby>喚<rt>わめ</rt></ruby>きます。",
+        "eng": "I scream."
+      },
+      {
+        "example": "<ruby>喚声<rt>かんせい</rt></ruby>をあげます。",
+        "eng": "I raise a shout."
+      }
+    ]
+  },
+  {
+    "kanji": "喝",
+    "yomikata": "カツ",
+    "onyomi": "カツ",
+    "kunyomi": "",
+    "english_meaning": "shout, scold",
+    "examples": [
+      {
+        "example": "<ruby>喝<rt>かつ</rt></ruby>を<ruby>入<rt>い</rt></ruby>れます。",
+        "eng": "I give a stern warning."
+      },
+      {
+        "example": "<ruby>喝采<rt>かっさい</rt></ruby>します。",
+        "eng": "I applaud."
+      }
+    ]
+  },
+  {
+    "kanji": "喪",
+    "yomikata": "ソウ, も",
+    "onyomi": "ソウ",
+    "kunyomi": "も",
+    "english_meaning": "mourning",
+    "examples": [
+      {
+        "example": "<ruby>喪<rt>も</rt></ruby>に<ruby>服<rt>ふく</rt></ruby>します。",
+        "eng": "I go into mourning."
+      },
+      {
+        "example": "<ruby>喪失<rt>そうしつ</rt></ruby>しました。",
+        "eng": "I lost."
+      }
+    ]
+  },
+  {
+    "kanji": "喬",
+    "yomikata": "キョウ",
+    "onyomi": "キョウ",
+    "kunyomi": "",
+    "english_meaning": "tall, high",
+    "examples": [
+      {
+        "example": "<ruby>喬木<rt>きょうぼく</rt></ruby>です。",
+        "eng": "It's a tall tree."
+      },
+      {
+        "example": "<ruby>喬<rt>たかし</rt></ruby>といいます。",
+        "eng": "My name is Takashi."
+      }
+    ]
+  },
+  {
+    "kanji": "嗣",
+    "yomikata": "シ",
+    "onyomi": "シ",
+    "kunyomi": "",
+    "english_meaning": "heir, succeed",
+    "examples": [
+      {
+        "example": "<ruby>後継者<rt>こうけいしゃ</rt></ruby>です。",
+        "eng": "He is a successor."
+      },
+      {
+        "example": "<ruby>嗣子<rt>しし</rt></ruby>がいます。",
+        "eng": "He has an heir."
+      }
+    ]
+  },
+  {
+    "kanji": "嘆",
+    "yomikata": "タン, なげ(く)",
+    "onyomi": "タン",
+    "kunyomi": "なげ(く)",
+    "english_meaning": "sigh, lament",
+    "examples": [
+      {
+        "example": "<ruby>嘆<rt>なげ</rt></ruby>きます。",
+        "eng": "I lament."
+      },
+      {
+        "example": "<ruby>嘆息<rt>たんそく</rt></ruby>します。",
+        "eng": "I sigh."
+      }
+    ]
+  },
+  {
+    "kanji": "嘉",
+    "yomikata": "カ",
+    "onyomi": "カ",
+    "kunyomi": "よみ(する)",
+    "english_meaning": "praise, excellent",
+    "examples": [
+      {
+        "example": "<ruby>嘉<rt>よみ</rt></ruby>します。",
+        "eng": "I praise."
+      },
+      {
+        "example": "<ruby>嘉永<rt>かえい</rt></ruby>年間です。",
+        "eng": "It's the Kaei era."
+      }
+    ]
+  },
+  {
+    "kanji": "嘱",
+    "yomikata": "ショク",
+    "onyomi": "ショク",
+    "kunyomi": "しょく(する)",
+    "english_meaning": "entrust, request",
+    "examples": [
+      {
+        "example": "<ruby>嘱託<rt>しょくたく</rt></ruby>します。",
+        "eng": "I entrust."
+      },
+      {
+        "example": "<ruby>嘱望<rt>しょくぼう</rt></ruby>されます。",
+        "eng": "He is expected."
+      }
+    ]
+  },
+  {
+    "kanji": "噴",
+    "yomikata": "フン, ふ(く)",
+    "onyomi": "フン",
+    "kunyomi": "ふ(く)",
+    "english_meaning": "erupt, spout",
+    "examples": [
+      {
+        "example": "<ruby>火山<rt>かざん</rt></ruby>が<ruby>噴火<rt>ふんか</rt></ruby>します。",
+        "eng": "The volcano erupts."
+      },
+      {
+        "example": "<ruby>噴水<rt>ふんすい</rt></ruby>があります。",
+        "eng": "There is a fountain."
+      }
+    ]
+  },
+  {
+    "kanji": "嚇",
+    "yomikata": "カク",
+    "onyomi": "カク",
+    "kunyomi": "",
+    "english_meaning": "threaten",
+    "examples": [
+      {
+        "example": "<ruby>威嚇<rt>いかく</rt></ruby>します。",
+        "eng": "I threaten."
+      },
+      {
+        "example": "<ruby>恐喝<rt>きょうかつ</rt></ruby>されました。",
+        "eng": "I was blackmailed."
+      }
+    ]
+  },
+  {
+    "kanji": "囚",
+    "yomikata": "シュウ",
+    "onyomi": "シュウ",
+    "kunyomi": "とら(われる)",
+    "english_meaning": "captive",
+    "examples": [
+      {
+        "example": "<ruby>囚人<rt>しゅうじん</rt></ruby>です。",
+        "eng": "He is a prisoner."
+      },
+      {
+        "example": "<ruby>囚<rt>とら</rt></ruby>われます。",
+        "eng": "I am captured."
+      }
+    ]
+  },
+  {
+    "kanji": "圏",
+    "yomikata": "ケン",
+    "onyomi": "ケン",
+    "kunyomi": "",
+    "english_meaning": "sphere, range",
+    "examples": [
+      {
+        "example": "<ruby>圏内<rt>けんない</rt></ruby>です。",
+        "eng": "It's within range."
+      },
+      {
+        "example": "<ruby>生活圏<rt>せいかつけん</rt></ruby>が<ruby>広<rt>ひろ</rt></ruby>いです。",
+        "eng": "The living area is wide."
+      }
+    ]
+  },
+  {
+    "kanji": "圭",
+    "yomikata": "ケイ",
+    "onyomi": "ケイ",
+    "kunyomi": "",
+    "english_meaning": "square jewel",
+    "examples": [
+      {
+        "example": "<ruby>圭角<rt>けいかく</rt></ruby>があります。",
+        "eng": "He has angularity."
+      },
+      {
+        "example": "<ruby>圭介<rt>けいすけ</rt></ruby>といいます。",
+        "eng": "My name is Keisuke."
+      }
+    ]
+  },
+  {
+    "kanji": "坑",
+    "yomikata": "コウ",
+    "onyomi": "コウ",
+    "kunyomi": "",
+    "english_meaning": "pit, mine",
+    "examples": [
+      {
+        "example": "<ruby>坑道<rt>こうどう</rt></ruby>に<ruby>入<rt>はい</rt></ruby>ります。",
+        "eng": "I enter the mine shaft."
+      },
+      {
+        "example": "<ruby>廃坑<rt>はいこう</rt></ruby>です。",
+        "eng": "It's an abandoned mine."
+      }
+    ]
+  },
+  {
+    "kanji": "坪",
+    "yomikata": "ヘイ, つぼ",
+    "onyomi": "ヘイ",
+    "kunyomi": "つぼ",
+    "english_meaning": "tsubo (unit of area)",
+    "examples": [
+      {
+        "example": "<ruby>十坪<rt>じゅうつぼ</rt></ruby>の<ruby>土地<rt>とち</rt></ruby>です。",
+        "eng": "It's ten tsubo of land."
+      },
+      {
+        "example": "<ruby>坪数<rt>つぼすう</rt></ruby>を<ruby>計算<rt>けいさん</rt></ruby>します。",
+        "eng": "I calculate the area."
+      }
+    ]
+  },
+  {
+    "kanji": "垂",
+    "yomikata": "スイ, た(れる)",
+    "onyomi": "スイ",
+    "kunyomi": "た(れる)",
+    "english_meaning": "drip, hang down",
+    "examples": [
+      {
+        "example": "<ruby>垂<rt>た</rt></ruby>れます。",
+        "eng": "It drips."
+      },
+      {
+        "example": "<ruby>垂直<rt>すいちょく</rt></ruby>です。",
+        "eng": "It's vertical."
+      }
+    ]
+  },
+  {
+    "kanji": "垣",
+    "yomikata": "エン, かき",
+    "onyomi": "エン",
+    "kunyomi": "かき",
+    "english_meaning": "fence",
+    "examples": [
+      {
+        "example": "<ruby>垣根<rt>かきね</rt></ruby>があります。",
+        "eng": "There is a fence."
+      },
+      {
+        "example": "<ruby>石垣<rt>いしがき</rt></ruby>です。",
+        "eng": "It's a stone wall."
+      }
+    ]
+  },
+  {
+    "kanji": "執",
+    "yomikata": "シツ, シュウ, と(る)",
+    "onyomi": "シツ, シュウ",
+    "kunyomi": "と(る)",
+    "english_meaning": "take, execute",
+    "examples": [
+      {
+        "example": "<ruby>執筆<rt>しっぴつ</rt></ruby>します。",
+        "eng": "I write."
+      },
+      {
+        "example": "<ruby>執拗<rt>しつよう</rt></ruby>です。",
+        "eng": "It's persistent."
+      }
+    ]
+  },
+  {
+    "kanji": "培",
+    "yomikata": "バイ, つちか(う)",
+    "onyomi": "バイ",
+    "kunyomi": "つちか(う)",
+    "english_meaning": "cultivate",
+    "examples": [
+      {
+        "example": "<ruby>土<rt>つち</rt></ruby>を<ruby>培<rt>つちか</rt></ruby>います。",
+        "eng": "I cultivate the soil."
+      },
+      {
+        "example": "<ruby>培養<rt>ばいよう</rt></ruby>します。",
+        "eng": "I cultivate (bacteria)."
+      }
+    ]
+  },
+  {
+    "kanji": "堀",
+    "yomikata": "クツ, ほり",
+    "onyomi": "クツ",
+    "kunyomi": "ほり",
+    "english_meaning": "moat, ditch",
+    "examples": [
+      {
+        "example": "お<ruby>堀<rt>ほり</rt></ruby>があります。",
+        "eng": "There is a moat."
+      },
+      {
+        "example": "<ruby>堀<rt>ほり</rt></ruby>を<ruby>掘<rt>ほ</rt></ruby>ります。",
+        "eng": "I dig a ditch."
+      }
+    ]
+  },
+  {
+    "kanji": "堅",
+    "yomikata": "ケン, かた(い)",
+    "onyomi": "ケン",
+    "kunyomi": "かた(い)",
+    "english_meaning": "hard, solid",
+    "examples": [
+      {
+        "example": "<ruby>堅<rt>かた</rt></ruby>い<ruby>石<rt>いし</rt></ruby>です。",
+        "eng": "It's a hard stone."
+      },
+      {
+        "example": "<ruby>堅実<rt>けんじつ</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>です。",
+        "eng": "He is a reliable person."
+      }
+    ]
+  },
+  {
+    "kanji": "堕",
+    "yomikata": "ダ, お(ちる)",
+    "onyomi": "ダ",
+    "kunyomi": "お(ちる)",
+    "english_meaning": "degenerate, fall",
+    "examples": [
+      {
+        "example": "<ruby>堕落<rt>だらく</rt></ruby>します。",
+        "eng": "I degenerate."
+      },
+      {
+        "example": "<ruby>堕<rt>お</rt></ruby>ちます。",
+        "eng": "I fall."
+      }
+    ]
+  },
+  {
+    "kanji": "堤",
+    "yomikata": "テイ, つつみ",
+    "onyomi": "テイ",
+    "kunyomi": "つつみ",
+    "english_meaning": "embankment",
+    "examples": [
+      {
+        "example": "<ruby>堤防<rt>ていぼう</rt></ruby>があります。",
+        "eng": "There is an embankment."
+      },
+      {
+        "example": "<ruby>堤<rt>つつみ</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>きます。",
+        "eng": "I walk on the embankment."
+      }
+    ]
+  },
+  {
+    "kanji": "堪",
+    "yomikata": "カン, た(える)",
+    "onyomi": "カン",
+    "kunyomi": "た(える)",
+    "english_meaning": "endure",
+    "examples": [
+      {
+        "example": "<ruby>堪<rt>た</rt></ruby>えられません。",
+        "eng": "I cannot endure."
+      },
+      {
+        "example": "<ruby>堪忍<rt>かんにん</rt></ruby>します。",
+        "eng": "I bear with it."
+      }
+    ]
+  },
+  {
+    "kanji": "塀",
+    "yomikata": "ヘイ",
+    "onyomi": "ヘイ",
+    "kunyomi": "",
+    "english_meaning": "wall, fence",
+    "examples": [
+      {
+        "example": "<ruby>塀<rt>へい</rt></ruby>を<ruby>越<rt>こ</rt></ruby>えます。",
+        "eng": "I climb over the wall."
+      },
+      {
+        "example": "<ruby>煉瓦塀<rt>れんがべい</rt></ruby>です。",
+        "eng": "It's a brick wall."
+      }
+    ]
+  },
+  {
+    "kanji": "塁",
+    "yomikata": "ルイ",
+    "onyomi": "ルイ",
+    "kunyomi": "",
+    "english_meaning": "base, fort",
+    "examples": [
+      {
+        "example": "<ruby>塁打<rt>るいだ</rt></ruby>を<ruby>打<rt>う</rt></ruby>ちます。",
+        "eng": "I hit a base hit."
+      },
+      {
+        "example": "<ruby>一塁手<rt>いちるいしゅ</rt></ruby>です。",
+        "eng": "He is a first baseman."
+      }
+    ]
+  },
+  {
+    "kanji": "塊",
+    "yomikata": "カイ, かたまり",
+    "onyomi": "カイ",
+    "kunyomi": "かたまり",
+    "english_meaning": "lump, mass",
+    "examples": [
+      {
+        "example": "<ruby>土<rt>つち</rt></ruby>の<ruby>塊<rt>かたまり</rt></ruby>です。",
+        "eng": "It's a lump of soil."
+      },
+      {
+        "example": "<ruby>金塊<rt>きんかい</rt></ruby>を<ruby>発見<rt>はっけん</rt></ruby>しました。",
+        "eng": "I found a gold nugget."
+      }
+    ]
+  },
+  {
+    "kanji": "塑",
+    "yomikata": "ソ",
+    "onyomi": "ソ",
+    "kunyomi": "",
+    "english_meaning": "model, mold",
+    "examples": [
+      {
+        "example": "<ruby>塑像<rt>そぞう</rt></ruby>を<ruby>作<rt>つく</rt></ruby>ります。",
+        "eng": "I make a statue."
+      },
+      {
+        "example": "<ruby>塑性<rt>そせい</rt></ruby>があります。",
+        "eng": "It has plasticity."
+      }
+    ]
+  },
+  {
+    "kanji": "塚",
+    "yomikata": "チョウ, つか",
+    "onyomi": "チョウ",
+    "kunyomi": "つか",
+    "english_meaning": "mound, hillock",
+    "examples": [
+      {
+        "example": "<ruby>古墳<rt>こふん</rt></ruby>の<ruby>塚<rt>つか</rt></ruby>です。",
+        "eng": "It's an ancient burial mound."
+      },
+      {
+        "example": "<ruby>塚<rt>つか</rt></ruby>を<ruby>築<rt>きず</rt></ruby>きます。",
+        "eng": "I build a mound."
+      }
+    ]
+  },
+  {
+    "kanji": "塾",
+    "yomikata": "ジュク",
+    "onyomi": "ジュク",
+    "kunyomi": "",
+    "english_meaning": "cram school",
+    "examples": [
+      {
+        "example": "<ruby>塾<rt>じゅく</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to cram school."
+      },
+      {
+        "example": "<ruby>予備校<rt>よびこう</rt></ruby>の<ruby>塾<rt>じゅく</rt></ruby>です。",
+        "eng": "It's a prep school."
+      }
+    ]
+  },
+  {
+    "kanji": "墓",
+    "yomikata": "ボ, はか",
+    "onyomi": "ボ",
+    "kunyomi": "はか",
+    "english_meaning": "grave, tomb",
+    "examples": [
+      {
+        "example": "<ruby>墓参<rt>はかまい</rt></ruby>りに<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to visit a grave."
+      },
+      {
+        "example": "<ruby>墓地<rt>ぼち</rt></ruby>です。",
+        "eng": "It's a cemetery."
+      }
+    ]
+  },
+  {
+    "kanji": "墜",
+    "yomikata": "ツイ, お(ちる)",
+    "onyomi": "ツイ",
+    "kunyomi": "お(ちる)",
+    "english_meaning": "fall, crash",
+    "examples": [
+      {
+        "example": "<ruby>墜落<rt>ついらく</rt></ruby>しました。",
+        "eng": "It crashed."
+      },
+      {
+        "example": "<ruby>墜<rt>お</rt></ruby>ちます。",
+        "eng": "I fall."
+      }
+    ]
+  },
+  {
+    "kanji": "墳",
+    "yomikata": "フン",
+    "onyomi": "フン",
+    "kunyomi": "",
+    "english_meaning": "tomb, mound",
+    "examples": [
+      {
+        "example": "<ruby>古墳<rt>こふん</rt></ruby>があります。",
+        "eng": "There is an ancient tomb."
+      },
+      {
+        "example": "<ruby>墳墓<rt>ふんぼ</rt></ruby>です。",
+        "eng": "It's a tomb."
+      }
+    ]
+  },
+  {
+    "kanji": "墾",
+    "yomikata": "コン",
+    "onyomi": "コン",
+    "kunyomi": "",
+    "english_meaning": "clear land",
+    "examples": [
+      {
+        "example": "<ruby>開墾<rt>かいこん</rt></ruby>します。",
+        "eng": "I cultivate land."
+      },
+      {
+        "example": "<ruby>墾田<rt>こんでん</rt></ruby>です。",
+        "eng": "It's cultivated land."
+      }
+    ]
+  },
+  {
+    "kanji": "壇",
+    "yomikata": "ダン, タン",
+    "onyomi": "ダン, タン",
+    "kunyomi": "",
+    "english_meaning": "platform, podium",
+    "examples": [
+      {
+        "example": "<ruby>演壇<rt>えんだん</rt></ruby>に<ruby>立<rt>た</rt></ruby>ちます。",
+        "eng": "I stand on the podium."
+      },
+      {
+        "example": "<ruby>壇上<rt>だんじょう</rt></ruby>で<ruby>話<rt>はな</rt></ruby>します。",
+        "eng": "I speak on the platform."
+      }
+    ]
+  },
+  {
+    "kanji": "壊",
+    "yomikata": "カイ, こわ(す)",
+    "onyomi": "カイ",
+    "kunyomi": "こわ(す)",
+    "english_meaning": "break, destroy",
+    "examples": [
+      {
+        "example": "<ruby>壊<rt>こわ</rt></ruby>れました。",
+        "eng": "It broke."
+      },
+      {
+        "example": "<ruby>破壊<rt>はかい</rt></ruby>します。",
+        "eng": "I destroy."
+      }
+    ]
+  },
+  {
+    "kanji": "壌",
+    "yomikata": "ジョウ",
+    "onyomi": "ジョウ",
+    "kunyomi": "",
+    "english_meaning": "soil, earth",
+    "examples": [
+      {
+        "example": "<ruby>土壌<rt>どじょう</rt></ruby>が<ruby>肥沃<rt>ひよく</rt></ruby>です。",
+        "eng": "The soil is fertile."
+      },
+      {
+        "example": "<ruby>天壌無窮<rt>てんじょうむきゅう</rt></ruby>です。",
+        "eng": "Eternal as heaven and earth."
+      }
+    ]
+  },
+  {
+    "kanji": "士",
+    "yomikata": "シ",
+    "onyomi": "シ",
+    "kunyomi": "",
+    "english_meaning": "samurai, man",
+    "examples": [
+      {
+        "example": "<ruby>武士<rt>ぶし</rt></ruby>です。",
+        "eng": "He is a samurai."
+      },
+      {
+        "example": "<ruby>紳士<rt>しんし</rt></ruby>です。",
+        "eng": "He is a gentleman."
+      }
+    ]
+  },
+  {
+    "kanji": "壮",
+    "yomikata": "ソウ",
+    "onyomi": "ソウ",
+    "kunyomi": "",
+    "english_meaning": "robust, manly",
+    "examples": [
+      {
+        "example": "<ruby>壮大<rt>そうだい</rt></ruby>な<ruby>計画<rt>けいかく</rt></ruby>です。",
+        "eng": "It's a grand plan."
+      },
+      {
+        "example": "<ruby>壮年<rt>そうねん</rt></ruby>です。",
+        "eng": "He is in his prime."
+      }
+    ]
+  },
+  {
+    "kanji": "壱",
+    "yomikata": "イチ",
+    "onyomi": "イチ",
+    "kunyomi": "",
+    "english_meaning": "one (formal)",
+    "examples": [
+      {
+        "example": "<ruby>壱万円<rt>いちまんえん</rt></ruby>です。",
+        "eng": "It's 10,000 yen."
+      },
+      {
+        "example": "<ruby>壱岐島<rt>いきのしま</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to Iki Island."
+      }
+    ]
+  },
+  {
+    "kanji": "奇",
+    "yomikata": "キ",
+    "onyomi": "キ",
+    "kunyomi": "く(しき)",
+    "english_meaning": "strange, odd",
+    "examples": [
+      {
+        "example": "<ruby>奇跡<rt>きせき</rt></ruby>が<ruby>起<rt>お</rt></ruby>きました。",
+        "eng": "A miracle happened."
+      },
+      {
+        "example": "<ruby>奇妙<rt>きみょう</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>です。",
+        "eng": "He is a strange person."
+      }
+    ]
+  },
+  {
+    "kanji": "奈",
+    "yomikata": "ナ",
+    "onyomi": "ナ",
+    "kunyomi": "",
+    "english_meaning": "what, Nara",
+    "examples": [
+      {
+        "example": "<ruby>奈良<rt>なら</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to Nara."
+      },
+      {
+        "example": "<ruby>奈何<rt>いかん</rt></ruby>せん。",
+        "eng": "What can be done?"
+      }
+    ]
+  },
+  {
+    "kanji": "奉",
+    "yomikata": "ホウ, たてまつ(る)",
+    "onyomi": "ホウ",
+    "kunyomi": "たてまつ(る)",
+    "english_meaning": "offer, dedicate",
+    "examples": [
+      {
+        "example": "<ruby>奉仕<rt>ほうし</rt></ruby>します。",
+        "eng": "I serve."
+      },
+      {
+        "example": "<ruby>奉納<rt>ほうのう</rt></ruby>します。",
+        "eng": "I dedicate."
+      }
+    ]
+  },
+  {
+    "kanji": "奔",
+    "yomikata": "ホン",
+    "onyomi": "ホン",
+    "kunyomi": "",
+    "english_meaning": "rush, run",
+    "examples": [
+      {
+        "example": "<ruby>奔走<rt>ほんそう</rt></ruby>します。",
+        "eng": "I run about."
+      },
+      {
+        "example": "<ruby>奔放<rt>ほんぽう</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>です。",
+        "eng": "He is a free-spirited person."
+      }
+    ]
+  },
+  {
+    "kanji": "奎",
+    "yomikata": "ケイ",
+    "onyomi": "ケイ",
+    "kunyomi": "",
+    "english_meaning": "star, stride",
+    "examples": [
+      {
+        "example": "<ruby>奎星<rt>けいせい</rt></ruby>です。",
+        "eng": "It's a star."
+      },
+      {
+        "example": "<ruby>奎<rt>けい</rt></ruby>といいます。",
+        "eng": "My name is Kei."
+      }
+    ]
+  },
+  {
+    "kanji": "奏",
+    "yomikata": "ソウ, かな(でる)",
+    "onyomi": "ソウ",
+    "kunyomi": "かな(でる)",
+    "english_meaning": "play music",
+    "examples": [
+      {
+        "example": "<ruby>演奏<rt>えんそう</rt></ruby>します。",
+        "eng": "I play music."
+      },
+      {
+        "example": "<ruby>奏<rt>かな</rt></ruby>でます。",
+        "eng": "I play."
+      }
+    ]
+  },
+  {
+    "kanji": "契",
+    "yomikata": "ケイ",
+    "onyomi": "ケイ",
+    "kunyomi": "",
+    "english_meaning": "pledge, contract",
+    "examples": [
+      {
+        "example": "<ruby>契約<rt>けいやく</rt></ruby>します。",
+        "eng": "I make a contract."
+      },
+      {
+        "example": "<ruby>契機<rt>けいき</rt></ruby>になります。",
+        "eng": "It becomes an opportunity."
+      }
+    ]
+  },
+  {
+    "kanji": "奨",
+    "yomikata": "ショウ",
+    "onyomi": "ショウ",
+    "kunyomi": "",
+    "english_meaning": "encourage, prize",
+    "examples": [
+      {
+        "example": "<ruby>奨学金<rt>しょうがくきん</rt></ruby>をもらいます。",
+        "eng": "I receive a scholarship."
+      },
+      {
+        "example": "<ruby>奨励<rt>しょうれい</rt></ruby>します。",
+        "eng": "I encourage."
+      }
+    ]
+  },
+  {
+    "kanji": "奪",
+    "yomikata": "ダツ, うば(う)",
+    "onyomi": "ダツ",
+    "kunyomi": "うば(う)",
+    "english_meaning": "rob, take by force",
+    "examples": [
+      {
+        "example": "<ruby>奪<rt>うば</rt></ruby>います。",
+        "eng": "I rob."
+      },
+      {
+        "example": "<ruby>奪回<rt>だっかい</rt></ruby>します。",
+        "eng": "I take back."
+      }
+    ]
+  },
+  {
+    "kanji": "奮",
+    "yomikata": "フン, ふる(う)",
+    "onyomi": "フン",
+    "kunyomi": "ふる(う)",
+    "english_meaning": "rouse, inspire",
+    "examples": [
+      {
+        "example": "<ruby>奮闘<rt>ふんとう</rt></ruby>します。",
+        "eng": "I fight hard."
+      },
+      {
+        "example": "<ruby>興奮<rt>こうふん</rt></ruby>します。",
+        "eng": "I get excited."
+      }
+    ]
+  },
+  {
+    "kanji": "奴",
+    "yomikata": "ド, やつ",
+    "onyomi": "ド",
+    "kunyomi": "やつ",
+    "english_meaning": "guy, fellow",
+    "examples": [
+      {
+        "example": "あの<ruby>奴<rt>やつ</rt></ruby>です。",
+        "eng": "That guy."
+      },
+      {
+        "example": "<ruby>奴隷<rt>どれい</rt></ruby>です。",
+        "eng": "He is a slave."
+      }
+    ]
+  },
+  {
+    "kanji": "如",
+    "yomikata": "ジョ, ニョ",
+    "onyomi": "ジョ, ニョ",
+    "kunyomi": "",
+    "english_meaning": "like, as",
+    "examples": [
+      {
+        "example": "<ruby>如実<rt>にょじつ</rt></ruby>に<ruby>示<rt>しめ</rt></ruby>します。",
+        "eng": "I show vividly."
+      },
+      {
+        "example": "<ruby>突然如<rt>とつぜんじょ</rt></ruby>として。",
+        "eng": "Suddenly."
+      }
+    ]
+  },
+  {
+    "kanji": "妃",
+    "yomikata": "ヒ",
+    "onyomi": "ヒ",
+    "kunyomi": "",
+    "english_meaning": "queen, princess",
+    "examples": [
+      {
+        "example": "<ruby>王妃<rt>おうひ</rt></ruby>です。",
+        "eng": "She is a queen."
+      },
+      {
+        "example": "<ruby>皇太子妃<rt>こうたいしひ</rt></ruby>です。",
+        "eng": "She is the crown princess."
+      }
+    ]
+  },
+  {
+    "kanji": "妄",
+    "yomikata": "モウ, ボウ",
+    "onyomi": "モウ, ボウ",
+    "kunyomi": "",
+    "english_meaning": "reckless, delusion",
+    "examples": [
+      {
+        "example": "<ruby>妄想<rt>もうそう</rt></ruby>です。",
+        "eng": "It's a delusion."
+      },
+      {
+        "example": "<ruby>妄動<rt>もうどう</rt></ruby>します。",
+        "eng": "I act recklessly."
+      }
+    ]
+  },
+  {
+    "kanji": "妊",
+    "yomikata": "ニン",
+    "onyomi": "ニン",
+    "kunyomi": "",
+    "english_meaning": "pregnant",
+    "examples": [
+      {
+        "example": "<ruby>妊娠<rt>にんしん</rt></ruby>しました。",
+        "eng": "I became pregnant."
+      },
+      {
+        "example": "<ruby>妊婦<rt>にんぷ</rt></ruby>さんです。",
+        "eng": "She is a pregnant woman."
+      }
+    ]
+  },
+  {
+    "kanji": "妙",
+    "yomikata": "ミョウ",
+    "onyomi": "ミョウ",
+    "kunyomi": "",
+    "english_meaning": "strange, exquisite",
+    "examples": [
+      {
+        "example": "<ruby>奇妙<rt>きみょう</rt></ruby>です。",
+        "eng": "It's strange."
+      },
+      {
+        "example": "<ruby>妙案<rt>みょうあん</rt></ruby>があります。",
+        "eng": "I have a clever idea."
+      }
+    ]
+  },
+  {
+    "kanji": "妥",
+    "yomikata": "ダ",
+    "onyomi": "ダ",
+    "kunyomi": "",
+    "english_meaning": "compromise",
+    "examples": [
+      {
+        "example": "<ruby>妥協<rt>だきょう</rt></ruby>します。",
+        "eng": "I compromise."
+      },
+      {
+        "example": "<ruby>妥当<rt>だとう</rt></ruby>です。",
+        "eng": "It's appropriate."
+      }
+    ]
+  },
+  {
+    "kanji": "妨",
+    "yomikata": "ボウ, さまた(げる)",
+    "onyomi": "ボウ",
+    "kunyomi": "さまた(げる)",
+    "english_meaning": "disturb, hinder",
+    "examples": [
+      {
+        "example": "<ruby>妨<rt>さまた</rt></ruby>げます。",
+        "eng": "I hinder."
+      },
+      {
+        "example": "<ruby>妨害<rt>ぼうがい</rt></ruby>します。",
+        "eng": "I obstruct."
+      }
+    ]
+  },
+  {
+    "kanji": "姫",
+    "yomikata": "キ, ひめ",
+    "onyomi": "キ",
+    "kunyomi": "ひめ",
+    "english_meaning": "princess",
+    "examples": [
+      {
+        "example": "お<ruby>姫様<rt>ひめさま</rt></ruby>です。",
+        "eng": "She is a princess."
+      },
+      {
+        "example": "<ruby>姫路城<rt>ひめじじょう</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to Himeji Castle."
+      }
+    ]
+  },
+  {
+    "kanji": "姻",
+    "yomikata": "イン",
+    "onyomi": "イン",
+    "kunyomi": "",
+    "english_meaning": "marriage",
+    "examples": [
+      {
+        "example": "<ruby>姻戚関係<rt>いんせきかんけい</rt></ruby>です。",
+        "eng": "It's a marital relationship."
+      },
+      {
+        "example": "<ruby>婚姻届<rt>こんいんとどけ</rt></ruby>を<ruby>出<rt>だ</rt></ruby>します。",
+        "eng": "I submit a marriage registration."
+      }
+    ]
+  },
+  {
+    "kanji": "姿",
+    "yomikata": "シ, すがた",
+    "onyomi": "シ",
+    "kunyomi": "すがた",
+    "english_meaning": "figure, form",
+    "examples": [
+      {
+        "example": "<ruby>美<rt>うつく</rt></ruby>しい<ruby>姿<rt>すがた</rt></ruby>です。",
+        "eng": "It's a beautiful figure."
+      },
+      {
+        "example": "<ruby>姿<rt>すがた</rt></ruby>を<ruby>消<rt>け</rt></ruby>します。",
+        "eng": "I disappear."
+      }
+    ]
+  },
+  {
+    "kanji": "威",
+    "yomikata": "イ",
+    "onyomi": "イ",
+    "kunyomi": "",
+    "english_meaning": "dignity, power",
+    "examples": [
+      {
+        "example": "<ruby>威力<rt>いりょく</rt></ruby>があります。",
+        "eng": "It has power."
+      },
+      {
+        "example": "<ruby>威張<rt>いば</rt></ruby>っています。",
+        "eng": "He is arrogant."
+      }
+    ]
+  },
+  {
+    "kanji": "娠",
+    "yomikata": "シン",
+    "onyomi": "シン",
+    "kunyomi": "",
+    "english_meaning": "pregnant",
+    "examples": [
+      {
+        "example": "<ruby>妊娠中<rt>にんしんちゅう</rt></ruby>です。",
+        "eng": "She is pregnant."
+      },
+      {
+        "example": "<ruby>懐妊<rt>かいにん</rt></ruby>しました。",
+        "eng": "She conceived."
+      }
+    ]
+  },
+  {
+    "kanji": "娯",
+    "yomikata": "ゴ",
+    "onyomi": "ゴ",
+    "kunyomi": "",
+    "english_meaning": "entertainment",
+    "examples": [
+      {
+        "example": "<ruby>娯楽施設<rt>ごらくしせつ</rt></ruby>です。",
+        "eng": "It's an entertainment facility."
+      },
+      {
+        "example": "<ruby>娯楽<rt>ごらく</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。",
+        "eng": "I like entertainment."
+      }
+    ]
+  },
+  {
+    "kanji": "婆",
+    "yomikata": "バ, ばば",
+    "onyomi": "バ",
+    "kunyomi": "ばば",
+    "english_meaning": "old woman",
+    "examples": [
+      {
+        "example": "<ruby>老婆<rt>ろうば</rt></ruby>です。",
+        "eng": "She is an old woman."
+      },
+      {
+        "example": "<ruby>産婆<rt>さんば</rt></ruby>さんです。",
+        "eng": "She is a midwife."
+      }
+    ]
+  },
+  {
+    "kanji": "婿",
+    "yomikata": "セイ, むこ",
+    "onyomi": "セイ",
+    "kunyomi": "むこ",
+    "english_meaning": "bridegroom, son-in-law",
+    "examples": [
+      {
+        "example": "<ruby>娘婿<rt>むすめむこ</rt></ruby>です。",
+        "eng": "He is my son-in-law."
+      },
+      {
+        "example": "<ruby>花婿<rt>はなむこ</rt></ruby>さんです。",
+        "eng": "He is the bridegroom."
+      }
+    ]
+  },
+  {
+    "kanji": "媒",
+    "yomikata": "バイ",
+    "onyomi": "バイ",
+    "kunyomi": "",
+    "english_meaning": "mediator, medium",
+    "examples": [
+      {
+        "example": "<ruby>媒酌人<rt>ばいしゃくにん</rt></ruby>です。",
+        "eng": "He is a matchmaker."
+      },
+      {
+        "example": "<ruby>媒体<rt>ばいたい</rt></ruby>です。",
+        "eng": "It's a medium."
+      }
+    ]
+  },
+  {
+    "kanji": "媛",
+    "yomikata": "エン",
+    "onyomi": "エン",
+    "kunyomi": "ひめ",
+    "english_meaning": "princess, beautiful woman",
+    "examples": [
+      {
+        "example": "<ruby>媛<rt>ひめ</rt></ruby>といいます。",
+        "eng": "My name is Hime."
+      },
+      {
+        "example": "<ruby>愛媛県<rt>えひめけん</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to Ehime prefecture."
+      }
+    ]
+  },
+  {
+    "kanji": "嫁",
+    "yomikata": "カ, よめ",
+    "onyomi": "カ",
+    "kunyomi": "よめ",
+    "english_meaning": "bride, marry into",
+    "examples": [
+      {
+        "example": "お<ruby>嫁<rt>よめ</rt></ruby>さんです。",
+        "eng": "She is a bride."
+      },
+      {
+        "example": "<ruby>嫁<rt>よめ</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "She gets married."
+      }
+    ]
+  },
+  {
+    "kanji": "嫌",
+    "yomikata": "ケン, きら(う)",
+    "onyomi": "ケン, ゲン",
+    "kunyomi": "きら(う)",
+    "english_meaning": "dislike, hate",
+    "examples": [
+      {
+        "example": "<ruby>嫌<rt>きら</rt></ruby>いです。",
+        "eng": "I dislike it."
+      },
+      {
+        "example": "<ruby>嫌<rt>いや</rt></ruby>がります。",
+        "eng": "He hates it."
+      }
+    ]
+  },
+  {
+    "kanji": "嫡",
+    "yomikata": "チャク",
+    "onyomi": "チャク",
+    "kunyomi": "",
+    "english_meaning": "legitimate child",
+    "examples": [
+      {
+        "example": "<ruby>嫡子<rt>ちゃくし</rt></ruby>です。",
+        "eng": "He is the legitimate child."
+      },
+      {
+        "example": "<ruby>嫡流<rt>ちゃくりゅう</rt></ruby>です。",
+        "eng": "It's the main line."
+      }
+    ]
+  },
+  {
+    "kanji": "嬉",
+    "yomikata": "キ, うれ(しい)",
+    "onyomi": "キ",
+    "kunyomi": "うれ(しい)",
+    "english_meaning": "happy, glad",
+    "examples": [
+      {
+        "example": "<ruby>嬉<rt>うれ</rt></ruby>しいです。",
+        "eng": "I'm happy."
+      },
+      {
+        "example": "<ruby>嬉<rt>うれ</rt></ruby>しそうな<ruby>顔<rt>かお</rt></ruby>です。",
+        "eng": "He looks happy."
+      }
+    ]
+  },
+  {
+    "kanji": "嬢",
+    "yomikata": "ジョウ",
+    "onyomi": "ジョウ",
+    "kunyomi": "",
+    "english_meaning": "young lady",
+    "examples": [
+      {
+        "example": "お<ruby>嬢<rt>じょう</rt></ruby>さんです。",
+        "eng": "She is a young lady."
+      },
+      {
+        "example": "<ruby>令嬢<rt>れいじょう</rt></ruby>です。",
+        "eng": "She is a daughter."
+      }
+    ]
+  },
+  {
+    "kanji": "孔",
+    "yomikata": "コウ",
+    "onyomi": "コウ",
+    "kunyomi": "",
+    "english_meaning": "hole, Confucius",
+    "examples": [
+      {
+        "example": "<ruby>孔子<rt>こうし</rt></ruby>です。",
+        "eng": "It's Confucius."
+      },
+      {
+        "example": "<ruby>毛孔<rt>もうこう</rt></ruby>が<ruby>開<rt>あ</rt></ruby>いています。",
+        "eng": "Pores are open."
+      }
+    ]
+  },
+  {
+    "kanji": "孝",
+    "yomikata": "コウ",
+    "onyomi": "コウ",
+    "kunyomi": "",
+    "english_meaning": "filial piety",
+    "examples": [
+      {
+        "example": "<ruby>親孝行<rt>おやこうこう</rt></ruby>です。",
+        "eng": "He is dutiful to parents."
+      },
+      {
+        "example": "<ruby>孝行<rt>こうこう</rt></ruby>したいです。",
+        "eng": "I want to be dutiful."
+      }
+    ]
+  },
+  {
+    "kanji": "孟",
+    "yomikata": "モウ",
+    "onyomi": "モウ",
+    "kunyomi": "",
+    "english_meaning": "Mencius, first",
+    "examples": [
+      {
+        "example": "<ruby>孟子<rt>もうし</rt></ruby>です。",
+        "eng": "It's Mencius."
+      },
+      {
+        "example": "<ruby>孟春<rt>もうしゅん</rt></ruby>です。",
+        "eng": "It's early spring."
+      }
+    ]
+  },
+  {
+    "kanji": "孤",
+    "yomikata": "コ",
+    "onyomi": "コ",
+    "kunyomi": "",
+    "english_meaning": "orphan, alone",
+    "examples": [
+      {
+        "example": "<ruby>孤独<rt>こどく</rt></ruby>です。",
+        "eng": "I am lonely."
+      },
+      {
+        "example": "<ruby>孤児<rt>こじ</rt></ruby>です。",
+        "eng": "He is an orphan."
+      }
+    ]
+  },
+  {
+    "kanji": "宏",
+    "yomikata": "コウ",
+    "onyomi": "コウ",
+    "kunyomi": "",
+    "english_meaning": "wide, large",
+    "examples": [
+      {
+        "example": "<ruby>宏壮<rt>こうそう</rt></ruby>な<ruby>建物<rt>たてもの</rt></ruby>です。",
+        "eng": "It's a magnificent building."
+      },
+      {
+        "example": "<ruby>宏大<rt>こうだい</rt></ruby>です。",
+        "eng": "It's vast."
+      }
+    ]
+  },
+  {
+    "kanji": "宗",
+    "yomikata": "シュウ, ソウ",
+    "onyomi": "シュウ, ソウ",
+    "kunyomi": "",
+    "english_meaning": "religion, sect",
+    "examples": [
+      {
+        "example": "<ruby>宗教<rt>しゅうきょう</rt></ruby>を<ruby>信<rt>しん</rt></ruby>じます。",
+        "eng": "I believe in religion."
+      },
+      {
+        "example": "<ruby>宗派<rt>しゅうは</rt></ruby>が<ruby>違<rt>ちが</rt></ruby>います。",
+        "eng": "The sect is different."
+      }
+    ]
+  },
+  {
+    "kanji": "宜",
+    "yomikata": "ギ",
+    "onyomi": "ギ",
+    "kunyomi": "",
+    "english_meaning": "best, suitable",
+    "examples": [
+      {
+        "example": "<ruby>宜<rt>よろ</rt></ruby>しくお<ruby>願<rt>ねが</rt></ruby>いします。",
+        "eng": "Please treat me well."
+      },
+      {
+        "example": "<ruby>適宜<rt>てきぎ</rt></ruby><ruby>行<rt>おこな</rt></ruby>います。",
+        "eng": "I do as appropriate."
+      }
+    ]
+  },
+  {
+    "kanji": "宣",
+    "yomikata": "セン",
+    "onyomi": "セン",
+    "kunyomi": "",
+    "english_meaning": "proclaim, declare",
+    "examples": [
+      {
+        "example": "<ruby>宣言<rt>せんげん</rt></ruby>します。",
+        "eng": "I declare."
+      },
+      {
+        "example": "<ruby>宣伝<rt>せんでん</rt></ruby>します。",
+        "eng": "I advertise."
+      }
+    ]
+  },
+  {
+    "kanji": "宥",
+    "yomikata": "ユウ",
+    "onyomi": "ユウ",
+    "kunyomi": "なぐさ(める)",
+    "english_meaning": "soothe, calm",
+    "examples": [
+      {
+        "example": "<ruby>宥<rt>なぐさ</rt></ruby>めます。",
+        "eng": "I soothe."
+      },
+      {
+        "example": "<ruby>宥和政策<rt>ゆうわせいさく</rt></ruby>です。",
+        "eng": "It's an appeasement policy."
+      }
+    ]
+  },
+  {
+    "kanji": "宮",
+    "yomikata": "キュウ, グウ, みや",
+    "onyomi": "キュウ, グウ",
+    "kunyomi": "みや",
+    "english_meaning": "shrine, palace",
+    "examples": [
+      {
+        "example": "<ruby>神社<rt>じんじゃ</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to the shrine."
+      },
+      {
+        "example": "<ruby>宮殿<rt>きゅうでん</rt></ruby>です。",
+        "eng": "It's a palace."
+      }
+    ]
+  },
+  {
+    "kanji": "宰",
+    "yomikata": "サイ",
+    "onyomi": "サイ",
+    "kunyomi": "",
+    "english_meaning": "manager, rule",
+    "examples": [
+      {
+        "example": "<ruby>主宰<rt>しゅさい</rt></ruby>します。",
+        "eng": "I preside over."
+      },
+      {
+        "example": "<ruby>宰相<rt>さいしょう</rt></ruby>です。",
+        "eng": "He is a prime minister."
+      }
+    ]
+  },
+  {
+    "kanji": "宴",
+    "yomikata": "エン",
+    "onyomi": "エン",
+    "kunyomi": "",
+    "english_meaning": "banquet",
+    "examples": [
+      {
+        "example": "<ruby>宴会<rt>えんかい</rt></ruby>を<ruby>開<rt>ひら</rt></ruby>きます。",
+        "eng": "I hold a banquet."
+      },
+      {
+        "example": "<ruby>宴席<rt>えんせき</rt></ruby>です。",
+        "eng": "It's a banquet seat."
+      }
+    ]
+  },
+  {
+    "kanji": "宵",
+    "yomikata": "ショウ, よい",
+    "onyomi": "ショウ",
+    "kunyomi": "よい",
+    "english_meaning": "early evening",
+    "examples": [
+      {
+        "example": "<ruby>宵<rt>よい</rt></ruby>の<ruby>口<rt>くち</rt></ruby>です。",
+        "eng": "It's early evening."
+      },
+      {
+        "example": "<ruby>宵<rt>よい</rt></ruby>っ<ruby>張<rt>ぱ</rt></ruby>りです。",
+        "eng": "I am a night owl."
+      }
+    ]
+  },
+  {
+    "kanji": "寂",
+    "yomikata": "ジャク, さび(しい)",
+    "onyomi": "ジャク",
+    "kunyomi": "さび(しい)",
+    "english_meaning": "lonely",
+    "examples": [
+      {
+        "example": "<ruby>寂<rt>さび</rt></ruby>しいです。",
+        "eng": "I'm lonely."
+      },
+      {
+        "example": "<ruby>静寂<rt>せいじゃく</rt></ruby>です。",
+        "eng": "It's silent."
+      }
+    ]
+  },
+  {
+    "kanji": "寅",
+    "yomikata": "イン, とら",
+    "onyomi": "イン",
+    "kunyomi": "とら",
+    "english_meaning": "tiger (zodiac)",
+    "examples": [
+      {
+        "example": "<ruby>寅年<rt>とらどし</rt></ruby>です。",
+        "eng": "It's the year of the tiger."
+      },
+      {
+        "example": "<ruby>寅<rt>とら</rt></ruby>の<ruby>刻<rt>こく</rt></ruby>です。",
+        "eng": "It's the hour of the tiger."
+      }
+    ]
+  },
+  {
+    "kanji": "密",
+    "yomikata": "ミツ",
+    "onyomi": "ミツ",
+    "kunyomi": "",
+    "english_meaning": "dense, secret",
+    "examples": [
+      {
+        "example": "<ruby>秘密<rt>ひみつ</rt></ruby>です。",
+        "eng": "It's a secret."
+      },
+      {
+        "example": "<ruby>密集<rt>みっしゅう</rt></ruby>しています。",
+        "eng": "It's densely crowded."
+      }
+    ]
+  },
+  {
+    "kanji": "寛",
+    "yomikata": "カン",
+    "onyomi": "カン",
+    "kunyomi": "",
+    "english_meaning": "broad, tolerant",
+    "examples": [
+      {
+        "example": "<ruby>寛大<rt>かんだい</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>です。",
+        "eng": "He is a generous person."
+      },
+      {
+        "example": "<ruby>寛容<rt>かんよう</rt></ruby>です。",
+        "eng": "He is tolerant."
+      }
+    ]
+  },
+  {
+    "kanji": "寡",
+    "yomikata": "カ",
+    "onyomi": "カ",
+    "kunyomi": "",
+    "english_meaning": "widow, few",
+    "examples": [
+      {
+        "example": "<ruby>寡婦<rt>かふ</rt></ruby>です。",
+        "eng": "She is a widow."
+      },
+      {
+        "example": "<ruby>寡黙<rt>かもく</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>です。",
+        "eng": "He is a taciturn person."
+      }
+    ]
+  },
+  {
+    "kanji": "寧",
+    "yomikata": "ネイ",
+    "onyomi": "ネイ",
+    "kunyomi": "",
+    "english_meaning": "rather, peaceful",
+    "examples": [
+      {
+        "example": "<ruby>寧<rt>むし</rt></ruby>ろそうします。",
+        "eng": "I'd rather do that."
+      },
+      {
+        "example": "<ruby>安寧秩序<rt>あんねいちつじょ</rt></ruby>です。",
+        "eng": "Peace and order."
+      }
+    ]
+  },
+  {
+    "kanji": "審",
+    "yomikata": "シン",
+    "onyomi": "シン",
+    "kunyomi": "",
+    "english_meaning": "judge, examine",
+    "examples": [
+      {
+        "example": "<ruby>審判<rt>しんぱん</rt></ruby>します。",
+        "eng": "I judge."
+      },
+      {
+        "example": "<ruby>審査<rt>しんさ</rt></ruby>があります。",
+        "eng": "There is an examination."
+      }
+    ]
+  },
+  {
+    "kanji": "寮",
+    "yomikata": "リョウ",
+    "onyomi": "リョウ",
+    "kunyomi": "",
+    "english_meaning": "dormitory",
+    "examples": [
+      {
+        "example": "<ruby>寮<rt>りょう</rt></ruby>に<ruby>住<rt>す</rt></ruby>んでいます。",
+        "eng": "I live in a dormitory."
+      },
+      {
+        "example": "<ruby>学生寮<rt>がくせいりょう</rt></ruby>です。",
+        "eng": "It's a student dormitory."
+      }
+    ]
+  },
+  {
+    "kanji": "寸",
+    "yomikata": "スン",
+    "onyomi": "スン",
+    "kunyomi": "",
+    "english_meaning": "measure, sun (unit)",
+    "examples": [
+      {
+        "example": "<ruby>寸法<rt>すんぽう</rt></ruby>を<ruby>測<rt>はか</rt></ruby>ります。",
+        "eng": "I take measurements."
+      },
+      {
+        "example": "<ruby>寸劇<rt>すんげき</rt></ruby>をします。",
+        "eng": "We do a skit."
+      }
+    ]
+  },
+  {
+    "kanji": "寿",
+    "yomikata": "ジュ, ことぶき",
+    "onyomi": "ジュ",
+    "kunyomi": "ことぶき",
+    "english_meaning": "longevity",
+    "examples": [
+      {
+        "example": "お<ruby>寿司<rt>すし</rt></ruby>を<ruby>食<rt>た</rt></ruby>べます。",
+        "eng": "I eat sushi."
+      },
+      {
+        "example": "<ruby>寿命<rt>じゅみょう</rt></ruby>が<ruby>長<rt>なが</rt></ruby>いです。",
+        "eng": "Lifespan is long."
+      }
+    ]
+  },
+  {
+    "kanji": "射",
+    "yomikata": "シャ, い(る)",
+    "onyomi": "シャ",
+    "kunyomi": "い(る)",
+    "english_meaning": "shoot",
+    "examples": [
+      {
+        "example": "<ruby>射的<rt>しゃてき</rt></ruby>をします。",
+        "eng": "I do shooting."
+      },
+      {
+        "example": "<ruby>放射線<rt>ほうしゃせん</rt></ruby>です。",
+        "eng": "It's radiation."
+      }
+    ]
+  },
+  {
+    "kanji": "尉",
+    "yomikata": "イ",
+    "onyomi": "イ",
+    "kunyomi": "",
+    "english_meaning": "military officer",
+    "examples": [
+      {
+        "example": "<ruby>少尉<rt>しょうい</rt></ruby>です。",
+        "eng": "He is a second lieutenant."
+      },
+      {
+        "example": "<ruby>大尉<rt>たいい</rt></ruby>です。",
+        "eng": "He is a captain."
+      }
+    ]
+  },
+  {
+    "kanji": "尋",
+    "yomikata": "ジン, たず(ねる)",
+    "onyomi": "ジン",
+    "kunyomi": "たず(ねる)",
+    "english_meaning": "inquire, fathom",
+    "examples": [
+      {
+        "example": "<ruby>尋<rt>たず</rt></ruby>ねます。",
+        "eng": "I ask."
+      },
+      {
+        "example": "<ruby>尋常<rt>じんじょう</rt></ruby>ではありません。",
+        "eng": "It's not ordinary."
+      }
+    ]
+  },
+  {
+    "kanji": "尚",
+    "yomikata": "ショウ",
+    "onyomi": "ショウ",
+    "kunyomi": "",
+    "english_meaning": "furthermore, esteem",
+    "examples": [
+      {
+        "example": "<ruby>尚<rt>なお</rt></ruby>、よろしくお<ruby>願<rt>ねが</rt></ruby>いします。",
+        "eng": "Furthermore, please treat me well."
+      },
+      {
+        "example": "<ruby>尚更<rt>なおさら</rt></ruby>です。",
+        "eng": "Even more so."
+      }
+    ]
+  },
+  {
+    "kanji": "尭",
+    "yomikata": "ギョウ",
+    "onyomi": "ギョウ",
+    "kunyomi": "",
+    "english_meaning": "high, far, Yao (emperor)",
+    "examples": [
+      {
+        "example": "<ruby>尭帝<rt>ぎょうてい</rt></ruby>です。",
+        "eng": "It's Emperor Yao."
+      },
+      {
+        "example": "<ruby>尭<rt>たかし</rt></ruby>といいます。",
+        "eng": "My name is Takashi."
+      }
+    ]
+  },
+  {
+    "kanji": "就",
+    "yomikata": "シュウ, ジュ, つ(く)",
+    "onyomi": "シュウ, ジュ",
+    "kunyomi": "つ(く)",
+    "english_meaning": "take office, concerning",
+    "examples": [
+      {
+        "example": "<ruby>就職<rt>しゅうしょく</rt></ruby>します。",
+        "eng": "I get a job."
+      },
+      {
+        "example": "<ruby>成就<rt>じょうじゅ</rt></ruby>します。",
+        "eng": "It is accomplished."
+      }
+    ]
+  },
+  {
+    "kanji": "尺",
+    "yomikata": "シャク",
+    "onyomi": "シャク",
+    "kunyomi": "",
+    "english_meaning": "shaku (unit of length)",
+    "examples": [
+      {
+        "example": "<ruby>尺寸<rt>しゃくすん</rt></ruby>を<ruby>測<rt>はか</rt></ruby>ります。",
+        "eng": "I measure length."
+      },
+      {
+        "example": "<ruby>物差<rt>ものさ</rt></ruby>しで<ruby>測<rt>はか</rt></ruby>ります。",
+        "eng": "I measure with a ruler."
+      }
+    ]
+  },
+  {
+    "kanji": "尼",
+    "yomikata": "ニ, あま",
+    "onyomi": "ニ",
+    "kunyomi": "あま",
+    "english_meaning": "nun",
+    "examples": [
+      {
+        "example": "<ruby>尼<rt>あま</rt></ruby>さんです。",
+        "eng": "She is a nun."
+      },
+      {
+        "example": "<ruby>比丘尼<rt>びくに</rt></ruby>です。",
+        "eng": "She is a Buddhist nun."
+      }
+    ]
+  },
+  {
+    "kanji": "尽",
+    "yomikata": "ジン, つ(くす)",
+    "onyomi": "ジン",
+    "kunyomi": "つ(くす)",
+    "english_meaning": "exhaust, use up",
+    "examples": [
+      {
+        "example": "<ruby>全力<rt>ぜんりょく</rt></ruby>を<ruby>尽<rt>つ</rt></ruby>くします。",
+        "eng": "I do my best."
+      },
+      {
+        "example": "<ruby>尽<rt>つ</rt></ruby>きません。",
+        "eng": "It never ends."
+      }
+    ]
+  },
+  {
+    "kanji": "尾",
+    "yomikata": "ビ, お",
+    "onyomi": "ビ",
+    "kunyomi": "お",
+    "english_meaning": "tail",
+    "examples": [
+      {
+        "example": "<ruby>尾<rt>お</rt></ruby>が<ruby>長<rt>なが</rt></ruby>いです。",
+        "eng": "The tail is long."
+      },
+      {
+        "example": "<ruby>末尾<rt>まつび</rt></ruby>に<ruby>書<rt>か</rt></ruby>きます。",
+        "eng": "I write at the end."
+      }
+    ]
+  },
+  {
+    "kanji": "尿",
+    "yomikata": "ニョウ",
+    "onyomi": "ニョウ",
+    "kunyomi": "",
+    "english_meaning": "urine",
+    "examples": [
+      {
+        "example": "<ruby>尿検査<rt>にょうけんさ</rt></ruby>をします。",
+        "eng": "I have a urine test."
+      },
+      {
+        "example": "<ruby>糖尿病<rt>とうにょうびょう</rt></ruby>です。",
+        "eng": "I have diabetes."
+      }
+    ]
+  },
+  {
+    "kanji": "屈",
+    "yomikata": "クツ",
+    "onyomi": "クツ",
+    "kunyomi": "",
+    "english_meaning": "bend, yield",
+    "examples": [
+      {
+        "example": "<ruby>屈伸<rt>くっしん</rt></ruby>します。",
+        "eng": "I bend and stretch."
+      },
+      {
+        "example": "<ruby>不満<rt>ふまん</rt></ruby>を<ruby>感<rt>かん</rt></ruby>じます。",
+        "eng": "I feel dissatisfaction."
+      }
+    ]
+  },
+  {
+    "kanji": "属",
+    "yomikata": "ゾク",
+    "onyomi": "ゾク",
+    "kunyomi": "",
+    "english_meaning": "belong, genus",
+    "examples": [
+      {
+        "example": "この<ruby>部<rt>ぶ</rt></ruby>に<ruby>属<rt>ぞく</rt></ruby>しています。",
+        "eng": "I belong to this department."
+      },
+      {
+        "example": "<ruby>金属<rt>きんぞく</rt></ruby>です。",
+        "eng": "It's metal."
+      }
+    ]
+  },
+  {
+    "kanji": "履",
+    "yomikata": "リ, は(く)",
+    "onyomi": "リ",
+    "kunyomi": "は(く)",
+    "english_meaning": "wear, footwear",
+    "examples": [
+      {
+        "example": "<ruby>靴<rt>くつ</rt></ruby>を<ruby>履<rt>は</rt></ruby>きます。",
+        "eng": "I put on shoes."
+      },
+      {
+        "example": "<ruby>履歴書<rt>りれきしょ</rt></ruby>を<ruby>書<rt>か</rt></ruby>きます。",
+        "eng": "I write a resume."
+      }
+    ]
+  },
+  {
+    "kanji": "屯",
+    "yomikata": "トン",
+    "onyomi": "トン",
+    "kunyomi": "",
+    "english_meaning": "garrison, station",
+    "examples": [
+      {
+        "example": "<ruby>駐屯地<rt>ちゅうとんち</rt></ruby>です。",
+        "eng": "It's a garrison."
+      },
+      {
+        "example": "<ruby>屯田兵<rt>とんでんへい</rt></ruby>です。",
+        "eng": "He is a settler soldier."
+      }
+    ]
+  },
+  {
+    "kanji": "岐",
+    "yomikata": "キ",
+    "onyomi": "キ",
+    "kunyomi": "",
+    "english_meaning": "branch off, fork",
+    "examples": [
+      {
+        "example": "<ruby>岐路<rt>きろ</rt></ruby>に<ruby>立<rt>た</rt></ruby>っています。",
+        "eng": "I'm at a crossroads."
+      },
+      {
+        "example": "<ruby>岐阜県<rt>ぎふけん</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to Gifu prefecture."
+      }
+    ]
+  },
+  {
+    "kanji": "岬",
+    "yomikata": "コウ, みさき",
+    "onyomi": "コウ",
+    "kunyomi": "みさき",
+    "english_meaning": "cape, promontory",
+    "examples": [
+      {
+        "example": "<ruby>岬<rt>みさき</rt></ruby>に<ruby>灯台<rt>とうだい</rt></ruby>があります。",
+        "eng": "There is a lighthouse on the cape."
+      },
+      {
+        "example": "<ruby>室戸岬<rt>むろとみさき</rt></ruby>です。",
+        "eng": "It's Cape Muroto."
+      }
+    ]
+  },
+  {
+    "kanji": "岳",
+    "yomikata": "ガク, たけ",
+    "onyomi": "ガク",
+    "kunyomi": "たけ",
+    "english_meaning": "peak, mountain",
+    "examples": [
+      {
+        "example": "<ruby>富士山<rt>ふじさん</rt></ruby>は<ruby>日本<rt>にほん</rt></ruby>の<ruby>最高峰<rt>さいこうほう</rt></ruby>です。",
+        "eng": "Mt. Fuji is the highest peak in Japan."
+      },
+      {
+        "example": "<ruby>岳父<rt>がくふ</rt></ruby>です。",
+        "eng": "He is my father-in-law."
+      }
+    ]
+  },
+  {
+    "kanji": "峠",
+    "yomikata": "とうげ",
+    "onyomi": "",
+    "kunyomi": "とうげ",
+    "english_meaning": "mountain pass",
+    "examples": [
+      {
+        "example": "<ruby>峠<rt>とうげ</rt></ruby>を<ruby>越<rt>こ</rt></ruby>えます。",
+        "eng": "I cross the mountain pass."
+      },
+      {
+        "example": "<ruby>峠道<rt>とうげみち</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>きます。",
+        "eng": "I walk on the mountain pass road."
+       }
+    ]
+  },
+  {
+    "kanji": "又",
+    "yomikata": "ユウ, また",
+    "onyomi": "ユウ",
+    "kunyomi": "また",
+    "english_meaning": "again, also",
+    "examples": [
+      {
+        "example": "<ruby>又<rt>また</rt></ruby><ruby>明日<rt>あした</rt></ruby><ruby>会<rt>あ</rt></ruby>いましょう。",
+        "eng": "Let's meet again tomorrow."
+      },
+      {
+        "example": "<ruby>又<rt>また</rt></ruby>の<ruby>機会<rt>きかい</rt></ruby>に。",
+        "eng": "Another time."
+      }
+    ]
+  },
+  {
+    "kanji": "及",
+    "yomikata": "キュウ, およ(ぶ)",
+    "onyomi": "キュウ",
+    "kunyomi": "およ(ぶ)",
+    "english_meaning": "reach, extend",
+    "examples": [
+      {
+        "example": "<ruby>及<rt>およ</rt></ruby>びます。",
+        "eng": "It reaches."
+      },
+      {
+        "example": "<ruby>追<rt>お</rt></ruby>いつくことができません。",
+        "eng": "I cannot catch up."
+      }
+    ]
+  },
+  {
+    "kanji": "叔",
+    "yomikata": "シュク",
+    "onyomi": "シュク",
+    "kunyomi": "",
+    "english_meaning": "uncle, aunt",
+    "examples": [
+      {
+        "example": "<ruby>叔父<rt>おじ</rt></ruby>さんが<ruby>来<rt>き</rt></ruby>ました。",
+        "eng": "My uncle came."
+      },
+      {
+        "example": "<ruby>叔母<rt>おば</rt></ruby>さんです。",
+        "eng": "She is my aunt."
+      }
+    ]
+  },
+  {
+    "kanji": "叙",
+    "yomikata": "ジョ",
+    "onyomi": "ジョ",
+    "kunyomi": "",
+    "english_meaning": "narrate, confer",
+    "examples": [
+      {
+        "example": "<ruby>叙述<rt>じょじゅつ</rt></ruby>します。",
+        "eng": "I narrate."
+      },
+      {
+        "example": "<ruby>叙勲<rt>じょくん</rt></ruby>されました。",
+        "eng": "He was decorated."
+      }
+    ]
+  },
+  {
+    "kanji": "叡",
+    "yomikata": "エイ",
+    "onyomi": "エイ",
+    "kunyomi": "",
+    "english_meaning": "wisdom, imperial",
+    "examples": [
+      {
+        "example": "<ruby>叡智<rt>えいち</rt></ruby>があります。",
+        "eng": "He has wisdom."
+      },
+      {
+        "example": "<ruby>叡山<rt>えいざん</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to Mount Hiei."
+      }
+    ]
+  },
+  {
+    "kanji": "句",
+    "yomikata": "ク",
+    "onyomi": "ク",
+    "kunyomi": "",
+    "english_meaning": "phrase",
+    "examples": [
+      {
+        "example": "<ruby>一句<rt>いっく</rt></ruby>を<ruby>覚<rt>おぼ</rt></ruby>えます。",
+        "eng": "I memorize a phrase."
+      },
+      {
+        "example": "<ruby>俳句<rt>はいく</rt></ruby>を<ruby>作<rt>つく</rt></ruby>ります。",
+        "eng": "I write haiku."
+      }
+    ]
+  },
+  {
+    "kanji": "只",
+    "yomikata": "シ, ただ",
+    "onyomi": "シ",
+    "kunyomi": "ただ",
+    "english_meaning": "only, free",
+    "examples": [
+      {
+        "example": "<ruby>只今<rt>ただいま</rt></ruby><ruby>帰<rt>かえ</rt></ruby>りました。",
+        "eng": "I just got home."
+      },
+      {
+        "example": "<ruby>只<rt>ただ</rt></ruby>でさしあげます。",
+        "eng": "I give it for free."
+      }
+    ]
+  },
+  {
+    "kanji": "叶",
+    "yomikata": "キョウ, かな(う)",
+    "onyomi": "キョウ",
+    "kunyomi": "かな(う)",
+    "english_meaning": "come true",
+    "examples": [
+      {
+        "example": "<ruby>夢<rt>ゆめ</rt></ruby>が<ruby>叶<rt>かな</rt></ruby>いました。",
+        "eng": "My dream came true."
+      },
+      {
+        "example": "<ruby>願<rt>ねが</rt></ruby>いを<ruby>叶<rt>かな</rt></ruby>えます。",
+        "eng": "I fulfill a wish."
+      }
+    ]
+  },
+  {
+    "kanji": "吉",
+    "yomikata": "キチ, キツ",
+    "onyomi": "キチ, キツ",
+    "kunyomi": "",
+    "english_meaning": "good luck",
+    "examples": [
+      {
+        "example": "<ruby>吉日<rt>きちじつ</rt></ruby>です。",
+        "eng": "It's a lucky day."
+      },
+      {
+        "example": "<ruby>不吉<rt>ふきつ</rt></ruby>です。",
+        "eng": "It's ominous."
+      }
+    ]
+  },
+  {
+    "kanji": "后",
+    "yomikata": "コウ, ゴ, きさき",
+    "onyomi": "コウ, ゴ",
+    "kunyomi": "きさき",
+    "english_meaning": "empress",
+    "examples": [
+      {
+        "example": "<ruby>皇后陛下<rt>こうごうへいか</rt></ruby>です。",
+        "eng": "Her Majesty the Empress."
+      },
+      {
+        "example": "<ruby>后妃<rt>こうひ</rt></ruby>です。",
+        "eng": "She is an empress."
+      }
+    ]
+  },
+  {
+    "kanji": "吏",
+    "yomikata": "リ",
+    "onyomi": "リ",
+    "kunyomi": "",
+    "english_meaning": "official",
+    "examples": [
+      {
+        "example": "<ruby>官吏<rt>かんり</rt></ruby>です。",
+        "eng": "He is a government official."
+      },
+      {
+        "example": "<ruby>吏員<rt>りいん</rt></ruby>がいます。",
+        "eng": "There is an official."
+      }
+    ]
+  },
+  {
+    "kanji": "吐",
+    "yomikata": "ト, は(く)",
+    "onyomi": "ト",
+    "kunyomi": "は(く)",
+    "english_meaning": "vomit, spew",
+    "examples": [
+      {
+        "example": "<ruby>吐<rt>は</rt></ruby>き<ruby>気<rt>け</rt></ruby>がします。",
+        "eng": "I feel nauseous."
+      },
+      {
+        "example": "<ruby>血<rt>ち</rt></ruby>を<ruby>吐<rt>は</rt></ruby>きました。",
+        "eng": "I vomited blood."
+      }
+    ]
+  },
+  {
+    "kanji": "吟",
+    "yomikata": "ギン",
+    "onyomi": "ギン",
+    "kunyomi": "",
+    "english_meaning": "recite, compose",
+    "examples": [
+      {
+        "example": "<ruby>吟味<rt>ぎんみ</rt></ruby>します。",
+        "eng": "I examine carefully."
+      },
+      {
+        "example": "<ruby>詩<rt>し</rt></ruby>を<ruby>吟<rt>ぎん</rt></ruby>じます。",
+        "eng": "I recite a poem."
+      }
+    ]
+  },
+  {
+    "kanji": "吾",
+    "yomikata": "ゴ, われ",
+    "onyomi": "ゴ",
+    "kunyomi": "われ",
+    "english_meaning": "I, my",
+    "examples": [
+      {
+        "example": "<ruby>吾輩<rt>わがはい</rt></ruby>は<ruby>猫<rt>ねこ</rt></ruby>です。",
+        "eng": "I am a cat."
+      },
+      {
+        "example": "<ruby>吾妻<rt>あづま</rt></ruby>です。",
+        "eng": "It's Azuma."
+      }
+    ]
+  },
+  {
+    "kanji": "呂",
+    "yomikata": "ロ",
+    "onyomi": "ロ",
+    "kunyomi": "",
+    "english_meaning": "spine, tone",
+    "examples": [
+      {
+        "example": "<ruby>呂律<rt>ろれつ</rt></ruby>が<ruby>回<rt>まわ</rt></ruby>りません。",
+        "eng": "My speech is slurred."
+      },
+      {
+        "example": "<ruby>風呂<rt>ふろ</rt></ruby>に<ruby>入<rt>はい</rt></ruby>ります。",
+        "eng": "I take a bath."
+      }
+    ]
+  },
+  {
+    "kanji": "呈",
+    "yomikata": "テイ",
+    "onyomi": "テイ",
+    "kunyomi": "",
+    "english_meaning": "offer, present",
+    "examples": [
+      {
+        "example": "<ruby>呈上<rt>ていじょう</rt></ruby>します。",
+        "eng": "I present."
+      },
+      {
+        "example": "<ruby>花<rt>はな</rt></ruby>を<ruby>呈<rt>てい</rt></ruby>します。",
+        "eng": "I offer flowers."
+      }
+    ]
+  },
+  {
+    "kanji": "呉",
+    "yomikata": "ゴ, く(れる)",
+    "onyomi": "ゴ",
+    "kunyomi": "く(れる)",
+    "english_meaning": "give, do for",
+    "examples": [
+      {
+        "example": "<ruby>教<rt>おし</rt></ruby>えてくれますか。",
+        "eng": "Will you teach me?"
+      },
+      {
+        "example": "<ruby>呉市<rt>くれし</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to Kure city."
+      }
+    ]
+  },
+  {
+    "kanji": "哀",
+    "yomikata": "アイ, あわ(れむ)",
+    "onyomi": "アイ",
+    "kunyomi": "あわ(れむ)",
+    "english_meaning": "sad, pathetic",
+    "examples": [
+      {
+        "example": "<ruby>哀<rt>あわ</rt></ruby>れな<ruby>話<rt>はなし</rt></ruby>です。",
+        "eng": "It's a sad story."
+      },
+      {
+        "example": "<ruby>哀愁<rt>あいしゅう</rt></ruby>があります。",
+        "eng": "There is pathos."
+      }
+    ]
+  },
+  {
+    "kanji": "哉",
+    "yomikata": "サイ, かな",
+    "onyomi": "サイ",
+    "kunyomi": "かな",
+    "english_meaning": "exclamation, question",
+    "examples": [
+      {
+        "example": "<ruby>快哉<rt>かいさい</rt></ruby>を<ruby>叫<rt>さけ</rt></ruby>びます。",
+        "eng": "I shout for joy."
+      },
+      {
+        "example": "かな、<ruby>美<rt>うつく</rt></ruby>しい<ruby>花<rt>はな</rt></ruby>よ。",
+        "eng": "Ah, beautiful flower."
+      }
+    ]
+  },
+  {
+    "kanji": "哲",
+    "yomikata": "テツ",
+    "onyomi": "テツ",
+    "kunyomi": "",
+    "english_meaning": "wise, philosophy",
+    "examples": [
+      {
+        "example": "<ruby>哲学<rt>てつがく</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>します。",
+        "eng": "I study philosophy."
+      },
+      {
+        "example": "<ruby>賢哲<rt>けんてつ</rt></ruby>です。",
+        "eng": "He is a wise person."
+      }
+    ]
+  },
+  {
+    "kanji": "唄",
+    "yomikata": "バイ, うた",
+    "onyomi": "バイ",
+    "kunyomi": "うた",
+    "english_meaning": "song, ballad",
+    "examples": [
+      {
+        "example": "<ruby>民謡<rt>みんよう</rt></ruby>を<ruby>唄<rt>うた</rt></ruby>います。",
+        "eng": "I sing a folk song."
+      },
+      {
+        "example": "<ruby>唄<rt>うた</rt></ruby>が<ruby>上手<rt>じょうず</rt></ruby>です。",
+        "eng": "He is good at singing."
+      }
+    ]
+  },
+  {
+    "kanji": "唆",
+    "yomikata": "サ, そそのか(す)",
+    "onyomi": "サ",
+    "kunyomi": "そそのか(す)",
+    "english_meaning": "instigate, tempt",
+    "examples": [
+      {
+        "example": "<ruby>唆<rt>そそのか</rt></ruby>されました。",
+        "eng": "I was instigated."
+      },
+      {
+        "example": "<ruby>教唆<rt>きょうさ</rt></ruby>します。",
+        "eng": "I instigate."
+      }
+    ]
+  },
+  {
+    "kanji": "唇",
+    "yomikata": "シン, くちびる",
+    "onyomi": "シン",
+    "kunyomi": "くちびる",
+    "english_meaning": "lips",
+    "examples": [
+      {
+        "example": "<ruby>唇<rt>くちびる</rt></ruby>が<ruby>乾<rt>かわ</rt></ruby>いています。",
+        "eng": "My lips are dry."
+      },
+      {
+        "example": "<ruby>唇<rt>くちびる</rt></ruby>を<ruby>噛<rt>か</rt></ruby>みます。",
+        "eng": "I bite my lip."
+      }
+    ]
+  },
+  {
+    "kanji": "唐",
+    "yomikata": "トウ",
+    "onyomi": "トウ",
+    "kunyomi": "",
+    "english_meaning": "Tang dynasty, foreign",
+    "examples": [
+      {
+        "example": "<ruby>唐辛子<rt>とうがらし</rt></ruby>を<ruby>入<rt>い</rt></ruby>れます。",
+        "eng": "I put red pepper."
+      },
+      {
+        "example": "<ruby>唐突<rt>とうとつ</rt></ruby>です。",
+        "eng": "It's abrupt."
+      }
+    ]
+  },
+  {
+    "kanji": "唯",
+    "yomikata": "ユイ, イ, ただ",
+    "onyomi": "ユイ, イ",
+    "kunyomi": "ただ",
+    "english_meaning": "only, merely",
+    "examples": [
+      {
+        "example": "<ruby>唯一<rt>ゆいいつ</rt></ruby>の<ruby>方法<rt>ほうほう</rt></ruby>です。",
+        "eng": "It's the only way."
+      },
+      {
+        "example": "<ruby>唯我独尊<rt>ゆいがどくそん</rt></ruby>です。",
+        "eng": "He is egotistical."
+      }
+    ]
+  },
+  {
+    "kanji": "唱",
+    "yomikata": "ショウ, とな(える)",
+    "onyomi": "ショウ",
+    "kunyomi": "とな(える)",
+    "english_meaning": "chant, recite",
+    "examples": [
+      {
+        "example": "<ruby>歌<rt>うた</rt></ruby>を<ruby>唱<rt>とな</rt></ruby>えます。",
+        "eng": "I sing a song."
+      },
+      {
+        "example": "<ruby>合唱<rt>がっしょう</rt></ruby>します。",
+        "eng": "We sing in chorus."
+      }
+    ]
+  },
+  {
+    "kanji": "啄",
+    "yomikata": "タク, ついば(む)",
+    "onyomi": "タク",
+    "kunyomi": "ついば(む)",
+    "english_meaning": "peck",
+    "examples": [
+      {
+        "example": "<ruby>鳥<rt>とり</rt></ruby>が<ruby>餌<rt>えさ</rt></ruby>を<ruby>啄<rt>ついば</rt></ruby>みます。",
+        "eng": "The bird pecks at food."
+      },
+      {
+        "example": "<ruby>啄木鳥<rt>きつつき</rt></ruby>です。",
+        "eng": "It's a woodpecker."
+      }
+    ]
+  },
+  {
+    "kanji": "啓",
+    "yomikata": "ケイ",
+    "onyomi": "ケイ",
+    "kunyomi": "",
+    "english_meaning": "enlighten, open",
+    "examples": [
+      {
+        "example": "<ruby>啓発<rt>けいはつ</rt></ruby>されます。",
+        "eng": "I am enlightened."
+      },
+      {
+        "example": "<ruby>啓示<rt>けいじ</rt></ruby>を<ruby>受<rt>う</rt></ruby>けます。",
+        "eng": "I receive a revelation."
+      }
+    ]
+  },
+  {
+    "kanji": "喚",
+    "yomikata": "カン, わめ(く)",
+    "onyomi": "カン",
+    "kunyomi": "わめ(く)",
+    "english_meaning": "scream, call out",
+    "examples": [
+      {
+        "example": "<ruby>喚<rt>わめ</rt></ruby>きます。",
+        "eng": "I scream."
+      },
+      {
+        "example": "<ruby>喚声<rt>かんせい</rt></ruby>をあげます。",
+        "eng": "I raise a shout."
+      }
+    ]
+  },
+  {
+    "kanji": "喝",
+    "yomikata": "カツ",
+    "onyomi": "カツ",
+    "kunyomi": "",
+    "english_meaning": "shout, scold",
+    "examples": [
+      {
+        "example": "<ruby>喝<rt>かつ</rt></ruby>を<ruby>入<rt>い</rt></ruby>れます。",
+        "eng": "I give a stern warning."
+      },
+      {
+        "example": "<ruby>喝采<rt>かっさい</rt></ruby>します。",
+        "eng": "I applaud."
+      }
+    ]
+  },
+  {
+    "kanji": "喪",
+    "yomikata": "ソウ, も",
+    "onyomi": "ソウ",
+    "kunyomi": "も",
+    "english_meaning": "mourning",
+    "examples": [
+      {
+        "example": "<ruby>喪<rt>も</rt></ruby>に<ruby>服<rt>ふく</rt></ruby>します。",
+        "eng": "I go into mourning."
+      },
+      {
+        "example": "<ruby>喪失<rt>そうしつ</rt></ruby>しました。",
+        "eng": "I lost."
+      }
+    ]
+  },
+  {
+    "kanji": "喬",
+    "yomikata": "キョウ",
+    "onyomi": "キョウ",
+    "kunyomi": "",
+    "english_meaning": "tall, high",
+    "examples": [
+      {
+        "example": "<ruby>喬木<rt>きょうぼく</rt></ruby>です。",
+        "eng": "It's a tall tree."
+      },
+      {
+        "example": "<ruby>喬<rt>たかし</rt></ruby>といいます。",
+        "eng": "My name is Takashi."
+      }
+    ]
+  },
+  {
+    "kanji": "嗣",
+    "yomikata": "シ",
+    "onyomi": "シ",
+    "kunyomi": "",
+    "english_meaning": "heir, succeed",
+    "examples": [
+      {
+        "example": "<ruby>後継者<rt>こうけいしゃ</rt></ruby>です。",
+        "eng": "He is a successor."
+      },
+      {
+        "example": "<ruby>嗣子<rt>しし</rt></ruby>がいます。",
+        "eng": "He has an heir."
+      }
+    ]
+  },
+  {
+    "kanji": "嘆",
+    "yomikata": "タン, なげ(く)",
+    "onyomi": "タン",
+    "kunyomi": "なげ(く)",
+    "english_meaning": "sigh, lament",
+    "examples": [
+      {
+        "example": "<ruby>嘆<rt>なげ</rt></ruby>きます。",
+        "eng": "I lament."
+      },
+      {
+        "example": "<ruby>嘆息<rt>たんそく</rt></ruby>します。",
+        "eng": "I sigh."
+      }
+    ]
+  },
+  {
+    "kanji": "嘉",
+    "yomikata": "カ",
+    "onyomi": "カ",
+    "kunyomi": "よみ(する)",
+    "english_meaning": "praise, excellent",
+    "examples": [
+      {
+        "example": "<ruby>嘉<rt>よみ</rt></ruby>します。",
+        "eng": "I praise."
+      },
+      {
+        "example": "<ruby>嘉永<rt>かえい</rt></ruby>年間です。",
+        "eng": "It's the Kaei era."
+      }
+    ]
+  },
+  {
+    "kanji": "嘱",
+    "yomikata": "ショク",
+    "onyomi": "ショク",
+    "kunyomi": "しょく(する)",
+    "english_meaning": "entrust, request",
+    "examples": [
+      {
+        "example": "<ruby>嘱託<rt>しょくたく</rt></ruby>します。",
+        "eng": "I entrust."
+      },
+      {
+        "example": "<ruby>嘱望<rt>しょくぼう</rt></ruby>されます。",
+        "eng": "He is expected."
+      }
+    ]
+  },
+  {
+    "kanji": "噴",
+    "yomikata": "フン, ふ(く)",
+    "onyomi": "フン",
+    "kunyomi": "ふ(く)",
+    "english_meaning": "erupt, spout",
+    "examples": [
+      {
+        "example": "<ruby>火山<rt>かざん</rt></ruby>が<ruby>噴火<rt>ふんか</rt></ruby>します。",
+        "eng": "The volcano erupts."
+      },
+      {
+        "example": "<ruby>噴水<rt>ふんすい</rt></ruby>があります。",
+        "eng": "There is a fountain."
+      }
+    ]
+  },
+  {
+    "kanji": "嚇",
+    "yomikata": "カク",
+    "onyomi": "カク",
+    "kunyomi": "",
+    "english_meaning": "threaten",
+    "examples": [
+      {
+        "example": "<ruby>威嚇<rt>いかく</rt></ruby>します。",
+        "eng": "I threaten."
+      },
+      {
+        "example": "<ruby>恐喝<rt>きょうかつ</rt></ruby>されました。",
+        "eng": "I was blackmailed."
+      }
+    ]
+  },
+  {
+    "kanji": "囚",
+    "yomikata": "シュウ",
+    "onyomi": "シュウ",
+    "kunyomi": "とら(われる)",
+    "english_meaning": "captive",
+    "examples": [
+      {
+        "example": "<ruby>囚人<rt>しゅうじん</rt></ruby>です。",
+        "eng": "He is a prisoner."
+      },
+      {
+        "example": "<ruby>囚<rt>とら</rt></ruby>われます。",
+        "eng": "I am captured."
+      }
+    ]
+  },
+  {
+    "kanji": "圏",
+    "yomikata": "ケン",
+    "onyomi": "ケン",
+    "kunyomi": "",
+    "english_meaning": "sphere, range",
+    "examples": [
+      {
+        "example": "<ruby>圏内<rt>けんない</rt></ruby>です。",
+        "eng": "It's within range."
+      },
+      {
+        "example": "<ruby>生活圏<rt>せいかつけん</rt></ruby>が<ruby>広<rt>ひろ</rt></ruby>いです。",
+        "eng": "The living area is wide."
+      }
+    ]
+  },
+  {
+    "kanji": "圭",
+    "yomikata": "ケイ",
+    "onyomi": "ケイ",
+    "kunyomi": "",
+    "english_meaning": "square jewel",
+    "examples": [
+      {
+        "example": "<ruby>圭角<rt>けいかく</rt></ruby>があります。",
+        "eng": "He has angularity."
+      },
+      {
+        "example": "<ruby>圭介<rt>けいすけ</rt></ruby>といいます。",
+        "eng": "My name is Keisuke."
+      }
+    ]
+  },
+  {
+    "kanji": "坑",
+    "yomikata": "コウ",
+    "onyomi": "コウ",
+    "kunyomi": "",
+    "english_meaning": "pit, mine",
+    "examples": [
+      {
+        "example": "<ruby>坑道<rt>こうどう</rt></ruby>に<ruby>入<rt>はい</rt></ruby>ります。",
+        "eng": "I enter the mine shaft."
+      },
+      {
+        "example": "<ruby>廃坑<rt>はいこう</rt></ruby>です。",
+        "eng": "It's an abandoned mine."
+      }
+    ]
+  },
+  {
+    "kanji": "坪",
+    "yomikata": "ヘイ, つぼ",
+    "onyomi": "ヘイ",
+    "kunyomi": "つぼ",
+    "english_meaning": "tsubo (unit of area)",
+    "examples": [
+      {
+        "example": "<ruby>十坪<rt>じゅうつぼ</rt></ruby>の<ruby>土地<rt>とち</rt></ruby>です。",
+        "eng": "It's ten tsubo of land."
+      },
+      {
+        "example": "<ruby>坪数<rt>つぼすう</rt></ruby>を<ruby>計算<rt>けいさん</rt></ruby>します。",
+        "eng": "I calculate the area."
+      }
+    ]
+  },
+  {
+    "kanji": "垂",
+    "yomikata": "スイ, た(れる)",
+    "onyomi": "スイ",
+    "kunyomi": "た(れる)",
+    "english_meaning": "drip, hang down",
+    "examples": [
+      {
+        "example": "<ruby>垂<rt>た</rt></ruby>れます。",
+        "eng": "It drips."
+      },
+      {
+        "example": "<ruby>垂直<rt>すいちょく</rt></ruby>です。",
+        "eng": "It's vertical."
+      }
+    ]
+  },
+  {
+    "kanji": "垣",
+    "yomikata": "エン, かき",
+    "onyomi": "エン",
+    "kunyomi": "かき",
+    "english_meaning": "fence",
+    "examples": [
+      {
+        "example": "<ruby>垣根<rt>かきね</rt></ruby>があります。",
+        "eng": "There is a fence."
+      },
+      {
+        "example": "<ruby>石垣<rt>いしがき</rt></ruby>です。",
+        "eng": "It's a stone wall."
+      }
+    ]
+  },
+  {
+    "kanji": "執",
+    "yomikata": "シツ, シュウ, と(る)",
+    "onyomi": "シツ, シュウ",
+    "kunyomi": "と(る)",
+    "english_meaning": "take, execute",
+    "examples": [
+      {
+        "example": "<ruby>執筆<rt>しっぴつ</rt></ruby>します。",
+        "eng": "I write."
+      },
+      {
+        "example": "<ruby>執拗<rt>しつよう</rt></ruby>です。",
+        "eng": "It's persistent."
+      }
+    ]
+  },
+  {
+    "kanji": "培",
+    "yomikata": "バイ, つちか(う)",
+    "onyomi": "バイ",
+    "kunyomi": "つちか(う)",
+    "english_meaning": "cultivate",
+    "examples": [
+      {
+        "example": "<ruby>土<rt>つち</rt></ruby>を<ruby>培<rt>つちか</rt></ruby>います。",
+        "eng": "I cultivate the soil."
+      },
+      {
+        "example": "<ruby>培養<rt>ばいよう</rt></ruby>します。",
+        "eng": "I cultivate (bacteria)."
+      }
+    ]
+  },
+  {
+    "kanji": "堀",
+    "yomikata": "クツ, ほり",
+    "onyomi": "クツ",
+    "kunyomi": "ほり",
+    "english_meaning": "moat, ditch",
+    "examples": [
+      {
+        "example": "お<ruby>堀<rt>ほり</rt></ruby>があります。",
+        "eng": "There is a moat."
+      },
+      {
+        "example": "<ruby>堀<rt>ほり</rt></ruby>を<ruby>掘<rt>ほ</rt></ruby>ります。",
+        "eng": "I dig a ditch."
+      }
+    ]
+  },
+  {
+    "kanji": "堅",
+    "yomikata": "ケン, かた(い)",
+    "onyomi": "ケン",
+    "kunyomi": "かた(い)",
+    "english_meaning": "hard, solid",
+    "examples": [
+      {
+        "example": "<ruby>堅<rt>かた</rt></ruby>い<ruby>石<rt>いし</rt></ruby>です。",
+        "eng": "It's a hard stone."
+      },
+      {
+        "example": "<ruby>堅実<rt>けんじつ</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>です。",
+        "eng": "He is a reliable person."
+      }
+    ]
+  },
+  {
+    "kanji": "堕",
+    "yomikata": "ダ, お(ちる)",
+    "onyomi": "ダ",
+    "kunyomi": "お(ちる)",
+    "english_meaning": "degenerate, fall",
+    "examples": [
+      {
+        "example": "<ruby>堕落<rt>だらく</rt></ruby>します。",
+        "eng": "I degenerate."
+      },
+      {
+        "example": "<ruby>堕<rt>お</rt></ruby>ちます。",
+        "eng": "I fall."
+      }
+    ]
+  },
+  {
+    "kanji": "堤",
+    "yomikata": "テイ, つつみ",
+    "onyomi": "テイ",
+    "kunyomi": "つつみ",
+    "english_meaning": "embankment",
+    "examples": [
+      {
+        "example": "<ruby>堤防<rt>ていぼう</rt></ruby>があります。",
+        "eng": "There is an embankment."
+      },
+      {
+        "example": "<ruby>堤<rt>つつみ</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>きます。",
+        "eng": "I walk on the embankment."
+      }
+    ]
+  },
+  {
+    "kanji": "堪",
+    "yomikata": "カン, た(える)",
+    "onyomi": "カン",
+    "kunyomi": "た(える)",
+    "english_meaning": "endure",
+    "examples": [
+      {
+        "example": "<ruby>堪<rt>た</rt></ruby>えられません。",
+        "eng": "I cannot endure."
+      },
+      {
+        "example": "<ruby>堪忍<rt>かんにん</rt></ruby>します。",
+        "eng": "I bear with it."
+      }
+    ]
+  },
+  {
+    "kanji": "塀",
+    "yomikata": "ヘイ",
+    "onyomi": "ヘイ",
+    "kunyomi": "",
+    "english_meaning": "wall, fence",
+    "examples": [
+      {
+        "example": "<ruby>塀<rt>へい</rt></ruby>を<ruby>越<rt>こ</rt></ruby>えます。",
+        "eng": "I climb over the wall."
+      },
+      {
+        "example": "<ruby>煉瓦塀<rt>れんがべい</rt></ruby>です。",
+        "eng": "It's a brick wall."
+      }
+    ]
+  },
+  {
+    "kanji": "塁",
+    "yomikata": "ルイ",
+    "onyomi": "ルイ",
+    "kunyomi": "",
+    "english_meaning": "base, fort",
+    "examples": [
+      {
+        "example": "<ruby>塁打<rt>るいだ</rt></ruby>を<ruby>打<rt>う</rt></ruby>ちます。",
+        "eng": "I hit a base hit."
+      },
+      {
+        "example": "<ruby>一塁手<rt>いちるいしゅ</rt></ruby>です。",
+        "eng": "He is a first baseman."
+      }
+    ]
+  },
+  {
+    "kanji": "塊",
+    "yomikata": "カイ, かたまり",
+    "onyomi": "カイ",
+    "kunyomi": "かたまり",
+    "english_meaning": "lump, mass",
+    "examples": [
+      {
+        "example": "<ruby>土<rt>つち</rt></ruby>の<ruby>塊<rt>かたまり</rt></ruby>です。",
+        "eng": "It's a lump of soil."
+      },
+      {
+        "example": "<ruby>金塊<rt>きんかい</rt></ruby>を<ruby>発見<rt>はっけん</rt></ruby>しました。",
+        "eng": "I found a gold nugget."
+      }
+    ]
+  },
+  {
+    "kanji": "塑",
+    "yomikata": "ソ",
+    "onyomi": "ソ",
+    "kunyomi": "",
+    "english_meaning": "model, mold",
+    "examples": [
+      {
+        "example": "<ruby>塑像<rt>そぞう</rt></ruby>を<ruby>作<rt>つく</rt></ruby>ります。",
+        "eng": "I make a statue."
+      },
+      {
+        "example": "<ruby>塑性<rt>そせい</rt></ruby>があります。",
+        "eng": "It has plasticity."
+      }
+    ]
+  },
+  {
+    "kanji": "塚",
+    "yomikata": "チョウ, つか",
+    "onyomi": "チョウ",
+    "kunyomi": "つか",
+    "english_meaning": "mound, hillock",
+    "examples": [
+      {
+        "example": "<ruby>古墳<rt>こふん</rt></ruby>の<ruby>塚<rt>つか</rt></ruby>です。",
+        "eng": "It's an ancient burial mound."
+      },
+      {
+        "example": "<ruby>塚<rt>つか</rt></ruby>を<ruby>築<rt>きず</rt></ruby>きます。",
+        "eng": "I build a mound."
+      }
+    ]
+  },
+  {
+    "kanji": "塾",
+    "yomikata": "ジュク",
+    "onyomi": "ジュク",
+    "kunyomi": "",
+    "english_meaning": "cram school",
+    "examples": [
+      {
+        "example": "<ruby>塾<rt>じゅく</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to cram school."
+      },
+      {
+        "example": "<ruby>予備校<rt>よびこう</rt></ruby>の<ruby>塾<rt>じゅく</rt></ruby>です。",
+        "eng": "It's a prep school."
+      }
+    ]
+  },
+  {
+    "kanji": "墓",
+    "yomikata": "ボ, はか",
+    "onyomi": "ボ",
+    "kunyomi": "はか",
+    "english_meaning": "grave, tomb",
+    "examples": [
+      {
+        "example": "<ruby>墓参<rt>はかまい</rt></ruby>りに<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to visit a grave."
+      },
+      {
+        "example": "<ruby>墓地<rt>ぼち</rt></ruby>です。",
+        "eng": "It's a cemetery."
+      }
+    ]
+  },
+  {
+    "kanji": "墜",
+    "yomikata": "ツイ, お(ちる)",
+    "onyomi": "ツイ",
+    "kunyomi": "お(ちる)",
+    "english_meaning": "fall, crash",
+    "examples": [
+      {
+        "example": "<ruby>墜落<rt>ついらく</rt></ruby>しました。",
+        "eng": "It crashed."
+      },
+      {
+        "example": "<ruby>墜<rt>お</rt></ruby>ちます。",
+        "eng": "I fall."
+      }
+    ]
+  },
+  {
+    "kanji": "墳",
+    "yomikata": "フン",
+    "onyomi": "フン",
+    "kunyomi": "",
+    "english_meaning": "tomb, mound",
+    "examples": [
+      {
+        "example": "<ruby>古墳<rt>こふん</rt></ruby>があります。",
+        "eng": "There is an ancient tomb."
+      },
+      {
+        "example": "<ruby>墳墓<rt>ふんぼ</rt></ruby>です。",
+        "eng": "It's a tomb."
+      }
+    ]
+  },
+  {
+    "kanji": "墾",
+    "yomikata": "コン",
+    "onyomi": "コン",
+    "kunyomi": "",
+    "english_meaning": "clear land",
+    "examples": [
+      {
+        "example": "<ruby>開墾<rt>かいこん</rt></ruby>します。",
+        "eng": "I cultivate land."
+      },
+      {
+        "example": "<ruby>墾田<rt>こんでん</rt></ruby>です。",
+        "eng": "It's cultivated land."
+      }
+    ]
+  },
+  {
+    "kanji": "壇",
+    "yomikata": "ダン, タン",
+    "onyomi": "ダン, タン",
+    "kunyomi": "",
+    "english_meaning": "platform, podium",
+    "examples": [
+      {
+        "example": "<ruby>演壇<rt>えんだん</rt></ruby>に<ruby>立<rt>た</rt></ruby>ちます。",
+        "eng": "I stand on the podium."
+      },
+      {
+        "example": "<ruby>壇上<rt>だんじょう</rt></ruby>で<ruby>話<rt>はな</rt></ruby>します。",
+        "eng": "I speak on the platform."
+      }
+    ]
+  },
+  {
+    "kanji": "壊",
+    "yomikata": "カイ, こわ(す)",
+    "onyomi": "カイ",
+    "kunyomi": "こわ(す)",
+    "english_meaning": "break, destroy",
+    "examples": [
+      {
+        "example": "<ruby>壊<rt>こわ</rt></ruby>れました。",
+        "eng": "It broke."
+      },
+      {
+        "example": "<ruby>破壊<rt>はかい</rt></ruby>します。",
+        "eng": "I destroy."
+      }
+    ]
+  },
+  {
+    "kanji": "壌",
+    "yomikata": "ジョウ",
+    "onyomi": "ジョウ",
+    "kunyomi": "",
+    "english_meaning": "soil, earth",
+    "examples": [
+      {
+        "example": "<ruby>土壌<rt>どじょう</rt></ruby>が<ruby>肥沃<rt>ひよく</rt></ruby>です。",
+        "eng": "The soil is fertile."
+      },
+      {
+        "example": "<ruby>天壌無窮<rt>てんじょうむきゅう</rt></ruby>です。",
+        "eng": "Eternal as heaven and earth."
+      }
+    ]
+  },
+  {
+    "kanji": "士",
+    "yomikata": "シ",
+    "onyomi": "シ",
+    "kunyomi": "",
+    "english_meaning": "samurai, man",
+    "examples": [
+      {
+        "example": "<ruby>武士<rt>ぶし</rt></ruby>です。",
+        "eng": "He is a samurai."
+      },
+      {
+        "example": "<ruby>紳士<rt>しんし</rt></ruby>です。",
+        "eng": "He is a gentleman."
+      }
+    ]
+  },
+  {
+    "kanji": "壮",
+    "yomikata": "ソウ",
+    "onyomi": "ソウ",
+    "kunyomi": "",
+    "english_meaning": "robust, manly",
+    "examples": [
+      {
+        "example": "<ruby>壮大<rt>そうだい</rt></ruby>な<ruby>計画<rt>けいかく</rt></ruby>です。",
+        "eng": "It's a grand plan."
+      },
+      {
+        "example": "<ruby>壮年<rt>そうねん</rt></ruby>です。",
+        "eng": "He is in his prime."
+      }
+    ]
+  },
+  {
+    "kanji": "壱",
+    "yomikata": "イチ",
+    "onyomi": "イチ",
+    "kunyomi": "",
+    "english_meaning": "one (formal)",
+    "examples": [
+      {
+        "example": "<ruby>壱万円<rt>いちまんえん</rt></ruby>です。",
+        "eng": "It's 10,000 yen."
+      },
+      {
+        "example": "<ruby>壱岐島<rt>いきのしま</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to Iki Island."
+      }
+    ]
+  },
+  {
+    "kanji": "奇",
+    "yomikata": "キ",
+    "onyomi": "キ",
+    "kunyomi": "く(しき)",
+    "english_meaning": "strange, odd",
+    "examples": [
+      {
+        "example": "<ruby>奇跡<rt>きせき</rt></ruby>が<ruby>起<rt>お</rt></ruby>きました。",
+        "eng": "A miracle happened."
+      },
+      {
+        "example": "<ruby>奇妙<rt>きみょう</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>です。",
+        "eng": "He is a strange person."
+      }
+    ]
+  },
+  {
+    "kanji": "奈",
+    "yomikata": "ナ",
+    "onyomi": "ナ",
+    "kunyomi": "",
+    "english_meaning": "what, Nara",
+    "examples": [
+      {
+        "example": "<ruby>奈良<rt>なら</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to Nara."
+      },
+      {
+        "example": "<ruby>奈何<rt>いかん</rt></ruby>せん。",
+        "eng": "What can be done?"
+      }
+    ]
+  },
+  {
+    "kanji": "奉",
+    "yomikata": "ホウ, たてまつ(る)",
+    "onyomi": "ホウ",
+    "kunyomi": "たてまつ(る)",
+    "english_meaning": "offer, dedicate",
+    "examples": [
+      {
+        "example": "<ruby>奉仕<rt>ほうし</rt></ruby>します。",
+        "eng": "I serve."
+      },
+      {
+        "example": "<ruby>奉納<rt>ほうのう</rt></ruby>します。",
+        "eng": "I dedicate."
+      }
+    ]
+  },
+  {
+    "kanji": "奔",
+    "yomikata": "ホン",
+    "onyomi": "ホン",
+    "kunyomi": "",
+    "english_meaning": "rush, run",
+    "examples": [
+      {
+        "example": "<ruby>奔走<rt>ほんそう</rt></ruby>します。",
+        "eng": "I run about."
+      },
+      {
+        "example": "<ruby>奔放<rt>ほんぽう</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>です。",
+        "eng": "He is a free-spirited person."
+      }
+    ]
+  },
+  {
+    "kanji": "奎",
+    "yomikata": "ケイ",
+    "onyomi": "ケイ",
+    "kunyomi": "",
+    "english_meaning": "star, stride",
+    "examples": [
+      {
+        "example": "<ruby>奎星<rt>けいせい</rt></ruby>です。",
+        "eng": "It's a star."
+      },
+      {
+        "example": "<ruby>奎<rt>けい</rt></ruby>といいます。",
+        "eng": "My name is Kei."
+      }
+    ]
+  },
+  {
+    "kanji": "奏",
+    "yomikata": "ソウ, かな(でる)",
+    "onyomi": "ソウ",
+    "kunyomi": "かな(でる)",
+    "english_meaning": "play music",
+    "examples": [
+      {
+        "example": "<ruby>演奏<rt>えんそう</rt></ruby>します。",
+        "eng": "I play music."
+      },
+      {
+        "example": "<ruby>奏<rt>かな</rt></ruby>でます。",
+        "eng": "I play."
+      }
+    ]
+  },
+  {
+    "kanji": "契",
+    "yomikata": "ケイ",
+    "onyomi": "ケイ",
+    "kunyomi": "",
+    "english_meaning": "pledge, contract",
+    "examples": [
+      {
+        "example": "<ruby>契約<rt>けいやく</rt></ruby>します。",
+        "eng": "I make a contract."
+      },
+      {
+        "example": "<ruby>契機<rt>けいき</rt></ruby>になります。",
+        "eng": "It becomes an opportunity."
+      }
+    ]
+  },
+  {
+    "kanji": "奨",
+    "yomikata": "ショウ",
+    "onyomi": "ショウ",
+    "kunyomi": "",
+    "english_meaning": "encourage, prize",
+    "examples": [
+      {
+        "example": "<ruby>奨学金<rt>しょうがくきん</rt></ruby>をもらいます。",
+        "eng": "I receive a scholarship."
+      },
+      {
+        "example": "<ruby>奨励<rt>しょうれい</rt></ruby>します。",
+        "eng": "I encourage."
+      }
+    ]
+  },
+  {
+    "kanji": "奪",
+    "yomikata": "ダツ, うば(う)",
+    "onyomi": "ダツ",
+    "kunyomi": "うば(う)",
+    "english_meaning": "rob, take by force",
+    "examples": [
+      {
+        "example": "<ruby>奪<rt>うば</rt></ruby>います。",
+        "eng": "I rob."
+      },
+      {
+        "example": "<ruby>奪回<rt>だっかい</rt></ruby>します。",
+        "eng": "I take back."
+      }
+    ]
+  },
+  {
+    "kanji": "奮",
+    "yomikata": "フン, ふる(う)",
+    "onyomi": "フン",
+    "kunyomi": "ふる(う)",
+    "english_meaning": "rouse, inspire",
+    "examples": [
+      {
+        "example": "<ruby>奮闘<rt>ふんとう</rt></ruby>します。",
+        "eng": "I fight hard."
+      },
+      {
+        "example": "<ruby>興奮<rt>こうふん</rt></ruby>します。",
+        "eng": "I get excited."
+      }
+    ]
+  },
+  {
+    "kanji": "奴",
+    "yomikata": "ド, やつ",
+    "onyomi": "ド",
+    "kunyomi": "やつ",
+    "english_meaning": "guy, fellow",
+    "examples": [
+      {
+        "example": "あの<ruby>奴<rt>やつ</rt></ruby>です。",
+        "eng": "That guy."
+      },
+      {
+        "example": "<ruby>奴隷<rt>どれい</rt></ruby>です。",
+        "eng": "He is a slave."
+      }
+    ]
+  },
+  {
+    "kanji": "如",
+    "yomikata": "ジョ, ニョ",
+    "onyomi": "ジョ, ニョ",
+    "kunyomi": "",
+    "english_meaning": "like, as",
+    "examples": [
+      {
+        "example": "<ruby>如実<rt>にょじつ</rt></ruby>に<ruby>示<rt>しめ</rt></ruby>します。",
+        "eng": "I show vividly."
+      },
+      {
+        "example": "<ruby>突然如<rt>とつぜんじょ</rt></ruby>として。",
+        "eng": "Suddenly."
+      }
+    ]
+  },
+  {
+    "kanji": "妃",
+    "yomikata": "ヒ",
+    "onyomi": "ヒ",
+    "kunyomi": "",
+    "english_meaning": "queen, princess",
+    "examples": [
+      {
+        "example": "<ruby>王妃<rt>おうひ</rt></ruby>です。",
+        "eng": "She is a queen."
+      },
+      {
+        "example": "<ruby>皇太子妃<rt>こうたいしひ</rt></ruby>です。",
+        "eng": "She is the crown princess."
+      }
+    ]
+  },
+  {
+    "kanji": "妄",
+    "yomikata": "モウ, ボウ",
+    "onyomi": "モウ, ボウ",
+    "kunyomi": "",
+    "english_meaning": "reckless, delusion",
+    "examples": [
+      {
+        "example": "<ruby>妄想<rt>もうそう</rt></ruby>です。",
+        "eng": "It's a delusion."
+      },
+      {
+        "example": "<ruby>妄動<rt>もうどう</rt></ruby>します。",
+        "eng": "I act recklessly."
+      }
+    ]
+  },
+  {
+    "kanji": "妊",
+    "yomikata": "ニン",
+    "onyomi": "ニン",
+    "kunyomi": "",
+    "english_meaning": "pregnant",
+    "examples": [
+      {
+        "example": "<ruby>妊娠<rt>にんしん</rt></ruby>しました。",
+        "eng": "I became pregnant."
+      },
+      {
+        "example": "<ruby>妊婦<rt>にんぷ</rt></ruby>さんです。",
+        "eng": "She is a pregnant woman."
+      }
+    ]
+  },
+  {
+    "kanji": "妙",
+    "yomikata": "ミョウ",
+    "onyomi": "ミョウ",
+    "kunyomi": "",
+    "english_meaning": "strange, exquisite",
+    "examples": [
+      {
+        "example": "<ruby>奇妙<rt>きみょう</rt></ruby>です。",
+        "eng": "It's strange."
+      },
+      {
+        "example": "<ruby>妙案<rt>みょうあん</rt></ruby>があります。",
+        "eng": "I have a clever idea."
+      }
+    ]
+  },
+  {
+    "kanji": "妥",
+    "yomikata": "ダ",
+    "onyomi": "ダ",
+    "kunyomi": "",
+    "english_meaning": "compromise",
+    "examples": [
+      {
+        "example": "<ruby>妥協<rt>だきょう</rt></ruby>します。",
+        "eng": "I compromise."
+      },
+      {
+        "example": "<ruby>妥当<rt>だとう</rt></ruby>です。",
+        "eng": "It's appropriate."
+      }
+    ]
+  },
+  {
+    "kanji": "妨",
+    "yomikata": "ボウ, さまた(げる)",
+    "onyomi": "ボウ",
+    "kunyomi": "さまた(げる)",
+    "english_meaning": "disturb, hinder",
+    "examples": [
+      {
+        "example": "<ruby>妨<rt>さまた</rt></ruby>げます。",
+        "eng": "I hinder."
+      },
+      {
+        "example": "<ruby>妨害<rt>ぼうがい</rt></ruby>します。",
+        "eng": "I obstruct."
+      }
+    ]
+  },
+  {
+    "kanji": "姫",
+    "yomikata": "キ, ひめ",
+    "onyomi": "キ",
+    "kunyomi": "ひめ",
+    "english_meaning": "princess",
+    "examples": [
+      {
+        "example": "お<ruby>姫様<rt>ひめさま</rt></ruby>です。",
+        "eng": "She is a princess."
+      },
+      {
+        "example": "<ruby>姫路城<rt>ひめじじょう</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to Himeji Castle."
+      }
+    ]
+  },
+  {
+    "kanji": "姻",
+    "yomikata": "イン",
+    "onyomi": "イン",
+    "kunyomi": "",
+    "english_meaning": "marriage",
+    "examples": [
+      {
+        "example": "<ruby>姻戚関係<rt>いんせきかんけい</rt></ruby>です。",
+        "eng": "It's a marital relationship."
+      },
+      {
+        "example": "<ruby>婚姻届<rt>こんいんとどけ</rt></ruby>を<ruby>出<rt>だ</rt></ruby>します。",
+        "eng": "I submit a marriage registration."
+      }
+    ]
+  },
+  {
+    "kanji": "姿",
+    "yomikata": "シ, すがた",
+    "onyomi": "シ",
+    "kunyomi": "すがた",
+    "english_meaning": "figure, form",
+    "examples": [
+      {
+        "example": "<ruby>美<rt>うつく</rt></ruby>しい<ruby>姿<rt>すがた</rt></ruby>です。",
+        "eng": "It's a beautiful figure."
+      },
+      {
+        "example": "<ruby>姿<rt>すがた</rt></ruby>を<ruby>消<rt>け</rt></ruby>します。",
+        "eng": "I disappear."
+      }
+    ]
+  },
+  {
+    "kanji": "威",
+    "yomikata": "イ",
+    "onyomi": "イ",
+    "kunyomi": "",
+    "english_meaning": "dignity, power",
+    "examples": [
+      {
+        "example": "<ruby>威力<rt>いりょく</rt></ruby>があります。",
+        "eng": "It has power."
+      },
+      {
+        "example": "<ruby>威張<rt>いば</rt></ruby>っています。",
+        "eng": "He is arrogant."
+      }
+    ]
+  },
+  {
+    "kanji": "娠",
+    "yomikata": "シン",
+    "onyomi": "シン",
+    "kunyomi": "",
+    "english_meaning": "pregnant",
+    "examples": [
+      {
+        "example": "<ruby>妊娠中<rt>にんしんちゅう</rt></ruby>です。",
+        "eng": "She is pregnant."
+      },
+      {
+        "example": "<ruby>懐妊<rt>かいにん</rt></ruby>しました。",
+        "eng": "She conceived."
+      }
+    ]
+  },
+  {
+    "kanji": "娯",
+    "yomikata": "ゴ",
+    "onyomi": "ゴ",
+    "kunyomi": "",
+    "english_meaning": "entertainment",
+    "examples": [
+      {
+        "example": "<ruby>娯楽施設<rt>ごらくしせつ</rt></ruby>です。",
+        "eng": "It's an entertainment facility."
+      },
+      {
+        "example": "<ruby>娯楽<rt>ごらく</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。",
+        "eng": "I like entertainment."
+      }
+    ]
+  },
+  {
+    "kanji": "婆",
+    "yomikata": "バ, ばば",
+    "onyomi": "バ",
+    "kunyomi": "ばば",
+    "english_meaning": "old woman",
+    "examples": [
+      {
+        "example": "<ruby>老婆<rt>ろうば</rt></ruby>です。",
+        "eng": "She is an old woman."
+      },
+      {
+        "example": "<ruby>産婆<rt>さんば</rt></ruby>さんです。",
+        "eng": "She is a midwife."
+      }
+    ]
+  },
+  {
+    "kanji": "婿",
+    "yomikata": "セイ, むこ",
+    "onyomi": "セイ",
+    "kunyomi": "むこ",
+    "english_meaning": "bridegroom, son-in-law",
+    "examples": [
+      {
+        "example": "<ruby>娘婿<rt>むすめむこ</rt></ruby>です。",
+        "eng": "He is my son-in-law."
+      },
+      {
+        "example": "<ruby>花婿<rt>はなむこ</rt></ruby>さんです。",
+        "eng": "He is the bridegroom."
+      }
+    ]
+  },
+  {
+    "kanji": "媒",
+    "yomikata": "バイ",
+    "onyomi": "バイ",
+    "kunyomi": "",
+    "english_meaning": "mediator, medium",
+    "examples": [
+      {
+        "example": "<ruby>媒酌人<rt>ばいしゃくにん</rt></ruby>です。",
+        "eng": "He is a matchmaker."
+      },
+      {
+        "example": "<ruby>媒体<rt>ばいたい</rt></ruby>です。",
+        "eng": "It's a medium."
+      }
+    ]
+  },
+  {
+    "kanji": "媛",
+    "yomikata": "エン",
+    "onyomi": "エン",
+    "kunyomi": "ひめ",
+    "english_meaning": "princess, beautiful woman",
+    "examples": [
+      {
+        "example": "<ruby>媛<rt>ひめ</rt></ruby>といいます。",
+        "eng": "My name is Hime."
+      },
+      {
+        "example": "<ruby>愛媛県<rt>えひめけん</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to Ehime prefecture."
+      }
+    ]
+  },
+  {
+    "kanji": "嫁",
+    "yomikata": "カ, よめ",
+    "onyomi": "カ",
+    "kunyomi": "よめ",
+    "english_meaning": "bride, marry into",
+    "examples": [
+      {
+        "example": "お<ruby>嫁<rt>よめ</rt></ruby>さんです。",
+        "eng": "She is a bride."
+      },
+      {
+        "example": "<ruby>嫁<rt>よめ</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "She gets married."
+      }
+    ]
+  },
+  {
+    "kanji": "嫌",
+    "yomikata": "ケン, きら(う)",
+    "onyomi": "ケン, ゲン",
+    "kunyomi": "きら(う)",
+    "english_meaning": "dislike, hate",
+    "examples": [
+      {
+        "example": "<ruby>嫌<rt>きら</rt></ruby>いです。",
+        "eng": "I dislike it."
+      },
+      {
+        "example": "<ruby>嫌<rt>いや</rt></ruby>がります。",
+        "eng": "He hates it."
+      }
+    ]
+  },
+  {
+    "kanji": "嫡",
+    "yomikata": "チャク",
+    "onyomi": "チャク",
+    "kunyomi": "",
+    "english_meaning": "legitimate child",
+    "examples": [
+      {
+        "example": "<ruby>嫡子<rt>ちゃくし</rt></ruby>です。",
+        "eng": "He is the legitimate child."
+      },
+      {
+        "example": "<ruby>嫡流<rt>ちゃくりゅう</rt></ruby>です。",
+        "eng": "It's the main line."
+      }
+    ]
+  },
+  {
+    "kanji": "嬉",
+    "yomikata": "キ, うれ(しい)",
+    "onyomi": "キ",
+    "kunyomi": "うれ(しい)",
+    "english_meaning": "happy, glad",
+    "examples": [
+      {
+        "example": "<ruby>嬉<rt>うれ</rt></ruby>しいです。",
+        "eng": "I'm happy."
+      },
+      {
+        "example": "<ruby>嬉<rt>うれ</rt></ruby>しそうな<ruby>顔<rt>かお</rt></ruby>です。",
+        "eng": "He looks happy."
+      }
+    ]
+  },
+  {
+    "kanji": "嬢",
+    "yomikata": "ジョウ",
+    "onyomi": "ジョウ",
+    "kunyomi": "",
+    "english_meaning": "young lady",
+    "examples": [
+      {
+        "example": "お<ruby>嬢<rt>じょう</rt></ruby>さんです。",
+        "eng": "She is a young lady."
+      },
+      {
+        "example": "<ruby>令嬢<rt>れいじょう</rt></ruby>です。",
+        "eng": "She is a daughter."
+      }
+    ]
+  },
+  {
+    "kanji": "孔",
+    "yomikata": "コウ",
+    "onyomi": "コウ",
+    "kunyomi": "",
+    "english_meaning": "hole, Confucius",
+    "examples": [
+      {
+        "example": "<ruby>孔子<rt>こうし</rt></ruby>です。",
+        "eng": "It's Confucius."
+      },
+      {
+        "example": "<ruby>毛孔<rt>もうこう</rt></ruby>が<ruby>開<rt>あ</rt></ruby>いています。",
+        "eng": "Pores are open."
+      }
+    ]
+  },
+  {
+    "kanji": "孝",
+    "yomikata": "コウ",
+    "onyomi": "コウ",
+    "kunyomi": "",
+    "english_meaning": "filial piety",
+    "examples": [
+      {
+        "example": "<ruby>親孝行<rt>おやこうこう</rt></ruby>です。",
+        "eng": "He is dutiful to parents."
+      },
+      {
+        "example": "<ruby>孝行<rt>こうこう</rt></ruby>したいです。",
+        "eng": "I want to be dutiful."
+      }
+    ]
+  },
+  {
+    "kanji": "孟",
+    "yomikata": "モウ",
+    "onyomi": "モウ",
+    "kunyomi": "",
+    "english_meaning": "Mencius, first",
+    "examples": [
+      {
+        "example": "<ruby>孟子<rt>もうし</rt></ruby>です。",
+        "eng": "It's Mencius."
+      },
+      {
+        "example": "<ruby>孟春<rt>もうしゅん</rt></ruby>です。",
+        "eng": "It's early spring."
+      }
+    ]
+  },
+  {
+    "kanji": "孤",
+    "yomikata": "コ",
+    "onyomi": "コ",
+    "kunyomi": "",
+    "english_meaning": "orphan, alone",
+    "examples": [
+      {
+        "example": "<ruby>孤独<rt>こどく</rt></ruby>です。",
+        "eng": "I am lonely."
+      },
+      {
+        "example": "<ruby>孤児<rt>こじ</rt></ruby>です。",
+        "eng": "He is an orphan."
+      }
+    ]
+  },
+  {
+    "kanji": "宏",
+    "yomikata": "コウ",
+    "onyomi": "コウ",
+    "kunyomi": "",
+    "english_meaning": "wide, large",
+    "examples": [
+      {
+        "example": "<ruby>宏壮<rt>こうそう</rt></ruby>な<ruby>建物<rt>たてもの</rt></ruby>です。",
+        "eng": "It's a magnificent building."
+      },
+      {
+        "example": "<ruby>宏大<rt>こうだい</rt></ruby>です。",
+        "eng": "It's vast."
+      }
+    ]
+  },
+  {
+    "kanji": "宗",
+    "yomikata": "シュウ, ソウ",
+    "onyomi": "シュウ, ソウ",
+    "kunyomi": "",
+    "english_meaning": "religion, sect",
+    "examples": [
+      {
+        "example": "<ruby>宗教<rt>しゅうきょう</rt></ruby>を<ruby>信<rt>しん</rt></ruby>じます。",
+        "eng": "I believe in religion."
+      },
+      {
+        "example": "<ruby>宗派<rt>しゅうは</rt></ruby>が<ruby>違<rt>ちが</rt></ruby>います。",
+        "eng": "The sect is different."
+      }
+    ]
+  },
+  {
+    "kanji": "宜",
+    "yomikata": "ギ",
+    "onyomi": "ギ",
+    "kunyomi": "",
+    "english_meaning": "best, suitable",
+    "examples": [
+      {
+        "example": "<ruby>宜<rt>よろ</rt></ruby>しくお<ruby>願<rt>ねが</rt></ruby>いします。",
+        "eng": "Please treat me well."
+      },
+      {
+        "example": "<ruby>適宜<rt>てきぎ</rt></ruby><ruby>行<rt>おこな</rt></ruby>います。",
+        "eng": "I do as appropriate."
+      }
+    ]
+  },
+  {
+    "kanji": "宣",
+    "yomikata": "セン",
+    "onyomi": "セン",
+    "kunyomi": "",
+    "english_meaning": "proclaim, declare",
+    "examples": [
+      {
+        "example": "<ruby>宣言<rt>せんげん</rt></ruby>します。",
+        "eng": "I declare."
+      },
+      {
+        "example": "<ruby>宣伝<rt>せんでん</rt></ruby>します。",
+        "eng": "I advertise."
+      }
+    ]
+  },
+  {
+    "kanji": "宥",
+    "yomikata": "ユウ",
+    "onyomi": "ユウ",
+    "kunyomi": "なぐさ(める)",
+    "english_meaning": "soothe, calm",
+    "examples": [
+      {
+        "example": "<ruby>宥<rt>なぐさ</rt></ruby>めます。",
+        "eng": "I soothe."
+      },
+      {
+        "example": "<ruby>宥和政策<rt>ゆうわせいさく</rt></ruby>です。",
+        "eng": "It's an appeasement policy."
+      }
+    ]
+  },
+  {
+    "kanji": "宮",
+    "yomikata": "キュウ, グウ, みや",
+    "onyomi": "キュウ, グウ",
+    "kunyomi": "みや",
+    "english_meaning": "shrine, palace",
+    "examples": [
+      {
+        "example": "<ruby>神社<rt>じんじゃ</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to the shrine."
+      },
+      {
+        "example": "<ruby>宮殿<rt>きゅうでん</rt></ruby>です。",
+        "eng": "It's a palace."
+      }
+    ]
+  },
+  {
+    "kanji": "宰",
+    "yomikata": "サイ",
+    "onyomi": "サイ",
+    "kunyomi": "",
+    "english_meaning": "manager, rule",
+    "examples": [
+      {
+        "example": "<ruby>主宰<rt>しゅさい</rt></ruby>します。",
+        "eng": "I preside over."
+      },
+      {
+        "example": "<ruby>宰相<rt>さいしょう</rt></ruby>です。",
+        "eng": "He is a prime minister."
+      }
+    ]
+  },
+  {
+    "kanji": "宴",
+    "yomikata": "エン",
+    "onyomi": "エン",
+    "kunyomi": "",
+    "english_meaning": "banquet",
+    "examples": [
+      {
+        "example": "<ruby>宴会<rt>えんかい</rt></ruby>を<ruby>開<rt>ひら</rt></ruby>きます。",
+        "eng": "I hold a banquet."
+      },
+      {
+        "example": "<ruby>宴席<rt>えんせき</rt></ruby>です。",
+        "eng": "It's a banquet seat."
+      }
+    ]
+  },
+  {
+    "kanji": "宵",
+    "yomikata": "ショウ, よい",
+    "onyomi": "ショウ",
+    "kunyomi": "よい",
+    "english_meaning": "early evening",
+    "examples": [
+      {
+        "example": "<ruby>宵<rt>よい</rt></ruby>の<ruby>口<rt>くち</rt></ruby>です。",
+        "eng": "It's early evening."
+      },
+      {
+        "example": "<ruby>宵<rt>よい</rt></ruby>っ<ruby>張<rt>ぱ</rt></ruby>りです。",
+        "eng": "I am a night owl."
+      }
+    ]
+  },
+  {
+    "kanji": "寂",
+    "yomikata": "ジャク, さび(しい)",
+    "onyomi": "ジャク",
+    "kunyomi": "さび(しい)",
+    "english_meaning": "lonely",
+    "examples": [
+      {
+        "example": "<ruby>寂<rt>さび</rt></ruby>しいです。",
+        "eng": "I'm lonely."
+      },
+      {
+        "example": "<ruby>静寂<rt>せいじゃく</rt></ruby>です。",
+        "eng": "It's silent."
+      }
+    ]
+  },
+  {
+    "kanji": "寅",
+    "yomikata": "イン, とら",
+    "onyomi": "イン",
+    "kunyomi": "とら",
+    "english_meaning": "tiger (zodiac)",
+    "examples": [
+      {
+        "example": "<ruby>寅年<rt>とらどし</rt></ruby>です。",
+        "eng": "It's the year of the tiger."
+      },
+      {
+        "example": "<ruby>寅<rt>とら</rt></ruby>の<ruby>刻<rt>こく</rt></ruby>です。",
+        "eng": "It's the hour of the tiger."
+      }
+    ]
+  },
+  {
+    "kanji": "密",
+    "yomikata": "ミツ",
+    "onyomi": "ミツ",
+    "kunyomi": "",
+    "english_meaning": "dense, secret",
+    "examples": [
+      {
+        "example": "<ruby>秘密<rt>ひみつ</rt></ruby>です。",
+        "eng": "It's a secret."
+      },
+      {
+        "example": "<ruby>密集<rt>みっしゅう</rt></ruby>しています。",
+        "eng": "It's densely crowded."
+      }
+    ]
+  },
+  {
+    "kanji": "寛",
+    "yomikata": "カン",
+    "onyomi": "カン",
+    "kunyomi": "",
+    "english_meaning": "broad, tolerant",
+    "examples": [
+      {
+        "example": "<ruby>寛大<rt>かんだい</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>です。",
+        "eng": "He is a generous person."
+      },
+      {
+        "example": "<ruby>寛容<rt>かんよう</rt></ruby>です。",
+        "eng": "He is tolerant."
+      }
+    ]
+  },
+  {
+    "kanji": "寡",
+    "yomikata": "カ",
+    "onyomi": "カ",
+    "kunyomi": "",
+    "english_meaning": "widow, few",
+    "examples": [
+      {
+        "example": "<ruby>寡婦<rt>かふ</rt></ruby>です。",
+        "eng": "She is a widow."
+      },
+      {
+        "example": "<ruby>寡黙<rt>かもく</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>です。",
+        "eng": "He is a taciturn person."
+      }
+    ]
+  },
+  {
+    "kanji": "寧",
+    "yomikata": "ネイ",
+    "onyomi": "ネイ",
+    "kunyomi": "",
+    "english_meaning": "rather, peaceful",
+    "examples": [
+      {
+        "example": "<ruby>寧<rt>むし</rt></ruby>ろそうします。",
+        "eng": "I'd rather do that."
+      },
+      {
+        "example": "<ruby>安寧秩序<rt>あんねいちつじょ</rt></ruby>です。",
+        "eng": "Peace and order."
+      }
+    ]
+  },
+  {
+    "kanji": "審",
+    "yomikata": "シン",
+    "onyomi": "シン",
+    "kunyomi": "",
+    "english_meaning": "judge, examine",
+    "examples": [
+      {
+        "example": "<ruby>審判<rt>しんぱん</rt></ruby>します。",
+        "eng": "I judge."
+      },
+      {
+        "example": "<ruby>審査<rt>しんさ</rt></ruby>があります。",
+        "eng": "There is an examination."
+      }
+    ]
+  },
+  {
+    "kanji": "寮",
+    "yomikata": "リョウ",
+    "onyomi": "リョウ",
+    "kunyomi": "",
+    "english_meaning": "dormitory",
+    "examples": [
+      {
+        "example": "<ruby>寮<rt>りょう</rt></ruby>に<ruby>住<rt>す</rt></ruby>んでいます。",
+        "eng": "I live in a dormitory."
+      },
+      {
+        "example": "<ruby>学生寮<rt>がくせいりょう</rt></ruby>です。",
+        "eng": "It's a student dormitory."
+      }
+    ]
+  },
+  {
+    "kanji": "寸",
+    "yomikata": "スン",
+    "onyomi": "スン",
+    "kunyomi": "",
+    "english_meaning": "measure, sun (unit)",
+    "examples": [
+      {
+        "example": "<ruby>寸法<rt>すんぽう</rt></ruby>を<ruby>測<rt>はか</rt></ruby>ります。",
+        "eng": "I take measurements."
+      },
+      {
+        "example": "<ruby>寸劇<rt>すんげき</rt></ruby>をします。",
+        "eng": "We do a skit."
+      }
+    ]
+  },
+  {
+    "kanji": "寿",
+    "yomikata": "ジュ, ことぶき",
+    "onyomi": "ジュ",
+    "kunyomi": "ことぶき",
+    "english_meaning": "longevity",
+    "examples": [
+      {
+        "example": "お<ruby>寿司<rt>すし</rt></ruby>を<ruby>食<rt>た</rt></ruby>べます。",
+        "eng": "I eat sushi."
+      },
+      {
+        "example": "<ruby>寿命<rt>じゅみょう</rt></ruby>が<ruby>長<rt>なが</rt></ruby>いです。",
+        "eng": "Lifespan is long."
+      }
+    ]
+  },
+  {
+    "kanji": "射",
+    "yomikata": "シャ, い(る)",
+    "onyomi": "シャ",
+    "kunyomi": "い(る)",
+    "english_meaning": "shoot",
+    "examples": [
+      {
+        "example": "<ruby>射的<rt>しゃてき</rt></ruby>をします。",
+        "eng": "I do shooting."
+      },
+      {
+        "example": "<ruby>放射線<rt>ほうしゃせん</rt></ruby>です。",
+        "eng": "It's radiation."
+      }
+    ]
+  },
+  {
+    "kanji": "尉",
+    "yomikata": "イ",
+    "onyomi": "イ",
+    "kunyomi": "",
+    "english_meaning": "military officer",
+    "examples": [
+      {
+        "example": "<ruby>少尉<rt>しょうい</rt></ruby>です。",
+        "eng": "He is a second lieutenant."
+      },
+      {
+        "example": "<ruby>大尉<rt>たいい</rt></ruby>です。",
+        "eng": "He is a captain."
+      }
+    ]
+  },
+  {
+    "kanji": "尋",
+    "yomikata": "ジン, たず(ねる)",
+    "onyomi": "ジン",
+    "kunyomi": "たず(ねる)",
+    "english_meaning": "inquire, fathom",
+    "examples": [
+      {
+        "example": "<ruby>尋<rt>たず</rt></ruby>ねます。",
+        "eng": "I ask."
+      },
+      {
+        "example": "<ruby>尋常<rt>じんじょう</rt></ruby>ではありません。",
+        "eng": "It's not ordinary."
+      }
+    ]
+  },
+  {
+    "kanji": "尚",
+    "yomikata": "ショウ",
+    "onyomi": "ショウ",
+    "kunyomi": "",
+    "english_meaning": "furthermore, esteem",
+    "examples": [
+      {
+        "example": "<ruby>尚<rt>なお</rt></ruby>、よろしくお<ruby>願<rt>ねが</rt></ruby>いします。",
+        "eng": "Furthermore, please treat me well."
+      },
+      {
+        "example": "<ruby>尚更<rt>なおさら</rt></ruby>です。",
+        "eng": "Even more so."
+      }
+    ]
+  },
+  {
+    "kanji": "尭",
+    "yomikata": "ギョウ",
+    "onyomi": "ギョウ",
+    "kunyomi": "",
+    "english_meaning": "high, far, Yao (emperor)",
+    "examples": [
+      {
+        "example": "<ruby>尭帝<rt>ぎょうてい</rt></ruby>です。",
+        "eng": "It's Emperor Yao."
+      },
+      {
+        "example": "<ruby>尭<rt>たかし</rt></ruby>といいます。",
+        "eng": "My name is Takashi."
+      }
+    ]
+  },
+  {
+    "kanji": "就",
+    "yomikata": "シュウ, ジュ, つ(く)",
+    "onyomi": "シュウ, ジュ",
+    "kunyomi": "つ(く)",
+    "english_meaning": "take office, concerning",
+    "examples": [
+      {
+        "example": "<ruby>就職<rt>しゅうしょく</rt></ruby>します。",
+        "eng": "I get a job."
+      },
+      {
+        "example": "<ruby>成就<rt>じょうじゅ</rt></ruby>します。",
+        "eng": "It is accomplished."
+      }
+    ]
+  },
+  {
+    "kanji": "尺",
+    "yomikata": "シャク",
+    "onyomi": "シャク",
+    "kunyomi": "",
+    "english_meaning": "shaku (unit of length)",
+    "examples": [
+      {
+        "example": "<ruby>尺寸<rt>しゃくすん</rt></ruby>を<ruby>測<rt>はか</rt></ruby>ります。",
+        "eng": "I measure length."
+      },
+      {
+        "example": "<ruby>物差<rt>ものさ</rt></ruby>しで<ruby>測<rt>はか</rt></ruby>ります。",
+        "eng": "I measure with a ruler."
+      }
+    ]
+  },
+  {
+    "kanji": "尼",
+    "yomikata": "ニ, あま",
+    "onyomi": "ニ",
+    "kunyomi": "あま",
+    "english_meaning": "nun",
+    "examples": [
+      {
+        "example": "<ruby>尼<rt>あま</rt></ruby>さんです。",
+        "eng": "She is a nun."
+      },
+      {
+        "example": "<ruby>比丘尼<rt>びくに</rt></ruby>です。",
+        "eng": "She is a Buddhist nun."
+      }
+    ]
+  },
+  {
+    "kanji": "尽",
+    "yomikata": "ジン, つ(くす)",
+    "onyomi": "ジン",
+    "kunyomi": "つ(くす)",
+    "english_meaning": "exhaust, use up",
+    "examples": [
+      {
+        "example": "<ruby>全力<rt>ぜんりょく</rt></ruby>を<ruby>尽<rt>つ</rt></ruby>くします。",
+        "eng": "I do my best."
+      },
+      {
+        "example": "<ruby>尽<rt>つ</rt></ruby>きません。",
+        "eng": "It never ends."
+      }
+    ]
+  },
+  {
+    "kanji": "尾",
+    "yomikata": "ビ, お",
+    "onyomi": "ビ",
+    "kunyomi": "お",
+    "english_meaning": "tail",
+    "examples": [
+      {
+        "example": "<ruby>尾<rt>お</rt></ruby>が<ruby>長<rt>なが</rt></ruby>いです。",
+        "eng": "The tail is long."
+      },
+      {
+        "example": "<ruby>末尾<rt>まつび</rt></ruby>に<ruby>書<rt>か</rt></ruby>きます。",
+        "eng": "I write at the end."
+      }
+    ]
+  },
+  {
+    "kanji": "尿",
+    "yomikata": "ニョウ",
+    "onyomi": "ニョウ",
+    "kunyomi": "",
+    "english_meaning": "urine",
+    "examples": [
+      {
+        "example": "<ruby>尿検査<rt>にょうけんさ</rt></ruby>をします。",
+        "eng": "I have a urine test."
+      },
+      {
+        "example": "<ruby>糖尿病<rt>とうにょうびょう</rt></ruby>です。",
+        "eng": "I have diabetes."
+      }
+    ]
+  },
+  {
+    "kanji": "屈",
+    "yomikata": "クツ",
+    "onyomi": "クツ",
+    "kunyomi": "",
+    "english_meaning": "bend, yield",
+    "examples": [
+      {
+        "example": "<ruby>屈伸<rt>くっしん</rt></ruby>します。",
+        "eng": "I bend and stretch."
+      },
+      {
+        "example": "<ruby>不満<rt>ふまん</rt></ruby>を<ruby>感<rt>かん</rt></ruby>じます。",
+        "eng": "I feel dissatisfaction."
+      }
+    ]
+  },
+  {
+    "kanji": "属",
+    "yomikata": "ゾク",
+    "onyomi": "ゾク",
+    "kunyomi": "",
+    "english_meaning": "belong, genus",
+    "examples": [
+      {
+        "example": "この<ruby>部<rt>ぶ</rt></ruby>に<ruby>属<rt>ぞく</rt></ruby>しています。",
+        "eng": "I belong to this department."
+      },
+      {
+        "example": "<ruby>金属<rt>きんぞく</rt></ruby>です。",
+        "eng": "It's metal."
+      }
+    ]
+  },
+  {
+    "kanji": "履",
+    "yomikata": "リ, は(く)",
+    "onyomi": "リ",
+    "kunyomi": "は(く)",
+    "english_meaning": "wear, footwear",
+    "examples": [
+      {
+        "example": "<ruby>靴<rt>くつ</rt></ruby>を<ruby>履<rt>は</rt></ruby>きます。",
+        "eng": "I put on shoes."
+      },
+      {
+        "example": "<ruby>履歴書<rt>りれきしょ</rt></ruby>を<ruby>書<rt>か</rt></ruby>きます。",
+        "eng": "I write a resume."
+      }
+    ]
+  },
+  {
+    "kanji": "屯",
+    "yomikata": "トン",
+    "onyomi": "トン",
+    "kunyomi": "",
+    "english_meaning": "garrison, station",
+    "examples": [
+      {
+        "example": "<ruby>駐屯地<rt>ちゅうとんち</rt></ruby>です。",
+        "eng": "It's a garrison."
+      },
+      {
+        "example": "<ruby>屯田兵<rt>とんでんへい</rt></ruby>です。",
+        "eng": "He is a settler soldier."
+      }
+    ]
+  },
+  {
+    "kanji": "岐",
+    "yomikata": "キ",
+    "onyomi": "キ",
+    "kunyomi": "",
+    "english_meaning": "branch off, fork",
+    "examples": [
+      {
+        "example": "<ruby>岐路<rt>きろ</rt></ruby>に<ruby>立<rt>た</rt></ruby>っています。",
+        "eng": "I'm at a crossroads."
+      },
+      {
+        "example": "<ruby>岐阜県<rt>ぎふけん</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。",
+        "eng": "I go to Gifu prefecture."
+      }
+    ]
+  },
+  {
+    "kanji": "岬",
+    "yomikata": "コウ, みさき",
+    "onyomi": "コウ",
+    "kunyomi": "みさき",
+    "english_meaning": "cape, promontory",
+    "examples": [
+      {
+        "example": "<ruby>岬<rt>みさき</rt></ruby>に<ruby>灯台<rt>とうだい</rt></ruby>があります。",
+        "eng": "There is a lighthouse on the cape."
+      },
+      {
+        "example": "<ruby>室戸岬<rt>むろとみさき</rt></ruby>です。",
+        "eng": "It's Cape Muroto."
+      }
+    ]
+  },
+  {
+    "kanji": "岳",
+    "yomikata": "ガク, たけ",
+    "onyomi": "ガク",
+    "kunyomi": "たけ",
+    "english_meaning": "peak, mountain",
+    "examples": [
+      {
+        "example": "<ruby>富士山<rt>ふじさん</rt></ruby>は<ruby>日本<rt>にほん</rt></ruby>の<ruby>最高峰<rt>さいこうほう</rt></ruby>です。",
+        "eng": "Mt. Fuji is the highest peak in Japan."
+      },
+      {
+        "example": "<ruby>岳父<rt>がくふ</rt></ruby>です。",
+        "eng": "He is my father-in-law."
+      }
+    ]
+  },
+  {
+    "kanji": "峠",
+    "yomikata": "とうげ",
+    "onyomi": "",
+    "kunyomi": "とうげ",
+    "english_meaning": "mountain pass",
+    "examples": [
+      {
+        "example": "<ruby>峠<rt>とうげ</rt></ruby>を<ruby>越<rt>こ</rt></ruby>えます。",
+        "eng": "I cross the mountain pass."
+      },
+      {
+        "example": "<ruby>峠道<rt>とうげみち</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>きます。",
+        "eng": "I walk on the mountain pass road."
+      }
+    ]
+  }
+]

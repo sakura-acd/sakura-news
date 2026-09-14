@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌸%3C/text%3E%3C/svg%3E"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grammar Point — Sakura</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans:['Outfit','sans-serif'], jp:['"Noto Sans JP"','sans-serif'] },
+          colors: {
+            blue:   { DEFAULT:'#7eb8e4', deep:'#3a7cbf' },
+            teal:   { DEFAULT:'#6ecec8', deep:'#2a9d8f' },
+            mint:   { DEFAULT:'#80d4a8', deep:'#27ae72' },
+            coral:  { DEFAULT:'#f4a57a', deep:'#e0693a' },
+            butter: { DEFAULT:'#f5da8a', deep:'#d4a017' },
+            lilac:  { DEFAULT:'#c4a8e0', deep:'#8b5cf6' },
+            ink:    { DEFAULT:'#1f2937', 2:'#475569', muted:'#94a3b8' },
+            bg:     { DEFAULT:'#f5f8fc', surface:'#ffffff', s2:'#eef2f7' },
+          },
+          borderRadius: { xl2:'1.25rem', xl3:'1.75rem', xl4:'2.25rem' },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family:'Outfit',sans-serif; transition:background .3s,color .3s; }
+    .jp  { font-family:'"Noto Sans JP"',sans-serif; }
+
+    .mesh-light {
+      background: radial-gradient(ellipse at 18% 0%,#e6f7f1 0%,transparent 45%),
+                  radial-gradient(ellipse at 90% 10%,#f7e9ef 0%,transparent 40%),
+                  #f4f9f7;
+    }
+    .mesh-dark {
+      background: radial-gradient(ellipse at 18% 0%,#102a24 0%,transparent 45%),
+                  radial-gradient(ellipse at 90% 10%,#241a22 0%,transparent 40%),
+                  #0c1220;
+    }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:none} }
+    .fu { animation:fadeUp .4s ease both; }
+
+    ::-webkit-scrollbar { width:4px; height:4px; }
+    ::-webkit-scrollbar-thumb { background:#c2d3e3; border-radius:99px; }
+
+    .icon-circle { width:44px; height:44px; border-radius:9999px; display:flex; align-items:center; justify-content:center; background:#fff; box-shadow:0 2px 10px rgba(15,23,42,.06); flex-shrink:0; }
+
+    .card { background:#fff; border-radius:1.25rem; padding:20px; box-shadow:0 2px 10px rgba(15,23,42,.06); }
+    .tag  { display:inline-block; font-size:11px; font-weight:700; padding:3px 12px; border-radius:9999px; }
+
+    .example-card { background:#f8fafc; border-radius:1rem; padding:14px 16px; border:1px solid #eef2f7; }
+    .t-ink2 { color:#475569; }
+    .t-muted { color:#94a3b8; }
+    .divider { border-color:#eef2f7; }
+
+    body.dark .card, body.dark .example-card { background:#151d2e !important; border-color:#1d2740 !important; box-shadow:0 2px 10px rgba(0,0,0,.3) !important; }
+    body.dark .icon-circle { background:#151d2e !important; box-shadow:0 2px 10px rgba(0,0,0,.3) !important; }
+    body.dark #topbar, body.dark #botnav { background:rgba(14,19,32,.96) !important; border-color:#1d2740 !important; }
+    body.dark h1, body.dark .t-ink { color:#e8eef6 !important; }
+    body.dark .t-ink2 { color:#8da4c0 !important; }
+    body.dark .t-muted { color:#8da4c0 !important; }
+    body.dark .divider { border-color:#1d2740 !important; }
+    body.dark #lang-switch { background:#1d2740 !important; border-color:#243050 !important; }
+    body.dark #lang-btn-en.inactive, body.dark #lang-btn-np.inactive { color:#8da4c0 !important; }
+  </style>
+  <meta name="theme-color" content="#e8799a"/>
+</head>
+
+<body class="mesh-light min-h-screen" id="body">
+
+<!-- Topbar -->
+<header id="topbar" class="fixed top-0 left-0 right-0 z-40 px-4 py-2.5 flex items-center transition-transform duration-300"
+        style="background:rgba(255,255,255,.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:0.5px solid rgba(0,0,0,.06);">
+  <a href="index.html" class="icon-circle" style="background:#dbf3ec;" aria-label="Back to Grammar list">
+    <svg width="18" height="18" fill="none" stroke="#27ae72" stroke-width="2.4" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+  </a>
+  <div class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 pointer-events-none select-none">
+    <span class="text-lg">📗</span>
+    <span class="font-extrabold text-base t-ink tracking-tight" id="topbar-title">Grammar</span>
+  </div>
+  <div class="ml-auto flex items-center gap-2 flex-shrink-0">
+    <div class="flex items-center rounded-full p-0.5 border border-slate-200 divider" style="background:#f1f5f9;" id="lang-switch">
+      <button onclick="setLangMode('en')" id="lang-btn-en" class="px-3 py-1.5 rounded-full text-xs font-bold transition-all t-muted inactive">EN</button>
+      <button onclick="setLangMode('np')" id="lang-btn-np" class="px-3 py-1.5 rounded-full text-xs font-bold transition-all" style="background:#27ae72;color:#fff;">नेपा</button>
+    </div>
+    <button onclick="toggleDark()" class="w-8 h-8 rounded-lg bg-white border border-slate-200 divider flex items-center justify-center t-muted hover:text-blue-deep hover:border-blue/50 transition-all">
+      <svg id="mob-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="max-w-lg mx-auto px-4 pb-28 pt-16">
+
+  <div id="content-area" class="space-y-4">
+    <div class="text-center py-20 t-muted text-sm">Loading grammar point…</div>
+  </div>
+
+  <div id="not-found" class="hidden text-center py-20">
+    <div class="text-3xl mb-2">🔍</div>
+    <div class="text-sm t-muted mb-4">Grammar point not found.</div>
+    <a href="index.html" class="inline-block px-5 py-2.5 rounded-full bg-mint text-white text-sm font-bold" style="background:#27ae72;">Back to Grammar</a>
+  </div>
+
+</div>
+
+<!-- Bottom nav (matches homepage / index.html) -->
+<nav id="botnav" class="lg:hidden fixed bottom-3 left-3 right-3 z-40 transition-transform duration-300 rounded-full"
+     style="background:rgba(255,255,255,.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);box-shadow:0 8px 40px rgba(15,23,42,.16);">
+  <div class="flex items-center" style="height:66px;">
+    <a href="../../../index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Home</span>
+    </a>
+    <a href="../../../jlpt/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 4h6a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2z"/><path d="M22 4h-6a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">JLPT</span>
+    </a>
+    <a href="../../../ssw/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3 10 5.5-10 5.5L2 8.5 12 3Z"/><path d="M6 11v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">SSW</span>
+    </a>
+    <a href="../../../quiz/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M4 20h2.5L18 8.5a1.8 1.8 0 0 0-2.5-2.5L4 17.5V20Z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Quiz</span>
+    </a>
+    <a href="../../../other/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+      <span class="text-[11px] font-semibold t-muted">More</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+function escapeHtml(s){
+  return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function slugifyCategory(name){
+  return (name || 'others').toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+function tagColorFor(category){
+  var slug = slugifyCategory(category);
+  var map = {
+    particles:  ['#27ae72', '#d7f3ea'],
+    verbforms:  ['#3a56d4', '#dbe0fb'],
+    adjectives: ['#c98a12', '#fdeecb'],
+    others:     ['#7c5cd6', '#e7e4f7'],
+  };
+  return map[slug] || map.others;
+}
+
+function getParam(name){
+  var params = new URLSearchParams(window.location.search);
+  return params.get(name);
+}
+
+var currentItem = null;
+var langMode = (function(){
+  try { return localStorage.getItem('sakura_lang_mode') || 'np'; } catch(e){ return 'np'; }
+})();
+var allPoints = [];
+
+function renderExamples(examples, lang){
+  if (!examples || !examples.length) return '';
+  return examples.map(function(ex){
+    var translated = lang === 'np' ? ex.nepali : ex.english;
+    return '' +
+      '<div class="example-card">' +
+        '<div class="jp text-[15px] font-semibold t-ink mb-1">' + escapeHtml(ex.japanese) + '</div>' +
+        '<div class="text-xs t-muted italic mb-1.5">' + escapeHtml(ex.romaji) + '</div>' +
+        '<div class="text-sm t-ink2">' + escapeHtml(translated) + '</div>' +
+      '</div>';
+  }).join('');
+}
+
+function syncLangButtons(){
+  var enBtn = document.getElementById('lang-btn-en');
+  var npBtn = document.getElementById('lang-btn-np');
+  if (!enBtn || !npBtn) return;
+  if (langMode === 'en') {
+    enBtn.style.background = '#27ae72'; enBtn.style.color = '#fff'; enBtn.classList.remove('inactive','t-muted');
+    npBtn.style.background = 'transparent'; npBtn.style.color = ''; npBtn.classList.add('inactive','t-muted');
+  } else {
+    npBtn.style.background = '#27ae72'; npBtn.style.color = '#fff'; npBtn.classList.remove('inactive','t-muted');
+    enBtn.style.background = 'transparent'; enBtn.style.color = ''; enBtn.classList.add('inactive','t-muted');
+  }
+}
+
+function setLangMode(mode){
+  langMode = mode;
+  try { localStorage.setItem('sakura_lang_mode', mode); } catch(e){}
+  syncLangButtons();
+  if (currentItem) renderPoint(currentItem);
+}
+
+function renderPoint(item){
+  currentItem = item;
+  syncLangButtons();
+  document.getElementById('topbar-title').textContent = item.lesson || 'Grammar';
+
+  var colors = tagColorFor(item.category);
+  var tagColor = colors[0], tagBg = colors[1];
+  var explanation = langMode === 'np' ? item.nepali_explanation : item.description;
+  var explanationLabel = langMode === 'np' ? 'व्याख्या' : 'Explanation';
+
+  var html = '' +
+    '<div class="card fu">' +
+      '<span class="tag" style="background:' + tagBg + ';color:' + tagColor + ';">' + escapeHtml(item.lesson) + ' · ' + escapeHtml(item.category) + '</span>' +
+      '<h1 class="text-xl font-extrabold t-ink mt-3 mb-2 leading-snug">' + escapeHtml(item.grammar_point) + '</h1>' +
+      '<div class="jp text-base font-semibold t-ink2 mb-4">' + escapeHtml(item.form) + '</div>' +
+      '<div class="text-[11px] font-extrabold uppercase tracking-wider t-muted mb-1.5">' + explanationLabel + '</div>' +
+      '<div class="text-sm t-ink2 leading-relaxed">' + escapeHtml(explanation) + '</div>' +
+    '</div>' +
+
+    (item.examples && item.examples.length ? (
+      '<div class="card fu">' +
+        '<h2 class="text-sm font-extrabold t-ink mb-3">Examples</h2>' +
+        '<div class="space-y-3">' + renderExamples(item.examples, langMode) + '</div>' +
+      '</div>'
+    ) : '') +
+
+    renderPrevNext(item);
+
+  document.getElementById('content-area').innerHTML = html;
+}
+
+function renderPrevNext(item){
+  if (!allPoints || !allPoints.length) return '';
+  var idx = allPoints.findIndex(function(x){ return x.id === item.id; });
+  if (idx === -1) return '';
+  var prev = idx > 0 ? allPoints[idx - 1] : null;
+  var next = idx < allPoints.length - 1 ? allPoints[idx + 1] : null;
+
+  function btn(target, dir){
+    var isPrev = dir === 'prev';
+    if (!target) {
+      return '' +
+        '<div class="flex-1 flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl opacity-40 cursor-not-allowed" style="background:#f1f5f9;">' +
+          (isPrev ? '<svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.3" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>' : '') +
+          '<span class="text-xs font-bold t-muted">' + (isPrev ? 'Previous' : 'Next') + '</span>' +
+          (!isPrev ? '<svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.3" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>' : '') +
+        '</div>';
+    }
+    return '' +
+      '<a href="list.html?id=' + encodeURIComponent(target.id) + '" class="flex-1 flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl card transition-transform hover:-translate-y-0.5">' +
+        (isPrev ? '<svg width="16" height="16" fill="none" stroke="#27ae72" stroke-width="2.3" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>' : '') +
+        '<span class="text-xs font-bold t-ink">' + (isPrev ? 'Previous' : 'Next') + '</span>' +
+        (!isPrev ? '<svg width="16" height="16" fill="none" stroke="#27ae72" stroke-width="2.3" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>' : '') +
+      '</a>';
+  }
+
+  return '<div class="flex items-stretch gap-3 fu">' + btn(prev, 'prev') + btn(next, 'next') + '</div>';
+}
+
+function loadPoint(){
+  var id = getParam('id');
+  var showNotFound = function(){
+    document.getElementById('content-area').classList.add('hidden');
+    document.getElementById('not-found').classList.remove('hidden');
+  };
+
+  if (!id) { showNotFound(); return; }
+
+  var cached = null;
+  try { cached = JSON.parse(localStorage.getItem('sakura_grammar_n5_full') || 'null'); } catch(e){}
+
+  function findAndRender(list){
+    allPoints = list || [];
+    var item = allPoints.find(function(x){ return x.id === id; });
+    if (!item) { showNotFound(); return; }
+    renderPoint(item);
+  }
+
+  if (cached && cached.length) {
+    findAndRender(cached);
+  } else {
+    // Fallback: re-derive from the raw JSON if cache is empty (e.g. direct link, cleared storage)
+    fetch('grammar-n5-data.json')
+      .then(function(r){ return r.json(); })
+      .then(function(raw){
+        var arr = Array.isArray(raw) ? raw : (raw.lessons || raw.data || []);
+        function extractKana(str){
+          var m = (str || '').match(/[\u3040-\u30ff\u4e00-\u9faf々〜～]+/g);
+          if (!m || !m.length) return '';
+          m.sort(function(a,b){ return b.length - a.length; });
+          return m[0].length > 4 ? m[0].slice(0,4) : m[0];
+        }
+        function categoryFromPoint(gp, form){
+          var s = ((gp||'')+' '+(form||'')).toLowerCase();
+          if (s.indexOf('particle') !== -1) return 'Particles';
+          if (s.indexOf('adjective') !== -1 || s.indexOf('adj') !== -1) return 'Adjectives';
+          if (s.indexOf('verb') !== -1 || /て-?form|ない-?form|た-?form|ます|ましょう|ません/i.test(gp||'')) return 'Verb Forms';
+          return 'Others';
+        }
+        function makeId(gp, idx){
+          var base = (gp||'grammar').toLowerCase().replace(/[^\w\s-]/g,'').trim().replace(/\s+/g,'-').slice(0,40).replace(/-+$/,'');
+          return 'g' + (idx+1) + (base ? '-'+base : '');
+        }
+        var list = arr.map(function(it, idx){
+          var category = categoryFromPoint(it.grammar_point, it.form);
+          return {
+            id: makeId(it.grammar_point, idx), number: idx+1, lesson: it.lesson || '',
+            grammar_point: it.grammar_point || '', form: it.form || '',
+            kana: extractKana(it.grammar_point) || extractKana(it.form) || '文',
+            description: it.english_explanation || '', nepali_explanation: it.nepali_explanation || '',
+            examples: it.examples || [], category: category, tag_label: category
+          };
+        });
+        try { localStorage.setItem('sakura_grammar_n5_full', JSON.stringify(list)); } catch(e){}
+        findAndRender(list);
+      })
+      .catch(showNotFound);
+  }
+}
+loadPoint();
+
+/* ── Dark mode ── */
+let isDark = false;
+const MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+const SUN  = '<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/>';
+function toggleDark() {
+  isDark = !isDark;
+  document.body.className = isDark ? 'mesh-dark min-h-screen text-slate-100 dark' : 'mesh-light min-h-screen';
+  const el = document.getElementById('mob-icon'); if(el) el.innerHTML = isDark ? SUN : MOON;
+}
+</script>
+</body>
+</html>

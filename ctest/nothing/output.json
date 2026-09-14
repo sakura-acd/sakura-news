@@ -1,0 +1,2898 @@
+[
+  {
+    "lesson": "Lesson 1",
+    "grammar_point": "Particle は (Topic Marker)",
+    "form": "N₁ は N₂ です。",
+    "english_explanation": "は (written with the hiragana character 'ha' but pronounced 'wa' when used as a particle) always comes right after a noun or pronoun and marks that noun as the TOPIC of the sentence — i.e. what the rest of the sentence is talking about. In English, は is sometimes translated as 'as for ~' though usually it just isn't translated at all, or translated as the subject.",
+    "nepali_explanation": "नेपाली र अंग्रेजी भाषामा पाइने अव्ययभन्दा जापानी भाषामा पाइने は अलिक फरक किसिमको हुन्छ। यो हमेशा नाम वा सर्वनाम (Noun/Pronoun) को ठीक पछाडि लाग्छ, र त्यसले जनाएको कुरालाई वाक्यको मुख्य विषय (Topic) बनाउँछ — अर्थात् वाक्यले के/कसको बारेमा कुरा गर्दैछ भन्ने कुरा है। लेख्दा は नै लेखिन्छ तर बोल्दा 'वा (wa)' भनेर उच्चारण गरिन्छ। यसलाई कहिलेकाहीं 'चाँही/ले' भनेर अनुवाद गर्न सकिन्छ, तर प्रायः यसको छुट्टै अर्थ नहुँदा अनुवादमा नदेखिन पनि सक्छ।",
+    "examples": [
+      {
+        "japanese": "私(わたし)は 学生(がくせい)です。",
+        "romaji": "Watashi wa gakusei desu.",
+        "english": "I am a student.",
+        "nepali": ""
+      },
+      {
+        "japanese": "山田(やまだ)さんは 先生(せんせい)です。",
+        "romaji": "Yamada-san wa sensei desu.",
+        "english": "Mr. Yamada is a teacher.",
+        "nepali": ""
+      },
+      {
+        "japanese": "これは 本(ほん)です。",
+        "romaji": "Kore wa hon desu.",
+        "english": "As for this, it is a book.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 1",
+    "grammar_point": "です (Copula: is/am/are)",
+    "form": "N です。",
+    "english_explanation": "です comes at the end of a noun sentence and means 'is/am/are'. It has no meaning of its own beyond politely completing the sentence — it does not act like a verb of existence, only a linking/copula word. The polite (honorific) equivalent is でございます, used in very formal speech such as by shop staff.",
+    "nepali_explanation": "です को नेपाली भाषामा 'हो' वा 'छ' भन्ने अर्थ लाग्दछ। यसले नामवाची वाक्य (noun sentence) लाई पूरा गर्ने काम मात्र गर्दछ — यो आफैंमा कुनै छुट्टै अर्थ बोकेको क्रियापद होइन, बरु वाक्य जोड्ने/पूरा गर्ने शब्द हो। यसको आदर शब्द でございます हो, जुन धेरै औपचारिक अवस्थामा (जस्तै पसलमा कर्मचारीले) प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "これは 本(ほん)です。",
+        "romaji": "Kore wa hon desu.",
+        "english": "This is a book.",
+        "nepali": ""
+      },
+      {
+        "japanese": "あれは 車(くるま)です。",
+        "romaji": "Are wa kuruma desu.",
+        "english": "That (over there) is a car.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 1",
+    "grammar_point": "N₁ は N₂ です。 (Basic Sentence Pattern)",
+    "form": "N₁ は N₂ です。",
+    "english_explanation": "This is the most basic Japanese sentence pattern, used to state a simple fact: 'N₁ is N₂'. N₁ (the topic, marked by は) comes first, then N₂ (what is being said about N₁), and です completes it politely.",
+    "nepali_explanation": "यो जापानी भाषाको सबैभन्दा आधारभूत र सरल वाक्य संरचना हो, जसको प्रयोग गरी 'N₁ चाँही N₂ हो' भन्ने सामान्य नामवाची वाक्य बनाइन्छ। पहिले विषय (は ले चिन्ह्याइएको N₁) आउँछ, त्यसपछि N₁ को बारेमा भनिने कुरा (N₂), र अन्तमा नम्रतापूर्वक वाक्य पूरा गर्न です आउँछ।",
+    "examples": [
+      {
+        "japanese": "わたしは 会社員(かいしゃいん)です。",
+        "romaji": "Watashi wa kaishain desu.",
+        "english": "I am a company employee.",
+        "nepali": ""
+      },
+      {
+        "japanese": "ラムさんは ネパール人(じん)です。",
+        "romaji": "Ramu-san wa Nepāru-jin desu.",
+        "english": "Ram is Nepali.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 1",
+    "grammar_point": "Particle も (Also / Too)",
+    "form": "N₁は N₂です。N₃も N₂です。",
+    "english_explanation": "も ('mo') always follows a noun or pronoun, just like は. If a second statement has exactly the same content (same N₂) as the first statement, then the topic-marker は in the second sentence is replaced with も, meaning 'also/too'.",
+    "nepali_explanation": "も ले पनि सधैं नाम वा सर्वनाम पछि नै लाग्छ, ठीक は जस्तै। यदि पहिलो वाक्यको विवरण (Statement) र दोस्रो वाक्यको विवरण उस्तै (त्यही N₂) भएमा, दोस्रो वाक्यमा प्रयोग हुने विषय-सूचक は लाई も ले बदल्नुपर्छ, जसको अर्थ 'पनि' हुन्छ।",
+    "examples": [
+      {
+        "japanese": "マヤさんは 先生(せんせい)です。ハリさんも 先生(せんせい)です。",
+        "romaji": "Maya-san wa sensei desu. Hari-san mo sensei desu.",
+        "english": "Maya is a teacher. Hari is also a teacher.",
+        "nepali": ""
+      },
+      {
+        "japanese": "これは ペンです。それも ペンです。",
+        "romaji": "Kore wa pen desu. Sore mo pen desu.",
+        "english": "This is a pen. That is also a pen.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 1",
+    "grammar_point": "Particle か (Question Marker)",
+    "form": "Sentence + か。",
+    "english_explanation": "When か is added to the very end of any sentence, that sentence becomes a question. Just like in English, Japanese questions are of two types: Yes/No Questions (answered with はい 'yes' or いいえ 'no') and W/H Questions (answered with specific information, never with はい/いいえ).",
+    "nepali_explanation": "वाक्यको एकदम अन्त्यमा か थपिएमा त्यो वाक्य प्रश्नमा परिणत हुन्छ। अंग्रेजी भाषामा जस्तै जापानी भाषामा पनि दुई प्रकारका प्रश्न हुन्छन्: Yes/No Question (जसको उत्तर はい 'हो' वा いいえ 'होइन' मा दिइन्छ) र W/H Question (जसको उत्तरमा विशेष जानकारी दिइन्छ, कहिल्यै はい/いいえ मा उत्तर दिइँदैन)।",
+    "examples": [
+      {
+        "japanese": "マヤさんは 学生(がくせい)ですか。 はい、マヤさんは 学生(がくせい)です。",
+        "romaji": "Maya-san wa gakusei desu ka. Hai, Maya-san wa gakusei desu.",
+        "english": "Is Maya a student? Yes, Maya is a student.",
+        "nepali": ""
+      },
+      {
+        "japanese": "あの ひとは だれですか。 あの かたは マヤさんです。",
+        "romaji": "Ano hito wa dare desu ka. Ano kata wa Maya-san desu.",
+        "english": "Who is that person? That person is Maya.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 1",
+    "grammar_point": "Particle の (Possessive: ~'s / of ~)",
+    "form": "N₁ の N₂",
+    "english_explanation": "の always joins two nouns/pronouns together, giving the meaning 'N₁'s N₂' or 'N₂ of N₁' — showing possession or belonging. It is placed right after the first noun (the owner) and before the second noun (the thing owned).",
+    "nepali_explanation": "の ले सधैं दुई नाम/सर्वनामलाई एकसाथ जोड्ने काम गर्छ, र यसको अर्थ स्पष्टरूपमा सधैं 'को' नै हुन्छ — जस्तै: उसको, उनिहरूको, रामको, श्यामको, मेरो, हाम्रो आदि। यो पहिलो नाम (मालिक) पछि र दोस्रो नाम (जुन कुराको मालिक हो त्यो) अगाडि राखिन्छ।",
+    "examples": [
+      {
+        "japanese": "わたしの 名前(なまえ)は ミナです。",
+        "romaji": "Watashi no namae wa Mina desu.",
+        "english": "My name is Mina.",
+        "nepali": ""
+      },
+      {
+        "japanese": "木村(きむら)さんは 富士(ふじ)大学(だいがく)の 学生(がくせい)です。",
+        "romaji": "Kimura-san wa Fuji daigaku no gakusei desu.",
+        "english": "Mr. Kimura is a student of Fuji University.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 2",
+    "grammar_point": "これ／それ／あれ (this/that/that over there)",
+    "form": "これ／それ／あれ は N です。",
+    "english_explanation": "These are demonstrative pronouns used to point at things without naming them: これ (kore) = 'this' — a thing near the speaker; それ (sore) = 'that' — a thing near the listener; あれ (are) = 'that over there' — a thing far from both speaker and listener. These words always attach the particle は right after them.",
+    "nepali_explanation": "कुनै वस्तुलाई नाम नलिईकनै औंल्याएर देखाउँदा प्रयोग हुने प्रदर्शक सर्वनाम हुन्: これ (यो) ले वक्ता आफू नजिकैको वस्तुलाई, それ (त्यो) ले सुन्ने व्यक्ति नजिकैको वस्तुलाई, र あれ (उ त्यो) ले वक्ता र श्रोता दुबैभन्दा टाढाको वस्तुलाई जनाउँछ। これ／それ／あれ को पछाडि जहिलेपनि は नै लाग्छ, अरू अव्यय लाग्दैन।",
+    "examples": [
+      {
+        "japanese": "これは かばんです。",
+        "romaji": "Kore wa kaban desu.",
+        "english": "This is a bag.",
+        "nepali": ""
+      },
+      {
+        "japanese": "あれは だれの 傘(かさ)ですか。 あれは わたしの かばんです。",
+        "romaji": "Are wa dare no kasa desu ka. Are wa watashi no kaban desu.",
+        "english": "Whose umbrella is that? That is my bag.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 2",
+    "grammar_point": "この N／その N／あの N (this/that + Noun)",
+    "form": "この／その／あの + Noun",
+    "english_explanation": "These are used exactly like これ/それ/あれ (this/that/that over there) but must always be followed directly by a noun — they cannot stand alone. So while これ means 'this (thing)', この always needs a noun after it, like この本 'this book'.",
+    "nepali_explanation": "यिनको अर्थ पनि これ/それ/あれ जस्तै 'यो/त्यो/उ त्यो' नै हुन्छ, तर फरक यत्ति हो कि यी एक्लै प्रयोग हुन सक्दैनन् — यिनको पछाडि सधैं Noun (नाम) आउनैपर्छ। जस्तै: これ ले एक्लै 'यो' भन्छ भने この ले सधैं この本 (यो किताब) जस्तो नामको साथमा मात्र प्रयोग हुन्छ।",
+    "examples": [
+      {
+        "japanese": "その かばんは わたしの ほんです。",
+        "romaji": "Sono kaban wa watashi no hon desu.",
+        "english": "That bag is my book.",
+        "nepali": ""
+      },
+      {
+        "japanese": "あの 傘(かさ)は だれの 傘(かさ)ですか。 あの 傘(かさ)は わたしのです。",
+        "romaji": "Ano kasa wa dare no kasa desu ka. Ano kasa wa watashi no desu.",
+        "english": "Whose umbrella is that? That umbrella is mine.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 2",
+    "grammar_point": "そうです／そうじゃ ありません (That's right / That's not right)",
+    "form": "そうです。／ そうじゃ ありません。",
+    "english_explanation": "そう is mainly used to give a short, direct affirmative or negative answer to a question. To give a short affirmative answer, say はい、そうです (yes, that's right); to give a short negative answer, say いいえ、そうじゃ ありません (no, that's not right).",
+    "nepali_explanation": "そう प्रायः प्रश्नको संक्षिप्त सकारात्मक वा नकारात्मक उत्तर दिन प्रयोग गरिन्छ। छोटकरीमा सकारात्मक उत्तर दिन はい、そうです (अँ, त्यसो हो) प्रयोग गरिन्छ भने, छोटकरीमा नकारात्मक उत्तर दिन いいえ、そうじゃ ありません (अँह, त्यसो होइन) प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "これは 本(ほん)ですか。 はい、そうです。",
+        "romaji": "Kore wa hon desu ka. Hai, sō desu.",
+        "english": "Is this a book? Yes, it is.",
+        "nepali": ""
+      },
+      {
+        "japanese": "いいえ、そうじゃ ありません。",
+        "romaji": "Iie, sō ja arimasen.",
+        "english": "No, it isn't.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 2",
+    "grammar_point": "S₁か、S₂か。 (Which one — A or B?)",
+    "form": "S₁か、S₂か。",
+    "english_explanation": "This pattern is used when asking someone to pick one of two options as an answer. Unlike Yes/No questions, the answer to this kind of question is never はい or いいえ — you must state which of the two options is correct.",
+    "nepali_explanation": "कसैलाई दुई विकल्पहरू (options) बीचबाट एउटा उत्तरको रूपमा छान्नु भनेर प्रश्न सोध्दा यो स्वरूप प्रयोग गरिन्छ। यो प्रश्नको उत्तर दिँदा はい अथवा いいえ को प्रयोग गरिँदैन — बरु दुई मध्ये कुन विकल्प सही हो त्यही भन्नुपर्छ।",
+    "examples": [
+      {
+        "japanese": "これは かばんですか、傘(かさ)ですか。 かばんです。",
+        "romaji": "Kore wa kaban desu ka, kasa desu ka. Kaban desu.",
+        "english": "Is this a bag or an umbrella? It's a bag.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 2",
+    "grammar_point": "N₁ の N₂ (Whose/what kind of thing)",
+    "form": "N₁ の N₂",
+    "english_explanation": "の here shows what N2 belongs to or what N2 is related to (already introduced in Lesson 1, but used more here in the context of things belonging to people).",
+    "nepali_explanation": "यहाँ の ले N2 कस्को हो अथवा केसँग सम्बन्धित छ भन्ने देखाउँछ (लेसन १ मा परिचय गराइएको भए तापनि यहाँ व्यक्तिको स्वामित्वमा भएका वस्तुहरूको सन्दर्भमा बढी प्रयोग गरिएको छ)।",
+    "examples": [
+      {
+        "japanese": "これは 車(くるま)の 雑誌(ざっし)です。",
+        "romaji": "Kore wa kuruma no zasshi desu.",
+        "english": "This is a car magazine.",
+        "nepali": ""
+      },
+      {
+        "japanese": "これは マヤさんの カメラです。",
+        "romaji": "Kore wa Maya-san no kamera desu.",
+        "english": "This is Maya's camera.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 2",
+    "grammar_point": "そうですか。 (Oh, I see. / Is that so?)",
+    "form": "そうですか。",
+    "english_explanation": "Used when the speaker has just received new information from someone and wants to show that they've understood/absorbed it — like saying 'Oh really?' or 'I see' in English.",
+    "nepali_explanation": "कसैले नयाँ जानकारी प्राप्त गर्दा त्यो जानकारी बुझेको वा थाहा पाएको जनाउन प्रयोग गरिन्छ — अंग्रेजीको 'Oh really?' वा 'I see' जस्तै।",
+    "examples": [
+      {
+        "japanese": "A: この 辞書(じしょ)は あなたのですか。 B: いいえ、ちがいます。マヤさんのです。 A: そうですか。",
+        "romaji": "Kono jisho wa anata no desu ka. Iie, chigaimasu. Maya-san no desu. Sō desu ka.",
+        "english": "Is this dictionary yours? No, it isn't. It's Maya's. I see.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 2",
+    "grammar_point": "お～ (Polite Prefix)",
+    "form": "お + Noun",
+    "english_explanation": "お is added in front of certain words purely to make them sound more polite/gentle towards the listener. It carries no meaning by itself — it's a marker of politeness.",
+    "nepali_explanation": "शब्दलाई श्रोता सामु नम्र बनाउनको लागि शब्दको अगाडि お को प्रयोग गरिन्छ। यसको आफैंमा कुनै छुट्टै अर्थ हुँदैन — यो केवल नम्रता जनाउने चिन्ह मात्र हो।",
+    "examples": [
+      {
+        "japanese": "おかね (money, politely)",
+        "romaji": "o-kane",
+        "english": "money",
+        "nepali": ""
+      },
+      {
+        "japanese": "おくに (country, politely)",
+        "romaji": "o-kuni",
+        "english": "country",
+        "nepali": ""
+      },
+      {
+        "japanese": "おみず (water, politely)",
+        "romaji": "o-mizu",
+        "english": "water",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 3",
+    "grammar_point": "ここ/そこ/あそこ/どこ and こちら/そちら/あちら/どちら",
+    "form": "ここ／そこ／あそこ／どこ",
+    "english_explanation": "ここ/そこ/あそこ indicate a PLACE (here/there/over there); どこ asks 'where'. こちら/そちら/あちら/どちら are the polite versions of the same words, but they can indicate either a PLACE or a DIRECTION (this way/that way/that way over there/which way).",
+    "nepali_explanation": "ここ/そこ/あそこ ले ठाउँ (place) सँग सम्बन्धित कुरा जनाउँछ भने どこ ले 'कहाँ' भनेर सोध्छ। こちら/そちら/あちら/どちら यिनकै आदरार्थी (polite) रूप हुन्, तर यिनले ठाउँ (place) वा ठाउँको दिशा (direction) दुबै जनाउन सक्छन्।",
+    "examples": [
+      {
+        "japanese": "事務所(じむしょ)は あそこです。",
+        "romaji": "Jimusho wa asoko desu.",
+        "english": "The office is over there.",
+        "nepali": ""
+      },
+      {
+        "japanese": "電話(でんわ)は ２階(かい)です。",
+        "romaji": "Denwa wa nikai desu.",
+        "english": "The telephone is on the 2nd floor.",
+        "nepali": ""
+      },
+      {
+        "japanese": "エレベーターは どちらですか。 あちらです。",
+        "romaji": "Erebētā wa dochira desu ka. Achira desu.",
+        "english": "Which way is the elevator? That way.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 3",
+    "grammar_point": "N は Place です。 (N is located at Place)",
+    "form": "N は Place です。",
+    "english_explanation": "Used to state where a certain place, item, or person is when someone asks or wants to know.",
+    "nepali_explanation": "कुनै ठाउँ, वस्तु अथवा व्यक्ति कहाँ छ भनेर भन्नुपरेमा यो स्वरूप प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "じむしょは あそこです。",
+        "romaji": "Jimusho wa asoko desu.",
+        "english": "The office is over there.",
+        "nepali": ""
+      },
+      {
+        "japanese": "やまださんは きょうしつです。",
+        "romaji": "Yamada-san wa kyōshitsu desu.",
+        "english": "Mr. Yamada is in the classroom.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 3",
+    "grammar_point": "N₁ の N₂ (Country/Company + Product)",
+    "form": "N₁ の N₂",
+    "english_explanation": "When N1 is the name of a country or a company, and N2 is the name of a product, this pattern shows that N2 is a product of N1. どこの is used to ask which country's or which company's product something is.",
+    "nepali_explanation": "जब N1 कुनै देशको नाम हुन्छ र N2 कुनै उत्पादन (product) को नाम हुन्छ, तब N2 चाँही N1 देशको उत्पादन हो भनेर भन्न यो स्वरूपको प्रयोग गरिन्छ। साथै, जब N1 कुनै कम्पनीको नाम हुन्छ, तब N2 चाँही N1 कम्पनीको उत्पादन हो भनेर भन्न पनि यही स्वरूपको प्रयोग गरिन्छ। どこの को प्रयोग गरी कुन देशको वा कुन कम्पनीको (कहाँको) उत्पादन हो भनेर प्रश्न सोधिन्छ।",
+    "examples": [
+      {
+        "japanese": "これは どこの コンピューターですか。",
+        "romaji": "Kore wa doko no konpyūtā desu ka.",
+        "english": "Whose (which country's) computer is this?",
+        "nepali": ""
+      },
+      {
+        "japanese": "にほんの コンピューターです。",
+        "romaji": "Nihon no konpyūtā desu.",
+        "english": "It's a Japanese computer.",
+        "nepali": ""
+      },
+      {
+        "japanese": "IMCの コンピューターです。",
+        "romaji": "IMC no konpyūtā desu.",
+        "english": "It's an IMC computer.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 3",
+    "grammar_point": "こ/そ/あ/ど Demonstrative System (Full Chart)",
+    "form": "これ/この/ここ/こちら etc.",
+    "english_explanation": "Japanese demonstratives all follow the same 4-way pattern based on the first sound: こ (near speaker), そ (near listener), あ (far from both), ど (question). This same pattern applies whether pointing at a thing, a thing+person, a place, or a direction.",
+    "nepali_explanation": "जापानी भाषाका सबै प्रदर्शक शब्दहरू एउटै ४-किसिमको ढाँचा पछ्याउँछन्, जुन पहिलो ध्वनिमा भर पर्छ: こ (वक्ता नजिक), そ (श्रोता नजिक), あ (दुबैभन्दा टाढा), ど (प्रश्न)। यही ढाँचा वस्तु, वस्तु+व्यक्ति, ठाउँ, अथवा दिशा जनाउँदा पनि उस्तै रूपमा लागू हुन्छ।",
+    "examples": [
+      {
+        "japanese": "thing: これ／それ／あれ／どれ",
+        "romaji": "kore/sore/are/dore",
+        "english": "this/that/that over there/which one",
+        "nepali": ""
+      },
+      {
+        "japanese": "place: ここ／そこ／あそこ／どこ",
+        "romaji": "koko/soko/asoko/doko",
+        "english": "here/there/over there/where",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 4",
+    "grammar_point": "Telling Time",
+    "form": "いま ―じ ―ふん／―ぷん です。",
+    "english_explanation": "This pattern is used to state the current time. なんじ 'what time' is used to ask the time.",
+    "nepali_explanation": "समय व्यक्त गर्न यो स्वरूपको प्रयोग गरिन्छ। समय सोध्नको लागि なんじ (कति बजे) को प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "いま なんじですか。",
+        "romaji": "Ima nanji desu ka.",
+        "english": "What time is it now?",
+        "nepali": ""
+      },
+      {
+        "japanese": "いま ７じです。",
+        "romaji": "Ima shichiji desu.",
+        "english": "It is 7 o'clock now.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 4",
+    "grammar_point": "Tense (じせい)",
+    "form": "Non-past / Past",
+    "english_explanation": "Japanese only has two tenses: Non-past (used for both present and future) and Past. There is no separate future tense form — the same present-tense verb is used to talk about the future.",
+    "nepali_explanation": "जापानी भाषामा काललाई दुई समूहमा मात्र विभाजित गरिएको छ: Present Tense (Non-past) र Past Tense। भविष्यकाल (Future Tense) को लागि छुट्टै रूप हुँदैन — त्यसको काम वर्तमानकालकै रूपले नै चलाइन्छ।",
+    "examples": [
+      {
+        "japanese": "あした べんきょうします。",
+        "romaji": "Ashita benkyō shimasu.",
+        "english": "I will study tomorrow. (same form as present)",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 4",
+    "grammar_point": "V ます-form (Polite Verb Form)",
+    "form": "V…ます",
+    "english_explanation": "This is called the Polite Form of a verb. It is the form most commonly used in everyday polite conversation, and is the standard 'dictionary entry point' form taught to beginners.",
+    "nepali_explanation": "यसलाई क्रियाको विनम्रस्वरूप (Polite Form of Verb) भनिन्छ। दैनिक नम्र कुराकानीमा सबैभन्दा बढी प्रयोग हुने यही रूप हो, र सुरुवाती विद्यार्थीहरूलाई सिकाइने आधारभूत रूप पनि यही हो।",
+    "examples": [
+      {
+        "japanese": "みます (see/watch)",
+        "romaji": "mimasu",
+        "english": "see, watch",
+        "nepali": ""
+      },
+      {
+        "japanese": "たべます (eat)",
+        "romaji": "tabemasu",
+        "english": "eat",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 4",
+    "grammar_point": "V ます／V ません／V ました／V ませんでした (4 basic conjugations)",
+    "form": "Present +ve/-ve, Past +ve/-ve",
+    "english_explanation": "These are the four basic conjugation forms of any polite verb, combining tense (non-past/past) with polarity (affirmative/negative).",
+    "nepali_explanation": "काल (non-past/past) र सकारात्मक/नकारात्मक (polarity) को संयोजनबाट बनेको जुनसुकै नम्र क्रियापदको चार आधारभूत रूपान्तरण हो।",
+    "examples": [
+      {
+        "japanese": "みます／みません／みました／みませんでした",
+        "romaji": "mimasu/mimasen/mimashita/mimasendeshita",
+        "english": "watch / don't watch / watched / didn't watch",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 4",
+    "grammar_point": "N(time)に Verb (Time marker に)",
+    "form": "N(time)に Verb",
+    "english_explanation": "に marks a specific point in time when an action happens or is performed — but only when that time is expressed as a specific number (like 6時 '6 o'clock'). If a day of the week is used, に can optionally be added too, though it is not required.",
+    "nepali_explanation": "に ले कुनै निश्चित समयमा केही काम गरिन्छ वा गरिएको छ भने उक्त समयलाई संकेत गर्छ। त्यो निश्चित समय भनेको अंकमा प्रयोग गरिएको हुनुपर्दछ (जस्तै ६ बजे)। साथै हप्ताको सातवार भएमा पनि に ले संकेत गर्न सकिन्छ, यद्यपि यो अनिवार्य छैन।",
+    "examples": [
+      {
+        "japanese": "わたしは まいあさ ６じに おきます。",
+        "romaji": "Watashi wa maiasa rokuji ni okimasu.",
+        "english": "I get up at 6 every morning.",
+        "nepali": ""
+      },
+      {
+        "japanese": "わたしは きのう べんきょうしました。",
+        "romaji": "Watashi wa kinō benkyō shimashita.",
+        "english": "I studied yesterday.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 4",
+    "grammar_point": "N₁ から N₂ まで (From ~ to ~)",
+    "form": "N₁から N₂まで",
+    "english_explanation": "から shows when or where an action begins, and まで shows when or where it ends. Both particles can be used together in the same sentence, or independently. から means 'from/since', while まで means 'up to/until'.",
+    "nepali_explanation": "から ले कुनै कार्य सुरुहुने वा गरिने समय अथवा ठाउँलाई संकेत गर्छ भने まで ले कुनै कार्य अन्त्यहुने वा गरिने समय अथवा ठाउँलाई संकेत गर्छ। から र まで एकैसाथ प्रयोग गर्नैपर्छ भन्ने हुँदैन — दुबैलाई छुट्टाछुट्टै पनि प्रयोग गर्न सकिन्छ। から को नेपाली अर्थ देखि/बाट हुन्छ भने まで को अर्थ सम्म हुन्छ।",
+    "examples": [
+      {
+        "japanese": "わたしは ９じから ５じまで はたらきます。",
+        "romaji": "Watashi wa kuji kara goji made hatarakimasu.",
+        "english": "I work from 9 to 5.",
+        "nepali": ""
+      },
+      {
+        "japanese": "わたしは １０じから べんきょうします。",
+        "romaji": "Watashi wa jūji kara benkyō shimasu.",
+        "english": "I study from 10 o'clock.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 4",
+    "grammar_point": "N₁ と N₂ (~ and ~)",
+    "form": "N₁ と N₂",
+    "english_explanation": "と connects two nouns or pronouns together with the meaning 'and'.",
+    "nepali_explanation": "と को नेपाली भाषामा 'र' भन्ने अर्थ हुन्छ। यसले दुई नाम (Noun) वा सर्वनाम (Pronoun) लाई समन्वय सम्बन्धमा जोड्ने काम गर्छ।",
+    "examples": [
+      {
+        "japanese": "ハリさんと マヤさんは がくせいです。",
+        "romaji": "Hari-san to Maya-san wa gakusei desu.",
+        "english": "Hari and Maya are students.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 5",
+    "grammar_point": "N(place)へ いきます／きます／かえります",
+    "form": "N(place)へ Verb",
+    "english_explanation": "へ (written with the hiragana 'he' but pronounced 'e' when used as a particle) marks the direction towards a place — go/come/return towards ~. It highlights the fact that the subject is heading in that direction, and always attaches directly after a place-word.",
+    "nepali_explanation": "へ (लेखिँदा へ नै तर अव्ययको रूपमा प्रयोग हुँदा 'ए' भनेर उच्चारण गरिने) ले कुनै ठाउँतिर भनेर दिशा जनाउने काम गर्छ। यसले कर्ता (subject) त्यो दिशातिर जाँदैछ भन्ने कुरालाई हाइलाइट गर्छ, र सधैं स्थानसूचक शब्दको ठीक पछाडि लाग्छ।",
+    "examples": [
+      {
+        "japanese": "あした どこへ いきますか。",
+        "romaji": "Ashita doko e ikimasu ka.",
+        "english": "Where will you go tomorrow?",
+        "nepali": ""
+      },
+      {
+        "japanese": "カトマンズへ いきます。",
+        "romaji": "Katomanzu e ikimasu.",
+        "english": "I will go to Kathmandu.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 5",
+    "grammar_point": "どこ[へ]も いきません／いきませんでした",
+    "form": "どこへも Verb(negative)",
+    "english_explanation": "When a question word like どこ ('where') is followed by も, the verb that follows is always negative. どこへも or どこも together mean 'nowhere/not anywhere'.",
+    "nepali_explanation": "जब どこ जस्तो प्रश्नवाचकशब्दले も लिन्छ, तब प्रयोगहुने क्रियापद जहिलेपनि negative हुन्छ। यहाँ どこへも वा どこも को नेपाली भाषामा 'कतैतिरपनि/कहिल्यै' भन्ने अर्थ हुन्छ।",
+    "examples": [
+      {
+        "japanese": "わたしは あした どこへも いきません。",
+        "romaji": "Watashi wa ashita doko e mo ikimasen.",
+        "english": "I won't go anywhere tomorrow.",
+        "nepali": ""
+      },
+      {
+        "japanese": "かれは きのう どこも いきませんでした。",
+        "romaji": "Kare wa kinō doko mo ikimasendeshita.",
+        "english": "He didn't go anywhere yesterday.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 5",
+    "grammar_point": "N(vehicle)で いきます／きます／かえります",
+    "form": "N(vehicle)で Verb",
+    "english_explanation": "When some vehicle/means of transport is used to go, come, or return, that means of transport is marked by で, meaning 'by/via'.",
+    "nepali_explanation": "जब कतै जान, आउन अथवा फर्कन कुनै सवारी-साधन प्रयोग गरिन्छ भने, त्यो सवारी-साधनलाई で ले संकेत गर्दछ। यहाँ で को अर्थ 'मा/बाट/द्वारा' भन्ने लाग्छ।",
+    "examples": [
+      {
+        "japanese": "きょうは なんで きましたか。",
+        "romaji": "Kyō wa nan de kimashita ka.",
+        "english": "How (by what) did you come today?",
+        "nepali": ""
+      },
+      {
+        "japanese": "バスで きました。",
+        "romaji": "Basu de kimashita.",
+        "english": "I came by bus.",
+        "nepali": ""
+      },
+      {
+        "japanese": "わたしは あるいて がっこうへ いきます。",
+        "romaji": "Watashi wa aruite gakkō e ikimasu.",
+        "english": "I go to school on foot (walking).",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 5",
+    "grammar_point": "N(person/animal)と Verb (~ with ~)",
+    "form": "N(person/animal)と Verb",
+    "english_explanation": "と here marks the person or animal with whom an action is done, meaning 'together with'. If no companion is mentioned (i.e. the action is done alone), ひとりで 'alone' is used instead, and と is not used.",
+    "nepali_explanation": "と ले कुनै कार्य कुनै व्यक्ती वा पशुको साथ गरिन्छ भने त्यो व्यक्ती वा पशुलाई संकेत गर्दछ, र यसको अर्थ 'सँग' हुन्छ। यदि कुनै कार्य कुनैको साथ बिना (एक्लै) गरिएको छ भने と को प्रयोग नगरी ひとりで (एक्लै) प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "かぞくと ポカラへ いきました。",
+        "romaji": "Kazoku to Pokara e ikimashita.",
+        "english": "I went to Pokhara with my family.",
+        "nepali": ""
+      },
+      {
+        "japanese": "わたしは ひとりで にほんへ きました。",
+        "romaji": "Watashi wa hitori de Nihon e kimashita.",
+        "english": "I came to Japan alone.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 5",
+    "grammar_point": "いつ (When)",
+    "form": "いつ Verb か。",
+    "english_explanation": "いつ is used to ask when someone does or did something. It cannot take particles like へ/を before the verb.",
+    "nepali_explanation": "कसैलाई कुनै कार्य कहिले गर्नुहुन्छ वा गर्नुभयो भनेर प्रश्न सोध्न いつ को प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "いつ カトマンズへ いきますか。",
+        "romaji": "Itsu Katomanzu e ikimasu ka.",
+        "english": "When will you go to Kathmandu?",
+        "nepali": ""
+      },
+      {
+        "japanese": "あなたの たんじょうびは いつですか。",
+        "romaji": "Anata no tanjōbi wa itsu desu ka.",
+        "english": "When is your birthday?",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 5",
+    "grammar_point": "～よ (Sentence-final Emphasis Particle)",
+    "form": "Sentence + よ",
+    "english_explanation": "よ is used at the end of a sentence either to give the listener information they don't already know, or to strongly state the speaker's own opinion/decision.",
+    "nepali_explanation": "よ लाई वाक्यको अन्त्यमा प्रयोग गरी अरूलाई थाहा नभएको जानकारी दिन, अथवा वक्ताले आफ्नो निर्णय जोड दिएर व्यक्त गर्न प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "この バスは カトマンズへ いきますか。 いいえ、つぎの ですよ。",
+        "romaji": "Kono basu wa Katomanzu e ikimasu ka. Iie, tsugi no desu yo.",
+        "english": "Does this bus go to Kathmandu? No, it's the next one.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 6",
+    "grammar_point": "N を Verb (Transitive Verb + Object)",
+    "form": "N を Verb",
+    "english_explanation": "を marks the direct object (the thing that receives the action) of a transitive verb — it always shows the noun that 'is being ~ed'. It is silent in meaning-translation but always carries the sense of 'to/を' logically, and it always comes between the object and the verb.",
+    "nepali_explanation": "を ले सधैं जुन कर्मले सकर्मक क्रियाले लिने कर्म (object) लाई संकेत गर्ने ठिक भएकोले, यसलाई Object Marker भनिन्छ। यसले सधैं 'लाई' भन्ने अर्थ दिइरहेको हुन्छ, यद्यपि नेपाली वाक्यमा यो अर्थ प्रत्यक्षरूपमा नदेखिएर सुषुप्त रूपमा बसेको हुन्छ। यो अव्यय जहिलेपनि object र verb को बीचमा आउँछ।",
+    "examples": [
+      {
+        "japanese": "きむらさんは テニスを します。",
+        "romaji": "Kimura-san wa tenisu o shimasu.",
+        "english": "Mr. Kimura plays tennis.",
+        "nepali": ""
+      },
+      {
+        "japanese": "わたしは ごはんを たべます。",
+        "romaji": "Watashi wa gohan o tabemasu.",
+        "english": "I eat a meal.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 6",
+    "grammar_point": "N を します (do/play)",
+    "form": "N を します",
+    "english_explanation": "します means 'do' or 'play' in Nepali and is combined with many different activity-nouns to express doing that activity.",
+    "nepali_explanation": "します को नेपाली भाषामा 'गर्छु' वा 'खेल्छु' भन्ने अर्थ लाग्दछ। यसलाई धेरै प्रकारका क्रियाकलापका नामसँग जोडेर त्यो क्रियाकलाप गर्ने कुरा व्यक्त गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "サッカーを します。",
+        "romaji": "Sakkā o shimasu.",
+        "english": "I play soccer.",
+        "nepali": ""
+      },
+      {
+        "japanese": "かいぎを します。",
+        "romaji": "Kaigi o shimasu.",
+        "english": "I hold a meeting.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 6",
+    "grammar_point": "なにを しますか。 (What will you do?)",
+    "form": "なにを しますか。",
+    "english_explanation": "This pattern is used to ask someone what they will do or are doing.",
+    "nepali_explanation": "कसैलाई के गर्नुहुन्छ भनेर प्रश्न गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "あした なにを しますか。 えいがを みます。",
+        "romaji": "Ashita nani o shimasu ka. Eiga o mimasu.",
+        "english": "What will you do tomorrow? I will watch a movie.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 6",
+    "grammar_point": "なん and なに (What)",
+    "form": "なん／なに",
+    "english_explanation": "なん is used: 1) when the word right after it begins with た/だ/な-row sounds, 2) before a counter suffix (asking 'how many/how much'), 3) when asking about the day of the week. なに is used in all other situations.",
+    "nepali_explanation": "なん लाई निम्न अवस्थामा प्रयोग गरिन्छ: १) यदि कुनैपनि अक्षर वा शब्दको अगाडिपहिलो अक्षर た、だ वा な-row मा पर्छ भने, २) जब यो counter suffix (कति ～ भनेर प्रश्न गर्दा) पछि आउँछ, ३) वार सोध्न पनि प्रयोग गरिन्छ। なに भने माथिका अवस्थाहरूबाहेक अरू सबै अवस्थामा प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "あれは なんですか。",
+        "romaji": "Are wa nan desu ka.",
+        "english": "What is that?",
+        "nepali": ""
+      },
+      {
+        "japanese": "なにを たべますか。",
+        "romaji": "Nani o tabemasu ka.",
+        "english": "What will you eat?",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 6",
+    "grammar_point": "N(place)で Verb-action",
+    "form": "N(place)で Verb",
+    "english_explanation": "で marks the location or place where an action takes place. Here で means 'at/in/from'.",
+    "nepali_explanation": "हामीले कुनै ठाउँ वा स्थानमा कुनै कार्य गर्छौं वा हुन्छ भने त्यो ठाउँ वा स्थानलाई で ले संकेत गर्छ। यहाँ で को अर्थ 'मा/बाट' हुन्छ।",
+    "examples": [
+      {
+        "japanese": "えきで しんぶんを かいました。",
+        "romaji": "Eki de shinbun o kaimashita.",
+        "english": "I bought a newspaper at the station.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 6",
+    "grammar_point": "V ましょう (Let's ~)",
+    "form": "V ましょう",
+    "english_explanation": "Used when appealing to others (or everyone) to do something together — 'let's do ~'. It is formed by removing ます from the V ます-form and adding ましょう.",
+    "nepali_explanation": "अरूलाई वा सबैलाई यसो गरौं, उसो गरौं भनेर आह्वान (appeal) गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ। यसको निर्माणको लागि V ます को ます लाई मात्र हटाई ましょう थपिदिए पुग्छ।",
+    "examples": [
+      {
+        "japanese": "ちょっと やすみましょう。",
+        "romaji": "Chotto yasumimashō.",
+        "english": "Let's take a short rest.",
+        "nepali": ""
+      },
+      {
+        "japanese": "いっしょに ごはんを たべましょう。",
+        "romaji": "Issho ni gohan o tabemashō.",
+        "english": "Let's eat together.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 6",
+    "grammar_point": "V ませんか (Won't you ~?)",
+    "form": "V ませんか",
+    "english_explanation": "Used when inviting someone to do something together.",
+    "nepali_explanation": "जब कसैलाई केही गर्न आमन्त्रण गर्नुपर्दछ, यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "いっしょに ひるごはんを たべませんか。 ええ、たべましょう。",
+        "romaji": "Issho ni hirugohan o tabemasen ka. Ee, tabemashō.",
+        "english": "Won't you have lunch together? Yes, let's eat.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 7",
+    "grammar_point": "N(tool/means)で Verb",
+    "form": "N(tool/means)で Verb",
+    "english_explanation": "で marks the tool or means used to carry out an action, meaning 'by means of/using'.",
+    "nepali_explanation": "कुनै कार्य गर्नलाई कुनै उपकरण वा माध्यमको प्रयोग गरिन्छ भने, त्यस उपकरण वा माध्यमलाई で ले संकेत गर्छ। यहाँ で को अर्थ 'ले/मा' हुन्छ।",
+    "examples": [
+      {
+        "japanese": "わたしは いつも じてんしゃで がっこうへ いきます。",
+        "romaji": "Watashi wa itsumo jitensha de gakkō e ikimasu.",
+        "english": "I always go to school by bicycle.",
+        "nepali": ""
+      },
+      {
+        "japanese": "にほんじんは はしで ごはんを たべます。",
+        "romaji": "Nihonjin wa hashi de gohan o tabemasu.",
+        "english": "Japanese people eat with chopsticks.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 7",
+    "grammar_point": "\"Word/Sentence\"は ～ご で なんですか。",
+    "form": "N は ～語(ご)で なんですか。",
+    "english_explanation": "Used to ask what a certain word or sentence is called in another language. However, if pointing directly at an object, これ/それ/あれは ～ごで なんですか is used instead.",
+    "nepali_explanation": "कुनै शब्द वा वाक्यलाई अर्को भाषामा के भनिन्छ भनेर प्रश्न गर्नुपर्दा यसको प्रयोग गरिन्छ। तर यदि कुनै वस्तुलाई देखाएर सोध्नुपर्दा भने これ／それ／あれ は ～ご で なんですか प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "「Thank You」は にほんごで なんですか。 「ありがとう ございます」です。",
+        "romaji": "'Thank You' wa nihongo de nan desu ka. 'Arigatō gozaimasu' desu.",
+        "english": "What is 'Thank You' in Japanese? It's 'Arigatou gozaimasu'.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 7",
+    "grammar_point": "N₁(person)に N₂を あげます／かします／おしえます。",
+    "form": "N₁に N₂を あげます",
+    "english_explanation": "に marks the recipient (person) when the speaker gives something, lends something, or teaches something to that person — meaning 'to'.",
+    "nepali_explanation": "कसैलाई केही दिने, उधार दिने वा सिकाउने कार्य गरिन्छ भने त्यो व्यक्तीलाई に ले संकेत गर्दछ। यहाँ に को अर्थ 'लाई' हुन्छ।",
+    "examples": [
+      {
+        "japanese": "きむらさんに はなを あげます。",
+        "romaji": "Kimura-san ni hana o agemasu.",
+        "english": "I give flowers to Mr. Kimura.",
+        "nepali": ""
+      },
+      {
+        "japanese": "ともだちに おかねを かしました。",
+        "romaji": "Tomodachi ni okane o kashimashita.",
+        "english": "I lent money to my friend.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 7",
+    "grammar_point": "N₁(person)に N₂を もらいます／かります／ならいます。",
+    "form": "N₁に N₂を もらいます",
+    "english_explanation": "に (or から) marks the source (person) from whom the speaker receives, borrows, or learns something — meaning 'from'. When receiving something from an organization or company, only から can be used, not に.",
+    "nepali_explanation": "कसैबाट केही पाउने, उधार लिने वा सिक्ने कार्य गरिन्छ भने त्यो व्यक्तीलाई に वा から ले संकेत गरिन्छ। यहाँ に को अर्थ 'बाट' हुन्छ। तर जब कुनै संस्था वा कम्पनीबाट केही पाउने वा लिने कार्य भएको खण्डमा केवल から को मात्र प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "やまださんから はなを もらいました。",
+        "romaji": "Yamada-san kara hana o moraimashita.",
+        "english": "I received flowers from Mr. Yamada.",
+        "nepali": ""
+      },
+      {
+        "japanese": "ぎんこうから おかねを かりました。",
+        "romaji": "Ginkō kara okane o karimashita.",
+        "english": "I borrowed money from the bank.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 7",
+    "grammar_point": "もう V ました (Already done)",
+    "form": "もう V ました",
+    "english_explanation": "もう means 'already'; the verb that follows it is always in the V ました (past) form, indicating that the action expressed by that verb has already been completed.",
+    "nepali_explanation": "यहाँ もう को 'अघिनै' भन्ने अर्थ हुन्छ र もう पछि आउने क्रियापद सधैं V ました मा हुन्छ। यो अवस्थामा क्रियापदले जनाएको कार्य सकिएको भन्ने हुन्छ।",
+    "examples": [
+      {
+        "japanese": "もう ひるごはんを たべましたか。 はい、[もう] たべました。",
+        "romaji": "Mō hirugohan o tabemashita ka. Hai, [mō] tabemashita.",
+        "english": "Have you already eaten lunch? Yes, I already ate.",
+        "nepali": ""
+      },
+      {
+        "japanese": "いいえ、まだです。",
+        "romaji": "Iie, mada desu.",
+        "english": "No, not yet.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 8",
+    "grammar_point": "Adjective Types: な-adjective and い-adjective",
+    "form": "な-adjective ／ い-adjective",
+    "english_explanation": "In Nepali/English, any word describing the quality of a noun, person, or place is called an adjective (like sweet, spicy, new, old, expensive, cheap etc). In Japanese, adjectives come in two types: those ending in な (な-adjective) and those ending in い (い-adjective).",
+    "nepali_explanation": "नेपाली भाषामा भन्नुपर्दा, कुनै पनि वस्तु, व्यक्ती वा ठाउँको विशेषता जनाउने शब्दलाई विशेषण भनिन्छ। जस्तै: मिठो, पिरो, नयाँ, पुरानो, अग्लो, होचो आदि। जापानीज भाषामा विशेषण दुई प्रकारका हुन्छन्: विशेषणको अन्त्यमा な अक्षर भएमा त्यसलाई な-adjective र विशेषणको अन्त्यमा い अक्षर भएमा त्यसलाई い-adjective भनिन्छ।",
+    "examples": [
+      {
+        "japanese": "しずか[な] (quiet)",
+        "romaji": "shizuka",
+        "english": "quiet",
+        "nepali": ""
+      },
+      {
+        "japanese": "たかい (expensive/tall)",
+        "romaji": "takai",
+        "english": "expensive, tall",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 8",
+    "grammar_point": "な-adj[な]です／な-adj[な]Noun です",
+    "form": "な-adj です。／な-adj[な] Noun です。",
+    "english_explanation": "When です comes right after a な-adjective, drop the final な. But when a Noun comes right after a な-adjective, keep the な.",
+    "nepali_explanation": "な-adjective को पछाडि です आएमा अन्त्यमको [な] लाई हटाइन्छ भने な-adjective को पछाडि Noun (नाम) आएमा अन्त्यमको [な] लाई लेखिन्छ।",
+    "examples": [
+      {
+        "japanese": "さくらは きれいです。",
+        "romaji": "Sakura wa kirei desu.",
+        "english": "Cherry blossoms are beautiful.",
+        "nepali": ""
+      },
+      {
+        "japanese": "さくらは きれいな はなです。",
+        "romaji": "Sakura wa kirei na hana desu.",
+        "english": "Cherry blossoms are beautiful flowers.",
+        "nepali": ""
+      },
+      {
+        "japanese": "ネパールは しずかな くにです。",
+        "romaji": "Nepāru wa shizuka na kuni desu.",
+        "english": "Nepal is a quiet country.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 8",
+    "grammar_point": "い-adj[～い]です／い-adj[～い]Noun です",
+    "form": "い-adj です。／い-adj Noun です。",
+    "english_explanation": "い-adjectives don't change at all whether followed by です or a Noun — no dropping or adding is needed.",
+    "nepali_explanation": "い-adjective को पछाडि です वा Noun जुनसुकै आएपनि केही असर पर्दैन — यसमा केही हटाउनु वा थप्नुपर्दैन।",
+    "examples": [
+      {
+        "japanese": "エベレストは たかいです。",
+        "romaji": "Everesuto wa takai desu.",
+        "english": "Everest is tall.",
+        "nepali": ""
+      },
+      {
+        "japanese": "この とけいは やすいです。 これは やすい とけいです。",
+        "romaji": "Kono tokei wa yasui desu. Kore wa yasui tokei desu.",
+        "english": "This watch is cheap. This is a cheap watch.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 8",
+    "grammar_point": "Non-past Negative of Adjective",
+    "form": "な-adj:じゃありません／い-adj:くない",
+    "english_explanation": "For な-adjectives: drop です entirely and add じゃ ありません (or では ありません). For い-adjectives: drop only the final い and add くない. Note the irregular exception: いい (good) becomes よくない, not いくない.",
+    "nepali_explanation": "な-adjective मा です लाई मात्र हटाई じゃ ありません वा では ありません लेखिन्छ। い-adjective मा शब्दको अन्तिमको い लाई मात्र हटाई くない लेखिन्छ। ध्यान दिनुहोस्: いい (राम्रो) को अपवाद रूप よくない हुन्छ, いくない होइन।",
+    "examples": [
+      {
+        "japanese": "あしたは ひまじゃ ありません。",
+        "romaji": "Ashita wa hima ja arimasen.",
+        "english": "Tomorrow is not free.",
+        "nepali": ""
+      },
+      {
+        "japanese": "きょうは あつくないです。",
+        "romaji": "Kyō wa atsukunai desu.",
+        "english": "Today is not hot.",
+        "nepali": ""
+      },
+      {
+        "japanese": "これは よくないです。",
+        "romaji": "Kore wa yokunai desu.",
+        "english": "This is not good.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 8",
+    "grammar_point": "S₁ が、S₂ (~, but ~)",
+    "form": "S₁が、S₂。",
+    "english_explanation": "が here means 'but'; it links two clauses of the same subject/topic that describe qualities in opposite directions (good-but-bad or bad-but-good).",
+    "nepali_explanation": "यहाँ が को 'तर' भन्ने अर्थ हुन्छ। यसले दुईवटा उस्तै शीर्षक भएको वाक्य, जसको गुण राम्रो-नराम्रो वा नराम्रो-राम्रो भएका वाक्यहरूलाई लिंक गर्दछ।",
+    "examples": [
+      {
+        "japanese": "この うちは ちいさいですが、きれいです。",
+        "romaji": "Kono uchi wa chiisai desu ga, kirei desu.",
+        "english": "This house is small, but it's nice.",
+        "nepali": ""
+      },
+      {
+        "japanese": "にほんりょうりは おいしいですが、たかいです。",
+        "romaji": "Nihon ryōri wa oishii desu ga, takai desu.",
+        "english": "Japanese food is delicious, but expensive.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 8",
+    "grammar_point": "S₁。そして S₂。 (~. And ~.)",
+    "form": "S₁。そして S₂。",
+    "english_explanation": "そして here means 'and/also'; it links two clauses of the same subject describing qualities that go in the same direction (both good, or both bad).",
+    "nepali_explanation": "यहाँ そして को 'र/साथसाथै' भन्ने अर्थ हुन्छ। यसले दुईवटा उस्तै शीर्षक भएको वाक्य, जसको गुण राम्रो-राम्रो वा नराम्रो-नराम्रो भएका वाक्यहरूलाई लिंक गर्दछ।",
+    "examples": [
+      {
+        "japanese": "この うちは おおきいです。そして きれいです。",
+        "romaji": "Kono uchi wa ōkii desu. Soshite kirei desu.",
+        "english": "This house is big. And it's nice.",
+        "nepali": ""
+      },
+      {
+        "japanese": "ネパールりょうりは おいしいです。そして やすいです。",
+        "romaji": "Nepāru ryōri wa oishii desu. Soshite yasui desu.",
+        "english": "Nepali food is delicious. And it's cheap.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 8",
+    "grammar_point": "とても／あまり (Very / Not so, with adjectives)",
+    "form": "とても+adj(+ve)／あまり+adj(-ve)",
+    "english_explanation": "Both words modify the following adjective. とても is always used with an affirmative sentence, while あまり is always used with a negative sentence.",
+    "nepali_explanation": "यी दुबै विशेषणको अगाडि लागी परिमार्जन गर्ने काम गर्छन्। とても सधैं सकारात्मक वाक्यसँग प्रयोग हुन्छ भने あまり सधैं नकारात्मक वाक्यसँग प्रयोग हुन्छ।",
+    "examples": [
+      {
+        "japanese": "この うちは とても おおきいです。",
+        "romaji": "Kono uchi wa totemo ōkii desu.",
+        "english": "This house is very big.",
+        "nepali": ""
+      },
+      {
+        "japanese": "この うちは あまり おおきくないです。",
+        "romaji": "Kono uchi wa amari ōkikunai desu.",
+        "english": "This house is not so big.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 8",
+    "grammar_point": "N は どうですか。 (How is N?)",
+    "form": "N は どうですか。",
+    "english_explanation": "Used when someone has traveled to, met, or used something and the speaker wants to ask their impression of that place, person, or thing.",
+    "nepali_explanation": "कसैले कुनै ठाउँ भ्रमण गरिसकेको, कुनै व्यक्तीलाई भेटिसकेको वा कुनै वस्तु प्रयोग गरिसकेको अनुभव भएमा त्यस व्यक्ती, ठाउँ वा वस्तुको बारेमा कस्तो छ भनेर प्रश्न गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "ポカラは どうですか。 きれいです。そして しずかです。",
+        "romaji": "Pokara wa dō desu ka. Kirei desu. Soshite shizuka desu.",
+        "english": "How is Pokhara? It's beautiful, and quiet.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 8",
+    "grammar_point": "N₁ は どんな N₂ ですか。 (What kind of N?)",
+    "form": "N₁は どんな N₂ですか。",
+    "english_explanation": "Here N2 is a category/group noun, and N1 belongs to that category. どんな means 'what kind of / what sort of'. どんな is always followed directly by a Noun.",
+    "nepali_explanation": "यहाँ N2 चाँही समूहवाचक नाम हुन्छ र N1 को वर्गलाई जनाउँछ। どんな को 'कस्तो प्रकारको' वा 'कस्तो खालको' भन्ने अर्थ हुन्छ। どんな पछि सधैं Noun (नाम) आउँछ।",
+    "examples": [
+      {
+        "japanese": "カトマンズは どんな まちですか。 べんりな まちです。",
+        "romaji": "Katomanzu wa donna machi desu ka. Benri na machi desu.",
+        "english": "What kind of city is Kathmandu? It's a convenient city.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 9",
+    "grammar_point": "N が あります／わかります／すきです／きらいです／じょうずです／へたです",
+    "form": "N が Verb/Adj",
+    "english_explanation": "We learned that a transitive verb takes を to mark its object. However, あります (have) and わかります (understand), plus adjectives like すき (like), きらい (dislike), じょうず (good at), and へた (poor at), all take が instead of を to mark their object.",
+    "nepali_explanation": "हामीले पाठ ६ मा सकर्मक क्रिया (transitive verb) ले लिने Noun लाई P-を ले संकेत गर्छ भनेर अध्ययन गरेका थियौं। तथापि, あります र わかります ले लिने Noun लाई P-が ले संकेत गर्दछ। साथै, विशेषणहरू जस्तै すきです、きらいです、じょうずです、へたです ले लिने Noun लाई पनि P-が ले संकेत गर्दछ।",
+    "examples": [
+      {
+        "japanese": "わたしは にほんごが わかります。",
+        "romaji": "Watashi wa nihongo ga wakarimasu.",
+        "english": "I understand Japanese.",
+        "nepali": ""
+      },
+      {
+        "japanese": "ミラーさんは さかなが すきです。",
+        "romaji": "Mirā-san wa sakana ga suki desu.",
+        "english": "Mr. Miller likes fish.",
+        "nepali": ""
+      },
+      {
+        "japanese": "ニタさんは うたが へたです。",
+        "romaji": "Nita-san wa uta ga heta desu.",
+        "english": "Ms. Nita is poor at singing.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 9",
+    "grammar_point": "どんな N (What kind of N — used to answer)",
+    "form": "どんな N が すきですか。",
+    "english_explanation": "どんな is used the same way as in Lesson 8, but here it is used to ask the listener to select one specific noun from within the given category (Noun).",
+    "nepali_explanation": "पाठ ८ मा अध्ययन गरिएको どんな को प्रयोग नै हो, तर यहाँ どんな पछि आउने N (समूहवाचक नाम) भित्र पर्ने कुनै एक नाम छानी उत्तर दिनुहोस् भनेर प्रश्न गर्न प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "どんな スポーツが すきですか。 サッカーが すきです。",
+        "romaji": "Donna supōtsu ga suki desu ka. Sakkā ga suki desu.",
+        "english": "What kind of sport do you like? I like soccer.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 9",
+    "grammar_point": "よく／だいたい／たくさん／すこし／あまり／ぜんぜん (Adverbs of degree/amount)",
+    "form": "Adverb + Verb",
+    "english_explanation": "These adverbs are placed before a verb to modify it, showing degree (well/mostly/a little/not so/not at all) or amount (a lot/a little). あまり and ぜんぜん must be used with negative verbs.",
+    "nepali_explanation": "यी क्रियाविशेषणहरू (adverbs) ले क्रिया (verb) लाई अगाडि राखी त्यो क्रिया (verb) लाई परिमार्जन गर्न प्रयोग गरिन्छ। あまり र ぜんぜん सधैं नकारात्मक क्रियापदसँग प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "わたしは えいごが よく わかります。",
+        "romaji": "Watashi wa eigo ga yoku wakarimasu.",
+        "english": "I understand English well.",
+        "nepali": ""
+      },
+      {
+        "japanese": "ハリさんは かんじが ぜんぜん わかりません。",
+        "romaji": "Hari-san wa kanji ga zenzen wakarimasen.",
+        "english": "Mr. Hari doesn't understand kanji at all.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 9",
+    "grammar_point": "S₁から、S₂ (Because ~, ~)",
+    "form": "S₁から、S₂。",
+    "english_explanation": "から here means 'so/therefore/because' and is used to give a reason. S1 is always the reason for S2. The order can also be reversed (S2。S1から。) — stating the result first, then the reason.",
+    "nepali_explanation": "यहाँ P-から को 'त्यसैले' भन्ने अर्थ हुन्छ र सो कारण दिन वा खुलाउनको लागि प्रयोग गरिन्छ। माथिको स्वरूपमा S1 चाँही S2 को कारण हुन्छ। S2 लाई पहिले व्यक्त गरी कारणलाई पछि व्यक्त गर्न पनि सकिन्छ।",
+    "examples": [
+      {
+        "japanese": "じかんが ありませんから、テレビを みません。",
+        "romaji": "Jikan ga arimasen kara, terebi o mimasen.",
+        "english": "Because I don't have time, I won't watch TV.",
+        "nepali": ""
+      },
+      {
+        "japanese": "きょうは こどもの たんじょうびですから、はやく かえります。",
+        "romaji": "Kyō wa kodomo no tanjōbi desu kara, hayaku kaerimasu.",
+        "english": "Because today is my child's birthday, I'll go home early.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 9",
+    "grammar_point": "どうして (Why)",
+    "form": "どうして Verb か。",
+    "english_explanation": "どうして is used to ask the reason for an action. The answer to such a question must always end with から.",
+    "nepali_explanation": "どうして को प्रयोग कुनै कार्यको कारण सोध्नलाई गरिन्छ। यस्तो प्रश्नको उत्तर दिँदा अन्तमा から को प्रयोग गर्नुपर्दछ।",
+    "examples": [
+      {
+        "japanese": "どうして さかなを たべませんか。 きらいですから。",
+        "romaji": "Dōshite sakana o tabemasen ka. Kirai desu kara.",
+        "english": "Why don't you eat fish? Because I dislike it.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 10",
+    "grammar_point": "N が あります／います (Existence: inanimate/animate)",
+    "form": "N が あります(inanimate)／います(animate)",
+    "english_explanation": "あります and います both mean 'exist/have/there is', and take が to mark their subject. あります is used for things that cannot move on their own (place, belongings, plants), while います is used for things that can move on their own (people and animals).",
+    "nepali_explanation": "あります र います ले लिने Noun लाई P-が ले संकेत गर्दछ। यदि Noun चाँही आफै हिँडडुल गर्न नसक्ने जस्तै: ठाउँ, सामान, बोट-विरुवा आदि भएमा あります को प्रयोग गरिन्छ भने आफै हिँडडुल गर्न सक्ने जस्तै: मानिस र जनावरहरू भएमा います को प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "おかねが あります。",
+        "romaji": "Okane ga arimasu.",
+        "english": "There is money.",
+        "nepali": ""
+      },
+      {
+        "japanese": "いぬが います。",
+        "romaji": "Inu ga imasu.",
+        "english": "There is a dog.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 10",
+    "grammar_point": "Place に N が あります／います",
+    "form": "Place に N が Verb",
+    "english_explanation": "に here means 'at/in' and marks the place where something/someone exists or is present.",
+    "nepali_explanation": "यहाँ に को 'मा' भन्ने अर्थ हुन्छ र Noun उपस्थित वा अवस्थित भएको ठाउँलाई संकेत गर्ने काम गर्दछ।",
+    "examples": [
+      {
+        "japanese": "きょうしつに テレビが あります。",
+        "romaji": "Kyōshitsu ni terebi ga arimasu.",
+        "english": "There is a TV in the classroom.",
+        "nepali": ""
+      },
+      {
+        "japanese": "じむしょに せんせいが います。",
+        "romaji": "Jimusho ni sensei ga imasu.",
+        "english": "The teacher is in the office.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 10",
+    "grammar_point": "N は Place に あります／います",
+    "form": "N は Place に Verb",
+    "english_explanation": "This is built directly from the previous pattern, but here the Noun is moved to the front to become the main topic of the sentence, and が is replaced with は.",
+    "nepali_explanation": "यो स्वरूप माथिल्लो स्वरूपबाटै बनाइएको हो। यस स्वरूपमा Noun लाई अघि लगी वाक्यको मुख्य विषय (Main Topic) बनाई P-が लाई हटाई P-は ले संकेत गर्नुपर्दछ।",
+    "examples": [
+      {
+        "japanese": "テレビは きょうしつに あります。",
+        "romaji": "Terebi wa kyōshitsu ni arimasu.",
+        "english": "The TV is in the classroom.",
+        "nepali": ""
+      },
+      {
+        "japanese": "せんせいは じむしょに います。",
+        "romaji": "Sensei wa jimusho ni imasu.",
+        "english": "The teacher is in the office.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 10",
+    "grammar_point": "N₁(things/person/place)の N₂(position)",
+    "form": "N₁の うえ／した／まえ etc.",
+    "english_explanation": "うえ、した、まえ、うしろ、みぎ、ひだり、なか、そと、となり、ちかく、あいだ are all nouns that indicate position, and are connected to the reference point using の.",
+    "nepali_explanation": "うえ、した、まえ、うしろ、みぎ、ひだり、なか、そと、となり、ちかく、あいだ हरू positon (स्थिति) जनाउने noun हरू (नामहरू) हुन्, र यिनलाई सन्दर्भ बिन्दुसँग の ले जोडिन्छ।",
+    "examples": [
+      {
+        "japanese": "テーブルの うえに ほんが あります。",
+        "romaji": "Tēburu no ue ni hon ga arimasu.",
+        "english": "There is a book on the table.",
+        "nepali": ""
+      },
+      {
+        "japanese": "ゆうびんきょくは ぎんこうの となりに あります。",
+        "romaji": "Yūbinkyoku wa ginkō no tonari ni arimasu.",
+        "english": "The post office is next to the bank.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 10",
+    "grammar_point": "N₁ や N₂ [など] (and ~, etc.)",
+    "form": "N₁ や N₂ など",
+    "english_explanation": "や, like と, connects nouns in a coordinate relationship, but the difference is や implies the list is NOT exhaustive — there may be more items not mentioned. など can be added after the final noun to explicitly show 'and other similar things'.",
+    "nepali_explanation": "P-や ले पनि P-と जस्तै गरी नामपदहरू (nouns) लाई समन्वय सम्बन्धमा जोड्ने कार्य गर्छ, तर यसको प्रयोग गर्दा उल्लेख गर्न खोजिएको noun हरूको संख्या असीमित हुन्छन् भन्ने बुझिन्छ। कहिलेकाहीं अन्तिमको noun को पछाडि など लगाई त्यहाँ अरू केही अन्य प्रकारका चिजहरू पनि छन् भनेर व्यक्त गर्न सकिन्छ। P-や को अर्थ 'आदि/इत्यादि' हुन्छ।",
+    "examples": [
+      {
+        "japanese": "かばんに ほんや えんぴつなどが あります。",
+        "romaji": "Kaban ni hon ya enpitsu nado ga arimasu.",
+        "english": "There are books, pencils, etc. in the bag.",
+        "nepali": ""
+      },
+      {
+        "japanese": "わたしは りんごや ぶどうや マンゴーが すきです。",
+        "romaji": "Watashi wa ringo ya budō ya mangō ga suki desu.",
+        "english": "I like apples, grapes, mangoes, and such.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 10",
+    "grammar_point": "Word(s) ですか。 (Confirming what was said)",
+    "form": "N ですか。",
+    "english_explanation": "Used when the speaker wants to make sure they correctly heard/understood a word that someone else said, by repeating it back as a confirmation question.",
+    "nepali_explanation": "कसैले भनेका कुराबाट पक्का (confirm) गर्न चाहेको शब्दलाई त्यो शब्दलाई पक्का गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "すみません、えいがかんは どこですか。 えいがかんですか。あの ビルの なかです。",
+        "romaji": "Sumimasen, eigakan wa doko desu ka. Eigakan desu ka. Ano biru no naka desu.",
+        "english": "Excuse me, where is the cinema? The cinema? It's inside that building.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 11",
+    "grammar_point": "How to Say Numbers (Counters)",
+    "form": "いくつ／なんにん／なんまい／なんだい／etc.",
+    "english_explanation": "Japanese uses different counting words depending on what type of object is being counted. There are separate counter systems for: irregular/miscellaneous objects (fruit, furniture, keys — いくつ), people (なんにん), thin & flat objects like paper/shirts/tickets (なんまい), and machines & vehicles (なんだい).",
+    "nepali_explanation": "जापानी भाषामा गन्ती गरिने वस्तुको प्रकार अनुसार फरक-फरक गन्तीको शब्द प्रयोग गरिन्छ। जस्तै: अनियमित वस्तु (फलफुल, फर्निचर, चाबी — いくつ), मानिस (なんにん), पातलो र फराकिलो सतहका वस्तु जस्तै कागज/सर्ट/टिकट (なんまい), र मेशिनरी र सवारी-साधन (なんだい)।",
+    "examples": [
+      {
+        "japanese": "りんごが みっつ あります。",
+        "romaji": "Ringo ga mittsu arimasu.",
+        "english": "There are 3 apples.",
+        "nepali": ""
+      },
+      {
+        "japanese": "がくせいが ごにん います。",
+        "romaji": "Gakusei ga gonin imasu.",
+        "english": "There are 5 students.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 11",
+    "grammar_point": "Quantifier(time period)に ―かい Verb",
+    "form": "Quantifier に ―かい Verb",
+    "english_explanation": "Used to express doing a certain action a specific number of times within a specific period of time (per year/month/week etc.).",
+    "nepali_explanation": "समय अवधिमा कुनै कार्य यति पटक वा यति चोटी गर्छु भनेर व्यक्त गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "いちねんに さんかい カトマンズへ いきます。",
+        "romaji": "Ichinen ni sankai Katomanzu e ikimasu.",
+        "english": "I go to Kathmandu 3 times a year.",
+        "nepali": ""
+      },
+      {
+        "japanese": "いっしゅうかんに いっかい さかなを たべます。",
+        "romaji": "Isshūkan ni ikkai sakana o tabemasu.",
+        "english": "I eat fish once a week.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 11",
+    "grammar_point": "Quantifier だけ／Noun だけ (only)",
+    "form": "Quantifier だけ／Noun だけ",
+    "english_explanation": "だけ means 'only/just' in Nepali, and can attach to either a quantity/time expression or directly to a noun.",
+    "nepali_explanation": "यहाँ だけ को नेपाली भाषामा 'मात्र' भन्ने अर्थ हुन्छ। यो कुनै मात्रा/समय अभिव्यक्ति अथवा सिधै नामसँग जोडिन सक्छ।",
+    "examples": [
+      {
+        "japanese": "わたしの やすみは どようびだけです。",
+        "romaji": "Watashi no yasumi wa doyōbi dake desu.",
+        "english": "My day off is only Saturday.",
+        "nepali": ""
+      },
+      {
+        "japanese": "きょうしつに がくせいが ５にんだけ います。",
+        "romaji": "Kyōshitsu ni gakusei ga gonin dake imasu.",
+        "english": "There are only 5 students in the classroom.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 12",
+    "grammar_point": "Past Affirmative & Negative of Noun and な-adjective Sentences",
+    "form": "でした／じゃありませんでした",
+    "english_explanation": "To change です into past affirmative, use でした. To change じゃ ありません into past negative, use じゃ ありませんでした (or では ありませんでした). This same table applies to both Noun sentences and な-adjective sentences.",
+    "nepali_explanation": "Noun र な-adjective sentence लाई एकै तरिकाले काल परिवर्तन गरिन्छ। सकारात्मक भूतकालको रूपमा रुपान्तरण गर्नको लागि ～です लाई ～でした र नकारात्मक भूतकालको रूपमा रुपान्तरण गर्नको लागि ～です लाई ～じゃ ありません でした वा ～では ありません でした ले बदल्नुपर्छ।",
+    "examples": [
+      {
+        "japanese": "わたしは がくせいでした。",
+        "romaji": "Watashi wa gakusei deshita.",
+        "english": "I was a student.",
+        "nepali": ""
+      },
+      {
+        "japanese": "これは べんりじゃ ありませんでした。",
+        "romaji": "Kore wa benri ja arimasendeshita.",
+        "english": "This was not convenient.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 12",
+    "grammar_point": "Past Affirmative & Negative of い-adjective Sentences",
+    "form": "かった／くなかった",
+    "english_explanation": "To change an い-adjective into past affirmative, drop the final ～い and add ～かった. For past negative, add ～くなかった instead.",
+    "nepali_explanation": "い-adjective sentence लाई सकारात्मक भूतकालको रूपमा रुपान्तरण गर्नको लागि い-adjective शब्दको अन्तिमको ～い लाई मात्र हटाई ～かった र नकारात्मक भूतकालको रूपमा रुपान्तरण गर्नको लागि ～くなかった ले बदल्नुपर्छ।",
+    "examples": [
+      {
+        "japanese": "おいしかったです。",
+        "romaji": "Oishikatta desu.",
+        "english": "It was delicious.",
+        "nepali": ""
+      },
+      {
+        "japanese": "おいしくなかったです。",
+        "romaji": "Oishikunakatta desu.",
+        "english": "It was not delicious.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 12",
+    "grammar_point": "N₁ は N₂ より Adjective です。 (Comparison: more than)",
+    "form": "N₁は N₂より Adj です。",
+    "english_explanation": "より means 'than/compared to', and is used to compare two things, people, or places. The adjective plays the important role in the comparison sentence.",
+    "nepali_explanation": "यहाँ より को 'भन्दा' भन्ने अर्थ हुन्छ। यसले कुनै दुई वस्तु, व्यक्ती वा ठाउँ बीच तुलना गर्नुपर्दा प्रयोग गरिन्छ। माथिको स्वरूपमा विशेषणको भूमिका महत्वपूर्ण हुन्छ।",
+    "examples": [
+      {
+        "japanese": "きょうは きのうより あついです。",
+        "romaji": "Kyō wa kinō yori atsui desu.",
+        "english": "Today is hotter than yesterday.",
+        "nepali": ""
+      },
+      {
+        "japanese": "この くるまは あの くるまより たかいです。",
+        "romaji": "Kono kuruma wa ano kuruma yori takai desu.",
+        "english": "This car is more expensive than that car.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 12",
+    "grammar_point": "N₁ と N₂ と どちらが Adj ですか。 (Which of the two ~?)",
+    "form": "… N の ほうが Adj です。",
+    "english_explanation": "Used to ask which of two things, people, or places has more of a certain quality. To answer, use の ほう (meaning 'that one') to say which side is correct.",
+    "nepali_explanation": "कुनै दुई वस्तु, व्यक्ती वा ठाउँ बीच कुन-चाँही, को-चाँही वा कहाँ-चाँही यस्तो वा उस्तो छ भनेर प्रश्न गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ। यहाँ उत्तर दिँदा प्रयोग हुने の ほう को अर्थ 'त्यो चाँही' वा 'नै' हुन्छ। यदि दुबै भनेर उत्तर दिनुपर्दा भने ……どちらも Adjective です। को प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "でんしゃと バスと どちらが はやいですか。 でんしゃの ほうが はやいです。",
+        "romaji": "Densha to basu to dochira ga hayai desu ka. Densha no hō ga hayai desu.",
+        "english": "Which is faster, train or bus? The train is faster.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 12",
+    "grammar_point": "N₁[のなか]でなに/どこ/だれ/いつが いちばん Adj ですか。 (Superlative)",
+    "form": "…N が いちばん Adj です。",
+    "english_explanation": "Used to ask which item within a group (N1) is the most ~ (superlative). To answer, choose one specific item from within that same group (N1) and use いちばん ('the most').",
+    "nepali_explanation": "पूछिएको N₁ (समूहवाचक नाम) बाट कुन, कहाँ, को, कहिले सबैभन्दा विशेष छ वा हो भनेर प्रश्न गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ। उत्तर दिँदा त्यही समूहवाचक नाम (N₁) भित्र पर्ने कुनै एउटा छनोट गरी उत्तर दिन प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "にほんりょうりの なかで なにが いちばん おいしいですか。 すしが いちばん おいしいです。",
+        "romaji": "Nihon ryōri no naka de nani ga ichiban oishii desu ka. Sushi ga ichiban oishii desu.",
+        "english": "What is the most delicious among Japanese foods? Sushi is the most delicious.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 13",
+    "grammar_point": "N が ほしいです。 (I want N)",
+    "form": "N が ほしいです。",
+    "english_explanation": "ほしい means 'want' in Nepali, used to express a desire for a certain thing. That desired thing is marked by が. Even though 'want' is not an adjective in Nepali/English, Japanese treats ほしい grammatically as an い-adjective, so it conjugates like one.",
+    "nepali_explanation": "ほしい को अर्थ नेपाली भाषामा इच्छा वा चाहना हो। कुनै पनि वस्तुको इच्छा वा चाहना व्यक्त गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ र त्यो वस्तुलाई P-が ले संकेत गर्दछ। नेपाली र अंग्रेजी भाषामा want भनेको विशेषण (adjective) होइन तर जापानी भाषामा भने हामी ほしい लाई い-adjective मान्छौं, त्यसैले यसलाई अरूकालमा परिवर्तन गर्न い-adjective कै तरिका प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "わたしは おかねが ほしいです。",
+        "romaji": "Watashi wa okane ga hoshii desu.",
+        "english": "I want money.",
+        "nepali": ""
+      },
+      {
+        "japanese": "バイクが ほしかったです。",
+        "romaji": "Baiku ga hoshikatta desu.",
+        "english": "I wanted a motorbike.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 13",
+    "grammar_point": "V ますたい です。 (I want to do ~)",
+    "form": "V(ます-stem)たいです。",
+    "english_explanation": "Remove ます from the V ます-form and add たい to express wanting to do a certain action. Just like ほしい, V たい is also treated grammatically as an い-adjective and conjugates the same way. Note: the object of the verb, normally marked by を, can optionally be marked by が instead, but no other particle can be substituted.",
+    "nepali_explanation": "V ます को ます लाई मात्र हटाई たい थपेर कुनै कार्य गर्न चाहन्छु वा गर्न मन छ भनेर आफ्नो मनको चाहना व्यक्त गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ। यहाँ V たい लाई पनि हामी い-adjective मान्छौं र अरूकालमा परिवर्तन गर्न い-adjective कै तरिका प्रयोग गरिन्छ। यदि Verb ले लिने Object लाई P-を ले संकेत गरेको छ भने त्यसको साटो P-が प्रयोग गरे पनि हुन्छ तर अरू Particle भएमा प्रयोग गर्न मिल्दैन।",
+    "examples": [
+      {
+        "japanese": "わたしは にほんへ いきたいです。",
+        "romaji": "Watashi wa Nihon e ikitai desu.",
+        "english": "I want to go to Japan.",
+        "nepali": ""
+      },
+      {
+        "japanese": "きょうは どこも いきたくないです。",
+        "romaji": "Kyō wa dokomo ikitakunai desu.",
+        "english": "I don't want to go anywhere today.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 13",
+    "grammar_point": "N(place)へ V/Noun に いきます／きます／かえります",
+    "form": "N(place)へ V(ます-stem)／Noun に Verb",
+    "english_explanation": "に here means 'in order to' or 'for the purpose of', and marks the purpose of going, coming, or returning somewhere.",
+    "nepali_explanation": "कुनै कार्य गर्नलाई जाँदैछु, आउँदैछु वा फर्कँदैछु भनेर भन्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ। यहाँ P-に को 'लाई' वा 'को लागि' भन्ने अर्थ हुन्छ।",
+    "examples": [
+      {
+        "japanese": "わたしは QFXへ えいがを みに いきます。",
+        "romaji": "Watashi wa QFX e eiga o mi ni ikimasu.",
+        "english": "I go to QFX to watch a movie.",
+        "nepali": ""
+      },
+      {
+        "japanese": "かいものに きました。",
+        "romaji": "Kaimono ni kimashita.",
+        "english": "I came for shopping.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 13",
+    "grammar_point": "どこか／なにか (somewhere/something)",
+    "form": "どこか[へ]／なにか[を]",
+    "english_explanation": "どこ ('where') and なに ('what') can drop the particle へ or を that would normally follow them.",
+    "nepali_explanation": "यहाँ どこ र なに ले लिने P-へ र P-を लाई हटाउन सकिन्छ।",
+    "examples": [
+      {
+        "japanese": "きのう どこか[へ] いきましたか。 はい、としょかんへ いきました。",
+        "romaji": "Kinō dokoka [e] ikimashita ka. Hai, toshokan e ikimashita.",
+        "english": "Did you go somewhere yesterday? Yes, I went to the library.",
+        "nepali": ""
+      },
+      {
+        "japanese": "おなかが すきましたから、なにか[を] たべたいです。",
+        "romaji": "Onaka ga sukimashita kara, nanika [o] tabetai desu.",
+        "english": "Because I'm hungry, I want to eat something.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 13",
+    "grammar_point": "ご～ (Honorific Prefix)",
+    "form": "ご + Noun",
+    "english_explanation": "ご, like お from earlier lessons, is a prefix added before certain words (usually Sino-Japanese origin words) to express respect.",
+    "nepali_explanation": "ご एउटा उपसर्ग हो जुन केही शब्दहरूको अगाडि जोडिएर सम्मान व्यक्त गर्न प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "ごしつもん (question, polite)",
+        "romaji": "go-shitsumon",
+        "english": "question",
+        "nepali": ""
+      },
+      {
+        "japanese": "ごへんじ (reply, polite)",
+        "romaji": "go-henji",
+        "english": "reply",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 14",
+    "grammar_point": "Verb Groups (Group I, II, III)",
+    "form": "Group I／II／III",
+    "english_explanation": "Verbs are classified into 3 groups. To conjugate any verb, you must first identify which group it belongs to, because the conjugation rules differ per group. Group I: the sound before ます is an い-sound (い/ち/り/に/び/み/き/ぎ/し). Group II: the sound before ます is an え-sound, with only one syllable before ます. Group III: only 2 verbs — きます and します (and compound します verbs formed with a noun + します).",
+    "nepali_explanation": "जापानी भाषामा क्रियापदलाई तीन समूहमा विभाजित गरिएको छ किनभने कुनैपनि क्रियापदको काल परिवर्तन गर्नकोलागि सबभन्दा पहिला उक्त क्रियापद कुन समूहमा पर्छ त्यो छुट्याउन जरुरी छ, किनभने समूह अनुसार क्रिया विस्तार (काल परिवर्तन) गर्ने नियम फरक हुन्छ। Group I: ます को अगाडि い-sound आउने अक्षर भएमा। Group II: ます को अगाडि え-sound आउने अक्षर भएमा र ます को अगाडि एउटा मात्र अक्षर भएमा। Group III: यस समूहमा सिमित दुई क्रियापद छन् — きます र します।",
+    "examples": [
+      {
+        "japanese": "Group I: かいます (buy)",
+        "romaji": "kaimasu",
+        "english": "buy",
+        "nepali": ""
+      },
+      {
+        "japanese": "Group II: たべます (eat)",
+        "romaji": "tabemasu",
+        "english": "eat",
+        "nepali": ""
+      },
+      {
+        "japanese": "Group III: きます／します (come/do)",
+        "romaji": "kimasu/shimasu",
+        "english": "come / do",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 14",
+    "grammar_point": "V ます-form → V て-form",
+    "form": "かいます→かって／たべます→たべて",
+    "english_explanation": "The て-form is very important in Japanese because it is the base for the continuous tense and many other grammar patterns. Group I verbs change their ending in different ways (い/ち/り→って, に/び/み→んで, き→いて, ぎ→いで, し→して — with いきます being an irregular exception, becoming いって not いいて). Group II verbs simply drop ます and add て. Group III: きます→きて, します→して.",
+    "nepali_explanation": "て-form सिकिसकेपछि हामीलाई लगातारकाल (Continuous Tense) को बारेमा जान्न धेरै मद्दत पुग्दछ। जापानी भाषामा यो form को निक्कै महत्व हुन्छ। Group I का क्रियापदहरूको अन्त्य फरक-फरक तरिकाले बदलिन्छ (い/ち/り→って, に/び/み→んで, き→いて, ぎ→いで, し→して — तर いきます को て-form अपवादस्वरूप いって हुन्छ, いいて होइन)। Group II का क्रियापदहरूमा ます लाई मात्र हटाई て लेखिन्छ। Group III: きます→きて, します→して।",
+    "examples": [
+      {
+        "japanese": "たべます → たべて",
+        "romaji": "tabemasu → tabete",
+        "english": "eat → (te-form)",
+        "nepali": ""
+      },
+      {
+        "japanese": "かいます → かって",
+        "romaji": "kaimasu → katte",
+        "english": "buy → (te-form)",
+        "nepali": ""
+      },
+      {
+        "japanese": "いきます → いって",
+        "romaji": "ikimasu → itte",
+        "english": "go → (te-form, irregular)",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 14",
+    "grammar_point": "V て-form ください。 (Please do ~)",
+    "form": "V て-form ください。",
+    "english_explanation": "Used to make a request or give an instruction to someone.",
+    "nepali_explanation": "कसैलाई केही गर्नुहोस् भनी अनुरोध वा निर्देशन (आज्ञा) गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "みぎへ まがって ください。",
+        "romaji": "Migi e magatte kudasai.",
+        "english": "Please turn right.",
+        "nepali": ""
+      },
+      {
+        "japanese": "べんきょうして ください。",
+        "romaji": "Benkyō shite kudasai.",
+        "english": "Please study.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 14",
+    "grammar_point": "V て-form います。 (Action in progress)",
+    "form": "V て-form います。",
+    "english_explanation": "Used to express that an action is currently happening or in progress.",
+    "nepali_explanation": "कुनै कार्य गर्दैछु वा भइरहेको छ भनेर भन्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "いま べんきょうして います。",
+        "romaji": "Ima benkyō shite imasu.",
+        "english": "I am studying now.",
+        "nepali": ""
+      },
+      {
+        "japanese": "ハリさんは でんわを かけて います。",
+        "romaji": "Hari-san wa denwa o kakete imasu.",
+        "english": "Mr. Hari is making a phone call.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 14",
+    "grammar_point": "V ます ましょうか。 (Shall I ~?)",
+    "form": "V ましょうか。",
+    "english_explanation": "Used to offer to do something for someone.",
+    "nepali_explanation": "कसैलाई केही गरौंकी भनेर प्रस्ताव (offer) गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "てつだいましょうか。 すみません。おねがいします。",
+        "romaji": "Tetsudaimashō ka. Sumimasen. Onegaishimasu.",
+        "english": "Shall I help you? Thank you, please.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 14",
+    "grammar_point": "Natural Phenomenon が Verb",
+    "form": "N(natural phenomenon)が Verb",
+    "english_explanation": "When describing a natural phenomenon (like rain or snow), the subject of that phenomenon is marked with が.",
+    "nepali_explanation": "कुनै प्राकृतिक क्रियाकलाप (natural phenomenon) लाई वर्णन गर्दा त्यस विषयलाई P-が ले संकेत गर्दछ।",
+    "examples": [
+      {
+        "japanese": "いま あめが ふって います。",
+        "romaji": "Ima ame ga futte imasu.",
+        "english": "It is raining now.",
+        "nepali": ""
+      },
+      {
+        "japanese": "ゆきが ふって います。",
+        "romaji": "Yuki ga futte imasu.",
+        "english": "It is snowing.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 14",
+    "grammar_point": "すみませんが (Excuse me, but ~)",
+    "form": "すみませんが、～",
+    "english_explanation": "Used before making a request, to soften the tone and be polite.",
+    "nepali_explanation": "कुनै अनुरोध गर्नुभन्दा अगाडि प्रयोग गरी वाक्यलाई नरम बनाउँछ।",
+    "examples": [
+      {
+        "japanese": "すみませんが、えいごで かいて ください。",
+        "romaji": "Sumimasen ga, eigo de kaite kudasai.",
+        "english": "Excuse me, but please write it in English.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 15",
+    "grammar_point": "V て-form も いいですか。 (May I ~?)",
+    "form": "V て-form も いいですか。",
+    "english_explanation": "Used to ask permission to do something. Affirmative answers to grant permission include: はい、V て-form も いいです。／はい、どうぞ。／ええ、いいですよ。どうぞ。",
+    "nepali_explanation": "कुनै कार्य गर्नकोलागि अनुमति माग्नु वा सोध्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ। माग्न सकिने अनुमतिको सकारात्मक उत्तर दिन: はい、V て-form も いいです। / はい、どうぞ। / ええ、いいですよ。どうぞ। प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "この じしょを かりても いいですか。 はい、かりても いいです。",
+        "romaji": "Kono jisho o karitemo ii desu ka. Hai, karitemo ii desu.",
+        "english": "May I borrow this dictionary? Yes, you may.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 15",
+    "grammar_point": "V て-form も いいです。 (It's okay to ~)",
+    "form": "V て-form も いいです。",
+    "english_explanation": "Used to give someone else permission — saying it's okay if they do a certain action.",
+    "nepali_explanation": "अरूकसैलाई कुनै कार्य गरे पनि हुन्छ भनेर आफ्नो अनुमति वा स्वीकृति दिनुपर्दा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "……しても いいです。",
+        "romaji": "...shitemo ii desu.",
+        "english": "It's okay to do ~.",
+        "nepali": ""
+      },
+      {
+        "japanese": "……かえっても いいです。",
+        "romaji": "...kaettemo ii desu.",
+        "english": "It's okay to go home.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 15",
+    "grammar_point": "V て-form は いけません。 (Must not do ~)",
+    "form": "V て-form は いけません。",
+    "english_explanation": "Used to express prohibition — that someone must not, cannot, or is not allowed to do something. Prohibition signs seen in public places are usually written this way. It can also be used to answer a permission-question negatively; for a strongly negative answer, いいえ、いけません is used alone.",
+    "nepali_explanation": "अरूकसैलाई कुनै कार्य गर्नु हुँदैन, गर्न पाइँदैन, गर्न मनाही छ वा गर्न मिल्दैन भनेर निषेध व्यक्त गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ। विभिन्न सार्वजनिक स्थल इत्यादिमा टाँसिने निषेधका सूचनाहरू यसै स्वरूपमा लखिएका हुन्छन्। साथै अनुमति मागिएका प्रश्नको नकारात्मक उत्तर दिन पनि यो स्वरूपको प्रयोग गरिन्छ। कडारूपमा नकारात्मक उत्तर दिनुपर्दा भने いいえ、いけません लाई मात्र प्रयोग गर्नुपर्दछ।",
+    "examples": [
+      {
+        "japanese": "ここに くるまを とめては いけません。",
+        "romaji": "Koko ni kuruma o tometewa ikemasen.",
+        "english": "You must not park a car here.",
+        "nepali": ""
+      },
+      {
+        "japanese": "あしたは やすんでは いけません。",
+        "romaji": "Ashita wa yasundewa ikemasen.",
+        "english": "You cannot take a day off tomorrow.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 15",
+    "grammar_point": "V て-form います。 (Habitual/ongoing state)",
+    "form": "V て-form います。",
+    "english_explanation": "Besides expressing an action currently in progress (Lesson 14), this form is also used to express a state resulting from a past action that still continues now and into the future, or a habitual/repeated action.",
+    "nepali_explanation": "पाठ १४ मा अध्ययन गरेको बाहेक, यो स्वरूपले कुनै अतितमा गरिएको क्रियाकलाप अहिले पनि भइरहेको र पछि पनि हुने अवस्था, वा दैनिक गर्ने आचरण कार्य (habitual action) लाई पनि व्यक्त गर्न प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "わたしは けっこんして います。",
+        "romaji": "Watashi wa kekkon shite imasu.",
+        "english": "I am married.",
+        "nepali": ""
+      },
+      {
+        "japanese": "わたしは だいがくで べんきょうして います。",
+        "romaji": "Watashi wa daigaku de benkyō shite imasu.",
+        "english": "I study at university.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 15",
+    "grammar_point": "N(place)に Verb／N₁(place)に N₂(object)を Verb。",
+    "form": "N(place)に Verb",
+    "english_explanation": "に marks a fixed, definite location associated with the action or object.",
+    "nepali_explanation": "P-に ले निश्चित ठाउँलाई संकेत गर्दछ।",
+    "examples": [
+      {
+        "japanese": "ここに じゅうしょと なまえを かいて ください。",
+        "romaji": "Koko ni jūsho to namae o kaite kudasai.",
+        "english": "Please write your address and name here.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 16",
+    "grammar_point": "V₁て-form、V₂て-form、～V ます。 (Sequential actions)",
+    "form": "V₁て, V₂て, ~Vます।",
+    "english_explanation": "When actions happen one after another and are completed in sequence, the verbs in all but the last clause are changed to て-form to connect them. Only the final verb carries the tense marker, which determines the tense of the whole sentence.",
+    "nepali_explanation": "यदि एकपछि अर्को गरी कार्यहरू सम्पन्न गरिएका छन् भने ती वाक्यहरूको क्रियापदलाई V て-form मा बदली वाक्यहरूलाई जोड्न सकिन्छ। तर अन्तीम वाक्यको क्रियापदलाई V て-form मा बदल्नु पर्दैन। यसरी जोडिएर बनेको वाक्यको काल चाँही अन्तीम वाक्यको कालले निर्धारित गर्दछ।",
+    "examples": [
+      {
+        "japanese": "わたしは あさ ６じに おきて、かおを あらって、おちゃを のみます。",
+        "romaji": "Watashi wa asa rokuji ni okite, kao o aratte, ocha o nomimasu.",
+        "english": "I get up at 6, wash my face, and drink tea.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 16",
+    "grammar_point": "い-adj くて、～。 (Connecting with い-adjective)",
+    "form": "い-adj(くて)、～。",
+    "english_explanation": "Drop the final ～い of an い-adjective and add ～くて to connect it with another clause. Like the て-form pattern above, the tense of the connected clause is determined by the final clause.",
+    "nepali_explanation": "い-adj वाक्यको अन्तिमको ～い लाई हटाई ～くて लेखी अरुकुनै वाक्यको साथ जोड्न सकिन्छ। यसरी जोडिएर बनेको वाक्यको काल पनि अन्तीम वाक्यको कालले निर्धारित गर्दछ।",
+    "examples": [
+      {
+        "japanese": "きのうは てんき よくて、あつかったです。",
+        "romaji": "Kinō wa tenki yokute, atsukatta desu.",
+        "english": "The weather was good and it was hot yesterday.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 16",
+    "grammar_point": "Noun／な-adj で、～。 (Connecting with Noun/な-adj)",
+    "form": "Noun/な-adj(で)、～。",
+    "english_explanation": "Drop です from a Noun or な-adjective sentence and add で to connect it with another clause. Note: this method cannot be used to connect clauses with contradictory meanings — for those, use が (Lesson 8) instead.",
+    "nepali_explanation": "Noun र な-adj वाक्यको です लाई हटाई で लेखी अर्कोकुनै वाक्यको साथ जोड्न सकिन्छ। ध्यान दिनुहोस्: यो विधिले विरोधाभासी धारणाको वाक्यलाई जोड्न सक्दैन — त्यस्तो अवस्थामा पाठ ८ मा अध्ययन गरिसकेको P-が को प्रयोग गर्नुपर्छ।",
+    "examples": [
+      {
+        "japanese": "ハリさんは ハンサムで、しんせつです。",
+        "romaji": "Hari-san wa hansamu de, shinsetsu desu.",
+        "english": "Mr. Hari is handsome and kind.",
+        "nepali": ""
+      },
+      {
+        "japanese": "マヤさんは かいしゃいんで、ハリさんは せんせいです。",
+        "romaji": "Maya-san wa kaishain de, Hari-san wa sensei desu.",
+        "english": "Maya is a company employee, and Hari is a teacher.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 16",
+    "grammar_point": "V₁て-formから、V₂。 (After doing V1, then V2)",
+    "form": "V₁て-formから、V₂。",
+    "english_explanation": "Used to express doing, having done, or wanting to do V2 only after V1 has been completed.",
+    "nepali_explanation": "कुनै कार्य गरेपछि अर्को कार्य गर्छु, गरे, गर्नुहोस्, गर्नचाहान्छु इत्यादि भनेर व्यक्त गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "しごとが おわってから、のみに いきたいです。",
+        "romaji": "Shigoto ga owatte kara, nomi ni ikitai desu.",
+        "english": "After work is finished, I want to go for a drink.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 16",
+    "grammar_point": "N₁ は N₂が Adjective です。 (Describing a specific feature)",
+    "form": "N₁は N₂が Adj です。",
+    "english_explanation": "Used to describe a specific feature/characteristic of N1, where N1 is marked with は and the specific feature (N2) is marked with が.",
+    "nepali_explanation": "कुनै वस्तु, व्यक्ती वा ठाउँको विषयको विशेष्ता वर्णन गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ। त्यो वस्तु, व्यक्ती वा ठाउँ N1 हो जसलाई P-は ले संकेत गर्दछ र विशेषण विवरणको विषय N2 हो जसलाई P-が ले संकेत गर्दछ।",
+    "examples": [
+      {
+        "japanese": "カトマンズは おてらが おおいです。",
+        "romaji": "Katomanzu wa otera ga ōi desu.",
+        "english": "Kathmandu has many temples.",
+        "nepali": ""
+      },
+      {
+        "japanese": "マリアさんは めが きれいです。",
+        "romaji": "Maria-san wa me ga kirei desu.",
+        "english": "Maria's eyes are beautiful.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 16",
+    "grammar_point": "どうやって (How / In what way)",
+    "form": "どうやって Verb か。",
+    "english_explanation": "Used to ask in what way or by what method something is done. The answer usually uses the V₁て-form、V₂て-form、～Vます pattern.",
+    "nepali_explanation": "कुनै कार्य वा कुरा कसरी वा कुन तरिकाले गर्ने वा गरिन्छ भनेर प्रश्न गर्नुपर्दा どうやって को प्रयोग गरिन्छ। यस्तो प्रश्नको उत्तर दिनका लागि V1て-form、V2て-form、～V ます ढाँचाको प्रयोग हुन्छ।",
+    "examples": [
+      {
+        "japanese": "くうこうまで どうやって いきますか。",
+        "romaji": "Kūkō made dōyatte ikimasu ka.",
+        "english": "How do you go to the airport?",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 16",
+    "grammar_point": "どれ／どのNoun (Which one, among 3+)",
+    "form": "どれ／どの N",
+    "english_explanation": "どれ and どの are used to ask which one to choose among three or more items or things. どの is always followed by a Noun.",
+    "nepali_explanation": "どれ र どの को प्रयोग गरी तीन वा सोभन्दा बढी लिह वा कुराहरू बीच कुनै एक छनोट वा एक नाम लिनलाई प्रश्न सोध्न प्रयोग गरिन्छ। どの पछि जहिलेपनि Noun लाग्दछ।",
+    "examples": [
+      {
+        "japanese": "きむらさんの かばんは どれですか。",
+        "romaji": "Kimura-san no kaban wa dore desu ka.",
+        "english": "Which one is Mr. Kimura's bag?",
+        "nepali": ""
+      },
+      {
+        "japanese": "マヤさんは どの ひとですか。",
+        "romaji": "Maya-san wa dono hito desu ka.",
+        "english": "Which person is Maya?",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 17",
+    "grammar_point": "V ない-form (Plain Negative)",
+    "form": "かきます→かかない",
+    "english_explanation": "This is the negative form (also called the Non-past plain negative form or the plain form of V ません). Group I: change the い-sound before ます to the corresponding あ-sound and add ない (Note: い changes to わ, not あ). Group II: drop ます and add ない. Group III: きます→こない, します→しない. Exception: あります becomes ない directly (not あらない).",
+    "nepali_explanation": "यो नकारात्मक रुप (negative form) हो, जसलाई Non-past plain negative form वा V ません को plain form पनि भनिन्छ। Group I: ます लाई मात्र हटाई い-sound लाई त्यसैको आ-sound मा बदली ない थपिन्छ (ध्यान दिनुहोस्: い बदलिएर あ होइन わ बन्छ)। Group II: ます लाई हटाई ない लेखिन्छ। Group III: きます→こない, します→しない। अपवाद: あります को negative form र्सिधै ない हुन्छ (あらない होइन)।",
+    "examples": [
+      {
+        "japanese": "かいます → かわない",
+        "romaji": "kaimasu → kawanai",
+        "english": "buy → don't buy",
+        "nepali": ""
+      },
+      {
+        "japanese": "たべます → たべない",
+        "romaji": "tabemasu → tabenai",
+        "english": "eat → don't eat",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 17",
+    "grammar_point": "V ない で ください。 (Please don't ~)",
+    "form": "V ない で ください。",
+    "english_explanation": "Used to request or instruct someone not to do a certain action.",
+    "nepali_explanation": "कसैलाई कुनै कार्य नगर्नुहोस् भनी अनुरोध वा निर्देशन (आज्ञा) गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "かかないで ください。",
+        "romaji": "Kakanaide kudasai.",
+        "english": "Please don't write.",
+        "nepali": ""
+      },
+      {
+        "japanese": "しないで ください。",
+        "romaji": "Shinaide kudasai.",
+        "english": "Please don't do it.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 17",
+    "grammar_point": "V ない ければ なりません。／V ないと いけません。 (Must do)",
+    "form": "V ないければなりません／V ないといけません",
+    "english_explanation": "Used to express that something must be done, or that it's not okay not to do it — i.e. obligation.",
+    "nepali_explanation": "कुनै कार्य नगरी हुँदैन वा गर्नैपर्छ भन्नुपरेमा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "しゅくだいを しなければ なりません。",
+        "romaji": "Shukudai o shinakereba narimasen.",
+        "english": "I must do homework.",
+        "nepali": ""
+      },
+      {
+        "japanese": "あした、はやく こなければ なりません。",
+        "romaji": "Ashita, hayaku konakereba narimasen.",
+        "english": "I must come early tomorrow.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 17",
+    "grammar_point": "V ない くても いいです。 (Don't have to)",
+    "form": "V ない くても いいです。",
+    "english_explanation": "Used to say that it's okay even if someone doesn't do a certain action.",
+    "nepali_explanation": "कसैलाई कुनै कार्य नगरे पनि हुन्छ भन्नुपरेमा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "かんじで かかなくても いいです。",
+        "romaji": "Kanji de kakanakutemo ii desu.",
+        "english": "You don't have to write in kanji.",
+        "nepali": ""
+      },
+      {
+        "japanese": "にほんごで はなさなくても いいです。",
+        "romaji": "Nihongo de hanasanakutemo ii desu.",
+        "english": "You don't have to speak in Japanese.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 17",
+    "grammar_point": "Making an Object the Topic of a Sentence",
+    "form": "N を → N は",
+    "english_explanation": "In Lesson 6 we learned that a transitive verb's direct object (Object) is marked with を. In this lesson, we learn how to make that Object the main topic of the sentence — the を marking the Object is replaced with は.",
+    "nepali_explanation": "पाठ ६ मा हामीले सकर्मक-क्रिया (Transitive Verb) को वस्तु (Direct Object) लाई P-を ले संकेत गर्छ भनेर अध्ययन गरेका थियौं। अब यस पाठमा वस्तु (Direct Object) लाई वाक्यको मुख्य विषय बनाउने तरिका सिक्छौं, जसमा वस्तु (Direct Object) लाई संकेत गर्ने P-を लाई P-は ले बदल्नुपर्छ।",
+    "examples": [
+      {
+        "japanese": "ここに にもつを おかないで ください。 にもつは ここに おかないで ください。",
+        "romaji": "Koko ni nimotsu o okanaide kudasai. Nimotsu wa koko ni okanaide kudasai.",
+        "english": "Please don't put the luggage here. (both mean the same, topic-shifted)",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 17",
+    "grammar_point": "N(time)までに Verb。 (By/before a certain time)",
+    "form": "N(time)までに Verb。",
+    "english_explanation": "までに means 'by the time of ~' — the action must be completed within the time limit indicated by までに. The time limit marked by までに is the boundary within which the action needs to be completed or must be done.",
+    "nepali_explanation": "कुनै कार्य までに ले संकेत गरेको समय सम्ममा सम्पन्न गर्नुपर्छ वा हुन्छ भन्नुपरेमा यो स्वरूपको प्रयोग गरिन्छ। までに ले संकेत गरेको समय त्यो समयको सीमाहो जुन समयमा कार्य सम्पन्न हुन्छ वा गर्नुपर्ने हुन्छ।",
+    "examples": [
+      {
+        "japanese": "かいぎは ５じまでに おわります。",
+        "romaji": "Kaigi wa goji made ni owarimasu.",
+        "english": "The meeting will end by 5 o'clock.",
+        "nepali": ""
+      },
+      {
+        "japanese": "このレポートは きんようびまでに おくって ください。",
+        "romaji": "Kono repōto wa kin'yōbi made ni okutte kudasai.",
+        "english": "Please send this report by Friday.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 18",
+    "grammar_point": "Dictionary Form / Root Form of Verb",
+    "form": "たべます→たべる",
+    "english_explanation": "This is the base/basic form of a verb, also called the Non-past plain form or the plain form of V ます. Group I: drop ます, change the い-sound before it to the corresponding う-sound (い→う, ち→つ, り→る, に→ぬ, び→ぶ, み→む, き→く, ぎ→ぐ, し→す). Group II: drop ます and add る. Group III: きます→くる, します→する.",
+    "nepali_explanation": "यो रुप क्रियापदको आधारभूत रुप (base form) हो, जसलाई Non-past plain form वा V ます को Plain form पनि भनिन्छ। Group I: ます लाई मात्र हटाई い-sound लाई त्यसैको उ-sound मा बदलिन्छ (い→う, ち→つ, り→る, に→ぬ, び→ぶ, み→む, き→く, ぎ→ぐ, し→す)। Group II: ます लाई मात्र हटाई る लेखिन्छ। Group III: きます→くる, します→する।",
+    "examples": [
+      {
+        "japanese": "かきます → かく",
+        "romaji": "kakimasu → kaku",
+        "english": "write (plain form)",
+        "nepali": ""
+      },
+      {
+        "japanese": "たべます → たべる",
+        "romaji": "tabemasu → taberu",
+        "english": "eat (plain form)",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 18",
+    "grammar_point": "Noun／Verb root form こと が できます。 (Can do)",
+    "form": "V root こと が できます。",
+    "english_explanation": "Used to express one's own ability or skill to do something or to be able to do something.",
+    "nepali_explanation": "केही सक्छु वा केही गर्न सक्छु भनेर आफ्नो क्षमता वा सीप व्यक्त गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "わたしは にほんごが できます。",
+        "romaji": "Watashi wa nihongo ga dekimasu.",
+        "english": "I can (speak) Japanese.",
+        "nepali": ""
+      },
+      {
+        "japanese": "マヤさんは かんじを よむ ことが できます。",
+        "romaji": "Maya-san wa kanji o yomu koto ga dekimasu.",
+        "english": "Maya can read kanji.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 18",
+    "grammar_point": "わたしの しゅみは Noun／V rootこと です。 (My hobby is ~)",
+    "form": "わたしのしゅみは…です。",
+    "english_explanation": "Used to express one's own hobby or interest. To ask about someone's hobby, use しゅみは なんですか (What is your hobby?).",
+    "nepali_explanation": "आफ्नो रुची वा शौक व्यक्त गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ। कसैलाई रुची के हो भनेर प्रश्न गर्नुपर्दा しゅうみは なんですか को प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "わたしの しゅみは スポーツです。",
+        "romaji": "Watashi no shumi wa supōtsu desu.",
+        "english": "My hobby is sports.",
+        "nepali": ""
+      },
+      {
+        "japanese": "わたしの しゅみは えいがを みる ことです。",
+        "romaji": "Watashi no shumi wa eiga o miru koto desu.",
+        "english": "My hobby is watching movies.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 18",
+    "grammar_point": "V₁root form／Nounの まえに、V₂ (Before doing V1, do V2)",
+    "form": "V root／Nounの まえに、V₂",
+    "english_explanation": "In this pattern, the action of V2 happens before the action or state of V1. No matter what tense V2 is in, V1 is always in the Root/dictionary form. If a Noun comes before まえに, の is inserted between them (as long as that Noun is an action-type noun). If a time-period quantifier comes before まえに, の is not needed.",
+    "nepali_explanation": "यस स्वरूपमा Verb1 को कार्य गर्नु वा हुनु अघि Verb2 को कार्य हुन्छ। Verb2 जुनसुकै कालमा भएपनि Verb1 जहिलेपनि Root form मा हुन्छ। Noun को पछि まえに आएमा, Noun र まえに को बिचमा の को प्रयोग गरिन्छ (यहाँ प्रयोगहुने Noun चाँही कार्य जनाउने खालको हुन्छ)। समय-अवधि जनाउने quantifier को पछि まえに आएमा の को आवश्यकता पर्दैन।",
+    "examples": [
+      {
+        "japanese": "にほんへ くる まえに、にほんごを べんきょうしました。",
+        "romaji": "Nihon e kuru mae ni, nihongo o benkyō shimashita.",
+        "english": "Before coming to Japan, I studied Japanese.",
+        "nepali": ""
+      },
+      {
+        "japanese": "しょくじの まえに、てを あらいます。",
+        "romaji": "Shokuji no mae ni, te o araimasu.",
+        "english": "Before a meal, I wash my hands.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 18",
+    "grammar_point": "なかなか (Not easily / Not readily)",
+    "form": "なかなか + negative",
+    "english_explanation": "When used with a negative sentence, なかなか means 'not easily/not so simply'.",
+    "nepali_explanation": "नकारात्मक वाक्यसँग प्रयोग गरिँदा なかなか को 'सजिलैसँग होइन' भन्ने अर्थ हुन्छ।",
+    "examples": [
+      {
+        "japanese": "ネパールでは なかなか さくらを みる ことが できません。",
+        "romaji": "Nepāru dewa nakanaka sakura o miru koto ga dekimasen.",
+        "english": "In Nepal, you can't easily see cherry blossoms.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 18",
+    "grammar_point": "ぜひ (By all means / Really)",
+    "form": "ぜひ + desire expression",
+    "english_explanation": "ぜひ is used together with expressions of desire and request (like ほしいです, V ます たいです, and V て-form ください) to add emphasis/sincerity to the meaning of the expression. ぜひ means 'definitely/really/in the near future'.",
+    "nepali_explanation": "ぜひ चाँही आशा र अनुरोधको अभिव्यक्ती सँग प्रयोग गरिन्छ, जस्तै: ほしい です、V ます form たい です र V て-form ください र अभिव्यक्तिको अर्थलाई जोड दिने कार्य गर्दछ। ぜひ को अर्थ पक्का/साँच्चै/निकट भविष्यमा हुन्छ।",
+    "examples": [
+      {
+        "japanese": "ぜひ パーティーに いきたいです。",
+        "romaji": "Zehi pātī ni ikitai desu.",
+        "english": "I really want to go to the party.",
+        "nepali": ""
+      },
+      {
+        "japanese": "ぜひ あそびに きて ください。",
+        "romaji": "Zehi asobi ni kite kudasai.",
+        "english": "Please definitely come to play.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 19",
+    "grammar_point": "V た-form (Plain Past Form)",
+    "form": "たべます→たべた",
+    "english_explanation": "Also called the Past plain form, or the plain form of V ました. It is formed the same way as て-form, except て becomes た, and で becomes だ.",
+    "nepali_explanation": "यसलाई Past plain form वा V ました को Plain form पनि भनिन्छ। यो त्यही तरिकाले बनाइन्छ जुन तरिकाले て-form बनाइन्छ, फरक यत्ति हो कि て लाई た मा र で लाई だ मा बदलिन्छ।",
+    "examples": [
+      {
+        "japanese": "いきます → いって → いった",
+        "romaji": "ikimasu → itte → itta",
+        "english": "go → (te-form) → went",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 19",
+    "grammar_point": "V た-form ことが あります。 (Have done ~ before)",
+    "form": "V た-form ことが あります。",
+    "english_explanation": "Used to express past experience — that one has done a certain action before. If there is no such experience, use V た-form ことが ありません instead.",
+    "nepali_explanation": "विगतमा गरेका कार्यहरूलाई अनुभवको रुपमा व्यक्त गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ। कुनै कार्यको अनुभव नभएको खण्डमा V た-form ことが ありません को प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "すしを たべた ことが あります。",
+        "romaji": "Sushi o tabeta koto ga arimasu.",
+        "english": "I have eaten sushi before.",
+        "nepali": ""
+      },
+      {
+        "japanese": "しんかんせんに のった ことが ありません。",
+        "romaji": "Shinkansen ni notta koto ga arimasen.",
+        "english": "I have never ridden the bullet train.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 19",
+    "grammar_point": "V たり／だり-form",
+    "form": "V た-form + り",
+    "english_explanation": "To form this pattern, simply add り to the V た-form.",
+    "nepali_explanation": "यो रुप बनाउन मात्र हामीले V た-form मा り जोडिदिनुपर्दछ।",
+    "examples": [
+      {
+        "japanese": "たべた → たべたり",
+        "romaji": "tabeta → tabetari",
+        "english": "eat (representative action)",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 19",
+    "grammar_point": "V₁たり、V₂たり、～します。 (Doing things like V1, V2 etc.)",
+    "form": "V₁たり、V₂たり、～します。",
+    "english_explanation": "Used to give information about, or express, more than one activity as representative examples (doing this and that, among other things). The last verb in this pattern is always します.",
+    "nepali_explanation": "यसो गर्ने, उसो गर्ने गर्छु भनेर एकभन्दा बढी क्रियाकलापहरूको जानकारी दिनुपर्दा वा व्यक्त गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ। यस स्वरूपमा अन्तमा सधैं します क्रियापदको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "やすみの ひは そうじしたり、せんたくしたり します。",
+        "romaji": "Yasumi no hi wa sōji shitari, sentaku shitari shimasu.",
+        "english": "On days off, I do things like cleaning and doing laundry.",
+        "nepali": ""
+      },
+      {
+        "japanese": "きのうは カラオケで ビールを のんだり、うたを うたったり しました。",
+        "romaji": "Kinō wa karaoke de bīru o nondari, uta o utattari shimashita.",
+        "english": "Yesterday I did things like drinking beer and singing songs at karaoke.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 19",
+    "grammar_point": "い-adj→く／な-adj→に／Nounに なります。 (Become ~)",
+    "form": "なります",
+    "english_explanation": "なります means 'become/turn into/reach', and indicates a change of state or condition. い-adjectives change い→く before なります; な-adjectives and Nouns change です→に before なります.",
+    "nepali_explanation": "なります को अर्थ हुन्छ, बन्छ वा पुग्छ भन्ने हुन्छ र यसले अवस्था वा स्थितिमा परिवर्तनको संकेत गर्दछ। सम्भावनालाई दर्शाउन वा अवस्था परिवर्तन हुने कार्य व्यक्त गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "きむらさんは げんきに なりました。",
+        "romaji": "Kimura-san wa genki ni narimashita.",
+        "english": "Mr. Kimura became healthy.",
+        "nepali": ""
+      },
+      {
+        "japanese": "これから だんだん あつく なります。",
+        "romaji": "Korekara dandan atsuku narimasu.",
+        "english": "It will gradually become hot from now on.",
+        "nepali": ""
+      },
+      {
+        "japanese": "わたしは いしゃに なりたいです。",
+        "romaji": "Watashi wa isha ni naritai desu.",
+        "english": "I want to become a doctor.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 20",
+    "grammar_point": "Plain Form (Overview)",
+    "form": "Polite → Plain",
+    "english_explanation": "This form is not used with people higher in status than the speaker; it is only used with people equal to or lower than oneself (close friends, family, younger people). It's important to study each conversion table carefully to properly convert from Polite Form to Plain Form.",
+    "nepali_explanation": "यो form आफुभन्दा ठूला व्यक्तीसँग प्रयोग गरिकुराकानी गर्नुहुँदैन। आफुभन्दा सानासँग मात्र यसको प्रयोग गरिन्छ। Polite form लाई Plain form मा लान सबै तालिका राम्रोसँग अध्ययन गर्नु जरुरी छ।",
+    "examples": [
+      {
+        "japanese": "いきます(polite) → いく(plain)",
+        "romaji": "ikimasu → iku",
+        "english": "go (polite) → go (plain)",
+        "nepali": ""
+      },
+      {
+        "japanese": "たべます(polite) → たべる(plain)",
+        "romaji": "tabemasu → taberu",
+        "english": "eat (polite) → eat (plain)",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 20",
+    "grammar_point": "Plain Form Question/Answer",
+    "form": "…か。 → …？／うん・ううん",
+    "english_explanation": "In plain speech, か is dropped and replaced with a rising intonation at the end of the sentence (marked ？). はい becomes うん (yeah), and いいえ becomes ううん (nah).",
+    "nepali_explanation": "अनौपचारिक बोलीमा か हटाइन्छ र वाक्यको अन्त्यमा स्वर उठाइन्छ (？ चिन्हले जनाइन्छ)। はい को सट्टा うん (हो/अँ) र いいえ को सट्टा ううん (होइन/अँह) प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "あした マヤさんに あった？ うん、あった。",
+        "romaji": "Ashita Maya-san ni atta? Un, atta.",
+        "english": "Did you meet Maya? Yeah, I did.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 20",
+    "grammar_point": "Informal Word Equivalents",
+    "form": "わたし→ぼく、あなた→きみ、～さん→～くん",
+    "english_explanation": "Certain words have informal/plain equivalents used in casual speech, generally by men or between people of equal/lower status. ぼく (informal 'I', used by men), きみ (informal 'you', used with equal/lower status people), ～くん (informal '~-san', used with equal/lower status people, especially attached to boys' names).",
+    "nepali_explanation": "केही शब्दहरूको अनौपचारिक/plain समानार्थी शब्द हुन्छन्, जुन प्रायः पुरुषले वा बराबर/तल्लो स्तरका व्यक्तिहरूले प्रयोग गर्छन्। ぼक (म, पुरुषहरूद्वारा प्रयोग गरिने わたし को अनौपचारिक शब्द), きみ (तिमी, बराबर वा तल्लो स्तरका मानिसहरूलाई सम्बोधन गर्न प्रयोग गरिने あなた को अनौपचारिक शब्द), ～くん (～जी, बराबर वा तल्लो स्तरका पुरुषहरूलाई सम्बोधन गर्न साथै केटा मान्छेको नामपछाडि जोडिने ～さん को अनौपचारिक शब्द)।",
+    "examples": [
+      {
+        "japanese": "ぼくは がくせいだ。",
+        "romaji": "Boku wa gakusei da.",
+        "english": "I am a student. (informal, male speaker)",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 20",
+    "grammar_point": "こっち／そっち／あっち／どっち (Informal direction words)",
+    "form": "こっち/そっち/あっち/どっち",
+    "english_explanation": "These are the informal, casual equivalents of こちら/そちら/あちら/どちら.",
+    "nepali_explanation": "यी こちら/そちら/あちら/どちら का अनौपचारिक (casual) रूप हुन्।",
+    "examples": [
+      {
+        "japanese": "どっちが いい？",
+        "romaji": "Docchi ga ii?",
+        "english": "Which one is better?",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 21",
+    "grammar_point": "Plain Form と おもいます。 (I think that ~)",
+    "form": "Plain Form と おもいます。",
+    "english_explanation": "Used to express one's own thought, opinion, or guess about something. To ask someone's opinion about a topic, use ～に ついて どう おもいますか — note that in this question pattern, と is not needed after どう.",
+    "nepali_explanation": "कुनै कुरा, वस्तु वा घटनाको बारेमा यस्तो जस्तो लाग्छ, उस्तो जस्तो लाग्छ भनेर आफ्नो विचार वा अनुमान व्यक्त गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ। ～に ついて どう おもいますか को प्रयोग गरी अरुलाई कुनै कुराको बारेमा राय वा विचार सोध्न प्रयोग गरिन्छ। यहाँ どう को पछाडि と को आवश्यकता पर्दैन।",
+    "examples": [
+      {
+        "japanese": "あした あめが ふる と おもいます。",
+        "romaji": "Ashita ame ga furu to omoimasu.",
+        "english": "I think it will rain tomorrow.",
+        "nepali": ""
+      },
+      {
+        "japanese": "にほんに ついて どう おもいますか。 ちょっと ぶっかが たかいと おもいます。",
+        "romaji": "Nihon ni tsuite dō omoimasu ka. Chotto bukka ga takai to omoimasu.",
+        "english": "What do you think about Japan? I think prices are a bit high.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 21",
+    "grammar_point": "Sentence Plain Form と いいました。 (Said that ~)",
+    "form": "Plain Form と いいました。",
+    "english_explanation": "Used to report exactly what someone else said — 'so-and-so said such-and-such'.",
+    "nepali_explanation": "अर्कोकसैले भनेको कुरालाई जस्ताको त्यस्तै त्यसो भन्यो, उसो भन्यो भनेर बताउनुपर्दा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "おとうとは あした がっこうへ いかない と いいました。",
+        "romaji": "Otōto wa ashita gakkō e ikanai to iimashita.",
+        "english": "My younger brother said he won't go to school tomorrow.",
+        "nepali": ""
+      },
+      {
+        "japanese": "せんせいは わたしの こたえが ただしい と いいました。",
+        "romaji": "Sensei wa watashi no kotae ga tadashii to iimashita.",
+        "english": "The teacher said my answer was correct.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 21",
+    "grammar_point": "Plain Form → でしょう？ (Isn't it? / Right?)",
+    "form": "Plain Form + でしょう？",
+    "english_explanation": "Used when speaking, hoping the listener already knows or is aware of something, to confirm 'isn't that so?' about something that already happened or is about to happen.",
+    "nepali_explanation": "श्रोता (listener) लाई केही ज्ञानभएको अपेक्षा गरी पहिले भैसकेको कुरालाई वा अब यसपछि हुन लागेको कुरालाई 'यसो हैन त?' भनेर निश्चय गर्ने आशयमा बोलिँदा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "きのう マヤさんに あった でしょう？",
+        "romaji": "Kinō Maya-san ni atta deshō?",
+        "english": "You met Maya yesterday, right?",
+        "nepali": ""
+      },
+      {
+        "japanese": "あしたは やすみ でしょう？",
+        "romaji": "Ashita wa yasumi deshō?",
+        "english": "Tomorrow is a holiday, right?",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 21",
+    "grammar_point": "N₁(place)で N₂が あります。 (An event is being held)",
+    "form": "N₁(place)で N₂が あります।",
+    "english_explanation": "When N2 refers to an event such as a game, party, concert, or festival, あります takes on the meaning 'is being held/is taking place' rather than just 'exists'.",
+    "nepali_explanation": "यहाँ ha N2 ले कुनै event जस्तै खेल, पार्टी, कन्सर्ट, चाडपर्व इत्यादि व्यक्त गर्दा ta あります को अर्थ '...हुन गइरहेको छ' भन्ने हुन्छ।",
+    "examples": [
+      {
+        "japanese": "とうきょうで サッカーの しあいが あります。",
+        "romaji": "Tōkyō de sakkā no shiai ga arimasu.",
+        "english": "There is a soccer match happening in Tokyo.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 21",
+    "grammar_point": "N(occasion)で",
+    "form": "N(occasion)で",
+    "english_explanation": "When a certain action happens on a specific occasion, で marks that occasion.",
+    "nepali_explanation": "जब निश्चित अवसरमा कुनै कार्य हुन्छ भने त्यसलाई P-で ले संकेत गर्दछ।",
+    "examples": [
+      {
+        "japanese": "コンサートで この しゃしんを とりました。",
+        "romaji": "Konsāto de kono shashin o torimashita.",
+        "english": "I took this photo at the concert.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 21",
+    "grammar_point": "N でも Verb (~ or something)",
+    "form": "N でも Verb",
+    "english_explanation": "でも is used to give one example among similar things as a suggestion — offering, encouraging, or advising someone.",
+    "nepali_explanation": "यहाँ でも को प्रयोग गरी एकैप्रकारका चिजबाट कुनैएक उदाहरणको रुपमा प्रयोग गरी कसैलाई सुझाव, प्रोत्साहन वा सल्लाह दिन प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "おちゃでも のみませんか。",
+        "romaji": "Ocha demo nomimasen ka.",
+        "english": "Won't you have tea or something?",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 21",
+    "grammar_point": "V ないと………… (Have to ~ / must)",
+    "form": "V ないと。",
+    "english_explanation": "This is the shortened form of V ないと いけません, formed by dropping いけません. Both forms are still considered to carry the same meaning.",
+    "nepali_explanation": "यो स्वरूप V ないと いけません को いけません लाई हटाई बनाइएको हो। त्यसैले यी दुबै स्वरूप उस्तै मानिन्छन्।",
+    "examples": [
+      {
+        "japanese": "もう かえらないと……。",
+        "romaji": "Mō kaeranai to...",
+        "english": "I have to go home now.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 22",
+    "grammar_point": "Noun Modification",
+    "form": "Adjective/Noun + Noun",
+    "english_explanation": "We already learned in Lessons 2 and 8 how to modify a Noun using another adjective or noun before it.",
+    "nepali_explanation": "हामीले पाठ २ र पाठ ८ मा Noun लाई परिमार्जन गर्न सिकेका थियौं।",
+    "examples": [
+      {
+        "japanese": "きむらさんの うち。",
+        "romaji": "Kimura-san no uchi.",
+        "english": "Mr. Kimura's house.",
+        "nepali": ""
+      },
+      {
+        "japanese": "きれいな うち。",
+        "romaji": "Kirei na uchi.",
+        "english": "A beautiful house.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 22",
+    "grammar_point": "Noun Modification by Sentences",
+    "form": "Plain Form Sentence + Noun",
+    "english_explanation": "A whole sentence can also be turned into a noun modifier. To do this, the noun being modified is placed right after the sentence in plain form. However, for な-adjective sentences, ～な is used instead of ～だ; and for Noun sentences, ～の is used instead of ～だ. This lets you turn an entire clause into a descriptor like 'the person who eats meat' or 'the house I bought yesterday' — and the whole modified phrase can then be used as a single noun (even changing Topic to Subject if needed).",
+    "nepali_explanation": "वाक्यलाई पनि Noun को रुपमा परिमार्जन गर्न सकिन्छ। यसो गर्दा plain form को पछि परिमार्जन गर्नुपर्ने Noun लाई राखिन्छ। तथापि な-adjective sentences को मामला (case) मा भने ～だ को ठाउँमा ～な को प्रयोग हुन्छ र Noun sentences को मामला (case) मा भने ～だ को ठाउँमा ～の को प्रयोग हुन्छ। यसरी Modified गरिएको Noun लाई Sentence बाट Single Noun को रुपमा हेरिने भएकोले आवश्यकता अनुसार प्रयोग गर्न सकिन्छ।",
+    "examples": [
+      {
+        "japanese": "にくを たべる ひと (a person who eats meat)",
+        "romaji": "niku o taberu hito",
+        "english": "a person who eats meat",
+        "nepali": ""
+      },
+      {
+        "japanese": "マヤさんが すんで いた うち。 (the house where Maya used to live)",
+        "romaji": "Maya-san ga sunde ita uchi.",
+        "english": "the house where Maya used to live",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 22",
+    "grammar_point": "Verb Root Form + じかん／やくそく／ようじ",
+    "form": "V root + じかん/やくそく/ようじ",
+    "english_explanation": "Before words like じかん (time), やくそく (promise/appointment), and ようじ (business/errand), the verb must be in the Root form.",
+    "nepali_explanation": "じかん、やくそく र ようじ को अघि को Verb चाँही Root form मा प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "あさごはんを たべる じかんが ありません。",
+        "romaji": "Asagohan o taberu jikan ga arimasen.",
+        "english": "I don't have time to eat breakfast.",
+        "nepali": ""
+      },
+      {
+        "japanese": "ともだちと えいがを みる やくそくが あります。",
+        "romaji": "Tomodachi to eiga o miru yakusoku ga arimasu.",
+        "english": "I have a promise to watch a movie with a friend.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 23",
+    "grammar_point": "V root/ V ない/ い-adj/ な-adj な/ Noun の + とき、～ (When ~)",
+    "form": "…とき、～ (main clause)",
+    "english_explanation": "とき means 'time/moment'. とき connects two clauses and expresses the timing of the action/state in the main clause. Note: if the Noun before とき is related to a time word (like あさ, ひる, よる), の is not used before とき.",
+    "nepali_explanation": "とき को अर्थ बेला वा समय हुन्छ। とき ले दुई वाक्यलाई जोड्छ र मुख्य खण्डमा हुने वा गरिने कार्य वा अवस्थाको समयलाई व्यक्त गर्दछ।",
+    "examples": [
+      {
+        "japanese": "としょかんで ほんを かりる とき、カードが いります。",
+        "romaji": "Toshokan de hon o kariru toki, kādo ga irimasu.",
+        "english": "When borrowing a book from the library, you need a card.",
+        "nepali": ""
+      },
+      {
+        "japanese": "ひまな とき、えいがを みに いきませんか。",
+        "romaji": "Hima na toki, eiga o mi ni ikimasen ka.",
+        "english": "When you're free, won't you go watch a movie?",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 23",
+    "grammar_point": "Verb Root/V た-form + とき、～ (Before/After nuance)",
+    "form": "V root/V たform + とき",
+    "english_explanation": "When Verb Root form comes before とき, it indicates the action hasn't been completed yet at that moment. When V た-form comes before とき, it indicates the action was already completed at that moment.",
+    "nepali_explanation": "जब とき को अघि Verb Root form राखिन्छ भने यसले कार्य पुरा नभएको संकेत गर्दछ, र とき को अघि V た-form राखिन्छ भने यसले कार्य समाप्त भएको संकेत गर्दछ।",
+    "examples": [
+      {
+        "japanese": "くにへ かえる とき、めがねを かいました。",
+        "romaji": "Kuni e kaeru toki, megane o kaimashita.",
+        "english": "When (about to) return to my country, I bought glasses.",
+        "nepali": ""
+      },
+      {
+        "japanese": "くにへ かえった とき、めがねを かいました。",
+        "romaji": "Kuni e kaetta toki, megane o kaimashita.",
+        "english": "When I had (already) returned to my country, I bought glasses.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 23",
+    "grammar_point": "Verb Root Form と、～ (main clause)",
+    "form": "V root と、～",
+    "english_explanation": "と connects two clauses when a certain result inevitably or naturally follows a certain action or condition — like a rule or mechanism. Note: と cannot be used to express one's own wish, hope, invitation, or request; たら (Lesson 25) is used instead for those cases.",
+    "nepali_explanation": "जब कुनै परिस्थिति व्यक्तगर्दा, कुनै निश्चित कार्यको परिणाम स्वरुप अर्को कार्य वा कुरा अनिवार्य रुपमा घटित हुन्छ भने, と को प्रयोग गरी वाक्यहरूलाई जोडिन्छ। ध्यान दिनुहोस्: एक व्यक्तीको इच्छा, आशा, निमन्त्रणा वा अनुरोधको अभिव्यक्तिहरू यस स्वरूपमा प्रयोग गर्न सकिँदैन — त्यसको लागि たら (पाठ २५) प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "この ボタンを おすと、おつりが でます。",
+        "romaji": "Kono botan o osu to, otsuri ga demasu.",
+        "english": "If you press this button, change comes out.",
+        "nepali": ""
+      },
+      {
+        "japanese": "みぎへ まがると、びょういんが あります。",
+        "romaji": "Migi e magaru to, byōin ga arimasu.",
+        "english": "If you turn right, there is a hospital.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 23",
+    "grammar_point": "Noun が adjective (Ongoing state)",
+    "form": "Noun が Adjective です。",
+    "english_explanation": "Used to give information about a state or condition that continues to exist as it is right now.",
+    "nepali_explanation": "यथावत रहिरहेका कुराको जानकारी गराउन यो स्वरूपको प्रयोग गरिन्छ। यथावत रहिरहेको विषय (subject) लाई P-が ले संकेत गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "ラジオの おとが ちいさいです。",
+        "romaji": "Rajio no oto ga chiisai desu.",
+        "english": "The radio's sound is small.",
+        "nepali": ""
+      },
+      {
+        "japanese": "からだの ちょうしが わるいです。",
+        "romaji": "Karada no chōshi ga warui desu.",
+        "english": "My physical condition is bad.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 23",
+    "grammar_point": "N(place)を V(verb of movement)",
+    "form": "N(place)を Verb",
+    "english_explanation": "を marks the place/route through which a movement action passes. This applies to movement verbs like さんぽします (take a walk), わたります (cross), あるきます (walk), etc.",
+    "nepali_explanation": "कुनै ठाउँबाट गुज्रने कार्य हुँदा त्यसलाई P-を ले संकेत गर्दछ। यो नियम さんぽします、わたります、あるきます जस्ता Movement verb हरूमा लागू हुन्छ।",
+    "examples": [
+      {
+        "japanese": "こうえんを さんぽします。",
+        "romaji": "Kōen o sanpo shimasu.",
+        "english": "I take a walk through the park.",
+        "nepali": ""
+      },
+      {
+        "japanese": "はしを わたります。",
+        "romaji": "Hashi o watarimasu.",
+        "english": "I cross the bridge.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 24",
+    "grammar_point": "くれます (Someone gives me ~)",
+    "form": "N は わたしに N₂を くれます。",
+    "english_explanation": "We learned that あげます means 'give' in Lesson 7. However, when the speaker (or the speaker's family) is the one receiving something from someone else, あげます cannot be used — instead, くれます must be used.",
+    "nepali_explanation": "हामीले あげます को अर्थ दिन्छु/दिनुहुन्छ भनेर पाठ ७ मा अध्ययन गरेका थियौं। यदि वक्ता (speaker) वा वक्ताको परिवार (speaker's family) लाई कसैले केही दिएको खण्डमा यस क्रियापदको प्रयोग गर्न मिल्दैन। यस अवस्थामा くれます क्रियापदको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "わたしは マヤさんに はなを あげました。",
+        "romaji": "Watashi wa Maya-san ni hana o agemashita.",
+        "english": "I gave flowers to Maya.",
+        "nepali": ""
+      },
+      {
+        "japanese": "マヤさんは わたしに はなを くれました。",
+        "romaji": "Maya-san wa watashi ni hana o kuremashita.",
+        "english": "Maya gave me flowers.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 24",
+    "grammar_point": "V て-form あげます／もらいます／くれます",
+    "form": "V て-form あげます/もらいます/くれます",
+    "english_explanation": "These forms are also very commonly used. あげます (て-form): expresses doing a favor for someone, giving/doing something for them out of goodwill. もらいます (て-form): expresses gratitude on the receiving end — receiving a favor from someone. くれます (て-form): expresses that someone does a favor for the speaker or the speaker's family member, out of goodwill.",
+    "nepali_explanation": "यी स्वरूप पनि धेरै चल्तीमा आउने स्वरूप हो। V て-form あげます: सद्भावना वा कृतज्ञताको भाव व्यक्त गर्दै आफुले कसैलाई केही गरिदिन्छु वा दिनुहुन्छ भन्ने कुरा व्यक्त गर्दछ। V て-form もらいます: प्राप्तकर्ताको पक्षमा कृतज्ञताको भावना व्यक्त गर्नुपर्दा प्रयोग गरिन्छ। V て-form くれます: सद्भावनाको भावका साथ कसैले आफ्नो वा आफ्नो परिवारको सदस्यको लागि केही गरि दिनुहुन्छ भन्ने कुरा व्यक्त गर्दछ।",
+    "examples": [
+      {
+        "japanese": "わたしは マヤさんに かんじを おしえて あげました。",
+        "romaji": "Watashi wa Maya-san ni kanji o oshiete agemashita.",
+        "english": "I taught Maya kanji (as a favor).",
+        "nepali": ""
+      },
+      {
+        "japanese": "わたしは スレスさんに ギターを おしえて もらいました。",
+        "romaji": "Watashi wa Suresu-san ni gitā o oshiete moraimashita.",
+        "english": "I had Suresh teach me guitar (gratefully).",
+        "nepali": ""
+      },
+      {
+        "japanese": "マヤさんは わたしに かんじを おしえて くれました。",
+        "romaji": "Maya-san wa watashi ni kanji o oshiete kuremashita.",
+        "english": "Maya (kindly) taught me kanji.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 24",
+    "grammar_point": "N₁ は N₂が Verb (New information marker)",
+    "form": "N₁は N₂が Verb।",
+    "english_explanation": "が marks the part of the sentence that gives new information to the listener.",
+    "nepali_explanation": "वाक्यमा नयाँ जानकारी दिने विषयलाई P-が ले संकेत गर्दछ।",
+    "examples": [
+      {
+        "japanese": "すてきな ネクタイですね。 ええ、ちちが くれました。",
+        "romaji": "Suteki na nekutai desu ne. Ee, chichi ga kuremashita.",
+        "english": "What a nice tie! Yes, my father gave it to me.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 24",
+    "grammar_point": "だれが Verb か (Who did it?)",
+    "form": "だれが Verb か。",
+    "english_explanation": "だれが means 'who' as the doer of an action. It is used to ask who performs or performed a certain action.",
+    "nepali_explanation": "यहाँ だれが को अर्थ 'कस्ले' हुन्छ। कुनै कार्य कस्ले गर्नुहुन्छ वा गर्नुभयो भनेर प्रश्न गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "だれが この レポートを かきましたか。 スレスさんが かきました。",
+        "romaji": "Dare ga kono repōto o kakimashita ka. Suresu-san ga kakimashita.",
+        "english": "Who wrote this report? Suresh wrote it.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 25",
+    "grammar_point": "Plain Past Form ら、～ (If ~, then ~)",
+    "form": "Plain Past Form ら、～",
+    "english_explanation": "Used to express a conditional/hypothetical situation — 'if this happens/is the case, then...'. It's used when the speaker wants to express an opinion, condition, request, etc. in a conditional way.",
+    "nepali_explanation": "यदि यसो भयो भने वा यस्तो भएको खण्डमा भनेर परिस्थितिजन्य शर्तलाई प्रकाशमा ल्याउन यो स्वरूपको प्रयोग गरिन्छ। वक्ताले सशर्त (conditional) मा आफ्नो राय, स्थिति, अनुरोध आदि व्यक्त गर्न चाहेमा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "おかねが あったら、りょこうします。",
+        "romaji": "Okane ga attara, ryokō shimasu.",
+        "english": "If I have money, I will travel.",
+        "nepali": ""
+      },
+      {
+        "japanese": "あめが ふったら、がっこうを やすみます。",
+        "romaji": "Ame ga futtara, gakkō o yasumimasu.",
+        "english": "If it rains, I will take a day off school.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 25",
+    "grammar_point": "V た-form ら、～ (After doing V1, then V2)",
+    "form": "V たform ら、～",
+    "english_explanation": "Used to express doing V2 after a definite future action (V1) is completed or has happened. The main clause (V2) after V た-form ら is always in present tense (non-past).",
+    "nepali_explanation": "भविष्यमा हुने निश्चित कुनैयौटा कार्य पुरा भइसकेपछि वा गरिसकेपछि अर्को कुनै कार्य हुन्छ वा गरिन्छ भनेर व्यक्त गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ। V た-form ら पछि प्रयोग हुने मुख्य वाक्य सधैं वर्तमानकाल (present tense) मा हुन्छ।",
+    "examples": [
+      {
+        "japanese": "１０じに なったら、でかけましょう。",
+        "romaji": "Jūji ni nattara, dekakemashō.",
+        "english": "Once it becomes 10 o'clock, let's go out.",
+        "nepali": ""
+      },
+      {
+        "japanese": "うちへ かえったら、すぐ シャワーを あびます。",
+        "romaji": "Uchi e kaettara, sugu shawā o abimasu.",
+        "english": "After I get home, I will take a shower right away.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 25",
+    "grammar_point": "V て-form／V ない(なくて)／い-adj(くて)／な-adj(で)／Noun で も、～ (Even if ~)",
+    "form": "…ても／でも、～",
+    "english_explanation": "Used to express that regardless of a certain condition, or even after doing a certain action, the opposite/contrary result still happens or is done.",
+    "nepali_explanation": "कुनै अवस्था भएपनि वा कुनै कार्य गरेपनि त्यस विपरित कुनै कार्य हुन्छ वा गरिन्छ भन्ने कुरालाई व्यक्त गर्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "あめが ふっても、せんたくします。",
+        "romaji": "Ame ga futtemo, sentaku shimasu.",
+        "english": "Even if it rains, I will do laundry.",
+        "nepali": ""
+      },
+      {
+        "japanese": "たかくても、その うちが かいたいです。",
+        "romaji": "Takakutemo, sono uchi ga kaitai desu.",
+        "english": "Even if it's expensive, I want to buy that house.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 25",
+    "grammar_point": "もし／いくら (If / However much)",
+    "form": "もし～たら／いくら～ても",
+    "english_explanation": "もし is used together with the Plain past ら sentence pattern, while いくら is used together with the ～ても/～でも sentence pattern, both expressing a conditional/hypothetical situation. もし means 'if', and いくら means 'no matter how much/however much'.",
+    "nepali_explanation": "もし चाँही Plain past ら को वाक्यसँग प्रयोग गरिन्छ भने いくら चाँही ～ても／～でも को वाक्यसँग प्रयोग गरिन्छ र स्थीतिजन्य शर्त उत्पन्न हुने अवस्थालाई व्यक्त गर्दछ। もし को अर्थ 'यदि' हुन्छ भने いくら को अर्थ 'जतिनै' हुन्छ।",
+    "examples": [
+      {
+        "japanese": "もし １おくえん あったら、いろいろな くにを りょこうしたいです。",
+        "romaji": "Moshi ichioku-en attara, iroiro na kuni o ryokō shitai desu.",
+        "english": "If I had 100 million yen, I would want to travel to various countries.",
+        "nepali": ""
+      },
+      {
+        "japanese": "いくら たかくても、その うちを かいます。",
+        "romaji": "Ikura takakutemo, sono uchi o kaimasu.",
+        "english": "No matter how expensive it is, I will buy that house.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  },
+  {
+    "lesson": "Lesson 25",
+    "grammar_point": "Subject of a Subordinate Clause marked by が",
+    "form": "subordinate clause の subject が",
+    "english_explanation": "When a sentence has a main clause and a subordinate clause (like a まえに clause), the subject of the subordinate clause is marked with が, not は — even though は is normally used to mark the topic of a full sentence.",
+    "nepali_explanation": "अधीनस्थ खण्ड (subordinate clause, जस्तै まえに भएको वाक्यांश) को विषय (subject) लाई は को सट्टा が ले संकेत गरिन्छ, जबकि सामान्यतया पुरा वाक्यको विषय (topic) は ले नै संकेत गरिन्छ।",
+    "examples": [
+      {
+        "japanese": "ともだちが くる まえに、へやを そうじします。",
+        "romaji": "Tomodachi ga kuru mae ni, heya o sōji shimasu.",
+        "english": "Before my friend comes, I clean the room.",
+        "nepali": ""
+      }
+    ],
+    "nepali_meaning": ""
+  }
+]

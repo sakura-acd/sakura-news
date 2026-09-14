@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/fab.svg"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kanji — 日 — Shikaku</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans:['Outfit','sans-serif'], jp:['"Noto Sans JP"','sans-serif'] },
+          colors: {
+            blue:   { DEFAULT:'#7eb8e4', deep:'#3a7cbf' },
+            teal:   { DEFAULT:'#6ecec8', deep:'#2a9d8f' },
+            mint:   { DEFAULT:'#80d4a8', deep:'#27ae72' },
+            coral:  { DEFAULT:'#f4a57a', deep:'#e0693a' },
+            butter: { DEFAULT:'#f5da8a', deep:'#d4a017' },
+            lilac:  { DEFAULT:'#c4a8e0', deep:'#8b5cf6' },
+            ink:    { DEFAULT:'#1f2937', 2:'#475569', muted:'#94a3b8' },
+            bg:     { DEFAULT:'#f5f8fc', surface:'#ffffff', s2:'#eef2f7' },
+          },
+          borderRadius: { xl2:'1.25rem', xl3:'1.75rem', xl4:'2.25rem' },
+          boxShadow: {
+            card: '0 2px 16px rgba(15,23,42,.07)',
+            md2:  '0 4px 24px rgba(15,23,42,.12)',
+            lg2:  '0 8px 40px rgba(15,23,42,.16)',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family:'Outfit',sans-serif; transition:background .3s,color .3s; }
+    .jp  { font-family:'"Noto Sans JP"',sans-serif; }
+
+    .mesh-light { background: radial-gradient(ellipse at 18% 12%,#d8edf8 0%,transparent 52%), radial-gradient(ellipse at 82% 88%,#d2f1ec 0%,transparent 52%), #f4f7fb; }
+    .mesh-dark  { background: radial-gradient(ellipse at 18% 12%,#0f2236 0%,transparent 52%), radial-gradient(ellipse at 82% 88%,#0b2120 0%,transparent 52%), #0c1220; }
+
+    body.dark #topbar, body.dark #botnav { background:rgba(12,18,32,.75) !important; border-color:rgba(255,255,255,.08) !important; }
+    body.dark .surface  { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark .t-ink    { color:#e8eef6 !important; }
+    body.dark .t-ink2   { color:#8da4c0 !important; }
+    body.dark .t-muted  { color:#4a607a !important; }
+    body.dark .divider  { border-color:#1d2740 !important; }
+    body.dark .kanji-char { color:#7eb8e4 !important; }
+    body.dark .ex-card  { background:#1d2740 !important; border-color:#2a3d56 !important; }
+    body.dark .onyomi-box { background:#17283f !important; }
+    body.dark .kunyomi-box { background:#132a24 !important; }
+    body.dark .stroke-box { background:#151d2e !important; border-color:rgba(126,184,228,.4) !important; }
+
+    .kanji-char { font-family:'"Noto Sans JP"',sans-serif; font-size:3.75rem; font-weight:700; color:#1f2937; line-height:1; }
+    @media (min-width:640px) { .kanji-char { font-size:5.5rem; } }
+    @media (min-width:1024px) { .kanji-char { font-size:4.75rem; } }
+
+    .ex-yomi { display:block; font-size:.62em; line-height:1; color:#3a7cbf; font-weight:600; }
+    body.dark .ex-yomi { color:#7eb8e4; }
+    .ex-text { line-height:2.2; font-size:1.25rem; font-weight:700; padding-top:.85em; }
+    .ex-text ruby { margin:0 1px; }
+    .ex-text rt { font-size:.55em; font-weight:700; color:#e0693a; letter-spacing:.02em; }
+    body.dark .ex-text rt { color:#f4a57a; }
+
+    @keyframes speak-pulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.1); } }
+    .speaking { animation: speak-pulse .6s ease infinite; }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:none} }
+    .fu { animation: fadeUp .4s ease both; }
+
+    ::-webkit-scrollbar { width:4px; } ::-webkit-scrollbar-thumb { background:#c2d3e3; border-radius:99px; }
+
+    /* Desktop dashboard fit: page itself never scrolls at lg+; only the
+       examples column scrolls internally if content overflows. */
+    @media (min-width:1024px) {
+      html, body { height:100%; overflow:hidden; }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.5/dist/hanzi-writer.min.js"></script>
+</head>
+
+<body class="mesh-light min-h-screen text-ink" id="body">
+
+<!-- ═══════════ MOBILE TOPBAR ═══════════ -->
+<header id="topbar" class="lg:hidden fixed top-0 left-0 right-0 z-40 bg-white/93 backdrop-blur-md border-b border-slate-100 shadow-sm px-4 py-2.5 flex items-center transition-transform duration-300">
+  <a href="index.html" class="t-ink2 flex-shrink-0">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+  </a>
+  <div class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 pointer-events-none select-none">
+    <div class="w-7 h-7 rounded-xl bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow"><span class="jp text-white font-bold text-sm">漢</span></div>
+    <span class="font-extrabold text-base t-ink">Kanji</span>
+    <span class="text-[11px] font-bold text-white px-2 py-0.5 rounded-full" style="background:#3a7cbf;">N5</span>
+  </div>
+  <div class="ml-auto flex items-center gap-2">
+    <button onclick="toggleLang()" id="lang-btn" class="px-2.5 py-1.5 rounded-full border border-slate-200 text-xs font-bold t-ink2" style="background:#f8fafc;">🇳🇵 NP</button>
+    <button onclick="toggleDark()" class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center t-muted" style="background:#f8fafc;">
+      <svg id="mob-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ═══════════ DESKTOP TOPBAR ═══════════ -->
+<header id="topbar-desktop" class="hidden lg:flex fixed top-0 left-0 right-0 z-40 bg-white/93 backdrop-blur-md border-b border-slate-100 shadow-sm px-6 py-3 items-center transition-transform duration-300">
+  <a href="index.html" class="t-ink2 flex-shrink-0 flex items-center gap-1.5 font-bold text-sm hover:text-blue-deep transition-colors">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+    Back
+  </a>
+  <div class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 pointer-events-none select-none">
+    <div class="w-7 h-7 rounded-xl bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow"><span class="jp text-white font-bold text-sm">漢</span></div>
+    <span class="font-extrabold text-base t-ink">Kanji</span>
+    <span class="text-[11px] font-bold text-white px-2 py-0.5 rounded-full" style="background:#3a7cbf;">N5</span>
+  </div>
+  <div class="ml-auto flex items-center gap-2">
+    <button onclick="toggleLang()" id="lang-btn-desktop" class="px-2.5 py-1.5 rounded-full border border-slate-200 text-xs font-bold t-ink2" style="background:#f8fafc;">🇳🇵 NP</button>
+    <button onclick="toggleDark()" class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center t-muted" style="background:#f8fafc;">
+      <svg id="desk-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ═══════════ MAIN ═══════════ -->
+<main class="min-h-screen pb-28 pt-16 px-4 max-w-2xl mx-auto
+             lg:min-h-0 lg:h-screen lg:max-w-5xl lg:px-6 lg:pt-16 lg:pb-4
+             lg:flex lg:items-center lg:justify-center lg:overflow-hidden">
+
+  <div class="w-full lg:h-full lg:max-h-full lg:flex lg:flex-col lg:overflow-hidden lg:py-4">
+
+    <div class="fu bg-bg-surface surface rounded-xl4 shadow-card border border-slate-100 divider p-6
+                lg:flex lg:flex-row lg:gap-6 lg:p-6 lg:flex-1 lg:min-h-0 lg:overflow-hidden">
+
+      <!-- LEFT COLUMN (desktop): kanji, readings, on/kun-yomi, stroke order -->
+      <div class="lg:w-[300px] lg:flex-shrink-0 lg:flex lg:flex-col lg:overflow-y-auto lg:pr-6 lg:border-r lg:border-slate-100 lg:divider">
+
+        <!-- Kanji + readings row -->
+        <div class="flex flex-row items-start gap-4 pb-6 border-b border-slate-100 divider lg:pb-5">
+          <div class="flex flex-col items-center gap-3 flex-shrink-0" style="width:120px;">
+            <div class="flex items-center gap-2">
+              <span class="kanji-char jp" id="kanji-glyph">日</span>
+              <button id="glyph-speak" class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 mt-2" style="background:rgba(110,206,200,.18);color:#2a9d8f;" title="Listen">
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+              </button>
+            </div>
+            <span id="stroke-count-badge" class="text-xs font-bold px-4 py-1.5 rounded-full" style="background:rgba(42,157,143,.12);color:#2a9d8f;">4 画</span>
+          </div>
+
+          <div class="w-px self-stretch bg-slate-100 divider flex-shrink-0"></div>
+
+          <div class="w-full flex-1 min-w-0 relative">
+            <button id="bookmark-btn" onclick="toggleBookmark()" class="absolute top-0 right-0 w-9 h-9 rounded-full border border-slate-200 divider flex items-center justify-center t-ink2 hover:bg-bg-s2 transition-all" aria-label="Bookmark" style="background:#f8fafc;">
+              <svg id="bookmark-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21 12 16 5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+            </button>
+            <div class="jp text-xl sm:text-2xl font-extrabold t-ink pr-10 text-left" id="kanji-yomikata">日（ひ・ニチ）</div>
+            <div class="text-[11px] font-bold tracking-widest uppercase t-muted mt-4 mb-1 text-left" id="meaning-label">Meaning</div>
+            <div class="text-lg sm:text-xl font-extrabold t-ink text-left" id="kanji-meaning">sun, day</div>
+          </div>
+        </div>
+
+        <!-- On'yomi / Kun'yomi -->
+        <div class="grid grid-cols-2 gap-3 pb-6 mb-6 border-b border-slate-100 divider lg:pb-5 lg:mb-5">
+          <div class="onyomi-box rounded-xl2 p-3 text-center" style="background:rgba(126,184,228,.14);">
+            <div class="text-[10px] font-bold tracking-widest uppercase t-muted mb-1">音読み (On'yomi)</div>
+            <div class="jp text-base font-extrabold" style="color:#3a7cbf;" id="onyomi-text">ニチ、ジツ</div>
+          </div>
+          <div class="kunyomi-box rounded-xl2 p-3 text-center" style="background:rgba(128,212,168,.16);">
+            <div class="text-[10px] font-bold tracking-widest uppercase t-muted mb-1">訓読み (Kun'yomi)</div>
+            <div class="jp text-base font-extrabold" style="color:#27ae72;" id="kunyomi-text">ひ、-か、-び</div>
+          </div>
+        </div>
+
+        <!-- Stroke Order -->
+        <div class="pb-6 mb-6 border-b border-slate-100 divider lg:pb-0 lg:mb-0 lg:border-b-0">
+          <button onclick="toggleStrokeSection()" id="stroke-toggle-btn" class="w-full flex items-center gap-2 text-left rounded-xl2 border border-slate-200 divider px-4 py-3 hover:bg-bg-s2 transition-colors" style="background:#f8fafc;">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            <h2 class="font-extrabold text-base t-ink jp flex-1">書き順 <span class="font-bold text-sm t-muted">(Stroke Order)</span></h2>
+            <svg id="stroke-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24" class="t-muted transition-transform duration-200 flex-shrink-0"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div id="stroke-panel" style="display:none;">
+            <div class="stroke-box rounded-xl3 p-4 flex flex-col items-center gap-5 mt-3" style="background:#f8fafc;border:2px solid rgba(42,157,143,.35);">
+              <div class="flex flex-col items-center gap-2 flex-shrink-0">
+                <div id="stroke-writer-target" class="rounded-xl2 border border-slate-200 divider bg-white surface" style="width:180px;height:180px;"></div>
+                <button onclick="quizStroke()" class="text-xs font-bold px-4 py-1.5 rounded-full text-white flex items-center gap-1.5" style="background:#2a9d8f;">
+                  ✏️ Practice
+                </button>
+                <span id="stroke-quiz-msg" class="text-xs font-semibold" style="color:#2a9d8f;display:none;"></span>
+              </div>
+              <div class="flex-1 min-w-0 text-center">
+                <p class="jp text-base font-bold t-ink" id="stroke-instr-jp">上から下に、左から右に書きます。</p>
+                <p class="text-sm t-muted mt-1" id="stroke-instr-en">Write from top to bottom, left to right.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN (desktop): examples, internally scrollable so the page itself never scrolls -->
+      <div class="lg:flex-1 lg:min-h-0 lg:flex lg:flex-col lg:overflow-hidden lg:pt-0 pt-0">
+
+        <!-- Examples panel (default view on desktop) -->
+        <div id="examples-panel" class="lg:flex lg:flex-col lg:flex-1 lg:min-h-0 lg:overflow-hidden">
+          <div class="flex items-center gap-2 mb-3 lg:flex-shrink-0 lg:pt-0">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <h2 class="font-extrabold text-base t-ink jp">例文 <span class="font-bold text-sm t-muted">(Examples)</span></h2>
+          </div>
+          <div id="examples-list" class="flex flex-col w-full rounded-xl2 border border-slate-100 divider overflow-hidden lg:rounded-none lg:border-0 lg:gap-3 lg:flex-1 lg:overflow-y-auto lg:pr-1"></div>
+        </div>
+
+        <!-- Desktop stroke-practice panel: replaces the examples panel above
+             while 書き順 (Stroke Order) is open, so Practice gets the full-width area. -->
+        <div id="stroke-panel-desktop" class="lg:flex-col lg:items-center lg:justify-center lg:gap-5 lg:flex-1 lg:min-h-0" style="display:none;">
+          <div class="flex items-center gap-2 lg:self-start lg:mb-1">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            <h2 class="font-extrabold text-base t-ink jp">書き順 <span class="font-bold text-sm t-muted">(Stroke Order)</span></h2>
+          </div>
+          <div id="stroke-writer-target-desktop" class="rounded-xl2 border border-slate-200 divider bg-white surface" style="width:260px;height:260px;"></div>
+          <button onclick="quizStroke('desktop')" class="text-xs font-bold px-4 py-1.5 rounded-full text-white flex items-center gap-1.5" style="background:#2a9d8f;">
+            ✏️ Practice
+          </button>
+          <span id="stroke-quiz-msg-desktop" class="text-xs font-semibold" style="color:#2a9d8f;display:none;"></span>
+          <div class="text-center max-w-xs">
+            <p class="jp text-base font-bold t-ink" id="stroke-instr-jp-desktop">上から下に、左から右に書きます。</p>
+            <p class="text-sm t-muted mt-1" id="stroke-instr-en-desktop">Write from top to bottom, left to right.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Prev / Next navigation -->
+    <div class="fu flex items-center gap-3 mt-4 lg:mt-3 lg:flex-shrink-0">
+      <button id="prev-kanji-btn" onclick="goPrev()" disabled class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl2 font-bold text-sm border border-slate-200 divider t-ink2 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-bg-s2 transition-all bg-bg-surface surface">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+        Previous
+      </button>
+      <span id="kanji-position" class="text-xs font-bold t-muted flex-shrink-0 px-2">1 / 1</span>
+      <button id="next-kanji-btn" onclick="goNext()" disabled class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl2 font-bold text-sm text-white disabled:opacity-30 disabled:cursor-not-allowed hover:brightness-105 transition-all" style="background:linear-gradient(135deg,#7eb8e4,#3a7cbf);">
+        Next
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- ═══════════ MOBILE BOTTOM NAV (hidden on desktop) ═══════════ -->
+<nav id="botnav" class="lg:hidden fixed bottom-3 left-3 right-3 z-40 transition-transform duration-300 rounded-full shadow-lg2"
+     style="background:rgba(255,255,255,.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);">
+  <div class="flex items-center" style="height:66px;">
+    <a href="index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Home</span>
+    </a>
+    <a href="jlpt.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#2a9d8f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 4h6a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2z"/><path d="M22 4h-6a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg>
+      <span class="text-[11px] font-bold" style="color:#2a9d8f;">JLPT</span>
+      <span class="absolute -bottom-1.5 w-5 h-[3px] rounded-full" style="background:#2a9d8f;"></span>
+    </a>
+    <a href="ssw.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3 10 5.5-10 5.5L2 8.5 12 3Z"/><path d="M6 11v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">SSW</span>
+    </a>
+    <a href="quiz/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M4 20h2.5L18 8.5a1.8 1.8 0 0 0-2.5-2.5L4 17.5V20Z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Quiz</span>
+    </a>
+    <a href="other.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+      <span class="text-[11px] font-semibold t-muted">More</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+/* ═══ DATA PATTERN — loaded from kanji.json (array of entries) ═══
+   Each kanji entry:
+   {
+     kanji, yomikata, onyomi, kunyomi, stroke_count,
+     english_meaning, nepali_meaning,
+     stroke_instruction_jp, stroke_instruction_en,
+     examples: [{ example /* HTML with <ruby><rt> furigana , eng, nepali }]
+   }
+*/
+let KANJI_LIST = [];
+let currentIndex = 0;
+let lang = 'np'; // 'np' | 'en'
+let isDark = false;
+
+const params = new URLSearchParams(location.search);
+currentIndex = parseInt(params.get('i'), 10) || 0;
+
+fetch('kanji.json')
+  .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+  .then(data => {
+    KANJI_LIST = Array.isArray(data) ? data : (data.kanji || data.words || []);
+    if (!KANJI_LIST.length) throw new Error('No data in kanji.json');
+    if (currentIndex < 0 || currentIndex >= KANJI_LIST.length) currentIndex = 0;
+    render();
+    updateNavButtons();
+  })
+  .catch(err => {
+    document.getElementById('kanji-yomikata').textContent = 'Could not load kanji.json';
+    document.getElementById('kanji-meaning').textContent = err.message;
+    console.error(err);
+  });
+
+/* ── Render (language-aware) ── */
+function render() {
+  const k = KANJI_LIST[currentIndex];
+  if (!k) return;
+  document.getElementById('kanji-glyph').textContent = k.kanji;
+  document.getElementById('kanji-yomikata').textContent = `${k.kanji}（${k.yomikata}）`;
+  document.getElementById('kanji-meaning').textContent = lang === 'np' ? (k.nepali_meaning || k.english_meaning) : k.english_meaning;
+  document.getElementById('meaning-label').textContent = lang === 'np' ? 'अर्थ' : 'Meaning';
+  document.getElementById('onyomi-text').textContent = k.onyomi;
+  document.getElementById('kunyomi-text').textContent = k.kunyomi;
+  document.getElementById('stroke-count-badge').textContent = `${k.stroke_count ?? '—'} 画`;
+  document.getElementById('stroke-instr-jp').textContent = k.stroke_instruction_jp || '';
+  document.getElementById('stroke-instr-en').textContent = k.stroke_instruction_en || '';
+  document.getElementById('stroke-instr-jp-desktop').textContent = k.stroke_instruction_jp || '';
+  document.getElementById('stroke-instr-en-desktop').textContent = k.stroke_instruction_en || '';
+  document.getElementById('kanji-position').textContent = `${currentIndex+1} / ${KANJI_LIST.length}`;
+
+  const list = document.getElementById('examples-list');
+  list.innerHTML = '';
+  const exArr = k.examples || [];
+  exArr.forEach((ex, i) => {
+    const translation = lang === 'np' ? (ex.nepali || ex.eng) : ex.eng;
+    const isLast = i === exArr.length - 1;
+    const card = document.createElement('div');
+    card.className = `ex-card fu w-full p-4 flex gap-3 items-start relative overflow-hidden ${isLast ? '' : 'border-b border-slate-100 divider'} lg:rounded-xl2 lg:border lg:border-slate-100 lg:divider`;
+    card.innerHTML = `
+      <div class="flex-1 min-w-0">
+        <div class="ex-text jp font-bold t-ink mb-2">${ex.example}</div>
+        <div class="text-base font-semibold" style="color:#2a9d8f;">${esc(translation)}</div>
+      </div>
+      <span class="absolute -right-2 -bottom-2 text-3xl opacity-70 select-none pointer-events-none">🌸</span>
+    `;
+    list.appendChild(card);
+  });
+
+  // Reset stroke-order accordion + writer(s) for the new kanji
+  strokeInitialized = { mobile: false, desktop: false };
+  strokeOpen = false;
+  document.getElementById('stroke-panel').style.display = 'none';
+  document.getElementById('stroke-panel-desktop').style.display = 'none';
+  document.getElementById('examples-panel').style.display = '';
+  document.getElementById('stroke-chevron').style.transform = '';
+  const quizMsg = document.getElementById('stroke-quiz-msg');
+  if (quizMsg) { quizMsg.style.display = 'none'; quizMsg.textContent = ''; }
+  const quizMsgDesktop = document.getElementById('stroke-quiz-msg-desktop');
+  if (quizMsgDesktop) { quizMsgDesktop.style.display = 'none'; quizMsgDesktop.textContent = ''; }
+}
+
+/* ── Prev / Next navigation ── */
+function goPrev() {
+  if (currentIndex <= 0) return;
+  currentIndex--;
+  syncUrl();
+  render();
+  updateNavButtons();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function goNext() {
+  if (currentIndex >= KANJI_LIST.length - 1) return;
+  currentIndex++;
+  syncUrl();
+  render();
+  updateNavButtons();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function syncUrl() {
+  const url = new URL(location.href);
+  url.searchParams.set('i', currentIndex);
+  history.replaceState(null, '', url);
+}
+function updateNavButtons() {
+  const prevBtn = document.getElementById('prev-kanji-btn');
+  const nextBtn = document.getElementById('next-kanji-btn');
+  prevBtn.disabled = currentIndex <= 0;
+  nextBtn.disabled = currentIndex >= KANJI_LIST.length - 1;
+}
+
+function toggleLang() {
+  lang = lang === 'np' ? 'en' : 'np';
+  const label = lang === 'np' ? '🇳🇵 NP' : '🇬🇧 EN';
+  const mobBtn = document.getElementById('lang-btn'); if (mobBtn) mobBtn.textContent = label;
+  const deskBtn = document.getElementById('lang-btn-desktop'); if (deskBtn) deskBtn.textContent = label;
+  render();
+}
+
+/* ── Dark mode ── */
+const MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+const SUN  = '<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/>';
+function toggleDark() {
+  isDark = !isDark;
+  document.body.className = isDark ? 'mesh-dark min-h-screen text-slate-100 dark' : 'mesh-light min-h-screen text-ink';
+  const icon = document.getElementById('mob-icon'); if (icon) icon.innerHTML = isDark ? SUN : MOON;
+  const deskIcon = document.getElementById('desk-icon'); if (deskIcon) deskIcon.innerHTML = isDark ? SUN : MOON;
+}
+
+/* ── Bookmark ── */
+let bookmarked = false;
+function toggleBookmark() {
+  bookmarked = !bookmarked;
+  const btn = document.getElementById('bookmark-btn');
+  const icon = document.getElementById('bookmark-icon');
+  if (bookmarked) { icon.setAttribute('fill', '#3a7cbf'); btn.style.borderColor = '#3a7cbf'; icon.style.stroke = '#3a7cbf'; }
+  else { icon.setAttribute('fill', 'none'); btn.style.borderColor = ''; icon.style.stroke = 'currentColor'; }
+}
+
+/* ── Text-to-speech ── */
+function speakJa(text, btn) {
+  if (!text) return;
+  if (btn && btn.classList.contains('speaking')) { window.speechSynthesis.cancel(); btn.classList.remove('speaking'); return; }
+  document.querySelectorAll('.speaking').forEach(b => b.classList.remove('speaking'));
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'ja-JP'; u.rate = 0.85;
+  const voices = window.speechSynthesis.getVoices();
+  const jpV = voices.find(v => v.lang.startsWith('ja')); if (jpV) u.voice = jpV;
+  if (btn) { u.onstart = () => btn.classList.add('speaking'); u.onend = u.onerror = () => btn.classList.remove('speaking'); }
+  window.speechSynthesis.speak(u);
+}
+function speakExample(html, btn) {
+  const div = document.createElement('div'); div.innerHTML = html;
+  div.querySelectorAll('rt').forEach(rt => rt.remove());
+  speakJa(div.textContent || div.innerText || '', btn);
+}
+document.getElementById('glyph-speak').addEventListener('click', function(){ speakJa(KANJI_LIST[currentIndex].kanji, this); });
+if (window.speechSynthesis) {
+  window.speechSynthesis.getVoices();
+  if (window.speechSynthesis.onvoiceschanged !== undefined) window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+}
+
+/* ── Stroke order writer (HanziWriter) — one instance for the mobile
+   inline panel, one for the desktop practice panel ── */
+let strokeWriters = { mobile: null, desktop: null };
+const STROKE_TARGET_IDS = { mobile: 'stroke-writer-target', desktop: 'stroke-writer-target-desktop' };
+const STROKE_SIZES = { mobile: 180, desktop: 260 };
+
+function initStroke(key) {
+  const targetId = STROKE_TARGET_IDS[key];
+  const size = STROKE_SIZES[key];
+  const target = document.getElementById(targetId);
+  target.innerHTML = '';
+  try {
+    const writer = HanziWriter.create(targetId, KANJI_LIST[currentIndex].kanji, {
+      width: size, height: size, padding: 10,
+      showOutline: true,
+      strokeColor: '#2a9d8f',
+      outlineColor: '#e2e8f0',
+      strokeAnimationSpeed: 1,
+      delayBetweenStrokes: 300,
+      delayBetweenLoops: 1500,
+      loopCharacterAnimation: true,
+    });
+    writer.loopCharacterAnimation();
+    strokeWriters[key] = writer;
+  } catch (e) {
+    target.innerHTML = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4rem;font-family:'Noto Sans JP',sans-serif;color:#2a9d8f;">${KANJI_LIST[currentIndex].kanji}</div>`;
+  }
+}
+function replayStroke(key) { if (strokeWriters[key]) strokeWriters[key].animateCharacter(); }
+
+function quizStroke(key) {
+  key = key || 'mobile';
+  const writer = strokeWriters[key];
+  if (!writer) return;
+  const msg = document.getElementById(key === 'desktop' ? 'stroke-quiz-msg-desktop' : 'stroke-quiz-msg');
+  msg.style.display = 'block';
+  msg.textContent = 'Draw the kanji!';
+  writer.quiz({
+    onComplete: () => { msg.textContent = '✅ Well done!'; },
+    onMistake: () => { msg.textContent = '✏️ Try again…'; }
+  });
+}
+
+let strokeInitialized = { mobile: false, desktop: false };
+let strokeOpen = false;
+function toggleStrokeSection() {
+  strokeOpen = !strokeOpen;
+  const chevron = document.getElementById('stroke-chevron');
+  chevron.style.transform = strokeOpen ? 'rotate(180deg)' : '';
+
+  const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+
+  if (isDesktop) {
+    // On desktop, Practice takes over the wide examples area instead of
+    // cramming into the narrow left column.
+    const panel = document.getElementById('stroke-panel');
+    panel.style.display = 'none';
+
+    const examplesPanel = document.getElementById('examples-panel');
+    const strokeDesktop = document.getElementById('stroke-panel-desktop');
+    examplesPanel.style.display = strokeOpen ? 'none' : '';
+    strokeDesktop.style.display = strokeOpen ? 'flex' : 'none';
+
+    if (strokeOpen && !strokeInitialized.desktop) {
+      strokeInitialized.desktop = true;
+      initStroke('desktop');
+    }
+  } else {
+    const panel = document.getElementById('stroke-panel');
+    panel.style.display = strokeOpen ? '' : 'none';
+    if (strokeOpen && !strokeInitialized.mobile) {
+      strokeInitialized.mobile = true;
+      initStroke('mobile');
+    }
+    if (strokeOpen) {
+      // Scroll the panel into view within the page (mobile scrolls the body).
+      requestAnimationFrame(() => {
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    }
+  }
+}
+
+/* ── Scroll-direction nav show/hide (mobile only) ── */
+(function(){
+  let lastY = window.scrollY;
+  const topbar = document.getElementById('topbar');
+  const botnav = document.getElementById('botnav');
+  window.addEventListener('scroll', function(){
+    if (window.innerWidth >= 1024) return; // desktop never scrolls the page
+    const y = window.scrollY;
+    const goingDown = y > lastY;
+    if (y < 10) { topbar.style.transform = 'translateY(0)'; botnav.style.transform = 'translateY(0)'; }
+    else if (goingDown) { botnav.style.transform = 'translateY(100%)'; topbar.style.transform = 'translateY(0)'; }
+    else { topbar.style.transform = 'translateY(-100%)'; botnav.style.transform = 'translateY(0)'; }
+    lastY = y;
+  }, { passive: true });
+})();
+
+function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+</script>
+</body>
+</html>

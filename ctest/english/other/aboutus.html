@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/fab.svg"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — Sakura</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans:['Outfit','sans-serif'], jp:['"Noto Sans JP"','sans-serif'] },
+          colors: {
+            blue:   { DEFAULT:'#7eb8e4', deep:'#3a7cbf' },
+            teal:   { DEFAULT:'#6ecec8', deep:'#2a9d8f' },
+            mint:   { DEFAULT:'#80d4a8', deep:'#27ae72' },
+            coral:  { DEFAULT:'#f4a57a', deep:'#e0693a' },
+            butter: { DEFAULT:'#f5da8a', deep:'#d4a017' },
+            lilac:  { DEFAULT:'#c4a8e0', deep:'#8b5cf6' },
+            ink:    { DEFAULT:'#1f2937', 2:'#475569', muted:'#94a3b8' },
+            bg:     { DEFAULT:'#f5f8fc', surface:'#ffffff', s2:'#eef2f7' },
+          },
+          borderRadius: { xl2:'1.25rem', xl3:'1.75rem', xl4:'2.25rem' },
+          boxShadow: {
+            card: '0 2px 16px rgba(15,23,42,.07)',
+            md2:  '0 4px 24px rgba(15,23,42,.12)',
+            lg2:  '0 8px 40px rgba(15,23,42,.16)',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family:'Outfit',sans-serif; transition:background .3s,color .3s; }
+    .jp  { font-family:'"Noto Sans JP"',sans-serif; }
+    .mesh-light {
+      background: radial-gradient(ellipse at 18% 12%,#d8edf8 0%,transparent 52%),
+                  radial-gradient(ellipse at 82% 88%,#d2f1ec 0%,transparent 52%),
+                  radial-gradient(ellipse at 58% 32%,#e6e2f6 0%,transparent 38%),
+                  #f4f7fb;
+    }
+    .mesh-dark {
+      background: radial-gradient(ellipse at 18% 12%,#0f2236 0%,transparent 52%),
+                  radial-gradient(ellipse at 82% 88%,#0b2120 0%,transparent 52%),
+                  #0c1220;
+    }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:none} }
+    .fu { animation:fadeUp .5s ease both; }
+    .d1{animation-delay:.07s} .d2{animation-delay:.14s}
+    .d3{animation-delay:.21s} .d4{animation-delay:.28s}
+    .d5{animation-delay:.35s} .d6{animation-delay:.42s}
+
+    .card-lift { transition:transform .18s ease,box-shadow .18s ease; }
+    .card-lift:hover { transform:translateY(-3px); box-shadow:0 10px 32px rgba(15,23,42,.13); }
+
+    .s-act { background:#eef5fc; color:#3a7cbf; font-weight:600; }
+    .drop { transition:opacity .15s ease,transform .15s ease; }
+    .drop.closed { opacity:0; transform:translateY(-6px); pointer-events:none; }
+    .drop.open   { opacity:1; transform:translateY(0); pointer-events:all; }
+
+    body.dark #topbar,body.dark #botnav,body.dark #sidebar-el {
+      background:rgba(14,19,32,.96) !important; border-color:#1d2740 !important;
+    }
+    body.dark .surface  { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark .t-ink    { color:#e8eef6 !important; }
+    body.dark .t-ink2   { color:#8da4c0 !important; }
+    body.dark .t-muted  { color:#4a607a !important; }
+    body.dark .divider  { border-color:#1d2740 !important; }
+    body.dark #desk-lang-drop { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark #lang-drop { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark .stat-card { background:#151d2e !important; border-color:#1d2740 !important; }
+
+    /* Hero gradient */
+    .hero-gradient {
+      background: linear-gradient(135deg, #3a7cbf 0%, #2a9d8f 50%, #27ae72 100%);
+    }
+
+    ::-webkit-scrollbar { width:4px; }
+    ::-webkit-scrollbar-thumb { background:#c2d3e3; border-radius:99px; }
+  </style>
+</head>
+
+<body class="mesh-light min-h-screen text-ink" id="body">
+
+
+<!-- ═══ TOP BAR ═══ -->
+<header id="topbar" class="sticky top-0 z-40 bg-white/93 backdrop-blur-md border-b border-slate-100 shadow-sm px-4 py-2.5 flex items-center gap-3">
+  <!-- Back button -->
+  <a href="javascript:history.back()" class="flex items-center gap-1.5 text-sm font-semibold t-ink2 hover:text-blue-deep transition-colors flex-shrink-0">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+    Back
+  </a>
+  <!-- Center title -->
+  <div class="flex items-center gap-2 mx-auto">
+    <div class="w-7 h-7 rounded-xl bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow">
+      <span class="jp text-white font-bold text-sm leading-none">識</span>
+    </div>
+    <span class="font-extrabold text-base t-ink tracking-tight">About Sakura</span>
+  </div>
+  <!-- Dark toggle -->
+  <button onclick="toggleDark()" class="w-8 h-8 rounded-lg bg-bg-s2 border border-slate-200 flex items-center justify-center t-muted hover:text-blue-deep hover:border-blue/50 transition-all flex-shrink-0">
+    <svg id="mob-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+</header>
+
+
+<!-- ═══ MAIN ═══ -->
+<main class="min-h-screen pb-24 lg:pb-10">
+
+  <!-- Hero Section -->
+  <div class="hero-gradient text-white px-5 lg:px-10 py-12 lg:py-16 fu">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <div class="w-14 h-14 rounded-xl2 bg-white/20 flex items-center justify-center shadow-lg">
+          <span class="jp font-bold text-3xl">識</span>
+        </div>
+      </div>
+      <h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-3 leading-tight">
+        Sakura<br/>
+        <span class="jp font-medium text-2xl lg:text-3xl opacity-90">日本語 Learning</span>
+      </h1>
+      <p class="text-white/85 text-base lg:text-lg leading-relaxed max-w-xl mx-auto">
+        A free, pastel-designed Japanese learning platform built for  learners preparing for JLPT, SSW, and BJT — no subscription required.
+      </p>
+    </div>
+  </div>
+
+  <!-- Stats row -->
+  <div class="px-5 lg:px-10 -mt-5 fu d1">
+    <div class="max-w-2xl mx-auto grid grid-cols-3 gap-3">
+      <div class="stat-card bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-4 text-center">
+        <div class="text-2xl font-extrabold t-ink text-blue-deep">10k+</div>
+        <div class="text-xs t-muted mt-0.5 font-medium">Learners</div>
+      </div>
+      <div class="stat-card bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-4 text-center">
+        <div class="text-2xl font-extrabold text-teal-deep">5</div>
+        <div class="text-xs t-muted mt-0.5 font-medium">JLPT Levels</div>
+      </div>
+      <div class="stat-card bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-4 text-center">
+        <div class="text-2xl font-extrabold text-mint-deep">Free</div>
+        <div class="text-xs t-muted mt-0.5 font-medium">Always</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mission -->
+  <section class="px-5 lg:px-10 mt-8 fu d2">
+    <div class="max-w-2xl mx-auto">
+      <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl" style="background:rgba(126,184,228,.15);">🎯</div>
+          <h2 class="text-lg font-extrabold t-ink">Our Mission</h2>
+        </div>
+        <p class="text-sm t-ink2 leading-relaxed">
+          Sakura was created to give every learner a <strong>free, effective, and beautiful</strong> way to study Japanese.
+          Whether you're preparing for the JLPT exam, applying for an SSW visa, or studying business Japanese for BJT —
+          Sakura provides structured courses, flashcards, quizzes, and kanji practice all in one place.
+        </p>
+        <p class="text-sm t-ink2 leading-relaxed mt-3">
+          We believe language learning should be <strong>accessible to all</strong>, regardless of financial background.
+          That's why Sakura is and will always remain free.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="px-5 lg:px-10 mt-6 fu d3">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-base font-extrabold t-ink mb-4">What We Offer</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+        <div class="card-lift bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-4 flex gap-3">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background:rgba(126,184,228,.15);">📖</div>
+          <div>
+            <div class="font-bold text-sm t-ink">JLPT N5 → N1</div>
+            <div class="text-xs t-muted mt-0.5">Vocabulary, Grammar, Kanji for all levels</div>
+          </div>
+        </div>
+
+        <div class="card-lift bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-4 flex gap-3">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background:rgba(110,206,200,.15);">🏭</div>
+          <div>
+            <div class="font-bold text-sm t-ink">SSW Preparation</div>
+            <div class="text-xs t-muted mt-0.5">Caregiver, Food Service, Agriculture & more</div>
+          </div>
+        </div>
+
+        <div class="card-lift bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-4 flex gap-3">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background:rgba(128,212,168,.15);">🃏</div>
+          <div>
+            <div class="font-bold text-sm t-ink">Zen Flashcards</div>
+            <div class="text-xs t-muted mt-0.5">3D flip cards with spaced repetition</div>
+          </div>
+        </div>
+
+        <div class="card-lift bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-4 flex gap-3">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background:rgba(244,165,122,.15);">✍️</div>
+          <div>
+            <div class="font-bold text-sm t-ink">Kanji Writing</div>
+            <div class="text-xs t-muted mt-0.5">Stroke order practice with quizzes</div>
+          </div>
+        </div>
+
+        <div class="card-lift bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-4 flex gap-3">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background:rgba(196,168,224,.15);">🎯</div>
+          <div>
+            <div class="font-bold text-sm t-ink">Gamified Quizzes</div>
+            <div class="text-xs t-muted mt-0.5">Timer, streaks, XP and instant feedback</div>
+          </div>
+        </div>
+
+        <div class="card-lift bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-4 flex gap-3">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background:rgba(245,218,138,.15);">💬</div>
+          <div>
+            <div class="font-bold text-sm t-ink">Bilingual Support</div>
+            <div class="text-xs t-muted mt-0.5">Explanations in 9 languages</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Language Support -->
+  <section class="px-5 lg:px-10 mt-6 fu d4">
+    <div class="max-w-2xl mx-auto">
+      <div class="rounded-xl3 p-6 border border-slate-100 divider" style="background:linear-gradient(135deg,rgba(110,206,200,.08),rgba(126,184,228,.08));">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="text-2xl">🌐</span>
+          <h2 class="text-base font-extrabold t-ink">Available in 9 Languages</h2>
+        </div>
+        <p class="text-sm t-ink2 leading-relaxed mb-4">
+          Sakura is built for  learners across the region. All quizzes, vocabulary,
+          and grammar explanations are available in <strong>9 languages</strong> — so you can
+          learn Japanese in your native language without relying on English as a bridge.
+        </p>
+        <div class="grid grid-cols-3 gap-2">
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-bg-surface surface border border-slate-100 divider shadow-card">
+            <span class="text-lg"></span>
+            <span class="text-xs font-bold t-ink">नेपाली</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-bg-surface surface border border-slate-100 divider shadow-card">
+            <span class="text-lg">🇬🇧</span>
+            <span class="text-xs font-bold t-ink">English</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-bg-surface surface border border-slate-100 divider shadow-card">
+            <span class="text-lg">🇮🇳</span>
+            <span class="text-xs font-bold t-ink">हिन्दी</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-bg-surface surface border border-slate-100 divider shadow-card">
+            <span class="text-lg">🇱🇰</span>
+            <span class="text-xs font-bold t-ink">සිංහල</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-bg-surface surface border border-slate-100 divider shadow-card">
+            <span class="text-lg">🇧🇩</span>
+            <span class="text-xs font-bold t-ink">বাংলা</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-bg-surface surface border border-slate-100 divider shadow-card">
+            <span class="text-lg">🇻🇳</span>
+            <span class="text-xs font-bold t-ink">Tiếng Việt</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-bg-surface surface border border-slate-100 divider shadow-card">
+            <span class="text-lg">🇮🇩</span>
+            <span class="text-xs font-bold t-ink">Indonesia</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-bg-surface surface border border-slate-100 divider shadow-card">
+            <span class="text-lg">🇹🇭</span>
+            <span class="text-xs font-bold t-ink">ภาษาไทย</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-bg-surface surface border border-slate-100 divider shadow-card">
+            <span class="text-lg">🇯🇵</span>
+            <span class="text-xs font-bold t-ink jp">日本語</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Chat -->
+  <section class="px-5 lg:px-10 mt-6 fu d5">
+    <div class="max-w-2xl mx-auto">
+      <div class="rounded-xl3 p-6 border border-slate-100 divider shadow-card bg-bg-surface surface">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl2 flex items-center justify-center text-2xl flex-shrink-0 shadow-md"
+               style="background:linear-gradient(135deg,#c4a8e0,#8b5cf6);">
+            💬
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 mb-1">
+              <h2 class="text-base font-extrabold t-ink">Community Chat</h2>
+              <span class="text-[10px] font-bold text-white px-2 py-0.5 rounded-full" style="background:#27ae72;">LIVE</span>
+            </div>
+            <p class="text-sm t-ink2 leading-relaxed mb-4">
+              Join the Sakura learner community! Chat with other Japanese learners,
+              share study tips, ask questions, and motivate each other — all in one place.
+              Your community, your language, your journey. 🌸
+            </p>
+
+            <!-- Feature pills -->
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full" style="background:rgba(196,168,224,.15);color:#8b5cf6;">🌐 Open to all learners</span>
+              <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full" style="background:rgba(128,212,168,.15);color:#27ae72;">✅ Free forever</span>
+              <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full" style="background:rgba(126,184,228,.15);color:#3a7cbf;">🔒 Safe & moderated</span>
+            </div>
+
+            <a href="community.html"
+               class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm text-white transition-all active:scale-95 hover:opacity-90"
+               style="background:linear-gradient(135deg,#c4a8e0,#8b5cf6);">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Join Community →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="px-5 lg:px-10 mt-6 fu d5">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-base font-extrabold t-ink mb-4">The Team</h2>
+      <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-6">
+        <div class="flex items-start gap-4">
+          <div class="w-14 h-14 rounded-xl2 bg-gradient-to-br from-blue to-teal flex items-center justify-center text-white font-extrabold text-xl flex-shrink-0 shadow">
+            識
+          </div>
+          <div>
+            <div class="font-extrabold text-base t-ink">Sakura Team</div>
+            <p class="text-sm t-ink2 leading-relaxed mt-2">
+              We are a small passionate team of passionate developers and Japanese language enthusiasts.
+              We built Sakura to make Japanese learning easier and more accessible for everyone .
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Links -->
+  <section class="px-5 lg:px-10 mt-6 fu d6">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-base font-extrabold t-ink mb-4">Contact & Links</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+        <a href="mailto:support@learnwithsakura.com"
+           class="card-lift bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-4 flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(126,184,228,.15);">
+            <svg class="w-5 h-5 text-blue-deep" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="font-bold text-sm t-ink">Email Us</div>
+            <div class="text-xs text-blue-deep">support@learnwithsakura.com</div>
+          </div>
+          <svg class="w-4 h-4 t-muted ml-auto group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+
+        <a href="community.html"
+           class="card-lift bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-4 flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background:rgba(196,168,224,.15);">🌐</div>
+          <div>
+            <div class="font-bold text-sm t-ink">Community</div>
+            <div class="text-xs t-muted">Join our learner community</div>
+          </div>
+          <svg class="w-4 h-4 t-muted ml-auto group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+
+        <a href="privacy.html"
+           class="card-lift bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-4 flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background:rgba(128,212,168,.15);">🔒</div>
+          <div>
+            <div class="font-bold text-sm t-ink">Privacy Policy</div>
+            <div class="text-xs t-muted">How we handle your data</div>
+          </div>
+          <svg class="w-4 h-4 t-muted ml-auto group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+
+        <a href="terms.html"
+           class="card-lift bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-4 flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background:rgba(245,218,138,.15);">📄</div>
+          <div>
+            <div class="font-bold text-sm t-ink">Terms of Service</div>
+            <div class="text-xs t-muted">Usage terms & conditions</div>
+          </div>
+          <svg class="w-4 h-4 t-muted ml-auto group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="px-5 lg:px-10 mt-8 mb-4 fu">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="jp text-2xl font-bold t-muted mb-1">識</div>
+      <div class="text-xs t-muted">© 2025 Sakura with ❤️</div>
+      <div class="text-xs t-muted mt-1">Free Japanese Learning for  Learners</div>
+    </div>
+  </div>
+
+</main>
+
+
+<!-- ═══ MOBILE BOTTOM NAV ═
+ tabata kami asahi ══ -->
+<nav id="botnav" class="lg:hidden fixed bottom-0 left-0 right-0 z-40 border-t border-slate-100"
+     style="background:rgba(255,255,255,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 -4px 24px rgba(15,23,42,.08);">
+  <div class="flex items-center" style="height:62px;">
+    <a href="index.html" class="flex-1 flex flex-col items-center justify-center gap-1 py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:38px;height:28px;background:#eef2f7;">
+        <svg width="17" height="17" fill="none" stroke="#94a3b8" stroke-width="2.3" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg>
+      </div>
+      <span style="font-size:10px;font-weight:600;color:#94a3b8;line-height:1;">Home</span>
+    </a>
+    <a href="jlpt.html" class="flex-1 flex flex-col items-center justify-center gap-1 py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:38px;height:28px;background:#eef2f7;">
+        <span style="font-size:10px;font-weight:800;color:#475569;">JLPT</span>
+      </div>
+      <span style="font-size:10px;font-weight:600;color:#94a3b8;line-height:1;">JLPT</span>
+    </a>
+    <a href="ssw.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 py-1" style="margin-top:-18px;">
+      <div class="flex items-center justify-center rounded-xl2 shadow-md2" style="width:50px;height:50px;background:linear-gradient(135deg,#6ecec8,#2a9d8f);box-shadow:0 6px 20px rgba(42,157,143,.35);">
+        <span class="jp text-white font-bold" style="font-size:21px;line-height:1;">特</span>
+      </div>
+      <span style="font-size:9px;font-weight:700;color:#2a9d8f;line-height:1;margin-top:2px;">SSW</span>
+    </a>
+    <a href="bjt.html" class="flex-1 flex flex-col items-center justify-center gap-1 py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:38px;height:28px;background:#eef2f7;">
+        <span style="font-size:10px;font-weight:800;color:#d4a017;">BJT</span>
+      </div>
+      <span style="font-size:10px;font-weight:600;color:#94a3b8;line-height:1;">BJT</span>
+    </a>
+    <a href="other.html" class="flex-1 flex flex-col items-center justify-center gap-1 py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:38px;height:28px;background:#eef2f7;">
+        <svg width="15" height="15" fill="none" stroke="#94a3b8" stroke-width="2" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg>
+      </div>
+      <span style="font-size:10px;font-weight:600;color:#94a3b8;line-height:1;">Other</span>
+    </a>
+  </div>
+</nav>
+
+
+<script>
+/* Dark mode */
+let isDark = false;
+const MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+const SUN  = '<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/>';
+function toggleDark() {
+  isDark = !isDark;
+  document.body.className = isDark ? 'mesh-dark min-h-screen text-slate-100 dark' : 'mesh-light min-h-screen text-ink';
+  ['mob-icon','desk-icon'].forEach(id => { const el = document.getElementById(id); if(el) el.innerHTML = isDark ? SUN : MOON; });
+  const l = document.getElementById('desk-lbl'); if(l) l.textContent = isDark ? 'Light mode' : 'Dark mode';
+}
+
+
+</script>
+
+</body>
+</html>

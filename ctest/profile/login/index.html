@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9PW2QXLNX2"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9PW2QXLNX2');</script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌸%3C/text%3E%3C/svg%3E"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login — Sakura</title>
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#e8799a"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="Sakura"/>
+  <link rel="apple-touch-icon" href="icons/icon-192.png"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config={theme:{extend:{fontFamily:{sans:['Outfit','sans-serif'],jp:['"Noto Sans JP"','sans-serif']},colors:{
+      blue:{DEFAULT:'#7eb8e4',deep:'#3a7cbf'},
+      teal:{DEFAULT:'#6ecec8',deep:'#2a9d8f'},
+      mint:{DEFAULT:'#80d4a8',deep:'#27ae72'},
+      coral:{DEFAULT:'#f4a57a',deep:'#e0693a'},
+      butter:{DEFAULT:'#f5da8a',deep:'#d4a017'},
+      lilac:{DEFAULT:'#c4a8e0',deep:'#8b5cf6'},
+      ink:{DEFAULT:'#1f2937',2:'#475569',muted:'#94a3b8'},
+      bg:{DEFAULT:'#f5f8fc',surface:'#ffffff',s2:'#eef2f7'}},
+      borderRadius:{xl2:'1.25rem',xl3:'1.75rem',xl4:'2.25rem'},
+      boxShadow:{card:'0 2px 16px rgba(15,23,42,.07)',md2:'0 4px 24px rgba(15,23,42,.12)',lg2:'0 8px 40px rgba(15,23,42,.16)'}}}};
+  </script>
+  <style>
+    body{font-family:'Outfit',sans-serif;transition:background .3s,color .3s;}
+    .jp{font-family:'"Noto Sans JP"',sans-serif;}
+    .mesh-light{background:radial-gradient(ellipse at 18% 12%,#d8edf8 0%,transparent 52%),radial-gradient(ellipse at 82% 88%,#d2f1ec 0%,transparent 52%),radial-gradient(ellipse at 58% 32%,#e6e2f6 0%,transparent 38%),#f4f7fb;}
+    .mesh-dark{background:radial-gradient(ellipse at 18% 12%,#0f2236 0%,transparent 52%),radial-gradient(ellipse at 82% 88%,#0b2120 0%,transparent 52%),#0c1220;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+    .fu{animation:fadeUp .5s ease both;}
+
+    .sk-input{width:100%;padding:11px 14px;border:2px solid #e2e8f0;border-radius:12px;background:#fff;font-size:14px;font-family:'Outfit',sans-serif;color:#1f2937;outline:none;transition:border-color .15s,box-shadow .15s;}
+    .sk-input:focus{border-color:#7eb8e4;box-shadow:0 0 0 3px rgba(126,184,228,.15);}
+    .sk-input::placeholder{color:#94a3b8;}
+    .tab-btn{transition:all .2s ease;}
+    .tab-btn.active{background:#fff;color:#3a7cbf;font-weight:700;box-shadow:0 2px 12px rgba(58,124,191,.12);border-radius:10px;}
+    .social-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 0;border-radius:12px;font-size:13px;font-weight:600;border:2px solid #e2e8f0;background:#fff;color:#1f2937;cursor:pointer;transition:all .18s ease;font-family:'Outfit',sans-serif;width:100%;}
+    .social-btn:hover{border-color:#7eb8e4;transform:translateY(-1px);box-shadow:0 4px 16px rgba(15,23,42,.08);}
+    .otp-box{width:44px;height:52px;text-align:center;font-size:20px;font-weight:700;border:2px solid #e2e8f0;border-radius:12px;background:#fff;color:#1f2937;outline:none;font-family:'Outfit',sans-serif;transition:all .2s ease;}
+    .otp-box:focus{border-color:#7eb8e4;box-shadow:0 0 0 3px rgba(126,184,228,.15);}
+    .otp-box.filled{border-color:#7eb8e4;background:rgba(126,184,228,.06);}
+    .otp-box.shake{animation:shake .32s ease;}
+    @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+    .pass-bar{height:3px;border-radius:2px;transition:all .3s;}
+    .pass-bar.weak{background:#e0693a;width:33%;}
+    .pass-bar.medium{background:#d4a017;width:66%;}
+    .pass-bar.strong{background:#27ae72;width:100%;}
+    #auth-loading{display:none;position:fixed;inset:0;z-index:999;align-items:center;justify-content:center;flex-direction:column;gap:14px;}
+    #auth-loading.show{display:flex;}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .spinner{width:18px;height:18px;border:2.5px solid #eef2f7;border-top-color:#3a7cbf;border-radius:50%;animation:spin .7s linear infinite;display:inline-block;vertical-align:middle;margin-right:7px;}
+
+    .drop{transition:opacity .15s ease,transform .15s ease;}
+    .drop.closed{opacity:0;transform:translateY(-6px);pointer-events:none;}
+    .drop.open{opacity:1;transform:translateY(0);pointer-events:all;}
+
+    body.dark #topbar,
+    body.dark #botnav{background:rgba(14,19,32,.96)!important;border-color:#1d2740!important;}
+    body.dark .card-box{background:#151d2e!important;border-color:#1d2740!important;}
+    body.dark .sk-input{background:#1d2740!important;border-color:#2a3d56!important;color:#e8eef6!important;}
+    body.dark .sk-input::placeholder{color:#4a607a!important;}
+    body.dark .social-btn{background:#1d2740!important;border-color:#2a3d56!important;color:#e8eef6!important;}
+    body.dark .otp-box{background:#1d2740!important;border-color:#2a3d56!important;color:#e8eef6!important;}
+    body.dark .otp-box.filled{background:rgba(126,184,228,.12)!important;}
+    body.dark .tab-btn.active{background:#0f2236!important;}
+    body.dark .t-ink{color:#e8eef6!important;}
+    body.dark .t-ink2{color:#8da4c0!important;}
+    body.dark .t-muted{color:#4a607a!important;}
+    body.dark #lang-drop{background:#151d2e!important;border-color:#1d2740!important;}
+    body.dark #lang-drop a{color:#8da4c0!important;}
+    ::-webkit-scrollbar{width:4px;} ::-webkit-scrollbar-thumb{background:#c2d3e3;border-radius:99px;}
+  </style>
+</head>
+<body class="mesh-light min-h-screen text-ink" id="body">
+
+<!-- LOADING -->
+<div id="auth-loading" class="mesh-light">
+  <div class="w-16 h-16 rounded-xl2 bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow-lg2">
+    <span class="jp text-white font-bold text-2xl">識</span>
+  </div>
+  <div class="font-extrabold text-lg t-ink">Sakura</div>
+  <div style="width:24px;height:24px;border:2.5px solid #eef2f7;border-top-color:#3a7cbf;border-radius:50%;animation:spin .7s linear infinite;"></div>
+</div>
+
+<!-- ═══════════ TOPBAR (matches homepage's mobile topbar) ═══════════ -->
+<header id="topbar" class="fixed top-0 left-0 right-0 z-40 px-4 py-2.5 flex items-center transition-transform duration-300"
+        style="background:rgba(255,255,255,.72);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:0.5px solid rgba(0,0,0,.08);">
+  <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+    <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow-md"><span class="jp text-white font-bold text-sm">識</span></div>
+    <span class="font-extrabold text-base t-ink tracking-tight">Sakura</span>
+  </a>
+
+  <div class="ml-auto flex items-center gap-2 flex-shrink-0">
+    <div class="relative" id="lang-wrap">
+      <button onclick="toggleDrop('lang')" class="flex items-center gap-1 pl-2 pr-1.5 py-1.5 rounded-lg bg-bg-s2 border border-slate-200 text-xs font-bold t-ink2 hover:border-blue/60 transition-all">
+        <span id="lang-flag">🇬🇧</span>
+        <span id="lang-code" class="ml-0.5">EN</span>
+        <svg id="lang-chev" class="w-3 h-3 t-muted ml-0.5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div id="lang-drop" class="drop closed absolute right-0 top-full mt-1.5 w-44 bg-white rounded-xl shadow-lg2 border border-slate-100 overflow-hidden z-50">
+        <a href="index.html"    onclick="setLang('EN','🇬🇧')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors">🇬🇧 English</a>
+        <a href="coming-soon.html" onclick="setLang('NP','🇳🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100">🇳🇵 नेपाली</a>
+        <a href="coming-soon.html" onclick="setLang('HI','🇮🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100">🇮🇳 हिन्दी</a>
+        <a href="coming-soon.html" onclick="setLang('SI','🇱🇰')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100">🇱🇰 සිංහල</a>
+        <a href="coming-soon.html" onclick="setLang('BN','🇧🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100">🇧🇩 বাংলা</a>
+        <a href="coming-soon.html" onclick="setLang('VI','🇻🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100">🇻🇳 Tiếng Việt</a>
+        <a href="coming-soon.html" onclick="setLang('ID','🇮🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100">🇮🇩 Indonesia</a>
+        <a href="coming-soon.html" onclick="setLang('TH','🇹🇭')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100">🇹🇭 ภาษาไทย</a>
+        <a href="coming-soon.html" onclick="setLang('JP','🇯🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100">🇯🇵 日本語</a>
+      </div>
+    </div>
+    <button onclick="toggleDark()" class="w-8 h-8 rounded-lg bg-bg-s2 border border-slate-200 flex items-center justify-center t-muted hover:text-blue-deep hover:border-blue/50 transition-all">
+      <svg id="theme-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="flex items-center justify-center min-h-screen px-4 pt-20 pb-28">
+  <div class="w-full max-w-sm fu">
+
+    <!-- Logo -->
+    <div class="text-center mb-6">
+      <div class="w-16 h-16 rounded-xl2 bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow-lg2 mx-auto mb-3">
+        <span class="jp text-white font-bold text-2xl">識</span>
+      </div>
+      <h1 class="text-xl font-extrabold t-ink mb-0.5">Welcome to Sakura</h1>
+      <p class="text-sm t-muted">Sign in to continue your Japanese journey 🌸</p>
+    </div>
+
+    <!-- Card -->
+    <div class="card-box bg-bg-surface rounded-xl3 shadow-lg2 border border-slate-100 p-6">
+
+      <!-- Tabs -->
+      <div class="flex gap-1 p-1 rounded-xl mb-5" style="background:#eef2f7;">
+        <button onclick="switchTab('login')" id="tab-login" class="tab-btn active flex-1 py-2 text-sm t-ink2 text-center">Login</button>
+        <button onclick="switchTab('signup')" id="tab-signup" class="tab-btn flex-1 py-2 text-sm t-muted text-center">Sign Up</button>
+      </div>
+
+      <!-- LOGIN -->
+      <div id="login-form">
+        <div class="space-y-3 mb-4">
+          <div>
+            <label class="block text-xs font-bold t-muted uppercase tracking-wider mb-1.5">Email</label>
+            <input class="sk-input" type="email" id="loginEmail" placeholder="you@example.com"/>
+          </div>
+          <div>
+            <label class="block text-xs font-bold t-muted uppercase tracking-wider mb-1.5">Password</label>
+            <input class="sk-input" type="password" id="loginPass" placeholder="••••••••"/>
+            <button onclick="forgotPassword()" class="text-xs font-semibold mt-1.5 float-right" style="color:#3a7cbf;background:none;border:none;cursor:pointer;">Forgot password?</button>
+            <div class="clear-both"></div>
+          </div>
+        </div>
+        <button onclick="emailLogin()" id="loginBtn" class="w-full py-3 rounded-xl font-bold text-sm text-white mb-4 active:scale-95 transition-all" style="background:linear-gradient(135deg,#3a7cbf,#2a9d8f);">Login →</button>
+        <div class="flex items-center gap-3 mb-4"><div class="flex-1 h-px bg-slate-200"></div><span class="text-xs t-muted">or</span><div class="flex-1 h-px bg-slate-200"></div></div>
+        <div class="grid grid-cols-2 gap-2">
+          <button id="googleBtn" class="social-btn"><svg width="16" height="16" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.2l6.7-6.7C35.7 2.4 30.2 0 24 0 14.8 0 6.9 5.4 3 13.3l7.8 6C12.7 13.2 17.9 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4.1 7.1-10.1 7.1-17z"/><path fill="#FBBC05" d="M10.8 28.7A14.7 14.7 0 0 1 9.5 24c0-1.6.3-3.2.8-4.7L2.5 13.3A24 24 0 0 0 0 24c0 3.9.9 7.6 2.5 10.8l8.3-6.1z"/><path fill="#34A853" d="M24 48c6.2 0 11.4-2 15.2-5.5l-7.5-5.8c-2 1.4-4.6 2.2-7.7 2.2-6.1 0-11.3-3.7-13.2-9l-7.8 6C6.9 42.6 14.8 48 24 48z"/></svg>Google</button>
+          <button id="twitterBtn" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X / Twitter</button>
+        </div>
+      </div>
+
+      <!-- SIGNUP -->
+      <div id="signup-form" class="hidden">
+        <div class="space-y-3 mb-4">
+          <div><label class="block text-xs font-bold t-muted uppercase tracking-wider mb-1.5">Full Name</label><input class="sk-input" type="text" id="signupName" placeholder="Your name"/></div>
+          <div><label class="block text-xs font-bold t-muted uppercase tracking-wider mb-1.5">Email</label><input class="sk-input" type="email" id="signupEmail" placeholder="you@example.com"/></div>
+          <div>
+            <label class="block text-xs font-bold t-muted uppercase tracking-wider mb-1.5">Password</label>
+            <input class="sk-input" type="password" id="signupPass" placeholder="At least 6 characters" oninput="checkStrength(this.value)"/>
+            <div id="pass-bar" class="pass-bar mt-2" style="background:#e2e8f0;width:100%;border-radius:2px;height:3px;"></div>
+          </div>
+        </div>
+        <button onclick="emailSignup()" id="signupBtn" class="w-full py-3 rounded-xl font-bold text-sm text-white mb-4 active:scale-95 transition-all" style="background:linear-gradient(135deg,#3a7cbf,#2a9d8f);">Create Account →</button>
+        <div class="flex items-center gap-3 mb-4"><div class="flex-1 h-px bg-slate-200"></div><span class="text-xs t-muted">or</span><div class="flex-1 h-px bg-slate-200"></div></div>
+        <div class="grid grid-cols-2 gap-2">
+          <button id="googleBtn2" class="social-btn"><svg width="16" height="16" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.2l6.7-6.7C35.7 2.4 30.2 0 24 0 14.8 0 6.9 5.4 3 13.3l7.8 6C12.7 13.2 17.9 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4.1 7.1-10.1 7.1-17z"/><path fill="#FBBC05" d="M10.8 28.7A14.7 14.7 0 0 1 9.5 24c0-1.6.3-3.2.8-4.7L2.5 13.3A24 24 0 0 0 0 24c0 3.9.9 7.6 2.5 10.8l8.3-6.1z"/><path fill="#34A853" d="M24 48c6.2 0 11.4-2 15.2-5.5l-7.5-5.8c-2 1.4-4.6 2.2-7.7 2.2-6.1 0-11.3-3.7-13.2-9l-7.8 6C6.9 42.6 14.8 48 24 48z"/></svg>Google</button>
+          <button id="twitterBtn2" class="social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X / Twitter</button>
+        </div>
+      </div>
+
+      <div id="message" class="hidden mt-4 px-4 py-3 rounded-xl text-sm font-semibold text-center"></div>
+      <p class="text-center text-[11px] t-muted mt-4">© 2025 Sakura · Secure & Encrypted 🔒</p>
+    </div>
+  </div>
+</main>
+
+<!-- OTP MODAL -->
+<div id="otp-overlay" style="display:none;position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);" onclick="if(event.target===this)closeOTP()">
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:calc(100% - 32px);max-width:360px;">
+    <div class="card-box bg-bg-surface rounded-xl3 shadow-lg2 border border-slate-100 p-6 text-center">
+      <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue to-teal flex items-center justify-center mx-auto mb-3 shadow-md2"><span class="text-2xl">📧</span></div>
+      <h3 class="font-extrabold text-base t-ink mb-1">Verify your email</h3>
+      <p class="text-xs t-muted mb-1">We sent a 6-digit code to</p>
+      <p id="otp-email" class="text-sm font-bold mb-5" style="color:#3a7cbf;"></p>
+      <div class="flex gap-2 justify-center mb-4">
+        <input class="otp-box" id="otp0" type="text" maxlength="1" inputmode="numeric" autocomplete="one-time-code"/>
+        <input class="otp-box" id="otp1" type="text" maxlength="1" inputmode="numeric"/>
+        <input class="otp-box" id="otp2" type="text" maxlength="1" inputmode="numeric"/>
+        <input class="otp-box" id="otp3" type="text" maxlength="1" inputmode="numeric"/>
+        <input class="otp-box" id="otp4" type="text" maxlength="1" inputmode="numeric"/>
+        <input class="otp-box" id="otp5" type="text" maxlength="1" inputmode="numeric"/>
+      </div>
+      <div id="otp-error" class="hidden text-xs font-semibold mb-3 px-3 py-2 rounded-xl" style="background:rgba(224,105,58,.1);color:#e0693a;"></div>
+      <button onclick="submitOTP()" id="otp-btn" class="w-full py-3 rounded-xl font-bold text-sm text-white mb-3" style="background:linear-gradient(135deg,#3a7cbf,#2a9d8f);">Verify Code</button>
+      <div class="flex items-center justify-center gap-2 text-xs t-muted mb-2">
+        <span>Resend in <span id="otp-countdown">60s</span></span>
+        <button onclick="resendOTP()" id="otp-resend" disabled class="font-bold" style="background:none;border:none;cursor:pointer;color:#3a7cbf;opacity:.4;">Resend</button>
+      </div>
+      <button onclick="closeOTP()" class="text-xs t-muted" style="background:none;border:none;cursor:pointer;">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- NEW PASSWORD MODAL -->
+<div id="newpass-overlay" style="display:none;position:fixed;inset:0;z-index:51;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);">
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:calc(100% - 32px);max-width:360px;">
+    <div class="card-box bg-bg-surface rounded-xl3 shadow-lg2 border border-slate-100 p-6">
+      <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue to-teal flex items-center justify-center mx-auto mb-3 shadow-md2 text-center"><span class="text-2xl">🔑</span></div>
+      <h3 class="font-extrabold text-base t-ink mb-1 text-center">Set New Password</h3>
+      <p class="text-xs t-muted text-center mb-5">Create a strong password for your account</p>
+      <div class="space-y-3 mb-4">
+        <div><label class="block text-xs font-bold t-muted uppercase tracking-wider mb-1.5">New Password</label><input class="sk-input" type="password" id="newPassInput" placeholder="At least 6 characters" oninput="checkNewPass(this.value)"/><div id="new-pass-bar" class="pass-bar mt-2" style="background:#e2e8f0;width:100%;border-radius:2px;height:3px;"></div></div>
+        <div><label class="block text-xs font-bold t-muted uppercase tracking-wider mb-1.5">Confirm Password</label><input class="sk-input" type="password" id="confirmPassInput" placeholder="Re-enter password"/></div>
+      </div>
+      <div id="newpass-error" class="hidden text-xs font-semibold mb-3 px-3 py-2 rounded-xl" style="background:rgba(224,105,58,.1);color:#e0693a;"></div>
+      <button onclick="submitNewPass()" id="newpass-btn" class="w-full py-3 rounded-xl font-bold text-sm text-white mb-3" style="background:linear-gradient(135deg,#3a7cbf,#2a9d8f);">Set Password</button>
+      <button onclick="closeNewPass()" class="w-full text-xs t-muted text-center" style="background:none;border:none;cursor:pointer;">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ BOTTOM NAV (same as homepage) ═══════════ -->
+<nav id="botnav" class="lg:hidden fixed bottom-3 left-3 right-3 z-40 transition-transform duration-300 rounded-full shadow-lg2"
+     style="background:rgba(255,255,255,.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);">
+  <div class="flex items-center" style="height:66px;">
+    <a href="index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Home</span>
+    </a>
+    <a href="jlpt/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 4h6a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2z"/><path d="M22 4h-6a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">JLPT</span>
+    </a>
+    <a href="ssw/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3 10 5.5-10 5.5L2 8.5 12 3Z"/><path d="M6 11v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">SSW</span>
+    </a>
+    <a href="quiz/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M4 20h2.5L18 8.5a1.8 1.8 0 0 0-2.5-2.5L4 17.5V20Z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Quiz</span>
+    </a>
+    <a href="other/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+      <span class="text-[11px] font-semibold t-muted">More</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+function showMsg(text,type='error'){const el=document.getElementById('message');el.textContent=text;if(type==='success')el.style.cssText='background:rgba(39,174,114,.1);color:#27ae72;margin-top:16px;padding:12px 16px;border-radius:12px;font-size:13px;font-weight:600;text-align:center;';else el.style.cssText='background:rgba(224,105,58,.1);color:#e0693a;margin-top:16px;padding:12px 16px;border-radius:12px;font-size:13px;font-weight:600;text-align:center;';el.classList.remove('hidden');}
+function setLoading(id,loading,orig){const b=document.getElementById(id);if(!b)return;b.disabled=loading;if(loading)b.innerHTML='<span class="spinner"></span>Loading...';else if(orig)b.textContent=orig;}
+function switchTab(tab){document.getElementById('tab-login').classList.toggle('active',tab==='login');document.getElementById('tab-signup').classList.toggle('active',tab!=='login');document.getElementById('tab-login').classList.toggle('t-muted',tab!=='login');document.getElementById('tab-signup').classList.toggle('t-muted',tab==='login');document.getElementById('login-form').classList.toggle('hidden',tab!=='login');document.getElementById('signup-form').classList.toggle('hidden',tab==='login');document.getElementById('message').classList.add('hidden');}
+function checkStrength(v){const b=document.getElementById('pass-bar');if(!v){b.className='pass-bar';b.style.background='#e2e8f0';return;}if(v.length<6)b.className='pass-bar weak';else if(/[A-Z]/.test(v)&&/[0-9]/.test(v))b.className='pass-bar strong';else b.className='pass-bar medium';}
+function checkNewPass(v){const b=document.getElementById('new-pass-bar');if(!v){b.className='pass-bar';b.style.background='#e2e8f0';return;}if(v.length<6)b.className='pass-bar weak';else if(/[A-Z]/.test(v)&&/[0-9]/.test(v))b.className='pass-bar strong';else b.className='pass-bar medium';}
+let isDark=false;
+const MOON='<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+const SUN='<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/>';
+function toggleDark(){isDark=!isDark;document.body.className=isDark?'mesh-dark min-h-screen text-slate-100 dark':'mesh-light min-h-screen text-ink';document.getElementById('theme-icon').innerHTML=isDark?SUN:MOON;}
+
+/* ── Language dropdown (matches homepage) ── */
+const drops={lang:false};
+function toggleDrop(name){drops[name]=!drops[name];const el=document.getElementById('lang-drop');if(el)el.className=el.className.replace(/\b(open|closed)\b/,drops[name]?'open':'closed');const chev=document.getElementById('lang-chev');if(chev)chev.style.transform=drops[name]?'rotate(180deg)':'';}
+function setLang(code,flag){const codeEl=document.getElementById('lang-code');if(codeEl)codeEl.textContent=code;const flagEl=document.getElementById('lang-flag');if(flagEl)flagEl.textContent=flag;drops.lang=false;const el=document.getElementById('lang-drop');if(el)el.className=el.className.replace(/\b(open|closed)\b/,'closed');const chev=document.getElementById('lang-chev');if(chev)chev.style.transform='';}
+document.addEventListener('click',e=>{const lw=document.getElementById('lang-wrap');if(lw&&!lw.contains(e.target)&&drops.lang){drops.lang=false;const el=document.getElementById('lang-drop');if(el)el.className=el.className.replace(/\b(open|closed)\b/,'closed');const chev=document.getElementById('lang-chev');if(chev)chev.style.transform='';}});
+
+/* ── Scroll-direction nav show/hide (matches homepage) ── */
+(function(){
+  let lastY=window.scrollY;
+  const topbar=document.getElementById('topbar');
+  const botnav=document.getElementById('botnav');
+  window.addEventListener('scroll',function(){
+    const y=window.scrollY;
+    const goingDown=y>lastY;
+    if(y<10){ if(topbar)topbar.style.transform='translateY(0)'; if(botnav)botnav.style.transform='translateY(0)'; }
+    else if(goingDown){ if(botnav)botnav.style.transform='translateY(150%)'; if(topbar)topbar.style.transform='translateY(0)'; }
+    else{ if(topbar)topbar.style.transform='translateY(-100%)'; if(botnav)botnav.style.transform='translateY(0)'; }
+    lastY=y;
+  },{passive:true});
+})();
+
+// OTP
+let _otpCb=null,_otpEmail=null,_otpType=null,_otpSub=false;
+function getOTPCode(){let c='';for(let i=0;i<6;i++)c+=(document.getElementById('otp'+i)?.value||'');return c;}
+window.showOTPModal=function(email,type,cb){_otpCb=cb;_otpEmail=email;_otpType=type;_otpSub=false;document.getElementById('otp-email').textContent=email;document.getElementById('otp-overlay').style.display='block';document.getElementById('otp-error').classList.add('hidden');document.getElementById('otp-btn').disabled=false;document.getElementById('otp-btn').textContent='Verify Code';for(let i=0;i<6;i++){const b=document.getElementById('otp'+i);if(b){b.value='';b.classList.remove('filled','shake');}}setTimeout(()=>document.getElementById('otp0')?.focus(),150);startCD();};
+function closeOTP(){document.getElementById('otp-overlay').style.display='none';clearInterval(window._cdT);_otpCb=null;}
+function startCD(){let s=60;document.getElementById('otp-resend').disabled=true;document.getElementById('otp-resend').style.opacity='.4';clearInterval(window._cdT);window._cdT=setInterval(()=>{s--;document.getElementById('otp-countdown').textContent=s+'s';if(s<=0){clearInterval(window._cdT);document.getElementById('otp-resend').disabled=false;document.getElementById('otp-resend').style.opacity='1';}},1000);}
+async function submitOTP(){if(_otpSub)return;const code=getOTPCode();if(code.length!==6){showOTPErr('Please enter the 6-digit code.');return;}_otpSub=true;const btn=document.getElementById('otp-btn');btn.disabled=true;btn.innerHTML='<span class="spinner"></span>Verifying...';document.getElementById('otp-error').classList.add('hidden');try{const r=await window.verifyOTP(_otpEmail,code,_otpType);if(r.success){_otpSub=false;const cb=_otpCb;closeOTP();if(cb)await cb();}else{showOTPErr(r.message||'Invalid OTP.');shakeOTP();_otpSub=false;btn.disabled=false;btn.textContent='Verify Code';}}catch(e){showOTPErr('Something went wrong.');_otpSub=false;btn.disabled=false;btn.textContent='Verify Code';}}
+async function resendOTP(){document.getElementById('otp-error').classList.add('hidden');document.getElementById('otp-resend').disabled=true;const r=await window.sendOTP(_otpEmail,_otpType);if(r.success)startCD();else showOTPErr('Failed to resend.');}
+function showOTPErr(m){const el=document.getElementById('otp-error');el.textContent=m;el.classList.remove('hidden');}
+function shakeOTP(){for(let i=0;i<6;i++){const b=document.getElementById('otp'+i);if(!b)continue;b.classList.add('shake');b.value='';b.classList.remove('filled');setTimeout(()=>b.classList.remove('shake'),400);}document.getElementById('otp0')?.focus();}
+(function(){function init(){for(let i=0;i<6;i++){const box=document.getElementById('otp'+i);if(!box)continue;box.addEventListener('input',function(){const v=this.value.replace(/[^0-9]/g,'');this.value=v?v.slice(-1):'';this.classList.toggle('filled',!!this.value);if(this.value&&i<5)document.getElementById('otp'+(i+1)).focus();const c=getOTPCode();if(c.length===6&&!_otpSub)setTimeout(submitOTP,120);});box.addEventListener('keydown',function(e){if(e.key==='Backspace'){if(this.value){this.value='';this.classList.remove('filled');}else if(i>0){const p=document.getElementById('otp'+(i-1));p.value='';p.classList.remove('filled');p.focus();}}if(!/^[0-9]$/.test(e.key)&&!['Backspace','Tab','ArrowLeft','ArrowRight'].includes(e.key))e.preventDefault();});box.addEventListener('paste',function(e){e.preventDefault();const p=(e.clipboardData||window.clipboardData).getData('text').replace(/[^0-9]/g,'').slice(0,6);for(let j=0;j<6;j++){const b=document.getElementById('otp'+j);if(!b)continue;b.value=p[j]||'';b.classList.toggle('filled',!!b.value);}if(p.length===6&&!_otpSub)setTimeout(submitOTP,120);});}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();})();
+// New pass
+let _npEmail=null;
+window.showNewPassModal=function(e){_npEmail=e;document.getElementById('newpass-overlay').style.display='block';setTimeout(()=>document.getElementById('newPassInput').focus(),150);};
+function closeNewPass(){document.getElementById('newpass-overlay').style.display='none';}
+async function submitNewPass(){const pass=document.getElementById('newPassInput').value,confirm=document.getElementById('confirmPassInput').value,errEl=document.getElementById('newpass-error'),btn=document.getElementById('newpass-btn');errEl.classList.add('hidden');if(pass.length<6){errEl.textContent='Password must be at least 6 characters!';errEl.classList.remove('hidden');return;}if(pass!==confirm){errEl.textContent='Passwords do not match!';errEl.classList.remove('hidden');return;}btn.disabled=true;btn.innerHTML='<span class="spinner"></span>Updating...';try{const res=await fetch("https://learnwithsakura.com/api/update-password.php",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:_npEmail,new_password:pass,project_id:'learnwith-sakura'})});const data=await res.json();if(data.success){closeNewPass();showMsg('✅ Password updated! Please login.','success');}else{throw new Error(data.message||'Update failed');}}catch(e){errEl.textContent='Failed: '+e.message;errEl.classList.remove('hidden');btn.disabled=false;btn.textContent='Set Password';}}
+// API
+window.saveMySQLDirect=async function(uid,email,name,photo,provider){try{await fetch("https://learnwithsakura.com/api/save-user.php",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({firebase_uid:uid,email:email||"",display_name:name||"",photo_url:photo||"",provider:provider||"unknown"})});}catch(e){}};
+window.sendOTP=async function(email,type){try{const r=await fetch("https://learnwithsakura.com/api/send-otp.php",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email,type})});return await r.json();}catch(e){return{success:false,message:e.message};}};
+window.verifyOTP=async function(email,code,type){try{const r=await fetch("https://learnwithsakura.com/api/verify-otp.php",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email,code,type})});return await r.json();}catch(e){return{success:false,message:e.message};}};
+</script>
+
+<script type="module">
+import{initializeApp}from"https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+import{getAuth,signInWithPopup,GoogleAuthProvider,TwitterAuthProvider,createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile,onAuthStateChanged}from"https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+const app=initializeApp({apiKey:"AIzaSyB-5EgDmpPYpdYoRpX9pXst5fPr2ICOai4",authDomain:"learnwith-sakura.firebaseapp.com",projectId:"learnwith-sakura",storageBucket:"learnwith-sakura.firebasestorage.app",messagingSenderId:"524809202868",appId:"1:524809202868:web:8d4f47a122d542e285bbe1",measurementId:"G-R0PBY0FQ2G"});
+const auth=getAuth(app),gP=new GoogleAuthProvider(),tP=new TwitterAuthProvider();
+document.getElementById('auth-loading').classList.add('show');
+onAuthStateChanged(auth,async u=>{if(u){await window.saveMySQLDirect(u.uid,u.email,u.displayName,u.photoURL,u.providerData[0]?.providerId||'password');window.location.replace('profile/index.html');}else{document.getElementById('auth-loading').classList.remove('show');}});
+async function gLogin(){try{await signInWithPopup(auth,gP);}catch(e){showMsg('❌ '+e.message);}}
+async function tLogin(){try{await signInWithPopup(auth,tP);}catch(e){showMsg('❌ '+e.message);}}
+['googleBtn','googleBtn2'].forEach(id=>document.getElementById(id)?.addEventListener('click',gLogin));
+['twitterBtn','twitterBtn2'].forEach(id=>document.getElementById(id)?.addEventListener('click',tLogin));
+window.emailLogin=async function(){const email=document.getElementById('loginEmail').value.trim(),pass=document.getElementById('loginPass').value;if(!email||!pass)return showMsg('Please enter your email and password.');setLoading('loginBtn',true);try{await signInWithEmailAndPassword(auth,email,pass);}catch(e){showMsg('❌ '+e.message);setLoading('loginBtn',false,'Login →');}};
+window.emailSignup=async function(){const name=document.getElementById('signupName').value.trim(),email=document.getElementById('signupEmail').value.trim(),pass=document.getElementById('signupPass').value;if(!name||!email||!pass)return showMsg('Please fill in all fields.');if(pass.length<6)return showMsg('Password must be at least 6 characters.');setLoading('signupBtn',true);const otp=await window.sendOTP(email,'signup');if(!otp.success){showMsg('❌ '+(otp.message||'Failed'));setLoading('signupBtn',false,'Create Account →');return;}setLoading('signupBtn',false,'Create Account →');showMsg('✅ OTP sent to '+email,'success');window.showOTPModal(email,'signup',async()=>{setLoading('signupBtn',true);try{const r=await createUserWithEmailAndPassword(auth,email,pass);await updateProfile(r.user,{displayName:name});await window.saveMySQLDirect(r.user.uid,r.user.email,name,r.user.photoURL,'password');}catch(e){showMsg('❌ '+e.message);setLoading('signupBtn',false,'Create Account →');}});};
+window.forgotPassword=async function(){const email=document.getElementById('loginEmail').value.trim();if(!email)return showMsg('Please enter your email first.');const otp=await window.sendOTP(email,'forgot');if(!otp.success){showMsg('❌ '+(otp.message||'Failed'));return;}showMsg('✅ OTP sent to '+email,'success');window.showOTPModal(email,'forgot',async()=>{window.showNewPassModal(email);});};
+function showMsg(text,type='error'){const el=document.getElementById('message');el.textContent=text;if(type==='success')el.style.cssText='background:rgba(39,174,114,.1);color:#27ae72;margin-top:16px;padding:12px 16px;border-radius:12px;font-size:13px;font-weight:600;text-align:center;';else el.style.cssText='background:rgba(224,105,58,.1);color:#e0693a;margin-top:16px;padding:12px 16px;border-radius:12px;font-size:13px;font-weight:600;text-align:center;';el.classList.remove('hidden');}
+function setLoading(id,loading,orig){const b=document.getElementById(id);if(!b)return;b.disabled=loading;if(loading)b.innerHTML='<span class="spinner"></span>Loading...';else if(orig)b.textContent=orig;}
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));}</script>
+</body>
+</html>

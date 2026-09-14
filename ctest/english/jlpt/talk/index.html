@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💬%3C/text%3E%3C/svg%3E"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Japanese Daily Talk — Sakura</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans:['Outfit','sans-serif'], jp:['"Noto Sans JP"','sans-serif'] },
+          colors: {
+            rose:  { DEFAULT:'#ec4899', deep:'#db2777', soft:'#fce7f0' },
+            sky:   { DEFAULT:'#60a5fa', deep:'#2563eb', soft:'#e5f0ff' },
+            amber: { DEFAULT:'#f5b942', deep:'#d4900f' },
+            ink:   { DEFAULT:'#1f2937', 2:'#475569', muted:'#94a3b8' },
+            bg:    { DEFAULT:'#fdf8fa', surface:'#ffffff', s2:'#fbeef3' },
+          },
+          borderRadius: { xl2:'1.25rem', xl3:'1.75rem' },
+          boxShadow: {
+            card: '0 2px 16px rgba(31,23,32,.06)',
+            md2:  '0 6px 28px rgba(31,23,32,.1)',
+            lg2:  '0 10px 44px rgba(31,23,32,.16)',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family:'Outfit',sans-serif; background:var(--bg,#fdf8fa); transition:background .3s,color .3s; }
+    .jp  { font-family:'"Noto Sans JP"',sans-serif; }
+    ::-webkit-scrollbar { width:5px; height:5px; }
+    ::-webkit-scrollbar-thumb { background:#f3d4e0; border-radius:99px; }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:none} }
+    .fu { animation:fadeUp .35s ease both; }
+
+    .t-ink2 { color:#475569; }
+    .t-muted { color:#94a3b8; }
+    .divider { border-color:#f6e2ea; }
+
+    /* Speech bubbles */
+    .bubble-left  { background:#fce7f0; border-radius:1.1rem 1.1rem 1.1rem .25rem; }
+    .bubble-right { background:#e5f0ff; border-radius:1.1rem 1.1rem .25rem 1.1rem; }
+    .avatar-circle { width:52px; height:52px; border-radius:9999px; display:flex; align-items:center; justify-content:center; font-size:26px; flex-shrink:0; box-shadow:0 2px 8px rgba(31,23,32,.08); }
+    .avatar-left  { background:linear-gradient(135deg,#fbcfe8,#fda4af); }
+    .avatar-right { background:linear-gradient(135deg,#bfdbfe,#93c5fd); }
+    .speak-btn { width:30px; height:30px; border-radius:9999px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,.7); flex-shrink:0; cursor:pointer; transition:transform .12s ease; border:none; }
+    .speak-btn:hover { transform:scale(1.08); }
+    .speak-btn.playing { animation:pulse-speak .6s ease infinite; }
+    @keyframes pulse-speak { 0%,100%{transform:scale(1)} 50%{transform:scale(1.15)} }
+
+    /* Scene list */
+    .scene-item { display:flex; align-items:center; gap:12px; padding:10px 12px; border-radius:1rem; cursor:pointer; transition:all .15s ease; }
+    .scene-item:hover { background:#fdf1f6; }
+    .scene-item.active { background:#fce7f0; }
+    .scene-icon { width:38px; height:38px; border-radius:.85rem; display:flex; align-items:center; justify-content:center; font-size:18px; background:#fff; box-shadow:0 2px 6px rgba(31,23,32,.05); flex-shrink:0; }
+    .scene-item.active .scene-icon { background:#fff; box-shadow:0 2px 8px rgba(236,72,153,.25); }
+
+    /* Tabs */
+    .tab-pill { display:flex; align-items:center; gap:6px; padding:9px 18px; border-radius:9999px; font-weight:700; font-size:14px; color:#94a3b8; cursor:pointer; transition:all .18s ease; border:none; background:none; white-space:nowrap; }
+    .tab-pill.active { background:#fff; color:#db2777; box-shadow:0 2px 10px rgba(31,23,32,.08); }
+
+    /* Vocab rows */
+    .vocab-row { display:flex; align-items:center; justify-content:space-between; padding:12px 0; border-bottom:1px solid #f6e2ea; gap:10px; }
+    .vocab-row:last-child { border-bottom:none; }
+
+    .card { background:#fff; border-radius:1.25rem; box-shadow:0 2px 16px rgba(31,23,32,.06); }
+
+    .phrase-chip { flex-shrink:0; background:#fff; border:1px solid #f6e2ea; border-radius:1rem; padding:10px 14px; min-width:150px; }
+
+    .mic-btn { width:64px; height:64px; border-radius:9999px; background:linear-gradient(135deg,#f472b6,#db2777); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(219,39,119,.4); border:none; cursor:pointer; transition:transform .15s ease; flex-shrink:0; }
+    .mic-btn:hover { transform:scale(1.05); }
+    .mic-btn.recording { animation:mic-pulse 1s ease infinite; }
+    @keyframes mic-pulse { 0%,100%{box-shadow:0 8px 24px rgba(219,39,119,.4)} 50%{box-shadow:0 8px 34px rgba(219,39,119,.7)} }
+
+    .drop { transition:opacity .15s ease,transform .15s ease; }
+    .drop.closed { opacity:0; transform:translateY(-6px); pointer-events:none; }
+    .drop.open   { opacity:1; transform:translateY(0);    pointer-events:all; }
+
+    .drawer { transition:transform .3s cubic-bezier(.23,1,.32,1); }
+    .drawer.closed { transform:translateX(-100%); }
+    .drawer-overlay { transition:opacity .3s ease; }
+    .drawer-overlay.closed { opacity:0; pointer-events:none; }
+
+    /* ─── Quiz step (question → 2 options → advance) ─── */
+    .quiz-card { background:#fff; border-radius:1.25rem; box-shadow:0 2px 16px rgba(31,23,32,.06); border:1.5px dashed #f6c9db; padding:18px; }
+    .quiz-question-label { font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#db2777; }
+    .quiz-options { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; }
+    .quiz-option { background:#fdf1f6; border:1.5px solid #f6e2ea; border-radius:1rem; padding:14px 10px; text-align:center; cursor:pointer; transition:all .15s ease; font-weight:600; }
+    .quiz-option:hover:not(:disabled) { border-color:#f472b6; background:#fce7f0; transform:translateY(-1px); }
+    .quiz-option:disabled { cursor:default; opacity:.55; }
+    .quiz-option.correct { background:#dcfce7 !important; border-color:#4ade80 !important; opacity:1 !important; }
+    .quiz-option.wrong { background:#fee2e2 !important; border-color:#f87171 !important; animation:shake-x .35s ease; }
+    @keyframes shake-x { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+    .quiz-complete { text-align:center; padding:10px 4px; }
+
+    body.dark { --bg:#0f0a10; }
+    body.dark { background:#0f0a10; color:#f0ede8; }
+    body.dark .card, body.dark .bg-white { background:#1c1420 !important; }
+    body.dark .t-ink2 { color:#c7b6c0 !important; }
+    body.dark .t-muted { color:#8f7c8a !important; }
+    body.dark .divider, body.dark .border-\[\#f6e2ea\] { border-color:#2c1f28 !important; }
+    body.dark .bubble-left { background:#3a1f2c !important; }
+    body.dark .bubble-right { background:#1d2b40 !important; }
+    body.dark .scene-item:hover { background:#241a22 !important; }
+    body.dark .scene-item.active { background:#3a1f2c !important; }
+    body.dark .tab-pill.active { background:#1c1420 !important; }
+    body.dark .vocab-row { border-color:#2c1f28 !important; }
+    body.dark .phrase-chip { background:#1c1420 !important; border-color:#2c1f28 !important; }
+    body.dark #desktop-topbar, body.dark #mobile-topbar, body.dark #botnav, body.dark #scene-drawer { background:rgba(15,10,16,.96) !important; border-color:#2c1f28 !important; }
+    body.dark h1, body.dark h2, body.dark .t-ink { color:#f0ede8 !important; }
+    body.dark .quiz-card { background:#1c1420 !important; border-color:#3a1f2c !important; }
+    body.dark .quiz-option { background:#241a22 !important; border-color:#3a1f2c !important; color:#f0ede8; }
+    body.dark .quiz-option.correct { background:#14532d !important; border-color:#4ade80 !important; }
+    body.dark .quiz-option.wrong { background:#450a0a !important; border-color:#f87171 !important; }
+  </style>
+  <meta name="theme-color" content="#db2777"/>
+</head>
+
+<body class="min-h-screen" id="body">
+
+<!-- ═══════ DESKTOP TOPBAR ═══════ -->
+<header id="desktop-topbar" class="hidden lg:flex fixed top-0 left-0 right-0 z-40 items-center gap-6 px-8 py-3"
+        style="background:rgba(255,255,255,.9);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid #f6e2ea;">
+  <div class="flex items-center gap-3 flex-shrink-0">
+    <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-rose to-sky flex items-center justify-center text-xl">💬</div>
+    <div>
+      <div class="font-extrabold text-lg t-ink leading-tight" id="app-title-desk">Japanese Daily Talk</div>
+      <div class="text-xs t-muted jp" id="app-sub-desk">日本語の日常会話を学ぼう</div>
+    </div>
+  </div>
+
+  <div class="flex items-center gap-1 bg-bg-s2 rounded-full p-1 mx-auto">
+    <button class="tab-pill active" data-tab="dialogue" onclick="setTab('dialogue', this)">💬 Dialogue</button>
+    <button class="tab-pill" data-tab="vocabulary" onclick="setTab('vocabulary', this)">📖 Vocabulary</button>
+    <button class="tab-pill" data-tab="grammar" onclick="setTab('grammar', this)">Aa Grammar</button>
+    <button class="tab-pill" data-tab="practice" onclick="setTab('practice', this)">✏️ Practice</button>
+  </div>
+
+  <div class="flex items-center gap-4 flex-shrink-0">
+    <div class="flex items-center gap-1.5 font-extrabold" style="color:#e0693a;">
+      🔥 <span id="streak-count-desk">0</span>
+    </div>
+    <div class="relative" id="desk-avatar-wrap">
+      <button onclick="toggleAvatarDrop()" class="flex items-center gap-2 focus:outline-none">
+        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-rose to-sky flex items-center justify-center text-white text-sm">👩</div>
+        <span class="font-bold text-sm t-ink" id="level-label-desk">Level 0</span>
+        <svg id="avatar-chev" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24" class="t-muted transition-transform"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div id="avatar-drop" class="drop closed absolute right-0 top-full mt-2 w-52 bg-white rounded-xl2 shadow-lg2 border border-slate-100 overflow-hidden z-50">
+        <div class="px-4 py-3" style="background:linear-gradient(135deg,#fce7f0,#e5f0ff);">
+          <div class="font-bold text-sm t-ink">Learner</div>
+          <div class="text-xs t-muted mt-0.5">Keep the streak going!</div>
+        </div>
+        <button onclick="toggleDark()" class="w-full flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-rose/5 transition-colors text-left">
+          <svg id="theme-icon-desk" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <span id="theme-label-desk">Dark mode</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════ MOBILE TOPBAR ═══════ -->
+<header id="mobile-topbar" class="lg:hidden fixed top-0 left-0 right-0 z-40 flex items-center gap-3 px-4 py-3"
+        style="background:rgba(255,255,255,.9);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid #f6e2ea;">
+  <button onclick="openDrawer()" class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" aria-label="Scenes menu">
+    <svg width="20" height="20" fill="none" stroke="#1f2937" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <div class="flex items-center gap-2 min-w-0">
+    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-rose to-sky flex items-center justify-center text-base flex-shrink-0">💬</div>
+    <div class="min-w-0">
+      <div class="font-extrabold text-sm t-ink leading-tight truncate" id="app-title-mob">Japanese Daily Talk</div>
+      <div class="text-[10px] t-muted jp truncate" id="app-sub-mob">日本語の日常会話を学ぼう</div>
+    </div>
+  </div>
+  <div class="ml-auto flex items-center gap-3 flex-shrink-0">
+    <div class="flex items-center gap-1 font-extrabold text-sm" style="color:#e0693a;">🔥<span id="streak-count-mob">0</span></div>
+    <button onclick="toggleDark()" class="w-8 h-8 rounded-full flex items-center justify-center" style="background:#fce7f0;color:#db2777;" aria-label="Level / theme">
+      <svg id="theme-icon-mob" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ═══════ MOBILE SCENE DRAWER ═══════ -->
+<div id="drawer-overlay" class="drawer-overlay closed fixed inset-0 bg-black/30 z-[60] lg:hidden" onclick="closeDrawer()"></div>
+<aside id="scene-drawer" class="drawer closed lg:hidden fixed top-0 left-0 h-full w-72 bg-white z-[70] p-4 overflow-y-auto" style="box-shadow:8px 0 32px rgba(31,23,32,.15);">
+  <div class="flex items-center justify-between mb-4">
+    <div class="font-extrabold text-xs uppercase tracking-widest t-muted">Scenes</div>
+    <button onclick="closeDrawer()" class="w-8 h-8 rounded-full flex items-center justify-center bg-bg-s2">
+      <svg width="15" height="15" fill="none" stroke="#475569" stroke-width="2.3" viewBox="0 0 24 24"><path d="m18 6-12 12M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div id="scene-list-mobile" class="space-y-1"></div>
+</aside>
+
+<!-- ═══════ MAIN LAYOUT ═══════ -->
+<div class="pt-16 lg:pt-20 pb-24 lg:pb-8 max-w-[1400px] mx-auto lg:px-8 px-0">
+  <div class="lg:grid lg:grid-cols-[240px_1fr_320px] lg:gap-6 lg:items-start">
+
+    <!-- LEFT: Scenes (desktop only) -->
+    <aside class="hidden lg:block sticky top-24">
+      <div class="text-xs font-extrabold uppercase tracking-widest t-muted mb-3 px-1">Scenes</div>
+      <div id="scene-list-desktop" class="space-y-1"></div>
+
+      <div class="card mt-6 p-4" style="background:linear-gradient(135deg,#fce7f0,#fbeef3);">
+        <div class="flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider mb-2" style="color:#db2777;">🎯 Daily Goal</div>
+        <div class="font-extrabold text-lg t-ink mb-2"><span id="goal-progress">0</span> / <span id="goal-target">0</span> 分</div>
+        <div class="h-2 rounded-full bg-white/70 overflow-hidden">
+          <div id="goal-bar" class="h-full rounded-full" style="width:0%;background:linear-gradient(90deg,#f472b6,#db2777);"></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CENTER: Dialogue / Vocabulary / Grammar / Practice -->
+    <main class="px-4 lg:px-0">
+
+      <!-- Mobile tabs row -->
+      <div class="lg:hidden flex items-center gap-1 bg-bg-s2 rounded-full p-1 mb-4 mt-1 overflow-x-auto" style="scrollbar-width:none;">
+        <button class="tab-pill active text-xs" data-tab="dialogue" onclick="setTab('dialogue', this)">💬 Dialogue</button>
+        <button class="tab-pill text-xs" data-tab="vocabulary" onclick="setTab('vocabulary', this)">📖 Vocab</button>
+        <button class="tab-pill text-xs" data-tab="grammar" onclick="setTab('grammar', this)">Aa Grammar</button>
+        <button class="tab-pill text-xs" data-tab="practice" onclick="setTab('practice', this)">✏️ Practice</button>
+      </div>
+
+      <!-- DIALOGUE PANEL -->
+      <section id="panel-dialogue">
+        <div class="card p-4 lg:p-6 mb-4 fu">
+          <div class="flex items-start justify-between gap-3 mb-2 lg:mb-3">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center text-lg flex-shrink-0" style="background:#fce7f0;">👥</div>
+              <div class="min-w-0">
+                <div class="font-extrabold text-base lg:text-lg t-ink jp leading-tight" id="scene-title-jp">—</div>
+                <div class="text-xs lg:text-sm t-muted" id="scene-title-en">—</div>
+              </div>
+            </div>
+            <button onclick="speakText(document.getElementById('scene-title-jp').textContent)" class="speak-btn flex-shrink-0" style="background:#fce7f0;">
+              <svg width="14" height="14" fill="#db2777" viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7" stroke="#db2777" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+          <div class="h-1.5 rounded-full bg-bg-s2 overflow-hidden mb-1">
+            <div id="line-progress-bar" class="h-full rounded-full" style="width:0%;background:linear-gradient(90deg,#f472b6,#db2777);"></div>
+          </div>
+          <div class="text-xs t-muted text-right"><span id="line-progress-count">0/0</span></div>
+        </div>
+
+        <!-- Already-answered lines appear here as chat bubbles -->
+        <div id="dialogue-lines" class="space-y-4 mb-4"></div>
+
+        <!-- Question → 2 options → advance -->
+        <div id="quiz-card" class="mb-5"></div>
+
+        <!-- Common phrases -->
+        <div class="mb-5" id="common-phrases-wrap">
+          <div class="flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider t-muted mb-2 px-1">⭐ よく使うフレーズ</div>
+          <div id="common-phrases" class="flex gap-2.5 overflow-x-auto pb-1" style="scrollbar-width:none;"></div>
+        </div>
+
+        <!-- Mic / nav row -->
+        <div class="flex items-center justify-between gap-3 card p-4">
+          <button onclick="navScene(-1)" class="hidden lg:flex items-center gap-1.5 px-4 py-2.5 rounded-full text-sm font-bold t-ink2 border border-slate-200 hover:border-rose/40 transition-all">← 前の会話</button>
+          <div class="flex-1 flex flex-col items-center gap-1.5">
+            <button onclick="toggleMic()" id="mic-btn" class="mic-btn" aria-label="Practice speaking">
+              <svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+            </button>
+            <span class="text-[11px] font-semibold t-muted" id="mic-label">タップして話してみよう</span>
+          </div>
+          <button onclick="navScene(1)" class="hidden lg:flex items-center gap-1.5 px-4 py-2.5 rounded-full text-sm font-bold t-ink2 border border-slate-200 hover:border-rose/40 transition-all">次の会話 →</button>
+        </div>
+      </section>
+
+      <!-- VOCABULARY PANEL (mobile full view; desktop uses right sidebar instead) -->
+      <section id="panel-vocabulary" class="hidden">
+        <div class="card p-5 fu">
+          <div class="font-extrabold text-base t-ink mb-4">📖 Vocabulary — <span id="vocab-panel-title" class="jp"></span></div>
+          <div id="vocab-panel-list"></div>
+        </div>
+      </section>
+
+      <!-- GRAMMAR PANEL (placeholder, still data-driven-ready) -->
+      <section id="panel-grammar" class="hidden">
+        <div class="card p-8 text-center fu">
+          <div class="text-3xl mb-2">Aa</div>
+          <div class="font-extrabold t-ink mb-1">Grammar notes coming soon</div>
+          <div class="text-sm t-muted">This tab will pull grammar points tied to <span class="jp" id="grammar-scene-name"></span> from the same JSON file.</div>
+        </div>
+      </section>
+
+      <!-- PRACTICE PANEL (placeholder) -->
+      <section id="panel-practice" class="hidden">
+        <div class="card p-8 text-center fu">
+          <div class="text-3xl mb-2">✏️</div>
+          <div class="font-extrabold t-ink mb-1">Practice exercises coming soon</div>
+          <div class="text-sm t-muted">Quiz questions for <span class="jp" id="practice-scene-name"></span> will be added to the JSON here.</div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- RIGHT: Vocabulary + Tip (desktop only) -->
+    <aside class="hidden lg:block sticky top-24 space-y-4">
+      <div class="card p-4">
+        <div class="flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider t-muted mb-3">📖 Vocabulary</div>
+        <div id="vocab-list-desktop"></div>
+      </div>
+      <div class="card p-4" style="background:#fffaf0;border:1px solid #fde9c4;">
+        <div class="flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider mb-2" style="color:#d4900f;">💡 Useful Tip</div>
+        <div class="text-sm t-ink2 leading-relaxed jp mb-2" id="tip-jp-desktop"></div>
+        <div class="text-sm t-ink2 leading-relaxed" id="tip-en-desktop"></div>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- ═══════ MOBILE BOTTOM NAV ═══════ -->
+<nav id="botnav" class="lg:hidden fixed bottom-0 left-0 right-0 z-40 flex items-center"
+     style="height:64px;background:rgba(255,255,255,.95);backdrop-filter:blur(20px) saturate(180%);border-top:1px solid #f6e2ea;">
+  <button onclick="setTab('dialogue')" class="flex-1 flex flex-col items-center justify-center gap-1 botnav-item" data-tab="dialogue">
+    <svg width="20" height="20" fill="none" stroke="#db2777" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <span class="text-[10px] font-bold" style="color:#db2777;">会話</span>
+  </button>
+  <button onclick="setTab('vocabulary')" class="flex-1 flex flex-col items-center justify-center gap-1 botnav-item" data-tab="vocabulary">
+    <svg width="20" height="20" fill="none" stroke="#94a3b8" stroke-width="2" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span class="text-[10px] font-bold t-muted">単語</span>
+  </button>
+  <button onclick="setTab('grammar')" class="flex-1 flex flex-col items-center justify-center gap-1 botnav-item" data-tab="grammar">
+    <svg width="20" height="20" fill="none" stroke="#94a3b8" stroke-width="2" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+    <span class="text-[10px] font-bold t-muted">学習</span>
+  </button>
+  <button onclick="setTab('practice')" class="flex-1 flex flex-col items-center justify-center gap-1 botnav-item" data-tab="practice">
+    <svg width="20" height="20" fill="none" stroke="#94a3b8" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+    <span class="text-[10px] font-bold t-muted">復習</span>
+  </button>
+  <button onclick="toggleAvatarDrop()" class="flex-1 flex flex-col items-center justify-center gap-1 relative" id="mob-mypage-btn">
+    <svg width="20" height="20" fill="none" stroke="#94a3b8" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    <span class="text-[10px] font-bold t-muted">マイページ</span>
+  </button>
+</nav>
+
+<script>
+/* ══════════════════════════════════════════════════════════
+   All content is loaded from dialogue-data.json:
+     { app, user, scenes:[{id,icon,jp,en}],
+       dialogues: { [sceneId]: { scene_title_jp, scene_title_en,
+         speakers:{name:{avatar,side}}, lines:[{speaker,jp,romaji,en}],
+         vocabulary:[{jp,romaji,en}], tip:{jp,en},
+         common_phrases:[{jp,en}] } } }
+
+   DIALOGUE FLOW (quiz-style):
+   Instead of dumping every line at once, each line is gated behind
+   a mini quiz: the app shows the ENGLISH meaning of the next line
+   as a question, offers 2 Japanese options (1 correct + 1 wrong),
+   and only reveals the bubble + advances once the user taps the
+   correct option. Already-answered lines stack up above as a
+   normal chat history.
+   ══════════════════════════════════════════════════════════ */
+var DATA = null;
+var currentSceneId = null;
+var currentTab = 'dialogue';
+var currentLines = [];   // lines for the active scene
+var revealedCount = 0;   // how many lines have been answered correctly so far
+
+function escapeHtml(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function loadData(){
+  fetch('dialogue-data.json')
+    .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+    .then(function(json){
+      DATA = json;
+      applyAppMeta();
+      renderSceneLists();
+      currentSceneId = DATA.scenes[0].id;
+      renderScene(currentSceneId);
+    })
+    .catch(function(err){
+      document.getElementById('dialogue-lines').innerHTML = '<div class="text-center py-16 t-muted text-sm">Could not load dialogue-data.json.</div>';
+      console.warn('Dialogue data load failed:', err);
+    });
+}
+
+function applyAppMeta(){
+  var app = DATA.app || {};
+  ['app-title-desk','app-title-mob'].forEach(function(id){ var el=document.getElementById(id); if(el) el.textContent = app.title_en || 'Japanese Daily Talk'; });
+  ['app-sub-desk','app-sub-mob'].forEach(function(id){ var el=document.getElementById(id); if(el) el.textContent = app.title_jp || ''; });
+  document.title = (app.title_en || 'Japanese Daily Talk') + ' — Sakura';
+
+  var user = DATA.user || {};
+  ['streak-count-desk','streak-count-mob'].forEach(function(id){ var el=document.getElementById(id); if(el) el.textContent = user.streak || 0; });
+  var lvl = document.getElementById('level-label-desk'); if(lvl) lvl.textContent = 'Level ' + (user.level || 0);
+  var gp = document.getElementById('goal-progress'); if(gp) gp.textContent = user.daily_progress_minutes || 0;
+  var gt = document.getElementById('goal-target'); if(gt) gt.textContent = user.daily_goal_minutes || 0;
+  var gb = document.getElementById('goal-bar');
+  if (gb && user.daily_goal_minutes) gb.style.width = Math.min(100, Math.round((user.daily_progress_minutes/user.daily_goal_minutes)*100)) + '%';
+}
+
+function sceneListItemHtml(scene, isMobile){
+  var activeClass = scene.id === currentSceneId ? 'active' : '';
+  return '' +
+    '<div class="scene-item ' + activeClass + '" data-scene="' + scene.id + '" onclick="selectScene(\'' + scene.id + '\'' + (isMobile ? ',true' : '') + ')">' +
+      '<span class="scene-icon">' + scene.icon + '</span>' +
+      '<div class="min-w-0">' +
+        '<div class="font-bold text-sm jp leading-tight ' + (scene.id===currentSceneId ? 'text-rose-deep' : 't-ink') + '">' + escapeHtml(scene.jp) + '</div>' +
+        '<div class="text-xs t-muted truncate">' + escapeHtml(scene.en) + '</div>' +
+      '</div>' +
+    '</div>';
+}
+
+function renderSceneLists(){
+  var htmlDesk = DATA.scenes.map(function(s){ return sceneListItemHtml(s, false); }).join('');
+  var htmlMob  = DATA.scenes.map(function(s){ return sceneListItemHtml(s, true); }).join('');
+  document.getElementById('scene-list-desktop').innerHTML = htmlDesk;
+  document.getElementById('scene-list-mobile').innerHTML = htmlMob;
+}
+
+function selectScene(id, closeAfter){
+  currentSceneId = id;
+  renderSceneLists();
+  renderScene(id);
+  if (closeAfter) closeDrawer();
+}
+function navScene(dir){
+  var ids = DATA.scenes.map(function(s){ return s.id; });
+  var idx = ids.indexOf(currentSceneId);
+  var next = ids[(idx + dir + ids.length) % ids.length];
+  selectScene(next);
+}
+
+function renderScene(id){
+  var d = DATA.dialogues[id];
+  if (!d) return;
+
+  document.getElementById('scene-title-jp').textContent = d.scene_title_jp || '';
+  document.getElementById('scene-title-en').textContent = d.scene_title_en || '';
+
+  // Reset the quiz-step state for the new scene.
+  // The first line is shown right away as a normal bubble; the quiz
+  // (question -> 2 options) kicks in starting from the 2nd line.
+  currentLines = d.lines || [];
+  revealedCount = Math.min(1, currentLines.length);
+  renderDialogueStep();
+
+  // Common phrases
+  var phrasesHtml = (d.common_phrases || []).map(function(p){
+    return '' +
+      '<div class="phrase-chip">' +
+        '<div class="flex items-center gap-1.5 mb-1">' +
+          '<span class="jp text-sm font-semibold t-ink">' + escapeHtml(p.jp) + '</span>' +
+          '<button onclick="speakText(\'' + escapeHtml(p.jp).replace(/'/g,"\\'") + '\')" class="speak-btn" style="background:#fce7f0;width:22px;height:22px;">' +
+            '<svg width="10" height="10" fill="#db2777" viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9H4z"/></svg>' +
+          '</button>' +
+        '</div>' +
+        '<div class="text-xs t-muted">' + escapeHtml(p.en) + '</div>' +
+      '</div>';
+  }).join('');
+  document.getElementById('common-phrases').innerHTML = phrasesHtml;
+
+  // Vocabulary (desktop sidebar + mobile panel)
+  var vocabRows = (d.vocabulary || []).map(function(v){
+    return '' +
+      '<div class="vocab-row">' +
+        '<div class="min-w-0">' +
+          '<div class="jp font-bold text-sm t-ink">' + escapeHtml(v.jp) + '</div>' +
+          '<div class="text-xs t-muted">' + escapeHtml(v.romaji) + '</div>' +
+          '<div class="text-xs t-ink2 mt-0.5">' + escapeHtml(v.en) + '</div>' +
+        '</div>' +
+        '<button onclick="speakText(\'' + escapeHtml(v.jp).replace(/'/g,"\\'") + '\')" class="speak-btn flex-shrink-0" style="background:#fce7f0;">' +
+          '<svg width="12" height="12" fill="#db2777" viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9H4z"/></svg>' +
+        '</button>' +
+      '</div>';
+  }).join('');
+  document.getElementById('vocab-list-desktop').innerHTML = vocabRows;
+  document.getElementById('vocab-panel-list').innerHTML = vocabRows;
+  document.getElementById('vocab-panel-title').textContent = d.scene_title_jp || '';
+
+  // Tip
+  var tip = d.tip || {};
+  document.getElementById('tip-jp-desktop').textContent = tip.jp || '';
+  document.getElementById('tip-en-desktop').textContent = tip.en || '';
+
+  // Grammar/Practice placeholders
+  document.getElementById('grammar-scene-name').textContent = d.scene_title_jp || '';
+  document.getElementById('practice-scene-name').textContent = d.scene_title_jp || '';
+}
+
+/* ── Bubble markup for an already-answered line ── */
+function bubbleHtml(line, speakers){
+  var speakerInfo = (speakers && speakers[line.speaker]) || { avatar:'🙂', side:'left' };
+  var isRight = speakerInfo.side === 'right';
+  return '' +
+    '<div class="flex items-end gap-3 fu ' + (isRight ? 'flex-row-reverse' : '') + '">' +
+      '<div class="flex flex-col items-center gap-1 flex-shrink-0">' +
+        '<div class="avatar-circle ' + (isRight ? 'avatar-right' : 'avatar-left') + '">' + speakerInfo.avatar + '</div>' +
+        '<span class="text-[11px] font-bold t-muted jp">' + escapeHtml(line.speaker) + '</span>' +
+      '</div>' +
+      '<div class="' + (isRight ? 'bubble-right' : 'bubble-left') + ' px-4 py-3 max-w-[75%] lg:max-w-[65%]">' +
+        '<div class="flex items-center gap-2 mb-1">' +
+          '<span class="jp text-base font-semibold t-ink">' + escapeHtml(line.jp) + '</span>' +
+          '<button onclick="speakLine(this,\'' + escapeHtml(line.jp).replace(/'/g,"\\'") + '\')" class="speak-btn" style="background:rgba(255,255,255,.6);">' +
+            '<svg width="12" height="12" fill="' + (isRight ? '#2563eb' : '#db2777') + '" viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9H4z"/></svg>' +
+          '</button>' +
+        '</div>' +
+        '<div class="text-xs t-ink2 italic mb-0.5">' + escapeHtml(line.romaji) + '</div>' +
+        '<div class="text-sm t-ink2">' + escapeHtml(line.en) + '</div>' +
+      '</div>' +
+    '</div>';
+}
+
+/* ── Render already-revealed bubbles + progress bar, then the quiz card ── */
+function renderDialogueStep(){
+  var d = DATA.dialogues[currentSceneId];
+  if (!d) return;
+  var speakers = d.speakers || {};
+
+  var html = '';
+  for (var i = 0; i < revealedCount; i++) {
+    html += bubbleHtml(currentLines[i], speakers);
+  }
+  document.getElementById('dialogue-lines').innerHTML = html;
+
+  var total = currentLines.length;
+  var pbar = document.getElementById('line-progress-bar');
+  if (pbar) pbar.style.width = (total ? Math.round((revealedCount/total)*100) : 0) + '%';
+  var pcount = document.getElementById('line-progress-count');
+  if (pcount) pcount.textContent = revealedCount + '/' + total;
+
+  renderQuizCard();
+
+  // keep newest bubble in view
+  var wrap = document.getElementById('dialogue-lines');
+  if (wrap && wrap.lastElementChild) wrap.lastElementChild.scrollIntoView({ block:'nearest', behavior:'smooth' });
+}
+
+/* ── The question → 2 options card for the next unrevealed line ── */
+function renderQuizCard(){
+  var container = document.getElementById('quiz-card');
+  if (!container) return;
+  var d = DATA.dialogues[currentSceneId];
+  var total = currentLines.length;
+
+  if (!total){
+    container.innerHTML = '';
+    return;
+  }
+
+  if (revealedCount >= total){
+    container.innerHTML =
+      '<div class="quiz-card quiz-complete fu">' +
+        '<div class="text-2xl mb-1">🎉</div>' +
+        '<div class="font-extrabold t-ink mb-1">会話完了！ Great job!</div>' +
+        '<div class="text-xs t-muted mb-3">You finished this conversation. Try it again or move to the next scene.</div>' +
+        '<div class="flex items-center justify-center gap-2">' +
+          '<button onclick="restartDialogue()" class="px-4 py-2 rounded-full text-xs font-bold" style="background:#fce7f0;color:#db2777;">もう一度 ↻</button>' +
+          '<button onclick="navScene(1)" class="px-4 py-2 rounded-full text-xs font-bold text-white" style="background:linear-gradient(135deg,#f472b6,#db2777);">次の会話 →</button>' +
+        '</div>' +
+      '</div>';
+    return;
+  }
+
+  var line = currentLines[revealedCount];
+  var speakers = (d && d.speakers) || {};
+  var speakerInfo = speakers[line.speaker] || { avatar:'🙂', side:'left' };
+
+  // Pick a distractor: any other line in this scene (fallback to itself if only one line exists)
+  var pool = currentLines.filter(function(l, idx){ return idx !== revealedCount && l.jp !== line.jp; });
+  var distractor = pool.length ? pool[Math.floor(Math.random() * pool.length)] : line;
+
+  var options = [line, distractor];
+  if (Math.random() < 0.5) options.reverse();
+
+  var optsHtml = options.map(function(opt){
+    var isCorrect = (opt === line);
+    return '<button type="button" class="quiz-option" onclick="answerQuiz(this,' + isCorrect + ')">' +
+        '<span class="jp text-sm">' + escapeHtml(opt.jp) + '</span>' +
+      '</button>';
+  }).join('');
+
+  container.innerHTML =
+    '<div class="quiz-card fu">' +
+      '<div class="flex items-center gap-2 mb-3">' +
+        '<div class="avatar-circle ' + (speakerInfo.side === 'right' ? 'avatar-right' : 'avatar-left') + '" style="width:36px;height:36px;font-size:16px;">' + speakerInfo.avatar + '</div>' +
+        '<div>' +
+          '<div class="quiz-question-label">' + escapeHtml(line.speaker) + ' が言う ・ Pick the right line</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="text-sm t-ink2 mb-1">"' + escapeHtml(line.en) + '"</div>' +
+      '<div class="quiz-options">' + optsHtml + '</div>' +
+      '<div id="quiz-feedback" class="text-xs font-bold mt-2 h-4"></div>' +
+    '</div>';
+}
+
+/* ── Handle an option click ── */
+function answerQuiz(btn, isCorrect){
+  var feedback = document.getElementById('quiz-feedback');
+  if (isCorrect){
+    document.querySelectorAll('#quiz-card .quiz-option').forEach(function(b){ b.disabled = true; });
+    btn.classList.add('correct');
+    if (feedback) { feedback.textContent = '✓ 正解！ Correct!'; feedback.style.color = '#16a34a'; }
+    speakText(currentLines[revealedCount].jp);
+    setTimeout(function(){
+      revealedCount++;
+      renderDialogueStep();
+    }, 650);
+  } else {
+    btn.classList.add('wrong');
+    if (feedback) { feedback.textContent = '✗ もう一度！ Try again'; feedback.style.color = '#dc2626'; }
+    setTimeout(function(){ btn.classList.remove('wrong'); }, 500);
+  }
+}
+
+function restartDialogue(){
+  revealedCount = Math.min(1, currentLines.length);
+  renderDialogueStep();
+}
+
+/* ── Tabs ── */
+function setTab(tab, btn){
+  currentTab = tab;
+  document.querySelectorAll('.tab-pill').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-pill[data-tab="'+tab+'"]').forEach(function(p){ p.classList.add('active'); });
+  ['dialogue','vocabulary','grammar','practice'].forEach(function(t){
+    var el = document.getElementById('panel-'+t);
+    if (el) el.classList.toggle('hidden', t !== tab);
+  });
+  document.querySelectorAll('.botnav-item').forEach(function(b){
+    var isActive = b.dataset.tab === tab;
+    var svg = b.querySelector('svg'); var label = b.querySelector('span');
+    if (svg) svg.setAttribute('stroke', isActive ? '#db2777' : '#94a3b8');
+    if (label) label.style.color = isActive ? '#db2777' : '';
+    if (label) label.classList.toggle('t-muted', !isActive);
+  });
+}
+
+/* ── Text-to-speech for 🔊 buttons ── */
+function speakText(text){
+  if (!('speechSynthesis' in window) || !text) return;
+  window.speechSynthesis.cancel();
+  var utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'ja-JP';
+  utter.rate = 0.92;
+  window.speechSynthesis.speak(utter);
+}
+function speakLine(btn, text){
+  speakText(text);
+  if (!btn) return;
+  btn.classList.add('playing');
+  setTimeout(function(){ btn.classList.remove('playing'); }, 700);
+}
+
+/* ── Mic (speech recognition where available, else a visual toggle) ── */
+var recognition = null, isRecording = false;
+(function setupRecognition(){
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) return;
+  recognition = new SR();
+  recognition.lang = 'ja-JP';
+  recognition.interimResults = false;
+  recognition.onresult = function(e){
+    var said = e.results[0][0].transcript;
+    document.getElementById('mic-label').textContent = 'You said: ' + said;
+  };
+  recognition.onerror = function(){ stopRecording(); };
+  recognition.onend = function(){ stopRecording(); };
+})();
+function toggleMic(){
+  if (isRecording) { stopRecording(); return; }
+  isRecording = true;
+  document.getElementById('mic-btn').classList.add('recording');
+  document.getElementById('mic-label').textContent = 'Listening…';
+  if (recognition) { try { recognition.start(); } catch(e){} }
+  else { setTimeout(stopRecording, 1500); }
+}
+function stopRecording(){
+  isRecording = false;
+  document.getElementById('mic-btn').classList.remove('recording');
+  if (recognition) { try { recognition.stop(); } catch(e){} }
+  setTimeout(function(){
+    var lbl = document.getElementById('mic-label');
+    if (lbl) lbl.textContent = 'タップして話してみよう';
+  }, 2200);
+}
+
+/* ── Drawer (mobile scene list) ── */
+function openDrawer(){
+  document.getElementById('scene-drawer').classList.remove('closed');
+  document.getElementById('drawer-overlay').classList.remove('closed');
+}
+function closeDrawer(){
+  document.getElementById('scene-drawer').classList.add('closed');
+  document.getElementById('drawer-overlay').classList.add('closed');
+}
+
+/* ── Avatar / theme dropdown ── */
+var avatarOpen = false;
+function toggleAvatarDrop(){
+  avatarOpen = !avatarOpen;
+  var d = document.getElementById('avatar-drop');
+  d.className = d.className.replace(/\b(open|closed)\b/, avatarOpen ? 'open' : 'closed');
+  var chev = document.getElementById('avatar-chev');
+  if (chev) chev.style.transform = avatarOpen ? 'rotate(180deg)' : '';
+}
+document.addEventListener('click', function(e){
+  var wrap = document.getElementById('desk-avatar-wrap');
+  if (wrap && !wrap.contains(e.target) && avatarOpen) { avatarOpen = false; var d=document.getElementById('avatar-drop'); d.className = d.className.replace(/\b(open|closed)\b/,'closed'); }
+});
+
+/* ── Dark mode ── */
+var isDark = false;
+var MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+var SUN  = '<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/>';
+function toggleDark(){
+  isDark = !isDark;
+  document.body.classList.toggle('dark', isDark);
+  ['theme-icon-desk','theme-icon-mob'].forEach(function(id){ var el=document.getElementById(id); if(el) el.innerHTML = isDark ? SUN : MOON; });
+  var lbl = document.getElementById('theme-label-desk'); if (lbl) lbl.textContent = isDark ? 'Light mode' : 'Dark mode';
+}
+
+loadData();
+</script>
+</body>
+</html>

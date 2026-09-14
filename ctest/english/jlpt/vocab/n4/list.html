@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulary — Sakura Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Outfit', 'sans-serif'],
+          jp: ['"Noto Sans JP"', 'sans-serif'],
+        },
+        colors: {
+          mint:   { 50:'#ECFDF5', 100:'#D1FAE5', 500:'#10B981', 600:'#059669' },
+          sky:    { 50:'#EFF6FF', 100:'#DBEAFE', 500:'#3B82F6', 600:'#2563EB' },
+          lilac:  { 50:'#FAF5FF', 100:'#F3E8FF', 500:'#A855F7', 600:'#9333EA' },
+          coral:  { 50:'#FFF7ED', 100:'#FFEDD5', 500:'#F97316', 600:'#EA580C' },
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Outfit', sans-serif; }
+  .jp { font-family: 'Noto Sans JP', sans-serif; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 999px; }
+  .card-enter { animation: cardIn .35s ease both; }
+  @keyframes cardIn { from { opacity:0; transform: translateY(8px);} to {opacity:1; transform:translateY(0);} }
+  .bg-hero {
+    background: radial-gradient(120% 60% at 15% 0%, #EDE9FE 0%, #FDF2F8 45%, transparent 70%);
+  }
+  .dark .bg-hero {
+    background: radial-gradient(120% 60% at 15% 0%, rgba(139,92,246,0.18) 0%, rgba(236,72,153,0.10) 45%, transparent 70%);
+  }
+  .progress-ring-bg { stroke: #E5E7EB; }
+  .dark .progress-ring-bg { stroke: #374151; }
+  .filter-panel { transform-origin: top right; }
+</style>
+</head>
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300 min-h-screen">
+
+<div class="max-w-md mx-auto min-h-screen bg-white dark:bg-gray-950 relative">
+
+  <!-- ===== Header ===== -->
+  <header class="relative bg-hero px-5 pt-6 pb-5 overflow-hidden">
+    <!-- decorative illustration -->
+    <svg class="absolute -top-2 right-2 w-40 h-40 opacity-90 pointer-events-none select-none" viewBox="0 0 200 200" fill="none">
+      <circle cx="150" cy="55" r="26" fill="#FBCFE8" class="dark:opacity-40"/>
+      <path d="M20 150 L85 70 L120 105 L150 55 L195 150 Z" fill="#93A9C7" class="dark:fill-slate-600"/>
+      <path d="M120 105 L150 55 L195 150 L120 150 Z" fill="#7C93B8" class="dark:fill-slate-700"/>
+      <path d="M150 55 L160 75 L140 75 Z" fill="#F8FAFC" class="dark:fill-slate-300"/>
+      <ellipse cx="45" cy="160" rx="34" ry="22" fill="#86EFAC" class="dark:fill-emerald-800"/>
+      <ellipse cx="90" cy="168" rx="40" ry="24" fill="#6EE7B7" class="dark:fill-emerald-900"/>
+      <g class="opacity-80">
+        <circle cx="35" cy="140" r="4" fill="#F9A8D4"/>
+        <circle cx="55" cy="132" r="3.5" fill="#F9A8D4"/>
+        <circle cx="70" cy="145" r="4" fill="#FBCFE8"/>
+        <circle cx="20" cy="150" r="3" fill="#FBCFE8"/>
+      </g>
+    </svg>
+
+    <div class="relative flex items-start justify-between">
+      <div>
+        <p class="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1">
+          <span class="inline-block animate-[wave_1.6s_ease-in-out_infinite]">👋</span> Good morning, <span id="userName" class="font-medium text-gray-700 dark:text-gray-200">Hem</span>!
+        </p>
+        <h1 class="text-4xl font-extrabold tracking-tight mt-1">Vocabulary</h1>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Learn • Practice • Remember</p>
+      </div>
+      <div class="flex items-center gap-2 shrink-0">
+        <button id="langToggle" class="px-3 py-1.5 rounded-full bg-sky-500 text-white text-xs font-bold shadow-sm hover:bg-sky-600 transition">EN</button>
+        <button id="darkToggle" class="w-9 h-9 rounded-full bg-white dark:bg-gray-800 shadow-sm flex items-center justify-center text-gray-600 dark:text-yellow-300 hover:scale-105 transition">
+          <svg id="darkIcon" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Progress card ===== -->
+  <section class="px-5 -mt-1">
+    <div class="bg-mint-50 dark:bg-emerald-950/40 rounded-3xl p-4 flex items-center gap-4 shadow-sm">
+      <div class="relative w-20 h-20 shrink-0">
+        <svg viewBox="0 0 80 80" class="w-20 h-20 -rotate-90">
+          <circle cx="40" cy="40" r="34" fill="none" stroke-width="8" class="progress-ring-bg"/>
+          <circle id="progressRing" cx="40" cy="40" r="34" fill="none" stroke="#22C55E" stroke-width="8" stroke-linecap="round"
+            stroke-dasharray="213.6" stroke-dashoffset="213.6"/>
+        </svg>
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <span id="learnedCount" class="text-lg font-extrabold text-emerald-600 dark:text-emerald-400 leading-none">0</span>
+          <span id="totalCount" class="text-[10px] text-gray-500 dark:text-gray-400 leading-none mt-0.5">/ 0</span>
+          <span class="text-[9px] text-gray-400 dark:text-gray-500 mt-0.5">Words</span>
+        </div>
+      </div>
+
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-semibold text-emerald-700 dark:text-emerald-400 flex items-center gap-1">You're doing great! <span>✨</span></p>
+        <p class="text-lg font-bold text-gray-800 dark:text-gray-100 -mt-0.5">Keep going!</p>
+        <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-2">
+          <span>Daily Goal</span>
+          <span><span id="dailyDone" class="font-semibold text-emerald-600 dark:text-emerald-400">0</span> / <span id="dailyGoal">20</span></span>
+        </div>
+        <div class="w-full h-2 bg-emerald-100 dark:bg-emerald-900 rounded-full mt-1 overflow-hidden">
+          <div id="dailyBar" class="h-full bg-emerald-500 rounded-full transition-all duration-500" style="width:0%"></div>
+        </div>
+      </div>
+
+      <div class="pl-3 border-l border-emerald-200 dark:border-emerald-800 flex flex-col items-center shrink-0">
+        <span class="text-2xl">🔥</span>
+        <span id="streakCount" class="text-xl font-extrabold text-gray-800 dark:text-gray-100 leading-none mt-0.5">0</span>
+        <span class="text-[10px] text-gray-500 dark:text-gray-400">Day Streak</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Search + filter ===== -->
+  <section class="px-5 mt-4 relative">
+    <div class="flex items-center gap-2">
+      <div class="flex-1 flex items-center gap-2 bg-gray-100 dark:bg-gray-900 rounded-full px-4 py-3">
+        <svg class="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 10a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <input id="searchInput" type="text" placeholder="Search vocabulary..." class="bg-transparent outline-none text-sm w-full placeholder-gray-400 dark:placeholder-gray-500 dark:text-gray-100">
+      </div>
+      <button id="filterBtn" class="w-11 h-11 shrink-0 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center text-gray-500 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800 transition">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h18M6 8h12M9 12h6M11 16h2"/></svg>
+      </button>
+    </div>
+
+    <!-- filter dropdown -->
+    <div id="filterPanel" class="filter-panel hidden absolute right-5 top-16 z-30 w-56 bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 p-4">
+      <p class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Level</p>
+      <div class="flex flex-wrap gap-2 mb-4" id="levelFilters">
+        <button data-level="all" class="lvl-chip px-3 py-1 rounded-full text-xs font-semibold bg-gray-900 text-white dark:bg-white dark:text-gray-900">All</button>
+        <button data-level="N5" class="lvl-chip px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">N5</button>
+        <button data-level="N4" class="lvl-chip px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">N4</button>
+      </div>
+      <p class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Type</p>
+      <select id="typeFilter" class="w-full text-sm rounded-lg bg-gray-100 dark:bg-gray-800 dark:text-gray-100 px-3 py-2 outline-none">
+        <option value="all">All types</option>
+      </select>
+      <label class="flex items-center gap-2 mt-4 text-sm text-gray-600 dark:text-gray-300">
+        <input type="checkbox" id="favOnly" class="rounded accent-emerald-500"> Favourites only
+      </label>
+    </div>
+  </section>
+
+  <!-- ===== Word list ===== -->
+  <section class="px-5 mt-5 pb-4">
+    <div id="wordList" class="flex flex-col gap-4"></div>
+
+    <div id="emptyState" class="hidden text-center py-16 text-gray-400">
+      <p class="text-4xl mb-2">🔍</p>
+      <p class="text-sm">No words found. Try a different search.</p>
+    </div>
+
+    <div id="loaderState" class="text-center py-16 text-gray-400">
+      <p class="text-sm animate-pulse">Loading vocabulary…</p>
+    </div>
+
+    <button id="loadMoreBtn" class="hidden w-full mt-2 py-3 rounded-2xl bg-gray-100 dark:bg-gray-900 text-sm font-semibold text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800 transition">
+      Load more words
+    </button>
+  </section>
+
+  <div class="h-24"></div>
+
+  <!-- ===== Bottom nav ===== -->
+  <nav class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-md">
+    <div class="bg-white dark:bg-gray-900 rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-gray-100 dark:border-gray-800 flex items-center justify-between px-2 py-2">
+      <a href="index.html" class="flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-full text-emerald-600 dark:text-emerald-400">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h4a1 1 0 001-1v-4h2v4a1 1 0 001 1h4a1 1 0 001-1V10"/></svg>
+        <span class="text-[10px] font-semibold">Home</span>
+      </a>
+      <a href="jlpt.html" class="flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-full text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span class="text-[10px] font-semibold">JLPT</span>
+      </a>
+      <a href="ssw.html" class="flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-full text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.42A12.02 12.02 0 0112 21.02 12.02 12.02 0 015.84 10.58L12 14z"/></svg>
+        <span class="text-[10px] font-semibold">SSW</span>
+      </a>
+      <a href="quiz.html" class="flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-full text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+        <span class="text-[10px] font-semibold">Quiz</span>
+      </a>
+      <a href="more.html" class="flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-full text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 12h.01M12 12h.01M18 12h.01"/></svg>
+        <span class="text-[10px] font-semibold">More</span>
+      </a>
+    </div>
+  </nav>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  const ACCENTS = [
+    { key:'mint',  border:'#22C55E', badgeBg:'#DCFCE7', badgeText:'#15803D', text:'#16A34A', iconBg:'#DCFCE7', iconText:'#16A34A' },
+    { key:'sky',   border:'#3B82F6', badgeBg:'#DBEAFE', badgeText:'#1D4ED8', text:'#2563EB', iconBg:'#DBEAFE', iconText:'#2563EB' },
+    { key:'lilac', border:'#A855F7', badgeBg:'#F3E8FF', badgeText:'#7E22CE', text:'#9333EA', iconBg:'#F3E8FF', iconText:'#9333EA' },
+    { key:'coral', border:'#F97316', badgeBg:'#FFEDD5', badgeText:'#C2410C', text:'#EA580C', iconBg:'#FFEDD5', iconText:'#EA580C' },
+  ];
+
+  const STORAGE = {
+    favs: 'sakura_vocab_favs',
+    lang: 'sakura_vocab_lang',
+    dark: 'sakura_vocab_dark',
+    streak: 'sakura_vocab_streak',
+    daily: 'sakura_vocab_daily',
+    cacheN5: 'sakura_vocab_cache_n5',
+    cacheN4: 'sakura_vocab_cache_n4',
+  };
+
+  let allWords = [];       // flattened {kana,kanji,english,meaning_np,example,example_en,example_np,level,type}
+  let filtered = [];
+  let shown = 0;
+  const PAGE_SIZE = 15;
+  let lang = localStorage.getItem(STORAGE.lang) || 'EN';
+  let currentLevel = 'all';
+  let currentType = 'all';
+  let favOnly = false;
+  let favs = JSON.parse(localStorage.getItem(STORAGE.favs) || '[]');
+
+  // ---------- Dark mode ----------
+  function applyDark(on){
+    document.documentElement.classList.toggle('dark', on);
+    localStorage.setItem(STORAGE.dark, on ? '1':'0');
+  }
+  applyDark(localStorage.getItem(STORAGE.dark) === '1');
+  document.getElementById('darkToggle').addEventListener('click', () => {
+    applyDark(!document.documentElement.classList.contains('dark'));
+  });
+
+  // ---------- Language toggle ----------
+  const langBtn = document.getElementById('langToggle');
+  function updateLangBtn(){ langBtn.textContent = lang; }
+  updateLangBtn();
+  langBtn.addEventListener('click', () => {
+    lang = lang === 'EN' ? 'NP' : 'EN';
+    localStorage.setItem(STORAGE.lang, lang);
+    updateLangBtn();
+    renderList(true);
+  });
+
+  // ---------- Fetch + cache vocab data ----------
+  // Tries each candidate filename in order until one is found (handles naming variants).
+  async function loadJSONWithFallback(candidateUrls, cacheKey){
+    const cached = localStorage.getItem(cacheKey);
+    if (cached) {
+      // refresh cache in background, ignore failures silently
+      tryUrls(candidateUrls).then(data => {
+        if (data) localStorage.setItem(cacheKey, JSON.stringify(data));
+      }).catch(()=>{});
+      return JSON.parse(cached);
+    }
+    const data = await tryUrls(candidateUrls);
+    if (!data) {
+      const err = new Error('None of these files were found next to list.html: ' + candidateUrls.join(', '));
+      err.candidates = candidateUrls;
+      throw err;
+    }
+    try { localStorage.setItem(cacheKey, JSON.stringify(data)); } catch(e){}
+    return data;
+  }
+
+  async function tryUrls(urls){
+    for (const url of urls) {
+      try {
+        const res = await fetch(url, { cache: 'no-store' });
+        if (res.ok) return await res.json();
+      } catch(e){ /* try next candidate */ }
+    }
+    return null;
+  }
+
+  function flatten(data, level){
+    const out = [];
+    (data.categories || []).forEach(cat => {
+      (cat.words || []).forEach(w => {
+        out.push({ ...w, level, type: cat.name });
+      });
+    });
+    return out;
+  }
+
+  async function init(){
+    const n5Candidates = ['./vocabulary-n5-data.json', './vocab-n5-data.json', './vocabulary-n5.json', './vocab-n5.json'];
+    const n4Candidates = ['./vocabulary-n4-data.json', './vocab-n4-data.json', './vocabulary-n4.json', './vocab-n4.json'];
+
+    const results = await Promise.allSettled([
+      loadJSONWithFallback(n5Candidates, STORAGE.cacheN5),
+      loadJSONWithFallback(n4Candidates, STORAGE.cacheN4),
+    ]);
+
+    const [n5Result, n4Result] = results;
+    allWords = [];
+    if (n5Result.status === 'fulfilled') allWords.push(...flatten(n5Result.value, 'N5'));
+    if (n4Result.status === 'fulfilled') allWords.push(...flatten(n4Result.value, 'N4'));
+
+    if (allWords.length === 0) {
+      const missing = [];
+      if (n5Result.status === 'rejected') missing.push('N5 file (tried: ' + n5Candidates.join(', ') + ')');
+      if (n4Result.status === 'rejected') missing.push('N4 file (tried: ' + n4Candidates.join(', ') + ')');
+      document.getElementById('loaderState').innerHTML =
+        '<p class="text-sm text-red-400 px-4">Could not load vocabulary data.<br>Missing: ' + missing.join('<br>') +
+        '<br><br>Make sure the JSON file(s) are in the exact same folder as list.html, and that you\'re opening this page through a local server (not double-clicking the file) — browsers block file:// fetches.</p>';
+      return;
+    }
+
+    // Warn softly if only one of the two loaded
+    if (n5Result.status === 'rejected' || n4Result.status === 'rejected') {
+      const which = n5Result.status === 'rejected' ? 'N5' : 'N4';
+      console.warn('Sakura Vocabulary: could not load the ' + which + ' word list — showing only the words that did load.');
+    }
+
+    document.getElementById('totalCount').textContent = '/ ' + allWords.length;
+
+    buildTypeFilterOptions();
+    updateProgressUI();
+    applyFilters();
+    document.getElementById('loaderState').classList.add('hidden');
+  }
+
+  function buildTypeFilterOptions(){
+    const types = [...new Set(allWords.map(w => w.type))];
+    const sel = document.getElementById('typeFilter');
+    types.forEach(t => {
+      const opt = document.createElement('option');
+      opt.value = t; opt.textContent = t;
+      sel.appendChild(opt);
+    });
+  }
+
+  // ---------- Progress / streak (simple local tracking) ----------
+  function todayKey(){
+    const d = new Date();
+    return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+  }
+  function updateProgressUI(){
+    const total = allWords.length || 1;
+    const learned = favs.length;
+    document.getElementById('learnedCount').textContent = learned;
+    const pct = Math.min(1, learned/total);
+    const circumference = 213.6;
+    document.getElementById('progressRing').setAttribute('stroke-dashoffset', String(circumference*(1-pct)));
+
+    const daily = JSON.parse(localStorage.getItem(STORAGE.daily) || '{}');
+    const done = daily.date === todayKey() ? (daily.count||0) : 0;
+    const goal = 20;
+    document.getElementById('dailyDone').textContent = done;
+    document.getElementById('dailyGoal').textContent = goal;
+    document.getElementById('dailyBar').style.width = Math.min(100, (done/goal)*100) + '%';
+
+    let streak = JSON.parse(localStorage.getItem(STORAGE.streak) || '{"count":0,"last":null}');
+    if (streak.last !== todayKey()) {
+      const y = new Date(); y.setDate(y.getDate()-1);
+      const yKey = y.getFullYear()+'-'+(y.getMonth()+1)+'-'+y.getDate();
+      streak.count = (streak.last === yKey) ? streak.count + 1 : 1;
+      streak.last = todayKey();
+      localStorage.setItem(STORAGE.streak, JSON.stringify(streak));
+    }
+    document.getElementById('streakCount').textContent = streak.count;
+  }
+
+  function bumpDaily(){
+    const daily = JSON.parse(localStorage.getItem(STORAGE.daily) || '{}');
+    if (daily.date !== todayKey()) { daily.date = todayKey(); daily.count = 0; }
+    daily.count = (daily.count||0) + 1;
+    localStorage.setItem(STORAGE.daily, JSON.stringify(daily));
+    updateProgressUI();
+  }
+
+  // ---------- Search / filters ----------
+  const searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener('input', () => applyFilters());
+
+  const filterBtn = document.getElementById('filterBtn');
+  const filterPanel = document.getElementById('filterPanel');
+  filterBtn.addEventListener('click', () => filterPanel.classList.toggle('hidden'));
+  document.addEventListener('click', (e) => {
+    if (!filterPanel.contains(e.target) && e.target !== filterBtn && !filterBtn.contains(e.target)) {
+      filterPanel.classList.add('hidden');
+    }
+  });
+
+  document.getElementById('levelFilters').addEventListener('click', (e) => {
+    const btn = e.target.closest('.lvl-chip');
+    if (!btn) return;
+    currentLevel = btn.dataset.level;
+    document.querySelectorAll('.lvl-chip').forEach(b => {
+      b.className = 'lvl-chip px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300';
+    });
+    btn.className = 'lvl-chip px-3 py-1 rounded-full text-xs font-semibold bg-gray-900 text-white dark:bg-white dark:text-gray-900';
+    applyFilters();
+  });
+
+  document.getElementById('typeFilter').addEventListener('change', (e) => {
+    currentType = e.target.value;
+    applyFilters();
+  });
+
+  document.getElementById('favOnly').addEventListener('change', (e) => {
+    favOnly = e.target.checked;
+    applyFilters();
+  });
+
+  function applyFilters(){
+    const q = searchInput.value.trim().toLowerCase();
+    filtered = allWords.filter(w => {
+      if (currentLevel !== 'all' && w.level !== currentLevel) return false;
+      if (currentType !== 'all' && w.type !== currentType) return false;
+      if (favOnly && !favs.includes(wordId(w))) return false;
+      if (!q) return true;
+      return (w.kana||'').toLowerCase().includes(q)
+        || (w.kanji||'').toLowerCase().includes(q)
+        || (w.english||'').toLowerCase().includes(q)
+        || (w.meaning_np||'').toLowerCase().includes(q);
+    });
+    renderList(true);
+  }
+
+  function wordId(w){ return w.level + '|' + w.kana + '|' + (w.kanji||''); }
+
+  // ---------- Rendering ----------
+  const listEl = document.getElementById('wordList');
+  const emptyEl = document.getElementById('emptyState');
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+  function renderList(reset){
+    if (reset) { listEl.innerHTML = ''; shown = 0; }
+    emptyEl.classList.toggle('hidden', filtered.length !== 0);
+
+    const next = filtered.slice(shown, shown + PAGE_SIZE);
+    next.forEach((w, i) => listEl.appendChild(renderCard(w, shown + i)));
+    shown += next.length;
+
+    loadMoreBtn.classList.toggle('hidden', shown >= filtered.length);
+  }
+
+  loadMoreBtn.addEventListener('click', () => renderList(false));
+
+  function renderCard(w, idx){
+    const accent = ACCENTS[idx % ACCENTS.length];
+    const id = wordId(w);
+    const isFav = favs.includes(id);
+    const num = String(idx + 1).padStart(2, '0');
+    const meaning = lang === 'EN' ? w.english : (w.meaning_np || w.english);
+    const exampleTranslation = lang === 'EN' ? w.example_en : (w.example_np || w.example_en);
+
+    const card = document.createElement('div');
+    card.className = 'card-enter bg-white dark:bg-gray-900 rounded-2xl shadow-[0_2px_16px_rgba(0,0,0,0.05)] dark:shadow-none border border-gray-50 dark:border-gray-800 pl-4 pr-3 py-4 flex gap-3';
+    card.style.borderLeft = `4px solid ${accent.border}`;
+
+    card.innerHTML = `
+      <div class="flex flex-col items-center gap-2 shrink-0 pt-0.5">
+        <span class="w-9 h-9 rounded-xl flex items-center justify-center text-xs font-extrabold" style="background:${accent.badgeBg};color:${accent.badgeText}">${num}</span>
+        <span class="px-2 py-0.5 rounded-full text-[10px] font-bold" style="background:${accent.badgeBg};color:${accent.badgeText}">${w.level}</span>
+      </div>
+
+      <div class="flex-1 min-w-0">
+        <div class="flex items-start justify-between gap-2">
+          <div class="min-w-0">
+            <div class="flex items-baseline gap-2 flex-wrap">
+              <span class="jp text-2xl font-bold leading-tight">${w.kanji ? w.kanji : w.kana}</span>
+              ${w.kanji ? `<span class="jp text-sm text-gray-400 dark:text-gray-500">${w.kana}</span>` : ''}
+            </div>
+            <p class="text-sm font-semibold mt-0.5" style="color:${accent.text}">${escapeHtml(meaning)}</p>
+          </div>
+          <div class="flex flex-col items-center gap-2 shrink-0">
+            <button class="speak-btn w-9 h-9 rounded-full flex items-center justify-center hover:scale-105 transition" style="background:${accent.iconBg};color:${accent.iconText}">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10a7.971 7.971 0 00-2.343-5.657 1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.983 5.983 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.987 3.987 0 0013 10a3.987 3.987 0 00-1.172-2.828 1 1 0 010-1.415z"/></svg>
+            </button>
+            <button class="fav-btn w-9 h-9 rounded-full flex items-center justify-center transition ${isFav ? 'text-rose-500' : 'text-gray-300 dark:text-gray-600'} hover:scale-105">
+              <svg class="w-5 h-5" fill="${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-100 dark:border-gray-800 mt-3 pt-2">
+          <p class="jp text-sm text-gray-700 dark:text-gray-300 leading-snug">${w.example || ''}</p>
+          <p class="text-xs text-gray-400 dark:text-gray-500 mt-0.5">${escapeHtml(exampleTranslation || '')}</p>
+        </div>
+      </div>
+    `;
+
+    card.querySelector('.speak-btn').addEventListener('click', () => speak(w.kanji || w.kana));
+    card.querySelector('.fav-btn').addEventListener('click', (e) => toggleFav(id, e.currentTarget));
+
+    return card;
+  }
+
+  function toggleFav(id, btn){
+    const already = favs.includes(id);
+    if (already) {
+      favs = favs.filter(f => f !== id);
+      btn.classList.remove('text-rose-500');
+      btn.classList.add('text-gray-300','dark:text-gray-600');
+      btn.querySelector('svg').setAttribute('fill','none');
+    } else {
+      favs.push(id);
+      btn.classList.add('text-rose-500');
+      btn.classList.remove('text-gray-300','dark:text-gray-600');
+      btn.querySelector('svg').setAttribute('fill','currentColor');
+      bumpDaily();
+    }
+    localStorage.setItem(STORAGE.favs, JSON.stringify(favs));
+    updateProgressUI();
+  }
+
+  function speak(text){
+    if (!('speechSynthesis' in window) || !text) return;
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'ja-JP';
+    u.rate = 0.85;
+    window.speechSynthesis.speak(u);
+  }
+
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str || '';
+    return div.innerHTML;
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>

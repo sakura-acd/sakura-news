@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vocabulary — Sakura</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans:['Outfit','sans-serif'], jp:['"Noto Sans JP"','sans-serif'] },
+          colors: {
+            blue:   { DEFAULT:'#7eb8e4', deep:'#3a7cbf' },
+            teal:   { DEFAULT:'#6ecec8', deep:'#2a9d8f' },
+            mint:   { DEFAULT:'#80d4a8', deep:'#27ae72' },
+            coral:  { DEFAULT:'#f4a57a', deep:'#e0693a' },
+            butter: { DEFAULT:'#f5da8a', deep:'#d4a017' },
+            ink:    { DEFAULT:'#1f2937', 2:'#475569', muted:'#94a3b8' },
+            bg:     { DEFAULT:'#f5f8fc', surface:'#ffffff', s2:'#eef2f7' },
+          },
+          borderRadius: { xl2:'1.25rem', xl3:'1.75rem', xl4:'2.25rem' },
+          boxShadow: { card:'0 2px 16px rgba(15,23,42,.07)', md2:'0 4px 24px rgba(15,23,42,.12)' },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family:'Outfit',sans-serif; }
+    .jp  { font-family:'"Noto Sans JP"',sans-serif; }
+
+    .mesh-light {
+      background: radial-gradient(ellipse at 18% 12%,#d8edf8 0%,transparent 52%),
+                  radial-gradient(ellipse at 82% 88%,#d2f1ec 0%,transparent 52%),
+                  #f4f7fb;
+    }
+    .mesh-dark {
+      background: radial-gradient(ellipse at 18% 12%,#0f2236 0%,transparent 52%),
+                  radial-gradient(ellipse at 82% 88%,#0b2120 0%,transparent 52%),
+                  #0c1220;
+    }
+
+    /* Table rows */
+    .vocab-row {
+      display:grid;
+      grid-template-columns: 2rem 1fr 1.1fr 1.5fr;
+      align-items:center;
+      gap:0;
+      border-bottom:1px solid #eef2f7;
+      cursor:pointer;
+      transition:background .12s;
+    }
+    .vocab-row:hover { background:rgba(126,184,228,.07); }
+    .vocab-row.active { background:rgba(126,184,228,.1); }
+
+    /* Example slide-down */
+    .example-box {
+      grid-column: 1 / -1;
+      overflow:hidden;
+      max-height:0;
+      transition:max-height .28s ease, padding .18s ease;
+    }
+    .example-box.open { max-height:200px; }
+
+    /* Speaker button */
+    .speak-btn {
+      background:none; border:none; cursor:pointer; padding:2px 6px;
+      color:#7eb8e4; transition:color .15s;
+    }
+    .speak-btn:hover { color:#3a7cbf; }
+
+    /* Search */
+    #search-input {
+      width:100%; padding:10px 14px 10px 40px;
+      border:2px solid #e2e8f0; border-radius:12px;
+      background:#fff; font-size:14px; font-family:'Outfit',sans-serif;
+      color:#1f2937; outline:none;
+      transition:border-color .15s, box-shadow .15s;
+    }
+    #search-input:focus { border-color:#7eb8e4; box-shadow:0 0 0 3px rgba(126,184,228,.15); }
+    #search-input::placeholder { color:#94a3b8; }
+
+    /* Sticky header */
+    .table-header {
+      display:grid;
+      grid-template-columns: 2rem 1fr 1.1fr 1.5fr;
+      position:sticky; top:0; z-index:10;
+      background:rgba(248,250,252,.97);
+      backdrop-filter:blur(8px);
+      border-bottom:2px solid #e2e8f0;
+    }
+
+    /* Dark mode */
+    body.dark #topbar { background:rgba(14,19,32,.96)!important; border-color:#1d2740!important; }
+    body.dark .vocab-row { border-color:#1d2740!important; }
+    body.dark .vocab-row:hover { background:rgba(126,184,228,.06)!important; }
+    body.dark .vocab-row.active { background:rgba(126,184,228,.1)!important; }
+    body.dark .table-header { background:rgba(12,18,32,.97)!important; border-color:#1d2740!important; }
+    body.dark .example-box { border-color:#1d2740!important; }
+    body.dark #search-input { background:#1d2740!important; border-color:#2a3d56!important; color:#e8eef6!important; }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:none} }
+    .fu { animation:fadeUp .35s ease both; }
+
+    ::-webkit-scrollbar { width:4px; }
+    ::-webkit-scrollbar-thumb { background:#c2d3e3; border-radius:99px; }
+  </style>
+</head>
+
+<body class="mesh-light min-h-screen text-ink" id="body">
+
+<!-- ═══ TOPBAR ═══ -->
+<header id="topbar" class="sticky top-0 z-40 bg-white/93 backdrop-blur-md border-b border-slate-100 shadow-sm px-4 py-2.5 flex items-center gap-3">
+  <a href="jlpt.html" class="flex items-center gap-1.5 text-sm font-semibold text-ink-2 hover:text-blue-deep transition-colors flex-shrink-0">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+    JLPT
+  </a>
+  <div class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 pointer-events-none select-none">
+    <span class="text-base">📚</span>
+    <span class="font-extrabold text-base text-ink tracking-tight" id="page-title">Vocabulary</span>
+    <span id="level-badge" class="text-[10px] font-bold text-white px-2 py-0.5 rounded-full" style="background:#3a7cbf;">N5</span>
+  </div>
+  <div class="ml-auto flex items-center gap-2 flex-shrink-0">
+    <button onclick="toggleDark()" class="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center text-ink-muted hover:text-blue-deep transition-all" style="background:#f8fafc;">
+      <svg id="theme-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ═══ LOADING ═══ -->
+<div id="loading-screen" class="flex flex-col items-center justify-center gap-4" style="min-height:60vh;">
+  <div class="text-4xl">📚</div>
+  <div class="text-sm font-semibold text-ink-muted">Loading vocabulary…</div>
+  <div class="w-32 h-1.5 bg-bg-s2 rounded-full overflow-hidden">
+    <div class="h-full bg-blue-deep rounded-full animate-pulse" style="width:65%"></div>
+  </div>
+</div>
+
+<!-- ═══ MAIN ═══ -->
+<div id="main-screen" class="hidden max-w-3xl mx-auto" style="padding-bottom:130px;">
+
+  <!-- Search + count -->
+  <div class="px-4 pt-4 pb-3 sticky top-[53px] z-20" style="background:inherit;">
+    <div class="relative">
+      <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="search-input" type="text" placeholder="Search vocabulary…" oninput="filterList(this.value)"/>
+    </div>
+    <div class="flex items-center justify-between mt-2 px-1">
+      <span class="text-xs text-ink-muted" id="count-label">— words</span>
+      <button onclick="speakAll()" class="flex items-center gap-1 text-xs font-semibold text-blue-deep hover:opacity-75 transition-opacity">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+        Play all
+      </button>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="mx-4 rounded-xl3 overflow-hidden border border-slate-100 shadow-card" style="background:#fff;" id="table-wrap">
+
+    <!-- Header -->
+    <div class="table-header text-[11px] font-extrabold text-ink-muted uppercase tracking-wider">
+      <div class="px-3 py-2.5">#</div>
+      <div class="px-2 py-2.5">Word</div>
+      <div class="px-2 py-2.5">Kanji</div>
+      <div class="px-2 py-2.5">Meaning</div>
+    </div>
+
+    <!-- Rows -->
+    <div id="vocab-list"></div>
+  </div>
+
+  <!-- No results -->
+  <div id="no-results" class="hidden text-center py-16">
+    <div class="text-4xl mb-3">🔍</div>
+    <div class="font-bold text-ink-2">No results found</div>
+    <div class="text-sm text-ink-muted mt-1">Try a different word</div>
+  </div>
+
+  <!-- Ad slot -->
+  <div class="mx-4 mt-4 rounded-xl overflow-hidden" style="min-height:90px;">
+    <ins class="adsbygoogle" style="display:block;width:100%;min-height:90px;"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+         data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+  </div>
+
+</div>
+
+<!-- ═══ ERROR ═══ -->
+<div id="error-screen" class="hidden flex flex-col items-center justify-center gap-4 px-6 text-center" style="min-height:60vh;">
+  <div class="text-4xl">⚠️</div>
+  <div class="font-bold text-ink">Could not load vocabulary</div>
+  <div class="text-sm text-ink-muted" id="err-msg">Make sure the JSON file is in the same folder.</div>
+  <a href="jlpt.html" class="px-5 py-2.5 rounded-xl text-sm font-bold text-white" style="background:#3a7cbf;">← Back</a>
+</div>
+
+<!-- ═══ BOTTOM NAV ═══ -->
+<nav class="lg:hidden fixed bottom-0 left-0 right-0 z-40"
+     style="background:rgba(255,255,255,.98);backdrop-filter:blur(20px);box-shadow:0 -1px 0 rgba(0,0,0,.07),0 -6px 24px rgba(15,23,42,.08);">
+  <div class="flex items-center" style="height:60px;">
+    <a href="index.html" class="flex-1 flex flex-col items-center justify-center gap-1 py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:36px;height:26px;background:#eef2f7;">
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg>
+      </div>
+      <span style="font-size:9px;font-weight:600;color:#94a3b8;">Home</span>
+    </a>
+    <a href="jlpt.html" class="flex-1 flex flex-col items-center justify-center gap-1 relative py-2">
+      <span class="absolute top-0 left-1/2 -translate-x-1/2 rounded-b-full" style="width:28px;height:3px;background:#3a7cbf;"></span>
+      <div class="flex items-center justify-center rounded-xl" style="width:36px;height:26px;background:rgba(58,124,191,.13);">
+        <span style="font-size:9px;font-weight:800;color:#3a7cbf;">JLPT</span>
+      </div>
+      <span style="font-size:9px;font-weight:800;color:#3a7cbf;">JLPT</span>
+    </a>
+    <a href="ssw.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 py-1" style="margin-top:-16px;">
+      <div class="flex items-center justify-center rounded-xl2" style="width:46px;height:46px;background:linear-gradient(135deg,#6ecec8,#2a9d8f);box-shadow:0 5px 16px rgba(42,157,143,.32);">
+        <span class="jp text-white font-bold" style="font-size:20px;line-height:1;">特</span>
+      </div>
+      <span style="font-size:8px;font-weight:700;color:#2a9d8f;margin-top:2px;">SSW</span>
+    </a>
+    <a href="bjt.html" class="flex-1 flex flex-col items-center justify-center gap-1 py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:36px;height:26px;background:#eef2f7;">
+        <span style="font-size:9px;font-weight:800;color:#d4a017;">BJT</span>
+      </div>
+      <span style="font-size:9px;font-weight:600;color:#94a3b8;">BJT</span>
+    </a>
+    <a href="other.html" class="flex-1 flex flex-col items-center justify-center gap-1 py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:36px;height:26px;background:#eef2f7;">
+        <svg width="14" height="14" fill="none" stroke="#94a3b8" stroke-width="2" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg>
+      </div>
+      <span style="font-size:9px;font-weight:600;color:#94a3b8;">Other</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+/* ═══════════════════════════════
+   CONFIG — URL param: ?level=n5
+═══════════════════════════════ */
+const params    = new URLSearchParams(location.search);
+const LEVEL     = params.get('level') || 'n5';
+const JSON_FILE = `vocab-${LEVEL}.json`;
+
+const LEVEL_COLORS = {
+  n5:'#3a7cbf', n4:'#2a9d8f', n3:'#27ae72', n2:'#d4a017', n1:'#e0693a'
+};
+
+let allWords    = [];
+let filtered    = [];
+let openIdx     = -1;    // currently expanded row
+let speakQueue  = [];
+let speakTimer  = null;
+
+/* ═══ INIT ═══ */
+document.addEventListener('DOMContentLoaded', () => {
+  const lvlUp = LEVEL.toUpperCase();
+  document.getElementById('level-badge').textContent = lvlUp;
+  document.getElementById('level-badge').style.background = LEVEL_COLORS[LEVEL] || '#3a7cbf';
+  document.getElementById('page-title').textContent = `Vocab ${lvlUp}`;
+
+  fetch(JSON_FILE)
+    .then(r => { if(!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+    .then(data => {
+      allWords = Array.isArray(data) ? data : (data.words || data.vocab || []);
+      if(!allWords.length) throw new Error('No words in JSON.');
+      filtered = [...allWords];
+      document.getElementById('loading-screen').classList.add('hidden');
+      document.getElementById('main-screen').classList.remove('hidden');
+      renderList();
+      try { (window.adsbygoogle=window.adsbygoogle||[]).push({}); } catch(e) {}
+    })
+    .catch(err => {
+      document.getElementById('loading-screen').classList.add('hidden');
+      document.getElementById('error-screen').classList.remove('hidden');
+      document.getElementById('err-msg').textContent = err.message;
+    });
+});
+
+/* ═══ RENDER LIST ═══ */
+function renderList() {
+  const container = document.getElementById('vocab-list');
+  const count     = document.getElementById('count-label');
+  const noRes     = document.getElementById('no-results');
+
+  if(!filtered.length) {
+    container.innerHTML = '';
+    noRes.classList.remove('hidden');
+    count.textContent = '0 words';
+    return;
+  }
+
+  noRes.classList.add('hidden');
+  count.textContent = `${filtered.length} word${filtered.length !== 1 ? 's' : ''}`;
+
+  container.innerHTML = filtered.map((w, i) => `
+    <div class="vocab-row${openIdx === i ? ' active' : ''}" onclick="toggleRow(${i})" id="row-${i}">
+      <div class="px-3 py-3.5 text-[11px] font-bold text-ink-muted select-none">${i + 1}</div>
+
+      <!-- Word + kana + speaker -->
+      <div class="px-2 py-3.5 min-w-0">
+        <div class="flex items-center gap-1.5">
+          <span class="jp font-bold text-ink text-base leading-tight">${w.word}</span>
+          <button class="speak-btn" onclick="event.stopPropagation(); speak('${escQ(w.word)}')" title="Listen">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+            </svg>
+          </button>
+        </div>
+        <div class="jp text-[11px] text-ink-muted mt-0.5">${w.kana || ''}</div>
+      </div>
+
+      <!-- Kanji -->
+      <div class="px-2 py-3.5 min-w-0">
+        <span class="jp font-bold text-ink text-sm">${w.kanji || '—'}</span>
+      </div>
+
+      <!-- Meaning -->
+      <div class="px-2 py-3.5 min-w-0">
+        <span class="text-sm font-semibold text-ink-2 leading-snug">${w.meaning}</span>
+      </div>
+
+      <!-- Example (hidden until click) -->
+      <div class="example-box${openIdx === i ? ' open' : ''}" id="ex-${i}">
+        <div class="px-4 py-3 mx-3 mb-3 rounded-xl" style="background:rgba(126,184,228,.08);border:1px solid rgba(126,184,228,.2);">
+          <div class="flex items-center gap-2 mb-1.5">
+            <span class="text-[10px] font-extrabold text-blue-deep uppercase tracking-wider">Example 例文</span>
+            <button class="speak-btn" onclick="event.stopPropagation(); speak('${escQ(w.example || '')}')" title="Listen to example">
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+              </svg>
+            </button>
+          </div>
+          <div class="jp text-sm text-ink leading-loose">${w.example || '—'}</div>
+          <div class="text-xs text-ink-muted mt-1 leading-snug">${w.example_meaning || ''}</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ═══ TOGGLE ROW ═══ */
+function toggleRow(i) {
+  const prev = openIdx;
+  openIdx = (openIdx === i) ? -1 : i;
+
+  // Reset previous
+  if(prev >= 0 && prev !== i) {
+    const prevRow = document.getElementById(`row-${prev}`);
+    const prevEx  = document.getElementById(`ex-${prev}`);
+    if(prevRow) prevRow.classList.remove('active');
+    if(prevEx)  prevEx.classList.remove('open');
+  }
+
+  const row = document.getElementById(`row-${i}`);
+  const ex  = document.getElementById(`ex-${i}`);
+  if(!row || !ex) return;
+
+  if(openIdx === i) {
+    row.classList.add('active');
+    ex.classList.add('open');
+    // Scroll into view smoothly
+    setTimeout(() => row.scrollIntoView({ behavior:'smooth', block:'nearest' }), 50);
+  } else {
+    row.classList.remove('active');
+    ex.classList.remove('open');
+  }
+}
+
+/* ═══ SEARCH ═══ */
+function filterList(query) {
+  openIdx = -1;
+  const q = query.trim().toLowerCase();
+  if(!q) {
+    filtered = [...allWords];
+  } else {
+    filtered = allWords.filter(w =>
+      (w.word    && w.word.includes(query)) ||
+      (w.kana    && w.kana.includes(q)) ||
+      (w.kanji   && w.kanji.includes(query)) ||
+      (w.meaning && w.meaning.toLowerCase().includes(q))
+    );
+  }
+  renderList();
+}
+
+/* ═══ SPEAK ═══ */
+function speak(text) {
+  if(!window.speechSynthesis || !text) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'ja-JP'; u.rate = 0.85;
+  const voices = window.speechSynthesis.getVoices();
+  const jp = voices.find(v => v.lang.startsWith('ja'));
+  if(jp) u.voice = jp;
+  window.speechSynthesis.speak(u);
+}
+
+function speakAll() {
+  if(!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  let i = 0;
+  function next() {
+    if(i >= filtered.length) return;
+    const u = new SpeechSynthesisUtterance(filtered[i].word);
+    u.lang = 'ja-JP'; u.rate = 0.8;
+    const voices = window.speechSynthesis.getVoices();
+    const jp = voices.find(v => v.lang.startsWith('ja'));
+    if(jp) u.voice = jp;
+    u.onend = () => { i++; setTimeout(next, 400); };
+    window.speechSynthesis.speak(u);
+  }
+  next();
+}
+
+if(window.speechSynthesis) {
+  window.speechSynthesis.getVoices();
+  if(window.speechSynthesis.onvoiceschanged !== undefined)
+    window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+}
+
+function escQ(str) {
+  return (str || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+}
+//ali maja aayena tehi pani thikai xa 
+// let isdark= false;
+// comst MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';'
+// //
+/* ═══ DARK MODE ═══ */
+let isDark = false;
+const MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+const SUN  = '<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/>';
+function toggleDark() {
+  isDark = !isDark;
+  document.body.className = isDark ? 'mesh-dark min-h-screen text-slate-100 dark' : 'mesh-light min-h-screen text-ink';
+  document.getElementById('theme-icon').innerHTML = isDark ? SUN : MOON;
+  const tw = document.getElementById('table-wrap');
+  if(tw) tw.style.background = isDark ? '#151d2e' : '#fff';
+}
+</script>
+</body>
+</html>

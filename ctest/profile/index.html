@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9PW2QXLNX2"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9PW2QXLNX2');</script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌸%3C/text%3E%3C/svg%3E"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Profile — Sakura</title>
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#e8799a"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="Sakura"/>
+  <link rel="apple-touch-icon" href="icons/icon-192.png"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config={theme:{extend:{fontFamily:{sans:['Outfit','sans-serif'],jp:['"Noto Sans JP"','sans-serif']},colors:{blue:{DEFAULT:'#7eb8e4',deep:'#3a7cbf'},teal:{DEFAULT:'#6ecec8',deep:'#2a9d8f'},mint:{DEFAULT:'#80d4a8',deep:'#27ae72'},coral:{DEFAULT:'#f4a57a',deep:'#e0693a'},butter:{DEFAULT:'#f5da8a',deep:'#d4a017'},lilac:{DEFAULT:'#c4a8e0',deep:'#8b5cf6'},ink:{DEFAULT:'#1f2937',2:'#475569',muted:'#94a3b8'},bg:{DEFAULT:'#f5f8fc',surface:'#ffffff',s2:'#eef2f7'}},borderRadius:{xl2:'1.25rem',xl3:'1.75rem',xl4:'2.25rem'},boxShadow:{card:'0 2px 16px rgba(15,23,42,.07)',md2:'0 4px 24px rgba(15,23,42,.12)',lg2:'0 8px 40px rgba(15,23,42,.16)'}}}};
+  </script>
+  <style>
+    body{font-family:'Outfit',sans-serif;transition:background .3s,color .3s;}
+    .jp{font-family:'"Noto Sans JP"',sans-serif;}
+    .mesh-light{background:radial-gradient(ellipse at 18% 12%,#d8edf8 0%,transparent 52%),radial-gradient(ellipse at 82% 88%,#d2f1ec 0%,transparent 52%),radial-gradient(ellipse at 58% 32%,#e6e2f6 0%,transparent 38%),#f4f7fb;}
+    .mesh-dark{background:radial-gradient(ellipse at 18% 12%,#0f2236 0%,transparent 52%),radial-gradient(ellipse at 82% 88%,#0b2120 0%,transparent 52%),#0c1220;}
+    @keyframes ring-pulse{0%,100%{box-shadow:0 0 0 0 rgba(110,206,200,.55);}50%{box-shadow:0 0 0 6px rgba(110,206,200,0);}}
+    .avatar-ring{background:conic-gradient(#6ecec8 0% 72%,#e2e8f0 72% 100%);border-radius:9999px;padding:3px;animation:ring-pulse 2.4s ease infinite;display:inline-block;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+    .fu{animation:fadeUp .45s ease both;}
+    .d1{animation-delay:.07s}.d2{animation-delay:.14s}.d3{animation-delay:.21s}.d4{animation-delay:.28s}.d5{animation-delay:.35s}
+    .card-lift{transition:transform .18s ease,box-shadow .18s ease;}
+    .card-lift:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(15,23,42,.12);}
+    .s-act{background:#eef5fc;color:#3a7cbf;font-weight:600;}
+    .drop{transition:opacity .15s ease,transform .15s ease;}
+    .drop.closed{opacity:0;transform:translateY(-6px);pointer-events:none;}
+    .drop.open{opacity:1;transform:translateY(0);pointer-events:all;}
+    #auth-loading{display:none;position:fixed;inset:0;z-index:999;align-items:center;justify-content:center;flex-direction:column;gap:14px;}
+    #auth-loading.show{display:flex;}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    /* Progress Modal */
+    .prog-overlay{display:none;position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.45);backdrop-filter:blur(6px);}
+    .prog-overlay.open{display:flex;align-items:flex-end;justify-content:center;}
+    @media(min-width:640px){.prog-overlay.open{align-items:center;}}
+    .prog-sheet{background:#fff;border-radius:1.75rem 1.75rem 0 0;width:100%;max-width:500px;max-height:90vh;overflow-y:auto;padding:24px 20px 36px;animation:slideUp .3s cubic-bezier(.22,1,.36,1);}
+    @media(min-width:640px){.prog-sheet{border-radius:1.75rem;animation:popIn .28s cubic-bezier(.22,1,.36,1);}}
+    @keyframes slideUp{from{transform:translateY(100%);opacity:0;}to{transform:translateY(0);opacity:1;}}
+    @keyframes popIn{from{transform:scale(0.93);opacity:0;}to{transform:scale(1);opacity:1;}}
+    .drag-handle{width:36px;height:4px;border-radius:4px;background:#e2e8f0;margin:0 auto 18px;}
+    .bk-bar{height:3px;border-radius:2px;margin-top:8px;overflow:hidden;background:#eef2f7;}
+    .bk-bar-fill{height:100%;border-radius:2px;transition:width .8s cubic-bezier(.22,1,.36,1);}
+    .sk-pulse{animation:skPulse 1.3s ease infinite;}
+    @keyframes skPulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+    /* Dark mode */
+    body.dark #sidebar-el{background:rgba(14,19,32,.96)!important;border-color:#1d2740!important;}
+    body.dark #topbar,
+    body.dark #botnav{background:rgba(14,19,32,.97)!important;border-color:#1d2740!important;}
+    body.dark .surface{background:#151d2e!important;border-color:#1d2740!important;}
+    body.dark .prog-sheet{background:#151d2e!important;}
+    body.dark .t-ink{color:#e8eef6!important;} body.dark .t-ink2{color:#8da4c0!important;} body.dark .t-muted{color:#4a607a!important;}
+    body.dark .divider{border-color:#1d2740!important;}
+    body.dark .avatar-ring{background:conic-gradient(#6ecec8 0% 72%,#1d2740 72% 100%);}
+    body.dark .bk-bar{background:#1d2740;}
+    body.dark #lang-drop,body.dark #desk-lang-drop{background:#151d2e!important;border-color:#1d2740!important;}
+    body.dark #lang-drop a,body.dark #desk-lang-drop a{color:#8da4c0!important;}
+    ::-webkit-scrollbar{width:4px;} ::-webkit-scrollbar-thumb{background:#c2d3e3;border-radius:99px;}
+  </style>
+</head>
+<body class="mesh-light min-h-screen text-ink" id="body">
+
+<!-- LOADING -->
+<div id="auth-loading" class="mesh-light">
+  <div class="w-16 h-16 rounded-xl2 bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow-lg2">
+    <span class="jp text-white font-bold text-2xl">識</span>
+  </div>
+  <div class="font-extrabold text-lg t-ink">Sakura</div>
+  <div style="width:24px;height:24px;border:2.5px solid #eef2f7;border-top-color:#3a7cbf;border-radius:50%;animation:spin .7s linear infinite;"></div>
+</div>
+
+<!-- ═══════════ SIDEBAR (matches homepage) ═══════════ -->
+<aside id="sidebar-el" class="hidden lg:flex flex-col fixed top-0 left-0 h-full w-60 bg-bg-surface surface border-r border-slate-100 divider z-30 shadow-card">
+
+  <div class="px-4 py-4 flex items-center gap-3 border-b border-slate-100 divider">
+    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow-md flex-shrink-0"><span class="jp text-white font-bold text-base">識</span></div>
+    <div class="min-w-0 flex-1">
+      <div class="font-bold text-base tracking-tight t-ink leading-tight">Sakura</div>
+      <div class="text-xs t-muted">日本語 Learning</div>
+    </div>
+    <div class="relative flex-shrink-0" id="desk-lang-wrap">
+      <button onclick="toggleDeskLang()" class="flex items-center gap-1 px-2 py-1.5 rounded-lg border border-slate-200 divider text-xs font-bold t-ink2 transition-all hover:border-blue/60 hover:text-blue-deep" style="background:#f8fafc;">
+        <span id="desk-lang-flag">🇬🇧</span><span id="desk-lang-code" class="ml-0.5">EN</span>
+        <svg id="desk-lang-chev" class="w-3 h-3 t-muted transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div id="desk-lang-drop" class="drop closed absolute right-0 top-full mt-1.5 w-44 bg-white surface rounded-xl shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+        <a href="index.html" onclick="setLang('EN','🇬🇧')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors">🇬🇧 English</a>
+        <a href="coming-soon.html" onclick="setLang('NP','🇳🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇳🇵 नेपाली</a>
+        <a href="coming-soon.html" onclick="setLang('HI','🇮🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇮🇳 हिन्दी</a>
+        <a href="coming-soon.html" onclick="setLang('SI','🇱🇰')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇱🇰 සිංහල</a>
+        <a href="coming-soon.html" onclick="setLang('BN','🇧🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇧🇩 বাংলা</a>
+        <a href="coming-soon.html" onclick="setLang('VI','🇻🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇻🇳 Tiếng Việt</a>
+        <a href="coming-soon.html" onclick="setLang('ID','🇮🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇮🇩 Indonesia</a>
+        <a href="coming-soon.html" onclick="setLang('TH','🇹🇭')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇹🇭 ภาษาไทย</a>
+        <a href="coming-soon.html" onclick="setLang('JP','🇯🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇯🇵 日本語</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="px-5 py-4 flex items-center gap-3 border-b border-slate-100 divider">
+    <div id="sb-avatar-ring" class="avatar-ring flex-shrink-0">
+      <div id="sb-avatar-inner" class="w-9 h-9 rounded-full bg-gradient-to-br from-blue to-teal flex items-center justify-center text-white font-bold text-sm overflow-hidden">S</div>
+    </div>
+    <div class="flex-1 min-w-0"><div class="font-semibold text-sm t-ink leading-tight" id="sb-name">...</div></div>
+  </div>
+
+  <nav class="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
+    <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg>Dashboard</a>
+    <a href="learn.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Learn</a>
+    <a href="quiz/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg>Quiz</a>
+    <div class="pt-4 pb-1 px-3 text-[10px] font-bold tracking-widest t-muted uppercase">Courses</div>
+    <a href="jlpt/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>JLPT</a>
+    <a href="ssw/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-mint/20 text-mint-deep font-bold text-[10px] flex items-center justify-center">SSW</span> SSW</a>
+    <div class="pt-4 pb-1 px-3 text-[10px] font-bold tracking-widest t-muted uppercase">General</div>
+    <a href="profile/index.html" class="s-act flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>My Profile</a>
+    <a href="other/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>More</a>
+  </nav>
+
+  <div class="px-4 py-4 border-t border-slate-100 divider">
+    <button onclick="toggleDark()" class="flex items-center gap-2 text-xs t-muted hover:text-ink transition-colors">
+      <svg id="desk-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span id="desk-lbl">Dark mode</span>
+    </button>
+  </div>
+</aside>
+
+<!-- ═══════════ TOPBAR (mobile, matches homepage) ═══════════ -->
+<header id="topbar" class="lg:hidden sticky top-0 z-40 bg-white/93 backdrop-blur-md border-b border-slate-100 shadow-sm px-4 py-2.5 flex items-center gap-2">
+  <a href="index.html" class="t-ink2 flex-shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></a>
+  <div class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 pointer-events-none select-none">
+    <span class="font-extrabold text-base t-ink tracking-tight">My Profile</span>
+  </div>
+  <div class="ml-auto flex items-center gap-2 flex-shrink-0">
+    <div class="relative" id="lang-wrap">
+      <button onclick="toggleDrop('lang')" class="flex items-center gap-1 pl-2 pr-1.5 py-1.5 rounded-lg bg-bg-s2 border border-slate-200 text-xs font-bold t-ink2 hover:border-blue/60 transition-all">
+        <span id="lang-flag">🇬🇧</span><span id="lang-code" class="ml-0.5">EN</span>
+        <svg id="lang-chev" class="w-3 h-3 t-muted ml-0.5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div id="lang-drop" class="drop closed absolute right-0 top-full mt-1.5 w-44 bg-white rounded-xl shadow-lg2 border border-slate-100 overflow-hidden z-50">
+        <a href="index.html"    onclick="setLang('EN','🇬🇧')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors">🇬🇧 English</a>
+        <a href="coming-soon.html" onclick="setLang('NP','🇳🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100">🇳🇵 नेपाली</a>
+        <a href="coming-soon.html" onclick="setLang('HI','🇮🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100">🇮🇳 हिन्दी</a>
+        <a href="coming-soon.html" onclick="setLang('SI','🇱🇰')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100">🇱🇰 සිංහල</a>
+        <a href="coming-soon.html" onclick="setLang('BN','🇧🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100">🇧🇩 বাংলা</a>
+        <a href="coming-soon.html" onclick="setLang('VI','🇻🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100">🇻🇳 Tiếng Việt</a>
+        <a href="coming-soon.html" onclick="setLang('ID','🇮🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100">🇮🇩 Indonesia</a>
+        <a href="coming-soon.html" onclick="setLang('TH','🇹🇭')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100">🇹🇭 ภาษาไทย</a>
+        <a href="coming-soon.html" onclick="setLang('JP','🇯🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100">🇯🇵 日本語</a>
+      </div>
+    </div>
+    <button onclick="toggleDark()" class="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center t-muted" style="background:#f8fafc;">
+      <svg id="mob-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="lg:ml-60 min-h-screen pb-28 lg:pb-10">
+  <div class="max-w-2xl mx-auto px-5 lg:px-8 pt-6">
+
+    <!-- Hero card -->
+    <div class="bg-bg-surface surface rounded-xl4 shadow-card border border-slate-100 divider p-6 mb-4 fu relative overflow-hidden">
+      <div class="absolute top-0 left-0 right-0 h-1.5 rounded-t-xl4" style="background:linear-gradient(90deg,#7eb8e4,#6ecec8,#80d4a8);"></div>
+      <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5 pt-2">
+        <div class="flex-shrink-0 relative group cursor-pointer" onclick="document.getElementById('avatarInput').click()">
+          <div class="avatar-ring">
+            <div id="avatar-wrap" class="w-20 h-20 rounded-full bg-gradient-to-br from-blue to-teal flex items-center justify-center text-white font-extrabold text-3xl shadow-md2 overflow-hidden">S</div>
+          </div>
+          <div class="absolute inset-0 rounded-full bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          </div>
+        </div>
+        <input type="file" id="avatarInput" accept="image/*" style="display:none" onchange="handleAvatar(event)"/>
+        <div class="flex-1 min-w-0 text-center sm:text-left">
+          <h1 class="text-xl font-extrabold t-ink leading-tight mb-0.5" id="prof-name">Loading...</h1>
+          <p class="text-sm t-muted mb-2" id="prof-email"></p>
+          <div class="flex flex-wrap gap-2 justify-center sm:justify-start">
+            <span id="rank-badge" class="text-[11px] font-bold px-3 py-1 rounded-full" style="background:rgba(58,124,191,.1);color:#3a7cbf;">🏆 #—</span>
+            <span id="streak-badge" class="text-[11px] font-bold px-3 py-1 rounded-full" style="background:rgba(139,92,246,.1);color:#8b5cf6;">🔥 0 day streak</span>
+            <span id="vip-badge" class="hidden text-[11px] font-bold px-3 py-1 rounded-full" style="background:rgba(212,160,23,.12);color:#d4a017;">👑 VIP Member</span>
+          </div>
+        </div>
+        <button onclick="doLogout()" class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-200 hover:border-coral hover:text-coral-deep transition-all" style="background:#f8fafc;color:#475569;">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Logout
+        </button>
+      </div>
+    </div>
+
+    <!-- XP / Points -->
+    <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider p-5 mb-4 fu d1">
+      <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center gap-2"><span class="text-lg">⚡</span><span class="font-bold text-sm t-ink">Progress Points</span></div>
+        <span id="pts-val" class="text-sm font-extrabold" style="color:#3a7cbf;">0 pts</span>
+      </div>
+      <div class="h-2.5 rounded-full overflow-hidden" style="background:#eef2f7;">
+        <div id="pts-bar" class="h-full rounded-full" style="width:0%;background:linear-gradient(90deg,#7eb8e4,#6ecec8);transition:width 1s ease;"></div>
+      </div>
+      <p id="pts-rank" class="text-xs t-muted mt-1.5">Loading rank...</p>
+    </div>
+
+    <!-- Stats (now 4, adds Day Streak) -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4 fu d2">
+      <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 p-4 text-center">
+        <div class="text-2xl font-extrabold mb-0.5" id="stat-time" style="color:#3a7cbf;">—</div>
+        <div class="text-[11px] t-muted font-semibold">Min Studied<br/>This Month</div>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 p-4 text-center">
+        <div class="text-2xl font-extrabold mb-0.5" id="stat-quiz" style="color:#27ae72;">—</div>
+        <div class="text-[11px] t-muted font-semibold">Quizzes<br/>Completed</div>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 p-4 text-center">
+        <div class="text-2xl font-extrabold mb-0.5" id="stat-acc" style="color:#d4a017;">—</div>
+        <div class="text-[11px] t-muted font-semibold">Quiz<br/>Accuracy</div>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 p-4 text-center">
+        <div class="text-2xl font-extrabold mb-0.5" id="stat-streak" style="color:#8b5cf6;">—</div>
+        <div class="text-[11px] t-muted font-semibold">Day<br/>Streak</div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="grid grid-cols-2 gap-3 mb-4 fu d2">
+      <button onclick="openProgressModal()"
+        class="flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm text-white active:scale-95 transition-all"
+        style="background:linear-gradient(135deg,#3a7cbf,#2a9d8f);">
+        <svg width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Progress Track
+      </button>
+      <a href="chat.html"
+        class="flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm active:scale-95 transition-all border"
+        style="background:rgba(58,124,191,.08);color:#3a7cbf;border-color:rgba(58,124,191,.2);">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Community Chat
+      </a>
+    </div>
+
+    <!-- ═══ NEW: Continue Your Courses ═══ -->
+    <div class="mb-4 fu d2">
+      <h2 class="text-sm font-bold t-ink mb-3">Continue Your Courses</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <a href="jlpt/index.html" class="card-lift bg-bg-surface surface rounded-xl3 p-4 shadow-card border border-slate-100 divider flex items-center gap-4">
+          <div class="w-11 h-11 rounded-xl2 bg-gradient-to-br from-blue to-blue-deep flex items-center justify-center shadow flex-shrink-0"><span class="text-white font-extrabold text-xs">JLPT</span></div>
+          <div class="flex-1 min-w-0">
+            <div class="font-bold text-sm t-ink">JLPT Course</div>
+            <div class="h-1.5 rounded-full overflow-hidden mt-1.5" style="background:#eef2f7;"><div id="jlpt-course-bar" class="h-full rounded-full" style="width:0%;background:#3a7cbf;transition:width .8s ease;"></div></div>
+            <div class="text-[11px] t-muted mt-1"><span id="jlpt-course-pct">0%</span> complete</div>
+          </div>
+          <svg class="w-4 h-4 t-muted flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a href="ssw/index.html" class="card-lift bg-bg-surface surface rounded-xl3 p-4 shadow-card border border-slate-100 divider flex items-center gap-4">
+          <div class="w-11 h-11 rounded-xl2 bg-gradient-to-br from-teal to-teal-deep flex items-center justify-center shadow flex-shrink-0"><span class="jp text-white font-bold text-base">特</span></div>
+          <div class="flex-1 min-w-0">
+            <div class="font-bold text-sm t-ink">SSW Course</div>
+            <div class="h-1.5 rounded-full overflow-hidden mt-1.5" style="background:#eef2f7;"><div id="ssw-course-bar" class="h-full rounded-full" style="width:0%;background:#2a9d8f;transition:width .8s ease;"></div></div>
+            <div class="text-[11px] t-muted mt-1"><span id="ssw-course-pct">0%</span> complete</div>
+          </div>
+          <svg class="w-4 h-4 t-muted flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider mb-4 fu d3">
+      <div class="px-5 py-3.5 border-b border-slate-100 divider flex items-center justify-between">
+        <span class="font-bold text-sm t-ink">Recent Activity</span>
+        <a href="index.html" class="text-xs font-semibold" style="color:#3a7cbf;">See all</a>
+      </div>
+      <div id="activity-list" class="divide-y divide-slate-100"></div>
+      <div id="activity-empty" class="hidden px-5 py-8 text-center">
+        <div class="text-2xl mb-2">📋</div>
+        <div class="text-sm t-muted">No activity yet — start a quiz!</div>
+      </div>
+    </div>
+
+    <!-- ═══ NEW: Explore ═══ -->
+    <div class="mb-4 fu d3">
+      <h2 class="text-sm font-bold t-ink mb-3">Explore</h2>
+      <div class="grid grid-cols-3 sm:grid-cols-5 gap-3">
+        <a href="news/index.html" class="card-lift flex flex-col items-center gap-2 p-3 rounded-xl3 bg-bg-surface surface border border-slate-100 divider shadow-card text-center">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-lg" style="background:rgba(126,184,228,.15);">📰</div>
+          <span class="text-[11px] font-bold t-ink leading-tight">News</span>
+        </a>
+        <a href="community/index.html" class="card-lift flex flex-col items-center gap-2 p-3 rounded-xl3 bg-bg-surface surface border border-slate-100 divider shadow-card text-center">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-lg" style="background:rgba(196,168,224,.18);">🌐</div>
+          <span class="text-[11px] font-bold t-ink leading-tight">Community</span>
+        </a>
+        <a href="jobhunt/index.html" class="card-lift flex flex-col items-center gap-2 p-3 rounded-xl3 bg-bg-surface surface border border-slate-100 divider shadow-card text-center">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-lg" style="background:rgba(245,218,138,.2);">💼</div>
+          <span class="text-[11px] font-bold t-ink leading-tight">Job Hunt</span>
+        </a>
+        <a href="kanji/index.html" class="card-lift flex flex-col items-center gap-2 p-3 rounded-xl3 bg-bg-surface surface border border-slate-100 divider shadow-card text-center">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(244,165,122,.18);"><span class="jp font-bold text-sm" style="color:#e0693a;">書</span></div>
+          <span class="text-[11px] font-bold t-ink leading-tight">Kanji</span>
+        </a>
+        <a href="download/index.html" class="card-lift flex flex-col items-center gap-2 p-3 rounded-xl3 border border-slate-100 divider shadow-card text-center relative overflow-hidden" style="background:linear-gradient(135deg,rgba(99,102,241,.10),rgba(139,92,246,.08));">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-lg" style="background:rgba(99,102,241,.16);">📲</div>
+          <span class="text-[11px] font-bold t-ink leading-tight">Get App</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Settings -->
+    <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider mb-4 fu d4">
+      <div class="px-5 py-3 border-b border-slate-100 divider"><span class="text-[10px] font-extrabold t-muted uppercase tracking-wider">Preferences</span></div>
+      <div class="flex items-center gap-3 px-5 py-3.5 border-b border-slate-100 divider">
+        <span class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(196,168,224,.12);">🌙</span>
+        <div class="flex-1"><div class="text-sm font-semibold t-ink">Dark Mode</div></div>
+        <button onclick="toggleDark()" id="dark-toggle-btn" class="relative w-11 h-6 rounded-full transition-all flex-shrink-0" style="background:#eef2f7;border:1.5px solid #e2e8f0;">
+          <span id="dark-toggle-knob" class="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white shadow transition-transform duration-200"></span>
+        </button>
+      </div>
+      <a href="coming-soon.html" class="flex items-center gap-3 px-5 py-3.5 hover:bg-bg-s2 transition-colors group">
+        <span class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(244,165,122,.12);">🚪</span>
+        <div class="flex-1"><div class="text-sm font-semibold" style="color:#e0693a;">Sign Out</div></div>
+        <svg class="w-4 h-4 t-muted group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+
+    <div class="text-center py-4 fu d4">
+      <div class="text-[11px] t-muted">Sakura Academy · v1.0.0</div>
+      <div class="flex items-center justify-center gap-3 mt-2">
+        <a href="about.html" class="text-[11px] t-muted hover:text-blue-deep transition-colors">About</a>
+        <span class="text-[11px] t-muted">·</span>
+        <a href="contact.html" class="text-[11px] t-muted hover:text-blue-deep transition-colors">Contact</a>
+        <span class="text-[11px] t-muted">·</span>
+        <a href="coming-soon.html" class="text-[11px] t-muted hover:text-blue-deep transition-colors">Privacy</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ═══ PROGRESS MODAL ═══ -->
+<div class="prog-overlay" id="prog-overlay" onclick="if(event.target===this)closeProgressModal()">
+  <div class="prog-sheet" id="prog-sheet">
+    <div class="drag-handle"></div>
+    <div class="flex items-center justify-between mb-5">
+      <div>
+        <div class="font-extrabold text-lg t-ink">📊 Progress Track</div>
+        <div class="text-xs t-muted mt-0.5" id="prog-month-lbl">This Month</div>
+      </div>
+      <button onclick="closeProgressModal()" class="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center t-muted text-base" style="background:#f8fafc;">✕</button>
+    </div>
+
+    <div id="prog-loading" class="space-y-3 sk-pulse">
+      <div class="h-24 rounded-xl" style="background:#eef2f7;"></div>
+      <div class="h-8 rounded-xl" style="background:#eef2f7;"></div>
+      <div class="h-8 w-4/5 rounded-xl" style="background:#eef2f7;"></div>
+      <div class="grid grid-cols-2 gap-3"><div class="h-24 rounded-xl" style="background:#eef2f7;"></div><div class="h-24 rounded-xl" style="background:#eef2f7;"></div><div class="h-24 rounded-xl" style="background:#eef2f7;"></div><div class="h-24 rounded-xl" style="background:#eef2f7;"></div></div>
+    </div>
+
+    <div id="prog-content" style="display:none;">
+
+      <div class="flex items-center gap-3 px-4 py-3 rounded-xl mb-5 text-sm" style="background:rgba(126,184,228,.08);border:1px solid rgba(126,184,228,.2);color:#3a7cbf;">
+        <span class="text-lg flex-shrink-0">🔄</span>
+        <span>Score resets monthly. Top 10 earn <strong>👑 VIP</strong> badge!</span>
+      </div>
+
+      <div class="flex flex-col items-center mb-5">
+        <div class="relative w-32 h-32">
+          <svg class="w-32 h-32" viewBox="0 0 130 130" style="transform:rotate(-90deg);">
+            <circle cx="65" cy="65" r="54" fill="none" stroke="#eef2f7" stroke-width="10"/>
+            <circle id="ring-fill" cx="65" cy="65" r="54" fill="none" stroke="url(#rg)" stroke-width="10" stroke-linecap="round" stroke-dasharray="339.3" stroke-dashoffset="339.3" style="transition:stroke-dashoffset 1s cubic-bezier(.22,1,.36,1);"/>
+            <defs><linearGradient id="rg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#7eb8e4"/><stop offset="100%" stop-color="#6ecec8"/></linearGradient></defs>
+          </svg>
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <span class="text-3xl font-extrabold t-ink leading-none" id="ring-score">0</span>
+            <span class="text-xs t-muted mt-0.5">/ 120 pts</span>
+          </div>
+        </div>
+        <div class="text-sm t-muted mt-2" id="ring-label">Engagement Score</div>
+        <div id="prog-vip" class="hidden text-xs font-bold px-3 py-1 rounded-full mt-2" style="background:rgba(212,160,23,.12);color:#d4a017;">👑 VIP This Month</div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 mb-4">
+        <div class="bg-bg-s2 surface rounded-xl2 p-4 relative overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-0.5 rounded-t-xl2" style="background:linear-gradient(90deg,#f4a57a,#e0693a);"></div>
+          <div class="text-xl mb-1">⏱️</div>
+          <div class="text-xl font-extrabold t-ink" id="bk-time">0m</div>
+          <div class="text-[11px] t-muted">Time spent</div>
+          <div class="text-[11px] font-bold mt-1" id="bk-time-pts" style="color:#e0693a;">0 / 50 pts</div>
+          <div class="bk-bar mt-2"><div class="bk-bar-fill" id="bk-time-bar" style="width:0%;background:linear-gradient(90deg,#f4a57a,#e0693a);"></div></div>
+        </div>
+        <div class="bg-bg-s2 surface rounded-xl2 p-4 relative overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-0.5 rounded-t-xl2" style="background:linear-gradient(90deg,#7eb8e4,#3a7cbf);"></div>
+          <div class="text-xl mb-1">📄</div>
+          <div class="text-xl font-extrabold t-ink" id="bk-pages">0</div>
+          <div class="text-[11px] t-muted">Pages visited</div>
+          <div class="text-[11px] font-bold mt-1" id="bk-pages-pts" style="color:#3a7cbf;">0 / 30 pts</div>
+          <div class="bk-bar mt-2"><div class="bk-bar-fill" id="bk-pages-bar" style="width:0%;background:linear-gradient(90deg,#7eb8e4,#3a7cbf);"></div></div>
+        </div>
+        <div class="bg-bg-s2 surface rounded-xl2 p-4 relative overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-0.5 rounded-t-xl2" style="background:linear-gradient(90deg,#80d4a8,#27ae72);"></div>
+          <div class="text-xl mb-1">📚</div>
+          <div class="text-xl font-extrabold t-ink" id="bk-lessons">0</div>
+          <div class="text-[11px] t-muted">Lessons done</div>
+          <div class="text-[11px] font-bold mt-1" id="bk-lessons-pts" style="color:#27ae72;">0 / 20 pts</div>
+          <div class="bk-bar mt-2"><div class="bk-bar-fill" id="bk-lessons-bar" style="width:0%;background:linear-gradient(90deg,#80d4a8,#27ae72);"></div></div>
+        </div>
+        <div class="bg-bg-s2 surface rounded-xl2 p-4 relative overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-0.5 rounded-t-xl2" style="background:linear-gradient(90deg,#f5da8a,#d4a017);"></div>
+          <div class="text-xl mb-1">🎯</div>
+          <div class="text-xl font-extrabold t-ink" id="bk-quizzes">0</div>
+          <div class="text-[11px] t-muted">Quizzes done</div>
+          <div class="text-[11px] font-bold mt-1" id="bk-quizzes-pts" style="color:#d4a017;">0 / 20 pts</div>
+          <div class="bk-bar mt-2"><div class="bk-bar-fill" id="bk-quizzes-bar" style="width:0%;background:linear-gradient(90deg,#f5da8a,#d4a017);"></div></div>
+        </div>
+      </div>
+
+      <div id="quiz-acc-section" class="bg-bg-s2 surface rounded-xl2 p-4 hidden">
+        <div class="text-[10px] font-extrabold t-muted uppercase tracking-wider mb-3">🎯 Quiz Accuracy</div>
+        <div class="flex items-center justify-between mb-2">
+          <div class="text-3xl font-extrabold" id="quiz-acc-pct" style="color:#27ae72;">0%</div>
+          <div class="text-right">
+            <div class="text-sm font-semibold" id="quiz-correct" style="color:#27ae72;">✅ 0 correct</div>
+            <div class="text-sm font-semibold" id="quiz-wrong" style="color:#e0693a;">❌ 0 wrong</div>
+            <div class="text-xs t-muted mt-0.5" id="quiz-total">0 total</div>
+          </div>
+        </div>
+        <div class="h-2 rounded-full overflow-hidden" style="background:#eef2f7;">
+          <div id="acc-bar" class="h-full rounded-full" style="width:0%;background:#27ae72;transition:width .8s ease;"></div>
+        </div>
+        <div class="flex justify-between text-xs t-muted mt-2">
+          <span>Quizzes completed:</span><span class="font-bold t-ink" id="quiz-count">0</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ BOTTOM NAV (matches homepage) ═══════════ -->
+<nav id="botnav" class="lg:hidden fixed bottom-3 left-3 right-3 z-40 transition-transform duration-300 rounded-full shadow-lg2"
+     style="background:rgba(255,255,255,.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);">
+  <div class="flex items-center" style="height:66px;">
+    <a href="index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Home</span>
+    </a>
+    <a href="jlpt/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 4h6a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2z"/><path d="M22 4h-6a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">JLPT</span>
+    </a>
+    <a href="ssw/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3 10 5.5-10 5.5L2 8.5 12 3Z"/><path d="M6 11v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">SSW</span>
+    </a>
+    <a href="quiz/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M4 20h2.5L18 8.5a1.8 1.8 0 0 0-2.5-2.5L4 17.5V20Z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Quiz</span>
+    </a>
+    <a href="other/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#2a9d8f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+      <span class="text-[11px] font-bold" style="color:#2a9d8f;">More</span>
+      <span class="absolute -bottom-1.5 w-5 h-[3px] rounded-full" style="background:#2a9d8f;"></span>
+    </a>
+  </div>
+</nav>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+<script src="/engagement-tracker.js"></script>
+
+<script>
+/* ── Firebase init ── */
+if(!firebase.apps.length){
+  firebase.initializeApp({
+    apiKey:"AIzaSyB-5EgDmpPYpdYoRpX9pXst5fPr2ICOai4",
+    authDomain:"learnwith-sakura.firebaseapp.com",
+    databaseURL:"https://learnwith-sakura-default-rtdb.firebaseio.com",
+    projectId:"learnwith-sakura",
+    storageBucket:"learnwith-sakura.firebasestorage.app",
+    messagingSenderId:"524809202868",
+    appId:"1:524809202868:web:8d4f47a122d542e285bbe1"
+  });
+}
+const auth=firebase.auth(), db=firebase.database(), storage=firebase.storage();
+
+/* ── Helpers ── */
+function getCurrentMonth(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0');}
+function getMonthLabel(k){return new Date(k+'-01').toLocaleDateString('en',{month:'long',year:'numeric'});}
+
+window.saveMySQLDirect=async function(uid,email,name,photo,provider){try{await fetch("https://learnwithsakura.com/api/save-user.php",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({firebase_uid:uid,email:email||"",display_name:name||"",photo_url:photo||"",provider:provider||"unknown"})});}catch(e){}};
+
+/* ── Auth ── */
+document.getElementById('auth-loading').classList.add('show');
+
+auth.onAuthStateChanged(function(user){
+  if(!user){window.location.replace('login/index.html');return;}
+  document.getElementById('auth-loading').classList.remove('show');
+
+  const name  = user.displayName||'User';
+  const email = user.email||'';
+  const localPic = localStorage.getItem('sakura-avatar-'+user.uid);
+  const photo = localPic||user.photoURL||'';
+  const pid   = user.providerData[0]?.providerId||'password';
+
+  document.getElementById('prof-name').textContent  = name;
+  document.getElementById('prof-email').textContent = email;
+  document.getElementById('sb-name').textContent    = name;
+
+  setAvatar(photo, name);
+
+  const userRef = db.ref('users/'+user.uid);
+  userRef.once('value').then(s=>{
+    if(!s.exists()) userRef.set({name,photo,points:0});
+    else userRef.update({name,photo});
+  });
+
+  /* Leaderboard */
+  db.ref('users').orderByChild('points').on('value', snap=>{
+    const all=[];
+    snap.forEach(c=>all.push({uid:c.key,...c.val()}));
+    all.sort((a,b)=>(b.points||0)-(a.points||0));
+    const idx   = all.findIndex(u=>u.uid===user.uid);
+    const pts   = idx>=0?(all[idx].points||0):0;
+    const isVip = idx>=0&&idx<10;
+    const maxP  = all.length>0?(all[0].points||1):1;
+    const pct   = Math.min(100,Math.round((pts/Math.max(maxP,1))*100));
+
+    document.getElementById('pts-val').textContent  = pts+' pts';
+    document.getElementById('pts-rank').textContent = idx>=0?'#'+(idx+1)+' of '+all.length+' users':'Not ranked yet';
+    document.getElementById('rank-badge').textContent = '🏆 #'+(idx>=0?idx+1:'—');
+    setTimeout(()=>{document.getElementById('pts-bar').style.width=pct+'%';},100);
+    if(isVip) document.getElementById('vip-badge').classList.remove('hidden');
+    else document.getElementById('vip-badge').classList.add('hidden');
+  });
+
+  /* Monthly stats */
+  const month = getCurrentMonth();
+  db.ref('engagement/'+user.uid+'/monthly/'+month).once('value',snap=>{
+    const d=snap.val()||{}, qs=d.quizStats||{};
+    document.getElementById('stat-time').textContent  = Math.round(d.totalTimeMin||0)+'m';
+    document.getElementById('stat-quiz').textContent  = d.quizzesCompleted||0;
+    const acc = qs.accuracyPct||0;
+    document.getElementById('stat-acc').textContent   = acc+'%';
+  });
+
+  /* Day streak (real, from engagement/{uid}) */
+  db.ref('engagement/'+user.uid).once('value',snap=>{
+    const e=snap.val()||{};
+    const streak = e.streak||e.dayStreak||0;
+    document.getElementById('stat-streak').textContent = streak;
+    document.getElementById('streak-badge').textContent = '🔥 '+streak+' day streak';
+  });
+
+  /* Continue Your Courses: progress/{uid}/jlpt & progress/{uid}/ssw completion */
+  loadCourseProgress(user.uid,'jlpt',['n5','n4','n3','n2','n1'],['vocab','grammar','kanji','rw'],'jlpt-course-bar','jlpt-course-pct');
+  loadCourseProgress(user.uid,'ssw',['caregiver','food','agriculture','construction','manufacturing'],['vocab','phrases','terms','scenarios'],'ssw-course-bar','ssw-course-pct');
+
+  /* Engagement tracker */
+  if(window.SakuraEngagement){SakuraEngagement.init(db,auth);if(email)SakuraEngagement.storeEmail(email);}
+
+  /* MySQL sync */
+  window.saveMySQLDirect(user.uid,email,name,photo,pid);
+
+  /* Activity */
+  renderActivity();
+});
+
+/* Aggregates completed/total across every sub-key/subject pair under progress/{uid}/{course}/{key}/{subject} */
+function loadCourseProgress(uid,course,keys,subjects,barId,pctId){
+  const db2=firebase.database();
+  const promises=keys.map(k=>db2.ref('progress/'+uid+'/'+course+'/'+k).once('value'));
+  Promise.all(promises).then(snaps=>{
+    let completed=0,total=0;
+    snaps.forEach(snap=>{
+      const data=snap.val()||{};
+      subjects.forEach(s=>{
+        const v=data[s]||{};
+        completed+=v.completed||0;
+        total+=v.total||0;
+      });
+    });
+    const pct=total>0?Math.min(100,Math.round(completed/total*100)):0;
+    const bar=document.getElementById(barId), pctEl=document.getElementById(pctId);
+    if(bar) setTimeout(()=>{bar.style.width=pct+'%';},150);
+    if(pctEl) pctEl.textContent=pct+'%';
+  }).catch(()=>{});
+}
+
+/* ── Avatar ── */
+function setAvatar(url, name){
+  const wrap=document.getElementById('avatar-wrap');
+  const sbInner=document.getElementById('sb-avatar-inner');
+  if(url){
+    wrap.innerHTML='<img src="'+url+'" class="w-full h-full object-cover" alt="avatar"/>';
+    sbInner.innerHTML='<img src="'+url+'" class="w-full h-full object-cover" alt="avatar"/>';
+  } else {
+    const l=(name||'U')[0].toUpperCase();
+    wrap.textContent=l; sbInner.textContent=l;
+  }
+}
+
+window.handleAvatar=async function(e){
+  const file=e.target.files[0]; if(!file)return;
+  const user=auth.currentUser; if(!user)return;
+  const reader=new FileReader();
+  reader.onload=function(ev){
+    const url=ev.target.result;
+    setAvatar(url,user.displayName||'U');
+    try{localStorage.setItem('sakura-avatar-'+user.uid,url);}catch(_){}
+  };
+  reader.readAsDataURL(file);
+  try{
+    const r=storage.ref('avatars/'+user.uid);
+    await r.put(file);
+    const url=await r.getDownloadURL();
+    await user.updateProfile({photoURL:url});
+    await window.saveMySQLDirect(user.uid,user.email,user.displayName,url,user.providerData[0]?.providerId||'password');
+  }catch(err){console.warn('Avatar upload:',err.message);}
+};
+
+/* ── Logout ── */
+window.doLogout=function(){auth.signOut().then(()=>window.location.replace('login/index.html'));};
+
+/* ── Progress modal ── */
+window.openProgressModal=function(){
+  document.getElementById('prog-overlay').classList.add('open');
+  document.getElementById('prog-loading').style.display='block';
+  document.getElementById('prog-content').style.display='none';
+  loadProgress();
+};
+window.closeProgressModal=function(){document.getElementById('prog-overlay').classList.remove('open');};
+window.addEventListener('popstate',closeProgressModal);
+
+function loadProgress(){
+  const user=auth.currentUser; if(!user)return;
+  const month=getCurrentMonth();
+  document.getElementById('prog-month-lbl').textContent=getMonthLabel(month);
+
+  db.ref('engagement/'+user.uid+'/monthly/'+month).once('value',snap=>{
+    const d=snap.val()||{}, qs=d.quizStats||{};
+    const timeMin   = Math.round(d.totalTimeMin||0);
+    const pages     = d.totalPages||0;
+    const lessons   = d.lessonsRead||0;
+    const quizzes   = d.quizzesCompleted||0;
+    const tScore    = Math.min(timeMin/2,50);
+    const pScore    = Math.min(pages*2,30);
+    const lScore    = Math.min(lessons*5,20);
+    const qScore    = Math.min(quizzes*3,20);
+    const total     = Math.round(tScore+pScore+lScore+qScore);
+    const isVip     = d.isVip||false;
+
+    const offset=339.3-(total/120)*339.3;
+    setTimeout(()=>{document.getElementById('ring-fill').style.strokeDashoffset=offset;},80);
+    document.getElementById('ring-score').textContent=total;
+    if(isVip){document.getElementById('prog-vip').classList.remove('hidden');document.getElementById('ring-label').textContent='👑 VIP this month!';}
+    else{document.getElementById('prog-vip').classList.add('hidden');document.getElementById('ring-label').textContent='Engagement Score';}
+
+    document.getElementById('bk-time').textContent       = timeMin+'m';
+    document.getElementById('bk-time-pts').textContent   = Math.round(tScore)+' / 50 pts';
+    document.getElementById('bk-pages').textContent      = pages;
+    document.getElementById('bk-pages-pts').textContent  = Math.round(pScore)+' / 30 pts';
+    document.getElementById('bk-lessons').textContent    = lessons;
+    document.getElementById('bk-lessons-pts').textContent= Math.round(lScore)+' / 20 pts';
+    document.getElementById('bk-quizzes').textContent    = quizzes;
+    document.getElementById('bk-quizzes-pts').textContent= Math.round(qScore)+' / 20 pts';
+    setTimeout(()=>{
+      document.getElementById('bk-time-bar').style.width    = (tScore/50*100)+'%';
+      document.getElementById('bk-pages-bar').style.width   = (pScore/30*100)+'%';
+      document.getElementById('bk-lessons-bar').style.width = (lScore/20*100)+'%';
+      document.getElementById('bk-quizzes-bar').style.width = (qScore/20*100)+'%';
+    },120);
+
+    const correct=qs.totalCorrect||0, wrong=qs.totalWrong||0, answered=qs.totalAnswered||0, acc=qs.accuracyPct||0;
+    const accColor=acc>=80?'#27ae72':acc>=60?'#d4a017':'#e0693a';
+    if(answered>0){
+      document.getElementById('quiz-acc-section').classList.remove('hidden');
+      document.getElementById('quiz-acc-pct').textContent=acc+'%';
+      document.getElementById('quiz-acc-pct').style.color=accColor;
+      document.getElementById('quiz-correct').textContent='✅ '+correct+' correct';
+      document.getElementById('quiz-wrong').textContent='❌ '+wrong+' wrong';
+      document.getElementById('quiz-total').textContent=answered+' total answers';
+      document.getElementById('quiz-count').textContent=quizzes;
+      setTimeout(()=>{document.getElementById('acc-bar').style.width=acc+'%';document.getElementById('acc-bar').style.background=accColor;},120);
+    }
+
+    document.getElementById('prog-loading').style.display='none';
+    document.getElementById('prog-content').style.display='block';
+  });
+}
+
+/* ── Activity ── */
+function timeAgoShort(ts){const diff=Date.now()-ts,m=Math.floor(diff/60000),h=Math.floor(diff/3600000),d=Math.floor(diff/86400000);if(m<1)return'Just now';if(m<60)return m+'m ago';if(h<24)return h+'h ago';if(d===1)return'Yesterday';return d+'d ago';}
+
+function renderActivity(){
+  const list=document.getElementById('activity-list'),empty=document.getElementById('activity-empty');
+  try{
+    const acts=JSON.parse(localStorage.getItem('sakura_activity')||'[]').slice(0,5);
+    if(!acts.length){empty.classList.remove('hidden');return;}
+    list.innerHTML=acts.map(a=>`
+      <div class="flex items-center gap-3 px-5 py-3">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm" style="background:${a.iconBg||'rgba(126,184,228,.15)'}">${a.icon||'📖'}</div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-semibold t-ink leading-tight">${a.title}</div>
+          <div class="text-xs t-muted">${timeAgoShort(a.ts)}${a.sub?' · '+a.sub:''}</div>
+        </div>
+        ${a.xp?`<span class="text-xs font-bold px-2 py-0.5 rounded-full flex-shrink-0" style="color:${a.xpColor||'#27ae72'};background:${a.xpBg||'rgba(128,212,168,.12)'}">+${a.xp} XP</span>`:''}
+      </div>
+    `).join('');
+  }catch(e){empty.classList.remove('hidden');}
+}
+
+/* ── Dark mode ── */
+let isDark=false;
+const MOON='<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+const SUN='<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/>';
+function toggleDark(){
+  isDark=!isDark;
+  document.body.className=isDark?'mesh-dark min-h-screen text-slate-100 dark':'mesh-light min-h-screen text-ink';
+  ['mob-icon','desk-icon'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=isDark?SUN:MOON;});
+  const lbl=document.getElementById('desk-lbl');if(lbl)lbl.textContent=isDark?'Light mode':'Dark mode';
+  const knob=document.getElementById('dark-toggle-knob'),btn=document.getElementById('dark-toggle-btn');
+  if(knob)knob.style.transform=isDark?'translateX(20px)':'translateX(0)';
+  if(btn)btn.style.background=isDark?'#3a7cbf':'#eef2f7';
+}
+
+/* ── Language dropdowns (matches homepage) ── */
+let deskLangOpen=false;
+function toggleDeskLang(){deskLangOpen=!deskLangOpen;const m=document.getElementById('desk-lang-drop'),c=document.getElementById('desk-lang-chev');m.className=m.className.replace(/\b(open|closed)\b/,deskLangOpen?'open':'closed');c.style.transform=deskLangOpen?'rotate(180deg)':'';}
+function setDeskLang(code,flag){['desk-lang-code','lang-code'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=code;});['desk-lang-flag','lang-flag'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=flag;});deskLangOpen=false;document.getElementById('desk-lang-drop').className=document.getElementById('desk-lang-drop').className.replace(/\b(open|closed)\b/,'closed');document.getElementById('desk-lang-chev').style.transform='';}
+const drops={lang:false};
+function toggleDrop(name){drops[name]=!drops[name];const el=document.getElementById('lang-drop');if(el)el.className=el.className.replace(/\b(open|closed)\b/,drops[name]?'open':'closed');const chev=document.getElementById('lang-chev');if(chev)chev.style.transform=drops[name]?'rotate(180deg)':'';}
+function setLang(code,flag){['lang-code','desk-lang-code'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=code;});['lang-flag','desk-lang-flag'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=flag;});drops.lang=false;const el=document.getElementById('lang-drop');if(el)el.className=el.className.replace(/\b(open|closed)\b/,'closed');const chev=document.getElementById('lang-chev');if(chev)chev.style.transform='';}
+document.addEventListener('click',e=>{
+  const dlw=document.getElementById('desk-lang-wrap');
+  if(dlw&&!dlw.contains(e.target)&&deskLangOpen){deskLangOpen=false;document.getElementById('desk-lang-drop').className=document.getElementById('desk-lang-drop').className.replace(/\b(open|closed)\b/,'closed');document.getElementById('desk-lang-chev').style.transform='';}
+  const lw=document.getElementById('lang-wrap');
+  if(lw&&!lw.contains(e.target)&&drops.lang){drops.lang=false;const el=document.getElementById('lang-drop');if(el)el.className=el.className.replace(/\b(open|closed)\b/,'closed');const chev=document.getElementById('lang-chev');if(chev)chev.style.transform='';}
+});
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));}</script>
+</body>
+</html>

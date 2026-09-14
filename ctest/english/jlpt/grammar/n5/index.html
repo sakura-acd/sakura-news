@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/fab.svg"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grammar (N5) — Sakura</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans:['Outfit','sans-serif'], jp:['"Noto Sans JP"','sans-serif'] },
+          colors: {
+            blue:   { DEFAULT:'#7eb8e4', deep:'#3a7cbf' },
+            teal:   { DEFAULT:'#6ecec8', deep:'#2a9d8f' },
+            mint:   { DEFAULT:'#80d4a8', deep:'#27ae72' },
+            coral:  { DEFAULT:'#f4a57a', deep:'#e0693a' },
+            butter: { DEFAULT:'#f5da8a', deep:'#d4a017' },
+            lilac:  { DEFAULT:'#c4a8e0', deep:'#8b5cf6' },
+            ink:    { DEFAULT:'#1f2937', 2:'#475569', muted:'#94a3b8' },
+            bg:     { DEFAULT:'#f5f8fc', surface:'#ffffff', s2:'#eef2f7' },
+          },
+          borderRadius: { xl2:'1.25rem', xl3:'1.75rem', xl4:'2.25rem' },
+          boxShadow: {
+            card: '0 2px 16px rgba(15,23,42,.07)',
+            md2:  '0 4px 24px rgba(15,23,42,.12)',
+            lg2:  '0 8px 40px rgba(15,23,42,.16)',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family:'Outfit',sans-serif; transition:background .3s,color .3s; }
+    .jp  { font-family:'"Noto Sans JP"',sans-serif; }
+
+    .mesh-light {
+      background: radial-gradient(ellipse at 18% 0%,#e6f7f1 0%,transparent 45%),
+                  radial-gradient(ellipse at 90% 10%,#f7e9ef 0%,transparent 40%),
+                  #f4f9f7;
+    }
+    .mesh-dark {
+      background: radial-gradient(ellipse at 18% 0%,#102a24 0%,transparent 45%),
+                  radial-gradient(ellipse at 90% 10%,#241a22 0%,transparent 40%),
+                  #0c1220;
+    }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:none} }
+    .fu { animation:fadeUp .4s ease both; }
+
+    ::-webkit-scrollbar { width:4px; height:4px; }
+    ::-webkit-scrollbar-thumb { background:#c2d3e3; border-radius:99px; }
+
+    /* Top bar */
+    .icon-circle { width:44px; height:44px; border-radius:9999px; display:flex; align-items:center; justify-content:center; background:#fff; box-shadow:0 2px 10px rgba(15,23,42,.06); flex-shrink:0; }
+    .stat-pill { display:flex; align-items:center; gap:10px; background:#fff; border-radius:9999px; padding:8px 16px; box-shadow:0 2px 10px rgba(15,23,42,.06); font-weight:800; font-size:14px; }
+    .stat-divider { width:1px; height:16px; background:#e2e8f0; }
+
+    /* Hero illustration */
+    .hero-illust { position:relative; width:100%; height:100%; }
+
+    /* Progress card */
+    .ring-track { stroke:#e7f4ee; }
+    .ring-fill { stroke:#27ae72; stroke-linecap:round; transition:stroke-dashoffset 1s cubic-bezier(.22,1,.36,1); }
+    .prog-row-bar { height:5px; border-radius:3px; background:#eef2f7; overflow:hidden; margin-top:6px; }
+    .prog-row-bar > span { display:block; height:100%; border-radius:3px; background:#27ae72; transition:width .8s ease; }
+
+    /* Category pills */
+    .cat-pill { display:inline-flex; align-items:center; gap:7px; padding:11px 18px; border-radius:9999px; font-weight:700; font-size:14px; white-space:nowrap; background:#fff; color:#1f2937; box-shadow:0 2px 8px rgba(15,23,42,.05); transition:all .18s ease; border:none; cursor:pointer; }
+    .cat-pill.active { background:#27ae72; color:#fff; box-shadow:0 4px 14px rgba(39,174,114,.35); }
+
+    /* Lesson cards */
+    .lesson-card { display:flex; align-items:center; gap:14px; background:#fff; border-radius:1.25rem; padding:16px; box-shadow:0 2px 10px rgba(15,23,42,.05); text-decoration:none; transition:transform .15s ease, box-shadow .15s ease; }
+    .lesson-card:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(15,23,42,.1); }
+    .lesson-body { flex:1; min-width:0; }
+    .lesson-title { font-weight:800; font-size:16px; color:#1f2937; line-height:1.25; }
+    .lesson-romaji { font-weight:600; color:#94a3b8; font-size:13px; margin-top:2px; }
+    .lesson-desc { font-size:13px; color:#64748b; margin-top:4px; line-height:1.4; }
+    .lesson-tag { display:inline-block; font-size:11px; font-weight:700; padding:2px 10px; border-radius:9999px; margin-top:7px; }
+    .lesson-right { display:flex; align-items:center; gap:12px; flex-shrink:0; }
+    .lesson-pct-wrap { text-align:right; min-width:52px; }
+    .lesson-pct { font-size:13px; font-weight:700; color:#1f2937; }
+    .lesson-bar { width:52px; height:4px; border-radius:3px; background:#eef2f7; overflow:hidden; margin-top:4px; }
+    .lesson-bar > span { display:block; height:100%; border-radius:3px; transition:width .8s ease; }
+    .lesson-chevron { width:32px; height:32px; border-radius:9999px; background:#f1f5f9; display:flex; align-items:center; justify-content:center; color:#64748b; flex-shrink:0; }
+
+    /* Floating sort button */
+    .fab { position:fixed; right:20px; bottom:96px; width:56px; height:56px; border-radius:9999px; background:linear-gradient(135deg,#6ecec8,#27ae72); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(39,174,114,.4); z-index:35; border:none; cursor:pointer; }
+
+    /* Dropdowns + avatar (matches homepage) */
+    .drop { transition:opacity .15s ease,transform .15s ease; }
+    .drop.closed { opacity:0; transform:translateY(-6px); pointer-events:none; }
+    .drop.open   { opacity:1; transform:translateY(0);    pointer-events:all; }
+    @keyframes ring-pulse {
+      0%,100% { box-shadow:0 0 0 0 rgba(110,206,200,.55); }
+      50%      { box-shadow:0 0 0 6px rgba(110,206,200,0); }
+    }
+    .avatar-ring {
+      background: conic-gradient(#6ecec8 0% 65%,#e2e8f0 65% 100%);
+      border-radius:9999px; padding:2.5px;
+      animation:ring-pulse 2.4s ease infinite;
+      display:inline-block; flex-shrink:0;
+    }
+    .t-ink2 { color:#475569; }
+    .surface, .surface2 { background:#ffffff; }
+    .divider { border-color:#eef2f7; }
+
+    body.dark .mesh-dark .stat-pill,
+    body.dark .icon-circle,
+    body.dark .cat-pill,
+    body.dark .lesson-card { background:#151d2e !important; box-shadow:0 2px 10px rgba(0,0,0,.3) !important; }
+    body.dark .lesson-title, body.dark .stat-pill, body.dark .lesson-chevron { color:#e8eef6 !important; }
+    body.dark .lesson-desc, body.dark .lesson-romaji { color:#8da4c0 !important; }
+    body.dark #topbar, body.dark #botnav, body.dark #sidebar-el { background:rgba(14,19,32,.96) !important; border-color:#1d2740 !important; }
+    body.dark .prog-card { background:#151d2e !important; }
+    body.dark .lesson-chevron { background:#1d2740 !important; }
+    body.dark .prog-row-bar, body.dark .lesson-bar { background:#1d2740 !important; }
+    body.dark h1, body.dark .t-ink { color:#e8eef6 !important; }
+    body.dark .t-ink2 { color:#8da4c0 !important; }
+    body.dark .t-muted { color:#8da4c0 !important; }
+    body.dark .surface, body.dark .surface2 { background:#151d2e !important; }
+    body.dark .divider { border-color:#1d2740 !important; }
+    body.dark .avatar-ring { background:conic-gradient(#6ecec8 0% 65%,#1d2740 65% 100%); }
+    body.dark #lang-drop, body.dark #desk-lang-drop { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark #lang-drop a, body.dark #desk-lang-drop a { color:#8da4c0 !important; }
+    body.dark #prof-drop, body.dark #desk-prof-drop { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark #prof-drop a, body.dark #desk-prof-drop a { color:#8da4c0 !important; }
+    body.dark #lang-switch-idx-mob, body.dark #lang-switch-idx-desk { background:#1d2740 !important; border-color:#243050 !important; }
+    body.dark #lang-btn-idx-mob-en.inactive, body.dark #lang-btn-idx-mob-np.inactive,
+    body.dark #lang-btn-idx-desk-en.inactive, body.dark #lang-btn-idx-desk-np.inactive { color:#8da4c0 !important; }
+  </style>
+  <meta name="theme-color" content="#e8799a"/>
+</head>
+
+<body class="mesh-light min-h-screen" id="body">
+
+<!-- ═══════════ DESKTOP SIDEBAR (matches homepage) ═══════════ -->
+<aside id="sidebar-el" class="hidden lg:flex flex-col fixed top-0 left-0 h-full w-60 bg-white surface border-r border-slate-100 divider z-30" style="box-shadow:0 2px 16px rgba(15,23,42,.07);">
+
+  <div class="px-4 py-4 flex items-center gap-3 border-b border-slate-100 divider">
+    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow-md flex-shrink-0">
+      <span class="jp text-white font-bold text-base">識</span>
+    </div>
+    <div class="min-w-0 flex-1">
+      <div class="font-bold text-base tracking-tight t-ink leading-tight">Sakura</div>
+      <div class="text-xs t-muted">日本語 Learning</div>
+    </div>
+    <div class="relative flex-shrink-0" id="desk-lang-wrap">
+      <button onclick="toggleDeskLang()" class="flex items-center gap-1 px-2 py-1.5 rounded-lg border border-slate-200 divider text-xs font-bold t-ink2 transition-all hover:border-blue/60 hover:text-blue-deep" style="background:#f8fafc;">
+        <span id="desk-lang-flag">🇬🇧</span><span id="desk-lang-code" class="ml-0.5">EN</span>
+        <svg id="desk-lang-chev" class="w-3 h-3 t-muted transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div id="desk-lang-drop" class="drop closed absolute right-0 top-full mt-1.5 w-44 bg-white surface rounded-xl shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+        <a href="../../../index.html" onclick="setLang('EN','🇬🇧')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors">🇬🇧 English</a>
+        <a href="../../../coming-soon.html" onclick="setLang('NP','🇳🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇳🇵 नेपाली</a>
+        <a href="../../../coming-soon.html" onclick="setLang('HI','🇮🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇮🇳 हिन्दी</a>
+        <a href="../../../coming-soon.html" onclick="setLang('SI','🇱🇰')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇱🇰 සිංහල</a>
+        <a href="../../../coming-soon.html" onclick="setLang('BN','🇧🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇧🇩 বাংলা</a>
+        <a href="../../../coming-soon.html" onclick="setLang('VI','🇻🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇻🇳 Tiếng Việt</a>
+        <a href="../../../coming-soon.html" onclick="setLang('ID','🇮🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇮🇩 Indonesia</a>
+        <a href="../../../coming-soon.html" onclick="setLang('TH','🇹🇭')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇹🇭 ภาษาไทย</a>
+        <a href="../../../coming-soon.html" onclick="setLang('JP','🇯🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇯🇵 日本語</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="px-5 py-4 flex items-center gap-3 border-b border-slate-100 divider relative" id="desk-prof-wrap">
+    <button onclick="toggleDeskProf()" class="flex items-center gap-3 flex-1 min-w-0 focus:outline-none" aria-label="Profile">
+      <div class="avatar-ring flex-shrink-0">
+        <div id="sb-avatar" class="w-9 h-9 rounded-full bg-gradient-to-br from-blue to-teal flex items-center justify-center text-white font-bold text-sm overflow-hidden">S</div>
+      </div>
+      <div class="flex-1 min-w-0 text-left">
+        <div class="font-semibold text-sm t-ink leading-tight" id="sb-name">Learner</div>
+      </div>
+      <svg id="desk-prof-chev" class="w-3.5 h-3.5 t-muted transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div id="desk-prof-drop" class="drop closed absolute left-3 right-3 top-full mt-1 bg-white surface rounded-xl2 shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+      <div class="px-4 py-3 bg-gradient-to-r from-blue/6 to-teal/6 border-b border-slate-100 divider">
+        <div class="font-bold text-sm t-ink" id="desk-drop-name">Learner</div>
+      </div>
+      <a href="../../../profile/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        My Profile
+      </a>
+      <a href="../../../download/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors border-t border-slate-100 divider">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16l-4-4h3V4h2v8h3l-4 4z"/><path d="M4 20h16"/></svg>
+        Download App
+      </a>
+    </div>
+  </div>
+
+  <nav class="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
+    <a href="../../../index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg>Home
+    </a>
+    <a href="../../../quiz/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg>Quiz
+    </a>
+    <div class="pt-4 pb-1 px-3 text-[10px] font-bold tracking-widest t-muted uppercase">Courses</div>
+    <a href="../../../jlpt/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>JLPT
+    </a>
+    <a href="../../../ssw/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-mint/20 text-mint-deep font-bold text-[10px] flex items-center justify-center">SSW</span> SSW</a>
+    <div class="pt-4 pb-1 px-3 text-[10px] font-bold tracking-widest t-muted uppercase">General</div>
+    <a href="../../../other/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>More
+    </a>
+  </nav>
+
+  <div class="px-4 py-4 border-t border-slate-100 divider space-y-3">
+    <div class="flex items-center rounded-full p-0.5 border border-slate-200 divider w-full" style="background:#f1f5f9;" id="lang-switch-idx-desk">
+      <button onclick="setLangMode('en')" id="lang-btn-idx-desk-en" class="flex-1 px-3 py-1.5 rounded-full text-xs font-bold transition-all t-muted inactive">EN</button>
+      <button onclick="setLangMode('np')" id="lang-btn-idx-desk-np" class="flex-1 px-3 py-1.5 rounded-full text-xs font-bold transition-all" style="background:#27ae72;color:#fff;">नेपाली</button>
+    </div>
+    <button onclick="toggleDark()" class="flex items-center gap-2 text-xs t-muted hover:text-ink transition-colors">
+      <svg id="desk-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span id="desk-lbl">Dark mode</span>
+    </button>
+  </div>
+</aside>
+
+
+<!-- ═══════════ MOBILE TOPBAR (matches homepage) ═══════════ -->
+<header id="topbar" class="lg:hidden fixed top-0 left-0 right-0 z-40 px-4 py-2.5 flex items-center transition-transform duration-300"
+        style="background:rgba(255,255,255,.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:0.5px solid rgba(0,0,0,.06);">
+  <div class="relative flex-shrink-0" id="prof-wrap">
+    <button id="prof-btn" onclick="toggleDrop('prof')" class="block focus:outline-none" aria-label="Profile">
+      <div class="avatar-ring">
+        <div id="mob-avatar" class="w-9 h-9 rounded-full bg-gradient-to-br from-blue to-teal flex items-center justify-center text-white font-bold text-sm select-none overflow-hidden">S</div>
+      </div>
+    </button>
+    <div id="prof-drop" class="drop closed absolute top-full left-0 mt-2 w-52 bg-white surface rounded-xl2 shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+      <div class="px-4 py-3 bg-gradient-to-r from-blue/6 to-teal/6 border-b border-slate-100 divider">
+        <div class="font-bold text-sm t-ink" id="mob-drop-name">Learner</div>
+      </div>
+      <a href="../../../profile/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        My Profile
+      </a>
+      <a href="../../../download/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors border-t border-slate-100 divider">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16l-4-4h3V4h2v8h3l-4 4z"/><path d="M4 20h16"/></svg>
+        Download App
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 pointer-events-none select-none">
+    <span class="text-lg">📗</span>
+    <span class="font-extrabold text-base t-ink tracking-tight">Grammar</span>
+  </div>
+
+  <div class="ml-auto flex items-center gap-2 flex-shrink-0">
+    <div class="flex items-center rounded-full p-0.5 border border-slate-200 divider" style="background:#f1f5f9;" id="lang-switch-idx-mob">
+      <button onclick="setLangMode('en')" id="lang-btn-idx-mob-en" class="px-3 py-1.5 rounded-full text-xs font-bold transition-all t-muted inactive">EN</button>
+      <button onclick="setLangMode('np')" id="lang-btn-idx-mob-np" class="px-3 py-1.5 rounded-full text-xs font-bold transition-all" style="background:#27ae72;color:#fff;">नेपा</button>
+    </div>
+    <button onclick="toggleDark()" class="w-8 h-8 rounded-lg bg-bg-s2 surface2 border border-slate-200 divider flex items-center justify-center t-muted hover:text-blue-deep hover:border-blue/50 transition-all">
+      <svg id="mob-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+
+<div class="max-w-lg lg:max-w-none mx-auto lg:ml-60 px-4 lg:px-8 pb-28 lg:pb-10 pt-16 lg:pt-8">
+
+  <!-- Back link + stats (points/streak) -->
+  <div class="flex items-center justify-between mb-5 fu">
+    <a href="../../../jlpt/index.html#n5" class="icon-circle" style="background:#dbf3ec;" aria-label="Back to JLPT N5">
+      <svg width="18" height="18" fill="none" stroke="#27ae72" stroke-width="2.4" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+    </a>
+    <div class="flex items-center gap-2.5">
+      <div class="stat-pill">
+        <span class="flex items-center gap-1.5" style="color:#d4a017;"><svg width="16" height="16" fill="#d4a017" viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 1-5 5 1.3 7L12 18l-6.3 3.5L7 14.5l-5-5 7-1L12 2Z"/></svg><span id="stat-points">0</span></span>
+        <span class="stat-divider"></span>
+        <span class="flex items-center gap-1.5" style="color:#e0693a;">🔥<span id="stat-streak">0</span></span>
+      </div>
+      <button class="icon-circle" aria-label="Search" onclick="document.getElementById('lesson-search').focus()">
+        <svg width="17" height="17" fill="none" stroke="#1f2937" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="relative mb-5 fu" style="min-height:150px;">
+    <div class="relative z-10 max-w-[60%]">
+      <div class="text-xs font-extrabold uppercase tracking-wider mb-1" style="color:#27ae72;">JLPT N5</div>
+      <h1 class="text-4xl font-extrabold t-ink leading-none mb-2" style="letter-spacing:-0.5px;">Grammar</h1>
+      <p class="text-sm t-muted leading-relaxed">Learn essential Japanese grammar step by step.</p>
+    </div>
+    <svg class="absolute top-0 right-0 hero-illust" width="230" height="150" viewBox="0 0 230 150" style="max-width:45%;">
+      <circle cx="60" cy="35" r="22" fill="#e8879f" opacity=".85"/>
+      <path d="M0 150 C 30 100, 70 100, 100 150 Z" fill="#c9dce3" opacity=".7"/>
+      <path d="M60 150 C 80 115, 110 115, 130 150 Z" fill="#a9c3cd" opacity=".7"/>
+      <g>
+        <rect x="95" y="90" width="8" height="55" fill="#5cbdb0"/>
+        <rect x="155" y="90" width="8" height="55" fill="#5cbdb0"/>
+        <rect x="85" y="70" width="88" height="10" rx="2" fill="#5cbdb0"/>
+        <rect x="90" y="55" width="78" height="9" rx="2" fill="#6ecec8"/>
+        <path d="M78 55 Q129 30 180 55 L168 60 Q129 42 90 60 Z" fill="#5cbdb0"/>
+      </g>
+      <g fill="#f2a9c2" opacity=".9">
+        <path d="M195 25 q10 -12 20 0 q-10 4 -10 12 q0 -8 -10 -12z"/>
+        <path d="M210 45 q9 -10 18 0 q-9 4 -9 11 q0 -7 -9 -11z"/>
+        <path d="M180 55 q8 -9 16 0 q-8 4 -8 10 q0 -6 -8 -10z"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Progress card -->
+  <div class="prog-card bg-white rounded-2xl p-5 mb-5 fu" style="box-shadow:0 2px 14px rgba(15,23,42,.06);">
+    <div class="flex items-center gap-5">
+      <div class="relative flex-shrink-0" style="width:96px;height:96px;">
+        <svg width="96" height="96" viewBox="0 0 96 96" style="transform:rotate(-90deg);">
+          <circle cx="48" cy="48" r="40" fill="none" stroke-width="9" class="ring-track"/>
+          <circle id="ring-fill" cx="48" cy="48" r="40" fill="none" stroke-width="9" class="ring-fill" stroke-dasharray="251.3" stroke-dashoffset="251.3"/>
+        </svg>
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <span class="text-xl font-extrabold t-ink leading-none" id="ring-pct">0%</span>
+          <span class="text-[10px] t-muted font-semibold mt-1">Progress</span>
+        </div>
+      </div>
+      <div class="flex-1 min-w-0 space-y-3.5">
+        <div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="t-ink2 font-medium">Lessons Completed</span>
+            <span class="font-extrabold t-ink" id="lessons-completed">0/0</span>
+          </div>
+          <div class="prog-row-bar"><span id="lessons-bar" style="width:0%;"></span></div>
+        </div>
+        <div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="t-ink2 font-medium">Mastery</span>
+            <span class="font-extrabold t-ink" id="mastery-pct">0%</span>
+          </div>
+          <div class="prog-row-bar"><span id="mastery-bar" style="width:0%;background:#3a7cbf;"></span></div>
+        </div>
+      </div>
+      <button class="icon-circle flex-shrink-0" style="background:#eafaf3;" aria-label="See details">
+        <svg width="16" height="16" fill="none" stroke="#27ae72" stroke-width="2.4" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Category filters -->
+  <div class="flex items-center gap-2.5 overflow-x-auto pb-1 mb-5 fu" style="scrollbar-width:none;" id="cat-filter-row">
+    <button class="cat-pill active" data-cat="all" onclick="filterCategory('all', this)">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      All
+    </button>
+    <button class="cat-pill" data-cat="particles" onclick="filterCategory('particles', this)">
+      <svg width="15" height="15" fill="none" stroke="#27ae72" stroke-width="2.3" viewBox="0 0 24 24"><path d="M19.44 12.94l.06-.94-.06-.94 1.03-.81a.75.75 0 0 0 .17-.95l-1-1.7a.75.75 0 0 0-.9-.35l-1.2.48c-.36-.28-.76-.51-1.19-.68l-.18-1.28a.75.75 0 0 0-.74-.65h-2a.75.75 0 0 0-.74.65l-.18 1.28c-.43.17-.83.4-1.19.68l-1.2-.48a.75.75 0 0 0-.9.35l-1 1.7a.75.75 0 0 0 .17.95l1.03.81-.06.94.06.94-1.03.81a.75.75 0 0 0-.17.95l1 1.7c.19.32.58.45.9.35l1.2-.48c.36.28.76.51 1.19.68l.18 1.28c.06.37.38.65.74.65h2c.36 0 .68-.28.74-.65l.18-1.28c.43-.17.83-.4 1.19-.68l1.2.48c.32.1.71-.03.9-.35l1-1.7a.75.75 0 0 0-.17-.95z"/></svg>
+      Particles
+    </button>
+    <button class="cat-pill" data-cat="verbforms" onclick="filterCategory('verbforms', this)">
+      <svg width="15" height="15" fill="#3a56d4" viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg>
+      Verb Forms
+    </button>
+    <button class="cat-pill" data-cat="adjectives" onclick="filterCategory('adjectives', this)">
+      <span style="font-size:15px;">🙂</span>
+      Adjectives
+    </button>
+    <button class="cat-pill" data-cat="others" onclick="filterCategory('others', this)">
+      <svg width="15" height="15" fill="none" stroke="#7c5cd6" stroke-width="2.3" stroke-linecap="round" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="19" cy="12" r="1.4"/></svg>
+      Others
+    </button>
+  </div>
+
+  <!-- Section header -->
+  <div class="flex items-center gap-2.5 mb-3 fu">
+    <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eafaf3;">
+      <svg width="17" height="17" fill="none" stroke="#27ae72" stroke-width="2.2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+    </div>
+    <h2 class="font-extrabold text-base t-ink flex-1">Grammar Lessons</h2>
+    <span class="font-extrabold text-sm" style="color:#27ae72;" id="lesson-count">0 Lessons</span>
+  </div>
+
+  <!-- Hidden search (focus target for search icon) -->
+  <input id="lesson-search" type="text" placeholder="Search grammar points…" class="w-full mb-3 px-4 py-2.5 rounded-xl border border-slate-200 text-sm bg-white focus:outline-none focus:border-mint" oninput="applySearch(this.value)"/>
+
+  <!-- Lesson list -->
+  <div id="lesson-list" class="space-y-3">
+    <div id="lesson-loading" class="text-center py-16 t-muted text-sm">Loading grammar lessons…</div>
+  </div>
+  <div id="lesson-empty" class="hidden text-center py-12">
+    <div class="text-3xl mb-2">🔍</div>
+    <div class="text-sm t-muted">No grammar points match.</div>
+  </div>
+
+</div>
+
+<!-- Floating sort button -->
+<button class="fab" aria-label="Sort" onclick="alert('Sort options coming soon')">
+  <svg width="22" height="22" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg>
+</button>
+
+<!-- Bottom nav (matches homepage) -->
+<nav id="botnav" class="lg:hidden fixed bottom-3 left-3 right-3 z-40 transition-transform duration-300 rounded-full shadow-lg2"
+     style="background:rgba(255,255,255,.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);">
+  <div class="flex items-center" style="height:66px;">
+    <a href="../../../index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Home</span>
+    </a>
+    <a href="../../../jlpt/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 4h6a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2z"/><path d="M22 4h-6a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">JLPT</span>
+    </a>
+    <a href="../../../ssw/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3 10 5.5-10 5.5L2 8.5 12 3Z"/><path d="M6 11v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">SSW</span>
+    </a>
+    <a href="../../../quiz/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M4 20h2.5L18 8.5a1.8 1.8 0 0 0-2.5-2.5L4 17.5V20Z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Quiz</span>
+    </a>
+    <a href="../../../other/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+      <span class="text-[11px] font-semibold t-muted">More</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+/* ══════════════════════════════════════════════════════════
+   Loads grammar-n5-data.json which is a FLAT ARRAY of grammar
+   points, one object per point, shaped like:
+
+   {
+     "lesson": "Lesson 1",
+     "grammar_point": "Particle は (Topic Marker)",
+     "form": "N₁ は N₂ です。",
+     "english_explanation": "...",
+     "nepali_explanation": "...",
+     "examples": [ { "japanese","romaji","english","nepali" }, ... ]
+   }
+
+   There is no id/kana/romaji/category field in the raw data, so we
+   derive them client-side:
+     - id       -> slug built from grammar_point + index (stable enough
+                   for progress-tracking keys; re-ordering the JSON
+                   will change ids, so keep the file append-only)
+     - kana     -> first run of Japanese characters found in
+                   grammar_point (fallback: from `form`, fallback: 文)
+     - category -> guessed from keywords in grammar_point/form
+                   (Particle / Adjective / Verb+て/ない/た-form / else Other)
+     - description -> english_explanation (truncated for the card)
+
+   The full transformed dataset (incl. nepali_explanation + examples)
+   is cached to localStorage under 'sakura_grammar_n5_full' so the
+   lesson detail page (lesson.html?id=...) can read it by id without
+   re-fetching or re-deriving anything.
+   ══════════════════════════════════════════════════════════ */
+var allLessons = [];
+var GRAMMAR_LESSONS = [];
+var langMode = (function(){
+  try { return localStorage.getItem('sakura_lang_mode') || 'np'; } catch(e){ return 'np'; }
+})();
+
+function escapeHtml(s){
+  return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function truncate(str, n){
+  str = str || '';
+  if (str.length <= n) return str;
+  return str.slice(0, n).replace(/\s+\S*$/, '') + '…';
+}
+
+/* Grab the longest run of hiragana/katakana/kanji from a string, for
+   use as the little circular lesson icon. */
+function extractKana(str){
+  var m = (str || '').match(/[\u3040-\u30ff\u4e00-\u9faf々〜～]+/g);
+  if (!m || !m.length) return '';
+  m.sort(function(a,b){ return b.length - a.length; });
+  var k = m[0];
+  return k.length > 4 ? k.slice(0,4) : k;
+}
+
+function categoryFromPoint(gp, form){
+  var s = ((gp || '') + ' ' + (form || '')).toLowerCase();
+  if (s.indexOf('particle') !== -1) return 'Particles';
+  if (s.indexOf('adjective') !== -1 || s.indexOf('adj') !== -1) return 'Adjectives';
+  if (s.indexOf('verb') !== -1 ||
+      /て-?form|ない-?form|た-?form|ます|ましょう|ません|copula/i.test(gp || '')) {
+    return 'Verb Forms';
+  }
+  return 'Others';
+}
+
+function slugifyCategory(name){
+  return (name || 'others').toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
+function tagColorFor(category){
+  var slug = slugifyCategory(category);
+  var map = {
+    particles:  ['#27ae72', '#d7f3ea'],
+    verbforms:  ['#3a56d4', '#dbe0fb'],
+    adjectives: ['#c98a12', '#fdeecb'],
+    others:     ['#7c5cd6', '#e7e4f7'],
+  };
+  return map[slug] || map.others;
+}
+
+function makeId(gp, idx){
+  var base = (gp || 'grammar')
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-')
+    .slice(0, 40)
+    .replace(/-+$/, '');
+  return 'g' + (idx + 1) + (base ? '-' + base : '');
+}
+
+function transformRawData(raw){
+  var arr = Array.isArray(raw) ? raw : (raw.lessons || raw.data || []);
+  return arr.map(function(item, idx){
+    var category = categoryFromPoint(item.grammar_point, item.form);
+    return {
+      id: makeId(item.grammar_point, idx),
+      number: idx + 1,
+      lesson: item.lesson || '',
+      grammar_point: item.grammar_point || '',
+      form: item.form || '',
+      kana: extractKana(item.grammar_point) || extractKana(item.form) || '文',
+      description: item.english_explanation || '',
+      nepali_explanation: item.nepali_explanation || '',
+      examples: item.examples || [],
+      category: category,
+      tag_label: category,
+    };
+  });
+}
+
+function renderLessons(lessons){
+  var listEl = document.getElementById('lesson-list');
+  var html = lessons.map(function(l){
+    var slug = slugifyCategory(l.category);
+    var colors = tagColorFor(l.category);
+    var tagColor = colors[0], tagBg = colors[1];
+    var iconBg = l.icon_bg || tagBg;
+    var tagLabel = (l.lesson ? l.lesson + ' · ' : '') + (l.tag_label || l.category || '');
+    var descText = langMode === 'np' ? (l.nepali_explanation || l.description) : (l.description || l.nepali_explanation);
+    return '' +
+      '<a href="list.html?id=' + encodeURIComponent(l.id) + '" class="lesson-card" data-cat="' + slug + '">' +
+        '<div class="lesson-body">' +
+          '<div class="lesson-title">' + escapeHtml(l.grammar_point) + '</div>' +
+          '<div class="lesson-romaji jp">' + escapeHtml(l.form) + '</div>' +
+          '<div class="lesson-desc">' + escapeHtml(truncate(descText, 100)) + '</div>' +
+          '<span class="lesson-tag" style="background:' + tagBg + ';color:' + tagColor + ';">' + escapeHtml(tagLabel) + '</span>' +
+        '</div>' +
+        '<div class="lesson-right">' +
+          '<div class="lesson-pct-wrap">' +
+            '<span class="lesson-pct" id="pb-' + l.id + '-pct">0%</span>' +
+            '<div class="lesson-bar"><span id="pb-' + l.id + '-bar" style="width:0%;background:' + tagColor + ';"></span></div>' +
+          '</div>' +
+          '<span class="lesson-chevron"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></span>' +
+        '</div>' +
+      '</a>';
+  }).join('');
+  listEl.innerHTML = html;
+  allLessons = Array.prototype.slice.call(document.querySelectorAll('.lesson-card'));
+  document.getElementById('lesson-count').textContent = lessons.length + ' Lesson' + (lessons.length === 1 ? '' : 's');
+  document.getElementById('lessons-completed').textContent = '0/' + lessons.length;
+}
+
+var LANG_BTN_PAIRS = [
+  ['lang-btn-idx-mob-en', 'lang-btn-idx-mob-np'],
+  ['lang-btn-idx-desk-en', 'lang-btn-idx-desk-np'],
+];
+
+function syncLangButtons(){
+  LANG_BTN_PAIRS.forEach(function(pair){
+    var enBtn = document.getElementById(pair[0]);
+    var npBtn = document.getElementById(pair[1]);
+    if (!enBtn || !npBtn) return;
+    if (langMode === 'en') {
+      enBtn.style.background = '#27ae72'; enBtn.style.color = '#fff'; enBtn.classList.remove('inactive','t-muted');
+      npBtn.style.background = 'transparent'; npBtn.style.color = ''; npBtn.classList.add('inactive','t-muted');
+    } else {
+      npBtn.style.background = '#27ae72'; npBtn.style.color = '#fff'; npBtn.classList.remove('inactive','t-muted');
+      enBtn.style.background = 'transparent'; enBtn.style.color = ''; enBtn.classList.add('inactive','t-muted');
+    }
+  });
+}
+
+function setLangMode(mode){
+  langMode = mode;
+  try { localStorage.setItem('sakura_lang_mode', mode); } catch(e){}
+  syncLangButtons();
+  if (GRAMMAR_LESSONS.length) {
+    renderLessons(GRAMMAR_LESSONS);
+    var activeCatBtn = document.querySelector('.cat-pill.active');
+    var activeCat = activeCatBtn ? activeCatBtn.dataset.cat : 'all';
+    applyFilters(activeCat, document.getElementById('lesson-search').value);
+  }
+}
+
+function loadGrammarLessons(){
+  fetch('grammar-n5-data.json')
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function(raw){
+      GRAMMAR_LESSONS = transformRawData(raw);
+      try { localStorage.setItem('sakura_grammar_n5_full', JSON.stringify(GRAMMAR_LESSONS)); } catch(e){}
+      syncLangButtons();
+      renderLessons(GRAMMAR_LESSONS);
+      loadFirebaseProgress();
+    })
+    .catch(function(err){
+      document.getElementById('lesson-list').innerHTML = '<div class="text-center py-16 t-muted text-sm">Could not load grammar-n5-data.json.</div>';
+      console.warn('Grammar lessons load failed:', err);
+    });
+}
+loadGrammarLessons();
+
+/* ── Category filter ── */
+function filterCategory(cat, btn){
+  document.querySelectorAll('.cat-pill').forEach(function(p){ p.classList.remove('active'); });
+  btn.classList.add('active');
+  applyFilters(cat, document.getElementById('lesson-search').value);
+}
+function applySearch(q){
+  var activeCat = document.querySelector('.cat-pill.active').dataset.cat;
+  applyFilters(activeCat, q);
+}
+function applyFilters(cat, query){
+  query = (query || '').trim().toLowerCase();
+  var visible = 0;
+  allLessons.forEach(function(card){
+    var matchesCat = (cat === 'all') || (card.dataset.cat === cat);
+    var text = card.textContent.toLowerCase();
+    var matchesSearch = !query || text.includes(query);
+    var show = matchesCat && matchesSearch;
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+  document.getElementById('lesson-count').textContent = visible + ' Lesson' + (visible === 1 ? '' : 's');
+  document.getElementById('lesson-empty').classList.toggle('hidden', visible !== 0);
+}
+
+/* ── Dark mode (manual toggle, matches homepage) ── */
+let isDark = false;
+const MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+const SUN  = '<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/>';
+function toggleDark() {
+  isDark = !isDark;
+  document.body.className = isDark ? 'mesh-dark min-h-screen text-slate-100 dark' : 'mesh-light min-h-screen';
+  ['mob-icon','desk-icon'].forEach(id => { const el = document.getElementById(id); if(el) el.innerHTML = isDark ? SUN : MOON; });
+  const l = document.getElementById('desk-lbl'); if(l) l.textContent = isDark ? 'Light mode' : 'Dark mode';
+}
+/* Default is always light mode — no auto system-preference detection. */
+
+/* ── Scroll-direction nav show/hide (mobile only) ── */
+(function(){
+  let lastY = window.scrollY;
+  const topbar = document.getElementById('topbar');
+  const botnav = document.getElementById('botnav');
+  window.addEventListener('scroll', function(){
+    const y = window.scrollY;
+    const goingDown = y > lastY;
+    if (y < 10) { if (topbar) topbar.style.transform = 'translateY(0)'; if (botnav) botnav.style.transform = 'translateY(0)'; }
+    else if (goingDown) { if (botnav) botnav.style.transform = 'translateY(150%)'; if (topbar) topbar.style.transform = 'translateY(0)'; }
+    else { if (topbar) topbar.style.transform = 'translateY(-100%)'; if (botnav) botnav.style.transform = 'translateY(0)'; }
+    lastY = y;
+  }, { passive: true });
+})();
+
+/* ── Desktop profile dropdown ── */
+let deskProfOpen = false;
+function toggleDeskProf() {
+  deskProfOpen = !deskProfOpen;
+  const drop = document.getElementById('desk-prof-drop');
+  const chev = document.getElementById('desk-prof-chev');
+  drop.className = drop.className.replace(/\b(open|closed)\b/, deskProfOpen ? 'open' : 'closed');
+  if(chev) chev.style.transform = deskProfOpen ? 'rotate(180deg)' : '';
+}
+
+/* ── Language dropdowns ── */
+let deskLangOpen = false;
+function toggleDeskLang() {
+  deskLangOpen = !deskLangOpen;
+  const m = document.getElementById('desk-lang-drop'), c = document.getElementById('desk-lang-chev');
+  m.className = m.className.replace(/\b(open|closed)\b/, deskLangOpen ? 'open' : 'closed');
+  c.style.transform = deskLangOpen ? 'rotate(180deg)' : '';
+}
+function setLang(code, flag) {
+  ['desk-lang-code','lang-code'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=code; });
+  ['desk-lang-flag','lang-flag'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=flag; });
+  deskLangOpen = false;
+  document.getElementById('desk-lang-drop').className = document.getElementById('desk-lang-drop').className.replace(/\b(open|closed)\b/,'closed');
+  document.getElementById('desk-lang-chev').style.transform = '';
+}
+const drops = { prof: false, lang: false };
+function toggleDrop(name) {
+  const other = name === 'prof' ? 'lang' : 'prof';
+  drops[other] = false;
+  const oel = document.getElementById(other === 'prof' ? 'prof-drop' : 'lang-drop');
+  if(oel) oel.className = oel.className.replace(/\bopen\b/,'closed');
+  drops[name] = !drops[name];
+  const el = document.getElementById(name === 'prof' ? 'prof-drop' : 'lang-drop');
+  if(el) el.className = el.className.replace(/\b(open|closed)\b/, drops[name] ? 'open' : 'closed');
+  if(name === 'lang') { const chev = document.getElementById('lang-chev'); if(chev) chev.style.transform = drops.lang ? 'rotate(180deg)' : ''; }
+}
+document.addEventListener('click', e => {
+  const deskProfWrap = document.getElementById('desk-prof-wrap');
+  if(deskProfWrap && !deskProfWrap.contains(e.target) && deskProfOpen) {
+    deskProfOpen = false;
+    const drop = document.getElementById('desk-prof-drop'), chev = document.getElementById('desk-prof-chev');
+    if(drop) drop.className = drop.className.replace(/\b(open|closed)\b/,'closed');
+    if(chev) chev.style.transform = '';
+  }
+  const dlw = document.getElementById('desk-lang-wrap');
+  if(dlw && !dlw.contains(e.target) && deskLangOpen) {
+    deskLangOpen = false;
+    document.getElementById('desk-lang-drop').className = document.getElementById('desk-lang-drop').className.replace(/\b(open|closed)\b/,'closed');
+    document.getElementById('desk-lang-chev').style.transform = '';
+  }
+  const pb = document.getElementById('prof-wrap');
+  if(pb && !pb.contains(e.target) && drops.prof) { drops.prof = false; document.getElementById('prof-drop').className = document.getElementById('prof-drop').className.replace(/\b(open|closed)\b/,'closed'); }
+  const lb = document.getElementById('lang-wrap');
+  if(lb && !lb.contains(e.target) && drops.lang) { drops.lang = false; document.getElementById('lang-drop').className = document.getElementById('lang-drop').className.replace(/\b(open|closed)\b/,'closed'); document.getElementById('lang-chev').style.transform = ''; }
+});
+
+/* ── Cached user name ── */
+(function(){
+  var cachedName = localStorage.getItem('sakura_user_name');
+  if (cachedName) {
+    ['sb-name','mob-drop-name','desk-drop-name'].forEach(function(id){ var el=document.getElementById(id); if(el) el.textContent=cachedName; });
+  }
+})();
+
+/* ── Firebase: REAL progress tracking (no fake numbers) ──
+   Paths (adjust if your schema differs):
+     engagement/{uid}                          → totalPoints, streak
+     progress/{uid}/jlpt/n5/grammar/{lessonId}  → { completed: 0|1, mastery: 0-100 } */
+var _fbUser = null, _fbReady = false;
+window.loadFirebaseProgress = function(){
+  if (_fbUser && document.querySelectorAll('.lesson-card').length) {
+    _runProgressLoad(_fbUser);
+  }
+};
+function _setLessonPct(id, mastery){
+  var bar = document.getElementById('pb-'+id+'-bar'), pct = document.getElementById('pb-'+id+'-pct');
+  var p = Math.max(0, Math.min(100, mastery || 0));
+  if(bar) bar.style.width = p + '%';
+  if(pct) pct.textContent = p + '%';
+  return p;
+}
+function _runProgressLoad(user){
+  var db = firebase.database();
+
+  db.ref('engagement/'+user.uid).once('value').then(function(snap){
+    var e = snap.val() || {};
+    document.getElementById('stat-points').textContent = e.totalPoints || e.points || 0;
+    document.getElementById('stat-streak').textContent = e.streak || e.dayStreak || 0;
+  }).catch(function(){});
+
+  var lessonIds = Array.prototype.slice.call(document.querySelectorAll('.lesson-card')).map(function(el){
+    return el.querySelector('[id^="pb-"]').id.replace(/^pb-/, '').replace(/-(bar|pct)$/, '');
+  }).filter(function(v, i, a){ return a.indexOf(v) === i; });
+
+  db.ref('progress/'+user.uid+'/jlpt/n5/grammar').once('value').then(function(snap){
+    var data = snap.val() || {};
+    var completed = 0, masterySum = 0;
+    lessonIds.forEach(function(id){
+      var l = data[id] || {};
+      var m = _setLessonPct(id, l.mastery || 0);
+      if (l.completed) completed++;
+      masterySum += m;
+    });
+    var total = lessonIds.length || 1;
+    var overallPct = Math.round(masterySum / total);
+    var offset = 251.3 - (overallPct/100) * 251.3;
+    var ringEl = document.getElementById('ring-fill');
+    if(ringEl) setTimeout(function(){ ringEl.style.strokeDashoffset = offset; }, 150);
+    document.getElementById('ring-pct').textContent = overallPct + '%';
+    document.getElementById('lessons-completed').textContent = completed + '/' + lessonIds.length;
+    document.getElementById('lessons-bar').style.width = Math.round(completed/lessonIds.length*100) + '%';
+    document.getElementById('mastery-pct').textContent = overallPct + '%';
+    document.getElementById('mastery-bar').style.width = overallPct + '%';
+  }).catch(function(){});
+}
+(function(){
+  function loadScript(src,cb){ var s=document.createElement('script'); s.src=src; s.onload=cb; document.head.appendChild(s); }
+  function initFirebase(){
+    if(!firebase.apps.length){ firebase.initializeApp({apiKey:"AIzaSyB-5EgDmpPYpdYoRpX9pXst5fPr2ICOai4",authDomain:"learnwith-sakura.firebaseapp.com",databaseURL:"https://learnwith-sakura-default-rtdb.firebaseio.com",projectId:"learnwith-sakura",storageBucket:"learnwith-sakura.firebasestorage.app",messagingSenderId:"524809202868",appId:"1:524809202868:web:8d4f47a122d542e285bbe1"}); }
+    firebase.auth().onAuthStateChanged(function(user){ _fbUser = user; if(user) window.loadFirebaseProgress(); });
+  }
+  loadScript('https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js',function(){ loadScript('https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js',function(){ loadScript('https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js',initFirebase); }); });
+})();
+
+(function(){
+  var PAGE='grammar/n5/index.html'; var PROG=0;
+  try {
+    var list = JSON.parse(localStorage.getItem('Sakura_recent') || '[]');
+    list = list.filter(function(x){ return x.url !== PAGE; });
+    list.unshift({ url: PAGE, ts: Date.now(), prog: PROG });
+    if(list.length > 10) list = list.slice(0, 10);
+    localStorage.setItem('Sakura_recent', JSON.stringify(list));
+  } catch(e) {}
+})();
+</script>
+</body>
+</html>

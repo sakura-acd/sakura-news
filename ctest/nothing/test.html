@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatbot Search</title>
+<script async src="https://cse.google.com/cse.js?cx=e5dc5da86a49348f8"></script>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: #f2f4f7;
+    margin: 0;
+    height: 100vh;
+    position: relative;
+  }
+
+  /* Floating round chatbot icon button (bottom-right, green, chevron icon) */
+  #chatbot-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #4caf50;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  #chatbot-toggle:hover {
+    background: #439a46;
+    transform: scale(1.06);
+  }
+  #chatbot-toggle svg {
+    width: 22px;
+    height: 22px;
+    stroke: white;
+    fill: none;
+    stroke-width: 2.5;
+    transition: transform 0.25s ease;
+  }
+  #chatbot-toggle.open svg {
+    transform: rotate(180deg);
+  }
+
+  /* Search panel - styled like a chat widget, bottom-right, red header */
+  #search-panel {
+    position: fixed;
+    bottom: 92px;
+    right: 24px;
+    width: 460px;
+    max-width: 90vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    overflow: hidden;
+  }
+  #search-panel.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  #search-panel .panel-header {
+    background: #e53935;
+    color: white;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+  #search-panel h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  #search-panel-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    color: white;
+    padding: 0 0 0 8px;
+    opacity: 0.85;
+  }
+  #search-panel-close:hover {
+    opacity: 1;
+  }
+  #search-panel .panel-body {
+    padding: 16px;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 480px;
+  }
+
+  /* Keep Google CSE result text small and contained within the narrow panel */
+  #search-panel .gsc-control-cse {
+    padding: 0 !important;
+    font-size: 13px;
+  }
+  #search-panel .gsc-result {
+    padding: 6px 0 !important;
+  }
+  #search-panel table.gsc-search-box {
+    margin-bottom: 6px !important;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Search panel styled as a chat widget (hidden by default) -->
+  <div id="search-panel">
+    <div class="panel-header">
+      <h3>お問い合わせ</h3>
+      <button id="search-panel-close" aria-label="Close">&times;</button>
+    </div>
+    <div class="panel-body">
+      <div class="gcse-search"></div>
+    </div>
+  </div>
+
+  <!-- Round toggle button with chevron icon -->
+  <button id="chatbot-toggle" aria-label="Search">
+    <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  </button>
+
+<script>
+  const toggleBtn = document.getElementById('chatbot-toggle');
+  const panel = document.getElementById('search-panel');
+  const closeBtn = document.getElementById('search-panel-close');
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    panel.classList.toggle('open');
+    toggleBtn.classList.toggle('open');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    panel.classList.remove('open');
+    toggleBtn.classList.remove('open');
+  });
+
+  // Close panel when clicking outside (but not on the toggle icon)
+  document.addEventListener('click', (e) => {
+    if (!panel.contains(e.target) && !toggleBtn.contains(e.target)) {
+      panel.classList.remove('open');
+      toggleBtn.classList.remove('open');
+    }
+  });
+</script>
+
+</body>
+</html>

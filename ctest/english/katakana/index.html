@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/fab.svg"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>カタカナ Draw — Sakura</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans:['Outfit','sans-serif'], jp:['"Noto Sans JP"','sans-serif'] },
+          colors: {
+            blue:   { DEFAULT:'#7eb8e4', deep:'#3a7cbf' },
+            teal:   { DEFAULT:'#6ecec8', deep:'#2a9d8f' },
+            mint:   { DEFAULT:'#80d4a8', deep:'#27ae72' },
+            coral:  { DEFAULT:'#f4a57a', deep:'#e0693a' },
+            butter: { DEFAULT:'#f5da8a', deep:'#d4a017' },
+            lilac:  { DEFAULT:'#c4a8e0', deep:'#8b5cf6' },
+            ink:    { DEFAULT:'#1f2937', 2:'#475569', muted:'#94a3b8' },
+            bg:     { DEFAULT:'#f5f8fc', surface:'#ffffff', s2:'#eef2f7' },
+          },
+          borderRadius: { xl2:'1.25rem', xl3:'1.75rem', xl4:'2.25rem' },
+          boxShadow: {
+            card: '0 2px 16px rgba(15,23,42,.07)',
+            md2:  '0 4px 24px rgba(15,23,42,.12)',
+            lg2:  '0 8px 40px rgba(15,23,42,.16)',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family:'Outfit',sans-serif; transition:background .3s,color .3s; }
+    .jp  { font-family:'"Noto Sans JP"',sans-serif; }
+
+    .mesh-light {
+      background: radial-gradient(ellipse at 18% 0%,#e6f7f1 0%,transparent 45%),
+                  radial-gradient(ellipse at 90% 10%,#f7e9ef 0%,transparent 40%),
+                  #f4f9f7;
+    }
+    .mesh-dark {
+      background: radial-gradient(ellipse at 18% 0%,#102a24 0%,transparent 45%),
+                  radial-gradient(ellipse at 90% 10%,#241a22 0%,transparent 40%),
+                  #0c1220;
+    }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:none} }
+    .fu { animation:fadeUp .4s ease both; }
+
+    ::-webkit-scrollbar { width:4px; height:4px; }
+    ::-webkit-scrollbar-thumb { background:#c2d3e3; border-radius:99px; }
+
+    .icon-circle { width:44px; height:44px; border-radius:9999px; display:flex; align-items:center; justify-content:center; background:#fff; box-shadow:0 2px 10px rgba(15,23,42,.06); flex-shrink:0; }
+    .t-ink2 { color:#475569; }
+    .t-muted { color:#94a3b8; }
+    .surface, .surface2 { background:#ffffff; }
+    .divider { border-color:#eef2f7; }
+
+    /* Dropdowns + avatar (matches homepage) */
+    .drop { transition:opacity .15s ease,transform .15s ease; }
+    .drop.closed { opacity:0; transform:translateY(-6px); pointer-events:none; }
+    .drop.open   { opacity:1; transform:translateY(0);    pointer-events:all; }
+    @keyframes ring-pulse {
+      0%,100% { box-shadow:0 0 0 0 rgba(110,206,200,.55); }
+      50%      { box-shadow:0 0 0 6px rgba(110,206,200,0); }
+    }
+    .avatar-ring {
+      background: conic-gradient(#6ecec8 0% 65%,#e2e8f0 65% 100%);
+      border-radius:9999px; padding:2.5px;
+      animation:ring-pulse 2.4s ease infinite;
+      display:inline-block; flex-shrink:0;
+    }
+
+    /* Section / row label */
+    .row-label { font-size:11px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#27ae72; margin:28px 0 12px; display:flex; align-items:center; gap:8px; }
+    .row-label::before { content:''; display:block; width:16px; height:2px; border-radius:2px; background:#27ae72; }
+    .row-label:first-of-type { margin-top:0; }
+
+    /* Character grid cards */
+    .hgrid { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; }
+    .hcard {
+      background:#fff; border-radius:1rem; padding:16px 6px 12px; text-align:center; cursor:pointer;
+      box-shadow:0 2px 10px rgba(15,23,42,.05); transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+      border:1.5px solid transparent; position:relative; user-select:none;
+    }
+    .hcard:hover { transform:translateY(-3px); box-shadow:0 8px 20px rgba(15,23,42,.1); border-color:rgba(39,174,114,.3); }
+    .hcard.active-card { border-color:#27ae72; background:#eafaf3; box-shadow:0 0 0 2px rgba(39,174,114,.2); }
+    .hchar { font-size:1.7rem; font-weight:600; display:block; margin-bottom:4px; color:#1f2937; line-height:1; }
+    .hrom { font-size:11px; font-weight:700; letter-spacing:.04em; color:#94a3b8; }
+    .hcard-empty { border-radius:1rem; background:transparent; }
+    .special-tag {
+      position:absolute; top:5px; left:5px; font-size:8px; font-weight:800; letter-spacing:.04em; text-transform:uppercase;
+      padding:1.5px 6px; border-radius:9999px; background:#fdeecb; color:#c98a12; line-height:1.3;
+    }
+
+    /* Compound section */
+    .compound-note { font-size:13px; color:#94a3b8; margin-bottom:14px; }
+    .compound-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:10px; }
+    .compound-group { background:#fff; border-radius:1rem; padding:14px; box-shadow:0 2px 10px rgba(15,23,42,.05); }
+    .cg-header { display:flex; align-items:baseline; gap:6px; margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid #eef2f7; }
+    .cg-base { font-size:1.35rem; font-weight:700; color:#27ae72; }
+    .cg-rom { font-size:11px; font-weight:700; color:#94a3b8; letter-spacing:.04em; }
+    .cg-combos { display:flex; gap:6px; }
+    .cg-card { flex:1; background:#f8fafc; border-radius:.6rem; padding:7px 3px; text-align:center; }
+    .cg-char { font-size:1.05rem; font-weight:600; display:block; margin-bottom:2px; color:#1f2937; }
+    .cg-rom-sm { font-size:10px; font-weight:700; letter-spacing:.04em; color:#94a3b8; }
+
+    /* Draw panel (bottom sheet) */
+    .draw-panel {
+      position:fixed; bottom:0; left:0; right:0; z-index:300;
+      background:#fff; border-top:1px solid #eef2f7; border-radius:1.75rem 1.75rem 0 0;
+      box-shadow:0 -8px 40px rgba(15,23,42,.16);
+      transform:translateY(100%); transition:transform .4s cubic-bezier(.23,1,.32,1);
+      padding:20px 18px 30px; max-height:90vh; overflow-y:auto;
+    }
+    .draw-panel.open { transform:translateY(0); }
+    .dp-inner { max-width:520px; margin:0 auto; }
+    .dp-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; }
+    .dp-char-info { display:flex; align-items:center; gap:14px; }
+    .dp-char-big { font-size:2.6rem; font-weight:600; line-height:1; color:#27ae72; }
+    .dp-rom { font-size:1.1rem; font-weight:800; letter-spacing:.04em; margin-bottom:4px; color:#1f2937; }
+    .dp-tags { display:flex; gap:6px; }
+    .dp-tag { font-size:9px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; padding:2px 8px; border-radius:9999px; }
+    .dp-tag.type { background:#d7f3ea; color:#27ae72; }
+    .dp-tag.row  { background:#fdeecb; color:#c98a12; }
+
+    .dp-cols { display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:start; }
+    @media(max-width:520px) { .dp-cols { grid-template-columns:1fr; } }
+    .col-label { font-size:10px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#94a3b8; margin-bottom:10px; display:flex; align-items:center; gap:6px; }
+    .col-label::before { content:''; display:block; width:9px; height:1px; background:#cbd5e1; }
+
+    .svg-viewer, .canvas-viewer { background:#f8fafc; border:1px solid #eef2f7; border-radius:1rem; padding:14px; display:flex; flex-direction:column; align-items:center; gap:12px; }
+    .stroke-stage { position:relative; width:100%; max-width:200px; aspect-ratio:1/1; background:#fff; border-radius:.6rem; }
+    .loader { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:11px; color:#94a3b8; text-align:center; padding:8px; }
+
+    .stroke-btn-row, .canvas-btn-row { display:flex; gap:6px; width:100%; }
+    .s-btn, .c-btn {
+      flex:1; padding:8px 4px; border:1px solid #e2e8f0; border-radius:.6rem; background:#fff; color:#475569;
+      font-family:'Outfit',sans-serif; font-size:12px; font-weight:700; cursor:pointer; transition:all .18s; text-align:center;
+    }
+    .s-btn:hover, .c-btn:hover { color:#1f2937; border-color:rgba(39,174,114,.4); }
+    .s-btn.play { background:linear-gradient(135deg,#6ecec8,#27ae72); color:#fff; border-color:transparent; box-shadow:0 3px 12px rgba(39,174,114,.35); }
+    .s-btn.play:hover { box-shadow:0 5px 18px rgba(39,174,114,.5); }
+    .c-btn.red { border-color:rgba(224,105,58,.3); color:#e0693a; }
+    .c-btn.red:hover { background:rgba(224,105,58,.08); }
+
+    .draw-stage { position:relative; width:100%; max-width:200px; aspect-ratio:1/1; border-radius:.6rem; overflow:hidden; cursor:crosshair; touch-action:none; background:#fff; }
+    .ghost { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:120px; font-weight:400; opacity:.05; pointer-events:none; user-select:none; color:#1f2937; transition:opacity .3s; }
+    .ghost.on { opacity:.12; }
+    #drawCanvas { position:absolute; inset:0; width:100%; height:100%; touch-action:none; }
+
+    .dp-nav-row { display:flex; gap:8px; margin-top:16px; }
+    .dp-nav-btn {
+      flex:1; padding:10px; border:1px solid #e2e8f0; border-radius:.7rem; background:#fff; color:#475569;
+      font-family:'Outfit',sans-serif; font-size:13px; font-weight:700; cursor:pointer; transition:all .18s; text-align:center;
+    }
+    .dp-nav-btn:hover { color:#1f2937; border-color:rgba(39,174,114,.4); background:#f0fdf7; }
+    .dp-close {
+      background:#f1f5f9; border:1px solid #e2e8f0; border-radius:.6rem; width:34px; height:34px;
+      display:flex; align-items:center; justify-content:center; cursor:pointer; color:#64748b; font-size:1rem; transition:all .18s;
+    }
+    .dp-close:hover { color:#1f2937; border-color:rgba(224,105,58,.4); }
+
+    body.dark .hcard, body.dark .compound-group, body.dark .cg-card,
+    body.dark .icon-circle { background:#151d2e !important; box-shadow:0 2px 10px rgba(0,0,0,.3) !important; }
+    body.dark .cg-card { background:#1a2338 !important; }
+    body.dark .hcard.active-card { background:rgba(39,174,114,.12) !important; }
+    body.dark .hchar, body.dark .cg-char { color:#e8eef6 !important; }
+    body.dark #topbar, body.dark #botnav, body.dark #sidebar-el { background:rgba(14,19,32,.96) !important; border-color:#1d2740 !important; }
+    body.dark h1, body.dark .t-ink { color:#e8eef6 !important; }
+    body.dark .t-ink2 { color:#8da4c0 !important; }
+    body.dark .t-muted { color:#8da4c0 !important; }
+    body.dark .surface, body.dark .surface2 { background:#151d2e !important; }
+    body.dark .divider { border-color:#1d2740 !important; }
+    body.dark .avatar-ring { background:conic-gradient(#6ecec8 0% 65%,#1d2740 65% 100%); }
+    body.dark #lang-drop, body.dark #desk-lang-drop { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark #lang-drop a, body.dark #desk-lang-drop a { color:#8da4c0 !important; }
+    body.dark #prof-drop, body.dark #desk-prof-drop { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark #prof-drop a, body.dark #desk-prof-drop a { color:#8da4c0 !important; }
+    body.dark .draw-panel, body.dark .svg-viewer, body.dark .canvas-viewer,
+    body.dark .stroke-stage, body.dark .draw-stage { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark .s-btn, body.dark .c-btn, body.dark .dp-nav-btn, body.dark .dp-close { background:#1a2338 !important; border-color:#243050 !important; color:#8da4c0 !important; }
+    body.dark .ghost { color:#e8eef6 !important; }
+    body.dark .col-label, body.dark .compound-note { color:#8da4c0 !important; }
+    body.dark #kana-switch-mob, body.dark #kana-switch-desk { background:#1d2740 !important; border-color:#243050 !important; }
+    body.dark #kana-btn-mob-hira.inactive, body.dark #kana-btn-mob-kata.inactive,
+    body.dark #kana-btn-desk-hira.inactive, body.dark #kana-btn-desk-kata.inactive { color:#8da4c0 !important; }
+  </style>
+  <meta name="theme-color" content="#e8799a"/>
+</head>
+
+<body class="mesh-light min-h-screen" id="body">
+
+<!-- ═══════════ DESKTOP SIDEBAR (matches homepage) ═══════════ -->
+<aside id="sidebar-el" class="hidden lg:flex flex-col fixed top-0 left-0 h-full w-60 bg-white surface border-r border-slate-100 divider z-30" style="box-shadow:0 2px 16px rgba(15,23,42,.07);">
+
+  <div class="px-4 py-4 flex items-center gap-3 border-b border-slate-100 divider">
+    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow-md flex-shrink-0">
+      <span class="jp text-white font-bold text-base">識</span>
+    </div>
+    <div class="min-w-0 flex-1">
+      <div class="font-bold text-base tracking-tight t-ink leading-tight">Sakura</div>
+      <div class="text-xs t-muted">日本語 Learning</div>
+    </div>
+  </div>
+
+  <div class="px-5 py-4 flex items-center gap-3 border-b border-slate-100 divider relative" id="desk-prof-wrap">
+    <button onclick="toggleDeskProf()" class="flex items-center gap-3 flex-1 min-w-0 focus:outline-none" aria-label="Profile">
+      <div class="avatar-ring flex-shrink-0">
+        <div id="sb-avatar" class="w-9 h-9 rounded-full bg-gradient-to-br from-blue to-teal flex items-center justify-center text-white font-bold text-sm overflow-hidden">S</div>
+      </div>
+      <div class="flex-1 min-w-0 text-left">
+        <div class="font-semibold text-sm t-ink leading-tight" id="sb-name">Learner</div>
+      </div>
+      <svg id="desk-prof-chev" class="w-3.5 h-3.5 t-muted transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div id="desk-prof-drop" class="drop closed absolute left-3 right-3 top-full mt-1 bg-white surface rounded-xl2 shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+      <div class="px-4 py-3 bg-gradient-to-r from-blue/6 to-teal/6 border-b border-slate-100 divider">
+        <div class="font-bold text-sm t-ink" id="desk-drop-name">Learner</div>
+      </div>
+      <a href="../../../profile/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        My Profile
+      </a>
+      <a href="../../../download/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors border-t border-slate-100 divider">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16l-4-4h3V4h2v8h3l-4 4z"/><path d="M4 20h16"/></svg>
+        Download App
+      </a>
+    </div>
+  </div>
+
+  <nav class="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
+    <a href="../../../index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg>Home
+    </a>
+    <a href="../../../quiz/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg>Quiz
+    </a>
+    <div class="pt-4 pb-1 px-3 text-[10px] font-bold tracking-widest t-muted uppercase">Courses</div>
+    <a href="../../../jlpt/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>JLPT
+    </a>
+    <a href="../../../ssw/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-mint/20 text-mint-deep font-bold text-[10px] flex items-center justify-center">SSW</span> SSW</a>
+    <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold" style="color:#27ae72;background:#eafaf3;">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>Reading &amp; Writing
+    </a>
+    <div class="pt-4 pb-1 px-3 text-[10px] font-bold tracking-widest t-muted uppercase">General</div>
+    <a href="../../../other/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>More
+    </a>
+  </nav>
+
+  <div class="px-4 py-4 border-t border-slate-100 divider space-y-3">
+    <div class="flex items-center rounded-full p-0.5 border border-slate-200 divider w-full" style="background:#f1f5f9;" id="kana-switch-desk">
+      <button onclick="setScriptMode('hiragana')" id="kana-btn-desk-hira" class="flex-1 px-3 py-1.5 rounded-full text-xs font-bold transition-all t-muted inactive jp">あ Hiragana</button>
+      <button onclick="setScriptMode('katakana')" id="kana-btn-desk-kata" class="flex-1 px-3 py-1.5 rounded-full text-xs font-bold transition-all jp" style="background:#27ae72;color:#fff;">ア Katakana</button>
+    </div>
+    <button onclick="toggleDark()" class="flex items-center gap-2 text-xs t-muted hover:text-ink transition-colors">
+      <svg id="desk-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span id="desk-lbl">Dark mode</span>
+    </button>
+  </div>
+</aside>
+
+
+<!-- ═══════════ MOBILE TOPBAR (matches homepage) ═══════════ -->
+<header id="topbar" class="lg:hidden fixed top-0 left-0 right-0 z-40 px-4 py-2.5 flex items-center transition-transform duration-300"
+        style="background:rgba(255,255,255,.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:0.5px solid rgba(0,0,0,.06);">
+  <div class="relative flex-shrink-0" id="prof-wrap">
+    <button id="prof-btn" onclick="toggleDrop('prof')" class="block focus:outline-none" aria-label="Profile">
+      <div class="avatar-ring">
+        <div id="mob-avatar" class="w-9 h-9 rounded-full bg-gradient-to-br from-blue to-teal flex items-center justify-center text-white font-bold text-sm select-none overflow-hidden">S</div>
+      </div>
+    </button>
+    <div id="prof-drop" class="drop closed absolute top-full left-0 mt-2 w-52 bg-white surface rounded-xl2 shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+      <div class="px-4 py-3 bg-gradient-to-r from-blue/6 to-teal/6 border-b border-slate-100 divider">
+        <div class="font-bold text-sm t-ink" id="mob-drop-name">Learner</div>
+      </div>
+      <a href="../../../profile/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        My Profile
+      </a>
+      <a href="../../../download/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors border-t border-slate-100 divider">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16l-4-4h3V4h2v8h3l-4 4z"/><path d="M4 20h16"/></svg>
+        Download App
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 pointer-events-none select-none">
+    <span class="text-lg">✍️</span>
+    <span class="font-extrabold text-base t-ink tracking-tight" id="topbar-title">Katakana Draw</span>
+  </div>
+
+  <div class="ml-auto flex items-center gap-2 flex-shrink-0">
+    <div class="flex items-center rounded-full p-0.5 border border-slate-200 divider" style="background:#f1f5f9;" id="kana-switch-mob">
+      <button onclick="setScriptMode('hiragana')" id="kana-btn-mob-hira" class="px-2.5 py-1.5 rounded-full text-xs font-bold transition-all t-muted inactive jp">あ</button>
+      <button onclick="setScriptMode('katakana')" id="kana-btn-mob-kata" class="px-2.5 py-1.5 rounded-full text-xs font-bold transition-all jp" style="background:#27ae72;color:#fff;">ア</button>
+    </div>
+    <button onclick="toggleDark()" class="w-8 h-8 rounded-lg bg-bg-s2 surface2 border border-slate-200 divider flex items-center justify-center t-muted hover:text-blue-deep hover:border-blue/50 transition-all">
+      <svg id="mob-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+
+<div class="max-w-lg lg:max-w-none mx-auto lg:ml-60 px-4 lg:px-8 pb-28 lg:pb-10 pt-16 lg:pt-8">
+
+  <!-- Back link -->
+  <div class="flex items-center justify-between mb-5 fu">
+    <a href="../../../index.html" class="icon-circle" style="background:#dbf3ec;" aria-label="Back to Reading &amp; Writing">
+      <svg width="18" height="18" fill="none" stroke="#27ae72" stroke-width="2.4" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+    </a>
+  </div>
+
+  <!-- Hero -->
+  <div class="mb-6 fu">
+    <div class="text-xs font-extrabold uppercase tracking-wider mb-1" style="color:#27ae72;">Module 04 · Reading &amp; Writing</div>
+    <h1 class="text-4xl font-extrabold t-ink leading-none mb-2" style="letter-spacing:-0.5px;">Draw <span class="jp" id="hero-jp">カタカナ</span></h1>
+    <p class="text-sm t-muted leading-relaxed max-w-md">Tap any character to watch the animated stroke order, then practice drawing it yourself on the canvas.</p>
+  </div>
+
+  <!-- CHARACTER GRID -->
+  <div id="grid-content">
+    <div class="text-center py-16 t-muted text-sm">Loading characters…</div>
+  </div>
+
+</div>
+
+<!-- Bottom nav (matches homepage) -->
+<nav id="botnav" class="lg:hidden fixed bottom-3 left-3 right-3 z-40 transition-transform duration-300 rounded-full shadow-lg2"
+     style="background:rgba(255,255,255,.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);">
+  <div class="flex items-center" style="height:66px;">
+    <a href="../../../index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Home</span>
+    </a>
+    <a href="../../../jlpt/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 4h6a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2z"/><path d="M22 4h-6a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">JLPT</span>
+    </a>
+    <a href="../../../ssw/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3 10 5.5-10 5.5L2 8.5 12 3Z"/><path d="M6 11v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">SSW</span>
+    </a>
+    <a href="../../../quiz/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M4 20h2.5L18 8.5a1.8 1.8 0 0 0-2.5-2.5L4 17.5V20Z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Quiz</span>
+    </a>
+    <a href="../../../other/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+      <span class="text-[11px] font-semibold t-muted">More</span>
+    </a>
+  </div>
+</nav>
+
+<!-- DRAW PANEL (bottom sheet) -->
+<div class="draw-panel" id="drawPanel">
+  <div class="dp-inner">
+    <div class="dp-header">
+      <div class="dp-char-info">
+        <div class="dp-char-big jp" id="dp-char">ア</div>
+        <div>
+          <div class="dp-rom" id="dp-rom">a</div>
+          <div class="dp-tags">
+            <span class="dp-tag type" id="dp-type">Katakana</span>
+            <span class="dp-tag row" id="dp-row">Vowels</span>
+          </div>
+        </div>
+      </div>
+      <button class="dp-close" onclick="closePanel()">✕</button>
+    </div>
+
+    <div class="dp-cols">
+      <!-- LEFT: stroke guide -->
+      <div>
+        <div class="col-label">Stroke Order · 書き順</div>
+        <div class="svg-viewer">
+          <div class="stroke-stage" id="strokeStage">
+            <div class="loader">Loading…</div>
+          </div>
+          <div class="stroke-btn-row">
+            <button class="s-btn" onclick="sPrev()">← Prev</button>
+            <button class="s-btn play" id="playBtn" onclick="sPlay()">▶ Play</button>
+            <button class="s-btn" onclick="sNext()">Next →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: practice canvas -->
+      <div>
+        <div class="col-label">Your Practice · 練習</div>
+        <div class="canvas-viewer">
+          <div class="draw-stage">
+            <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none" viewBox="0 0 210 210">
+              <line x1="105" y1="0" x2="105" y2="210" stroke="#e2e8f0" stroke-width=".8" stroke-dasharray="4 4"/>
+              <line x1="0" y1="105" x2="210" y2="105" stroke="#e2e8f0" stroke-width=".8" stroke-dasharray="4 4"/>
+              <line x1="0" y1="0" x2="210" y2="210" stroke="#e2e8f0" stroke-width=".6" stroke-dasharray="4 4" opacity=".5"/>
+              <line x1="210" y1="0" x2="0" y2="210" stroke="#e2e8f0" stroke-width=".6" stroke-dasharray="4 4" opacity=".5"/>
+              <rect x=".5" y=".5" width="209" height="209" fill="none" stroke="#e2e8f0" stroke-width=".8"/>
+            </svg>
+            <div class="ghost jp" id="ghostChar">ア</div>
+            <canvas id="drawCanvas" width="210" height="210"></canvas>
+          </div>
+          <div class="canvas-btn-row">
+            <button class="c-btn" onclick="toggleGhost()" id="ghostBtn">👁 Guide</button>
+            <button class="c-btn red" onclick="clearCanvas()">🗑 Clear</button>
+          </div>
+          <div style="font-size:11px;color:#94a3b8;text-align:center">Draw with mouse or finger · ここに書いてみよう</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dp-nav-row">
+      <button class="dp-nav-btn" onclick="panelNav(-1)">← Prev char</button>
+      <button class="dp-nav-btn" onclick="panelNav(1)">Next char →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const STROKE_COLORS = ['#27ae72','#3a7cbf','#2a9d8f','#e0693a','#d4a017','#8b5cf6'];
+
+const KATAKANA_DATA = [
+  {row:'Vowels (母音)',char:'ア',rom:'a'},{row:'Vowels (母音)',char:'イ',rom:'i'},{row:'Vowels (母音)',char:'ウ',rom:'u'},
+  {row:'Vowels (母音)',char:'エ',rom:'e'},{row:'Vowels (母音)',char:'オ',rom:'o'},
+  {row:'K-row (カ行)',char:'カ',rom:'ka'},{row:'K-row (カ行)',char:'キ',rom:'ki'},{row:'K-row (カ行)',char:'ク',rom:'ku'},
+  {row:'K-row (カ行)',char:'ケ',rom:'ke'},{row:'K-row (カ行)',char:'コ',rom:'ko'},
+  {row:'S-row (サ行)',char:'サ',rom:'sa'},{row:'S-row (サ行)',char:'シ',rom:'shi'},{row:'S-row (サ行)',char:'ス',rom:'su'},
+  {row:'S-row (サ行)',char:'セ',rom:'se'},{row:'S-row (サ行)',char:'ソ',rom:'so'},
+  {row:'T-row (タ行)',char:'タ',rom:'ta'},{row:'T-row (タ行)',char:'チ',rom:'chi'},{row:'T-row (タ行)',char:'ツ',rom:'tsu'},
+  {row:'T-row (タ行)',char:'テ',rom:'te'},{row:'T-row (タ行)',char:'ト',rom:'to'},
+  {row:'N-row (ナ行)',char:'ナ',rom:'na'},{row:'N-row (ナ行)',char:'ニ',rom:'ni'},{row:'N-row (ナ行)',char:'ヌ',rom:'nu'},
+  {row:'N-row (ナ行)',char:'ネ',rom:'ne'},{row:'N-row (ナ行)',char:'ノ',rom:'no'},
+  {row:'H-row (ハ行)',char:'ハ',rom:'ha'},{row:'H-row (ハ行)',char:'ヒ',rom:'hi'},{row:'H-row (ハ行)',char:'フ',rom:'fu'},
+  {row:'H-row (ハ行)',char:'ヘ',rom:'he'},{row:'H-row (ハ行)',char:'ホ',rom:'ho'},
+  {row:'M-row (マ行)',char:'マ',rom:'ma'},{row:'M-row (マ行)',char:'ミ',rom:'mi'},{row:'M-row (マ行)',char:'ム',rom:'mu'},
+  {row:'M-row (マ行)',char:'メ',rom:'me'},{row:'M-row (マ行)',char:'モ',rom:'mo'},
+  {row:'Y-row (ヤ行)',char:'ヤ',rom:'ya'},{row:'Y-row (ヤ行)',char:'ユ',rom:'yu'},{row:'Y-row (ヤ行)',char:'ヨ',rom:'yo'},
+  {row:'R-row (ラ行)',char:'ラ',rom:'ra'},{row:'R-row (ラ行)',char:'リ',rom:'ri'},{row:'R-row (ラ行)',char:'ル',rom:'ru'},
+  {row:'R-row (ラ行)',char:'レ',rom:'re'},{row:'R-row (ラ行)',char:'ロ',rom:'ro'},
+  {row:'W-row + ン',char:'ワ',rom:'wa'},{row:'W-row + ン',char:'ヲ',rom:'wo/o',special:'Particle'},{row:'W-row + ン',char:'ン',rom:'n',special:'Consonant'},
+];
+
+const HIRAGANA_DATA = [
+  {row:'Vowels (母音)',char:'あ',rom:'a'},{row:'Vowels (母音)',char:'い',rom:'i'},{row:'Vowels (母音)',char:'う',rom:'u'},
+  {row:'Vowels (母音)',char:'え',rom:'e'},{row:'Vowels (母音)',char:'お',rom:'o'},
+  {row:'K-row (か行)',char:'か',rom:'ka'},{row:'K-row (か行)',char:'き',rom:'ki'},{row:'K-row (か行)',char:'く',rom:'ku'},
+  {row:'K-row (か行)',char:'け',rom:'ke'},{row:'K-row (か行)',char:'こ',rom:'ko'},
+  {row:'S-row (さ行)',char:'さ',rom:'sa'},{row:'S-row (さ行)',char:'し',rom:'shi'},{row:'S-row (さ行)',char:'す',rom:'su'},
+  {row:'S-row (さ行)',char:'せ',rom:'se'},{row:'S-row (さ行)',char:'そ',rom:'so'},
+  {row:'T-row (た行)',char:'た',rom:'ta'},{row:'T-row (た行)',char:'ち',rom:'chi'},{row:'T-row (た行)',char:'つ',rom:'tsu'},
+  {row:'T-row (た行)',char:'て',rom:'te'},{row:'T-row (た行)',char:'と',rom:'to'},
+  {row:'N-row (な行)',char:'な',rom:'na'},{row:'N-row (な行)',char:'に',rom:'ni'},{row:'N-row (な行)',char:'ぬ',rom:'nu'},
+  {row:'N-row (な行)',char:'ね',rom:'ne'},{row:'N-row (な行)',char:'の',rom:'no'},
+  {row:'H-row (は行)',char:'は',rom:'ha'},{row:'H-row (は行)',char:'ひ',rom:'hi'},{row:'H-row (は行)',char:'ふ',rom:'fu'},
+  {row:'H-row (は行)',char:'へ',rom:'he'},{row:'H-row (は行)',char:'ほ',rom:'ho'},
+  {row:'M-row (ま行)',char:'ま',rom:'ma'},{row:'M-row (ま行)',char:'み',rom:'mi'},{row:'M-row (ま行)',char:'む',rom:'mu'},
+  {row:'M-row (ま行)',char:'め',rom:'me'},{row:'M-row (ま行)',char:'も',rom:'mo'},
+  {row:'Y-row (や行)',char:'や',rom:'ya'},{row:'Y-row (や行)',char:'ゆ',rom:'yu'},{row:'Y-row (や行)',char:'よ',rom:'yo'},
+  {row:'R-row (ら行)',char:'ら',rom:'ra'},{row:'R-row (ら行)',char:'り',rom:'ri'},{row:'R-row (ら行)',char:'る',rom:'ru'},
+  {row:'R-row (ら行)',char:'れ',rom:'re'},{row:'R-row (ら行)',char:'ろ',rom:'ro'},
+  {row:'W-row + ん',char:'わ',rom:'wa'},{row:'W-row + ん',char:'を',rom:'wo/o',special:'Particle'},{row:'W-row + ん',char:'ん',rom:'n',special:'Consonant'},
+];
+
+const COMPOUNDS_KATAKANA = [
+  {base:'キ',rom:'ki',combos:[{char:'キャ',rom:'kya'},{char:'キュ',rom:'kyu'},{char:'キョ',rom:'kyo'}]},
+  {base:'シ',rom:'shi',combos:[{char:'シャ',rom:'sha'},{char:'シュ',rom:'shu'},{char:'ショ',rom:'sho'}]},
+  {base:'チ',rom:'chi',combos:[{char:'チャ',rom:'cha'},{char:'チュ',rom:'chu'},{char:'チョ',rom:'cho'}]},
+  {base:'ニ',rom:'ni',combos:[{char:'ニャ',rom:'nya'},{char:'ニュ',rom:'nyu'},{char:'ニョ',rom:'nyo'}]},
+  {base:'ヒ',rom:'hi',combos:[{char:'ヒャ',rom:'hya'},{char:'ヒュ',rom:'hyu'},{char:'ヒョ',rom:'hyo'}]},
+  {base:'ミ',rom:'mi',combos:[{char:'ミャ',rom:'mya'},{char:'ミュ',rom:'myu'},{char:'ミョ',rom:'myo'}]},
+  {base:'リ',rom:'ri',combos:[{char:'リャ',rom:'rya'},{char:'リュ',rom:'ryu'},{char:'リョ',rom:'ryo'}]},
+  {base:'ギ',rom:'gi',combos:[{char:'ギャ',rom:'gya'},{char:'ギュ',rom:'gyu'},{char:'ギョ',rom:'gyo'}]},
+  {base:'ジ',rom:'ji',combos:[{char:'ジャ',rom:'ja'},{char:'ジュ',rom:'ju'},{char:'ジョ',rom:'jo'}]},
+  {base:'ビ',rom:'bi',combos:[{char:'ビャ',rom:'bya'},{char:'ビュ',rom:'byu'},{char:'ビョ',rom:'byo'}]},
+  {base:'ピ',rom:'pi',combos:[{char:'ピャ',rom:'pya'},{char:'ピュ',rom:'pyu'},{char:'ピョ',rom:'pyo'}]},
+];
+
+const COMPOUNDS_HIRAGANA = [
+  {base:'き',rom:'ki',combos:[{char:'きゃ',rom:'kya'},{char:'きゅ',rom:'kyu'},{char:'きょ',rom:'kyo'}]},
+  {base:'し',rom:'shi',combos:[{char:'しゃ',rom:'sha'},{char:'しゅ',rom:'shu'},{char:'しょ',rom:'sho'}]},
+  {base:'ち',rom:'chi',combos:[{char:'ちゃ',rom:'cha'},{char:'ちゅ',rom:'chu'},{char:'ちょ',rom:'cho'}]},
+  {base:'に',rom:'ni',combos:[{char:'にゃ',rom:'nya'},{char:'にゅ',rom:'nyu'},{char:'にょ',rom:'nyo'}]},
+  {base:'ひ',rom:'hi',combos:[{char:'ひゃ',rom:'hya'},{char:'ひゅ',rom:'hyu'},{char:'ひょ',rom:'hyo'}]},
+  {base:'み',rom:'mi',combos:[{char:'みゃ',rom:'mya'},{char:'みゅ',rom:'myu'},{char:'みょ',rom:'myo'}]},
+  {base:'り',rom:'ri',combos:[{char:'りゃ',rom:'rya'},{char:'りゅ',rom:'ryu'},{char:'りょ',rom:'ryo'}]},
+  {base:'ぎ',rom:'gi',combos:[{char:'ぎゃ',rom:'gya'},{char:'ぎゅ',rom:'gyu'},{char:'ぎょ',rom:'gyo'}]},
+  {base:'じ',rom:'ji',combos:[{char:'じゃ',rom:'ja'},{char:'じゅ',rom:'ju'},{char:'じょ',rom:'jo'}]},
+  {base:'び',rom:'bi',combos:[{char:'びゃ',rom:'bya'},{char:'びゅ',rom:'byu'},{char:'びょ',rom:'byo'}]},
+  {base:'ぴ',rom:'pi',combos:[{char:'ぴゃ',rom:'pya'},{char:'ぴゅ',rom:'pyu'},{char:'ぴょ',rom:'pyo'}]},
+];
+
+let scriptMode = (function(){
+  try { return localStorage.getItem('sakura_kana_mode') || 'katakana'; } catch(e){ return 'katakana'; }
+})();
+function activeData(){ return scriptMode === 'hiragana' ? HIRAGANA_DATA : KATAKANA_DATA; }
+function activeCompounds(){ return scriptMode === 'hiragana' ? COMPOUNDS_HIRAGANA : COMPOUNDS_KATAKANA; }
+function scriptLabel(){ return scriptMode === 'hiragana' ? 'Hiragana' : 'Katakana'; }
+function scriptJpName(){ return scriptMode === 'hiragana' ? 'ひらがな' : 'カタカナ'; }
+
+const strokeCache = {};
+
+async function fetchStrokes(char){
+  if(strokeCache[char] !== undefined) return strokeCache[char];
+  const cp = char.codePointAt(0).toString(16).padStart(5,'0');
+  const url = `https://raw.githubusercontent.com/KanjiVG/kanjivg/master/kanji/${cp}.svg`;
+  try{
+    const res = await fetch(url);
+    if(!res.ok) throw new Error('not found');
+    const text = await res.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(text,'image/svg+xml');
+    const paths = [...doc.querySelectorAll('path')].filter(p=>{
+      const id = p.getAttribute('id')||'';
+      return id.includes('kvg:') && !id.includes('StrokeNumbers');
+    });
+    if(!paths.length) throw new Error('no paths');
+    const strokes = paths.map((p,i)=>({d:p.getAttribute('d'),color:STROKE_COLORS[i%STROKE_COLORS.length]}));
+    strokeCache[char] = strokes;
+    return strokes;
+  } catch(e){
+    console.warn('KanjiVG fetch failed for',char,e);
+    strokeCache[char] = null;
+    return null;
+  }
+}
+
+let currentIdx=0, strokeIdx=-1, strokeTimer=null, currentStrokes=[];
+let showGhost = false;
+
+function syncKanaButtons(){
+  const pairs = [['kana-btn-mob-hira','kana-btn-mob-kata'], ['kana-btn-desk-hira','kana-btn-desk-kata']];
+  pairs.forEach(function(pair){
+    const hiraBtn = document.getElementById(pair[0]);
+    const kataBtn = document.getElementById(pair[1]);
+    if (!hiraBtn || !kataBtn) return;
+    if (scriptMode === 'hiragana') {
+      hiraBtn.style.background = '#27ae72'; hiraBtn.style.color = '#fff'; hiraBtn.classList.remove('inactive','t-muted');
+      kataBtn.style.background = 'transparent'; kataBtn.style.color = ''; kataBtn.classList.add('inactive','t-muted');
+    } else {
+      kataBtn.style.background = '#27ae72'; kataBtn.style.color = '#fff'; kataBtn.classList.remove('inactive','t-muted');
+      hiraBtn.style.background = 'transparent'; hiraBtn.style.color = ''; hiraBtn.classList.add('inactive','t-muted');
+    }
+  });
+}
+function updateLabels(){
+  const heroEl = document.getElementById('hero-jp'); if(heroEl) heroEl.textContent = scriptJpName();
+  const topbarEl = document.getElementById('topbar-title'); if(topbarEl) topbarEl.textContent = scriptLabel() + ' Draw';
+  document.title = scriptJpName() + ' Draw — Sakura';
+}
+function setScriptMode(mode){
+  if (mode === scriptMode) return;
+  scriptMode = mode;
+  try { localStorage.setItem('sakura_kana_mode', mode); } catch(e){}
+  closePanel();
+  syncKanaButtons();
+  updateLabels();
+  renderGrid();
+}
+
+function renderGrid(){
+  const data = activeData();
+  const groups={};
+  data.forEach((h,i)=>{ if(!groups[h.row])groups[h.row]=[]; groups[h.row].push({...h,idx:i}); });
+  let html='';
+  for(const [row,chars] of Object.entries(groups)){
+    html+=`<div class="row-label">${row}</div><div class="hgrid">`;
+    chars.forEach(h=>{
+      const special = h.special ? `<span class="special-tag">${h.special}</span>` : '';
+      html+=`<div class="hcard" id="hc-${h.idx}" onclick="openPanel(${h.idx})">
+        ${special}
+        <span class="hchar jp">${h.char}</span>
+        <span class="hrom">${h.rom}</span>
+      </div>`;
+    });
+    const rem = chars.length % 5;
+    if(rem !== 0){ for(let i=0;i<5-rem;i++) html+=`<div class="hcard-empty"></div>`; }
+    html+=`</div>`;
+  }
+
+  // ── COMPOUND CHARACTERS (きゃ / キャ etc) ──
+  html += `<div class="row-label">Compound Characters · 拗音</div>`;
+  html += `<div class="compound-note">These special combinations use a small ゃゅょ/ャュョ</div>`;
+  html += `<div class="compound-grid">`;
+  activeCompounds().forEach(g=>{
+    html += `<div class="compound-group">
+      <div class="cg-header"><span class="cg-base jp">${g.base}</span><span class="cg-rom">${g.rom}</span></div>
+      <div class="cg-combos">`;
+    g.combos.forEach(c=>{
+      html += `<div class="cg-card"><span class="cg-char jp">${c.char}</span><span class="cg-rom-sm">${c.rom}</span></div>`;
+    });
+    html += `</div></div>`;
+  });
+  html += `</div>`;
+
+  document.getElementById('grid-content').innerHTML=html;
+}
+syncKanaButtons();
+updateLabels();
+renderGrid();
+
+async function openPanel(idx){
+  currentIdx=idx; strokeIdx=-1;
+  clearTimeout(strokeTimer);
+  document.querySelectorAll('.hcard').forEach(c=>c.classList.remove('active-card'));
+  const card=document.getElementById('hc-'+idx);
+  if(card){ card.classList.add('active-card'); card.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+  const h=activeData()[idx];
+  document.getElementById('dp-char').textContent=h.char;
+  document.getElementById('dp-rom').textContent=h.rom;
+  document.getElementById('dp-row').textContent=h.row;
+  const typeEl=document.getElementById('dp-type'); if(typeEl) typeEl.textContent=scriptLabel();
+  document.getElementById('ghostChar').textContent=h.char;
+  clearCanvas();
+  document.getElementById('drawPanel').classList.add('open');
+  document.body.style.overflow='hidden';
+  const stage=document.getElementById('strokeStage');
+  stage.innerHTML=`<div class="loader">Loading strokes…</div>`;
+  document.getElementById('playBtn').textContent='▶ Play';
+  const strokes = await fetchStrokes(h.char);
+  if(!strokes){
+    stage.innerHTML=`<div class="loader" style="color:#e0693a">Could not load — check internet</div>`;
+    currentStrokes=[];
+    return;
+  }
+  currentStrokes=strokes;
+  buildSVG(strokes);
+  setTimeout(()=>sPlay(),200);
+}
+
+function closePanel(){
+  clearTimeout(strokeTimer);
+  document.getElementById('drawPanel').classList.remove('open');
+  document.body.style.overflow='';
+  document.querySelectorAll('.hcard').forEach(c=>c.classList.remove('active-card'));
+}
+function panelNav(dir){ const len=activeData().length; openPanel((currentIdx+dir+len)%len); }
+
+function buildSVG(strokes){
+  const stage=document.getElementById('strokeStage');
+  let svg=`<svg id="strokeSVG" viewBox="0 0 109 109" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0">`;
+  svg+=`<line x1="54.5" y1="0" x2="54.5" y2="109" stroke="#e2e8f0" stroke-width=".6" stroke-dasharray="3 3"/>`;
+  svg+=`<line x1="0" y1="54.5" x2="109" y2="54.5" stroke="#e2e8f0" stroke-width=".6" stroke-dasharray="3 3"/>`;
+  svg+=`<rect x=".5" y=".5" width="108" height="108" fill="none" stroke="#e2e8f0" stroke-width=".6"/>`;
+  strokes.forEach((s,i)=>{
+    svg+=`<path id="sp-${i}" d="${s.d}" fill="none" stroke="${s.color}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0"/>`;
+  });
+  svg+=`</svg>`;
+  stage.innerHTML=svg;
+}
+
+function animPath(el,ms,done){
+  let len; try{len=el.getTotalLength();}catch(e){len=150;}
+  if(!len||len<1)len=150;
+  el.setAttribute('stroke-dasharray',len);
+  el.setAttribute('stroke-dashoffset',len);
+  el.setAttribute('opacity','1');
+  const t0=performance.now();
+  (function tick(now){
+    const p=Math.min((now-t0)/ms,1);
+    const ease=p<.5?2*p*p:-1+(4-2*p)*p;
+    el.setAttribute('stroke-dashoffset',len*(1-ease));
+    if(p<1)requestAnimationFrame(tick);
+    else{el.setAttribute('stroke-dashoffset','0');if(done)done();}
+  })(t0);
+}
+
+function showStroke(idx,done){
+  if(!currentStrokes.length||idx<0||idx>=currentStrokes.length)return;
+  for(let i=0;i<idx;i++){
+    const p=document.getElementById('sp-'+i);
+    if(p){let l;try{l=p.getTotalLength();}catch(e){l=150;}p.setAttribute('stroke-dasharray',l);p.setAttribute('stroke-dashoffset','0');p.setAttribute('opacity','1');}
+  }
+  for(let i=idx+1;i<currentStrokes.length;i++){
+    const p=document.getElementById('sp-'+i);
+    if(p)p.setAttribute('opacity','0');
+  }
+  const cur=document.getElementById('sp-'+idx);
+  if(cur)animPath(cur,700,done);
+  strokeIdx=idx;
+}
+
+function sPlay(){
+  clearTimeout(strokeTimer);
+  if(!currentStrokes.length)return;
+  for(let i=0;i<currentStrokes.length;i++){
+    const p=document.getElementById('sp-'+i);
+    if(p){p.setAttribute('opacity','0');p.setAttribute('stroke-dashoffset','999');}
+  }
+  strokeIdx=-1;
+  document.getElementById('playBtn').textContent='⏸ Playing…';
+  (function next(i){
+    if(i>=currentStrokes.length){document.getElementById('playBtn').textContent='▶ Play';strokeIdx=currentStrokes.length-1;return;}
+    showStroke(i,()=>{strokeTimer=setTimeout(()=>next(i+1),180);});
+  })(0);
+}
+function sNext(){if(strokeIdx<currentStrokes.length-1)showStroke(strokeIdx+1);}
+function sPrev(){
+  if(strokeIdx>0){showStroke(strokeIdx-1);return;}
+  for(let i=0;i<currentStrokes.length;i++){const p=document.getElementById('sp-'+i);if(p)p.setAttribute('opacity','0');}
+  strokeIdx=-1;
+}
+
+const canvas=document.getElementById('drawCanvas');
+const ctx=canvas.getContext('2d');
+let drawing=false,lx=0,ly=0;
+function gp(e){
+  const r=canvas.getBoundingClientRect(),sx=canvas.width/r.width,sy=canvas.height/r.height;
+  return e.touches?{x:(e.touches[0].clientX-r.left)*sx,y:(e.touches[0].clientY-r.top)*sy}:{x:(e.clientX-r.left)*sx,y:(e.clientY-r.top)*sy};
+}
+canvas.addEventListener('mousedown',e=>{drawing=true;const p=gp(e);lx=p.x;ly=p.y;ctx.beginPath();ctx.moveTo(lx,ly);});
+canvas.addEventListener('mousemove',e=>{if(!drawing)return;const p=gp(e);ctx.lineTo(p.x,p.y);ctx.strokeStyle='#27ae72';ctx.lineWidth=6;ctx.lineCap='round';ctx.lineJoin='round';ctx.stroke();lx=p.x;ly=p.y;});
+canvas.addEventListener('mouseup',()=>drawing=false);
+canvas.addEventListener('mouseleave',()=>drawing=false);
+canvas.addEventListener('touchstart',e=>{e.preventDefault();drawing=true;const p=gp(e);lx=p.x;ly=p.y;ctx.beginPath();ctx.moveTo(lx,ly);},{passive:false});
+canvas.addEventListener('touchmove',e=>{e.preventDefault();if(!drawing)return;const p=gp(e);ctx.lineTo(p.x,p.y);ctx.strokeStyle='#27ae72';ctx.lineWidth=6;ctx.lineCap='round';ctx.lineJoin='round';ctx.stroke();lx=p.x;ly=p.y;},{passive:false});
+canvas.addEventListener('touchend',e=>{e.preventDefault();drawing=false;},{passive:false});
+
+function clearCanvas(){ctx.clearRect(0,0,canvas.width,canvas.height);}
+function toggleGhost(){
+  showGhost=!showGhost;
+  document.getElementById('ghostChar').classList.toggle('on',showGhost);
+  document.getElementById('ghostBtn').textContent=showGhost?'👁 Hide':'👁 Guide';
+}
+
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('drawPanel').classList.contains('open'))return;
+  if(e.key==='Escape')closePanel();
+  if(e.key==='ArrowRight')panelNav(1);
+  if(e.key==='ArrowLeft')panelNav(-1);
+  if(e.key==='ArrowDown'){e.preventDefault();sNext();}
+  if(e.key==='ArrowUp'){e.preventDefault();sPrev();}
+  if(e.key===' '){e.preventDefault();sPlay();}
+  if(e.key.toLowerCase()==='c')clearCanvas();
+});
+
+/* ── Dark mode (manual toggle, matches homepage — shares body.dark class) ── */
+let isDark = false;
+const MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+const SUN  = '<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/>';
+function toggleDark() {
+  isDark = !isDark;
+  document.body.className = isDark ? 'mesh-dark min-h-screen text-slate-100 dark' : 'mesh-light min-h-screen';
+  ['mob-icon','desk-icon'].forEach(id => { const el = document.getElementById(id); if(el) el.innerHTML = isDark ? SUN : MOON; });
+  const l = document.getElementById('desk-lbl'); if(l) l.textContent = isDark ? 'Light mode' : 'Dark mode';
+}
+
+/* ── Scroll-direction nav show/hide (mobile only) ── */
+(function(){
+  let lastY = window.scrollY;
+  const topbar = document.getElementById('topbar');
+  const botnav = document.getElementById('botnav');
+  window.addEventListener('scroll', function(){
+    const y = window.scrollY;
+    const goingDown = y > lastY;
+    if (y < 10) { if (topbar) topbar.style.transform = 'translateY(0)'; if (botnav) botnav.style.transform = 'translateY(0)'; }
+    else if (goingDown) { if (botnav) botnav.style.transform = 'translateY(150%)'; if (topbar) topbar.style.transform = 'translateY(0)'; }
+    else { if (topbar) topbar.style.transform = 'translateY(-100%)'; if (botnav) botnav.style.transform = 'translateY(0)'; }
+    lastY = y;
+  }, { passive: true });
+})();
+
+/* ── Desktop profile dropdown ── */
+let deskProfOpen = false;
+function toggleDeskProf() {
+  deskProfOpen = !deskProfOpen;
+  const drop = document.getElementById('desk-prof-drop');
+  const chev = document.getElementById('desk-prof-chev');
+  drop.className = drop.className.replace(/\b(open|closed)\b/, deskProfOpen ? 'open' : 'closed');
+  if(chev) chev.style.transform = deskProfOpen ? 'rotate(180deg)' : '';
+}
+const drops = { prof: false };
+function toggleDrop(name) {
+  drops[name] = !drops[name];
+  const el = document.getElementById(name === 'prof' ? 'prof-drop' : null);
+  if(el) el.className = el.className.replace(/\b(open|closed)\b/, drops[name] ? 'open' : 'closed');
+}
+document.addEventListener('click', e => {
+  const deskProfWrap = document.getElementById('desk-prof-wrap');
+  if(deskProfWrap && !deskProfWrap.contains(e.target) && deskProfOpen) {
+    deskProfOpen = false;
+    const drop = document.getElementById('desk-prof-drop'), chev = document.getElementById('desk-prof-chev');
+    if(drop) drop.className = drop.className.replace(/\b(open|closed)\b/,'closed');
+    if(chev) chev.style.transform = '';
+  }
+  const pb = document.getElementById('prof-wrap');
+  if(pb && !pb.contains(e.target) && drops.prof) { drops.prof = false; const pd=document.getElementById('prof-drop'); if(pd) pd.className = pd.className.replace(/\b(open|closed)\b/,'closed'); }
+});
+
+/* ── Cached user name ── */
+(function(){
+  var cachedName = localStorage.getItem('sakura_user_name');
+  if (cachedName) {
+    ['sb-name','mob-drop-name','desk-drop-name'].forEach(function(id){ var el=document.getElementById(id); if(el) el.textContent=cachedName; });
+  }
+})();
+</script>
+</body>
+</html>

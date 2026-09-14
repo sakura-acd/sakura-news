@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌸%3C/text%3E%3C/svg%3E"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kanji — Sakura Academy</title>
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#e8799a"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="Sakura"/>
+  <link rel="apple-touch-icon" href="icons/icon-192.png"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config={theme:{extend:{
+      fontFamily:{sans:['Outfit','sans-serif'],jp:['"Noto Sans JP"','sans-serif']},
+      colors:{
+        blue:{DEFAULT:'#7eb8e4',deep:'#3a7cbf'},
+        teal:{DEFAULT:'#6ecec8',deep:'#2a9d8f'},
+        mint:{DEFAULT:'#80d4a8',deep:'#27ae72'},
+        coral:{DEFAULT:'#f4a57a',deep:'#e0693a'},
+        butter:{DEFAULT:'#f5da8a',deep:'#d4a017'},
+        lilac:{DEFAULT:'#c4a8e0',deep:'#8b5cf6'},
+        ink:{DEFAULT:'#1f2937',2:'#475569',muted:'#94a3b8'},
+        bg:{DEFAULT:'#f5f8fc',surface:'#ffffff',s2:'#eef2f7'}
+      },
+      borderRadius:{xl2:'1.25rem',xl3:'1.75rem',xl4:'2.25rem'},
+      boxShadow:{card:'0 2px 16px rgba(15,23,42,.07)',md2:'0 4px 24px rgba(15,23,42,.12)',lg2:'0 8px 40px rgba(15,23,42,.18)'}
+    }}}
+  </script>
+  <style>
+    body{font-family:'Outfit',sans-serif;}
+    .jp{font-family:'"Noto Sans JP"',sans-serif;}
+    .mesh-light{background:radial-gradient(ellipse at 18% 12%,#d8edf8 0%,transparent 52%),radial-gradient(ellipse at 82% 88%,#d2f1ec 0%,transparent 52%),#f4f7fb;}
+    .mesh-dark{background:radial-gradient(ellipse at 18% 12%,#0f2236 0%,transparent 52%),radial-gradient(ellipse at 82% 88%,#0b2120 0%,transparent 52%),#0c1220;}
+    @keyframes ring-pulse{0%,100%{box-shadow:0 0 0 0 rgba(110,206,200,.55);}50%{box-shadow:0 0 0 6px rgba(110,206,200,0);}}
+    .avatar-ring{background:conic-gradient(#6ecec8 0% 65%,#e2e8f0 65% 100%);border-radius:9999px;padding:2.5px;animation:ring-pulse 2.4s ease infinite;display:inline-block;flex-shrink:0;}
+    .drop{transition:opacity .15s ease,transform .15s ease;}
+    .drop.closed{opacity:0;transform:translateY(-6px);pointer-events:none;}
+    .drop.open{opacity:1;transform:translateY(0);pointer-events:all;}
+    .s-act{background:#eef5fc;color:#3a7cbf;font-weight:600;}
+    /* Kanji card */
+    .kanji-card{transition:transform .18s ease,box-shadow .18s ease;background:#fff;border-radius:1.75rem;border:1px solid #e2e8f0;box-shadow:0 2px 16px rgba(15,23,42,.07);}
+    .kanji-card:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(15,23,42,.1);}
+    .kanji-char{font-family:'"Noto Sans JP"',sans-serif;font-size:4rem;font-weight:700;color:#3a7cbf;line-height:1;text-shadow:0 0 40px rgba(58,124,191,.15);}
+    @media(min-width:1024px){.kanji-char{font-size:5rem;}}
+    .ex-card{background:#f8fafc;border-radius:1rem;border:1px solid #e2e8f0;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+    .fu{animation:fadeUp .35s ease both;}
+    /* Dark mode */
+    body.dark #topbar,body.dark #botnav,body.dark #sidebar-el{background:rgba(14,19,32,.96)!important;border-color:#1d2740!important;}
+    body.dark .surface{background:#151d2e!important;border-color:#1d2740!important;}
+    body.dark .t-ink{color:#e8eef6!important;} body.dark .t-ink2{color:#8da4c0!important;} body.dark .t-muted{color:#4a607a!important;}
+    body.dark .divider{border-color:#1d2740!important;}
+    body.dark .kanji-card{background:#151d2e!important;border-color:#1d2740!important;}
+    body.dark .kanji-char{color:#7eb8e4!important;}
+    body.dark .ex-card{background:#1d2740!important;border-color:#2a3d56!important;}
+    body.dark #desk-prof-drop,body.dark #desk-lang-drop{background:#151d2e!important;border-color:#1d2740!important;}
+    body.dark #desk-prof-drop a,body.dark #desk-lang-drop a{color:#8da4c0!important;}
+    
+    /* ── Mixed kanji+yomi display ── */
+    /* ── Furigana / Ruby ── */
+    rt { font-size:0.52em; color:#3a7cbf; font-weight:600; }
+    body.dark rt { color:#7eb8e4; }
+    .ex-text { line-height:2.8; font-size:1.05rem; font-weight:700; }
+    .kanji-ruby rt { display:none; }
+    ::-webkit-scrollbar{width:4px;} ::-webkit-scrollbar-thumb{background:#c2d3e3;border-radius:99px;}
+    /* Search */
+    #pc-search{outline:none;transition:border-color .2s,box-shadow .2s;}
+    #pc-search:focus{border-color:#7eb8e4;box-shadow:0 0 0 3px rgba(126,184,228,.15);}
+    /* Speak button pulse */
+    @keyframes speak-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+    .speaking{animation:speak-pulse .6s ease infinite;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.5/dist/hanzi-writer.min.js"></script>
+</head>
+<body class="mesh-light min-h-screen text-ink" id="body">
+
+<!-- ═══════════════ STROKE ORDER MODAL ═══════════════ -->
+<div id="stroke-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4" style="background:rgba(15,23,42,.5);backdrop-filter:blur(6px);display:none;" onclick="closeStrokeModal(event)">
+  <div class="bg-white surface rounded-xl3 shadow-lg2 p-6 flex flex-col items-center gap-4 relative" style="min-width:300px;" onclick="event.stopPropagation()">
+    <button onclick="closeStrokeBtn()" class="absolute top-3 right-3 w-7 h-7 rounded-full flex items-center justify-center t-muted hover:bg-bg-s2 transition-all" style="font-size:16px;background:#f8fafc;border:1px solid #e2e8f0;">✕</button>
+    <div id="stroke-kanji-label" class="text-3xl font-bold t-ink jp"></div>
+    <div id="stroke-writer-target" style="width:240px;height:240px;"></div>
+    <div class="flex gap-2">
+      <button onclick="replayStroke()" class="px-4 py-2 rounded-xl text-xs font-bold text-white hover:opacity-90 transition-all" style="background:#3a7cbf;">▶ Replay</button>
+      <button onclick="quizStroke()" class="px-4 py-2 rounded-xl text-xs font-bold text-white hover:opacity-90 transition-all" style="background:#2a9d8f;">✏️ Practice</button>
+    </div>
+    <div id="stroke-quiz-msg" class="text-xs font-semibold" style="color:#2a9d8f;display:none;">Draw the kanji!</div>
+  </div>
+</div>
+
+<!-- ═══════════════ DESKTOP SIDEBAR ═══════════════ -->
+<aside id="sidebar-el" class="hidden lg:flex flex-col fixed top-0 left-0 h-full w-60 bg-bg-surface surface border-r border-slate-100 divider z-30 shadow-card">
+
+  <div class="px-4 py-4 flex items-center gap-3 border-b border-slate-100 divider">
+    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow-md flex-shrink-0">
+      <span class="jp text-white font-bold text-base">識</span>
+    </div>
+    <div class="min-w-0 flex-1">
+      <div class="font-bold text-base tracking-tight t-ink leading-tight">Shikaku</div>
+      <div class="text-xs t-muted">日本語 Learning</div>
+    </div>
+    <div class="relative flex-shrink-0" id="desk-lang-wrap">
+      <button onclick="toggleDeskLang()"
+        class="flex items-center gap-1 px-2 py-1.5 rounded-lg border border-slate-200 divider text-xs font-bold t-ink2 transition-all hover:border-blue/60 hover:text-blue-deep"
+        style="background:#f8fafc;">
+        <span id="desk-lang-flag">🇬🇧</span>
+        <span id="desk-lang-code" class="ml-0.5">EN</span>
+        <svg id="desk-lang-chev" class="w-3 h-3 t-muted transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div id="desk-lang-drop" class="drop closed absolute right-0 top-full mt-1.5 w-44 bg-white surface rounded-xl shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+        <a href="index.html" onclick="setDeskLang('EN','🇬🇧')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors">🇬🇧 English</a>
+        <a href="coming-soon.html" onclick="setDeskLang('NP','🇳🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇳🇵 नेपाली</a>
+        <a href="coming-soon.html" onclick="setDeskLang('HI','🇮🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇮🇳 हिन्दी</a>
+        <a href="coming-soon.html" onclick="setDeskLang('SI','🇱🇰')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇱🇰 සිංහල</a>
+        <a href="coming-soon.html" onclick="setDeskLang('BN','🇧🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇧🇩 বাংলা</a>
+        <a href="coming-soon.html" onclick="setDeskLang('VI','🇻🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇻🇳 Tiếng Việt</a>
+        <a href="coming-soon.html" onclick="setDeskLang('ID','🇮🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇮🇩 Indonesia</a>
+        <a href="coming-soon.html" onclick="setDeskLang('TH','🇹🇭')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇹🇭 ภาษาไทย</a>
+        <a href="coming-soon.html" onclick="setDeskLang('JP','🇯🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇯🇵 日本語</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="px-5 py-4 flex items-center gap-3 border-b border-slate-100 divider relative" id="desk-prof-wrap">
+    <button onclick="toggleDeskProf()" class="flex items-center gap-3 flex-1 min-w-0 focus:outline-none" aria-label="Profile">
+      <div class="avatar-ring flex-shrink-0">
+        <div id="sb-avatar" class="w-9 h-9 rounded-full bg-gradient-to-br from-blue to-teal flex items-center justify-center text-white font-bold text-sm overflow-hidden">S</div>
+      </div>
+      <div class="flex-1 min-w-0 text-left">
+        <div class="font-semibold text-sm t-ink leading-tight" id="sb-name">hye mate</div>
+      </div>
+      <svg id="desk-prof-chev" class="w-3.5 h-3.5 t-muted transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div id="desk-prof-drop" class="drop closed absolute left-3 right-3 top-full mt-1 bg-white surface rounded-xl2 shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+      <div class="px-4 py-3 bg-gradient-to-r from-blue/6 to-teal/6 border-b border-slate-100 divider">
+        <div class="font-bold text-sm t-ink" id="desk-drop-name">hye mate</div>
+      </div>
+      <a href="profile.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        My Profile
+      </a>
+
+      <button onclick="toggleNotification()" class="w-full flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors border-t border-slate-100 divider">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        <span class="flex-1 text-left" id="desk-notif-lbl">Notifications</span>
+        <div id="desk-notif-toggle" class="w-9 h-5 rounded-full relative flex-shrink-0 transition-colors" style="background:#e2e8f0;">
+          <div id="desk-notif-thumb" class="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white shadow transition-transform"></div>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <nav class="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
+    <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg>
+      Dashboard
+    </a>
+    <a href="learn.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      Learn
+    </a>
+    <a href="study.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 4v16M2 12h6"/></svg>
+      Study
+    </a>
+    <a href="quiz.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg>
+      Quiz
+    </a>
+    <div class="pt-4 pb-1 px-3 text-[10px] font-bold tracking-widest t-muted uppercase">Courses</div>
+    <a href="jlpt.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      JLPT
+    </a>
+    <a href="ssw.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-mint/20 text-mint-deep font-bold text-[10px] flex items-center justify-center">SSW</span> SSW</a>
+    <a href="bjt.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-butter/20 text-butter-deep font-bold text-[10px] flex items-center justify-center">BJT</span> BJT</a>
+  </nav>
+
+  <div class="px-4 py-4 border-t border-slate-100 divider flex items-center justify-between">
+    <button onclick="toggleDark()" class="flex items-center gap-2 text-xs t-muted hover:text-ink transition-colors">
+      <svg id="desk-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span id="desk-lbl">Dark mode</span>
+    </button>
+    <button onclick="toggleNotification()" class="flex items-center gap-1.5 text-xs t-muted hover:text-ink transition-colors focus:outline-none" title="Toggle notifications">
+      <svg id="notif-icon-desk" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+    </button>
+  </div>
+</aside>
+
+
+<!-- ═══════════════ MOBILE TOP BAR ═══════════════ -->
+
+<!-- MOBILE TOPBAR -->
+<header id="topbar" class="lg:hidden sticky top-0 z-40 bg-white/93 backdrop-blur-md border-b border-slate-100 shadow-sm px-4 py-2.5 flex items-center">
+  <a href="index.html" class="t-ink2 flex-shrink-0">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+  </a>
+  <div class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 pointer-events-none select-none">
+    <div class="w-7 h-7 rounded-xl bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow"><span class="jp text-white font-bold text-sm">漢</span></div>
+    <span class="font-extrabold text-base t-ink">Kanji</span>
+    <span id="level-badge" class="text-[10px] font-bold text-white px-2 py-0.5 rounded-full" style="background:#3a7cbf;">N5</span>
+  </div>
+  <div class="ml-auto flex items-center gap-2">
+    <button onclick="toggleLang()" id="lang-btn" class="px-2 py-1.5 rounded-lg border border-slate-200 text-xs font-bold t-ink2" style="background:#f8fafc;">🇳🇵 NP</button>
+    <button onclick="toggleDark()" class="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center t-muted" style="background:#f8fafc;">
+      <svg id="mob-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<div class="lg:ml-60 min-h-screen">
+
+  <!-- PC Search bar -->
+  <div class="hidden lg:flex items-center gap-4 px-6 py-4 border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-20">
+    <div class="relative flex-1 max-w-lg">
+      <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 t-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="pc-search" class="w-full bg-bg-s2 border border-slate-200 rounded-xl pl-9 pr-4 py-2 text-sm t-ink" placeholder="Search kanji, meaning…"/>
+    </div>
+    <button onclick="toggleLang()" id="desk-lang-btn" class="px-3 py-2 rounded-xl border border-slate-200 text-xs font-bold t-ink2 hover:border-blue/60 transition-all" style="background:#f8fafc;">🇳🇵 NP</button>
+    <span class="text-xs t-muted" id="pc-count"></span>
+  </div>
+
+  <!-- Loading -->
+  <div id="loading-screen" class="flex flex-col items-center justify-center gap-4 py-24">
+    <div class="w-14 h-14 rounded-xl2 flex items-center justify-center shadow-md bg-gradient-to-br from-blue to-teal">
+      <span class="jp text-white font-bold text-2xl">漢</span>
+    </div>
+    <div class="text-sm font-semibold t-muted">Loading…</div>
+    <div class="w-32 h-1.5 bg-bg-s2 rounded-full overflow-hidden">
+      <div class="h-full bg-blue-deep rounded-full animate-pulse" style="width:60%"></div>
+    </div>
+  </div>
+
+  <!-- Error -->
+  <div id="error-screen" class="hidden flex flex-col items-center justify-center gap-4 px-6 py-24 text-center">
+    <div class="text-4xl">⚠️</div>
+    <div class="font-bold t-ink">Could not load kanji</div>
+    <div class="text-sm t-muted" id="err-msg">Place kanji.json in the same folder.</div>
+  </div>
+
+  <!-- Kanji list -->
+  <div id="kanji-list" class="hidden px-4 py-5 pb-28 lg:pb-8 max-w-4xl mx-auto">
+    <div id="kanji-items" class="flex flex-col gap-5"></div>
+    <!-- Pagination -->
+    <div id="pagination" style="display:none;" class="flex items-center justify-between mt-6 pt-4 border-t border-slate-100">
+      <button id="prev-btn" onclick="changePage(-1)" disabled class="px-5 py-2.5 rounded-xl border border-slate-200 text-sm font-bold t-ink2 disabled:opacity-30 hover:border-blue/60 transition-all" style="background:#f8fafc;">← Prev</button>
+      <span class="text-sm t-muted font-semibold" id="page-info">1 / 1</span>
+      <button id="next-btn" onclick="changePage(1)" disabled class="px-5 py-2.5 rounded-xl border border-slate-200 text-sm font-bold t-ink2 disabled:opacity-30 hover:border-blue/60 transition-all" style="background:#f8fafc;">Next →</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<nav id="botnav" class="lg:hidden fixed bottom-0 left-0 right-0 z-40" style="background:rgba(255,255,255,.98);backdrop-filter:blur(20px);box-shadow:0 -1px 0 rgba(0,0,0,.07),0 -6px 24px rgba(15,23,42,.08);">
+  <div class="flex items-center" style="height:60px;">
+    <a href="index.html" class="flex-1 flex flex-col items-center justify-center gap-1 py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:36px;height:26px;background:#eef2f7;"><svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg></div>
+      <span style="font-size:9px;font-weight:600;color:#94a3b8;">Home</span>
+    </a>
+    <a href="jlpt.html" class="flex-1 flex flex-col items-center justify-center gap-1 relative py-2">
+      <span class="absolute top-0 left-1/2 -translate-x-1/2 rounded-b-full" style="width:28px;height:3px;background:#3a7cbf;"></span>
+      <div class="flex items-center justify-center rounded-xl" style="width:36px;height:26px;background:rgba(58,124,191,.13);"><span style="font-size:9px;font-weight:800;color:#3a7cbf;">JLPT</span></div>
+      <span style="font-size:9px;font-weight:800;color:#3a7cbf;">JLPT</span>
+    </a>
+    <a href="ssw.html" class="flex-1 flex flex-col items-center justify-center gap-0.5 py-1" style="margin-top:-16px;">
+      <div class="flex items-center justify-center rounded-xl2" style="width:46px;height:46px;background:linear-gradient(135deg,#6ecec8,#2a9d8f);box-shadow:0 5px 16px rgba(42,157,143,.32);"><span class="jp text-white font-bold" style="font-size:20px;line-height:1;">特</span></div>
+      <span style="font-size:8px;font-weight:700;color:#2a9d8f;margin-top:2px;">SSW</span>
+    </a>
+    <a href="bjt.html" class="flex-1 flex flex-col items-center justify-center gap-1 py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:36px;height:26px;background:#eef2f7;"><span style="font-size:9px;font-weight:800;color:#d4a017;">BJT</span></div>
+      <span style="font-size:9px;font-weight:600;color:#94a3b8;">BJT</span>
+    </a>
+    <a href="other.html" class="flex-1 flex flex-col items-center justify-center gap-1 py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:36px;height:26px;background:#eef2f7;"><svg width="14" height="14" fill="none" stroke="#94a3b8" stroke-width="2" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg></div>
+      <span style="font-size:9px;font-weight:600;color:#94a3b8;">Other</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+/* ── Desktop profile dropdown ── */
+let deskProfOpen = false;
+function toggleDeskProf() {
+  deskProfOpen = !deskProfOpen;
+  const drop = document.getElementById('desk-prof-drop');
+  const chev = document.getElementById('desk-prof-chev');
+  drop.className = drop.className.replace(/\b(open|closed)\b/, deskProfOpen ? 'open' : 'closed');
+  if(chev) chev.style.transform = deskProfOpen ? 'rotate(180deg)' : '';
+}
+
+/* ── Dark mode ── */
+let isDark = false;
+const MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+const SUN  = '<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/>';
+function toggleDark() {
+  isDark = !isDark;
+  document.body.className = isDark ? 'mesh-dark min-h-screen text-slate-100 dark' : 'mesh-light min-h-screen text-ink';
+  ['mob-icon','desk-icon'].forEach(id => { const el = document.getElementById(id); if(el) el.innerHTML = isDark ? SUN : MOON; });
+  const lbl = document.getElementById('desk-lbl'); if(lbl) lbl.textContent = isDark ? 'Light mode' : 'Dark mode';
+}
+
+/* ── Language ── */
+let deskLangOpen = false;
+function toggleDeskLang() {
+  deskLangOpen = !deskLangOpen;
+  const m = document.getElementById('desk-lang-drop'), c = document.getElementById('desk-lang-chev');
+  m.className = m.className.replace(/\b(open|closed)\b/, deskLangOpen ? 'open' : 'closed');
+  c.style.transform = deskLangOpen ? 'rotate(180deg)' : '';
+}
+function setDeskLang(code, flag) {
+  ['desk-lang-code','lang-code'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=code; });
+  ['desk-lang-flag','lang-flag'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=flag; });
+  deskLangOpen = false;
+  document.getElementById('desk-lang-drop').className = document.getElementById('desk-lang-drop').className.replace(/\b(open|closed)\b/,'closed');
+  document.getElementById('desk-lang-chev').style.transform = '';
+}
+const drops = { prof: false, lang: false };
+function toggleDrop(name) {
+  const other = name === 'prof' ? 'lang' : 'prof';
+  drops[other] = false;
+  const oel = document.getElementById(other === 'prof' ? 'prof-drop' : 'lang-drop');
+  if(oel) oel.className = oel.className.replace(/\bopen\b/,'closed');
+  drops[name] = !drops[name];
+  const el = document.getElementById(name === 'prof' ? 'prof-drop' : 'lang-drop');
+  if(el) el.className = el.className.replace(/\b(open|closed)\b/, drops[name] ? 'open' : 'closed');
+  if(name === 'lang') { const chev = document.getElementById('lang-chev'); if(chev) chev.style.transform = drops.lang ? 'rotate(180deg)' : ''; }
+}
+function setLang(code, flag) {
+  ['lang-code','desk-lang-code'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=code; });
+  ['lang-flag','desk-lang-flag'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=flag; });
+  drops.lang = false;
+  const el = document.getElementById('lang-drop'); if(el) el.className = el.className.replace(/\b(open|closed)\b/,'closed');
+  const chev = document.getElementById('lang-chev'); if(chev) chev.style.transform = '';
+}
+
+/* ── Outside click ── */
+document.addEventListener('click', e => {
+  const deskProfWrap = document.getElementById('desk-prof-wrap');
+  if(deskProfWrap && !deskProfWrap.contains(e.target) && deskProfOpen) {
+    deskProfOpen = false;
+    const drop = document.getElementById('desk-prof-drop'), chev = document.getElementById('desk-prof-chev');
+    if(drop) drop.className = drop.className.replace(/\b(open|closed)\b/,'closed');
+    if(chev) chev.style.transform = '';
+  }
+  const dlw = document.getElementById('desk-lang-wrap');
+  if(dlw && !dlw.contains(e.target) && deskLangOpen) {
+    deskLangOpen = false;
+    document.getElementById('desk-lang-drop').className = document.getElementById('desk-lang-drop').className.replace(/\b(open|closed)\b/,'closed');
+    document.getElementById('desk-lang-chev').style.transform = '';
+  }
+  const pb = document.getElementById('prof-wrap');
+  if(pb && !pb.contains(e.target) && drops.prof) { drops.prof = false; document.getElementById('prof-drop').className = document.getElementById('prof-drop').className.replace(/\b(open|closed)\b/,'closed'); }
+  const lb = document.getElementById('lang-wrap');
+  if(lb && !lb.contains(e.target) && drops.lang) { drops.lang = false; document.getElementById('lang-drop').className = document.getElementById('lang-drop').className.replace(/\b(open|closed)\b/,'closed'); document.getElementById('lang-chev').style.transform = ''; }
+});
+
+/* ── Notification toggle ── */
+(function(){
+  var KEY='sakura_notif_on', on=localStorage.getItem(KEY)!=='0';
+  function syncUI(){
+    ['desk','mob'].forEach(function(p){
+      var tg=document.getElementById(p+'-notif-toggle'),th=document.getElementById(p+'-notif-thumb'),lb=document.getElementById(p+'-notif-lbl');
+      if(tg) tg.style.background=on?'#3a7cbf':'#e2e8f0';
+      if(th) th.style.transform=on?'translateX(16px)':'';
+      if(lb) lb.textContent=on?'Notifications: ON':'Notifications: OFF';
+    });
+    // Sidebar bell icon color
+    var bell=document.getElementById('notif-icon-desk');
+    if(bell) bell.style.stroke=on?'#3a7cbf':'#94a3b8';
+  }
+  syncUI();
+  window.toggleNotification=function(){
+    on=!on; localStorage.setItem(KEY,on?'1':'0'); syncUI();
+    var t=document.createElement('div'); t.style.cssText='position:fixed;top:72px;left:50%;transform:translateX(-50%);z-index:9999;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:10px 18px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(15,23,42,.12);white-space:nowrap;'; t.style.color=on?'#27ae72':'#94a3b8'; t.textContent=on?'🔔 Notifications turned ON':'🔕 Notifications turned OFF'; document.body.appendChild(t); setTimeout(function(){ t.remove(); },2500);
+  };
+  if(on){ var lastShown=localStorage.getItem('sakura_notif_last'),today=new Date().toDateString(); if(lastShown!==today){ localStorage.setItem('sakura_notif_last',today); setTimeout(function(){ var msgs=['🌸 आज JLPT practice गर्नुस् — streak जोगाउनुस्!','📖 आजको Word of the Day हेर्नुभयो?','🎯 5 minute Quiz — आफ्नो level test गर्नुस्!','✨ नयाँ vocabulary सिक्न तयार हुनुस्!','🏆 Daily goal पूरा गर्नुस्!']; var msg=msgs[new Date().getDay()%msgs.length]; var banner=document.createElement('div'); banner.style.cssText='position:fixed;top:70px;left:50%;transform:translateX(-50%);z-index:9999;background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:14px 18px;display:flex;align-items:center;gap:12px;max-width:320px;width:calc(100% - 32px);box-shadow:0 8px 32px rgba(15,23,42,.15);'; banner.innerHTML='<div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#7eb8e4,#6ecec8);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;">🌸</div><div style="flex:1;min-width:0;font-size:13px;font-weight:600;color:#1f2937;">'+msg+'</div><button onclick="this.parentElement.remove()" style="background:none;border:none;cursor:pointer;color:#94a3b8;font-size:16px;flex-shrink:0;">✕</button>'; document.body.appendChild(banner); setTimeout(function(){ banner.remove(); },6000); },2000); } }
+})();
+
+/* ═══ KANJI PAGE LOGIC ═══ */
+const params = new URLSearchParams(location.search);
+const LEVEL  = (params.get('level') || 'n5').toLowerCase();
+const JSON_FILE = 'kanji.json';
+const PER_PAGE = 10;
+const LEVEL_COLORS = {n5:'#3a7cbf',n4:'#2a9d8f',n3:'#27ae72',n2:'#d4a017',n1:'#e0693a'};
+
+let allData=[], filtered=[], page=0, lang='np';
+let currentSpeakBtn=null;
+
+// Set level badge
+(function(){
+  const color = LEVEL_COLORS[LEVEL] || '#3a7cbf';
+  const badge = document.getElementById('level-badge');
+  if(badge){ badge.textContent = LEVEL.toUpperCase(); badge.style.background = color; }
+})();
+
+// Load data
+fetch(JSON_FILE)
+  .then(r=>{ if(!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+  .then(data=>{
+    allData = Array.isArray(data) ? data : (data.kanji || data.words || []);
+    if(!allData.length) throw new Error('No data in JSON.');
+    filtered = [...allData];
+    document.getElementById('loading-screen').classList.add('hidden');
+    document.getElementById('kanji-list').classList.remove('hidden');
+    renderPage();
+    document.getElementById('pc-count').textContent = allData.length + ' kanji';
+  })
+  .catch(err=>{
+    document.getElementById('loading-screen').classList.add('hidden');
+    document.getElementById('error-screen').classList.remove('hidden');
+    document.getElementById('err-msg').textContent = err.message;
+  });
+
+// Search
+function setupSearch(id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  el.addEventListener('input', function(){
+    const q = this.value.toLowerCase().trim();
+    filtered = q ? allData.filter(k=>[k.kanji,k.yomikata,k.onyomi,k.kunyomi,k.english_meaning,k.nepali_meaning].filter(Boolean).join(' ').toLowerCase().includes(q)) : [...allData];
+    page = 0;
+    renderPage();
+    document.getElementById('pc-count').textContent = (q ? filtered.length + ' results' : allData.length + ' kanji');
+  });
+}
+setupSearch('pc-search');
+
+
+/* ── Parse mixed kanji+yomi text ── */
+function isKanji(c){ const n=c.codePointAt(0); return (n>=0x4e00&&n<=0x9fff)||(n>=0x3400&&n<=0x4dbf)||c==='々'; }
+function isHira(c){ return c.codePointAt(0)>=0x3040&&c.codePointAt(0)<=0x309f; }
+
+function parseMixed(text){
+  if(!text) return '';
+  let result='', i=0;
+  while(i<text.length){
+    if(isKanji(text[i])){
+      // collect kanji run
+      let k='';
+      while(i<text.length&&isKanji(text[i])){ k+=text[i]; i++; }
+      // collect hiragana immediately after = reading
+      let r='';
+      while(i<text.length&&isHira(text[i])){ r+=text[i]; i++; }
+      if(r) result+=`${esc(k)}<span class="ex-yomi">${esc(r)}</span>`;
+      else   result+=esc(k);
+    } else {
+      result+=esc(text[i]); i++;
+    }
+  }
+  return result;
+}
+
+function renderPage(){
+  const container = document.getElementById('kanji-items');
+  container.innerHTML = '';
+  const totalPages = Math.ceil(filtered.length / PER_PAGE);
+  const start = page * PER_PAGE;
+  const items = filtered.slice(start, start + PER_PAGE);
+
+  items.forEach((k, i) => {
+    const idx = start + i + 1;
+    const meaning = lang === 'np' ? (k.nepali_meaning || k.english_meaning || '') : (k.english_meaning || '');
+    const onYomi = k.onyomi || '—';
+    const kunYomi = k.kunyomi || '—';
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'fu kanji-card overflow-hidden';
+
+    // Card header
+    const header = document.createElement('div');
+    header.className = 'p-5 flex items-center gap-5';
+    header.innerHTML = `
+      <div class="flex flex-col items-center flex-shrink-0" style="min-width:72px;">
+        <ruby class="kanji-char kanji-ruby jp">${esc(k.kanji||'')}<rt>${esc(k.yomikata||'')}</rt></ruby>
+        ${k.yomikata ? `<span class="text-sm t-muted jp mt-1 block text-center" style="letter-spacing:.05em;">${esc(k.yomikata)}</span>` : ''}
+      </div>
+      <div class="flex-1 min-w-0">
+        <div class="flex items-start justify-between gap-3 mb-2">
+          <span class="text-lg font-extrabold t-ink leading-tight">${esc(meaning)}</span>
+          <div class="flex items-center gap-2 flex-shrink-0">
+            <span class="text-[10px] font-bold t-muted">${idx}</span>
+            <button id="stroke-${idx}" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center t-ink2 hover:bg-teal/10 transition-all flex-shrink-0" style="background:#f8fafc;" title="Stroke order">
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </button>
+            <button id="speak-${idx}" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center t-ink2 hover:bg-blue/10 transition-all flex-shrink-0" style="background:#f8fafc;" title="Listen">
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-3 mt-1">
+          <div class="flex flex-col gap-0.5">
+            <span class="text-[9px] font-bold tracking-widest uppercase" style="color:#94a3b8;">音読み</span>
+            <span class="jp text-sm font-bold" style="color:#3a7cbf;">${esc(onYomi)}</span>
+          </div>
+          <div class="w-px mx-1" style="background:#e2e8f0;"></div>
+          <div class="flex flex-col gap-0.5">
+            <span class="text-[9px] font-bold tracking-widest uppercase" style="color:#94a3b8;">訓読み</span>
+            <span class="jp text-sm font-bold" style="color:#475569;">${esc(kunYomi)}</span>
+          </div>
+        </div>
+      </div>`;
+    wrapper.appendChild(header);
+
+    // Speak button
+    const speakBtn = header.querySelector(`#speak-${idx}`);
+    speakBtn.addEventListener('click', () => {
+      if(currentSpeakBtn && currentSpeakBtn !== speakBtn) {
+        window.speechSynthesis.cancel();
+        currentSpeakBtn.classList.remove('speaking');
+        currentSpeakBtn.style.background = '#f8fafc';
+      }
+      if(speakBtn.classList.contains('speaking')){
+        window.speechSynthesis.cancel();
+        speakBtn.classList.remove('speaking');
+        speakBtn.style.background = '#f8fafc';
+        currentSpeakBtn = null;
+        return;
+      }
+      const parts = [k.kanji, k.onyomi, k.kunyomi].filter(Boolean);
+      const u = new SpeechSynthesisUtterance(parts.join('、'));
+      u.lang = 'ja-JP'; u.rate = 0.85;
+      const voices = window.speechSynthesis.getVoices();
+      const jpV = voices.find(v=>v.lang.startsWith('ja')); if(jpV) u.voice = jpV;
+      u.onstart = () => { speakBtn.classList.add('speaking'); speakBtn.style.background = 'rgba(58,124,191,.15)'; currentSpeakBtn = speakBtn; };
+      u.onend = u.onerror = () => { speakBtn.classList.remove('speaking'); speakBtn.style.background = '#f8fafc'; currentSpeakBtn = null; };
+      window.speechSynthesis.speak(u);
+    });
+
+    // Stroke order button
+    const strokeBtn = header.querySelector(`#stroke-${idx}`);
+    strokeBtn.addEventListener('click', () => openStroke(k.kanji));
+
+    // Examples
+    if(k.examples && k.examples.length){
+      const exSection = document.createElement('div');
+      exSection.className = 'px-5 pb-5 flex flex-col gap-2';
+      const exLabel = document.createElement('div');
+      exLabel.className = 'text-[9px] font-bold tracking-widest uppercase t-muted mb-1';
+      exLabel.textContent = 'EXAMPLES';
+      exSection.appendChild(exLabel);
+
+      k.examples.forEach((ex, ei) => {
+        const exCard = document.createElement('div');
+        exCard.className = 'ex-card p-3 flex gap-3 items-start';
+        const exTrans = lang === 'np' ? (ex.nepali || ex.eng || '') : (ex.eng || '');
+        const exPlayId = `ex-${idx}-${ei}`;
+        exCard.innerHTML = `
+          <button id="${exPlayId}" class="w-7 h-7 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5 hover:bg-blue/20 transition-all" style="background:rgba(126,184,228,.12);" title="Play">
+            <svg width="11" height="11" fill="#3a7cbf" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <div class="flex-1 min-w-0">
+            ${ex.example ? `<div class="ex-text jp font-bold t-ink mb-2" style="font-size:1.05rem;">${ex.example}</div>` : ''}
+            ${exTrans ? `<div class="text-sm font-semibold text-teal-deep mt-0.5">${esc(exTrans)}</div>` : ''}
+          </div>`;
+        exSection.appendChild(exCard);
+
+        // Example speak button
+        const exPlay = exCard.querySelector(`#${exPlayId}`);
+        exPlay.addEventListener('click', e => {
+          e.stopPropagation();
+          if(!ex.example) return;
+          const cleanText = stripRt(ex.example);
+          const u2 = new SpeechSynthesisUtterance(cleanText);
+          u2.lang = 'ja-JP'; u2.rate = 0.85;
+          const voices = window.speechSynthesis.getVoices();
+          const jpV2 = voices.find(v=>v.lang.startsWith('ja')); if(jpV2) u2.voice = jpV2;
+          u2.onstart = () => exPlay.classList.add('speaking');
+          u2.onend = u2.onerror = () => exPlay.classList.remove('speaking');
+          window.speechSynthesis.speak(u2);
+        });
+      });
+      wrapper.appendChild(exSection);
+    }
+
+    container.appendChild(wrapper);
+  });
+
+  // Pagination
+  const pag = document.getElementById('pagination');
+  const totalPages2 = Math.ceil(filtered.length / PER_PAGE);
+  if(totalPages2 > 1){
+    pag.style.display = 'flex';
+    document.getElementById('prev-btn').disabled = page === 0;
+    document.getElementById('next-btn').disabled = page >= totalPages2 - 1;
+    document.getElementById('page-info').textContent = `${page+1} / ${totalPages2}`;
+  } else {
+    pag.style.display = 'none';
+  }
+}
+
+function changePage(dir){
+  const totalPages = Math.ceil(filtered.length / PER_PAGE);
+  page = Math.max(0, Math.min(totalPages - 1, page + dir));
+  renderPage();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function toggleLang(){
+  lang = lang === 'np' ? 'en' : 'np';
+  const label = lang === 'np' ? '🇳🇵 NP' : '🇬🇧 EN';
+  ['lang-btn','desk-lang-btn'].forEach(id=>{ const el=document.getElementById(id); if(el) el.textContent=label; });
+  renderPage();
+}
+
+/* ═══ STROKE ORDER MODAL ═══ */
+let strokeWriter = null;
+
+function openStroke(kanji) {
+  if(!kanji) return;
+  document.getElementById('stroke-kanji-label').textContent = kanji;
+  document.getElementById('stroke-quiz-msg').style.display = 'none';
+  document.getElementById('stroke-quiz-msg').textContent = 'Draw the kanji!';
+  document.getElementById('stroke-modal').style.display = 'flex';
+  const target = document.getElementById('stroke-writer-target');
+  target.innerHTML = '';
+  try {
+    strokeWriter = HanziWriter.create('stroke-writer-target', kanji, {
+      width: 240, height: 240, padding: 12,
+      showOutline: true,
+      strokeColor: '#3a7cbf',
+      outlineColor: '#e2e8f0',
+      drawingColor: '#2a9d8f',
+      strokeAnimationSpeed: 1,
+      delayBetweenStrokes: 300,
+    });
+    strokeWriter.animateCharacter();
+  } catch(e) {
+    target.innerHTML = `<div style="width:160px;height:160px;display:flex;align-items:center;justify-content:center;font-size:5rem;font-family:'Noto Sans JP',sans-serif;color:#3a7cbf;">${kanji}</div>`;
+  }
+}
+function closeStrokeModal(e) {
+  if(e.target !== document.getElementById('stroke-modal')) return;
+  document.getElementById('stroke-modal').style.display = 'none';
+  strokeWriter = null;
+}
+function closeStrokeBtn() {
+  document.getElementById('stroke-modal').style.display = 'none';
+  strokeWriter = null;
+}
+function replayStroke() {
+  document.getElementById('stroke-quiz-msg').style.display = 'none';
+  if(strokeWriter) strokeWriter.animateCharacter();
+}
+function quizStroke() {
+  if(!strokeWriter) return;
+  const msg = document.getElementById('stroke-quiz-msg');
+  msg.style.display = 'block';
+  msg.textContent = 'Draw the kanji!';
+  strokeWriter.quiz({
+    onComplete: () => { msg.textContent = '✅ Well done!'; }
+  });
+}
+
+function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* Strip HTML tags for TTS — removes <rt> readings, returns base kanji text */
+function stripRt(html){
+  if(!html) return '';
+  const div = document.createElement('div');
+  div.innerHTML = html;
+  div.querySelectorAll('rt').forEach(rt => rt.remove());
+  return div.textContent || div.innerText || '';
+}
+
+if(window.speechSynthesis){window.speechSynthesis.getVoices();if(window.speechSynthesis.onvoiceschanged!==undefined)window.speechSynthesis.onvoiceschanged=()=>window.speechSynthesis.getVoices();}
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));}</script>
+</body>
+</html>

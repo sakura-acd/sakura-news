@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/fab.svg"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>More — Sakura</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans:['Outfit','sans-serif'], jp:['"Noto Sans JP"','sans-serif'] },
+          colors: {
+            blue:   { DEFAULT:'#7eb8e4', deep:'#3a7cbf' },
+            teal:   { DEFAULT:'#6ecec8', deep:'#2a9d8f' },
+            mint:   { DEFAULT:'#80d4a8', deep:'#27ae72' },
+            coral:  { DEFAULT:'#f4a57a', deep:'#e0693a' },
+            butter: { DEFAULT:'#f5da8a', deep:'#d4a017' },
+            lilac:  { DEFAULT:'#c4a8e0', deep:'#8b5cf6' },
+            ink:    { DEFAULT:'#1f2937', 2:'#475569', muted:'#94a3b8' },
+            bg:     { DEFAULT:'#f5f8fc', surface:'#ffffff', s2:'#eef2f7' },
+          },
+          borderRadius: { xl2:'1.25rem', xl3:'1.75rem', xl4:'2.25rem' },
+          boxShadow: {
+            card: '0 2px 16px rgba(15,23,42,.07)',
+            md2:  '0 4px 24px rgba(15,23,42,.12)',
+            lg2:  '0 8px 40px rgba(15,23,42,.16)',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family:'Outfit',sans-serif; transition:background .3s,color .3s; }
+    .jp  { font-family:'"Noto Sans JP"',sans-serif; }
+
+    .mesh-light {
+      background: radial-gradient(ellipse at 18% 12%,#d8edf8 0%,transparent 52%),
+                  radial-gradient(ellipse at 82% 88%,#d2f1ec 0%,transparent 52%),
+                  radial-gradient(ellipse at 58% 32%,#e6e2f6 0%,transparent 38%),
+                  #f4f7fb;
+    }
+    .mesh-dark {
+      background: radial-gradient(ellipse at 18% 12%,#0f2236 0%,transparent 52%),
+                  radial-gradient(ellipse at 82% 88%,#0b2120 0%,transparent 52%),
+                  #0c1220;
+    }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:none} }
+    .fu  { animation:fadeUp .5s ease both; }
+    .d1  { animation-delay:.07s; } .d2 { animation-delay:.14s; }
+    .d3  { animation-delay:.21s; } .d4 { animation-delay:.28s; }
+    .d5  { animation-delay:.35s; } .d6 { animation-delay:.42s; }
+
+    .card-lift { transition:transform .18s ease,box-shadow .18s ease; }
+    .card-lift:hover { transform:translateY(-3px); box-shadow:0 10px 32px rgba(15,23,42,.13); }
+
+    .ring-track { stroke:#e2e8f0; }
+    .ring-fill  { stroke:#2a9d8f; stroke-linecap:round;
+                  transition:stroke-dashoffset .9s cubic-bezier(.4,0,.2,1); }
+
+    .s-act { background:#eef5fc; color:#3a7cbf; font-weight:600; }
+
+    .drop { transition:opacity .15s ease,transform .15s ease; }
+    .drop.closed { opacity:0; transform:translateY(-6px); pointer-events:none; }
+    .drop.open   { opacity:1; transform:translateY(0);    pointer-events:all; }
+
+    /* Level button active state */
+    .level-btn { transition:all .2s ease; }
+    .level-btn.active { transform:translateY(-2px); }
+
+    @keyframes ring-pulse {
+      0%,100% { box-shadow:0 0 0 0 rgba(110,206,200,.55); }
+      50%      { box-shadow:0 0 0 6px rgba(110,206,200,0); }
+    }
+    .avatar-ring {
+      background: conic-gradient(#6ecec8 0% 65%,#e2e8f0 65% 100%);
+      border-radius:9999px; padding:2.5px;
+      animation:ring-pulse 2.4s ease infinite;
+      display:inline-block; flex-shrink:0;
+    }
+
+    /* Dark mode */
+    body.dark #sidebar-el { background:rgba(14,19,32,.96) !important; border-color:#1d2740 !important; }
+    body.dark #topbar,
+    body.dark #botnav { background:rgba(12,18,32,.68) !important; border-color:rgba(255,255,255,.08) !important; }
+    body.dark .surface  { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark .surface2 { background:#1d2740 !important; }
+    body.dark .t-ink    { color:#e8eef6 !important; }
+    body.dark .t-ink2   { color:#8da4c0 !important; }
+    body.dark .t-muted  { color:#4a607a !important; }
+    body.dark .divider  { border-color:#1d2740 !important; }
+    body.dark .ring-track { stroke:#1d2740; }
+    body.dark .avatar-ring { background:conic-gradient(#6ecec8 0% 65%,#1d2740 65% 100%); }
+    body.dark #desk-lang-drop { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark #desk-lang-drop a { color:#8da4c0 !important; }
+    body.dark #lang-drop { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark #lang-drop a { color:#8da4c0 !important; }
+    body.dark #prof-drop, body.dark #desk-prof-drop { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark #prof-drop a, body.dark #desk-prof-drop a { color:#8da4c0 !important; }
+    body.dark #prof-drop a:hover, body.dark #desk-prof-drop a:hover { background:rgba(126,184,228,.08) !important; }
+
+    ::-webkit-scrollbar { width:4px; }
+    ::-webkit-scrollbar-thumb { background:#c2d3e3; border-radius:99px; }
+
+    .prog-bar { height:5px; border-radius:99px; background:#eef2f7; overflow:hidden; }
+    body.dark .prog-bar { background:#1d2740; }
+    .prog-bar > span { display:block; height:100%; border-radius:99px; }
+    .pill-btn { transition:transform .15s ease, box-shadow .15s ease; }
+    .pill-btn:hover { transform:translateY(-1px); }
+    .badge-check { box-shadow:0 0 0 3px #fff; }
+    body.dark .badge-check { box-shadow:0 0 0 3px #151d2e; }
+
+    /* ── Hero banner background ──
+       To use your own image: replace the url('') below with your image path
+       (e.g. url('images/hero-bg.jpg')) and re-upload/host it alongside this file.
+       The gradient stays underneath as a fallback + tint so text stays readable. */
+    .hero-banner {
+      background-image: url('');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #d3f0ec;
+      background-blend-mode: normal;
+    }
+    .hero-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg,rgba(211,240,236,.88) 0%,rgba(220,240,232,.72) 45%,rgba(228,242,220,.55) 100%);
+      z-index: 0;
+      pointer-events: none;
+    }
+  </style>
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#e8799a"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="Sakura"/>
+  <link rel="apple-touch-icon" href="icons/icon-192.png"/>
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VK64G24LYX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VK64G24LYX');
+  </script>
+</head>
+
+<body class="mesh-light min-h-screen text-ink" id="body">
+
+<!-- ═══════════ DESKTOP SIDEBAR ═══════════ -->
+<aside id="sidebar-el" class="hidden lg:flex flex-col fixed top-0 left-0 h-full w-60 bg-bg-surface surface border-r border-slate-100 divider z-30 shadow-card">
+
+  <!-- Logo + lang -->
+  <div class="px-4 py-4 flex items-center gap-3 border-b border-slate-100 divider">
+    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow-md flex-shrink-0">
+      <span class="jp text-white font-bold text-base">識</span>
+    </div>
+    <div class="min-w-0 flex-1">
+      <div class="font-bold text-base tracking-tight t-ink leading-tight">Sakura</div>
+      <div class="text-xs t-muted">日本語 Learning</div>
+    </div>
+    <div class="relative flex-shrink-0" id="desk-lang-wrap">
+      <button onclick="toggleDeskLang()"
+        class="flex items-center gap-1 px-2 py-1.5 rounded-lg border border-slate-200 divider text-xs font-bold t-ink2 transition-all hover:border-blue/60 hover:text-blue-deep"
+        style="background:#f8fafc;">
+        <span id="desk-lang-flag">🇬🇧</span>
+        <span id="desk-lang-code" class="ml-0.5">EN</span>
+        <svg id="desk-lang-chev" class="w-3 h-3 t-muted transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div id="desk-lang-drop" class="drop closed absolute right-0 top-full mt-1.5 w-44 bg-white surface rounded-xl shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+        <a href="../index.html" onclick="setDeskLang('EN','🇬🇧')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors">🇬🇧 English</a>
+        <a href="../../coming-soon.html" onclick="setDeskLang('NP','🇳🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇳🇵 नेपाली</a>
+        <a href="../../coming-soon.html" onclick="setDeskLang('HI','🇮🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇮🇳 हिन्दी</a>
+        <a href="../../coming-soon.html" onclick="setDeskLang('SI','🇱🇰')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇱🇰 සිංහල</a>
+        <a href="../../coming-soon.html" onclick="setDeskLang('BN','🇧🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇧🇩 বাংলা</a>
+        <a href="../../coming-soon.html" onclick="setDeskLang('VI','🇻🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇻🇳 Tiếng Việt</a>
+        <a href="../../coming-soon.html" onclick="setDeskLang('ID','🇮🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇮🇩 Indonesia</a>
+        <a href="../../coming-soon.html" onclick="setDeskLang('TH','🇹🇭')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇹🇭 ภาษาไทย</a>
+        <a href="../../coming-soon.html" onclick="setDeskLang('JP','🇯🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇯🇵 日本語</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Profile -->
+  <div class="px-5 py-4 flex items-center gap-3 border-b border-slate-100 divider relative" id="desk-prof-wrap">
+    <button onclick="toggleDeskProf()" class="flex items-center gap-3 flex-1 min-w-0 focus:outline-none" aria-label="Profile">
+      <div class="avatar-ring flex-shrink-0">
+        <div id="sb-avatar" class="w-9 h-9 rounded-full bg-gradient-to-br from-blue to-teal flex items-center justify-center text-white font-bold text-sm overflow-hidden">S</div>
+      </div>
+      <div class="flex-1 min-w-0 text-left">
+        <div class="font-semibold text-sm t-ink leading-tight" id="sb-name">Learner</div>
+      </div>
+      <svg id="desk-prof-chev" class="w-3.5 h-3.5 t-muted transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div id="desk-prof-drop" class="drop closed absolute left-3 right-3 top-full mt-1 bg-white surface rounded-xl2 shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+      <div class="px-4 py-3 bg-gradient-to-r from-blue/6 to-teal/6 border-b border-slate-100 divider">
+        <div class="font-bold text-sm t-ink" id="desk-drop-name">Learner</div>
+      </div>
+      <a href="../profile/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        My Profile
+      </a>
+      <a href="../download/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors border-t border-slate-100 divider">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16l-4-4h3V4h2v8h3l-4 4z"/><path d="M4 20h16"/></svg>
+        Download App
+      </a>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <nav class="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
+    <a href="../index.html"  class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg>Dashboard
+    </a>
+    <a href="../learn.html"  class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Learn
+    </a>
+    <a href="../study.html"  class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 4v16M2 12h6"/></svg>Study
+    </a>
+    <a href="../quiz/index.html"   class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg>Quiz
+    </a>
+    <div class="pt-4 pb-1 px-3 text-[10px] font-bold tracking-widest t-muted uppercase">Courses</div>
+    <a href="../jlpt/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>JLPT
+    </a>
+    <a href="../ssw/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-mint/20 text-mint-deep font-bold text-[10px] flex items-center justify-center">SSW</span> SSW</a>
+
+    <div class="pt-4 pb-1 px-3 text-[10px] font-bold tracking-widest t-muted uppercase">General</div>
+    <a href="index.html" class="s-act flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>More
+    </a>
+  </nav>
+
+  <!-- Footer -->
+  <div class="px-4 py-4 border-t border-slate-100 divider flex items-center justify-between">
+    <button onclick="toggleDark()" class="flex items-center gap-2 text-xs t-muted hover:text-ink transition-colors">
+      <svg id="desk-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span id="desk-lbl">Dark mode</span>
+    </button>
+  </div>
+</aside>
+
+
+<!-- ═══════════ MOBILE TOPBAR ═══════════ -->
+<header id="topbar" class="lg:hidden fixed top-0 left-0 right-0 z-40 px-4 py-2.5 flex items-center transition-transform duration-300"
+        style="background:rgba(255,255,255,.72);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:0.5px solid rgba(0,0,0,.08);">
+  <div class="relative flex-shrink-0" id="prof-wrap">
+    <button id="prof-btn" onclick="toggleDrop('prof')" class="block focus:outline-none" aria-label="Profile">
+      <div class="avatar-ring">
+        <div id="mob-avatar" class="w-9 h-9 rounded-full bg-gradient-to-br from-blue to-teal flex items-center justify-center text-white font-bold text-sm select-none overflow-hidden">S</div>
+      </div>
+    </button>
+    <div id="prof-drop" class="drop closed absolute top-full left-0 mt-2 w-52 bg-white surface rounded-xl2 shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+      <div class="px-4 py-3 bg-gradient-to-r from-blue/6 to-teal/6 border-b border-slate-100 divider">
+        <div class="font-bold text-sm t-ink" id="mob-drop-name">Learner</div>
+      </div>
+      <a href="../profile/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        My Profile
+      </a>
+      <a href="../download/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors border-t border-slate-100 divider">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16l-4-4h3V4h2v8h3l-4 4z"/><path d="M4 20h16"/></svg>
+        Download App
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 pointer-events-none select-none">
+    <span class="text-lg">⚙️</span>
+    <span class="font-extrabold text-base t-ink tracking-tight">More</span>
+  </div>
+
+  <div class="ml-auto flex items-center gap-2 flex-shrink-0">
+    <div class="relative" id="lang-wrap">
+      <button onclick="toggleDrop('lang')" class="flex items-center gap-1 pl-2 pr-1.5 py-1.5 rounded-lg bg-bg-s2 surface2 border border-slate-200 divider text-xs font-bold t-ink2 hover:border-blue/60 transition-all">
+        <span id="lang-flag">🇬🇧</span>
+        <span id="lang-code" class="ml-0.5">EN</span>
+        <svg id="lang-chev" class="w-3 h-3 t-muted ml-0.5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div id="lang-drop" class="drop closed absolute right-0 top-full mt-1.5 w-44 bg-white surface rounded-xl shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+        <a href="../index.html"    onclick="setLang('EN','🇬🇧')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors">🇬🇧 English</a>
+        <a href="../../coming-soon.html" onclick="setLang('NP','🇳🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇳🇵 नेपाली</a>
+        <a href="../../coming-soon.html" onclick="setLang('HI','🇮🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇮🇳 हिन्दी</a>
+        <a href="../../coming-soon.html" onclick="setLang('SI','🇱🇰')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇱🇰 සිංහල</a>
+        <a href="../../coming-soon.html" onclick="setLang('BN','🇧🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇧🇩 বাংলা</a>
+        <a href="../../coming-soon.html" onclick="setLang('VI','🇻🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇻🇳 Tiếng Việt</a>
+        <a href="../../coming-soon.html" onclick="setLang('ID','🇮🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇮🇩 Indonesia</a>
+        <a href="../../coming-soon.html" onclick="setLang('TH','🇹🇭')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇹🇭 ภาษาไทย</a>
+        <a href="../../coming-soon.html" onclick="setLang('JP','🇯🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇯🇵 日本語</a>
+      </div>
+    </div>
+    <button onclick="toggleDark()" class="w-8 h-8 rounded-lg bg-bg-s2 surface2 border border-slate-200 divider flex items-center justify-center t-muted hover:text-blue-deep hover:border-blue/50 transition-all">
+      <svg id="mob-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+
+<!-- ═══════════ MAIN CONTENT ═══════════ -->
+<main id="main-content" class="lg:ml-60 min-h-screen pb-28 lg:pb-10 pt-14 lg:pt-8 lg:px-8">
+
+
+  <section class="px-5 lg:px-0 pt-5 lg:pt-0 fu d3">
+    <h2 class="text-sm font-bold t-ink mb-3">Settings</h2>
+    <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider divide-y divide-slate-100" id="settings-divide">
+
+      <a href="../profile/index.html" class="flex items-center gap-3 px-4 py-3.5 hover:bg-bg-s2 transition-colors">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(126,184,228,.15);"><svg class="w-4 h-4" fill="none" stroke="#3a7cbf" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <span class="flex-1 text-sm font-semibold t-ink">Edit Profile</span>
+        <svg class="w-4 h-4 t-muted flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+
+      <button onclick="toggleDark()" class="w-full flex items-center gap-3 px-4 py-3.5 hover:bg-bg-s2 transition-colors text-left">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(139,92,246,.15);"><svg id="more-dark-icon" class="w-4 h-4" fill="none" stroke="#8b5cf6" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
+        <span class="flex-1 text-sm font-semibold t-ink">Dark Mode</span>
+        <span class="relative inline-flex h-6 w-11 items-center rounded-full flex-shrink-0 transition-colors" id="dark-toggle-track" style="background:#e2e8f0;">
+          <span class="inline-block h-4.5 w-4.5 transform rounded-full bg-white shadow transition-transform" id="dark-toggle-knob" style="width:18px;height:18px;transform:translateX(3px);"></span>
+        </span>
+      </button>
+
+    </div>
+  </section>
+
+  <!-- Support & About -->
+  <section class="px-5 lg:px-0 mt-6 fu d4">
+    <h2 class="text-sm font-bold t-ink mb-3">Support &amp; About</h2>
+    <div class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider divide-y divide-slate-100">
+
+      <a href="../help/index.html" class="flex items-center gap-3 px-4 py-3.5 hover:bg-bg-s2 transition-colors">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(58,124,191,.12);"><svg class="w-4 h-4" fill="none" stroke="#3a7cbf" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 1.5-2 1.5-2.5 3"/><path d="M12 17h.01"/></svg></div>
+        <span class="flex-1 text-sm font-semibold t-ink">Help &amp; FAQ</span>
+        <svg class="w-4 h-4 t-muted flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="../contact/index.html" class="flex items-center gap-3 px-4 py-3.5 hover:bg-bg-s2 transition-colors">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(42,157,143,.13);"><svg class="w-4 h-4" fill="none" stroke="#2a9d8f" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v12H7l-3 3V4Z"/></svg></div>
+        <span class="flex-1 text-sm font-semibold t-ink">Contact Us</span>
+        <svg class="w-4 h-4 t-muted flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <button class="w-full flex items-center gap-3 px-4 py-3.5 hover:bg-bg-s2 transition-colors text-left">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(212,160,23,.15);"><svg class="w-4 h-4" fill="none" stroke="#d4a017" stroke-width="2" viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 1-5 5 1.3 7L12 18l-6.3 3.5L7 14.5l-5-5 7-1L12 2Z"/></svg></div>
+        <span class="flex-1 text-sm font-semibold t-ink">Rate the App</span>
+        <svg class="w-4 h-4 t-muted flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+      <button class="w-full flex items-center gap-3 px-4 py-3.5 hover:bg-bg-s2 transition-colors text-left">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(196,168,224,.18);"><svg class="w-4 h-4" fill="none" stroke="#8b5cf6" stroke-width="2" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-3.9M8.6 13.5l6.8 3.9"/></svg></div>
+        <span class="flex-1 text-sm font-semibold t-ink">Share with Friends</span>
+        <svg class="w-4 h-4 t-muted flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+      <a href="../about/index.html" class="flex items-center gap-3 px-4 py-3.5 hover:bg-bg-s2 transition-colors">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(244,165,122,.16);"><svg class="w-4 h-4" fill="none" stroke="#e0693a" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        <span class="flex-1 text-sm font-semibold t-ink">About Us</span>
+        <svg class="w-4 h-4 t-muted flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="../terms/index.html" class="flex items-center gap-3 px-4 py-3.5 hover:bg-bg-s2 transition-colors">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#eef2f7;"><svg class="w-4 h-4" fill="none" stroke="#475569" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+        <span class="flex-1 text-sm font-semibold t-ink">Terms of Service</span>
+        <svg class="w-4 h-4 t-muted flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="../privacy/index.html" class="flex items-center gap-3 px-4 py-3.5 hover:bg-bg-s2 transition-colors">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#eef2f7;"><svg class="w-4 h-4" fill="none" stroke="#475569" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></div>
+        <span class="flex-1 text-sm font-semibold t-ink">Privacy Policy</span>
+        <svg class="w-4 h-4 t-muted flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <div class="flex items-center gap-3 px-4 py-3.5">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#eef2f7;"><span class="jp text-sm font-bold" style="color:#475569;">識</span></div>
+        <span class="flex-1 text-sm font-semibold t-ink">App Version</span>
+        <span class="text-xs t-muted font-medium">v1.0.0</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Log out -->
+  <section class="px-5 lg:px-0 mt-6 fu d5">
+    <button class="w-full flex items-center justify-center gap-2 rounded-xl3 py-3.5 text-sm font-bold border transition-all hover:brightness-95" style="background:#fdf0ea;color:#e0693a;border-color:#f5d9c8;">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+      Log Out
+    </button>
+  </section>
+
+</main>
+
+
+
+<!-- ═══════════ MOBILE BOTTOM NAV ═══════════ -->
+<nav id="botnav" class="lg:hidden fixed bottom-3 left-3 right-3 z-40 transition-transform duration-300 rounded-full shadow-lg2"
+     style="background:rgba(255,255,255,.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);">
+  <div class="flex items-center" style="height:66px;">
+    <a href="../index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Home</span>
+    </a>
+    <a href="../jlpt/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 4h6a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2z"/><path d="M22 4h-6a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">JLPT</span>
+    </a>
+    <a href="../ssw/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3 10 5.5-10 5.5L2 8.5 12 3Z"/><path d="M6 11v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">SSW</span>
+    </a>
+    <a href="../quiz/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M4 20h2.5L18 8.5a1.8 1.8 0 0 0-2.5-2.5L4 17.5V20Z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Quiz</span>
+    </a>
+    <a href="index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#2a9d8f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+      <span class="text-[11px] font-bold" style="color:#2a9d8f;">More</span>
+      <span class="absolute -bottom-1.5 w-5 h-[3px] rounded-full" style="background:#2a9d8f;"></span>
+    </a>
+  </div>
+</nav>
+
+
+<!-- ═══════════ SCRIPTS ═══════════ -->
+<script>
+let isDark = false;
+const MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+const SUN  = '<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/>';
+
+function toggleDark() {
+  isDark = !isDark;
+  document.body.className = isDark
+    ? 'mesh-dark min-h-screen text-slate-100 dark'
+    : 'mesh-light min-h-screen text-ink';
+  ['mob-icon','desk-icon'].forEach(id => { const el = document.getElementById(id); if(el) el.innerHTML = isDark ? SUN : MOON; });
+  const l = document.getElementById('desk-lbl'); if(l) l.textContent = isDark ? 'Light mode' : 'Dark mode';
+  const moreIcon = document.getElementById('more-dark-icon'); if(moreIcon) moreIcon.innerHTML = isDark ? SUN : MOON;
+  const track = document.getElementById('dark-toggle-track'); const knob = document.getElementById('dark-toggle-knob');
+  if(track) track.style.background = isDark ? '#3a7cbf' : '#e2e8f0';
+  if(knob) knob.style.transform = isDark ? 'translateX(21px)' : 'translateX(3px)';
+}
+
+/* ── Scroll-direction nav show/hide (mobile only) ──
+   Scrolling down: bottom nav hides, top nav stays visible.
+   Scrolling up: top nav hides, bottom nav stays visible. */
+(function(){
+  let lastY = window.scrollY;
+  const topbar = document.getElementById('topbar');
+  const botnav = document.getElementById('botnav');
+  window.addEventListener('scroll', function(){
+    const y = window.scrollY;
+    const goingDown = y > lastY;
+    if (y < 10) {
+      if (topbar) topbar.style.transform = 'translateY(0)';
+      if (botnav) botnav.style.transform = 'translateY(0)';
+    } else if (goingDown) {
+      if (botnav) botnav.style.transform = 'translateY(100%)';
+      if (topbar) topbar.style.transform = 'translateY(0)';
+    } else {
+      if (topbar) topbar.style.transform = 'translateY(-100%)';
+      if (botnav) botnav.style.transform = 'translateY(0)';
+    }
+    lastY = y;
+  }, { passive: true });
+})();
+
+/* ── Desktop profile dropdown ── */
+let deskProfOpen = false;
+function toggleDeskProf() {
+  deskProfOpen = !deskProfOpen;
+  const drop = document.getElementById('desk-prof-drop');
+  const chev = document.getElementById('desk-prof-chev');
+  drop.className = drop.className.replace(/\b(open|closed)\b/, deskProfOpen ? 'open' : 'closed');
+  if(chev) chev.style.transform = deskProfOpen ? 'rotate(180deg)' : '';
+}
+
+/* ── Language dropdowns ── */
+let deskLangOpen = false;
+function toggleDeskLang() {
+  deskLangOpen = !deskLangOpen;
+  const m = document.getElementById('desk-lang-drop'), c = document.getElementById('desk-lang-chev');
+  m.className = m.className.replace(/\b(open|closed)\b/, deskLangOpen ? 'open' : 'closed');
+  c.style.transform = deskLangOpen ? 'rotate(180deg)' : '';
+}
+function setDeskLang(code, flag) {
+  ['desk-lang-code','lang-code'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=code; });
+  ['desk-lang-flag','lang-flag'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=flag; });
+  deskLangOpen = false;
+  document.getElementById('desk-lang-drop').className = document.getElementById('desk-lang-drop').className.replace(/\b(open|closed)\b/,'closed');
+  document.getElementById('desk-lang-chev').style.transform = '';
+}
+const drops = { prof: false, lang: false };
+function toggleDrop(name) {
+  const other = name === 'prof' ? 'lang' : 'prof';
+  drops[other] = false;
+  const oel = document.getElementById(other === 'prof' ? 'prof-drop' : 'lang-drop');
+  if(oel) oel.className = oel.className.replace(/\bopen\b/,'closed');
+  drops[name] = !drops[name];
+  const el = document.getElementById(name === 'prof' ? 'prof-drop' : 'lang-drop');
+  if(el) el.className = el.className.replace(/\b(open|closed)\b/, drops[name] ? 'open' : 'closed');
+  if(name === 'lang') { const chev = document.getElementById('lang-chev'); if(chev) chev.style.transform = drops.lang ? 'rotate(180deg)' : ''; }
+}
+function setLang(code, flag) {
+  ['lang-code','desk-lang-code'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=code; });
+  ['lang-flag','desk-lang-flag'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=flag; });
+  drops.lang = false;
+  const el = document.getElementById('lang-drop'); if(el) el.className = el.className.replace(/\b(open|closed)\b/,'closed');
+  const chev = document.getElementById('lang-chev'); if(chev) chev.style.transform = '';
+}
+
+/* ── Outside click ── */
+document.addEventListener('click', e => {
+  const deskProfWrap = document.getElementById('desk-prof-wrap');
+  if(deskProfWrap && !deskProfWrap.contains(e.target) && deskProfOpen) {
+    deskProfOpen = false;
+    const drop = document.getElementById('desk-prof-drop'), chev = document.getElementById('desk-prof-chev');
+    if(drop) drop.className = drop.className.replace(/\b(open|closed)\b/,'closed');
+    if(chev) chev.style.transform = '';
+  }
+  const dlw = document.getElementById('desk-lang-wrap');
+  if(dlw && !dlw.contains(e.target) && deskLangOpen) {
+    deskLangOpen = false;
+    document.getElementById('desk-lang-drop').className = document.getElementById('desk-lang-drop').className.replace(/\b(open|closed)\b/,'closed');
+    document.getElementById('desk-lang-chev').style.transform = '';
+  }
+  const pb = document.getElementById('prof-wrap');
+  if(pb && !pb.contains(e.target) && drops.prof) { drops.prof = false; document.getElementById('prof-drop').className = document.getElementById('prof-drop').className.replace(/\b(open|closed)\b/,'closed'); }
+  const lb = document.getElementById('lang-wrap');
+  if(lb && !lb.contains(e.target) && drops.lang) { drops.lang = false; document.getElementById('lang-drop').className = document.getElementById('lang-drop').className.replace(/\b(open|closed)\b/,'closed'); document.getElementById('lang-chev').style.transform = ''; }
+});
+
+/* ── Firebase dynamic name/avatar (sidebar + mobile topbar) ── */
+(function(){
+  var cachedName=localStorage.getItem('sakura_user_name');
+  if(cachedName){ ['sb-name','mob-drop-name','desk-drop-name'].forEach(function(id){ var el=document.getElementById(id); if(el) el.textContent=cachedName; }); }
+  function applyUser(user){
+    if(!user) return;
+    var name=user.displayName||cachedName||'Learner', localPic=localStorage.getItem('sakura-avatar-'+user.uid), photo=localPic||user.photoURL||'';
+    localStorage.setItem('sakura_user_name',name);
+    ['sb-name','mob-drop-name','desk-drop-name'].forEach(function(id){ var el=document.getElementById(id); if(el) el.textContent=name; });
+    ['sb-avatar','mob-avatar'].forEach(function(id){ var el=document.getElementById(id); if(!el) return; if(photo){ el.innerHTML='<img src="'+photo+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt=""/>'; } else { el.textContent=(name[0]||'S').toUpperCase(); } });
+  }
+
+  function loadScript(src,cb){ var s=document.createElement('script'); s.src=src; s.onload=cb; document.head.appendChild(s); }
+  function initFirebase(){
+    if(!firebase.apps.length){ firebase.initializeApp({apiKey:"AIzaSyB-5EgDmpPYpdYoRpX9pXst5fPr2ICOai4",authDomain:"learnwith-sakura.firebaseapp.com",databaseURL:"https://learnwith-sakura-default-rtdb.firebaseio.com",projectId:"learnwith-sakura",storageBucket:"learnwith-sakura.firebasestorage.app",messagingSenderId:"524809202868",appId:"1:524809202868:web:8d4f47a122d542e285bbe1"}); }
+    firebase.auth().onAuthStateChanged(applyUser);
+  }
+  loadScript('https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js',function(){ loadScript('https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js',function(){ loadScript('https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js',initFirebase); }); });
+})();
+</script>
+
+<script>
+(function(){
+  var PAGE='other/index.html'; var PROG=100;
+  try {
+    var list = JSON.parse(localStorage.getItem('Sakura_recent') || '[]');
+    list = list.filter(function(x){ return x.url !== PAGE; });
+    list.unshift({ url: PAGE, ts: Date.now(), prog: PROG });
+    if(list.length > 10) list = list.slice(0, 10);
+    localStorage.setItem('Sakura_recent', JSON.stringify(list));
+  } catch(e) {}
+})();
+</script>
+
+  <script>
+    if('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .catch(e => console.log('SW error:', e));
+      });
+    }
+  </script>
+</body>
+</html>

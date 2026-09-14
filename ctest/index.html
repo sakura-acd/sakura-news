@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R0PBY0FQ2G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R0PBY0FQ2G');
+</script>
+  <link rel="icon" type="image/svg+xml" href="/fab.svg"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sakura Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit','sans-serif'],
+            jp:   ['"Noto Sans JP"','sans-serif'],
+          },
+          colors: {
+            blue:   { DEFAULT:'#7eb8e4', deep:'#3a7cbf' },
+            teal:   { DEFAULT:'#6ecec8', deep:'#2a9d8f' },
+            mint:   { DEFAULT:'#80d4a8', deep:'#27ae72' },
+            coral:  { DEFAULT:'#f4a57a', deep:'#e0693a' },
+            butter: { DEFAULT:'#f5da8a', deep:'#d4a017' },
+            lilac:  { DEFAULT:'#c4a8e0', deep:'#8b5cf6' },
+            ink:    { DEFAULT:'#1f2937', 2:'#475569', muted:'#94a3b8' },
+            bg:     { DEFAULT:'#f5f8fc', surface:'#ffffff', s2:'#eef2f7' },
+          },
+          borderRadius: { xl2:'1.25rem', xl3:'1.75rem', xl4:'2.25rem' },
+          boxShadow: {
+            card: '0 2px 16px rgba(15,23,42,.07)',
+            md2:  '0 4px 24px rgba(15,23,42,.12)',
+            lg2:  '0 8px 40px rgba(15,23,42,.16)',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family:'Outfit',sans-serif; transition:background .3s,color .3s; }
+    .jp  { font-family:'"Noto Sans JP"',sans-serif; }
+
+    .mesh-light {
+      background: radial-gradient(ellipse at 18% 12%,#d8edf8 0%,transparent 52%),
+                  radial-gradient(ellipse at 82% 88%,#d2f1ec 0%,transparent 52%),
+                  radial-gradient(ellipse at 58% 32%,#e6e2f6 0%,transparent 38%),
+                  #f4f7fb;
+    }
+    .mesh-dark {
+      background: radial-gradient(ellipse at 18% 12%,#0f2236 0%,transparent 52%),
+                  radial-gradient(ellipse at 82% 88%,#0b2120 0%,transparent 52%),
+                  #0c1220;
+    }
+
+    @keyframes ring-pulse {
+      0%,100% { box-shadow:0 0 0 0 rgba(110,206,200,.55); }
+      50%      { box-shadow:0 0 0 6px rgba(110,206,200,0); }
+    }
+    .avatar-ring {
+      background: conic-gradient(#6ecec8 0% 65%,#e2e8f0 65% 100%);
+      border-radius:9999px; padding:2.5px;
+      animation:ring-pulse 2.4s ease infinite;
+      display:inline-block; flex-shrink:0;
+    }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:none} }
+    .fu { animation:fadeUp .5s ease both; }
+    .d1{animation-delay:.07s} .d2{animation-delay:.14s}
+    .d3{animation-delay:.21s} .d4{animation-delay:.28s} .d5{animation-delay:.35s}
+
+    .card-lift { transition:transform .18s ease,box-shadow .18s ease; }
+    .card-lift:hover { transform:translateY(-3px); box-shadow:0 10px 32px rgba(15,23,42,.13); }
+
+    .ring-track { stroke:#e2e8f0; }
+    .ring-fill  { stroke:#6ecec8; stroke-linecap:round;
+                  transition:stroke-dashoffset .9s cubic-bezier(.4,0,.2,1); }
+
+    .pbar { transition:width 1s cubic-bezier(.4,0,.2,1); }
+
+    .drop { transition:opacity .15s ease,transform .15s ease; }
+    .drop.closed { opacity:0; transform:translateY(-6px); pointer-events:none; }
+    .drop.open   { opacity:1; transform:translateY(0);    pointer-events:all; }
+
+    #bcard { transition:transform .32s cubic-bezier(.4,0,.2,1); }
+    .s-act { background:#eef5fc; color:#3a7cbf; font-weight:600; }
+
+    body.dark .dk-bg  { background:#0c1220 !important; }
+    body.dark #sidebar-el { background:rgba(14,19,32,.96) !important; border-color:#1d2740 !important; }
+    body.dark #topbar, body.dark #botnav { background:rgba(12,18,32,.75) !important; border-color:rgba(255,255,255,.08) !important; }
+    body.dark .surface  { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark .surface2 { background:#1d2740 !important; }
+    body.dark .t-ink    { color:#e8eef6 !important; }
+    body.dark .t-ink2   { color:#8da4c0 !important; }
+    body.dark .t-muted  { color:#4a607a !important; }
+    body.dark .ring-track { stroke:#1d2740; }
+    body.dark .avatar-ring { background:conic-gradient(#6ecec8 0% 65%,#1d2740 65% 100%); }
+    body.dark #bcard    { background:#151d2e !important; }
+    body.dark #prof-drop, body.dark #lang-drop, body.dark #desk-lang-drop, body.dark #desk-prof-drop { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark #prof-drop a, body.dark #lang-drop button, body.dark #desk-lang-drop button, body.dark #desk-prof-drop a { color:#8da4c0 !important; }
+    body.dark #prof-drop a:hover, body.dark #lang-drop button:hover, body.dark #desk-lang-drop button:hover, body.dark #desk-prof-drop a:hover { background:rgba(126,184,228,.08) !important; }
+    body.dark .divider  { border-color:#1d2740 !important; }
+
+    ::-webkit-scrollbar { width:4px; }
+    ::-webkit-scrollbar-thumb { background:#c2d3e3; border-radius:99px; }
+  </style>
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#e8799a"/>
+  <!-- Safari PWA -->
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="Sakura"/>
+  <link rel="apple-touch-icon" href="icons/icon-192.png"/>
+  <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png"/>
+  <link rel="apple-touch-icon" sizes="144x144" href="icons/icon-144.png"/>
+  <!-- Mobile web -->
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="application-name" content="Sakura"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R0PBY0FQ2G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>
+</head>
+
+<body class="mesh-light min-h-screen text-ink" id="body">
+
+
+<!-- ═══════════════ DESKTOP SIDEBAR ═══════════════ -->
+<aside id="sidebar-el" class="hidden lg:flex flex-col fixed top-0 left-0 h-full w-60 bg-bg-surface surface border-r border-slate-100 divider z-30 shadow-card">
+
+  <div class="px-4 py-4 flex items-center gap-3 border-b border-slate-100 divider">
+    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow-md flex-shrink-0">
+      <span class="jp text-white font-bold text-base">識</span>
+    </div>
+    <div class="min-w-0 flex-1">
+      <div class="font-bold text-base tracking-tight t-ink leading-tight">Sakura</div>
+      <div class="text-xs t-muted">日本語 Learning</div>
+    </div>
+    <div class="relative flex-shrink-0" id="desk-lang-wrap">
+      <button onclick="toggleDeskLang()"
+        class="flex items-center gap-1 px-2 py-1.5 rounded-lg border border-slate-200 divider text-xs font-bold t-ink2 transition-all hover:border-blue/60 hover:text-blue-deep"
+        style="background:#f8fafc;">
+        <span id="desk-lang-flag">🇬🇧</span>
+        <span id="desk-lang-code" class="ml-0.5">EN</span>
+        <svg id="desk-lang-chev" class="w-3 h-3 t-muted transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div id="desk-lang-drop" class="drop closed absolute right-0 top-full mt-1.5 w-44 bg-white surface rounded-xl shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+        <a href="index.html" onclick="setDeskLang('EN','🇬🇧')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors">🇬🇧 English</a>
+        <a href="coming-soon.html" onclick="setDeskLang('NP','🇳🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇳🇵 नेपाली</a>
+        <a href="coming-soon.html" onclick="setDeskLang('HI','🇮🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇮🇳 हिन्दी</a>
+        <a href="coming-soon.html" onclick="setDeskLang('SI','🇱🇰')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇱🇰 සිංහල</a>
+        <a href="coming-soon.html" onclick="setDeskLang('BN','🇧🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇧🇩 বাংলা</a>
+        <a href="coming-soon.html" onclick="setDeskLang('VI','🇻🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇻🇳 Tiếng Việt</a>
+        <a href="coming-soon.html" onclick="setDeskLang('ID','🇮🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇮🇩 Indonesia</a>
+        <a href="coming-soon.html" onclick="setDeskLang('TH','🇹🇭')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇹🇭 ภาษาไทย</a>
+        <a href="coming-soon.html" onclick="setDeskLang('JP','🇯🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇯🇵 日本語</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="px-5 py-4 flex items-center gap-3 border-b border-slate-100 divider relative" id="desk-prof-wrap">
+    <button onclick="toggleDeskProf()" class="flex items-center gap-3 flex-1 min-w-0 focus:outline-none" aria-label="Profile">
+      <div class="avatar-ring flex-shrink-0">
+        <div id="sb-avatar" class="w-9 h-9 rounded-full bg-white flex items-center justify-center text-white font-bold text-sm overflow-hidden">
+          <img src="logo.svg" alt="Sakura Academy" class="w-full h-full object-cover"/>
+        </div>
+      </div>
+      <div class="flex-1 min-w-0 text-left">
+        <div class="font-semibold text-sm t-ink leading-tight" id="sb-name">hye mate</div>
+      </div>
+      <svg id="desk-prof-chev" class="w-3.5 h-3.5 t-muted transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div id="desk-prof-drop" class="drop closed absolute left-3 right-3 top-full mt-1 bg-white surface rounded-xl2 shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+      <div class="px-4 py-3 bg-gradient-to-r from-blue/6 to-teal/6 border-b border-slate-100 divider">
+        <div class="font-bold text-sm t-ink" id="desk-drop-name">hye mate</div>
+      </div>
+      <a href="profile/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        My Profile
+      </a>
+      <a href="english/download/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors border-t border-slate-100 divider">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16l-4-4h3V4h2v8h3l-4 4z"/><path d="M4 20h16"/></svg>
+        Download App
+      </a>
+
+    </div>
+  </div>
+
+  <nav class="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
+    <a href="index.html" class="s-act flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg>
+      Dashboard
+    </a>
+    <a href="english/learn.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      Learn
+    </a>
+    <a href="english/study.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 4v16M2 12h6"/></svg>
+      Study
+    </a>
+    <a href="english/quiz.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg>
+      Quiz
+    </a>
+    <div class="pt-4 pb-1 px-3 text-[10px] font-bold tracking-widest t-muted uppercase">Courses</div>
+    <a href="english/jlpt/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      JLPT
+    </a>
+    <a href="english/ssw/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-mint/20 text-mint-deep font-bold text-[10px] flex items-center justify-center">SSW</span> SSW</a>
+  </nav>
+
+  <div class="px-4 py-4 border-t border-slate-100 divider flex items-center justify-between">
+    <button onclick="toggleDark()" class="flex items-center gap-2 text-xs t-muted hover:text-ink transition-colors">
+      <svg id="desk-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span id="desk-lbl">Dark mode</span>
+    
+    </button>
+  </div>
+</aside>
+
+
+<!-- ═══════════════ MOBILE TOP BAR ═══════════════ -->
+<header id="topbar" class="lg:hidden fixed top-0 left-0 right-0 z-40 px-4 py-2.5 flex items-center transition-transform duration-300"
+        style="background:rgba(255,255,255,.72);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:0.5px solid rgba(0,0,0,.08);">
+  <div class="relative flex-shrink-0" id="prof-wrap">
+    <button id="prof-btn" onclick="toggleDrop('prof')" class="block focus:outline-none" aria-label="Profile">
+      <div class="avatar-ring">
+        <div id="mob-avatar" class="w-9 h-9 rounded-full bg-white flex items-center justify-center text-white font-bold text-sm select-none overflow-hidden">
+        <img src="logo.svg" alt="Sakura Academy" class="w-full h-full object-cover"/>
+      </div>
+      </div>
+    </button>
+    <div id="prof-drop" class="drop closed absolute top-full left-0 mt-2 w-52 bg-white surface rounded-xl2 shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+      <div class="px-4 py-3 bg-gradient-to-r from-blue/6 to-teal/6 border-b border-slate-100 divider">
+        <div class="font-bold text-sm t-ink" id="mob-drop-name">hye mate</div>
+      </div>
+      <a href="english/profile/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        My Profile
+      </a>
+      <a href="english/download/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors border-t border-slate-100 divider">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16l-4-4h3V4h2v8h3l-4 4z"/><path d="M4 20h16"/></svg>
+        Download App
+      </a>
+
+    </div>
+  </div>
+
+  <div class="ml-auto flex items-center gap-2 flex-shrink-0">
+    <div class="relative" id="lang-wrap">
+      <button onclick="toggleDrop('lang')" class="flex items-center gap-1 pl-2 pr-1.5 py-1.5 rounded-lg bg-bg-s2 surface2 border border-slate-200 divider text-xs font-bold t-ink2 hover:border-blue/60 transition-all">
+        <span id="lang-flag">🇬🇧</span>
+        <span id="lang-code" class="ml-0.5">EN</span>
+        <svg id="lang-chev" class="w-3 h-3 t-muted ml-0.5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div id="lang-drop" class="drop closed absolute right-0 top-full mt-1.5 w-44 bg-white surface rounded-xl shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+        <a href="index.html"    onclick="setLang('EN','🇬🇧')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors">🇬🇧 English</a>
+        <a href="coming-soon.html" onclick="setLang('NP','🇳🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇳🇵 नेपाली</a>
+        <a href="coming-soon.html" onclick="setLang('HI','🇮🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇮🇳 हिन्दी</a>
+        <a href="coming-soon.html" onclick="setLang('SI','🇱🇰')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇱🇰 සිංහල</a>
+        <a href="coming-soon.html" onclick="setLang('BN','🇧🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇧🇩 বাংলা</a>
+        <a href="coming-soon.html" onclick="setLang('VI','🇻🇳')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇻🇳 Tiếng Việt</a>
+        <a href="coming-soon.html" onclick="setLang('ID','🇮🇩')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇮🇩 Indonesia</a>
+        <a href="coming-soon.html" onclick="setLang('TH','🇹🇭')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇹🇭 ภาษาไทย</a>
+        <a href="coming-soon.html" onclick="setLang('JP','🇯🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇯🇵 日本語</a>
+      </div>
+    </div>
+    <button onclick="toggleDark()" class="w-8 h-8 rounded-lg bg-bg-s2 surface2 border border-slate-200 divider flex items-center justify-center t-muted hover:text-blue-deep hover:border-blue/50 transition-all">
+      <svg id="mob-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+
+<!-- ═══════════════ MAIN CONTENT ═══════════════ -->
+<main class="lg:ml-60 min-h-screen pb-28 lg:pb-10 pt-16 lg:pt-0">
+
+  <!-- Greeting + Slide box -->
+  <section class="px-5 lg:px-8 pt-6 lg:pt-8 pb-2">
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+      <div class="fu">
+        <h1 class="text-2xl lg:text-3xl font-extrabold t-ink leading-tight tracking-tight">
+          <span id="greeting-name">hye mate</span>, Let's start<br class="lg:hidden"/> today's lesson!
+        </h1>
+        <p class="mt-1.5 text-sm t-ink2">今日も <span class="font-bold text-blue-deep">衣装に</span> 頑張りましょう。</p>
+      </div>
+
+      <!-- Slide Swipe Box -->
+      <div class="fu d1 self-start w-full lg:w-auto" style="overflow:hidden;border-radius:1.75rem;">
+        <div id="slide-track" style="display:flex;width:200%;transition:transform .5s cubic-bezier(.4,0,.2,1);">
+
+          <!-- SLIDE 1: Goal Ring + Stats -->
+          <div style="width:50%;flex-shrink:0;">
+            <div class="flex items-center gap-5 bg-bg-surface surface rounded-xl4 px-6 py-4 shadow-card border border-slate-100 divider relative">
+              <div class="relative w-24 h-24 flex-shrink-0">
+                <svg class="w-24 h-24 -rotate-90" viewBox="0 0 88 88">
+                  <circle class="ring-track" cx="44" cy="44" r="36" fill="none" stroke-width="7"/>
+                  <circle class="ring-fill" id="goal-ring-fill" cx="44" cy="44" r="36" fill="none" stroke-width="7" stroke-dasharray="226.2" stroke-dashoffset="226.2"/>
+                </svg>
+                <div class="absolute inset-0 flex flex-col items-center justify-center">
+                  <span class="text-xl font-extrabold t-ink leading-none" id="goal-ring-pct">0%</span>
+                  <span class="text-[10px] t-muted font-medium mt-0.5">today</span>
+                </div>
+              </div>
+              <div class="space-y-2.5">
+                <div>
+                  <div class="text-[11px] t-muted font-medium mb-1">Words Learned</div>
+                  <div class="flex items-center gap-2">
+                    <div class="h-1.5 w-28 bg-bg-s2 surface2 rounded-full overflow-hidden"><div class="h-full bg-teal rounded-full pbar" id="words-bar" style="width:0%"></div></div>
+                    <span class="text-xs font-bold t-ink2" id="words-val">0/20</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="text-[11px] t-muted font-medium mb-1">Quiz Score</div>
+                  <div class="flex items-center gap-2">
+                    <div class="h-1.5 w-28 bg-bg-s2 surface2 rounded-full overflow-hidden"><div class="h-full bg-blue-deep rounded-full pbar" id="quiz-bar" style="width:0%"></div></div>
+                    <span class="text-xs font-bold t-ink2" id="quiz-val">0%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="absolute bottom-2 right-4 flex gap-1">
+                <div style="width:6px;height:6px;border-radius:50%;background:#3a7cbf;"></div>
+                <div id="dot2" style="width:6px;height:6px;border-radius:50%;background:#e2e8f0;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 2: Word of Day -->
+          <div style="width:50%;flex-shrink:0;">
+            <div class="bg-bg-surface surface rounded-xl4 shadow-card border border-slate-100 divider px-5 py-4 relative" style="background:linear-gradient(135deg,rgba(126,184,228,.09),rgba(110,206,200,.06));">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-extrabold t-muted uppercase tracking-wider">✨ Word of the Day</span>
+                <span id="wotd-num" class="text-[10px] t-muted"></span>
+              </div>
+              <div class="flex items-center gap-4 mb-3">
+                <div class="flex-shrink-0">
+                  <div id="wotd-word" class="jp font-bold t-ink" style="font-size:2.2rem;line-height:1;"></div>
+                  <div id="wotd-reading" class="jp text-sm t-muted mt-1"></div>
+                  <div id="wotd-romaji" class="text-xs t-muted" style="font-style:italic;"></div>
+                </div>
+                <div class="flex-1 border-l border-slate-200 pl-4">
+                  <div id="wotd-meaning" class="font-bold text-sm t-ink mb-1"></div>
+                  <div id="wotd-example" class="jp text-xs leading-relaxed" style="color:#475569;"></div>
+                  <div id="wotd-ex-meaning" class="text-[11px] t-muted mt-0.5" style="font-style:italic;"></div>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <button onclick="prevWotd()" class="w-7 h-7 rounded-full flex items-center justify-center font-bold t-muted text-base" style="background:#eef2f7;border:none;cursor:pointer;">‹</button>
+                <div id="wotd-dots" class="flex gap-1.5 flex-1 justify-center"></div>
+                <button onclick="nextWotd()" class="w-7 h-7 rounded-full flex items-center justify-center font-bold t-muted text-base" style="background:#eef2f7;border:none;cursor:pointer;">›</button>
+              </div>
+              <div class="absolute bottom-2 right-4 flex gap-1">
+                <div id="dot1" style="width:6px;height:6px;border-radius:50%;background:#e2e8f0;"></div>
+                <div style="width:6px;height:6px;border-radius:50%;background:#3a7cbf;"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter tabs -->
+  <section class="px-5 lg:px-8 mt-4 fu d2">
+    <div class="flex gap-2.5 overflow-x-auto pb-1" style="scrollbar-width:none">
+      <button class="flex-shrink-0 px-5 py-2.5 rounded-full bg-blue-deep text-white text-sm font-bold shadow-sm">All</button>
+      <a href="english/jlpt/index.html"  class="flex-shrink-0 px-5 py-2.5 rounded-full bg-bg-surface surface t-ink2 text-sm font-semibold border border-slate-200 hover:border-blue hover:text-blue-deep transition-all">JLPT</a>
+      <a href="english/ssw/index.html"   class="flex-shrink-0 px-5 py-2.5 rounded-full bg-bg-surface surface t-ink2 text-sm font-semibold border border-slate-200 hover:border-teal hover:text-teal-deep transition-all">SSW</a>
+      <a href="english/other/index.html" class="flex-shrink-0 px-5 py-2.5 rounded-full bg-bg-surface surface t-ink2 text-sm font-semibold border border-slate-200 hover:border-lilac hover:text-lilac-deep transition-all">practice</a>
+    </div>
+  </section>
+
+  <!-- Continue Today -->
+  <section class="px-5 lg:px-8 mt-5 fu d2" id="continue-section">
+    <h2 class="text-sm font-bold t-ink mb-3 flex items-center gap-2">
+      <span class="w-5 h-5 rounded-full flex items-center justify-center" style="background:rgba(62,124,191,.15);">
+        <svg class="w-3 h-3 text-blue-deep" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      </span>
+      Continue Today
+      <span class="ml-auto text-[10px] font-medium t-muted">Recently visited</span>
+    </h2>
+    <div id="recent-pages" class="grid grid-cols-1 gap-3"></div>
+    <div id="no-history" class="hidden rounded-xl3 border border-dashed border-slate-200 p-6 text-center" style="background:#f8fafc">
+      <div class="text-3xl mb-2">👋</div>
+      <div class="text-sm font-semibold t-ink mb-1">No recent pages yet</div>
+      <div class="text-xs t-muted">Pages you visit will appear here so you can quickly continue.</div>
+    </div>
+  </section>
+
+  <!-- Explore Features -->
+  <section class="px-5 lg:px-8 mt-6 fu d3">
+    <h2 class="text-sm font-bold t-ink mb-3 flex items-center gap-2">
+      <span class="w-5 h-5 rounded-full flex items-center justify-center" style="background:rgba(110,206,200,.18);">
+        <svg class="w-3 h-3 text-teal-deep" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </span>
+      Explore Features
+    </h2>
+    <div class="grid grid-cols-3 lg:grid-cols-6 gap-3">
+      <a href="english/quiz/index.html" class="flex flex-col items-center gap-2.5 p-4 rounded-xl3 bg-bg-surface surface border border-slate-100 divider shadow-card card-lift text-center">
+        <div class="w-14 h-14 rounded-xl2 flex items-center justify-center text-2xl" style="background:rgba(128,212,168,.15);">🎯</div>
+        <span class="text-sm font-bold t-ink leading-tight">Quiz</span>
+      </a>
+      <a href="english/news/index.html" class="flex flex-col items-center gap-2.5 p-4 rounded-xl3 bg-bg-surface surface border border-slate-100 divider shadow-card card-lift text-center">
+        <div class="w-14 h-14 rounded-xl2 flex items-center justify-center text-2xl" style="background:rgba(126,184,228,.15);">📰</div>
+        <span class="text-sm font-bold t-ink leading-tight">News</span>
+      </a>
+      <a href="english/conversation/index.html" class="flex flex-col items-center gap-2.5 p-4 rounded-xl3 bg-bg-surface surface border border-slate-100 divider shadow-card card-lift text-center">
+        <div class="w-14 h-14 rounded-xl2 flex items-center justify-center text-2xl" style="background:rgba(110,206,200,.15);">💬</div>
+        <span class="text-sm font-bold t-ink leading-tight">Daily Talk</span>
+      </a>
+      <a href="english/jobhunt/index.html" class="flex flex-col items-center gap-2.5 p-4 rounded-xl3 bg-bg-surface surface border border-slate-100 divider shadow-card card-lift text-center">
+        <div class="w-14 h-14 rounded-xl2 flex items-center justify-center text-2xl" style="background:rgba(245,218,138,.2);">💼</div>
+        <span class="text-sm font-bold t-ink leading-tight">Job Hunt</span>
+      </a>
+      <a href="english/community/index.html" class="flex flex-col items-center gap-2.5 p-4 rounded-xl3 bg-bg-surface surface border border-slate-100 divider shadow-card card-lift text-center">
+        <div class="w-14 h-14 rounded-xl2 flex items-center justify-center text-2xl" style="background:rgba(196,168,224,.18);">🌐</div>
+        <span class="text-sm font-bold t-ink leading-tight">Community</span>
+      </a>
+      <a href="english/kanji/index.html" class="flex flex-col items-center gap-2.5 p-4 rounded-xl3 bg-bg-surface surface border border-slate-100 divider shadow-card card-lift text-center">
+        <div class="w-14 h-14 rounded-xl2 flex items-center justify-center" style="background:rgba(244,165,122,.18);">
+          <span class="jp font-bold text-2xl" style="color:#e0693a;">書</span>
+        </div>
+        <span class="text-sm font-bold t-ink leading-tight">Kanji Write</span>
+      </a>
+      <a href="english/learn/index.html" class="flex flex-col items-center gap-2.5 p-4 rounded-xl3 bg-bg-surface surface border border-slate-100 divider shadow-card card-lift text-center">
+        <div class="w-14 h-14 rounded-xl2 flex items-center justify-center" style="background:rgba(232,121,154,.16);">
+          <span class="jp font-bold" style="font-size:24px;color:#e8799a;line-height:1;">あア</span>
+        </div>
+        <span class="text-sm font-bold t-ink leading-tight">Hiragana/<br>Katakana</span>
+      </a>
+      <a href="english/download/index.html" class="flex flex-col items-center gap-2.5 p-4 rounded-xl3 border border-slate-100 divider shadow-card card-lift text-center relative overflow-hidden" style="background:linear-gradient(135deg,rgba(99,102,241,.10),rgba(139,92,246,.08));">
+        <span class="absolute top-2 right-2 text-[9px] font-extrabold px-1.5 py-0.5 rounded-full leading-none" style="background:#6366f1;color:#fff;">NEW</span>
+        <div class="w-14 h-14 rounded-xl2 flex items-center justify-center text-2xl" style="background:rgba(99,102,241,.16);">📲</div>
+        <span class="text-sm font-bold t-ink leading-tight">Download<br>App</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Course Streams -->
+  <section class="px-5 lg:px-8 mt-6 fu d4">
+    <h2 class="text-sm font-bold t-ink mb-3">Course Streams</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <a href="english/jlpt/index.html" class="card-lift bg-bg-surface surface rounded-xl3 p-5 shadow-card border border-slate-100 divider flex flex-col gap-3">
+        <div class="w-12 h-12 rounded-xl2 bg-gradient-to-br from-blue to-blue-deep flex items-center justify-center shadow"><span class="text-white font-extrabold text-base">N5</span></div>
+        <div><div class="font-bold t-ink text-lg">JLPT</div><div class="text-sm t-muted mt-0.5">N5 → N1 prep</div></div>
+        <div><div class="flex justify-between text-xs t-muted mb-1"><span>Progress</span><span class="font-bold" id="jlpt-prog-lbl">0%</span></div><div class="h-2 rounded-full overflow-hidden" style="background:#eef2f7"><div class="h-full bg-blue-deep rounded-full pbar" id="jlpt-prog-bar" style="width:0%"></div></div></div>
+        <div class="text-sm t-muted">Vocab · Grammar · Kanji · Quiz</div>
+      </a>
+      <a href="english/ssw/index.html" class="card-lift bg-bg-surface surface rounded-xl3 p-5 shadow-card border border-slate-100 divider flex flex-col gap-3">
+        <div class="w-12 h-12 rounded-xl2 bg-gradient-to-br from-teal to-teal-deep flex items-center justify-center shadow"><span class="jp text-white font-bold text-base">特</span></div>
+        <div><div class="font-bold t-ink text-lg">SSW</div><div class="text-sm t-muted mt-0.5">Specified Skilled</div></div>
+        <div><div class="flex justify-between text-xs t-muted mb-1"><span>Progress</span><span class="font-bold">30%</span></div><div class="h-2 rounded-full overflow-hidden" style="background:#eef2f7"><div class="h-full bg-teal-deep rounded-full pbar" style="width:30%"></div></div></div>
+        <div class="text-sm t-muted">Caregiver · Agriculture · Food</div>
+      </a>
+      <a href="english/other/index.html" class="card-lift bg-bg-surface surface rounded-xl3 p-5 shadow-card border border-slate-100 divider flex flex-col gap-3">
+        <div class="w-12 h-12 rounded-xl2 bg-gradient-to-br from-lilac to-lilac-deep flex items-center justify-center shadow"><span class="jp text-white font-bold text-lg">辞</span></div>
+        <div><div class="font-bold t-ink text-lg">Smart Dict</div><div class="text-sm t-muted mt-0.5">AI-powered lookup</div></div>
+        <div class="text-sm t-muted">Tap any word to get meaning + examples.</div>
+        <div class="text-sm t-muted">40k entries · Instant search</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Recent Activity -->
+  <section class="px-5 lg:px-8 mt-6 fu d5">
+    <h2 class="text-sm font-bold t-ink mb-3">Recent Activity</h2>
+    <div id="activity-list" class="bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 divider divide-y divide-slate-100 overflow-hidden"></div>
+    <div id="activity-empty" class="hidden rounded-xl3 border border-dashed border-slate-200 p-6 text-center" style="background:#f8fafc;">
+      <div class="text-2xl mb-2">📋</div>
+      <div class="text-sm font-semibold t-ink">No activity yet</div>
+      <div class="text-xs t-muted mt-1">Start a quiz or lesson to see your activity here.</div>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ═══════════════ MOBILE BOTTOM NAV ═══════════════ -->
+<nav id="botnav" class="lg:hidden fixed bottom-3 left-3 right-3 z-40 transition-transform duration-300 rounded-full shadow-lg2"
+     style="background:rgba(255,255,255,.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);">
+  <div class="flex items-center" style="height:66px;">
+    <a href="index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#2a9d8f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg>
+      <span class="text-[11px] font-bold" style="color:#2a9d8f;">Home</span>
+      <span class="absolute -bottom-1.5 w-5 h-[3px] rounded-full" style="background:#2a9d8f;"></span>
+    </a>
+    <a href="english/jlpt/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 4h6a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2z"/><path d="M22 4h-6a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">JLPT</span>
+    </a>
+    <a href="english/ssw/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3 10 5.5-10 5.5L2 8.5 12 3Z"/><path d="M6 11v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">SSW</span>
+    </a>
+    <a href="english/quiz/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M4 20h2.5L18 8.5a1.8 1.8 0 0 0-2.5-2.5L4 17.5V20Z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Quiz</span>
+    </a>
+    <a href="english/other/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+      <span class="text-[11px] font-semibold t-muted">More</span>
+    </a>
+  </div>
+</nav>
+
+
+<!-- ═══════════════ SCRIPTS ═══════════════ -->
+<script>
+/* ── Desktop profile dropdown ── */
+let deskProfOpen = false;
+function toggleDeskProf() {
+  deskProfOpen = !deskProfOpen;
+  const drop = document.getElementById('desk-prof-drop');
+  const chev = document.getElementById('desk-prof-chev');
+  drop.className = drop.className.replace(/\b(open|closed)\b/, deskProfOpen ? 'open' : 'closed');
+  if(chev) chev.style.transform = deskProfOpen ? 'rotate(180deg)' : '';
+}
+
+/* ── Dark mode ── */
+let isDark = false;
+const MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+const SUN  = '<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/>';
+function toggleDark() {
+  isDark = !isDark;
+  document.body.className = isDark ? 'mesh-dark min-h-screen text-slate-100 dark' : 'mesh-light min-h-screen text-ink';
+  ['mob-icon','desk-icon'].forEach(id => { const el = document.getElementById(id); if(el) el.innerHTML = isDark ? SUN : MOON; });
+  const lbl = document.getElementById('desk-lbl'); if(lbl) lbl.textContent = isDark ? 'Light mode' : 'Dark mode';
+}
+
+/* ── Scroll-direction nav show/hide (mobile only) ──
+   Scrolling down: bottom nav hides, top nav stays visible.
+   Scrolling up: top nav hides, bottom nav stays visible. */
+(function(){
+  let lastY = window.scrollY;
+  const topbar = document.getElementById('topbar');
+  const botnav = document.getElementById('botnav');
+  window.addEventListener('scroll', function(){
+    const y = window.scrollY;
+    const goingDown = y > lastY;
+    if (y < 10) {
+      if (topbar) topbar.style.transform = 'translateY(0)';
+      if (botnav) botnav.style.transform = 'translateY(0)';
+    } else if (goingDown) {
+      if (botnav) botnav.style.transform = 'translateY(100%)';
+      if (topbar) topbar.style.transform = 'translateY(0)';
+    } else {
+      if (topbar) topbar.style.transform = 'translateY(-100%)';
+      if (botnav) botnav.style.transform = 'translateY(0)';
+    }
+    lastY = y;
+  }, { passive: true });
+})();
+
+/* ── Language ── */
+let deskLangOpen = false;
+function toggleDeskLang() {
+  deskLangOpen = !deskLangOpen;
+  const m = document.getElementById('desk-lang-drop'), c = document.getElementById('desk-lang-chev');
+  m.className = m.className.replace(/\b(open|closed)\b/, deskLangOpen ? 'open' : 'closed');
+  c.style.transform = deskLangOpen ? 'rotate(180deg)' : '';
+}
+function setDeskLang(code, flag) {
+  ['desk-lang-code','lang-code'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=code; });
+  ['desk-lang-flag','lang-flag'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=flag; });
+  deskLangOpen = false;
+  document.getElementById('desk-lang-drop').className = document.getElementById('desk-lang-drop').className.replace(/\b(open|closed)\b/,'closed');
+  document.getElementById('desk-lang-chev').style.transform = '';
+}
+const drops = { prof: false, lang: false };
+function toggleDrop(name) {
+  const other = name === 'prof' ? 'lang' : 'prof';
+  drops[other] = false;
+  const oel = document.getElementById(other === 'prof' ? 'prof-drop' : 'lang-drop');
+  if(oel) oel.className = oel.className.replace(/\bopen\b/,'closed');
+  drops[name] = !drops[name];
+  const el = document.getElementById(name === 'prof' ? 'prof-drop' : 'lang-drop');
+  if(el) el.className = el.className.replace(/\b(open|closed)\b/, drops[name] ? 'open' : 'closed');
+  if(name === 'lang') { const chev = document.getElementById('lang-chev'); if(chev) chev.style.transform = drops.lang ? 'rotate(180deg)' : ''; }
+}
+function setLang(code, flag) {
+  ['lang-code','desk-lang-code'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=code; });
+  ['lang-flag','desk-lang-flag'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=flag; });
+  drops.lang = false;
+  const el = document.getElementById('lang-drop'); if(el) el.className = el.className.replace(/\b(open|closed)\b/,'closed');
+  const chev = document.getElementById('lang-chev'); if(chev) chev.style.transform = '';
+}
+
+/* ── Outside click ── */
+document.addEventListener('click', e => {
+  const deskProfWrap = document.getElementById('desk-prof-wrap');
+  if(deskProfWrap && !deskProfWrap.contains(e.target) && deskProfOpen) {
+    deskProfOpen = false;
+    const drop = document.getElementById('desk-prof-drop'), chev = document.getElementById('desk-prof-chev');
+    if(drop) drop.className = drop.className.replace(/\b(open|closed)\b/,'closed');
+    if(chev) chev.style.transform = '';
+  }
+  const dlw = document.getElementById('desk-lang-wrap');
+  if(dlw && !dlw.contains(e.target) && deskLangOpen) {
+    deskLangOpen = false;
+    document.getElementById('desk-lang-drop').className = document.getElementById('desk-lang-drop').className.replace(/\b(open|closed)\b/,'closed');
+    document.getElementById('desk-lang-chev').style.transform = '';
+  }
+  const pb = document.getElementById('prof-wrap');
+  if(pb && !pb.contains(e.target) && drops.prof) { drops.prof = false; document.getElementById('prof-drop').className = document.getElementById('prof-drop').className.replace(/\b(open|closed)\b/,'closed'); }
+  const lb = document.getElementById('lang-wrap');
+  if(lb && !lb.contains(e.target) && drops.lang) { drops.lang = false; document.getElementById('lang-drop').className = document.getElementById('lang-drop').className.replace(/\b(open|closed)\b/,'closed'); document.getElementById('lang-chev').style.transform = ''; }
+});
+
+/* ── Recent pages ── */
+const PAGE_META = {
+  'learn.html':        { title:'Learn', sub:'Hiragana & Kanji', emoji:'📖', bg:'rgba(126,184,228,.13)', accent:'#3a7cbf', bar:'#3a7cbf' },
+  'study.html':        { title:'Flashcard Study', sub:'Zen flip cards', emoji:'🃏', bg:'rgba(110,206,200,.13)', accent:'#2a9d8f', bar:'#6ecec8' },
+  'quiz/index.html':         { title:'Quiz Arena', sub:'Gamified questions', emoji:'🎯', bg:'rgba(128,212,168,.13)', accent:'#27ae72', bar:'#80d4a8' },
+  'jlpt/index.html':         { title:'JLPT Course', sub:'N5 → N1 prep', emoji:'📝', bg:'rgba(126,184,228,.13)', accent:'#3a7cbf', bar:'#3a7cbf' },
+  'ssw/index.html':          { title:'SSW Course', sub:'Specified Skilled Worker', emoji:'🏭', bg:'rgba(110,206,200,.13)', accent:'#2a9d8f', bar:'#6ecec8' },
+  'news/index.html':         { title:'Japanese News', sub:'Read & listen daily', emoji:'📰', bg:'rgba(126,184,228,.13)', accent:'#3a7cbf', bar:'#7eb8e4' },
+  'conversation/index.html': { title:'Daily Conversation', sub:'Everyday phrases', emoji:'💬', bg:'rgba(110,206,200,.13)', accent:'#2a9d8f', bar:'#6ecec8' },
+  'jobhunt/index.html':      { title:'Job Hunt', sub:'Japanese job vocab', emoji:'💼', bg:'rgba(245,218,138,.18)', accent:'#d4a017', bar:'#f5da8a' },
+  'community/index.html':    { title:'Community', sub:'Connect with learners', emoji:'🌐', bg:'rgba(196,168,224,.16)', accent:'#8b5cf6', bar:'#c4a8e0' },
+  'kanji/index.html':        { title:'Kanji Writing', sub:'Stroke order practice', emoji:'書', bg:'rgba(244,165,122,.15)', accent:'#e0693a', bar:'#f4a57a' },
+  'other/index.html':        { title:'Other Courses', sub:'Practice · More', emoji:'✨', bg:'rgba(196,168,224,.16)', accent:'#8b5cf6', bar:'#c4a8e0' },
+};
+function timeAgo(ts) {
+  const diff = Date.now()-ts, m=Math.floor(diff/60000), h=Math.floor(diff/3600000), d=Math.floor(diff/86400000);
+  if(m<1) return 'Just now'; if(m<60) return m+'m ago'; if(h<24) return h+'h ago'; return d+'d ago';
+}
+function renderRecent() {
+  // Only show the single most recent page visited
+  const pages = JSON.parse(localStorage.getItem('Sakura_recent')||'[]').slice(0,1);
+  const container = document.getElementById('recent-pages'), empty = document.getElementById('no-history');
+  if(!pages.length){ container.classList.add('hidden'); empty.classList.remove('hidden'); return; }
+  empty.classList.add('hidden'); container.classList.remove('hidden');
+  container.innerHTML = pages.map(p => {
+    const m = PAGE_META[p.url]||{title:p.url.replace('.html',''),sub:'',emoji:'📄',bg:'rgba(126,184,228,.13)',accent:'#3a7cbf',bar:'#3a7cbf'};
+    const icon = m.emoji==='書' ? `<span class="jp font-bold" style="font-size:26px;color:${m.accent};line-height:1;">書</span>` : `<span style="font-size:26px;line-height:1;">${m.emoji}</span>`;
+    return `<a href="${p.url}" class="card-lift rounded-xl3 p-4 flex items-center gap-4 group border" style="background:linear-gradient(135deg,${m.bg},rgba(255,255,255,0));border-color:${m.accent}22;">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:${m.bg};">${icon}</div>
+      <div class="min-w-0 flex-1">
+        <div class="font-bold text-sm t-ink leading-tight">${m.title}</div>
+        <div class="text-xs t-muted mt-0.5">${timeAgo(p.ts)} · ${m.sub}</div>
+        <div class="h-1 w-full rounded-full mt-2 overflow-hidden" style="background:${m.accent}18;"><div class="h-full rounded-full" style="width:${p.prog||50}%;background:${m.bar};"></div></div>
+      </div>
+      <svg class="w-4 h-4 t-muted flex-shrink-0 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+    </a>`;
+  }).join('');
+}
+renderRecent();
+
+/* ── Activity ── */
+window.trackActivity = function(event) {
+  try { const list=JSON.parse(localStorage.getItem('sakura_activity')||'[]'); list.unshift({...event,ts:Date.now()}); localStorage.setItem('sakura_activity',JSON.stringify(list.slice(0,30))); } catch(e){}
+};
+function renderActivity() {
+  const list=document.getElementById('activity-list'), empty=document.getElementById('activity-empty');
+  const acts=JSON.parse(localStorage.getItem('sakura_activity')||'[]').slice(0,10);
+  if(!acts.length){ list.classList.add('hidden'); empty.classList.remove('hidden'); return; }
+  empty.classList.add('hidden'); list.classList.remove('hidden');
+  const ago=ts=>{ const d=Date.now()-ts,m=Math.floor(d/60000),h=Math.floor(d/3600000),dy=Math.floor(d/86400000); if(m<1)return'Just now';if(m<60)return m+'m ago';if(h<24)return h+'h ago';if(dy===1)return'Yesterday';return dy+'d ago'; };
+  list.innerHTML=acts.map(a=>`<div class="flex items-center gap-3 px-4 py-3"><div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-base" style="background:${a.iconBg||'rgba(126,184,228,.15)'}">${a.icon||'📖'}</div><div class="flex-1 min-w-0"><div class="text-sm font-semibold t-ink leading-tight">${a.title}</div><div class="text-xs t-muted mt-0.5">${ago(a.ts)}${a.sub?' · '+a.sub:''}</div></div>${a.xp?`<span class="text-xs font-bold px-2.5 py-0.5 rounded-full flex-shrink-0" style="color:${a.xpColor||'#27ae72'};background:${a.xpBg||'rgba(128,212,168,.12)'}">+${a.xp} XP</span>`:''}</div>`).join('');
+}
+renderActivity();
+
+/* ── Word of the Day ── */
+(function(){
+  let words=[], cur=0, slide=0, autoTimer;
+  function todayIdx(len){ const d=new Date(); return (d.getFullYear()*365+d.getMonth()*31+d.getDate())%len; }
+  function goSlide(idx){
+    slide=idx%2;
+    const track=document.getElementById('slide-track');
+    if(track) track.style.transform=slide===0?'translateX(0)':'translateX(-50%)';
+    const d1=document.getElementById('dot1'), d2=document.getElementById('dot2');
+    if(d1) d1.style.background=slide===1?'#3a7cbf':'#e2e8f0';
+    if(d2) d2.style.background=slide===0?'#3a7cbf':'#e2e8f0';
+  }
+  function setWord(idx){
+    if(!words.length) return;
+    cur=(idx+words.length)%words.length;
+    const w=words[cur];
+    document.getElementById('wotd-word').textContent=w.word;
+    document.getElementById('wotd-reading').textContent=w.reading;
+    document.getElementById('wotd-romaji').textContent=w.romaji;
+    document.getElementById('wotd-meaning').textContent=w.meaning;
+    document.getElementById('wotd-example').textContent=w.example;
+    const ex=document.getElementById('wotd-ex-meaning'); if(ex) ex.textContent='— '+w.example_meaning;
+    const num=document.getElementById('wotd-num'); if(num) num.textContent=(cur+1)+' / '+words.length;
+    const dots=document.getElementById('wotd-dots');
+    if(dots){ dots.innerHTML=''; const show=Math.min(words.length,8); for(let i=0;i<show;i++){ const d=document.createElement('div'); d.style.cssText=`width:5px;height:5px;border-radius:50%;background:${i===cur%show?'#3a7cbf':'#e2e8f0'};transition:background .3s;`; dots.appendChild(d); } }
+  }
+  window.nextWotd=function(){ setWord(cur+1); if(slide===0) goSlide(1); };
+  window.prevWotd=function(){ setWord(cur-1); if(slide===0) goSlide(1); };
+  function startAuto(){ clearInterval(autoTimer); autoTimer=setInterval(function(){ goSlide(slide+1); if(slide===1) setWord(cur+1); },5000); }
+  fetch('/english/day/word-of-day.json').then(r=>r.json()).then(data=>{ words=data; setWord(todayIdx(words.length)); startAuto(); }).catch(()=>{ words=[{word:'頑張る',reading:'がんばる',romaji:'ganbaru',meaning:"Do one's best",example:'毎日頑張っています',example_meaning:'I do my best every day'}]; setWord(0); startAuto(); });
+})();
+
+/* ── Download App banner (once per day) ── */
+(function(){
+  var lastShown=localStorage.getItem('sakura_app_banner_last'),today=new Date().toDateString();
+  if(lastShown!==today){ localStorage.setItem('sakura_app_banner_last',today); setTimeout(function(){ var banner=document.createElement('div'); banner.style.cssText='position:fixed;top:70px;left:50%;transform:translateX(-50%);z-index:9999;background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:14px 18px;display:flex;align-items:center;gap:12px;max-width:320px;width:calc(100% - 32px);box-shadow:0 8px 32px rgba(15,23,42,.15);cursor:pointer;'; banner.onclick=function(e){ if(!e.target.closest('button')) window.location.href='english/download/index.html'; }; banner.innerHTML='<div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#7eb8e4,#3a7cbf);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;">📲</div><div style="flex:1;min-width:0;font-size:13px;font-weight:600;color:#1f2937;">Download App — Sakura Academy PWA install </div><button onclick="this.parentElement.remove()" style="background:none;border:none;cursor:pointer;color:#94a3b8;font-size:16px;flex-shrink:0;">✕</button>'; document.body.appendChild(banner); setTimeout(function(){ banner.remove(); },6000); },2000); }
+})();
+
+/* ── Firebase dynamic name/avatar/stats ── */
+(function(){
+  var cachedName=localStorage.getItem('sakura_user_name');
+  if(cachedName){ ['greeting-name','sb-name','mob-drop-name','desk-drop-name'].forEach(function(id){ var el=document.getElementById(id); if(el) el.textContent=cachedName; }); }
+  function applyUser(user){
+    if(!user) return;
+    var name=user.displayName||cachedName||'mate', localPic=localStorage.getItem('sakura-avatar-'+user.uid), photo=localPic||user.photoURL||'';
+    localStorage.setItem('sakura_user_name',name);
+    ['greeting-name','sb-name','mob-drop-name','desk-drop-name'].forEach(function(id){ var el=document.getElementById(id); if(el) el.textContent=name; });
+    ['sb-avatar','mob-avatar'].forEach(function(id){ var el=document.getElementById(id); if(!el) return; if(photo){ el.innerHTML='<img src="'+photo+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt=""/>'; } else { el.textContent=(name[0]||'S').toUpperCase(); } });
+    var month=(function(){ var d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'); })();
+    firebase.database().ref('engagement/'+user.uid+'/monthly/'+month).once('value').then(function(snap){
+      var d=snap.val()||{}, qs=d.quizStats||{}, quizzes=d.quizzesCompleted||0, acc=qs.accuracyPct||0, words=Math.min(quizzes,20), wordsPct=Math.round(words/20*100), ringPct=Math.round((wordsPct+acc)/2);
+      var offset=226.2-(ringPct/100)*226.2, ringEl=document.getElementById('goal-ring-fill');
+      if(ringEl) setTimeout(function(){ ringEl.style.strokeDashoffset=offset; },200);
+      var pctEl=document.getElementById('goal-ring-pct'); if(pctEl) pctEl.textContent=ringPct+'%';
+      var wBar=document.getElementById('words-bar'), wVal=document.getElementById('words-val');
+      if(wBar) setTimeout(function(){ wBar.style.width=wordsPct+'%'; },200); if(wVal) wVal.textContent=words+'/20';
+      var qBar=document.getElementById('quiz-bar'), qVal=document.getElementById('quiz-val');
+      if(qBar) setTimeout(function(){ qBar.style.width=acc+'%'; },200); if(qVal) qVal.textContent=acc+'%';
+    }).catch(function(){});
+  }
+  function loadScript(src,cb){ var s=document.createElement('script'); s.src=src; s.onload=cb; document.head.appendChild(s); }
+  function initFirebase(){
+    if(!firebase.apps.length){ firebase.initializeApp({apiKey:"AIzaSyB-5EgDmpPYpdYoRpX9pXst5fPr2ICOai4",authDomain:"learnwith-sakura.firebaseapp.com",databaseURL:"https://learnwith-sakura-default-rtdb.firebaseio.com",projectId:"learnwith-sakura",storageBucket:"learnwith-sakura.firebasestorage.app",messagingSenderId:"524809202868",appId:"1:524809202868:web:8d4f47a122d542e285bbe1"}); }
+    firebase.auth().onAuthStateChanged(applyUser);
+  }
+  loadScript('https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js',function(){ loadScript('https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js',function(){ loadScript('https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js',initFirebase); }); });
+})();
+</script>
+
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js', { scope: '/' })
+      .then(reg => {
+        // Check for SW update every 60s
+        setInterval(() => reg.update(), 60000);
+        reg.addEventListener('updatefound', () => {
+          const newSW = reg.installing;
+          newSW.addEventListener('statechange', () => {
+            if(newSW.state === 'installed' && navigator.serviceWorker.controller){
+              // New version available — silent update
+              newSW.postMessage({ type: 'SKIP_WAITING' });
+            }
+          });
+        });
+      })
+      .catch(() => {});
+    // Reload when new SW takes over
+    navigator.serviceWorker.addEventListener('controllerchange', () => location.reload());
+  });
+}
+</script>
+<!-- ═══════════════ CHATBOT WIDGET (JSON-powered) ═══════════════ -->
+<style>
+  #cb-toggle {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #4caf50;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  #cb-toggle:hover { background: #439a46; transform: scale(1.06); }
+  #cb-toggle svg { width: 22px; height: 22px; stroke: white; fill: none; stroke-width: 2.5; transition: transform .25s ease; }
+  #cb-toggle.open svg { transform: rotate(180deg); }
+
+  #cb-panel {
+    position: fixed;
+    bottom: 154px;
+    right: 20px;
+    width: 300px;
+    max-width: 88vw;
+    max-height: 480px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    overflow: hidden;
+  }
+  #cb-panel.open { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  #cb-panel .cb-header {
+    background: #e53935;
+    color: white;
+    padding: 13px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+  #cb-panel .cb-header h3 { margin: 0; font-size: 14px; font-weight: 600; }
+  #cb-close { background: none; border: none; font-size: 19px; line-height: 1; cursor: pointer; color: white; opacity: .85; }
+  #cb-close:hover { opacity: 1; }
+
+  #cb-messages { flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 9px; background: #f5f6f8; min-height: 320px; }
+  .cb-msg { max-width: 85%; padding: 8px 12px; border-radius: 13px; font-size: 13px; line-height: 1.45; word-wrap: break-word; }
+  .cb-msg.bot { background: white; color: #333; border: 1px solid #e5e5e5; align-self: flex-start; border-bottom-left-radius: 4px; }
+  .cb-msg.user { background: #e53935; color: white; align-self: flex-end; border-bottom-right-radius: 4px; }
+  .cb-link-btn { display: inline-block; margin-top: 6px; font-size: 12px; font-weight: 600; color: #e53935; text-decoration: none; }
+  .cb-link-btn:hover { text-decoration: underline; }
+
+  #cb-input-row { display: flex; gap: 8px; padding: 10px; border-top: 1px solid #eee; background: white; flex-shrink: 0; }
+  #cb-input { flex: 1; border: 1px solid #ddd; border-radius: 20px; padding: 8px 13px; font-size: 13px; outline: none; }
+  #cb-input:focus { border-color: #e53935; }
+  #cb-send { background: #e53935; color: white; border: none; border-radius: 50%; width: 34px; height: 34px; flex-shrink: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  #cb-send:hover { background: #c62828; }
+  #cb-send svg { width: 15px; height: 15px; fill: white; }
+</style>
+
+<div id="cb-panel">
+  <div class="cb-header">
+    <h3>お問い合わせ</h3>
+    <button id="cb-close" aria-label="Close">&times;</button>
+  </div>
+  <div id="cb-messages"></div>
+  <div id="cb-input-row">
+    <input type="text" id="cb-input" placeholder="メッセージを入力..." autocomplete="off">
+    <button id="cb-send" aria-label="Send">
+      <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
+    </button>
+  </div>
+</div>
+
+<button id="cb-toggle" aria-label="Chat">
+  <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</button>
+
+<script>
+(function(){
+  const toggleBtn = document.getElementById('cb-toggle');
+  const panel = document.getElementById('cb-panel');
+  const closeBtn = document.getElementById('cb-close');
+  const messages = document.getElementById('cb-messages');
+  const input = document.getElementById('cb-input');
+  const sendBtn = document.getElementById('cb-send');
+
+  let knowledgeBase = [];
+  let dataLoaded = false;
+
+  // Load Q&A + page-link data from JSON
+  fetch('chatbot-data.json')
+    .then(r => r.json())
+    .then(data => { knowledgeBase = data; dataLoaded = true; })
+    .catch(() => { dataLoaded = true; });
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const wasOpen = panel.classList.contains('open');
+    panel.classList.toggle('open');
+    toggleBtn.classList.toggle('open');
+    if (!wasOpen && messages.children.length === 0) {
+      addMessage('bot', 'Hello! How can I help you today? 😊 (Try: JLPT, SSW, Kanji, Quiz, News...)');
+    }
+  });
+
+  closeBtn.addEventListener('click', () => {
+    panel.classList.remove('open');
+    toggleBtn.classList.remove('open');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!panel.contains(e.target) && !toggleBtn.contains(e.target)) {
+      panel.classList.remove('open');
+      toggleBtn.classList.remove('open');
+    }
+  });
+  input.addEventListener('click', (e) => e.stopPropagation());
+
+  function addMessage(sender, text, link, linkText) {
+    const el = document.createElement('div');
+    el.className = 'cb-msg ' + sender;
+    el.textContent = text;
+    if (link) {
+      const a = document.createElement('a');
+      a.href = link;
+      a.className = 'cb-link-btn';
+      a.textContent = linkText || 'Open →';
+      el.appendChild(document.createElement('br'));
+      el.appendChild(a);
+    }
+    messages.appendChild(el);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  const defaultAnswer = "Sorry, I didn't quite understand that. Try asking about JLPT, SSW, Kanji, Quiz, News, Conversation, Job Hunt, Community, practice, or the App.";
+
+  function getBotReply(userText) {
+    const lower = userText.toLowerCase();
+    for (const entry of knowledgeBase) {
+      if (entry.keywords.some(k => lower.includes(k.toLowerCase()))) {
+        return entry;
+      }
+    }
+    return { answer: defaultAnswer, link: "", linkText: "" };
+  }
+
+  function sendMessage() {
+    const text = input.value.trim();
+    if (!text) return;
+    addMessage('user', text);
+    input.value = '';
+    setTimeout(() => {
+      const reply = getBotReply(text);
+      addMessage('bot', reply.answer, reply.link, reply.linkText);
+    }, 350);
+  }
+
+  sendBtn.addEventListener('click', sendMessage);
+  input.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendMessage(); });
+})();
+</script>
+
+</body>
+</html>

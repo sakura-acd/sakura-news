@@ -1,0 +1,184 @@
+{
+  "app": {
+    "title_jp": "日本語の日常会話を学ぼう",
+    "title_en": "Japanese Daily Talk"
+  },
+  "user": {
+    "streak": 7,
+    "level": 12,
+    "daily_goal_minutes": 20,
+    "daily_progress_minutes": 8
+  },
+  "scenes": [
+    { "id": "greetings",  "icon": "🏠", "jp": "あいさつ",       "en": "Greetings" },
+    { "id": "shopping",   "icon": "🛍️", "jp": "買い物",         "en": "Shopping" },
+    { "id": "restaurant", "icon": "🍴", "jp": "レストラン",     "en": "Restaurant" },
+    { "id": "transport",  "icon": "🚉", "jp": "駅・交通",       "en": "Transportation" },
+    { "id": "school",     "icon": "🏫", "jp": "学校・職場",     "en": "School / Work" },
+    { "id": "friends",    "icon": "❤️", "jp": "友達との会話",   "en": "Friends" }
+  ],
+  "dialogues": {
+    "greetings": {
+      "scene_title_jp": "あいさつ（友達に会ったとき）",
+      "scene_title_en": "Greetings (When you meet your friend)",
+      "speakers": {
+        "さくら": { "avatar": "👩", "side": "left" },
+        "たくみ": { "avatar": "👨", "side": "right" }
+      },
+      "lines": [
+        { "speaker": "さくら", "jp": "やあ、ひさしぶり！",             "romaji": "Yaa, hisashiburi!",             "en": "Hey, long time no see!" },
+        { "speaker": "たくみ", "jp": "さくら！げんきだった？",         "romaji": "Sakura! Genki datta?",         "en": "Sakura! How have you been?" },
+        { "speaker": "さくら", "jp": "うん、げんきだよ。たくみは？",   "romaji": "Un, genki da yo. Takumi wa?",  "en": "Yes, I'm good. How about you?" },
+        { "speaker": "たくみ", "jp": "ぼくも、げんきだよ！",           "romaji": "Boku mo, genki da yo!",        "en": "I'm good too!" },
+        { "speaker": "さくら", "jp": "よかった！今度ごはんに行こうよ。", "romaji": "Yokatta! Kondo gohan ni ikou yo.", "en": "Great! Let's go eat sometime." }
+      ],
+      "vocabulary": [
+        { "jp": "ひさしぶり", "romaji": "hisashiburi", "en": "long time no see" },
+        { "jp": "げんき",     "romaji": "genki",       "en": "healthy, good" },
+        { "jp": "うん",       "romaji": "un",          "en": "yes (casual)" },
+        { "jp": "ぼく",       "romaji": "boku",        "en": "I (masculine)" },
+        { "jp": "よかった",   "romaji": "yokatta",     "en": "I'm glad" }
+      ],
+      "tip": {
+        "jp": "友達や知り合いに会ったときは、「ひさしぶり！」と声をかけましょう。相手の様子をたずねると、会話がつながります。",
+        "en": "When you meet your friend, say \"Hisashiburi!\" to start a conversation. Asking how they are helps keep the conversation going."
+      },
+      "common_phrases": [
+        { "jp": "ひさしぶり！", "en": "Long time no see!" },
+        { "jp": "元気？",       "en": "How are you?" },
+        { "jp": "うん、元気！", "en": "I'm good!" },
+        { "jp": "またね！",     "en": "See you!" }
+      ]
+    },
+    "shopping": {
+      "scene_title_jp": "買い物（お店で）",
+      "scene_title_en": "Shopping (At the store)",
+      "speakers": {
+        "さくら": { "avatar": "👩", "side": "left" },
+        "店員":   { "avatar": "🧑", "side": "right" }
+      },
+      "lines": [
+        { "speaker": "さくら", "jp": "すみません、これはいくらですか？", "romaji": "Sumimasen, kore wa ikura desu ka?", "en": "Excuse me, how much is this?" },
+        { "speaker": "店員",   "jp": "それは千円です。",                 "romaji": "Sore wa sen-en desu.",               "en": "That's 1,000 yen." },
+        { "speaker": "さくら", "jp": "じゃあ、これをください。",         "romaji": "Jaa, kore o kudasai.",               "en": "Then I'll take this, please." },
+        { "speaker": "店員",   "jp": "ありがとうございます！",           "romaji": "Arigatou gozaimasu!",                "en": "Thank you very much!" }
+      ],
+      "vocabulary": [
+        { "jp": "いくら",     "romaji": "ikura",   "en": "how much" },
+        { "jp": "円",         "romaji": "en",      "en": "yen" },
+        { "jp": "ください",   "romaji": "kudasai", "en": "please give me" },
+        { "jp": "すみません", "romaji": "sumimasen", "en": "excuse me" }
+      ],
+      "tip": {
+        "jp": "値段を聞くときは「いくらですか？」が便利です。買うと決めたら「〜をください」と言いましょう。",
+        "en": "\"Ikura desu ka?\" is handy for asking a price. Once you decide to buy something, say \"~ o kudasai.\""
+      },
+      "common_phrases": [
+        { "jp": "いくらですか？", "en": "How much is it?" },
+        { "jp": "これをください。", "en": "I'll take this." },
+        { "jp": "高いです。",     "en": "It's expensive." },
+        { "jp": "安いですね。",   "en": "That's cheap!" }
+      ]
+    },
+    "restaurant": {
+      "scene_title_jp": "レストラン（注文する）",
+      "scene_title_en": "Restaurant (Ordering food)",
+      "speakers": {
+        "たくみ": { "avatar": "👨", "side": "left" },
+        "店員":   { "avatar": "🧑", "side": "right" }
+      },
+      "lines": [
+        { "speaker": "店員",   "jp": "ご注文はお決まりですか？", "romaji": "Gochuumon wa okimari desu ka?", "en": "Are you ready to order?" },
+        { "speaker": "たくみ", "jp": "ラーメンをひとつお願いします。", "romaji": "Raamen o hitotsu onegaishimasu.", "en": "One ramen, please." },
+        { "speaker": "店員",   "jp": "かしこまりました。",       "romaji": "Kashikomarimashita.",           "en": "Certainly." }
+      ],
+      "vocabulary": [
+        { "jp": "注文",       "romaji": "chuumon",    "en": "order" },
+        { "jp": "お願いします", "romaji": "onegaishimasu", "en": "please" },
+        { "jp": "ひとつ",     "romaji": "hitotsu",    "en": "one (item)" }
+      ],
+      "tip": {
+        "jp": "注文するときは「〜をお願いします」がとても便利な表現です。",
+        "en": "\"~ o onegaishimasu\" is a very handy phrase for ordering anything."
+      },
+      "common_phrases": [
+        { "jp": "お願いします。", "en": "Please." },
+        { "jp": "おいしいです！", "en": "It's delicious!" },
+        { "jp": "お会計お願いします。", "en": "Check, please." }
+      ]
+    },
+    "transport": {
+      "scene_title_jp": "駅・交通（道をたずねる）",
+      "scene_title_en": "Transportation (Asking for directions)",
+      "speakers": {
+        "さくら": { "avatar": "👩", "side": "left" },
+        "駅員":   { "avatar": "🧑", "side": "right" }
+      },
+      "lines": [
+        { "speaker": "さくら", "jp": "東京駅へはどう行けばいいですか？", "romaji": "Toukyou-eki e wa dou ikeba ii desu ka?", "en": "How do I get to Tokyo Station?" },
+        { "speaker": "駅員",   "jp": "この電車に乗ってください。",       "romaji": "Kono densha ni notte kudasai.",       "en": "Please take this train." }
+      ],
+      "vocabulary": [
+        { "jp": "駅",   "romaji": "eki",    "en": "station" },
+        { "jp": "電車", "romaji": "densha", "en": "train" },
+        { "jp": "乗る", "romaji": "noru",   "en": "to ride/board" }
+      ],
+      "tip": {
+        "jp": "「〜へはどう行けばいいですか？」は道をたずねるときの基本表現です。",
+        "en": "\"~ e wa dou ikeba ii desu ka?\" is a basic phrase for asking how to get somewhere."
+      },
+      "common_phrases": [
+        { "jp": "道に迷いました。", "en": "I'm lost." },
+        { "jp": "近いですか？",     "en": "Is it close?" }
+      ]
+    },
+    "school": {
+      "scene_title_jp": "学校・職場（自己紹介）",
+      "scene_title_en": "School / Work (Self introduction)",
+      "speakers": {
+        "たくみ": { "avatar": "👨", "side": "left" },
+        "先生":   { "avatar": "🧑‍🏫", "side": "right" }
+      },
+      "lines": [
+        { "speaker": "たくみ", "jp": "はじめまして、たくみです。",   "romaji": "Hajimemashite, Takumi desu.", "en": "Nice to meet you, I'm Takumi." },
+        { "speaker": "先生",   "jp": "よろしくお願いします。",       "romaji": "Yoroshiku onegaishimasu.",   "en": "Pleased to meet you too." }
+      ],
+      "vocabulary": [
+        { "jp": "はじめまして", "romaji": "hajimemashite", "en": "nice to meet you" },
+        { "jp": "よろしくお願いします", "romaji": "yoroshiku onegaishimasu", "en": "pleased to meet you / please treat me well" }
+      ],
+      "tip": {
+        "jp": "自己紹介では「はじめまして」で始めて、「よろしくお願いします」で締めくくりましょう。",
+        "en": "Start self-introductions with \"Hajimemashite\" and close with \"Yoroshiku onegaishimasu.\""
+      },
+      "common_phrases": [
+        { "jp": "はじめまして。", "en": "Nice to meet you." },
+        { "jp": "よろしくお願いします。", "en": "Pleased to meet you." }
+      ]
+    },
+    "friends": {
+      "scene_title_jp": "友達との会話（週末の予定）",
+      "scene_title_en": "Friends (Weekend plans)",
+      "speakers": {
+        "さくら": { "avatar": "👩", "side": "left" },
+        "たくみ": { "avatar": "👨", "side": "right" }
+      },
+      "lines": [
+        { "speaker": "さくら", "jp": "週末、なにするの？",   "romaji": "Shuumatsu, nani suru no?", "en": "What are you doing this weekend?" },
+        { "speaker": "たくみ", "jp": "映画を見に行くよ。",   "romaji": "Eiga o mi ni iku yo.",     "en": "I'm going to watch a movie." }
+      ],
+      "vocabulary": [
+        { "jp": "週末", "romaji": "shuumatsu", "en": "weekend" },
+        { "jp": "映画", "romaji": "eiga",      "en": "movie" }
+      ],
+      "tip": {
+        "jp": "友達とカジュアルに話すときは「〜の？」を使うと自然です。",
+        "en": "Ending a casual question with \"~ no?\" sounds natural when talking with friends."
+      },
+      "common_phrases": [
+        { "jp": "なにするの？", "en": "What are you doing?" },
+        { "jp": "いいね！",     "en": "Sounds good!" }
+      ]
+    }
+  }
+}

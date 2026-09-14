@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌸%3C/text%3E%3C/svg%3E"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vocabulary (N5) — Shikaku</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit','sans-serif'],
+            jp:   ['"Noto Sans JP"','sans-serif'],
+          },
+          colors: {
+            blue:   { DEFAULT:'#7eb8e4', deep:'#3a7cbf' },
+            teal:   { DEFAULT:'#6ecec8', deep:'#2a9d8f' },
+            mint:   { DEFAULT:'#80d4a8', deep:'#27ae72' },
+            coral:  { DEFAULT:'#f4a57a', deep:'#e0693a' },
+            butter: { DEFAULT:'#f5da8a', deep:'#d4a017' },
+            lilac:  { DEFAULT:'#c4a8e0', deep:'#8b5cf6' },
+            ink:    { DEFAULT:'#1f2937', 2:'#475569', muted:'#94a3b8' },
+            bg:     { DEFAULT:'#f5f8fc', surface:'#ffffff', s2:'#eef2f7' },
+          },
+          borderRadius: { xl2:'1.25rem', xl3:'1.75rem', xl4:'2.25rem' },
+          boxShadow: {
+            card: '0 2px 16px rgba(15,23,42,.07)',
+            md2:  '0 4px 24px rgba(15,23,42,.12)',
+            lg2:  '0 8px 40px rgba(15,23,42,.16)',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family:'Outfit',sans-serif; transition:background .3s,color .3s; }
+    .jp  { font-family:'"Noto Sans JP"',sans-serif; }
+
+    .mesh-light {
+      background: radial-gradient(ellipse at 18% 12%,#d8edf8 0%,transparent 52%),
+                  radial-gradient(ellipse at 82% 88%,#d2f1ec 0%,transparent 52%),
+                  radial-gradient(ellipse at 58% 32%,#e6e2f6 0%,transparent 38%),
+                  #f4f7fb;
+    }
+    .mesh-dark {
+      background: radial-gradient(ellipse at 18% 12%,#0f2236 0%,transparent 52%),
+                  radial-gradient(ellipse at 82% 88%,#0b2120 0%,transparent 52%),
+                  #0c1220;
+    }
+
+    @keyframes ring-pulse {
+      0%,100% { box-shadow:0 0 0 0 rgba(110,206,200,.55); }
+      50%      { box-shadow:0 0 0 6px rgba(110,206,200,0); }
+    }
+    .avatar-ring {
+      background: conic-gradient(#6ecec8 0% 65%,#e2e8f0 65% 100%);
+      border-radius:9999px; padding:2.5px;
+      animation:ring-pulse 2.4s ease infinite;
+      display:inline-block; flex-shrink:0;
+    }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:none} }
+    .fu { animation:fadeUp .5s ease both; }
+    .d1{animation-delay:.07s} .d2{animation-delay:.14s}
+    .d3{animation-delay:.21s} .d4{animation-delay:.28s} .d5{animation-delay:.35s}
+
+    .card-lift { transition:transform .18s ease,box-shadow .18s ease; }
+    .card-lift:hover { transform:translateY(-3px); box-shadow:0 10px 32px rgba(15,23,42,.13); }
+
+    .ring-track { stroke:#e2e8f0; }
+    .ring-fill  { stroke:#2a9d8f; stroke-linecap:round;
+                  transition:stroke-dashoffset .9s cubic-bezier(.4,0,.2,1); }
+
+    .pbar { transition:width 1s cubic-bezier(.4,0,.2,1); }
+
+    .s-act { background:#eef5fc; color:#3a7cbf; font-weight:600; }
+
+    body.dark .dk-bg  { background:#0c1220 !important; }
+    body.dark #topbar,
+    body.dark #botnav,
+    body.dark #sidebar-el { background:rgba(14,19,32,.96) !important; border-color:#1d2740 !important; }
+    body.dark .surface  { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark .surface2 { background:#1d2740 !important; }
+    body.dark .t-ink    { color:#e8eef6 !important; }
+    body.dark .t-ink2   { color:#8da4c0 !important; }
+    body.dark .t-muted  { color:#4a607a !important; }
+    body.dark .ring-track { stroke:#1d2740; }
+    body.dark .avatar-ring { background:conic-gradient(#6ecec8 0% 65%,#1d2740 65% 100%); }
+    body.dark .divider  { border-color:#1d2740 !important; }
+    body.dark .lp-track, body.dark .c-track { background:#1d2740 !important; }
+
+    ::-webkit-scrollbar { width:4px; }
+    ::-webkit-scrollbar-thumb { background:#c2d3e3; border-radius:99px; }
+  </style>
+  <meta name="theme-color" content="#e8799a"/>
+  <!-- Vocabulary data embedded directly (avoids fetch/CORS issues when opened locally) -->
+  <!-- Vocabulary data loaded from vocab-n5-data.json at runtime (fetch) -->
+</head>
+
+<body class="mesh-light min-h-screen text-ink" id="body">
+
+
+<!-- ═══════════════ DESKTOP SIDEBAR ═══════════════ -->
+<aside id="sidebar-el" class="hidden lg:flex flex-col fixed top-0 left-0 h-full w-60 bg-bg-surface surface border-r border-slate-100 divider z-30 shadow-card">
+
+  <div class="px-4 py-4 flex items-center gap-3 border-b border-slate-100 divider">
+    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow-md flex-shrink-0">
+      <span class="jp text-white font-bold text-base">識</span>
+    </div>
+    <div class="min-w-0 flex-1">
+      <div class="font-bold text-base tracking-tight t-ink leading-tight">Shikaku</div>
+      <div class="text-xs t-muted">日本語 Learning</div>
+    </div>
+  </div>
+
+  <div class="px-5 py-4 flex items-center gap-3 border-b border-slate-100 divider">
+    <div class="avatar-ring flex-shrink-0">
+      <div id="sb-avatar" class="w-9 h-9 rounded-full bg-gradient-to-br from-blue to-teal flex items-center justify-center text-white font-bold text-sm overflow-hidden">S</div>
+    </div>
+    <div class="flex-1 min-w-0 text-left">
+      <div class="font-semibold text-sm t-ink leading-tight" id="sb-name">hye mate</div>
+    </div>
+  </div>
+
+  <nav class="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
+    <a href="../../index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg>
+      Home
+    </a>
+    <a href="../../learn.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      Learn
+    </a>
+    <a href="../../study.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 4v16M2 12h6"/></svg>
+      Study
+    </a>
+    <a href="../../quiz/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg>
+      Quiz
+    </a>
+    <div class="pt-4 pb-1 px-3 text-[10px] font-bold tracking-widest t-muted uppercase">Courses</div>
+    <a href="../../jlpt/index.html" class="s-act flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      JLPT
+    </a>
+    <a href="../../ssw.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-mint/20 text-mint-deep font-bold text-[10px] flex items-center justify-center">SSW</span> SSW</a>
+    <a href="../../bjt.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-butter/20 text-butter-deep font-bold text-[10px] flex items-center justify-center">BJT</span> BJT</a>
+  </nav>
+
+  <div class="px-4 py-4 border-t border-slate-100 divider flex items-center justify-between">
+    <button onclick="toggleDark()" class="flex items-center gap-2 text-xs t-muted hover:text-ink transition-colors">
+      <svg id="desk-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span id="desk-lbl">Dark mode</span>
+    </button>
+  </div>
+</aside>
+
+
+<!-- ═══════════════ MOBILE TOP BAR ═══════════════ -->
+<header id="topbar" class="lg:hidden fixed top-0 left-0 right-0 z-40 bg-white/93 backdrop-blur-md border-b border-slate-100 shadow-sm px-4 py-2.5 flex items-center gap-3 transition-transform duration-300">
+  <a href="../../jlpt/index.html#n5" class="w-8 h-8 rounded-lg flex items-center justify-center t-ink2 hover:bg-bg-s2 transition-colors flex-shrink-0" aria-label="Back">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+  </a>
+  <h1 class="font-bold text-sm t-ink flex-1">Vocabulary (N5)</h1>
+  <button onclick="toggleDark()" class="w-8 h-8 rounded-lg bg-bg-s2 surface2 border border-slate-200 divider flex items-center justify-center t-muted hover:text-blue-deep hover:border-blue/50 transition-all flex-shrink-0">
+    <svg id="mob-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+</header>
+
+
+<!-- ═══════════════ MAIN CONTENT ═══════════════ -->
+<main class="lg:ml-60 min-h-screen pb-28 lg:pb-10 pt-14 lg:pt-0">
+
+  <!-- Hero -->
+  <section class="px-5 lg:px-8 pt-5 lg:pt-8">
+    <div class="fu relative overflow-hidden rounded-xl4 px-6 py-7 lg:py-9 shadow-card border border-slate-100 divider"
+         style="background:linear-gradient(135deg,rgba(126,184,228,.16),rgba(110,206,200,.10));">
+      <div class="relative z-10 max-w-[60%] lg:max-w-[46%]">
+        <div class="hidden lg:block text-[11px] font-extrabold tracking-widest uppercase text-blue-deep mb-2">JLPT Course · Vocabulary</div>
+        <h1 class="text-2xl lg:text-4xl font-extrabold t-ink leading-tight tracking-tight">JLPT N5<br/>Vocabulary</h1>
+        <div class="mt-2 text-sm font-bold text-blue-deep"><span id="hero-total-words">…</span> Words</div>
+        <p class="mt-1.5 text-xs lg:text-sm t-ink2 leading-relaxed">Build your core word bank, one list at a time.</p>
+      </div>
+      <div class="absolute top-3 right-3 lg:top-6 lg:right-10 text-6xl lg:text-8xl opacity-90 select-none">📚</div>
+    </div>
+  </section>
+
+  <!-- Progress + Right column -->
+  <section class="px-5 lg:px-8 mt-5 lg:mt-6">
+    <div class="lg:grid lg:grid-cols-[minmax(0,360px)_1fr] lg:gap-6 lg:items-start">
+
+      <!-- Progress card -->
+      <div class="fu d1 bg-bg-surface surface rounded-xl4 shadow-card border border-slate-100 divider p-6">
+        <div class="flex items-center justify-between mb-5">
+          <h3 class="text-sm font-bold t-ink">Your Progress</h3>
+          <a href="#" class="text-xs font-bold text-blue-deep">See Details</a>
+        </div>
+
+        <div class="flex items-center gap-5 mb-6">
+          <div class="relative w-28 h-28 flex-shrink-0">
+            <svg class="w-28 h-28 -rotate-90" viewBox="0 0 112 112">
+              <circle class="ring-track" cx="56" cy="56" r="48" fill="none" stroke-width="10"/>
+              <circle class="ring-fill" id="ov-ring-fill" cx="56" cy="56" r="48" fill="none" stroke-width="10"
+                stroke-dasharray="301.6" stroke-dashoffset="301.6"/>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+              <span class="text-2xl font-extrabold t-ink leading-none" id="ov-ring-pct">0%</span>
+              <span class="text-[10px] t-muted font-semibold mt-1">Completed</span>
+            </div>
+          </div>
+
+          <div class="flex-1 space-y-3.5">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#27ae72;">✓</div>
+              <div><div class="font-extrabold text-base t-ink leading-tight" id="ov-words">0</div><div class="text-[11px] t-muted">Words Learned</div></div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#d4a017;">★</div>
+              <div><div class="font-extrabold text-base t-ink leading-tight" id="ov-points">0 / 0</div><div class="text-[11px] t-muted">Points</div></div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style="background:#e0693a;">🔥</div>
+              <div><div class="font-extrabold text-base t-ink leading-tight" id="ov-streak">0</div><div class="text-[11px] t-muted">Day Streak</div></div>
+            </div>
+          </div>
+        </div>
+
+        <button class="w-full flex items-center justify-center gap-2 rounded-xl2 py-3.5 text-white text-sm font-bold shadow-md2 bg-gradient-to-br from-blue to-blue-deep hover:brightness-105 transition-all mb-5">
+          Continue Learning
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+
+        <div class="space-y-1.5" id="continue-list-block">
+          <div class="flex justify-between text-xs">
+            <span class="font-semibold t-ink2" id="cl-title">No list in progress yet</span>
+            <span class="font-extrabold t-ink" id="cl-pct">0%</span>
+          </div>
+          <div class="h-1.5 rounded-full overflow-hidden lp-track" style="background:#eef2f7;">
+            <div class="h-full rounded-full pbar" id="cl-bar" style="width:0%;background:linear-gradient(90deg,#7eb8e4,#3a7cbf);"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: categories + quick practice -->
+      <div class="mt-6 lg:mt-0">
+
+        <h2 class="text-sm font-bold t-ink mb-3 fu d2">Vocabulary Categories</h2>
+        <div id="vocab-categories-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-3 fu d2">
+          <!-- Populated dynamically from vocab-n5-data.json — see script at bottom -->
+          <div class="col-span-2 sm:col-span-3 text-center py-6 t-muted text-xs" id="vocab-categories-loading">Loading categories…</div>
+        </div>
+
+        <h2 class="text-sm font-bold t-ink mt-6 mb-3 fu d3">Quick Practice</h2>
+        <div class="grid grid-cols-2 gap-3 fu d3">
+          <a href="../../quiz/n5/index.html" class="card-lift bg-bg-surface surface rounded-xl3 p-4 shadow-card border border-slate-100 divider">
+            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-white text-base mb-6 bg-gradient-to-br from-mint to-mint-deep">📋</div>
+            <h5 class="font-bold text-sm t-ink">Vocab Quiz</h5>
+            <p class="text-[11px] t-muted mb-3">Test your word bank</p>
+            <div class="text-right t-muted">
+              <svg class="w-4 h-4 inline" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+          </a>
+          <a href="#" class="card-lift bg-bg-surface surface rounded-xl3 p-4 shadow-card border border-slate-100 divider">
+            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-white text-base mb-6 bg-gradient-to-br from-lilac to-lilac-deep">🃏</div>
+            <h5 class="font-bold text-sm t-ink">Flashcards</h5>
+            <p class="text-[11px] t-muted mb-3">Review with flip cards</p>
+            <div class="text-right t-muted">
+              <svg class="w-4 h-4 inline" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ═══════════ MOBILE BOTTOM NAV ═══════════ -->
+<nav id="botnav" class="lg:hidden fixed bottom-3 left-3 right-3 z-40 transition-transform duration-300 rounded-full shadow-lg2"
+     style="background:rgba(255,255,255,.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);">
+  <div class="flex items-center" style="height:66px;">
+    <a href="../../index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Home</span>
+    </a>
+    <a href="../../jlpt/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#2a9d8f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 4h6a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2z"/><path d="M22 4h-6a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg>
+      <span class="text-[11px] font-bold" style="color:#2a9d8f;">JLPT</span>
+      <span class="absolute -bottom-1.5 w-5 h-[3px] rounded-full" style="background:#2a9d8f;"></span>
+    </a>
+    <a href="../../ssw/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3 10 5.5-10 5.5L2 8.5 12 3Z"/><path d="M6 11v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">SSW</span>
+    </a>
+    <a href="../../quiz/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M4 20h2.5L18 8.5a1.8 1.8 0 0 0-2.5-2.5L4 17.5V20Z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Quiz</span>
+    </a>
+    <a href="../../other/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+      <span class="text-[11px] font-semibold t-muted">More</span>
+    </a>
+  </div>
+</nav>
+
+
+<!-- ═══════════════ SCRIPTS ═══════════════ -->
+<script>
+/* ── Dark mode (matches homepage behavior) ── */
+let isDark = false;
+const MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+const SUN  = '<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/>';
+function toggleDark() {
+  isDark = !isDark;
+  document.body.className = isDark ? 'mesh-dark min-h-screen text-slate-100 dark' : 'mesh-light min-h-screen text-ink';
+  ['mob-icon','desk-icon'].forEach(id => { const el = document.getElementById(id); if(el) el.innerHTML = isDark ? SUN : MOON; });
+  const lbl = document.getElementById('desk-lbl'); if(lbl) lbl.textContent = isDark ? 'Light mode' : 'Dark mode';
+}
+
+/* ── Scroll-direction nav show/hide (mobile only) ──
+   Scrolling down: bottom nav hides, top nav stays visible.
+   Scrolling up: top nav hides, bottom nav stays visible. */
+(function(){
+  let lastY = window.scrollY;
+  const topbar = document.getElementById('topbar');
+  const botnav = document.getElementById('botnav');
+  window.addEventListener('scroll', function(){
+    const y = window.scrollY;
+    const goingDown = y > lastY;
+    if (y < 10) {
+      if (topbar) topbar.style.transform = 'translateY(0)';
+      if (botnav) botnav.style.transform = 'translateY(0)';
+    } else if (goingDown) {
+      if (botnav) botnav.style.transform = 'translateY(100%)';
+      if (topbar) topbar.style.transform = 'translateY(0)';
+    } else {
+      if (topbar) topbar.style.transform = 'translateY(-100%)';
+      if (botnav) botnav.style.transform = 'translateY(0)';
+    }
+    lastY = y;
+  }, { passive: true });
+})();
+
+/* ── Cached user name (same localStorage key as homepage) ── */
+(function(){
+  var cachedName = localStorage.getItem('sakura_user_name');
+  if (cachedName) {
+    var el = document.getElementById('sb-name');
+    if (el) el.textContent = cachedName;
+  }
+})();
+
+/* ── Load categories dynamically from vocab-n5-data.json ──
+   Grouped into exactly 4 buckets so the page stays simple:
+     Adjective = i-Adjectives + na-Adjectives
+     Verb      = Verbs Group 1 (Ichidan) + Verbs Group 5 (Godan) + Irregular Verbs
+     Noun      = every other category (People & Basics, Things, Countries, Time,
+                 Places, Adverbs, Colors, etc.)
+     All       = Noun + Adjective + Verb combined (the full word list)
+   Counts are computed from the real JSON — nothing here is hand-typed. */
+var VOCAB_CATEGORY_SLUGS = [];
+var VOCAB_ADJECTIVE_MATCH = /i-Adjectives|na-Adjectives/i;
+var VOCAB_VERB_MATCH = /Verbs Group 1|Verbs Group 5|Irregular Verbs/i;
+
+function loadVocabCategories(){
+  fetch('vocab-n5-data.json')
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function(data){
+      var grid = document.getElementById('vocab-categories-grid');
+      var totalEl = document.getElementById('hero-total-words');
+
+      var adjectiveCount = 0, verbCount = 0, nounCount = 0;
+      (data.categories || []).forEach(function(cat){
+        var n = (cat.words || []).length;
+        if(VOCAB_ADJECTIVE_MATCH.test(cat.name)) adjectiveCount += n;
+        else if(VOCAB_VERB_MATCH.test(cat.name)) verbCount += n;
+        else nounCount += n;
+      });
+      var allCount = nounCount + adjectiveCount + verbCount;
+      if(totalEl) totalEl.textContent = (data.total_words || allCount) + '+';
+
+      var buckets = [
+        { slug:'all',       name:'All',       icon:'全', count:allCount,       g1:'#6ecec8', g2:'#2a9d8f' },
+        { slug:'noun',      name:'Noun',      icon:'名', count:nounCount,      g1:'#7eb8e4', g2:'#3a7cbf' },
+        { slug:'adjective', name:'Adjective', icon:'形', count:adjectiveCount, g1:'#f5da8a', g2:'#d4a017' },
+        { slug:'verb',      name:'Verb',      icon:'動', count:verbCount,      g1:'#f4a57a', g2:'#e0693a' },
+      ];
+
+      var html = '';
+      buckets.forEach(function(b){
+        VOCAB_CATEGORY_SLUGS.push(b.slug);
+        html += '' +
+          '<a href="list.html?cat=' + b.slug + '" class="card-lift bg-bg-surface surface rounded-xl3 p-4 shadow-card border border-slate-100 divider">' +
+            '<div class="w-9 h-9 rounded-xl flex items-center justify-center text-white text-base mb-3" style="background:linear-gradient(135deg,' + b.g1 + ',' + b.g2 + ');"><span class="jp font-bold text-sm">' + b.icon + '</span></div>' +
+            '<h4 class="font-bold text-sm t-ink">' + b.name + '</h4>' +
+            '<div class="text-[11px] t-muted mb-3">' + b.count + ' Words</div>' +
+            '<div class="h-1.5 rounded-full overflow-hidden c-track mb-1.5" style="background:#eef2f7;"><div class="h-full rounded-full pbar" id="pb-' + b.slug + '-bar" style="width:0%;background:' + b.g2 + ';"></div></div>' +
+            '<div class="text-[11px] font-bold text-right" style="color:' + b.g2 + ';" id="pb-' + b.slug + '-pct">0%</div>' +
+          '</a>';
+      });
+      if(grid) grid.innerHTML = html;
+    })
+    .catch(function(err){
+      var grid = document.getElementById('vocab-categories-grid');
+      if(grid) grid.innerHTML = '<div class="col-span-2 sm:col-span-3 text-center py-6 t-muted text-xs">Could not load categories (vocab-n5-data.json not found).</div>';
+      console.warn('Vocab categories load failed:', err);
+    });
+}
+document.addEventListener('DOMContentLoaded', loadVocabCategories);
+
+/* ── Firebase: real name/avatar + REAL progress tracking ──
+   Same project config as the rest of the site. Every number on this page
+   starts at 0/0 and only fills in once real data comes back from the
+   database — nothing here is a placeholder number.
+   Paths used (adjust the strings below if your real schema differs):
+     engagement/{uid}                           → streak, points, wordsLearned
+     engagement/{uid}/monthly/{YYYY-MM}          → quizStats, lessonsRead etc.
+     progress/{uid}/jlpt/n5/vocab/{category}     → { completed, total }
+     progress/{uid}/jlpt/n5/vocab/current        → { title, pct } (Continue list row) */
+(function(){
+  var cachedName = localStorage.getItem('sakura_user_name');
+  var lastPct = 0;
+
+  function applyUser(user){
+    if(!user) return;
+    var name = user.displayName || cachedName || 'Learner';
+    var localPic = localStorage.getItem('sakura-avatar-'+user.uid), photo = localPic || user.photoURL || '';
+    localStorage.setItem('sakura_user_name', name);
+    var nameEl = document.getElementById('sb-name'); if(nameEl) nameEl.textContent = name;
+    var avEl = document.getElementById('sb-avatar');
+    if(avEl){ if(photo){ avEl.innerHTML = '<img src="'+photo+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt=""/>'; } else { avEl.textContent = (name[0]||'S').toUpperCase(); } }
+    loadProgress(user);
+  }
+
+  function setPct(prefix, completed, total){
+    var bar = document.getElementById(prefix+'-bar'), pct = document.getElementById(prefix+'-pct');
+    var p = total > 0 ? Math.min(100, Math.round(completed/total*100)) : 0;
+    if(bar) bar.style.width = p+'%';
+    if(pct) pct.textContent = p+'%';
+    return p;
+  }
+
+  function loadProgress(user){
+    var db = firebase.database();
+    var month = (function(){ var d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'); })();
+
+    /* Overall card */
+    db.ref('engagement/'+user.uid).once('value').then(function(snap){
+      var e = snap.val() || {};
+      var streak = e.streak || e.dayStreak || 0;
+      var points = e.totalPoints || e.points || 0;
+      var pointsMax = e.pointsGoal || 0;
+      var words = e.wordsLearned || 0;
+
+      db.ref('engagement/'+user.uid+'/monthly/'+month).once('value').then(function(mSnap){
+        var m = mSnap.val() || {};
+        var qs = m.quizStats || {};
+        var acc = qs.accuracyPct || 0;
+
+        var ringPct = Math.round(acc || 0);
+        lastPct = ringPct;
+        var offset = 301.6 - (ringPct/100)*301.6;
+        var ringEl = document.getElementById('ov-ring-fill');
+        if(ringEl) setTimeout(function(){ ringEl.style.strokeDashoffset = offset; }, 200);
+        var pctEl = document.getElementById('ov-ring-pct'); if(pctEl) pctEl.textContent = ringPct+'%';
+
+        var wEl = document.getElementById('ov-words'); if(wEl) wEl.textContent = words;
+        var pEl = document.getElementById('ov-points'); if(pEl) pEl.textContent = points+(pointsMax?(' / '+pointsMax):'');
+        var sEl = document.getElementById('ov-streak'); if(sEl) sEl.textContent = streak;
+
+        updateRecentTracking(lastPct);
+      }).catch(function(){});
+    }).catch(function(){});
+
+    /* Vocabulary category bars — uses the real category list loaded from
+       vocab-n5-data.json (VOCAB_CATEGORY_SLUGS), not a fixed list. */
+    var categories = VOCAB_CATEGORY_SLUGS.length ? VOCAB_CATEGORY_SLUGS : [];
+    db.ref('progress/'+user.uid+'/jlpt/n5/vocab').once('value').then(function(snap){
+      var data = snap.val() || {};
+      categories.forEach(function(cat){
+        var c = data[cat] || {};
+        setPct('pb-'+cat, c.completed||0, c.total||0);
+      });
+
+      /* Continue list row: only show a real in-progress list if one exists */
+      var cur = data.current;
+      if(cur && cur.title){
+        var t = document.getElementById('cl-title'); if(t) t.textContent = cur.title;
+        var p = document.getElementById('cl-pct'); if(p) p.textContent = (cur.pct||0)+'%';
+        var b = document.getElementById('cl-bar'); if(b) b.style.width = (cur.pct||0)+'%';
+      }
+    }).catch(function(){});
+  }
+
+  function loadScript(src,cb){ var s=document.createElement('script'); s.src=src; s.onload=cb; document.head.appendChild(s); }
+  function initFirebase(){
+    if(!firebase.apps.length){ firebase.initializeApp({apiKey:"AIzaSyB-5EgDmpPYpdYoRpX9pXst5fPr2ICOai4",authDomain:"learnwith-sakura.firebaseapp.com",databaseURL:"https://learnwith-sakura-default-rtdb.firebaseio.com",projectId:"learnwith-sakura",storageBucket:"learnwith-sakura.firebasestorage.app",messagingSenderId:"524809202868",appId:"1:524809202868:web:8d4f47a122d542e285bbe1"}); }
+    firebase.auth().onAuthStateChanged(applyUser);
+  }
+  loadScript('https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js',function(){ loadScript('https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js',function(){ loadScript('https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js',initFirebase); }); });
+
+  /* Update the recent-pages entry with the real percentage once known */
+  window.updateRecentTracking = function(pct){
+    try {
+      var PAGE='vocab/n5/index.html';
+      var list = JSON.parse(localStorage.getItem('Sakura_recent') || '[]');
+      var idx = list.findIndex(function(x){ return x.url === PAGE; });
+      if(idx >= 0) { list[idx].prog = pct; localStorage.setItem('Sakura_recent', JSON.stringify(list)); }
+    } catch(e) {}
+  };
+})();
+</script>
+
+<script>
+/* ── Recent-page tracking (same pattern as jlpt/index.html) ──
+   Starts at 0 — updateRecentTracking() above overwrites this with the
+   real percentage once Firebase data loads. */
+(function(){
+  var PAGE='vocab/n5/index.html'; var PROG=0;
+  try {
+    var list = JSON.parse(localStorage.getItem('Sakura_recent') || '[]');
+    list = list.filter(function(x){ return x.url !== PAGE; });
+    list.unshift({ url: PAGE, ts: Date.now(), prog: PROG });
+    if(list.length > 10) list = list.slice(0, 10);
+    localStorage.setItem('Sakura_recent', JSON.stringify(list));
+  } catch(e) {}
+})();
+</script>
+</body>
+</html>

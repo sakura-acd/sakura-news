@@ -1,0 +1,2747 @@
+[
+  {
+    "lesson": "Lesson 26",
+    "grammar_point": "～んです (Explanatory ん)",
+    "form": "Verb(Plain)/い-adj(Plain)/な-adj(Plain)だ→な/Noun(Plain)だ→な + んです",
+    "english_explanation": "んです is used to explain a reason or situation in more detail. In casual speech ～のです is used more often than ～んです. Note that んです is not used for stating plain factual information about oneself, e.g. one's own name.",
+    "nepali_explanation": "कारणलाई विस्तृत रुपमा भन्नु पर्दा ～んです को प्रयोग गरिन्छ । तर प्राय बोलाइमा भने ～んです को सट्टामा ～のです को बढि प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "いくんです",
+        "romaji": "iku n desu",
+        "english": "(explaining) I'm going.",
+        "nepali": "जान्छु (कारणसहित)"
+      },
+      {
+        "japanese": "ひまなんです",
+        "romaji": "hima nan desu",
+        "english": "(explaining) I'm free.",
+        "nepali": "फुर्सद छ (कारणसहित)"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 26",
+    "grammar_point": "～んですか (Reason Seeker)",
+    "form": "Plain form + んですか",
+    "english_explanation": "Used by the speaker to guess or ask about the reason behind something they saw or heard. Note: this form is not used when stating plain factual information, e.g. giving one's own name.",
+    "nepali_explanation": "वक्ता (Speaker) ले सुनेको वा देखेको कुराको कारणको अनुमान गर्न अथवा जानकारी लिनको लागि यो स्वरुप प्रयोग गरिन्छ । तर सत्य तथ्य कुराको वयानमा भने ～んです को स्वरुपको प्रयोग हुदैन ।",
+    "examples": [
+      {
+        "japanese": "ラムさんは ドイツに すんでいたんですか。",
+        "romaji": "Ramu-san wa Doitsu ni sunde ita n desu ka.",
+        "english": "Oh, was Mr. Ram living in Germany?",
+        "nepali": "रामजी जर्मनीमा बस्नु भएको थियो हो ?"
+      },
+      {
+        "japanese": "その とけい、どこで かったんですか。",
+        "romaji": "Sono tokei, doko de katta n desu ka.",
+        "english": "That watch — where did you buy it?",
+        "nepali": "त्यो घडि, कहाँ किनेको हो ?"
+      },
+      {
+        "japanese": "どうしたん ですか。 おなかが いたいん です。",
+        "romaji": "Dō shita n desu ka. Onaka ga itai n desu.",
+        "english": "What's wrong? My stomach hurts.",
+        "nepali": "के भयो ? पेट दुखिरहेको छ ।"
+      },
+      {
+        "japanese": "どうして こなかったん ですか。 うちに ようじが あったん です。",
+        "romaji": "Dōshite konakatta n desu ka. Uchi ni yōji ga atta n desu.",
+        "english": "Why didn't you come? I had something to do at home.",
+        "nepali": "किन नआएको ? घरमा काम भएकोले गर्दा ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 26",
+    "grammar_point": "～んですが、～ (Request & Permission Seeker)",
+    "form": "Plain form + んですが、～",
+    "english_explanation": "Here が introduces a new topic before a request or permission-seeking statement. It softens the tone, showing slight hesitation and politeness before asking for something.",
+    "nepali_explanation": "यहाँ が (तर) एउटा हो Particle र ～んですが ले नयाँ विषयलाई प्रस्तुत गर्दछ । यहाँ वक्ताले अलिकति हिचकिटाहट गरि, Polite भएर अनुरोध र अनुमति माग्दा प्रयोग हुन्छ ।",
+    "examples": [
+      {
+        "japanese": "はじめて ケーキを つくったんですが、ちょっと みて いただけませんか。",
+        "romaji": "Hajimete kēki o tsukutta n desu ga, chotto mite itadakemasen ka.",
+        "english": "I made a cake for the first time — would you take a look at it?",
+        "nepali": "पहिलो पटक केक बनाको, एकै छिन हेरिदिनुहुन्छ कि ?"
+      },
+      {
+        "japanese": "しょうらい おかねもちに なりたいんですが、どうしたら いいですか。",
+        "romaji": "Shōrai okanemochi ni naritai n desu ga, dō shitara ii desu ka.",
+        "english": "I want to become rich someday — what should I do?",
+        "nepali": "भविष्यमा धनि हुन चाहान्छु, के गर्दा ठिक होला ?"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 26",
+    "grammar_point": "V て いただけませんか (Polite request)",
+    "form": "V て-form + いただけませんか",
+    "english_explanation": "An even more polite way to make a request than V てください. くださいませんか can be used instead for an even more hopeful, humble request.",
+    "nepali_explanation": "V-て ください भन्दा पनि अझ विनम्र भएर अनुरोध गर्नुपर्दा यो स्वरुपको प्रयोग गरिन्छ । いただけませんか को ठाउँमा अलि बढि आस गरेर अझ विनम्र भएर अनुरोध गर्दा भने くださいませんか को प्रयोग गर्न सकिन्छ ।",
+    "examples": [
+      {
+        "japanese": "しゅくだいを みて いただけませんか。",
+        "romaji": "Shukudai o mite itadakemasen ka.",
+        "english": "Could you please look at my homework?",
+        "nepali": "गृहकार्य हेरिदिन हुन्छ कि ?"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 26",
+    "grammar_point": "WHO-word (not どうして) + V たら いいですか。",
+    "form": "Question word + V たら いいですか。",
+    "english_explanation": "Used to ask for a suggestion or seek advice on how best to do something. どうして ('why') is not used in this pattern.",
+    "nepali_explanation": "यो V たら いいですか स्वरुप वक्ताले सुफाब र कुनैकुरा गर्ने तरिका सोच्नको लागि प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "ダーラン いきたいんですが、どのバスに のったら いいですか。",
+        "romaji": "Dāran ikitai n desu ga, dono basu ni nottara ii desu ka.",
+        "english": "I want to go to Dharan — which bus should I take?",
+        "nepali": "धरान जान चाहान्छु । कुन बस चढ्दा ठिक हुन्छ ?"
+      },
+      {
+        "japanese": "かのじょが いないんですが、どうしたら いいですか。",
+        "romaji": "Kanojo ga inai n desu ga, dō shitara ii desu ka.",
+        "english": "I don't have a girlfriend — what should I do?",
+        "nepali": "केटी साथी छैनन् । के गर्दा ठिक होला ?"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 27",
+    "grammar_point": "Potential Verb",
+    "form": "Group I: い→え+る; Group II: drop ます+られる; Group III: irregular",
+    "english_explanation": "A verb converted to express 'can do' is called a Potential Verb. E.g. たべます (eat) → たべられます (can eat). Group I changes the い-sound before ます to the え-sound and adds る; Group II drops ます and adds られます; Group III is irregular (きます→こられます, します→できます).",
+    "nepali_explanation": "Can (できる) क्रियाको प्रयोग नगरि रुपान्तरण गरिएको Verb लाई Potential Verb भनिन्छ । Potential Verb ले कसैको क्षमता र कुनै काम गर्न सकिने सम्भाव्यतालाई देखाउदछ, र वस्तुको संकेत を को सट्टामा が ले गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "わたしは さかなりょうりが つくれます。",
+        "romaji": "Watashi wa sakana ryōri ga tsukuremasu.",
+        "english": "I can make fish dishes.",
+        "nepali": "म माछाको परिकार बनाउन सक्छु ।"
+      },
+      {
+        "japanese": "そのみせで たばこが かえます。",
+        "romaji": "Sono mise de tabako ga kaemasu.",
+        "english": "You can buy cigarettes at that shop.",
+        "nepali": "त्यो पसलमा चुरोट किन्न सकिन्छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 27",
+    "grammar_point": "みえます and きこえます (vs. potential form)",
+    "form": "Nが みえます／きこえます",
+    "english_explanation": "みられます/きけます mean being able to see/hear something intentionally (potential form of みます/ききます). In contrast, みえます/きこえます mean something is naturally visible/audible without any deliberate effort or wish.",
+    "nepali_explanation": "みられます र みえます、अनि きけます र きこえます उस्तै जस्तो लागे पनि अर्थ फरक-फरक हुनआउछ । みられます र きけます भनेको चाहेकोले/इच्छाले हेर्ने र सुन्ने भन्ने बुझिन्छ तर みえます / きこえます ले भने कसैको चहाना या इच्छा बिनाने हेर्न वा सुन्न सकिने भन्ने अर्थ लाग्दछ ।",
+    "examples": [
+      {
+        "japanese": "Ilam から アンナプルナが みえます。",
+        "romaji": "Ilam kara Anna Puruna ga miemasu.",
+        "english": "You can see Annapurna from Ilam.",
+        "nepali": "इलाम बाट अन्नपूर्ण देखिन्छ ।"
+      },
+      {
+        "japanese": "Ilam に ひっじが みられます。",
+        "romaji": "Ilam ni hitsuji ga miraremasu.",
+        "english": "You can (go to see and) view sheep in Ilam.",
+        "nepali": "इलाम मा भेडा देख्न सकिन्छ ।"
+      },
+      {
+        "japanese": "ラジオで ニュースが きけます。",
+        "romaji": "Rajio de nyūsu ga kikemasu.",
+        "english": "You can listen to the news on the radio.",
+        "nepali": "रेडियो बाट समाचार सुन्न सकिन्छ ।"
+      },
+      {
+        "japanese": "ラジオの おとが きこえます。",
+        "romaji": "Rajio no oto ga kikoemasu.",
+        "english": "The sound of the radio can be heard.",
+        "nepali": "रेडियोको आवाज सुनिन्छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 27",
+    "grammar_point": "できます (to come into existence)",
+    "form": "N が できます",
+    "english_explanation": "できます literally means 'can/be possible', but can also be used to mean something 'came into being' or 'was completed'.",
+    "nepali_explanation": "できます को सीधा अर्थ भएपनि हुनु, सकिनु र पुरा हुनु जस्ता ठाउमा पनी प्रयोग गर्न सकिन्छ ।",
+    "examples": [
+      {
+        "japanese": "わたしの むらに がっこうが できました。",
+        "romaji": "Watashi no mura ni gakkō ga dekimashita.",
+        "english": "A school was built in my village.",
+        "nepali": "मेरो गाउँमा स्कुल बन्यो ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 27",
+    "grammar_point": "P-は (Highlighting particle over を/が/へ/etc.)",
+    "form": "Noun は (replacing を/が, or added to で/に/へ/から/まで)",
+    "english_explanation": "When a noun is highlighted as the topic, は is used. When the noun is marked by を or が, は replaces them; with other particles (で/に/へ/から/まで), は is added after them. This can also be used to add focus/emphasis to a word.",
+    "nepali_explanation": "Noun लाई Topic को रुपमा Highlight गर्नुपर्दा は को प्रयोग गरिन्छ, जब Noun लाई を र が Particle ले संकेत गरेको हुन्छ तब यी Particle लाई は ले बदल्नुपर्ने भने अरु (で/に/へ/から/まで) मा भने は लाई जोडिन्छ । त्यस्तै कुनै शब्दलाई अलि बढी focus गर्दा पनि は को प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "わたしは にほんには ちゅうごくじんと すんでいました。",
+        "romaji": "Watashi wa Nihon ni wa Chūgokujin to sunde imashita.",
+        "english": "In Japan, I was living with a Chinese person.",
+        "nepali": "म जापानमा चाईनिजसँग बस्थें ।"
+      },
+      {
+        "japanese": "あまいものは たべますが、からいものは たべません。",
+        "romaji": "Amai mono wa tabemasu ga, karai mono wa tabemasen.",
+        "english": "I eat sweet things, but I don't eat spicy things.",
+        "nepali": "गुलियोकुरा खान्छु तर पिरोकुरा चाँहि खाइन ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 27",
+    "grammar_point": "P-も (over を/が/へ)",
+    "form": "Noun も (replacing を/が; へ can be dropped before も)",
+    "english_explanation": "も works like は above, replacing を and が, and being added after other particles, meaning 'also/too'. When adding も after へ, へ can be dropped without changing the meaning.",
+    "nepali_explanation": "も ले भने माथि は ले जस्तै गरि を र が Particle लाई बदल्छ र अरु Particle मा भने も जोडिन्छ र へ को Case मा भने Particle へ हटाएपनि फरक पर्दैन ।",
+    "examples": [
+      {
+        "japanese": "わたしは さくらが すきです。バラも すきです。",
+        "romaji": "Watashi wa sakura ga suki desu. Bara mo suki desu.",
+        "english": "I like cherry blossoms. I like roses too.",
+        "nepali": "मलाई सकुरा मनपर्छ । गुलाफ पनि मन पर्छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 27",
+    "grammar_point": "しか (only, with negative)",
+    "form": "Noun (drop を/が) + しか + negative verb",
+    "english_explanation": "Usually attaches to a noun, replacing を/が, and states that nothing except the noun applies. しか is used with a negative verb, opposite in effect to だけ (which is used with an affirmative verb).",
+    "nepali_explanation": "यो प्राय : Noun सँग जोडिएर आउछ । यस्ले を र が Particle लाई हटाई, जोडिएको Noun भन्दा बाहेक सबै हुदैन भने जनाउछ । しか र だけ को प्रयोग विपरित हुन्छ ।",
+    "examples": [
+      {
+        "japanese": "にくだけ たべます。",
+        "romaji": "Niku dake tabemasu.",
+        "english": "I eat only meat.",
+        "nepali": "मासुमात्रै खान्छु ।"
+      },
+      {
+        "japanese": "にくしか たべません。",
+        "romaji": "Niku shika tabemasen.",
+        "english": "I eat nothing but meat.",
+        "nepali": "मासुबाहेक (अरुकेही) खाँदिन ।"
+      },
+      {
+        "japanese": "にちようびだけ やすみます。",
+        "romaji": "Nichiyōbi dake yasumimasu.",
+        "english": "I rest only on Sunday.",
+        "nepali": "आइतवार मात्रै बिदा बस्छु ।"
+      },
+      {
+        "japanese": "にちようびしか やすみません。",
+        "romaji": "Nichiyōbi shika yasumimasen.",
+        "english": "I rest on no day except Sunday.",
+        "nepali": "आइतवार बाहेक बिदा बस्दीन ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 28",
+    "grammar_point": "V ながら (while doing ~)",
+    "form": "V(ます-stem) + ながら",
+    "english_explanation": "Drop ます from the verb and add ながら. Used to express doing one action while doing another, or two actions occurring together over a period of time. It functions somewhat like a conjunction; the first clause always uses this form, while the second clause's verb form can vary.",
+    "nepali_explanation": "Verb को ます लाई हटाएर ながら लगाउने । कुनै यौटा काम वा कुरा गर्दै अर्को काम वा कुरा गर्ने वा गरिरहेको भन्ने आशय व्यक्त गर्नको लागि यो स्वरुपको प्रयोग हुन्छ ।",
+    "examples": [
+      {
+        "japanese": "ビデオを みながら、ごはんを たべます。",
+        "romaji": "Bideo o minagara, gohan o tabemasu.",
+        "english": "I eat while watching videos.",
+        "nepali": "भिडियो हेर्दै खाना खान्छु ।"
+      },
+      {
+        "japanese": "こうこうの とき、べんきょうしながら、アルバイトも して いました。",
+        "romaji": "Kōkō no toki, benkyō shinagara, arubaito mo shite imashita.",
+        "english": "When I was in high school, I was working part-time while studying.",
+        "nepali": "+2 को समयमा अध्ययनगर्दै काम पनि गरेको थिए ।"
+      },
+      {
+        "japanese": "しょくじを しながら、べんきょうしては いけません。",
+        "romaji": "Shokuji o shinagara, benkyō shite wa ikemasen.",
+        "english": "You must not study while eating.",
+        "nepali": "खाना खाँदै अध्ययनगर्नु हुँदैन ।"
+      },
+      {
+        "japanese": "はたらきながら、にほんごを べんきょうして います。",
+        "romaji": "Hatarakinagara, Nihongo o benkyō shite imasu.",
+        "english": "I am studying Japanese while working.",
+        "nepali": "काम गर्दै जापानीज-भाषा अध्ययन गर्दैछु ।"
+      },
+      {
+        "japanese": "ダーランに すんで いました。",
+        "romaji": "Dāran ni sunde imashita.",
+        "english": "I used to live in Dharan.",
+        "nepali": "धरानमा बस्ने गर्थें ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 28",
+    "grammar_point": "Plain form + し、～ (both ~ and ~)",
+    "form": "Plain form + し (each clause ending in し)",
+    "english_explanation": "Used to list more than one quality, fault, or trait, applicable to both adjectives and verbs. Each adjective or verb in the list ends in し. When using this form, if a particle を/が is present, it must be changed to も.",
+    "nepali_explanation": "एक भन्दा बढी गुण, दोष वा लक्षण बताउनुपर्दा यो स्वरुपको प्रयोग गरिन्छ । विशेषण तथा क्रियापद दुवैमा प्रयोग गर्न सकिन्छ । यो स्वरुपको प्रयोग गर्दा यदि Particle を/が लाई मात्र Particle も मा बदल्नु पर्दछ ।",
+    "examples": [
+      {
+        "japanese": "この カメラは やすいし、かるいし、いい しゃしんも とります。",
+        "romaji": "Kono kamera wa yasui shi, karui shi, ii shashin mo torimasu.",
+        "english": "This camera is cheap, light, and also takes good photos.",
+        "nepali": "यो क्यामरा सस्तो छ, हल्का छ र राम्रो फोटोपनि खिच्छ ।"
+      },
+      {
+        "japanese": "わたしは ねつも あるし、あたまも いたい です。",
+        "romaji": "Watashi wa netsu mo aru shi, atama mo itai desu.",
+        "english": "I have a fever, and my head aches too.",
+        "nepali": "मलाई ज्वरोपनि छ र टाउकोपनि दुखेको छ ।"
+      },
+      {
+        "japanese": "かれは ピアノも できるし、うたを うたうのも じょうず です。",
+        "romaji": "Kare wa piano mo dekiru shi, uta o utau no mo jōzu desu.",
+        "english": "He can play the piano, and he's also good at singing.",
+        "nepali": "उ पियानोपनि बजाउन सक्दछ र गीत गाउनमापनि सिपालु छ ।"
+      },
+      {
+        "japanese": "あの レストランは たべものも おいしいし、ねだんも やすいです。",
+        "romaji": "Ano resutoran wa tabemono mo oishii shi, nedan mo yasui desu.",
+        "english": "That restaurant's food is delicious, and its prices are also cheap.",
+        "nepali": "उ त्यो रेस्टुरेण्डको खानेकुरापनि मिठो छ र मुल्यपनि सस्तो छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 28",
+    "grammar_point": "それに (in addition, moreover)",
+    "form": "それに (conjunction)",
+    "english_explanation": "Used to add another similar fact or condition to a statement.",
+    "nepali_explanation": "अर्को समान तथ्य वा अवस्था जोड्नको लागि प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "この せっけんは やすいし、フランスせいひんだし、それに はだにも いいです。",
+        "romaji": "Kono sekken wa yasui shi, Furansu seihin da shi, sore ni hada ni mo ii desu.",
+        "english": "This soap is cheap and is a French product, and moreover it's good for the skin too.",
+        "nepali": "यो साबुन सस्तो र नेपाली सामान हुनुकासाथै छालालाईपनि राम्रो छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 28",
+    "grammar_point": "それで (so, for that reason)",
+    "form": "それで (conjunction)",
+    "english_explanation": "Used to express that the previously stated facts are the reason for what follows.",
+    "nepali_explanation": "पहिले भनिएको कुराहरु कारण हुन्भनेर व्यक्त गर्न それで (conjunction) को प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "この レストランは たべものも おいしいし、ねだんも やすいし、それで ひとが おおいんです。",
+        "romaji": "Kono resutoran wa tabemono mo oishii shi, nedan mo yasui shi, sore de hito ga ōi n desu.",
+        "english": "This restaurant's food is delicious and its prices are cheap too, so there are many people.",
+        "nepali": "यो रेस्ट्रुरेण्डको खानेकुरापनि मीठो छ, मुल्यपनि सस्तो छ त्यस कारण मान्छे धेरै छन् ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 29",
+    "grammar_point": "じどうし・たどうし (Intransitive & Transitive verb)",
+    "form": "じどうし (Intransitive) / たどうし (Transitive)",
+    "english_explanation": "A verb that is completed without depending on another word (no object needed) is called an intransitive verb (じどうし). A verb that needs an object to complete the sentence and to accomplish the action is called a transitive verb (たどうし).",
+    "nepali_explanation": "अरमा निर्भर नभई सम्पन्न हुने क्रियालाई じどうし (Intransitive Verb) भनिन्छ । वाक्य पुराहुनको लागि अर्क शब्दमा निर्भर गर्ने र काम सम्पन्न हुनको लागी वस्तु (object) को आवश्यकता पर्छ भने त्यसलाई たどうし (Transitive Verb) भनेर भनिन्छ ।",
+    "examples": [
+      {
+        "japanese": "われます",
+        "romaji": "waremasu",
+        "english": "(it) breaks (intransitive)",
+        "nepali": "फुट्छ"
+      },
+      {
+        "japanese": "しめます",
+        "romaji": "shimemasu",
+        "english": "(to) close (something) (transitive)",
+        "nepali": "बन्द गर्छु"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 29",
+    "grammar_point": "Noun が V(じどうし)て います。 (resulting state)",
+    "form": "Noun が Intransitive verb て います",
+    "english_explanation": "The subject of the action is marked by が. Used when something that already happened is still having an effect right now; this pattern uses the intransitive verb.",
+    "nepali_explanation": "कामको विषयलाई が - particle ले संकेत गरिन्छ । पहिलेनै भएको कामले अहिले सम्म पनि असर (effect) गरिरहेको छ भने यो स्वरुपको प्रयोग गरिन्छ । यदि काम भएको विषयलाई Topic को रुपमा लीएमा が को सट्टा は ले संकेत गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "この えんぴつは おれて います。",
+        "romaji": "Kono enpitsu wa orete imasu.",
+        "english": "This pencil is broken.",
+        "nepali": "यो पेन्सील भाँचीएको छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 29",
+    "grammar_point": "V て しまいました (completion)",
+    "form": "V て-form + しまいました",
+    "english_explanation": "Used to express that a task or event has been completed. Compared to plain V ました, this form emphasizes that the action was truly and fully completed, so it is often used with もう or ぜんぶ.",
+    "nepali_explanation": "कुनै पनि काम वा घटना सकिसकेको छ भनेर व्यक्त गर्दा यो स्वरुप (pattern) को प्रयोग गरिन्छ । V ました भन्दा यो V て しまいました ले साच्चीके कार्य पुरा भएको छ भनेर जनाउदछ । त्यसैले もう वा ぜんぶ को बढि प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "にくを ぜんぶ たべて しまいました。",
+        "romaji": "Niku o zenbu tabete shimaimashita.",
+        "english": "I ate up all the meat.",
+        "nepali": "मासु सबै खाइसके ।"
+      },
+      {
+        "japanese": "５ふん だけ はなしましたが、ともだちに なって しまいました。",
+        "romaji": "Gofun dake hanashimashita ga, tomodachi ni natte shimaimashita.",
+        "english": "We only talked for 5 minutes, but we ended up becoming friends.",
+        "nepali": "५ मिनेट मात्र कुरा गरेकोथिए, साथि भइसके ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 29",
+    "grammar_point": "V て しまいました (regret)",
+    "form": "V て-form + しまいました",
+    "english_explanation": "Used to express regret or misfortune over something that happened.",
+    "nepali_explanation": "कुनै कुराको पछुतो वा अफसोसलाई व्यक्त गर्दा यो स्वरुपको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "さいふを なくして しまいました。",
+        "romaji": "Saifu o nakushite shimaimashita.",
+        "english": "I lost my wallet (unfortunately).",
+        "nepali": "पर्स हराए ।"
+      },
+      {
+        "japanese": "あいぼうの あしを ふんで しまいました。",
+        "romaji": "Aibō no ashi o funde shimaimashita.",
+        "english": "I accidentally stepped on my partner's foot.",
+        "nepali": "सोमको खुट्टा कुल्चीदिए ।"
+      },
+      {
+        "japanese": "たいへんな ことを して しまいました。",
+        "romaji": "Taihen na koto o shite shimaimashita.",
+        "english": "I did a terrible thing.",
+        "nepali": "गर्नै नहुने कुरा गरे ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 29",
+    "grammar_point": "V て しまいます (near-future completion)",
+    "form": "V て-form + しまいます",
+    "english_explanation": "Used when the speaker states they will finish a task in the near future.",
+    "nepali_explanation": "वक्ताले कुनै काम निकट भविष्यमा सकाउछु भनेर व्यक्त गर्दा यो स्वरुपको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "ごご５じに なると、うちへ かえって しまいます。",
+        "romaji": "Gogo goji ni naru to, uchi e kaette shimaimasu.",
+        "english": "Once it's 5pm, I'll go straight home.",
+        "nepali": "बेलुकी ५ बज्योभने, घर फर्किसक्छु ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 29",
+    "grammar_point": "ありました (found/there was)",
+    "form": "N が ありました",
+    "english_explanation": "Used when a person or object has been found or come across.",
+    "nepali_explanation": "कुनै कुरा (व्यक्ती वा वस्तु) लाई भेट्टाईएको अवस्थामा .............が ありました को प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "みちに １００えんが ありました。",
+        "romaji": "Michi ni hyaku-en ga arimashita.",
+        "english": "I found 100 yen on the road.",
+        "nepali": "बाटोमा १०० येन भेट्टाए ।"
+      },
+      {
+        "japanese": "かばんが ありましたよ。",
+        "romaji": "Kaban ga arimashita yo.",
+        "english": "I found a bag!",
+        "nepali": "झोला भेट्टाए ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 29",
+    "grammar_point": "どこかで／どこかに／おさきに どうぞ／おさきに しつれいします",
+    "form": "Fixed expressions",
+    "english_explanation": "どこかで (somewhere) → an action happening somewhere; どこかに (somewhere) → an object being somewhere; おさきに どうぞ is said to invite someone to go/do something before you; おさきに しつれいします is said when you yourself are leaving/doing something first.",
+    "nepali_explanation": "どこかで (कतैतिर) → कुनै ठाउमा कार्य हुदा; どこかに (कतैतिर) → कुनै ठाउमा (वस्तु) हुदा; おさきに どうぞ (अरुलाई अघि जानुस वा गर्नुस भन्दा भनिन्छ); おさきに しつれいします (आफु नै अघि जान्छु वा गर्छु भन्दा भनिन्छ)",
+    "examples": [
+      {
+        "japanese": "おさきに どうぞ。",
+        "romaji": "Osaki ni dōzo.",
+        "english": "Please, go ahead of me.",
+        "nepali": "अरुलाई अघि जानुस वा गर्नुस भन्दा भनिन्छ ।"
+      },
+      {
+        "japanese": "おさきに しつれいします。",
+        "romaji": "Osaki ni shitsurei shimasu.",
+        "english": "Excuse me for leaving/going first.",
+        "nepali": "आफु नै अघि जान्छु वा गर्छु भन्दा भनिन्छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 30",
+    "grammar_point": "V て あります。 (resulting state, deliberate)",
+    "form": "Place に Noun が V て あります",
+    "english_explanation": "Used to express the result of an action performed with intention/purpose. This pattern uses a transitive verb (たどうし). When the noun is the topic, the pattern becomes Noun は Place に V て あります.",
+    "nepali_explanation": "कसैले जानी बुझीकन गरेको कामको परिणामलाई व्यक्त गर्नुपर्दा यो Form को प्रयोग हुन्छ । यस स्वरुपमा たどうし को प्रयोग हुन्छ जसले अभिव्यक्ती व्यक्त गर्दछ । यो स्वरुप औजो प्रयोग हुन्छ र प्राय: もう सँग प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "ベッドの したに ほんが おいて あります。",
+        "romaji": "Beddo no shita ni hon ga oite arimasu.",
+        "english": "A book is placed under the bed.",
+        "nepali": "खाटको मुनि पुस्तक राखीएको छ ।"
+      },
+      {
+        "japanese": "カレンダーに こんげつの よていが かいて あります。",
+        "romaji": "Karendā ni kongetsu no yotei ga kaite arimasu.",
+        "english": "This month's plan is written on the calendar.",
+        "nepali": "क्यालेण्डरमा यसमहिनाको योजना लेखीएको छ ।"
+      },
+      {
+        "japanese": "かべに ちずが はって あります。",
+        "romaji": "Kabe ni chizu ga hatte arimasu.",
+        "english": "A map is stuck on the wall.",
+        "nepali": "भित्तामा नक्सा टासीएको छ ।"
+      },
+      {
+        "japanese": "かびんに はなが かざって あります。",
+        "romaji": "Kabin ni hana ga kazatte arimasu.",
+        "english": "Flowers are arranged in the vase.",
+        "nepali": "फुलदानीमा फुल सजाईएको छ ।"
+      },
+      {
+        "japanese": "はなは かびんに かざって あります。",
+        "romaji": "Hana wa kabin ni kazatte arimasu.",
+        "english": "As for the flowers, they are arranged in the vase.",
+        "nepali": "फुल फुलदानीमा सजाईएको छ ।"
+      },
+      {
+        "japanese": "りょこうの じゅんびは もう して あります。",
+        "romaji": "Ryokō no junbi wa mō shite arimasu.",
+        "english": "Preparations for the trip have already been made.",
+        "nepali": "भ्रमणको तयारी पहिलेनै गरीएको छ ।"
+      },
+      {
+        "japanese": "ホテルは もう よやくして あります。",
+        "romaji": "Hoteru wa mō yoyaku shite arimasu.",
+        "english": "The hotel has already been booked.",
+        "nepali": "होटल पहिलेनै बुकिङ गरीएको छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 30",
+    "grammar_point": "V て おきます。 (do in advance)",
+    "form": "V て-form + おきます",
+    "english_explanation": "Used to express doing a necessary task within a certain time frame, i.e. preparing in advance. In casual speech ～ておきます is often shortened to ～ときます.",
+    "nepali_explanation": "कुनै निश्चीत समयभित्र आवश्यक कार्य गर्छु भनेर व्यक्त गर्दा यो स्वरुपको प्रयोग गरिन्छ । दैनिक कुराकानीमा भने ～て おきます लाई ～ときます भनेर प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "うちに ともだちが くる まえに、そうじして おきます。",
+        "romaji": "Uchi ni tomodachi ga kuru mae ni, sōji shite okimasu.",
+        "english": "I'll clean up in advance before my friend comes home.",
+        "nepali": "घरमा साथी आउनु अघि सरसफाई गरी राख्छु ।"
+      },
+      {
+        "japanese": "にほんへ いく まえに、にほんごを べんきょうして おいた ほうが いいです。",
+        "romaji": "Nihon e iku mae ni, Nihongo o benkyō shite oita hō ga ii desu.",
+        "english": "It would be better to study Japanese in advance before going to Japan.",
+        "nepali": "जापान जानु अघि जापानीज भाषा पढीराख्दा राम्रो होला ।"
+      },
+      {
+        "japanese": "あした しけんが ありますから、いすは そのままに して おいて ください。",
+        "romaji": "Ashita shiken ga arimasu kara, isu wa sono mama ni shite oite kudasai.",
+        "english": "Since there's an exam tomorrow, please leave the chairs as they are.",
+        "nepali": "भोली परिक्षा भएकोलेगर्दा कुर्सी जस्तो छ त्यस्तै छोडी राख्नुहोस् ।"
+      },
+      {
+        "japanese": "かばんは そこに おいといて ください。",
+        "romaji": "Kaban wa soko ni oitoite kudasai.",
+        "english": "Please leave the bag there.",
+        "nepali": "झोलाचाँही त्यहानिर राखी राख्नुहोस् ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 30",
+    "grammar_point": "まだ + V て います。 (still doing)",
+    "form": "まだ + V て-form + います",
+    "english_explanation": "Used to say that an action expressed by the verb is still ongoing.",
+    "nepali_explanation": "क्रियाले भनेको कार्य अझै हुदैछ भन्नको लागि यो स्वरुपको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "リタさんは まだ ごはんを たべて います。",
+        "romaji": "Rita-san wa mada gohan o tabete imasu.",
+        "english": "Rita is still eating.",
+        "nepali": "रिताजी अझै खाना खाँदैहुनुहुन्छ ।"
+      },
+      {
+        "japanese": "まだ あめが ふって います。",
+        "romaji": "Mada ame ga futte imasu.",
+        "english": "It's still raining.",
+        "nepali": "अझै वर्षात् हुँदैछ । / अझै पानी पर्दैछ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 30",
+    "grammar_point": "それは ～ (Used for Slang)",
+    "form": "それは ～",
+    "english_explanation": "A colloquial expression used at the start of a reaction.",
+    "nepali_explanation": "बोलचालको भाषामा प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "それは いいですね。",
+        "romaji": "Sore wa ii desu ne.",
+        "english": "That sounds nice.",
+        "nepali": "त्यो सुन्नमा राम्रो लाग्छ ।"
+      },
+      {
+        "japanese": "それは おめでとう ございます。",
+        "romaji": "Sore wa omedetō gozaimasu.",
+        "english": "Congratulations!",
+        "nepali": "बधाई छ ।"
+      },
+      {
+        "japanese": "それは いけませんね。",
+        "romaji": "Sore wa ikemasen ne.",
+        "english": "That's bad/too bad.",
+        "nepali": "त्यो त नराम्रो भयो ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 31",
+    "grammar_point": "Volitional Form (Plain form of ましょう)",
+    "form": "Group I: い→お+う; Group II: drop ます+よう; Group III: irregular",
+    "english_explanation": "The verb form used to express one's own suggestion or intention is called the Volitional Form (いこうけい / ～おうけい). Since it is the plain form of ましょう, it is used in informal conversation.",
+    "nepali_explanation": "वक्ताले गरेको सुफाव वा सल्लाहलाई भन्दा प्रयोग गरिने क्रीया को form लाई いこうけい (Volitional Form) वा ～おう-केई भनिन्छ । Volitional Form चाँही V-ましょう को plain form भएकोले Informal Conversation मा प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "いきましょう → いこう",
+        "romaji": "ikimashō → ikō",
+        "english": "let's go (polite) → let's go (plain)",
+        "nepali": "जाऔं (नम्र → सामान्य)"
+      },
+      {
+        "japanese": "たべます → たべよう",
+        "romaji": "tabemasu → tabeyō",
+        "english": "eat → let's eat",
+        "nepali": "खाऔं"
+      },
+      {
+        "japanese": "みます → みよう",
+        "romaji": "mimasu → miyō",
+        "english": "see → let's look",
+        "nepali": "हेरौं"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 31",
+    "grammar_point": "Verb (Volitional Form) + と おもって います",
+    "form": "Volitional form + と おもいます／おもって います",
+    "english_explanation": "Used when the speaker has thought about doing something. Volitional Form + と おもいます expresses a thought just occurring now; Volitional Form + と おもって います expresses a decision that oneself or someone else has already made.",
+    "nepali_explanation": "वक्ताले कुनै कार्य गर्न सोचेको अवस्थामा Volitional Form + と おもいます को प्रयोग गरिन्छ । त्यस्तै आफुलेवा अरुकसैले पहिलेनै निर्णय गरेको मनसायलाई व्यक्त गर्दा भने Verb volitional Form + と おもって います को प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "いまから デートに いこうと おもいます。",
+        "romaji": "Ima kara dēto ni ikō to omoimasu.",
+        "english": "I think I'll go on a date now.",
+        "nepali": "म अब डेटिङ जाउ भनी सोचेको छु ।"
+      },
+      {
+        "japanese": "どようび ダーランへ いこうと おもって います。",
+        "romaji": "Doyōbi Dāran e ikō to omotte imasu.",
+        "english": "I'm planning to go to Dharan on Saturday.",
+        "nepali": "शनिबार धरान जाउ भन्ने लागिरहेको छ ।"
+      },
+      {
+        "japanese": "ソニアさんは にほんで はたらこうと おもって います。",
+        "romaji": "Sonia-san wa Nihon de hatarakō to omotte imasu.",
+        "english": "Sonia is planning to work in Japan.",
+        "nepali": "सोनियाजीले जापानमा काम गरौंभनी सोचीराख्नुभएको छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 31",
+    "grammar_point": "V root form／V ない form + つもり です",
+    "form": "V root/V ない + つもり です",
+    "english_explanation": "Used to express a decision or intention about doing (or not doing) something in one's own mind. Not used for expressing someone else's intentions.",
+    "nepali_explanation": "आफुलाई गर्न मनलागेको वा यसो गर्ने छु वा गर्ने छुइन भनेर विचार गरिराखेको कुरालाई व्यक्त गर्नुपर्दा यो स्वरुपको प्रयोग गरिन्छ । अर्कोको विचार व्यक्त गर्दा चाँही यो स्वरुपको प्रयोग गरिँदैन ।",
+    "examples": [
+      {
+        "japanese": "うちへ かえってから、１じかん やすむ つもりです。",
+        "romaji": "Uchi e kaette kara, ichijikan yasumu tsumori desu.",
+        "english": "I intend to rest for an hour after returning home.",
+        "nepali": "घर फर्किएपछि एक घण्टा आराम गर्नेछु ।"
+      },
+      {
+        "japanese": "あしたからは おさけを のまない つもりです。",
+        "romaji": "Ashita kara wa osake o nomanai tsumori desu.",
+        "english": "I don't intend to drink alcohol from tomorrow.",
+        "nepali": "भोलीबाट रक्सी पीउने छुइन ।"
+      },
+      {
+        "japanese": "いまの かいしゃで はたらかない つもり です。",
+        "romaji": "Ima no kaisha de hatarakanai tsumori desu.",
+        "english": "I don't intend to work at my current company (any longer).",
+        "nepali": "अहिलेको कम्पनीमा काम नगर्ने विचार छ ।"
+      },
+      {
+        "japanese": "わたしは こんかいの なつやすみに イギリスへ いく つもり です。",
+        "romaji": "Watashi wa konkai no natsuyasumi ni Tai e iku tsumori desu.",
+        "english": "I intend to go to England this summer vacation.",
+        "nepali": "म चाँही यसपटकको गर्मी बिदामा बेलायततिर जाने विचार छ ।"
+      },
+      {
+        "japanese": "いしゃに なって、まずしい ひとびとの おせわを する つもり です。",
+        "romaji": "Isha ni natte, mazushii hitobito no osewa o suru tsumori desu.",
+        "english": "I intend to become a doctor and take care of poor people.",
+        "nepali": "डाक्टर बनेर गरिब-गुरुवाको सेवा गर्ने विचार छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 31",
+    "grammar_point": "V root form／Noun の + よてい です",
+    "form": "V root form/Noun の + よてい です",
+    "english_explanation": "Used to give information about one's own plans/schedule.",
+    "nepali_explanation": "आफ्नो योजनाहरुको जानकारी गराउनको लागी यो स्वरुपको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "１０月に しけんが うけるよてい です。",
+        "romaji": "Jūgatsu ni shiken ga ukeru yotei desu.",
+        "english": "I'm scheduled to take the exam in October.",
+        "nepali": "October मा परिक्षा दिने योजना छ ।"
+      },
+      {
+        "japanese": "りょこうは １しゅうかんぐらいの よてい です。",
+        "romaji": "Ryokō wa isshūkan gurai no yotei desu.",
+        "english": "The trip is planned to be about one week.",
+        "nepali": "भ्रमण चाँही एकहप्ता जतिको योजना छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 31",
+    "grammar_point": "まだ V て いません (not yet)",
+    "form": "まだ + V て-form + いません",
+    "english_explanation": "Used when something has not yet happened or has not yet been done.",
+    "nepali_explanation": "कुनै कार्य अझै नभएको वा अझै नगरिएको अवस्थामा यो स्वरुपको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "ドアは まだ あいて いません。",
+        "romaji": "Doa wa mada aite imasen.",
+        "english": "The door is not open yet.",
+        "nepali": "ढोका अझै खुलेको छैन ।"
+      },
+      {
+        "japanese": "まだ ごはんを たべて いません。",
+        "romaji": "Mada gohan o tabete imasen.",
+        "english": "I haven't eaten yet.",
+        "nepali": "अझै खाना खाएको छुइन ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 32",
+    "grammar_point": "V た／V ない + ほうが いいです (advice)",
+    "form": "V た-form / V ない-form + ほうが いいです",
+    "english_explanation": "Used to give a somewhat firmer suggestion or advice about doing or not doing something. Note: V たら いいです gives general advice, but V た ほうが いいです emphasizes recommending one option over another when there are alternatives.",
+    "nepali_explanation": "कसैलाई अलिक कडारुपमा कुनै कुरा गर्न वा नगर्न सुफाव अथवा सल्लाह दिँदा यो स्वरुपको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "あさ おきて、１リットル みずを のんだ ほうが いいです。",
+        "romaji": "Asa okite, ichi rittoru mizu o nonda hō ga ii desu.",
+        "english": "It's better to drink one liter of water after getting up in the morning.",
+        "nepali": "बिहान उठेर एक लिटर पानी पिउदा राम्रो हुन्छ ।"
+      },
+      {
+        "japanese": "わからないとき「わかりません」、と いった ほうが いいです。",
+        "romaji": "Wakaranai toki 'wakarimasen', to itta hō ga ii desu.",
+        "english": "When you don't understand, it's better to say 'I don't understand'.",
+        "nepali": "नबुझेको बेला「わかりません」, भनेर भन्दा ठिक होला ।"
+      },
+      {
+        "japanese": "きのうの ケーキ ですから、たべない ほうが いいです。",
+        "romaji": "Kinō no kēki desu kara, tabenai hō ga ii desu.",
+        "english": "Since it's yesterday's cake, it's better not to eat it.",
+        "nepali": "हिजोको केक हो त्यसैले, नखादा ठिक हुन्छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 32",
+    "grammar_point": "Plain form + でしょう (probably)",
+    "form": "Verb/い-adj/な-adj/Noun plain form + でしょう",
+    "english_explanation": "Used to express the speaker's guess based on some information they have.",
+    "nepali_explanation": "पाएका केही जानकारीलाई आधारमानी वक्ताले गर्ने अनुमानलाई व्यक्त गर्दा यो स्वरुपको प्रयोग हुन्छ ।",
+    "examples": [
+      {
+        "japanese": "あしたは あめが ふるでしょう。",
+        "romaji": "Ashita wa ame ga furu deshō.",
+        "english": "It will probably rain tomorrow.",
+        "nepali": "भोली पानी पर्छ होला ।"
+      },
+      {
+        "japanese": "あしたも あつい でしょう。",
+        "romaji": "Ashita mo atsui deshō.",
+        "english": "It will probably be hot tomorrow too.",
+        "nepali": "भोली पनि गर्मी हुन्छ होला ।"
+      },
+      {
+        "japanese": "あしたは ひま でしょう。",
+        "romaji": "Ashita wa hima deshō.",
+        "english": "I'll probably be free tomorrow.",
+        "nepali": "भोली फुर्सद होला ।"
+      },
+      {
+        "japanese": "あのひとは いしゃ でしょう。",
+        "romaji": "Ano hito wa isha deshō.",
+        "english": "That person is probably a doctor.",
+        "nepali": "त्यो व्यक्ति डाक्टर होला ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 32",
+    "grammar_point": "Plain form + かも しれません (might)",
+    "form": "Verb/い-adj/な-adj/Noun plain form + かも しれません",
+    "english_explanation": "Used to express one's uncertain guess or suspicion that something might happen or someone might do something. The likelihood expressed by ～かも しれません is lower than ～でしょう.",
+    "nepali_explanation": "कुनै कुरा हुनपनी सक्छ वा हुन के बेर, अथवा कसैले केही कुरा गर्नपनी सक्छ वा गर्न के बेर भनेर आफ्नो अनुमान वा आशंका व्यक्त गर्नको लागि यो स्वरुपको प्रयोग गरिन्छ । तर ～でしょう भन्दा ～かも しれません स्वरुपको कार्य हुने सम्भावना कम रहन्छ ।",
+    "examples": [
+      {
+        "japanese": "あしたは あめが ふる かもしれません。",
+        "romaji": "Ashita wa ame ga furu kamoshiremasen.",
+        "english": "It might rain tomorrow.",
+        "nepali": "भोली पानी पर्नपनी सक्छ ।"
+      },
+      {
+        "japanese": "この スープは からくない かもしれません。",
+        "romaji": "Kono sūpu wa karakunai kamoshiremasen.",
+        "english": "This soup might not be spicy.",
+        "nepali": "यो सुप पिरो नहुनपनी सक्छ ।"
+      },
+      {
+        "japanese": "あしたは ひま かもしれません。",
+        "romaji": "Ashita wa hima kamoshiremasen.",
+        "english": "I might be free tomorrow.",
+        "nepali": "भोली फुर्सद हुनपनी सक्छ ।"
+      },
+      {
+        "japanese": "あしたは やすみ かもしれません。",
+        "romaji": "Ashita wa yasumi kamoshiremasen.",
+        "english": "Tomorrow might be a holiday.",
+        "nepali": "भोली बिदा हुनपनी सक्छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 32",
+    "grammar_point": "Adverbs: きっと／たぶん／もしかしたら",
+    "form": "Adverb + likelihood-marking form",
+    "english_explanation": "きっと (definitely/surely) is used when the likelihood of what the speaker says is very high. たぶん (probably) marks a likelihood lower than きっと, and is often used with ～でしょう or ～と おもいます. もしかしたら (perhaps/possibly) is used when likelihood is low, often together with ～かも しれません.",
+    "nepali_explanation": "きっと (अवश्यै/पक्कै) - वक्ताले भनेको कुरा हुने सम्भावता धेरैनै भएको अवस्थामा यो Adverb को प्रयोग गरिन्छ । たぶん (सायद) - कार्य हुने सम्भावता きっと को भन्दा कम भएमा, प्राय: जसो ～でしょう को साथ प्रयोग हुने गर्दछ । もしかしたら (हुनसक्छ) - कुनै कुराका सम्भावता कम रहेको बेलामा प्राय: ～かも しれません सँग प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "こんや きっと あめが ふります。",
+        "romaji": "Kon'ya kitto ame ga furimasu.",
+        "english": "It will definitely rain tonight.",
+        "nepali": "आज राती पक्कै पानी पर्छ ।"
+      },
+      {
+        "japanese": "こんや たぶん あめが ふるでしょう。",
+        "romaji": "Kon'ya tabun ame ga furu deshō.",
+        "english": "It will probably rain tonight.",
+        "nepali": "आज राती सायद पानी पर्छ होला ।"
+      },
+      {
+        "japanese": "さとうさんは この ニュースを たぶん しらないと おもいます。",
+        "romaji": "Satō-san wa kono nyūsu o tabun shiranai to omoimasu.",
+        "english": "I think Mr. Satō probably doesn't know this news.",
+        "nepali": "सातोजीलाई यो समाचार सायद थाहाछैन जस्तो लाग्छ ।"
+      },
+      {
+        "japanese": "もしかしたら、A さんは もう こないかもしれません。",
+        "romaji": "Moshikashitara, A-san wa mō konai kamoshiremasen.",
+        "english": "Perhaps A might not come anymore.",
+        "nepali": "हुनसक्छ, A जी अब नआउनपनी सक्नुहुन्छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 32",
+    "grammar_point": "The Expression (indefinite pronoun + relative clause)",
+    "form": "なにか／いつか／だれかに／どこか + descriptive clause",
+    "english_explanation": "Indefinite words like なにか (something), いつか (sometime), だれかに (to someone), どこか (somewhere) can be followed by a descriptive clause to form phrases like 'something to worry about'.",
+    "nepali_explanation": "なにか しんぱいなこと (केही पीर परेको कुरा); なにか たべたいもの (केही खानमन लागेको कुरा); いつか こまった とき (कुनै समस्या परेको बेला); だれかに あいする ひと (कसैलाई सोनिया गर्ने मान्छे); どこか あそびたい ところ (कतै रमाइलो गर्ने ठाउँ)",
+    "examples": [
+      {
+        "japanese": "なにか しんぱいなこと",
+        "romaji": "nanika shinpai na koto",
+        "english": "something to worry about",
+        "nepali": "केही पीर परेको कुरा"
+      },
+      {
+        "japanese": "どこか あそびたい ところ",
+        "romaji": "dokoka asobitai tokoro",
+        "english": "somewhere one wants to go have fun",
+        "nepali": "कतै रमाइलो गर्ने ठाउँ"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 32",
+    "grammar_point": "Quantifier で (within a duration/amount)",
+    "form": "Quantifier + で",
+    "english_explanation": "When specifying a price, time, or quantity needed for an action or state, で is added after that word.",
+    "nepali_explanation": "Action र अवस्थाको लागि मुल्य, समय र मात्रालाई तोकेर भन्नुपर्दा, ती शब्दको पछि で को प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "えきまで ３０ぷんで いけますか。",
+        "romaji": "Eki made sanjuppun de ikemasu ka.",
+        "english": "Can you get to the station within 30 minutes?",
+        "nepali": "रेलस्टेसन सम्म ३० मिनेटमा जान सकिन्छ ?"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 33",
+    "grammar_point": "Imperative & Prohibitive forms (といれいけい & きんしけい)",
+    "form": "Group I: ます→え+add nothing; Group II: ます→ろ; Group III: irregular / Group I: root+な",
+    "english_explanation": "Imperative form gives a forceful command to do something; Prohibitive form gives a forceful command not to do something. These blunt forms are typically used only by men, from a senior to a junior, or a parent to a child. Ending with よ softens the command between friends. In urgent situations or on signs, these forms may be used by anyone. Non-volitional verbs (できます, あります, わかります) have no imperative/prohibitive form.",
+    "nepali_explanation": "Imperative - निर्देशन Prohibitive - निशेधीत। Imperative form कुनै व्यक्तिलाई जवरजस्ती वा बाध्यपारी यसो गर भनेर निर्देशन दिनको लागि प्रयोग गरिन्छ भने Prohibitive form भने कुनै व्यक्तीलाई जवरजस्ती वा बाध्यपारी यसो नगर भनेर निर्देशन दिनको लागि प्रयोग गरिनछ ।",
+    "examples": [
+      {
+        "japanese": "もっと べんきょう しろ。",
+        "romaji": "Motto benkyō shiro.",
+        "english": "Study more!",
+        "nepali": "अझै पढ ।"
+      },
+      {
+        "japanese": "にどと おくれるな。",
+        "romaji": "Nido to okureruna.",
+        "english": "Don't be late again!",
+        "nepali": "अबआइन्दा/फेरी कहिले ढिला नहु ।"
+      },
+      {
+        "japanese": "とまれ",
+        "romaji": "tomare",
+        "english": "Stop!",
+        "nepali": "रोक्"
+      },
+      {
+        "japanese": "はいるな",
+        "romaji": "hairuna",
+        "english": "Do not enter!",
+        "nepali": "नपस्/पस्न निषेध"
+      },
+      {
+        "japanese": "うちでも べんきょうしなさい。",
+        "romaji": "Uchi demo benkyō shinasai.",
+        "english": "Study at home too.",
+        "nepali": "घरमापनि पढ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 33",
+    "grammar_point": "～と よみます／～と かいて あります (read as/written as)",
+    "form": "Word/phrase + と よみます／と かいて あります",
+    "english_explanation": "A new use of ～と いいます from Lesson 21, used to say how something is read or that something is written a certain way.",
+    "nepali_explanation": "Lesson 21 को जस्तै ～と いいます को एउटा नयाँ तरिका हो ।",
+    "examples": [
+      {
+        "japanese": "これは なんと よみますか。",
+        "romaji": "Kore wa nan to yomimasu ka.",
+        "english": "How is this read?",
+        "nepali": "यसलाई के भनेर पढिन्छ ?"
+      },
+      {
+        "japanese": "「とまれ」と よみます。",
+        "romaji": "'Tomare' to yomimasu.",
+        "english": "It's read as 'tomare'.",
+        "nepali": "'तोमारे' भनेर पढिन्छ ।"
+      },
+      {
+        "japanese": "あそこに「とまれ」と かいて あります。",
+        "romaji": "Asoko ni 'tomare' to kaite arimasu.",
+        "english": "It's written 'tomare' over there.",
+        "nepali": "उ त्यहा 'तोमारे' भनेर लेखिएको छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 33",
+    "grammar_point": "X は Y と いう いみ です。 (X means Y)",
+    "form": "X は Y と いう いみ です",
+    "english_explanation": "Used to define the meaning of X. どういう is used when asking about the meaning. と いう comes from と いいます.",
+    "nepali_explanation": "X को अर्थलाई परिभाषित (define) गर्दा यो form प्रयोग हुन्छ । अर्थ सोध्नु परेमा 「どういう」को प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "「きんし」は どういう いみ ですか。",
+        "romaji": "'Kinshi' wa dō iu imi desu ka.",
+        "english": "What does 'kinshi' mean?",
+        "nepali": "'किन्सी' भनेको के अर्थ हो ?"
+      },
+      {
+        "japanese": "「きんし」は ダメ と いう いみ です。",
+        "romaji": "'Kinshi' wa dame to iu imi desu.",
+        "english": "'Kinshi' means 'not allowed'.",
+        "nepali": "'किन्सी' भनेको मनाही वा निषेध भन्ने अर्थ हो ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 33",
+    "grammar_point": "～さんは \"Sentence\" plain form と いって いました。 (quoting)",
+    "form": "Person は Sentence(plain form) と いって いました",
+    "english_explanation": "Used to relay exactly what a third person said.",
+    "nepali_explanation": "तेस्रो व्यक्तीको अभिव्यक्ती वा सन्देशलाई जस्ताको तस्तै भन्नुपर्दा यो स्वरुपको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "ソニアさんは 「あした やすみます」と いって いました。",
+        "romaji": "Sonia-san wa 'ashita yasumimasu' to itte imashita.",
+        "english": "Sonia said, 'I'll be off tomorrow.'",
+        "nepali": "सोनियाजीले 'भोली बिदा बस्छु' भनेर भन्दैहुनुहुन्थीयो ।"
+      },
+      {
+        "japanese": "ソニアさんは あした やすむと いって いました。",
+        "romaji": "Sonia-san wa ashita yasumu to itte imashita.",
+        "english": "Sonia said that she would be off tomorrow.",
+        "nepali": "सोनियाजीले भोली बिदा बस्छु भनेर भन्दैहुनुहुन्थीयो ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 33",
+    "grammar_point": "～さんに \"Sentence\" plain form と つたえて いただけませんか。",
+    "form": "Person に Sentence(plain form) と つたえて いただけませんか",
+    "english_explanation": "Used to politely ask someone to pass a message to a third person.",
+    "nepali_explanation": "कसैलाई विनम्रतापूर्वक कुनै सन्देश भनिदिनुहुन्छकी भनेर आग्रहगर्नुपर्दा यो स्वरुपको प्रयोग हुन्छ ।",
+    "examples": [
+      {
+        "japanese": "ソニアさんに「あいたい です」と つたえて いただけませんか。",
+        "romaji": "Sonia-san ni 'aitai desu' to tsutaete itadakemasen ka.",
+        "english": "Could you please tell Sonia that I want to meet her?",
+        "nepali": "सोनियाजीलाई 'भेट्न चाहान्छु' भनेर भनिदिनुहुन्छ की ?"
+      },
+      {
+        "japanese": "がくせいたちに あしたは やすみじゃない と つたえて いただけませんか。",
+        "romaji": "Gakuseitachi ni ashita wa yasumi ja nai to tsutaete itadakemasen ka.",
+        "english": "Could you please tell the students that tomorrow is not a holiday?",
+        "nepali": "विद्यार्थीहरुलाई भोली बिदा होइन भनेर भनिदिनुहुन्छ की ?"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 34",
+    "grammar_point": "Verb1 た-form／Noun の + とおりに、Verb2 (just as/according to)",
+    "form": "V1(た-form)/Nの + とおりに、V2",
+    "english_explanation": "Used to say 'do it just as/exactly as' something was seen, heard, read, learned, taught, or said. When it follows a Noun, it means 'according to that noun'.",
+    "nepali_explanation": "कसैले देखेको, सुनेको, पढेको वा सिकेको शब्द वा कार्यलाई जस्ताको त्यस्तै गरे जस्तै, भने जस्तै, सिकाए जस्तै गर्नुहोस् भनेर भन्नु पर्दा प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "わたしが かいた とおりに、かいて ください。",
+        "romaji": "Watashi ga kaita tōri ni, kaite kudasai.",
+        "english": "Please write exactly as I wrote.",
+        "nepali": "मैले लेखेको जस्तै गरि लेख्नुहोस् ।"
+      },
+      {
+        "japanese": "せんせいが おしえた とおりに かんじを かきました。",
+        "romaji": "Sensei ga oshieta tōri ni kanji o kakimashita.",
+        "english": "I wrote the kanji exactly as the teacher taught.",
+        "nepali": "शिक्षकले सिकाउनुभएको अनुसार खान्जी लेखें ।"
+      },
+      {
+        "japanese": "せんの とおりに、かみを きって ください。",
+        "romaji": "Sen no tōri ni, kami o kitte kudasai.",
+        "english": "Please cut the paper along the line.",
+        "nepali": "लाइनको अनुसार कागज काट्नुहोस् ।"
+      },
+      {
+        "japanese": "せいめいしょの とおりに、くみたてました。",
+        "romaji": "Setsumeisho no tōri ni, kumitatemashita.",
+        "english": "I assembled it according to the instruction manual.",
+        "nepali": "निर्देशन पुस्तिकाको अनुसार एस्सेम्बल गरे ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 34",
+    "grammar_point": "V1た form／Noun の + あとで、Verb2 (after)",
+    "form": "V1(た-form)/Nの + あとで、V2",
+    "english_explanation": "Used when a second action only starts/is completed after the first action or noun's task is complete. Note: V てから and V たあとで look similar in meaning, but differ in the interval of time between the two actions.",
+    "nepali_explanation": "「あとで」भन्दा अघिको क्रिया (V た-form) र Noun को कार्य पुरा भएपछि मात्र अर्को कार्य सुरुवात वा सम्पन्न हुने अवस्थामा प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "あたらしいのを かった あとで、なくした エアホンが みつかりました。",
+        "romaji": "Atarashii no o katta ato de, nakushita earahon ga mitsukarimashita.",
+        "english": "After buying a new one, I found the earphones I had lost.",
+        "nepali": "नया एरफोन् किनिसकेपछि, हराएको एरफोन् भेटीयो ।"
+      },
+      {
+        "japanese": "じゅぎょうの あとで、えいがを みに いきましょう。",
+        "romaji": "Jugyō no ato de, eiga o mi ni ikimashō.",
+        "english": "Let's go watch a movie after class.",
+        "nepali": "कक्षा पछि चलचित्र हेर्नलाई जाऔं ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 34",
+    "grammar_point": "V1て／V1ないで + Verb2",
+    "form": "V1(て-form/ないで-form) + V2",
+    "english_explanation": "The て-form or ないで-form supports the following verb, clarifying the manner or state of the final action in the sentence.",
+    "nepali_explanation": "V て / V ないで form ले लगत्तै आउने Verb लाई समर्थन (support) गर्ने गर्दछ जस्ले वाक्यमा रहेको अन्तीम क्रियाको कार्य वा अवस्थालाई अझै प्रष्ट्याउने काम गर्दछ ।",
+    "examples": [
+      {
+        "japanese": "くつを はいて はしります。",
+        "romaji": "Kutsu o haite hashirimasu.",
+        "english": "I run wearing shoes.",
+        "nepali": "जुत्ता लगाएर दौडिन्छु ।"
+      },
+      {
+        "japanese": "くつを はかないで はしります。",
+        "romaji": "Kutsu o hakanaide hashirimasu.",
+        "english": "I run without wearing shoes.",
+        "nepali": "जुत्ता नलगाई दौडिन्छु ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 34",
+    "grammar_point": "V1ないで、V2ます／V2ました (without doing V1, do V2)",
+    "form": "V1ないで、V2",
+    "english_explanation": "Used to indicate which of two presented alternative possibilities was actually done.",
+    "nepali_explanation": "जब वक्ताले प्रस्तुत गरेका दुई वैकल्पिक सम्भावनाहरुबाट लिइएको कार्यको ढाँचालाई संकेत गर्न यो pattern को प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "ソニアさんに きかないで、プレゼントを かいました。",
+        "romaji": "Sonia-san ni kikanaide, purezento o kaimashita.",
+        "english": "I bought the gift without asking Sonia.",
+        "nepali": "सोनियाजीलाई नसोधिकन, गिफ्ट किने ।"
+      },
+      {
+        "japanese": "あした なにも しないで、ずっと えいがを みます。",
+        "romaji": "Ashita nani mo shinaide, zutto eiga o mimasu.",
+        "english": "Tomorrow, without doing anything, I'll watch movies all day.",
+        "nepali": "भोली केहीपनि नगरिकन चलचित्र हेर्छु ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 35",
+    "grammar_point": "Recap: ～V と (result-based conditional)",
+    "form": "V(root) + と",
+    "english_explanation": "Used for a result that follows a certain action/condition; suitable for facts and predictable outcomes. This form cannot express the speaker's own wish, invitation, permission, request, or decision.",
+    "nepali_explanation": "यो कुनैकार्यको नतिजालाई व्यक्त गरिने भएकोले यो अनुमान लगाउन सकिने र तथ्य कुरामा प्रयोग गरिन्छ । यो स्वरुपले वक्ताको इच्छा, चहाना, अनुमती, अनुरोध वा निर्णय भने व्यक्त गर्न सकिदैन ।",
+    "examples": [
+      {
+        "japanese": "これを まわすと、おとが おおきく なります。",
+        "romaji": "Kore o mawasu to, oto ga ōkiku narimasu.",
+        "english": "If you turn this, the sound gets louder.",
+        "nepali": "यो घुमायो भने आवाज ठुलो हुन्छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 35",
+    "grammar_point": "Recap: ～V たら (conditional, common in speech)",
+    "form": "V(たform) + ら",
+    "english_explanation": "Used when the specified action is expected to be accomplished once a certain process or condition is complete. Since this form is used in casual conversation, its use tends to be more frequent.",
+    "nepali_explanation": "कुनै निश्चित प्रक्रिया वा अवस्था पुरा भएमा भनीएको कार्य सम्पादन/पुरा हुने अवस्थामा प्रयोग गरिन्छ । यो form साधारण बोलिचालीको भाषामा बोलिने भएकोले यसको प्रयोग बढी हुनेगर्दछ ।",
+    "examples": [
+      {
+        "japanese": "もし じかんが なかったら、デートへ いきません。",
+        "romaji": "Moshi jikan ga nakattara, dēto e ikimasen.",
+        "english": "If I don't have time, I won't go on the date.",
+        "nepali": "यदि समय भएन भने, डेटिङ जादिन ।"
+      },
+      {
+        "japanese": "Biratnagar へ くれば、ぜひ れんらくして ください。",
+        "romaji": "Biratnagar e kureba, zehi renraku shite kudasai.",
+        "english": "If you come to Biratnagar, please be sure to contact me.",
+        "nepali": "विराटनगर आउनु भयो भने, अवश्य सम्पर्क गर्नुहोस् ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 35",
+    "grammar_point": "Noun + なら、～ (if it's ~)",
+    "form": "Noun + なら、～",
+    "english_explanation": "Used to give more information about a topic that someone raised or asked about.",
+    "nepali_explanation": "कसैले दिएको वा सोधेको विषय वस्तु माथि थप जानकारी दिनको लागी प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "つめたい ところに いきたいんですが……",
+        "romaji": "Tsumetai tokoro ni ikitai n desu ga...",
+        "english": "I want to go somewhere cold...",
+        "nepali": "चिसो ठाउ जान चाहान्छु......."
+      },
+      {
+        "japanese": "つめたい ところなら、Daman の ほうが いいですよ。",
+        "romaji": "Tsumetai tokoro nara, Daman no hō ga ii desu yo.",
+        "english": "If it's somewhere cold, Daman is better.",
+        "nepali": "यदि चिसो ठाउ हो भने, दमन ठिक हुन्छ नी ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 35",
+    "grammar_point": "W/H Question + Verb(Conditional Form) いいですか。 (asking for advice)",
+    "form": "Question word + Conditional form + いいですか",
+    "english_explanation": "Used to ask for the best suggestion or advice.",
+    "nepali_explanation": "सबैभन्दा उत्तम सुफाव वा सल्लाह लिन वा सोध्नको लागि यो स्वरुपको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "ダーランへ いきたいんですが、どうすれば いいですか。",
+        "romaji": "Dāran e ikitai n desu ga, dō sureba ii desu ka.",
+        "english": "I want to go to Dharan — what should I do?",
+        "nepali": "धरान जान चाहान्छु, के गर्दा ठिक होला ?"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 35",
+    "grammar_point": "Conditional Form + ほど ~ (the more ~, the more ~)",
+    "form": "A1(Conditional form) + A2(root/い～い/な) ほど ~",
+    "english_explanation": "The same verb or adjective is used in A1 and A2. This pattern shows that a change in the second part happens along with a change in the first part — 'the more you do A, the more B.'",
+    "nepali_explanation": "यहा A1 र A2 मा एउटै Verb वा Adjective को प्रयोग गरिन्छ । यो Pattern ले, अघिल्लो भागमा हुने परिवर्तन संगसंगै पछिल्लो भागको अवस्थामा पनी परिवर्तन आउने कुरालाई संकेत गर्दछ ।",
+    "examples": [
+      {
+        "japanese": "ビールは のめば のむほど おいしく なります。",
+        "romaji": "Bīru wa nomeba nomu hodo oishiku narimasu.",
+        "english": "The more you drink beer, the tastier it gets.",
+        "nepali": "बियर जति पियो उति मीठो हुन्छ ।"
+      },
+      {
+        "japanese": "ラーメンは あつければ あついほど おいしい です。",
+        "romaji": "Rāmen wa atsukereba atsui hodo oishii desu.",
+        "english": "Ramen is tastier the hotter it is.",
+        "nepali": "रामेन जति ताता उती मिठो हो ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 35",
+    "grammar_point": "「じょうけん」けい: Conditional Form",
+    "form": "Group I: い→え+ば; Group II: drop ます+れば; Group III: irregular; い-adj: い→ければ; な-adj/N: +なら",
+    "english_explanation": "The Conditional Form describes the necessary condition for the latter half of the sentence. あります becomes ない→なければ. い-adjectives drop the final い and add ければ; な-adjectives and Nouns add なら (dropping だ/な).",
+    "nepali_explanation": "Conditional Form ले Sentence को पछिल्लो भागलाई चाहिने आवश्यकतालाई वर्णन गर्दछ ।",
+    "examples": [
+      {
+        "japanese": "ドアの まえに たてば、ドアが あきます。",
+        "romaji": "Doa no mae ni tateba, doa ga akimasu.",
+        "english": "If you stand in front of the door, it opens.",
+        "nepali": "ढोकाको अगाडि उभिएमा, ढोका खुल्छ ।"
+      },
+      {
+        "japanese": "はれなら、ここから アンナプルナが みえます。",
+        "romaji": "Harenara, koko kara Anna Puruna ga miemasu.",
+        "english": "If it's clear, you can see Annapurna from here.",
+        "nepali": "घाम लागेमा यहाँबाट अन्नपूर्ण देखिन्छ ।"
+      },
+      {
+        "japanese": "しつもんが なければ、これで おわりましょう。",
+        "romaji": "Shitsumon ga nakereba, kore de owarimashō.",
+        "english": "If there are no questions, let's end here.",
+        "nepali": "प्रश्न नभएमा, यसले अन्त गरौं ।"
+      },
+      {
+        "japanese": "むりなら、あさってまで やすんで ください。",
+        "romaji": "Muri nara, asatte made yasunde kudasai.",
+        "english": "If it's not possible, please rest until the day after tomorrow.",
+        "nepali": "असम्भव भएमा, पर्सी सम्म छुट्टी बस्नुस् ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 36",
+    "grammar_point": "V1 Root-form／V1ない-form + ように、V2 (so that ~)",
+    "form": "V1(root/ない) + ように、V2",
+    "english_explanation": "V1 indicates a goal or purpose, and V2 expresses the action needed to accomplish V1's goal.",
+    "nepali_explanation": "V1 ले लक्ष्य वा उद्देश्यलाई संकेत गर्दछ भने V2 ले V1 को लक्ष्य वा उद्देश्य पुरा हुनको लागी चाहिने कार्यलाई व्यक्त गर्दछ ।",
+    "examples": [
+      {
+        "japanese": "にほんごで はなせる ように、まいにち ４じかん にほんごを べんきょうして います。",
+        "romaji": "Nihongo de hanaseru yō ni, mainichi yojikan Nihongo o benkyō shite imasu.",
+        "english": "I study Japanese for 4 hours every day so that I'll be able to speak in Japanese.",
+        "nepali": "जापानिजमा कुरा गर्न सक्ने होस् भनी हरेकदिन ४ घण्टा जापानीज भाषा अध्ययन गर्दैछु ।"
+      },
+      {
+        "japanese": "なくさない ように、さいふを ポケットに いれて ください。",
+        "romaji": "Nakusanai yō ni, saifu o poketto ni irete kudasai.",
+        "english": "Put the wallet in your pocket so you don't lose it.",
+        "nepali": "नहराउने गरि पर्स गोजीमा राख्नुस् ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 36",
+    "grammar_point": "V root form／V ない→く + ように なります (become able to/unable to)",
+    "form": "V root/V ない→く + ように なります",
+    "english_explanation": "なります indicates a change from one state to another. Since the verb before なります indicates ability/possibility, it's usually a Potential Verb. V-なく なります indicates that an action can no longer be done. This form can also be used for a habit changing over time.",
+    "nepali_explanation": "「なります」ले कुनै पनि कुरा एउटा अवस्थाबाट अर्को अवस्थामा परिवर्तन भएको संकेत गर्दछ । यही 「なります」भन्दा अघिल्लो Verb ले क्षमता र सम्भाव्यतालाई संकेत गर्ने भएकोलेगर्दा Potential Verb को बढी प्रयोग हुन आउछ ।",
+    "examples": [
+      {
+        "japanese": "やっと、およげる ように なりました。",
+        "romaji": "Yatto, oyogeru yō ni narimashita.",
+        "english": "I finally became able to swim.",
+        "nepali": "अन्तत: पौडीन सकेभएँ ।"
+      },
+      {
+        "japanese": "としを とると、ちいさい じが よめなく なります。",
+        "romaji": "Toshi o toru to, chiisai ji ga yomenaku narimasu.",
+        "english": "As you get older, you become unable to read small text.",
+        "nepali": "उमेर बढ्दैएमा साना अक्षर पढ्न नसक्ने भईन्छ ।"
+      },
+      {
+        "japanese": "リターが ひけるように なりましたか。 いいえ、まだ ひけません。",
+        "romaji": "Gitā ga hikeru yō ni narimashita ka. Iie, mada hikemasen.",
+        "english": "Did you become able to play guitar? No, I still can't.",
+        "nepali": "गिटार बजाउन सक्ने हुनुभयो ? अँ, अझै बजाउन सक्दिन ।"
+      },
+      {
+        "japanese": "４ねんまえから、わたしは からいものを たべなく なりました。",
+        "romaji": "Yonen mae kara, watashi wa karai mono o tabenaku narimashita.",
+        "english": "Since 4 years ago, I've stopped eating spicy things.",
+        "nepali": "४ वर्ष अघिबाट म पिरोकुरा खान नसक्ने भएं ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 36",
+    "grammar_point": "V Root-form／V ない-form + ように します (make an effort to)",
+    "form": "V root/V ない + ように します",
+    "english_explanation": "Used to express a habit or continuous effort to do or not do something. ～ように して います describes a habit one keeps; ～ように して ください is an indirect, polite request (as opposed to the direct request of V てください／V ないでください).",
+    "nepali_explanation": "कुनै कुरा गर्न वा नगर्नको लागी गरिने बानी वा लगातारको प्रयासलाई व्यक्त गर्दा यो वाक्य ढाँचाको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "あさ おきて、みずを のむように して います。",
+        "romaji": "Asa okite, mizu o nomu yō ni shite imasu.",
+        "english": "I make a habit of drinking water after waking up in the morning.",
+        "nepali": "बिहान उठेर पानी पिउने (कोसिस) गर्छु ।"
+      },
+      {
+        "japanese": "やさいも たべるように して ください。",
+        "romaji": "Yasai mo taberu yō ni shite kudasai.",
+        "english": "Please make an effort to eat vegetables too.",
+        "nepali": "साकपात पनि खाने गर्नुहोस् ।"
+      },
+      {
+        "japanese": "じゅぎょうに おくれないように して ください。",
+        "romaji": "Jugyō ni okurenai yō ni shite kudasai.",
+        "english": "Please make sure not to be late for class.",
+        "nepali": "क्लासमा ढिला नहुने गर्नुहोस् ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 36",
+    "grammar_point": "とか (such as, and so on)",
+    "form": "N1とか、N2とか、～",
+    "english_explanation": "Like や, とか is used to give many examples. とか can also come at the end of a noun. Unlike や, とか is more commonly used in everyday conversation.",
+    "nepali_explanation": "～や ले जस्तै ～とか ले पनि धेरै उदाहरण दिनको लागि प्रयोग गरिन्छ । साथै ～や भन्दा, दैनिक हुने कुराकानीमा ～とか को प्राय: बढी प्रयोग हुन्छ ।",
+    "examples": [
+      {
+        "japanese": "どんな たべものが すきですか。 すし とか てんぷら とか ラーメンとか…………",
+        "romaji": "Donna tabemono ga suki desu ka. Sushi toka tenpura toka rāmen toka...",
+        "english": "What kind of food do you like? Things like sushi, tempura, ramen, and so on...",
+        "nepali": "कस्तो खानेकुरा मन पर्छ ? सुसी, तेन्पुरा, रामेन जस्ता कुराहरु....।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 37",
+    "grammar_point": "Passive Verb (受け身どうし)",
+    "form": "Group I: い→あ/わ+れます; Group II: drop ます+られます; Group III: irregular",
+    "english_explanation": "Used to express, politely and indirectly, an action done to the topic. All passive verbs conjugate as Group II verbs.",
+    "nepali_explanation": "Topic माथी केही गरिएको कार्यलाई विनम्र भई अप्रत्यक्ष रुपमा भन्नुपर्दा Passive Verb को प्रयोग गरिनछ । सबै Passive Verb हरु Group II का verb हुन् ।",
+    "examples": [
+      {
+        "japanese": "いいます → いわれます",
+        "romaji": "iimasu → iwaremasu",
+        "english": "say → be said/be told",
+        "nepali": "भन्छु → भनिन्छु"
+      },
+      {
+        "japanese": "みます → みられます",
+        "romaji": "mimasu → miraremasu",
+        "english": "see → be seen",
+        "nepali": "हेर्छु → हेरिन्छु"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 37",
+    "grammar_point": "Person1 は Person2 に Verb (passive)",
+    "form": "Person1 は Person2 に Passive Verb",
+    "english_explanation": "Used to express that something was done to Person1 by Person2. Here Person1 is the topic, and Person2 is marked with に, meaning 'by'.",
+    "nepali_explanation": "Person1 को तर्फ कसैद्वारा (Person2) केही गरिएको कार्यलाई व्यक्त गर्दा यो pattern को प्रयोग गरिन्छ । यहाँ Person1 चाँही Topic अलि Person2 लाई P に ले संकेत गरिन्छ जस्को अर्थ द्वारा हुन्छ र Passive Verb को प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "せんせいは わたしを ほめました。 わたしは せんせいに ほめられました。",
+        "romaji": "Sensei wa watashi o homemashita. Watashi wa sensei ni homeraremashita.",
+        "english": "The teacher praised me. I was praised by the teacher.",
+        "nepali": "शिक्षकले मलाई प्रशंसा गर्नुभयो । म शिक्षकद्वारा प्रशंसित भए ।"
+      },
+      {
+        "japanese": "わたしは ねこに かまれました。",
+        "romaji": "Watashi wa neko ni kamaremashita.",
+        "english": "I was bitten by a cat.",
+        "nepali": "म बिरालोद्वारा टोकिए ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 37",
+    "grammar_point": "Person1 は Person2 に Noun を Verb (passive)",
+    "form": "Person1 は Person2 に Noun を Passive Verb",
+    "english_explanation": "Used to express the feeling of Person1 (affected person) when Person2's action was directed at an object belonging to/related to Person1. Note: for expressing a favor received, V てもらいます is used instead.",
+    "nepali_explanation": "कसैको (Person2 को) कार्य चाँही अरुकसैको (Person1 को) मातहतमा रहेको वस्तु माथी निर्देशित हुन्छ भने कार्यले असर गरेको मान्छे (Person1) को भावनालाई व्यक्त गर्न यो स्वरुपको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "わたしは おとうとに ケーイギリスを こわされました。",
+        "romaji": "Watashi wa otōto ni kētai o kowasaremashita.",
+        "english": "My little brother broke my phone (on me).",
+        "nepali": "मेरो मोबाइल भाईले बिगारिदियो ।"
+      },
+      {
+        "japanese": "わたしは いぬに てを かまれました。",
+        "romaji": "Watashi wa inu ni te o kamaremashita.",
+        "english": "My hand was bitten by a dog.",
+        "nepali": "मेरो हात कुकुरले टोकिदियो ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 37",
+    "grammar_point": "Noun (things) が／は Passive Verb",
+    "form": "Noun が／は Passive Verb",
+    "english_explanation": "Used when not naming the person who did an action; の pairs with が or は after the object noun. Passive verb is used in this case, common in written texts and news reports.",
+    "nepali_explanation": "कुनै काम गरेको व्यक्तीलाई उल्लेख नगर्नुपर्दा यो स्वरुपको प्रयोगुगरी वस्तु (things) को पछि が वा は को प्रयोग गरिन्छ । यस्तो स्वरुप प्राय: लेख, समाचारहरुमा सुन्न पाइन्छ ।",
+    "examples": [
+      {
+        "japanese": "１４９２ねんに アメリカが はっけんされました。",
+        "romaji": "Sen yonhyaku kyūjū ni-nen ni Amerika ga hakken saremashita.",
+        "english": "America was discovered in the year 1492.",
+        "nepali": "सन् १४९२ सालमा अमेरिका पत्ता लगाइयो ।"
+      },
+      {
+        "japanese": "Ghode Jatra は カトマンズで ひらかれました。",
+        "romaji": "Ghode Jatra wa Katomanzu de hirakaremashita.",
+        "english": "Ghode Jatra was held in Kathmandu.",
+        "nepali": "घोडेजात्रा काठमाण्डौंमा गरियो ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 37",
+    "grammar_point": "Noun は Person に よって Passive Verb (invention/discovery)",
+    "form": "Noun は Person に よって Passive Verb",
+    "english_explanation": "When talking about who invented or discovered something, the inventor/discoverer is marked with に よって instead of に. Verbs like かきます、はつめいします、はっけんします are used in this pattern.",
+    "nepali_explanation": "कुनै पनि चीज वा कुराको आविष्कार (सिर्जना) वा पत्ता लगाइन्छ भने Passive Verb को प्रयोग गरी आविष्कार वा पत्ता लगाउने व्यक्तीलाई に को सट्टामा に よって ले संकेत गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "「Munamadan」は Laxmi Prasad Devkota に よって かかれました。",
+        "romaji": "'Munamadan' wa Laxmi Prasad Devkota ni yotte kakaremashita.",
+        "english": "'Munamadan' was written by Laxmi Prasad Devkota.",
+        "nepali": "'मुनामदन' चाँही लक्ष्मी प्रसाद देवकोटा द्वारा लेखिएको हो ।"
+      },
+      {
+        "japanese": "ひこうきは ライトきょうだい に よって はつめいされました。",
+        "romaji": "Hikōki wa Raito kyōdai ni yotte hatsumei saremashita.",
+        "english": "The airplane was invented by the Wright brothers.",
+        "nepali": "हवाईजहाज चाँही राईटब्रदर्स द्वारा आविष्कार गरिएको हो ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 37",
+    "grammar_point": "Noun から／Noun で つくられます。 (made from)",
+    "form": "Noun から／Noun で つくられます",
+    "english_explanation": "から marks the raw material something is made from. で marks the material when it can be seen at a glance from the finished product.",
+    "nepali_explanation": "जब कुनै कुरा वा चीज जुन कच्चा पदार्थबाट बनाइन्छ त्यसलाई から ले संकेत गर्दछ । साथै कुनै करा एम्ट हेर्दा के बाट बनिएको हो भनेर भन्न सकिन्छ भने, त्यो कच्चा पदार्थलाई で ले संकेत गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "ビールは むぎから つくられます。",
+        "romaji": "Bīru wa mugi kara tsukuraremasu.",
+        "english": "Beer is made from wheat/barley.",
+        "nepali": "बियर गँहुबाट बनाइन्छ ।"
+      },
+      {
+        "japanese": "この はしは たけで つくられました。",
+        "romaji": "Kono hashi wa take de tsukuraremashita.",
+        "english": "These chopsticks are made of bamboo.",
+        "nepali": "यो चप्स्टिक बाँसबाट बनाइएको हो ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 38",
+    "grammar_point": "Verb (plain form) の (nominalizer)",
+    "form": "Verb plain form + の",
+    "english_explanation": "の is attached to a verb's plain form to turn it into a noun.",
+    "nepali_explanation": "Verb को plain form मा の – Particle लगाएर Noun को रुपमा प्रयोग गर्न सकिन्छ ।",
+    "examples": [
+      {
+        "japanese": "テニスを するの",
+        "romaji": "tenisu o suru no",
+        "english": "playing tennis (nominalized)",
+        "nepali": "टेनिस खेल्नु"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 38",
+    "grammar_point": "Verb (Root form) のは Adjective です (evaluation)",
+    "form": "Verb root + のは + Adjective です",
+    "english_explanation": "Used to give an evaluation/reaction. Adjectives like むずかしい、やさしい、おもしろい、たのしい、きけん[な]、たいへん[な] are commonly used with this pattern.",
+    "nepali_explanation": "प्रतिक्रीया वा मुल्यान्कन गर्नको लागी यो pattern को प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "テニスを するのは おもしろい です。",
+        "romaji": "Tenisu o suru no wa omoshiroi desu.",
+        "english": "Playing tennis is fun.",
+        "nepali": "टेनिस खेल्न रमाईलो छ ।"
+      },
+      {
+        "japanese": "テニスを みるのは おもしろい です。",
+        "romaji": "Tenisu o miru no wa omoshiroi desu.",
+        "english": "Watching tennis is fun.",
+        "nepali": "टेनिस हेर्न रमाईलो छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 38",
+    "grammar_point": "Verb (Root form) のが Adjective です (likes/skills)",
+    "form": "Verb root + のが + Adjective です",
+    "english_explanation": "Used to describe likes/dislikes, skills, hobbies, or abilities, so adjectives like すき[な]、きらい[な]、じょうず[な]、へた[な]、はやい、おそい are used.",
+    "nepali_explanation": "यो स्वरुप कसैको मनपर्ने वा मननपर्ने तथा सिप, शौक वा क्षमता जस्ता कुरा वर्णन गर्नको लागी प्रयोग हुने भएकोलेगर्दा すき[な]、きらい[な]、じょうず[な]、へた[な]、はやい、おそい जस्ता Adjectives हरुको प्रयोग हुन्छ ।",
+    "examples": [
+      {
+        "japanese": "わたしは はなを そだてるのが すきです。",
+        "romaji": "Watashi wa hana o sodateru no ga suki desu.",
+        "english": "I like growing flowers.",
+        "nepali": "मलाई फुल हुर्काउन मनपर्छ ।"
+      },
+      {
+        "japanese": "フランスじんは あるくのが おそい です。",
+        "romaji": "Furansujin wa aruku no ga osoi desu.",
+        "english": "French people are slow walkers.",
+        "nepali": "फ्रान्सेलीहरु हिड्न ढिला हुन्छन् ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 38",
+    "grammar_point": "Verb (Root form) のを わすれました (forgot to do)",
+    "form": "Verb root + のを + わすれました",
+    "english_explanation": "Used when one forgot to do what the verb expresses.",
+    "nepali_explanation": "Verb ले भनेको कार्य गर्न बिर्सिएको खण्डमा प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "ははに でんわを するのを わすれました。",
+        "romaji": "Haha ni denwa o suru no o wasuremashita.",
+        "english": "I forgot to call my mother.",
+        "nepali": "आमालाई फोन गर्न बिर्सिए ।"
+      },
+      {
+        "japanese": "くつを かうのを わすれました。",
+        "romaji": "Kutsu o kau no o wasuremashita.",
+        "english": "I forgot to buy shoes.",
+        "nepali": "जुत्ता किन्न बिर्सिए ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 38",
+    "grammar_point": "Verb (plain form) のを しって いますか。 (do you know that ~)",
+    "form": "Verb plain form + のを しって いますか",
+    "english_explanation": "Used to ask whether the listener knows about something that was told to them. Note the difference between しりません and しりませんでした — the latter is used when you just learned of something from the question; the former when you still don't know.",
+    "nepali_explanation": "सुन्ने मान्छेलाई बताईएको कुरा थाहा छ वा छैन भनेर सोझ प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "ソニアさんが らいげつ けっこんするのを しって いますか。",
+        "romaji": "Sonia-san ga raigetsu kekkon suru no o shitte imasu ka.",
+        "english": "Do you know that Sonia is getting married next month?",
+        "nepali": "सोनियाजीले आउने महिना विवाह गर्ने कुरा थाहा छ ?"
+      },
+      {
+        "japanese": "たなかさんに あかちゃんが うまれたのを しって いますか。 いいえ、しりませんでした。",
+        "romaji": "Tanaka-san ni akachan ga umareta no o shitte imasu ka. Iie, shirimasen deshita.",
+        "english": "Do you know that Mr. Tanaka had a baby? No, I didn't know that.",
+        "nepali": "तानाकाजीले बच्चा जन्माउनुभएको कुरा थाहा छ ? अँह, थाहा थिएन ।"
+      },
+      {
+        "japanese": "スミスさんの じゅうしょを しって いますか。 いいえ、しりません。",
+        "romaji": "Sumisu-san no jūsho o shitte imasu ka. Iie, shirimasen.",
+        "english": "Do you know Mr. Smith's address? No, I don't know.",
+        "nepali": "स्मिथजीको ठेगाना थाहा छ ? अँह, थाहा छैन ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 38",
+    "grammar_point": "Verb/い-adj/な-adj/Noun plain form + のは N です (topic-focus)",
+    "form": "Plain form(だ→な for な-adj) + のは + N です",
+    "english_explanation": "If a noun represents a thing, person, or place, that noun can be marked with の as the topic; the topic then delivers more than half the information.",
+    "nepali_explanation": "यदि Noun ले वस्तु, व्यक्ती वा ठाउ जस्ता कुरालाई प्रतिनिधित्व (represent) गर्दछ भने त्यस्तै Noun लाई の – Particle लगाई, Topic को रुपमा प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "わたしが うまれたの は Gorkha の ちいさな むら です。",
+        "romaji": "Watashi ga umareta no wa Gorkha no chiisana mura desu.",
+        "english": "Where I was born is a small village in Gorkha.",
+        "nepali": "म जन्मीएको चाँही गोर्खाको सानो गाउँ हो ।"
+      },
+      {
+        "japanese": "１ねんで いちばん さむいの は Magh です。",
+        "romaji": "Ichinen de ichiban samui no wa Magh desu.",
+        "english": "The coldest time of the year is Magh.",
+        "nepali": "वर्षमा सबैभन्दा जाडो चाँही माघ हो ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 38",
+    "grammar_point": "～ときも／～ときや／～ときの／～ときに／～ときから",
+    "form": "とき + Particle",
+    "english_explanation": "Since とき (time) is a noun, various particles can attach after it.",
+    "nepali_explanation": "とき (समय) को पछाडि विभिन्न Particles हरु जोड्न सकिन्छ किनकी とき एउटा Noun हो ।",
+    "examples": [
+      {
+        "japanese": "みずを のめない ときも ある。",
+        "romaji": "Mizu o nomenai toki mo aru.",
+        "english": "There are also times when I can't drink water.",
+        "nepali": "पानी पिउन नसकीने समय पनि हुन्छ ।"
+      },
+      {
+        "japanese": "こまった ときに、わたしの ところに きて ください。",
+        "romaji": "Komatta toki ni, watashi no tokoro ni kite kudasai.",
+        "english": "When you're in trouble, please come to me.",
+        "nepali": "समस्या परेको बेलामा मेरो ठाउमा आउनुहोस् ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 39",
+    "grammar_point": "V て/V ないくて/い-adj→くて/な-adj→で 、～ (reason, cause)",
+    "form": "Cause-clause(て/くて/で form) 、Effect-clause",
+    "english_explanation": "In this pattern, the first half presents a cause and the second half presents the resulting effect. Compared to から (Lesson 9), this pattern has more restrictions: (1) the second half is limited to expressions without volition (e.g. びっくりする, あんしんする, こまる, さびしい, うれしい, ざんねんだ); (2) volitional expressions (wish, order, invitation, request) cannot appear in the second half — から is used instead; (3) the events in the two halves occur in sequence, first then second.",
+    "nepali_explanation": "यस वाक्यको ढाँचामा, वाक्यको पहिलो भागले कारण प्रस्तुत गर्दछ र दोश्रो भागले त्यो कारणले उत्पन्न गरेको परिणामलाई प्रस्तुत गर्दछ । ～से विपरीत, यस स्वरुपको प्रयोगमा धेरै अवरोधहरु हुन्छन् ।",
+    "examples": [
+      {
+        "japanese": "ニュースを きいて、びっくりしました。",
+        "romaji": "Nyūsu o kiite, bikkuri shimashita.",
+        "english": "I heard the news and was surprised.",
+        "nepali": "समाचार सुनेर अचम्मित भए ।"
+      },
+      {
+        "japanese": "かぞくに あえなくて、さびしいです。",
+        "romaji": "Kazoku ni aenakute, sabishii desu.",
+        "english": "I'm lonely because I can't meet my family.",
+        "nepali": "परिवारलाई भेट्न नसकेर, एक्लो छु ।"
+      },
+      {
+        "japanese": "どようびは つごうが わるくて、いけません。",
+        "romaji": "Doyōbi wa tsugō ga warukute, ikemasen.",
+        "english": "Saturday is inconvenient for me, so I can't go.",
+        "nepali": "शनिबार अवस्था खराबभएर, जान सकिन ।"
+      },
+      {
+        "japanese": "じこが あって、バスが おくれて しまいました。",
+        "romaji": "Jiko ga atte, basu ga okurete shimaimashita.",
+        "english": "There was an accident, so the bus was delayed.",
+        "nepali": "दुर्घटना भएर, बस ढिलो भयो ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 39",
+    "grammar_point": "Noun で (cause: natural events/incidents)",
+    "form": "Noun(event) で",
+    "english_explanation": "で marks the cause, using nouns for incidents and natural phenomena (じこ、じしん、かじ etc.). This pattern is not used for predictions or wishes.",
+    "nepali_explanation": "P で ले कारणलाई संकेत गर्दछ भनेर अध्ययन गर्यौं । यस केसमा प्रयोग हुने Noun हरुले घटनाहरु र प्राकृतिक घटनाहरुलाई संकेत गर्दछ जस्तै: じこ、じしん、かじ आदि ।",
+    "examples": [
+      {
+        "japanese": "じしんで ビルが たおれました。",
+        "romaji": "Jishin de biru ga taoremashita.",
+        "english": "The building collapsed due to the earthquake.",
+        "nepali": "भूकम्पले बिल्डिङ ढल्यो ।"
+      },
+      {
+        "japanese": "かじで むらが やけました。",
+        "romaji": "Kaji de mura ga yakemashita.",
+        "english": "The village burned down due to the fire.",
+        "nepali": "आगलागीले गाउँ जल्यो ।"
+      },
+      {
+        "japanese": "びょうきで かいしゃを やすみました。",
+        "romaji": "Byōki de kaisha o yasumimashita.",
+        "english": "I took a day off from work due to illness.",
+        "nepali": "बिरामले कम्पनी बिदाबस्यो ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 39",
+    "grammar_point": "Verb/い-adj/な-adj/Noun plain form + ので、～ (reason, softer than から)",
+    "form": "Plain form(だ→な) + ので、～",
+    "english_explanation": "Like から (Lesson 9), ので gives a reason, but leaves a softer impression on the listener and is often used to state a reason politely, ask permission, or make an excuse. Because it's a soft expression, it is not used with imperative/prohibitive forms.",
+    "nepali_explanation": "हामीले पाठ ९ मा अध्ययन गरेको ～से जस्तै ～ので ले पनि कारणलाई वयान गर्दछ । ～ので को प्रयोगले श्रोतामा कमजोर प्रभाव छोड्दै वक्ताको कुरालाई नरम बनाई प्राय: कारणलाई राम्रो ढँगले व्यक्त गर्न, अनुमति माग्न वा बहाना बनाउन प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "にほごが わからないので、えいごで はなして いただけませんか。",
+        "romaji": "Nihongo ga wakaranai node, eigo de hanashite itadakemasen ka.",
+        "english": "Since I don't understand Japanese, could you speak in English?",
+        "nepali": "जापानीज-भाषा नबुझ्ने भएकोले अङ्ग्रेजिमा कुरा गरिदिनु हुन्छकी ।"
+      },
+      {
+        "japanese": "あしたは あめなので、うちで やすみます。",
+        "romaji": "Ashita wa ame na node, uchi de yasumimasu.",
+        "english": "Since it's rainy tomorrow, I'll rest at home.",
+        "nepali": "भोली वर्षात्भएकोले घरमा आराम गर्छु ।"
+      },
+      {
+        "japanese": "ようじが ありますので、おさきに しつれいします。",
+        "romaji": "Yōji ga arimasu node, osaki ni shitsurei shimasu.",
+        "english": "Since I have some business to attend to, please excuse me for leaving first.",
+        "nepali": "काम भएकोले, कृपया म अघि जान्छु ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 39",
+    "grammar_point": "とちゅうで (on the way, in the middle of)",
+    "form": "V root form／Noun の + とちゅうで",
+    "english_explanation": "とちゅうで means 'on the way/in the middle of'. It is used after a verb's root form or after Noun の.",
+    "nepali_explanation": "とちゅうで को अर्थ बिचमा भन्ने हो । यो V root-form वा Noun の को पछी प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "がっこうへ いく とちゅうで ともだちに あいました。",
+        "romaji": "Gakkō e iku tochū de tomodachi ni aimashita.",
+        "english": "I met a friend on the way to school.",
+        "nepali": "विद्यालय जाने बिचमा साथीलाई भेटे ।"
+      },
+      {
+        "japanese": "マラソンの とちゅうで おなかが いたく なりました。",
+        "romaji": "Marason no tochū de onaka ga itaku narimashita.",
+        "english": "My stomach started hurting in the middle of the marathon.",
+        "nepali": "म्याराथनको बिचमा पेट दुख्यो ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 40",
+    "grammar_point": "WHO-Q word + Plain form + か、～",
+    "form": "Question word + Plain form + か、～",
+    "english_explanation": "Used to embed a question-word question into another sentence about some topic.",
+    "nepali_explanation": "यो स्वरुप कुनैपनी कुरा वा विषय वस्तुको बारेमा प्रश्नवाचक शब्दको साथ सोधपुछ गर्न प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "やまの たかさは どうやって はかるか、しりません。",
+        "romaji": "Yama no takasa wa dōyatte hakaru ka, shirimasen.",
+        "english": "I don't know how the height of a mountain is measured.",
+        "nepali": "पहाडको उचाई कसरी नाप्ने हो थाहाछैन ।"
+      },
+      {
+        "japanese": "しけんは なんじに はじまったか、わかりません。",
+        "romaji": "Shiken wa nanji ni hajimatta ka, wakarimasen.",
+        "english": "I don't know what time the exam started.",
+        "nepali": "परीक्षा कतिबजे सुरुभएछ थाहाछैन ।"
+      },
+      {
+        "japanese": "おかねを はらうとき どんな カードが ひつようか しらべて ください。",
+        "romaji": "Okane o harau toki donna kādo ga hitsuyō ka shirabete kudasai.",
+        "english": "Please check what kind of card is needed when paying.",
+        "nepali": "पैसा तिर्ने बेला कस्तो खालको कार्ड आवश्यक पर्छ पत्ता गर्नुहोस् ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 40",
+    "grammar_point": "Plain form + か どうか、～ (whether or not)",
+    "form": "Plain form(だ→な) + か どうか、～",
+    "english_explanation": "Used to ask about a topic without a question word, when unsure/uncertain. どうか is required after the plain form + か.",
+    "nepali_explanation": "यो स्वरुप कुनैपनी कुरा वा विषय वस्तु को बारेमा दोधार (confuse) भई प्रश्नवाचक शब्द विनानै सोधपुछ गर्नु पर्दा प्रयोग गरिन्छ । यसमा \"plain form か\"को पछि どうか को आवश्यक पर्दछ ।",
+    "examples": [
+      {
+        "japanese": "その はなしは ほんとうか どうか、わかりません。",
+        "romaji": "Sono hanashi wa hontō ka dōka, wakarimasen.",
+        "english": "I don't know whether that story is true or not.",
+        "nepali": "त्यो कुरा सत्य हो की कसो थाहा छैन ।"
+      },
+      {
+        "japanese": "にほんごの しけんを うけるか どうか、しりません。",
+        "romaji": "Nihongo no shiken o ukeru ka dōka, shirimasen.",
+        "english": "I don't know whether I'll take the Japanese exam or not.",
+        "nepali": "जापानीज-भाषाको परिक्षा दिउ की कसो थाहा छैन ।"
+      },
+      {
+        "japanese": "たべものが たりるか どうか、たしかめます。",
+        "romaji": "Tabemono ga tariru ka dōka, tashikamemasu.",
+        "english": "I'll check whether the food is enough or not.",
+        "nepali": "खानेकुरा पुग्छ की कसो पक्का गर्छु ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 40",
+    "grammar_point": "V て-form みます (try doing)",
+    "form": "V て-form + みます",
+    "english_explanation": "Here V て shows that the action is a trial/experiment.",
+    "nepali_explanation": "यहाँ V て ले दर्साइएको कार्य एक परिक्षण हो भनेर देखाउन प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "この ぼうしは あうか どうか、かぶって みます。",
+        "romaji": "Kono bōshi wa au ka dōka, kabutte mimasu.",
+        "english": "I'll try wearing this hat to see if it fits.",
+        "nepali": "यो टोपी ठिक हुन्छ की हुँदैन लगाएर हेर्छु ।"
+      },
+      {
+        "japanese": "しんかんせんに のって みて ください。",
+        "romaji": "Shinkansen ni notte mite kudasai.",
+        "english": "Please try riding the shinkansen.",
+        "nepali": "बुलेट रेलमा चढेर हेर्नुहोस् ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 40",
+    "grammar_point": "い-adj（～い）→～さ (adjective-to-noun)",
+    "form": "い-adj drop い + さ",
+    "english_explanation": "Drop the final い of an い-adjective and add さ to turn it into a noun expressing degree/measure. E.g. たかい(tall)→たかさ(height), おもい(heavy)→おもさ(weight), おおきい(big)→おおきさ(size).",
+    "nepali_explanation": "い-adj को अन्तको い लाई さ मा बदली, い-adj लाई Noun मा परिवर्तन गर्न सकिन्छ ।",
+    "examples": [
+      {
+        "japanese": "にもつの おもさ、どうやって はかりますか。",
+        "romaji": "Nimotsu no omosa, dōyatte hakarimasu ka.",
+        "english": "How do you measure the weight of the luggage?",
+        "nepali": "लगेजको तौल कसरी जोकिन्छ ?"
+      },
+      {
+        "japanese": "はしの ながさは 2839 メートル です。",
+        "romaji": "Hashi no nagasa wa nisen happyaku sanjū kyū mētoru desu.",
+        "english": "The length of the bridge is 2839 meters.",
+        "nepali": "पुलको लम्बाई २८३९ मीटर छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 40",
+    "grammar_point": "ソニアは がっこうで どうでしょうか。 (polite uncertain question)",
+    "form": "Topic + どうでしょうか",
+    "english_explanation": "～でしょうか is used to ask a question softly — the answer may be uncertain to the listener, and it can also be used even when the listener knows the answer for sure.",
+    "nepali_explanation": "～でしょうか को प्रयोग भने प्रश्न सोझ गरिन्छ जस्को उत्तर श्रोतालाई अनिश्चीत हुन सक्छ र प्रश्न जस्को उत्तर श्रोताले पक्का दिनसक्छ भने पनि ～でしょうか को प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "ソニアは がっこうで どうでしょうか。",
+        "romaji": "Sonia wa gakkō de dō deshō ka.",
+        "english": "I wonder how Sonia is doing at school.",
+        "nepali": "सोनिया विद्यालयमा कस्तो छ होला ?"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 41",
+    "grammar_point": "A に Noun を やります。 (giving to inferior/animal/plant)",
+    "form": "A に Noun を やります",
+    "english_explanation": "When the recipient is of lower status than the speaker, or is an animal or plant, やります is generally used instead of あげます.",
+    "nepali_explanation": "वक्ताले केही दिँदा यदि प्राप्तकर्ता चाँही तल्लो स्तरको व्यक्ती अथवा कुनै जनावर वा बोटविरुवा हो भने あげます को सट्टामा सामान्यतया やります को प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "わたしは めいに チョコレートを やりました。",
+        "romaji": "Watashi wa mei ni chokorēto o yarimashita.",
+        "english": "I gave chocolate to my niece.",
+        "nepali": "मैले मेरो भतिजनीलाई चकलेट दिए ।"
+      },
+      {
+        "japanese": "わたしは いぬに ほねを やりました。",
+        "romaji": "Watashi wa inu ni hone o yarimashita.",
+        "english": "I gave a bone to the dog.",
+        "nepali": "मैले कुकुरलाई हड्डी दिए ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 41",
+    "grammar_point": "A に Noun を いただきます。 (receiving from a superior)",
+    "form": "A に Noun を いただきます",
+    "english_explanation": "Used instead of もらいます when the speaker receives something from a person of higher social standing.",
+    "nepali_explanation": "वक्ताले आफु भन्दा समाजमा माथिल्लो स्तरको व्यक्तीबाट कुनै करा प्राप्त गरेको वा पाएको खण्डमा もらいます को सट्टामा いただきます को प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "わたしは せんせいに とけいを いただきました。",
+        "romaji": "Watashi wa sensei ni tokei o itadakimashita.",
+        "english": "I received a watch from my teacher.",
+        "nepali": "मैले शिक्षकबाट घडी पाए ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 41",
+    "grammar_point": "A が [わたしに] Noun を くださいます。 (superior giving to speaker)",
+    "form": "A が [わたしに] Noun を くださいます",
+    "english_explanation": "Used instead of くれます when a person of higher social standing gives something to the speaker.",
+    "nepali_explanation": "समाजमा माथिल्लो स्तरको व्यक्तीले आफूलाई केही दिनुभएको खण्डमा くれます को सट्टामा सामान्यतया くださいます को प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "オーナーが わたしに みかんを くださいました。",
+        "romaji": "Ōnā ga watashi ni mikan o kudasaimashita.",
+        "english": "The owner gave me mandarins.",
+        "nepali": "मालिकले मलाई सुन्तला दिनुभयो ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 41",
+    "grammar_point": "V て くださいませんか。 (a polite request)",
+    "form": "V て-form + くださいませんか",
+    "english_explanation": "Used for a polite request. Slightly less polite than V て いただけませんか.",
+    "nepali_explanation": "V て くださいませんか कुनैकुराको विनम्र अनुरोधको लागी प्रयोग गरिन्छ । तर यो स्वरुप V て いたださいませんか भन्दा कम विनम्रता देखाउछ ।",
+    "examples": [
+      {
+        "japanese": "スマホの つかいかたを おしえて くださいませんか。",
+        "romaji": "Sumaho no tsukaikata o oshiete kudasaimasen ka.",
+        "english": "Could you teach me how to use a smartphone?",
+        "nepali": "स्मार्टफोनको प्रयोग गर्ने तरिका सिकाई दिनुहुन्छ की ?"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 41",
+    "grammar_point": "Noun に Verb (as a token/memento)",
+    "form": "Noun に Verb",
+    "english_explanation": "に here means 'as a token of' or 'as a memento of'.",
+    "nepali_explanation": "यहाँ に ले संकेत गरेको Noun को अर्थ चिनोको रुपमा वा सम्फनाको रुपमा भन्ने हुन्छ ।",
+    "examples": [
+      {
+        "japanese": "せんせいが けっこんの おいわいに この とけいを くださいました。",
+        "romaji": "Sensei ga kekkon no oiwai ni kono tokei o kudasaimashita.",
+        "english": "My teacher gave me this watch as a wedding gift.",
+        "nepali": "शिक्षकले विवाहको उपलक्ष्यमा यो घडी दिनुभएको थियो ।"
+      },
+      {
+        "japanese": "わたしは ラリトプルりょこうの おみやげに pustakari を かいました。",
+        "romaji": "Watashi wa Raritopuru ryokō no omiyage ni pustakari o kaimashita.",
+        "english": "I bought pustakari as a souvenir from my Lalitpur trip.",
+        "nepali": "मैले ललितपुर भ्रमणको कोसेलीमा पुष्टकारी किने ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 42",
+    "grammar_point": "いし／むいし Verbs (volitional vs non-volitional)",
+    "form": "N/A",
+    "english_explanation": "Verbs can be divided into いし (volitional, ones you can wish/intend) and むいし (non-volitional, ones you cannot intend). E.g. みます is volitional, but みえます is non-volitional.",
+    "nepali_explanation": "Verb लाई いし भएको र इश नभएको (むいし) गरि विभाजन गर्न सकिन्छ । इच्छा व्यक्तगर्न सकिने Verb लाई いश भएको Verb र इच्छा व्यक्त गर्न नसकिनेलाई むいし भएको Verb भनिन्छ ।",
+    "examples": [
+      {
+        "japanese": "その やまを みて ください。",
+        "romaji": "Sono yama o mite kudasai.",
+        "english": "Please look at that mountain. (grammatical — みます is volitional)",
+        "nepali": "हेर्नुहोस् भन्न सकिन्छ ।"
+      },
+      {
+        "japanese": "その やまを みえて ください。",
+        "romaji": "Sono yama o miete kudasai.",
+        "english": "(Ungrammatical — みえます is non-volitional, cannot be commanded)",
+        "nepali": "देख्नुहोस् भनेर भन्न सकिँदैन ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 42",
+    "grammar_point": "Verb(Root form)／Noun の + ために、～ (for the purpose of)",
+    "form": "V root/N の + ために、～",
+    "english_explanation": "Used to express the goal of a verb's action or a noun's purpose. Note: Noun の ために can also mean 'for the benefit of' the noun.",
+    "nepali_explanation": "Verb को कार्य र Noun को उद्देश्यलाई व्यक्त गर्न यो pattern को प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "くるまを かう ために、ちょきんして います。",
+        "romaji": "Kuruma o kau tame ni, chokin shite imasu.",
+        "english": "I'm saving money in order to buy a car.",
+        "nepali": "कार किन्नको लागी बचत गर्दैछु ।"
+      },
+      {
+        "japanese": "けんこうの ために、まいあさ うんどうして います。",
+        "romaji": "Kenkō no tame ni, maiasa undō shite imasu.",
+        "english": "I exercise every morning for my health.",
+        "nepali": "स्वास्थ्यको लागी हरेक बिहान व्यायाम गर्दैछु ।"
+      },
+      {
+        "japanese": "にほんで はたらく ために、にほんごを べんきょうして います。",
+        "romaji": "Nihon de hataraku tame ni, Nihongo o benkyō shite imasu.",
+        "english": "I'm studying Japanese in order to work in Japan.",
+        "nepali": "जापानमा काम गर्नको लागी जापानीज-भाषा अध्ययनगर्दैछु ।"
+      },
+      {
+        "japanese": "かぞくの ために、いっしょうけんめい はたらいて います。",
+        "romaji": "Kazoku no tame ni, isshōkenmei hataraite imasu.",
+        "english": "I'm working hard for my family.",
+        "nepali": "परिवारको लागी भनेर ज्यान दिएर काम गर्दैछु ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 42",
+    "grammar_point": "Verb(Root form)の／Noun + に ～ (used for, useful for)",
+    "form": "V root form の / Noun に つかいます／やくにたちます／かかります／ひつようです／いります",
+    "english_explanation": "As in Lesson 38, the verb root form + の can act as a noun. Words like つかいます、いいです、べんりです、やくに たちます、じかんが かかります、ひつようです、いります appear after this pattern to state purpose/usefulness.",
+    "nepali_explanation": "पाठ ३८ मा अध्ययन गरे अनुसार हामी V-root form の एउटा Noun को रुपमा प्रयोग गर्न सकिन्छ । उद्देश्य बताउनको लागी つかいます、いいです、べんりです、やくに たちます、じかんが かかります、ひつようです、いります जस्ता शब्दहरु यो pattern को पछिल्लो भागमा प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "この はさみは かみを きるのに つかいます。",
+        "romaji": "Kono hasami wa kami o kiru no ni tsukaimasu.",
+        "english": "These scissors are used for cutting paper.",
+        "nepali": "यो कैँची कपाल काट्नको लागी प्रयोग गरिन्छ ।"
+      },
+      {
+        "japanese": "あたらしい はしを つくるのに じかんが かかります。",
+        "romaji": "Atarashii hashi o tsukuru no ni jikan ga kakarimasu.",
+        "english": "It takes time to build a new bridge.",
+        "nepali": "नयाँ पुल बनाउनलाई समय लाग्छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 42",
+    "grammar_point": "Quantifier + は (minimum amount)",
+    "form": "Quantifier + は",
+    "english_explanation": "When は is attached to a quantifier, it indicates that the speaker's estimated minimum amount is necessary.",
+    "nepali_explanation": "परिमाणकसँग は-Particle जोडीएको बेलामा は-Particle ले वक्ताले अड्कल वा अनुमान गरेको न्युनतम मात्रा आवश्यक छ भन्ने कुरालाई सुचीत गर्दछ ।",
+    "examples": [
+      {
+        "japanese": "イベレストに のぼるのに １０００まんえんは いります。",
+        "romaji": "Anna Puruna ni noboru no ni issen man-en wa irimasu.",
+        "english": "It takes at least 10 million yen to climb Annapurna.",
+        "nepali": "अन्नपूर्ण चढ्नकोलागी एक करोड एन चाँही चाहिन्छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 42",
+    "grammar_point": "Quantifier + も (more than expected)",
+    "form": "Quantifier + も",
+    "english_explanation": "When も is attached to a quantifier, it indicates that the amount is greater than the speaker's estimate/expectation.",
+    "nepali_explanation": "परिमाणकसँग も-Particle जोडीएको बेलामा も-Particle ले वक्ताले अड्कल वा अनुमान गरेको भन्दा बढी मात्रा लाग्ने कुरालाई सुचीत गर्दछ ।",
+    "examples": [
+      {
+        "japanese": "ラリトプルから ダーランに つくのに ７じなかんも かかりました。",
+        "romaji": "Raritopuru kara Dāran ni tsuku no ni shichijikan mo kakarimashita.",
+        "english": "It took as much as 7 hours to get from Lalitpur to Dharan.",
+        "nepali": "ललितपुरबाट धरानमा पुग्नको लागी ७ घण्टा पो लाग्यो ।"
+      },
+      {
+        "japanese": "けっこんするのに、２００まんえんも ひつようなんですか。",
+        "romaji": "Kekkon suru no ni, nihyaku man-en mo hitsuyō nan desu ka.",
+        "english": "Do you really need as much as 2 million yen to get married?",
+        "nepali": "विवाह गर्नको लागी २० लाख एन पनि आवश्यक पर्छ र ?"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 43",
+    "grammar_point": "V ます-form／い-adj／な-adj + そうです (looks like/seems)",
+    "form": "V ます-stem/い-adj(drop い)/な-adj[な] + そうです",
+    "english_explanation": "Used to express one's impression or expectation formed by looking at a characteristic of a thing, person, or situation. This section covers estimating events about to happen (V ます-form, using words like いまにも、もうすぐ、これから).",
+    "nepali_explanation": "कुनै चिज, व्यक्ती वा अवस्थाको लक्षण वा गुण देखेर त्यसको आधारमा अन्दाज गरि यस्तो होला जस्तो छ अथवा त्यो चिज यस्तो देखिन्छ भन्ने धारणा वा आशय व्यक्त गर्नुपर्दा यो स्वरुपको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "いまにも あられが ふりそう です。",
+        "romaji": "Ima ni mo arare ga furisō desu.",
+        "english": "It looks like it's about to hail any moment.",
+        "nepali": "अहिलेपनि असिना पर्छ जस्तो छ ।"
+      },
+      {
+        "japanese": "もうすぐ ばらが さきそう です。",
+        "romaji": "Mōsugu bara ga sakisō desu.",
+        "english": "The roses look like they're about to bloom soon.",
+        "nepali": "अबचाँडै गुलाफ फुल्छ जस्तो छ ।"
+      },
+      {
+        "japanese": "ゆかに ころんで、あの こは なきそう です。",
+        "romaji": "Yuka ni koronde, ano ko wa nakisō desu.",
+        "english": "That child fell on the floor and looks about to cry.",
+        "nepali": "भुईमा लडेर त्यो बच्चा रोला जस्तो छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 43",
+    "grammar_point": "い-adj／な-adj + そうです (appearance-based guess)",
+    "form": "い-adj(drop い)/な-adj[な] + そうです",
+    "english_explanation": "Used to express an unconfirmed impression formed by observing a quality of an object or person. Note: with emotional adjectives like うれしい, かなしい, さびしい, this form is used only when guessing another person's feelings, since one can only guess at those.",
+    "nepali_explanation": "कुनै वस्तु वा व्यक्तीमा भएको गुण देखेर त्यो सम्बन्धि अनुमान लगाईएको तर, तथ्यको रुपमा साबित नभईसकेको धारणालाई व्यक्त गर्नुपर्दा यो स्वरुपको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "その くつは たかそう です。",
+        "romaji": "Sono kutsu wa takasō desu.",
+        "english": "Those shoes look expensive.",
+        "nepali": "त्यो जुत्ता महँगो जस्तो देखिन्छ ।"
+      },
+      {
+        "japanese": "あの ひとは てんさいそう です。",
+        "romaji": "Ano hito wa tensaisō desu.",
+        "english": "That person looks like a genius.",
+        "nepali": "उ त्यो व्यक्ती प्रतिभाशाली जस्तो छ ।"
+      },
+      {
+        "japanese": "ソニアさんは かなしそう です。",
+        "romaji": "Sonia-san wa kanashisō desu.",
+        "english": "Sonia looks sad.",
+        "nepali": "सोनियाजी दुःखी जस्तो देखिन्छ ।"
+      },
+      {
+        "japanese": "この つくえは じょうぶそう です。",
+        "romaji": "Kono tsukue wa jōbusō desu.",
+        "english": "This desk looks sturdy.",
+        "nepali": "यो डेस्क बलियो जस्तो छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 44",
+    "grammar_point": "V て きます (do and come back)",
+    "form": "V て-form + きます",
+    "english_explanation": "Means 'go somewhere, do something, and come back'. で marks the place where the action happens; if something is moved from one place to another, から is used instead since the action indicates a purpose.",
+    "nepali_explanation": "यसको अर्थ \"कतै जान्छु, केही गर्छु र फिर्ता आउछु\" भन्ने हुन्छ ।",
+    "examples": [
+      {
+        "japanese": "ちょっと ジュースを かって きます。",
+        "romaji": "Chotto jūsu o katte kimasu.",
+        "english": "I'll go buy juice and come back.",
+        "nepali": "एकैछिन जुस किनेर आउछु ।"
+      },
+      {
+        "japanese": "スーパーで ぎょうにゅうを かって きます。",
+        "romaji": "Sūpā de gyūnyū o katte kimasu.",
+        "english": "I'll go buy milk at the supermarket and come back.",
+        "nepali": "सुपरमार्केटमा गाईको दुध किनेर आउछु ।"
+      },
+      {
+        "japanese": "れいぞうこから ビールを とって きます。",
+        "romaji": "Reizōko kara bīru o totte kimasu.",
+        "english": "I'll go get beer from the fridge.",
+        "nepali": "फ्रिजबाट बियर लिएर आउछु ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 44",
+    "grammar_point": "Place へ いって きます (go and come back)",
+    "form": "Place へ いって きます",
+    "english_explanation": "Means 'go somewhere and then come back'. Used when not specifying what will be done at the destination.",
+    "nepali_explanation": "यसको अर्थ \"कतै जान्छु र त्यसपछि फिर्ता आउछु\" भन्ने हुन्छ ।",
+    "examples": [
+      {
+        "japanese": "ダーランへ いって きます。",
+        "romaji": "Dāran e itte kimasu.",
+        "english": "I'm going to Dharan (and will come back).",
+        "nepali": "धरान तिर गएर आउछु ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 44",
+    "grammar_point": "でかけて きます (go out and come back)",
+    "form": "でかけて きます",
+    "english_explanation": "Means 'go out somewhere and come back', used when not specifying where you're going out to or what you'll do there.",
+    "nepali_explanation": "यसको अर्थ \"कतै बाहिर निस्कन्छु र फिर्ता आउछु\" भन्ने हुन्छ ।",
+    "examples": [
+      {
+        "japanese": "ちょっと てかけて きます。",
+        "romaji": "Chotto dekakete kimasu.",
+        "english": "I'll go out for a bit and come back.",
+        "nepali": "एकैछिन बाहीर निस्केर आउछु ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 45",
+    "grammar_point": "V root／V た／V ない／い-adj／な-adj／Noun の + ばあいは、～",
+    "form": "Various form + ばあいは、～",
+    "english_explanation": "ばあいは describes a hypothetical situation, with the following clause describing how to handle it. ばあい is a noun.",
+    "nepali_explanation": "～ばあいは चाँही काल्पनिक परिस्थितीको बारेमा भन्न प्रयोग गरिने भएकोले पछिल्लो भागले चाँही कसरी त्यो परिस्थितीको सामना गर्ने भनेर व्यक्त गर्दछ । ばあい एउटा Noun हो ।",
+    "examples": [
+      {
+        "japanese": "じかんに こられない ばあいは、れんらくして ください。",
+        "romaji": "Jikan ni korarenai baai wa, renraku shite kudasai.",
+        "english": "If you can't come on time, please contact me.",
+        "nepali": "समयमा आउन नसक्ने अवस्थामा, सम्पर्क गर्नुहोस् ।"
+      },
+      {
+        "japanese": "おかねが ひつような ばあいは、わたしに いって ください。",
+        "romaji": "Okane ga hitsuyō na baai wa, watashi ni itte kudasai.",
+        "english": "If you need money, please tell me.",
+        "nepali": "पैसा आवश्यकपरेको अवस्थामा, मलाई भन्नुहोस् ।"
+      },
+      {
+        "japanese": "かじの ばあいは、しょうぼうしゃを よんで ください。",
+        "romaji": "Kaji no baai wa, shōbōsha o yonde kudasai.",
+        "english": "In case of a fire, please call a fire truck.",
+        "nepali": "आगलागी भएको अवस्थामा, दमकल बोलाउनुहोस् ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 45",
+    "grammar_point": "Verb/い-adj/な-adj/Noun plain form + のに、～ (even though)",
+    "form": "Plain form(だ→な) + のに、～",
+    "english_explanation": "Used when the result in the second half is different from what was expected.",
+    "nepali_explanation": "पछिल्लो भागमा अपेक्षा गरेको भन्दा भिन्न परिणाम आएको छ भने यो स्वरुपको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "やくそくしたのに、かのじょは きませんでした。",
+        "romaji": "Yakusoku shita noni, kanojo wa kimasen deshita.",
+        "english": "Even though we had promised, she didn't come.",
+        "nepali": "बाचा गरेता पनि साथीनी आइन ।"
+      },
+      {
+        "japanese": "この うちは おおきいのに、やすい です。",
+        "romaji": "Kono uchi wa ōkii noni, yasui desu.",
+        "english": "Even though this house is big, it's cheap.",
+        "nepali": "यो घर ठुलो भएता पनि सस्तो छ ।"
+      },
+      {
+        "japanese": "どようびなのに、がっこうへ いかなければ なりません。",
+        "romaji": "Doyōbi na noni, gakkō e ikanakereba narimasen.",
+        "english": "Even though it's Saturday, I have to go to school.",
+        "nepali": "शनिबार भएता पनि विद्यालय नगई हुँदैन ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 46",
+    "grammar_point": "Verb (root form) ところ です。 (about to)",
+    "form": "V root + ところです",
+    "english_explanation": "Used to express that an action is about to begin or is at the right moment to start. Words like これから、[ちょうど]いまから make the sentence clearer.",
+    "nepali_explanation": "कुनै कार्य सुरु हुन लागेको वा गर्न ठीक परेको आशय व्यक्त गर्नुपर्दा यो स्वरुपको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "これから てがみを かく ところです。",
+        "romaji": "Korekara tegami o kaku tokoro desu.",
+        "english": "I'm about to write a letter now.",
+        "nepali": "अब चिट्ठी लेख्न गईरहेको छु ।"
+      },
+      {
+        "japanese": "いまから でんわを する ところです。",
+        "romaji": "Ima kara denwa o suru tokoro desu.",
+        "english": "I'm about to make a phone call now.",
+        "nepali": "अब फोन गर्न गईरहेको छु ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 46",
+    "grammar_point": "V ている ところ です。 (in the middle of doing)",
+    "form": "V ている + ところです",
+    "english_explanation": "Used to express that an action is currently happening or being done. Often paired with いま.",
+    "nepali_explanation": "कुनै कार्य अहिले भईरहेको वा गरीरहेको आशय व्यक्त गर्नुपर्दा यो स्वरुपको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "いま ごはんを たべて いる ところです。",
+        "romaji": "Ima gohan o tabete iru tokoro desu.",
+        "english": "I'm in the middle of eating right now.",
+        "nepali": "अहिले खाना खाईरहेको छु ।"
+      },
+      {
+        "japanese": "いま けっかを しらべて いる ところです。",
+        "romaji": "Ima kekka o shirabete iru tokoro desu.",
+        "english": "I'm currently checking the results.",
+        "nepali": "अहिले परिणाम खोजीरहेको छु ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 46",
+    "grammar_point": "V た ところ です。 (just finished)",
+    "form": "V た + ところです",
+    "english_explanation": "Used to indicate that an action or event has just been completed. Often paired with たったいま.",
+    "nepali_explanation": "कुनै पनि कार्य भर्खर सकिएको वा पुरा भएको अवस्थालाई जनाउनको लागि यो स्वरुपको प्रयोग गरिन्छ । त्यसैले たったいま सँग प्राय: प्रयोग हुन्छ ।",
+    "examples": [
+      {
+        "japanese": "たったいま ぎんこうに ついた ところ です。",
+        "romaji": "Tatta ima ginkō ni tsuita tokoro desu.",
+        "english": "I just arrived at the bank.",
+        "nepali": "भर्खरै बैंकमा पुगे ।"
+      },
+      {
+        "japanese": "なやんで いる ところじゃないんだよ。",
+        "romaji": "Nayande iru tokoro ja nai n da yo.",
+        "english": "This isn't the time to be worrying.",
+        "nepali": "चिन्तित हुनेबेला होइन ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 46",
+    "grammar_point": "V た ばかり です。 (just did)",
+    "form": "V た + ばかりです",
+    "english_explanation": "Used to indicate that an action or event happened just a short while ago, not long ago. ばかり means 'just/recently'.",
+    "nepali_explanation": "यस्ले कुनै कार्य वा घटना भएको धेरै समय वितिसकेको छैन, एकैछिन अगाडी भएको हो भनेर भन्नको लागी यो स्वरुपको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "さっき たばこを すった ばかり です。",
+        "romaji": "Sakki tabako o sutta bakari desu.",
+        "english": "I just smoked a cigarette a while ago.",
+        "nepali": "अघि भर्खरै चुरोट पिएको हो ।"
+      },
+      {
+        "japanese": "さっき ごはんを たべた ばかりなのに また ラーメンを たべたくなりました。",
+        "romaji": "Sakki gohan o tabeta bakari na noni mata rāmen o tabetaku narimashita.",
+        "english": "Even though I just ate a while ago, I wanted to eat ramen again.",
+        "nepali": "अघि भर्खर खाना खाएता पनि फेरी चाउचाउ खात मन लाग्यो ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 46",
+    "grammar_point": "V root／V ない／い-adj／な-adj／Noun の + はず です (should/must be)",
+    "form": "Various form + はず です",
+    "english_explanation": "Used when the speaker is convinced that something they have guessed, thought, or reasoned is true. The scale of certainty is: はずだ > でしょう > とおもう > かもしれない.",
+    "nepali_explanation": "आफ्नो अन्दाजले, बिचारले, मनले, सोचले उल्लेख गरिएको कुरा साच्चीकै हुन्छ भन्ने विश्वस्त (convinced) भएको अवस्थामा यो स्वरुपको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "ソニアさんは きょう くる はずです。けさ はなしましたから。",
+        "romaji": "Sonia-san wa kyō kuru hazu desu. Kesa hanashimashita kara.",
+        "english": "Sonia should come today, since we talked this morning.",
+        "nepali": "सोनियाजी आज आउनुहुनेछ । आज बिहान गफ गरेको हुनाले ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 47",
+    "grammar_point": "Plain Form + そう です (hearsay)",
+    "form": "Plain form + そう です",
+    "english_explanation": "Used to pass along information received from a source without adding one's own view. If the source is stated, it is marked with ～に よると ('according to ~') at the start of the sentence.",
+    "nepali_explanation": "कुनै स्रोतबाट प्राप्त गरिएको जानकारी मा आफ्नो कुनैपनि दृष्टीकोण थपनगरि व्यक्त गर्नकोलागी यो स्वरुपको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "Bhutan は とても きれいだそうです。",
+        "romaji": "Bhutan wa totemo kirei da sō desu.",
+        "english": "I've heard that Bhutan is very beautiful.",
+        "nepali": "मैले सुनेको भुटान असाध्यै सुन्दर छ रे ।"
+      },
+      {
+        "japanese": "てんきよほうに よると、あしたは すずしくなるそうです。",
+        "romaji": "Tenki yohō ni yoru to, ashita wa suzushiku naru sō desu.",
+        "english": "According to the weather forecast, it will get cool tomorrow.",
+        "nepali": "मौसम जानकारीको अनुसार भोली शितल हुन्छ रे ।"
+      },
+      {
+        "japanese": "この ケーキは おいしいそうです。",
+        "romaji": "Kono kēki wa oishii sō desu.",
+        "english": "I've heard this cake is delicious.",
+        "nepali": "मैले सुनेको यो केक मिठो छ रे ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 47",
+    "grammar_point": "Verb/い-adj/な-adj/Noun plain form + ようです (appears/seems)",
+    "form": "Plain form(だ→な for な-adj, だ→の for Noun) + ようです",
+    "english_explanation": "Used to express an inference based on information obtained through the speaker's own senses. When ようです is combined with どうも, the speaker is not fully certain that what they say is true.",
+    "nepali_explanation": "वक्ताले संवेदी अंगहरु (sensory organs) मार्फत प्राप्त गरेको जानकारीको अनुसार अनुमान व्यक्त गर्नुपर्दा यो स्वरुपको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "そとは さむいようです。",
+        "romaji": "Soto wa samui yō desu.",
+        "english": "It seems cold outside.",
+        "nepali": "बाहिर पक्कै जाडो जस्तो छ ।"
+      },
+      {
+        "japanese": "あめが ふって いるようです。",
+        "romaji": "Ame ga futte iru yō desu.",
+        "english": "It seems to be raining.",
+        "nepali": "पानी पक्कै परिरहेको छ ।"
+      },
+      {
+        "japanese": "せきも でるし、あたまも いたい。どうも かぜを ひいたようだ。",
+        "romaji": "Seki mo deru shi, atama mo itai. Dōmo kaze o hiita yō da.",
+        "english": "I'm coughing and my head aches. It seems like I've caught a cold.",
+        "nepali": "खोकी पनि छ, टाउको पनि दुखेको छ । लाग्छ की चीसो लागेको जस्तो छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 47",
+    "grammar_point": "～そうです vs ～ようです (source of judgement)",
+    "form": "Comparison",
+    "english_explanation": "①こわそうです is a judgment based on how something looks (e.g. appearance). ②こわいようです is a judgment based on something read, heard, or told by someone else.",
+    "nepali_explanation": "① मा देखाईएको आधारमा निर्णय गरीएको छ भने, ② मा चाँही व्यक्ताले कतै पढेको, सुनेको र कसैले भनिदिएको आधारमा निर्णय गरिएको छ ।",
+    "examples": [
+      {
+        "japanese": "トランプさんは こわそうです。",
+        "romaji": "Toranpu-san wa kowasō desu.",
+        "english": "Mr. Trump looks scary. (judged by appearance)",
+        "nepali": "ट्रम्पजी डरलाग्दो जस्तो देखिन्छ ।"
+      },
+      {
+        "japanese": "トランプさんは こわいようです。",
+        "romaji": "Toranpu-san wa kowai yō desu.",
+        "english": "I hear Mr. Trump is scary. (judged from hearsay)",
+        "nepali": "ट्रम्पजी पक्कै डरलाग्दो हुनुहुन्छ रे ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 47",
+    "grammar_point": "こえ／おと／におい／あじ が します。 (senses)",
+    "form": "こえ／おと／におい／あじ が します",
+    "english_explanation": "Used to express what is perceived through the senses (voice/sound/smell/taste), with the sense of being perceived without any deliberate effort or intention.",
+    "nepali_explanation": "इन्द्रियहरुले बुफ्न सक्ने घटना अथवा कार्य लाई ～が します प्रयोग गरि व्यक्त गर्न सकिन्छ ।",
+    "examples": [
+      {
+        "japanese": "へんな おとが しますね。",
+        "romaji": "Hen na oto ga shimasu ne.",
+        "english": "What a strange sound, isn't it!",
+        "nepali": "कस्तो अनौठो आवाज छ है!"
+      },
+      {
+        "japanese": "なにか くさっている においが しますね。",
+        "romaji": "Nanika kusatte iru nioi ga shimasu ne.",
+        "english": "There's a smell of something rotting, isn't there!",
+        "nepali": "केही कुहिरहेको गन्ध छ है!"
+      },
+      {
+        "japanese": "へんな あじが しています。",
+        "romaji": "Hen na aji ga shite imasu.",
+        "english": "It has a strange taste!",
+        "nepali": "कस्तो अनौठो स्वाद छ है!"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 48",
+    "grammar_point": "しえきどうし (Causative Verb)",
+    "form": "Group I: い→あ+せます; Group II: drop ます+させます; Group III: irregular",
+    "english_explanation": "Used to make someone do something or let someone do something. All causative verbs conjugate as Group II verbs.",
+    "nepali_explanation": "कसैलाई कुनै कार्य गर्नलागाउन वा गराउन पर्दा Causative Verb को प्रयोग गरिनछ ।",
+    "examples": [
+      {
+        "japanese": "いいます → いわせます",
+        "romaji": "iimasu → iwasemasu",
+        "english": "say → make (someone) say",
+        "nepali": "भन्छु → भन्नलगाउछु"
+      },
+      {
+        "japanese": "たべます → たべさせます",
+        "romaji": "tabemasu → tabesasemasu",
+        "english": "eat → make (someone) eat",
+        "nepali": "खान्छु → खुआउछु"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 48",
+    "grammar_point": "N(person-junior)を V (Intransitive Causative Verb)",
+    "form": "N を Causative Verb (intransitive)",
+    "english_explanation": "Used when a person of higher status makes a person of lower status do something. Note: if the sentence also has N(place)を with an intransitive verb, the junior person is marked with に instead.",
+    "nepali_explanation": "ठुला मान्छेले साना मान्छेलाई कुनै कार्य गर्न लगाउने अवस्थामा यो स्वरुपको प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "ラムさんは ニマさんを みせへ いかせました。",
+        "romaji": "Ramu-san wa Nima-san o mise e ikasemashita.",
+        "english": "Mr. Ram made Nima go to the shop.",
+        "nepali": "रामजीले निमाजीलाई पसल पठाउनुभयो ।"
+      },
+      {
+        "japanese": "わたしは むすめを じゆうに あそばせました。",
+        "romaji": "Watashi wa musume o jiyū ni asobasemashita.",
+        "english": "I let my daughter play freely.",
+        "nepali": "मैले छोरीलाई स्वतन्त्रतापुर्वक खेल्न दिएँ ।"
+      },
+      {
+        "japanese": "わたしは こどもに みちの みぎがわを あるかせます。",
+        "romaji": "Watashi wa kodomo ni michi no migigawa o arukasemasu.",
+        "english": "I make the child walk on the right side of the road.",
+        "nepali": "म बच्चालाई बाटोको दाहिने पट्टी हिडाउछु ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 48",
+    "grammar_point": "(superior)は N(junior)に V (Transitive Causative Verb)",
+    "form": "は N に Causative Verb (transitive)",
+    "english_explanation": "Used when someone of higher status makes someone of lower status do something (obligating) or permits them to do something. Even feeling-related verbs (あんしんします、しんぱいします、がっかりします、よろこびます、かなしみます、おこります) can express the junior person's expression this way.",
+    "nepali_explanation": "ठुला मान्छेहरुबाट अह्राउने काम हुने भएकोले कुनै कुरालाई बाध्यत गराउँदा अथवा अनुमति दिँदा प्रयोग हुन्छ ।",
+    "examples": [
+      {
+        "japanese": "せんせいは せいとに じゆうに いけんを いわせました。",
+        "romaji": "Sensei wa seito ni jiyū ni iken o iwasemashita.",
+        "english": "The teacher had the students say their opinions freely.",
+        "nepali": "शिक्षकले शिष्यहरुलाई स्वतन्त्रतापुर्वक विचार भन्नलगाउनुभयो ।"
+      },
+      {
+        "japanese": "むすめに りょうりを てつだわせました。",
+        "romaji": "Musume ni ryōri o tetsudawasemashita.",
+        "english": "I had my daughter help with cooking.",
+        "nepali": "छोरीलाई खाना बनाउन सहयोगगर लगाए ।"
+      },
+      {
+        "japanese": "さくや れんらくを しなかったので、ははを しんぱいさせました。",
+        "romaji": "Sakuya renraku o shinakatta node, haha o shinpai sasemashita.",
+        "english": "Because I didn't contact her last night, I made my mother worried.",
+        "nepali": "हिजोरात्री सम्पर्क नगरेकोले, आमालाई चिन्तीत गराए ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 48",
+    "grammar_point": "Causative V て いただけませんか (asking permission)",
+    "form": "Causative V て-form + いただけませんか",
+    "english_explanation": "In Lesson 26, V て いただけませんか was used to request someone do something; here Causative V て いただけませんか is used to ask permission for oneself to do something.",
+    "nepali_explanation": "Lesson 26 मा V て いただけませんか ले कसैलाई केहीगर्न अनुरोधगर्दा प्रयोग गरिन्थ्यो भने, यस पाठमा Causative V て いただけませんか ले अनुमती माग्ने कार्यको लागी प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "あした やすませて いただけませんか。",
+        "romaji": "Ashita yasumasete itadakemasen ka.",
+        "english": "Would you please let me take tomorrow off?",
+        "nepali": "कृपया भोली बिदा दिनु हुन्छ की ?"
+      },
+      {
+        "japanese": "ここは しずか ですから、えを かかせて いただけませんか。",
+        "romaji": "Koko wa shizuka desu kara, e o kakasete itadakemasen ka.",
+        "english": "Since it's quiet here, could you let me draw a picture?",
+        "nepali": "यहाँ शान्त भएकोले, कृपया चित्र बनाउन दिनु हुन्छ की ?"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 49",
+    "grammar_point": "けいご (honorific expressions) — overview",
+    "form": "N/A",
+    "english_explanation": "けいご expresses respect toward others. It reflects the relationship between speaker and listener, and the person being discussed. Three points to consider: (1) show respect to seniors/superiors; (2) show respect to strangers and people met for the first time; (3) consider the ウチ (in-group, e.g. family/company) vs. ソト (out-group) relationship — けいご is not used when speaking to outsiders about one's own in-group members. There are three types: そうけいご (respectful expressions), けんじょうご (humble expressions), and ていねいご (polite expressions).",
+    "nepali_explanation": "けいご एउटा अरुप्रति गरिने आदरको अभिव्यक्ती हो । वक्ता (बोल्ने मान्छे) ले श्रोता (सुन्ने मान्छे) सँग भएको सम्बन्ध र जसको बारेमा कुरा गरिन्छ, उसंग गरिने सम्मानलाई けいご ले प्रष्ट पार्दछ ।",
+    "examples": [
+      {
+        "japanese": "そうけいご／けんじょうご／ていねいご",
+        "romaji": "sōkeigo / kenjōgo / teineigo",
+        "english": "respectful expressions / humble expressions / polite expressions",
+        "nepali": "सम्मानित अभिव्यक्ती / विनम्र अभिव्यक्ती / नम्र वा औपचारिक अभिव्यक्ती"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 49",
+    "grammar_point": "そうけいご (respectful expressions) — verb conversion",
+    "form": "Group I/II: as passive form; お+V ます+に なります; special respectful verbs",
+    "english_explanation": "All passive-voice verb forms can also be used as respectful expressions (all fall under Group II conjugation). お + V ます-stem + に なります is an even more respectful pattern (not used for Group III or one-syllable ます-stems, or verbs that already have a special respectful form). Some verbs have entirely special respectful forms, e.g. いきます/きます/います→いらっしゃいます; いいます→おっしゃいます; しっています→ごぞんじです; みます→ごらんに なります; たべます/のみます→めしあがります; します→なさいます; くれます→くださいます.",
+    "nepali_explanation": "そうけいご निकै मान दिनुपर्ने व्यक्तीहरुसंग बोलिने अभिव्यक्ती हो । अरुलाई निकै उच्चादर गरेर बोल्नुपर्दा そうけいご को प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "おとうさんは なんの しごとを されていますか。",
+        "romaji": "Otōsan wa nan no shigoto o sarete imasu ka.",
+        "english": "What kind of work does your father do?",
+        "nepali": "तपाईंको बावा के पेशा गर्दै होइल्सिन्छ ?"
+      },
+      {
+        "japanese": "ソニアさんは もう かえられました。",
+        "romaji": "Sonia-san wa mō kaeraremashita.",
+        "english": "Ms. Sonia has already gone home.",
+        "nepali": "सोनियाजी अघिनै फर्किबिस्किन्भयो ।"
+      },
+      {
+        "japanese": "こうちょうせんせいは もう おかえりに なりました。",
+        "romaji": "Kōchō sensei wa mō okaeri ni narimashita.",
+        "english": "The principal has already gone home.",
+        "nepali": "प्रधानाध्यापक सर अघिनै घर फर्किबिस्किनुभयो ।"
+      },
+      {
+        "japanese": "ジョーンズせんせいは じむしょに いらっしゃいます。",
+        "romaji": "Jōnzu sensei wa jimusho ni irasshaimasu.",
+        "english": "Mr. Jones is at the office.",
+        "nepali": "जोन्स सर अफिसमा होइबिस्किन्छ ।"
+      },
+      {
+        "japanese": "ジョーンズせんせいは テニスを なさいますか。 いいえ、なさらないと おもいます。",
+        "romaji": "Jōnzu sensei wa tenisu o nasaimasu ka. Iie, nasaranai to omoimasu.",
+        "english": "Does Mr. Jones play tennis? No, I don't think he does.",
+        "nepali": "जोन्स सर टेनिस खेलिस्छिन् ? अँह, खेलिस्दैन जस्तो लाग्छ ।"
+      },
+      {
+        "japanese": "こちらに おすわり ください。",
+        "romaji": "Kochira ni osuwari kudasai.",
+        "english": "Please sit here.",
+        "nepali": "यहाँ बसिबस्न्योस् ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 49",
+    "grammar_point": "お／ご + Noun/Adjective/Adverb (honorific prefix)",
+    "form": "お + Japanese-origin word; ご + Chinese-origin word",
+    "english_explanation": "Beyond verbs, some nouns, adjectives, and adverbs can also be made respectful by adding お or ご at the front. Generally お attaches to Japanese-origin (kunyomi) words, and ご attaches to Chinese-origin (onyomi) words, though there are exceptions.",
+    "nepali_explanation": "क्रियापदको अतिरिक्त, केही नाम (noun) हरु, विशेषण (adjective) हरु र क्रियाविशेषण (adverbs) हरुलाई पनि अघि お वा ご लगाएर सम्मानित अभिव्यक्तिमा प्रयोग गर्न सकिन्छ ।",
+    "examples": [
+      {
+        "japanese": "おげんき／おなまえ／おしごと",
+        "romaji": "ogenki / onamae / oshigoto",
+        "english": "health / name / job (honorific)",
+        "nepali": "स्वास्थ्य / नाम / काम (सम्मानित)"
+      },
+      {
+        "japanese": "ごかぞく／ごりょこう／ごしんせつ",
+        "romaji": "gokazoku / goryokō / goshinsetsu",
+        "english": "family / trip / kindness (honorific)",
+        "nepali": "परिवार / भ्रमण / दयालुता (सम्मानित)"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 49",
+    "grammar_point": "けいご र वाक्य शैली / वाक्यमा けいご को समान स्तर",
+    "form": "Plain form + respectful verb; consistent politeness level throughout sentence",
+    "english_explanation": "Honorific expressions can also end in plain form, forming a plain-style sentence, used when talking to a close friend about someone while still wanting to show respect. When using respectful expressions, all words in the sentence should be kept at a consistent level of politeness.",
+    "nepali_explanation": "けいご वाक्यको एक सादा रुप (plain form) संग अन्त्य हुनसक्छ, जसले वाक्यलाई सादा शैली वाक्य (plain style sentence) बनाउँछ । सम्मानित अभिव्यक्तीको प्रयोग गर्दा वाक्यका हरेक शब्दहरुमा ख्याल गरी समान स्तरको प्रयोग गर्न जरुरी हुन्छ ।",
+    "examples": [
+      {
+        "japanese": "おかあさんは うちに いらっしゃる？",
+        "romaji": "Okāsan wa uchi ni irassharu?",
+        "english": "Is your mother home?",
+        "nepali": "तिम्रो आमा घरमा हुनुहुन्छ ?"
+      },
+      {
+        "japanese": "スミスさまの おくさまも ごいっしょに テニスに いかれます。",
+        "romaji": "Sumisu-sama no okusama mo goissho ni tenisu ni ikaremasu.",
+        "english": "Mr. Smith's wife is also going along to play tennis.",
+        "nepali": "स्मिथजीको श्रीमतीपनि सँगै टेनिसलाई गईसिन्छ ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 49",
+    "grammar_point": "V ます → まして (～まして)",
+    "form": "V ます-stem + まして",
+    "english_explanation": "In very polite speech, けいご V まして is used in place of V て.",
+    "nepali_explanation": "धेरैनै विनम्र हुन चाहनुहुने अवस्थामा भने V て को सट्टामा けいご、V まして को प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "ゆうべ ねつを だしまして、けさも まだ さがらないんです。",
+        "romaji": "Yūbe netsu o dashimashite, kesa mo mada sagaranai n desu.",
+        "english": "I came down with a fever last night, and it still hasn't gone down this morning.",
+        "nepali": "हिजो राती ज्वरो आए, अज बिहानपनी अझै कमभएको छैन ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 50",
+    "grammar_point": "けんじょうご (Humble Expression) — overview",
+    "form": "N/A",
+    "english_explanation": "けんじょうご is used to show respect toward others by lowering oneself, making the listener seem higher in comparison. It should generally be used only with people of much higher status or customers; overusing it can seem mocking, so care must be taken.",
+    "nepali_explanation": "वक्ताले आफुलाई अरुप्रति नम्र बनाउन आफुलाई तल खसालेर वा आफुलाई तल्लो स्तरको बनाएर श्रोता वा सुन्ने व्यक्तीलाई उ उँचो भएको आभास दिलाई आदर देखाउन けんじょうご को प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "わたくしは ソニアと もうします。",
+        "romaji": "Watakushi wa Sonia to mōshimasu.",
+        "english": "My name is Sonia.",
+        "nepali": "मलाई सोनिया भनिन्छ । / मेरो नाम सोनिया हो ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 50",
+    "grammar_point": "お／ご ～します (humble 'I do')",
+    "form": "お + V(ます-stem, Group I & II) + します; ご + V ます(Group III) + します",
+    "english_explanation": "Used to humbly say that the speaker will do something for someone. Not used with verbs whose ます-stem is a single syllable (みます、います、きます). Group III's でんわします and やくそくします are exceptions, taking お instead of ご. Not used when no other person is involved in the action.",
+    "nepali_explanation": "お + V-ます (Group I & II) + します (.....गरिदिन्छु); ご + V ます (Group III)। माथीको १ र २ मा अर्को व्यक्ती संलग्न नभएको खण्डमा प्रयोग हुँदैन ।",
+    "examples": [
+      {
+        "japanese": "おもそうですね。おもちしましょうか。",
+        "romaji": "Omosō desu ne. Omochi shimashō ka.",
+        "english": "That looks heavy. Shall I carry it for you?",
+        "nepali": "भारीजस्तो देखिन्छ । बोकिदिउकी क्या हो ?"
+      },
+      {
+        "japanese": "わたくしが ソニアさんに スケジュールを おしらせします。",
+        "romaji": "Watakushi ga Sonia-san ni sukejūru o oshirase shimasu.",
+        "english": "I will inform Sonia of the schedule.",
+        "nepali": "म सोनियाजीलाई तालिका सुचितगरिदिन्छु ।"
+      },
+      {
+        "japanese": "こんしゅうの よていを ごせつめいします。",
+        "romaji": "Konshū no yotei o gosetsumei shimasu.",
+        "english": "I will explain this week's schedule.",
+        "nepali": "यो हप्ताको योजना व्याख्या गर्छु ।"
+      },
+      {
+        "japanese": "おでんわします",
+        "romaji": "odenwa shimasu",
+        "english": "I will call (you).",
+        "nepali": "फोन गर्छु ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 50",
+    "grammar_point": "Special Humble Verbs",
+    "form": "います→おります; します→いたします; しります→ぞんじます; いきます/きます→まいります; ききます/いきます→うかがいます; いいます→もうします; あいます→あめに かかります; みます→はいけんします; たべます/のみます/もらいます→いただきます",
+    "english_explanation": "Certain verbs have their own entirely special humble forms; お／ご cannot be attached to these. Used when the speaker's action involves the listener or a person of respect (a), or when it does not (b).",
+    "nepali_explanation": "क) वक्ताको कार्यले सुन्ने मान्छे (श्रोता) वा आदर निर्देशित मान्छेलाई समावेश गरिएको खण्डमा; ख) वक्ताको कार्यले सुन्ने मान्छे (श्रोता) वा आदर निर्देशित मान्छेलाई समावेश नगरिएको खण्डमा प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "あした てつだいいに わたくしが うかがいます。",
+        "romaji": "Ashita tetsudai ni watakushi ga ukagaimasu.",
+        "english": "I will come to help tomorrow.",
+        "nepali": "भोली सघाउनलाई म जान्छु ।"
+      },
+      {
+        "japanese": "せんせいの おくさまに あめに かかりました。",
+        "romaji": "Sensei no okusama ni ome ni kakarimashita.",
+        "english": "I had the honor of meeting the teacher's wife.",
+        "nepali": "सरको श्रीमतीलाई भेटेको थिए ।"
+      },
+      {
+        "japanese": "ラリトプルから まいりました。",
+        "romaji": "Raritopuru kara mairimashita.",
+        "english": "I have come from Lalitpur.",
+        "nepali": "ललितपुरबाट आएको ।"
+      }
+    ]
+  },
+  {
+    "lesson": "Lesson 50",
+    "grammar_point": "ていねいご (Polite Expression)",
+    "form": "あります→ございます; です→でございます; いいですか→よろしいでしょうか",
+    "english_explanation": "Used to show politeness toward the listener. ございます is the polite form of あります; ～で ございます is the polite form of です; よろしいでしょうか is the polite form of いいですか.",
+    "nepali_explanation": "श्रोता (सुन्ने मान्छे) लाई वक्ताको आदर देखाउन ていねいご को प्रयोग गरिन्छ ।",
+    "examples": [
+      {
+        "japanese": "トイレは そこの ひだりに ございます。",
+        "romaji": "Toire wa soko no hidari ni gozaimasu.",
+        "english": "The restroom is on the left over there.",
+        "nepali": "शौचालय त्यहाँको देब्रेमा छ ।"
+      },
+      {
+        "japanese": "これは ソニアさんの ほん で ございます。",
+        "romaji": "Kore wa Sonia-san no hon de gozaimasu.",
+        "english": "This is Sonia's book.",
+        "nepali": "यो सोनियाजीको पुस्तक हो ।"
+      },
+      {
+        "japanese": "100 えん いただいても よろしいでしょうか。",
+        "romaji": "Hyaku-en itadaite mo yoroshii deshō ka.",
+        "english": "May I receive 100 yen?",
+        "nepali": "१०० एन पाउन सक्छु की ?"
+      }
+    ]
+  }
+]

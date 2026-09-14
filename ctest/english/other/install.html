@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/fab.svg"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>download Sakura App</title>
+  <!-- PWA -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌸%3C/text%3E%3C/svg%3E"/>
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#e8799a"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="Sakura"/>
+  <link rel="apple-touch-icon" href="icons/icon-192.png"/>
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());
+    gtag('config','G-XXXXXXXXXX');
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Outfit','sans-serif'],jp:['"Noto Sans JP"','sans-serif']},colors:{blue:{DEFAULT:'#7eb8e4',deep:'#3a7cbf'},teal:{DEFAULT:'#6ecec8',deep:'#2a9d8f'},mint:{DEFAULT:'#80d4a8',deep:'#27ae72'},ink:{DEFAULT:'#1f2937',2:'#475569',muted:'#94a3b8'},bg:{DEFAULT:'#f5f8fc',surface:'#ffffff',s2:'#eef2f7'}},borderRadius:{xl2:'1.25rem',xl3:'1.75rem',xl4:'2.25rem'},boxShadow:{card:'0 2px 16px rgba(15,23,42,.07)',lg2:'0 8px 40px rgba(15,23,42,.18)'}}}}</script>
+  <style>
+    body{font-family:'Outfit',sans-serif;}
+    .jp{font-family:'"Noto Sans JP"',sans-serif;}
+    .mesh-light{background:radial-gradient(ellipse at 18% 12%,#d8edf8 0%,transparent 52%),radial-gradient(ellipse at 82% 88%,#d2f1ec 0%,transparent 52%),#f4f7fb;}
+    .mesh-dark{background:radial-gradient(ellipse at 18% 12%,#0f2236 0%,transparent 52%),radial-gradient(ellipse at 82% 88%,#0b2120 0%,transparent 52%),#0c1220;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+    .fu{animation:fadeUp .45s ease both;}
+    .d1{animation-delay:.07s}.d2{animation-delay:.14s}.d3{animation-delay:.21s}.d4{animation-delay:.28s}
+    .card-lift{transition:transform .18s ease,box-shadow .18s ease;}
+    .card-lift:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(15,23,42,.12);}
+    .step-num{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;flex-shrink:0;background:rgba(58,124,191,.12);color:#3a7cbf;}
+    .video-box{position:relative;width:100%;padding-bottom:56.25%;border-radius:1rem;overflow:hidden;background:#0f172a;margin-top:12px;}
+    .video-box iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+    .play-btn{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;}
+    body.dark #topbar{background:rgba(14,19,32,.96)!important;border-color:#1d2740!important;}
+    body.dark .surface{background:#151d2e!important;border-color:#1d2740!important;}
+    body.dark .t-ink{color:#e8eef6!important;} body.dark .t-ink2{color:#8da4c0!important;} body.dark .t-muted{color:#4a607a!important;}
+    ::-webkit-scrollbar{width:4px;} ::-webkit-scrollbar-thumb{background:#c2d3e3;border-radius:99px;}
+  </style>
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#e8799a"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="Sakura"/>
+  <link rel="apple-touch-icon" href="icons/icon-192.png"/>
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body class="mesh-light min-h-screen text-ink" id="body">
+
+<header id="topbar" class="sticky top-0 z-40 bg-white/93 backdrop-blur-md border-b border-slate-100 shadow-sm px-4 py-2.5 flex items-center">
+  <a href="index.html" class="flex items-center gap-1.5 text-sm font-semibold text-ink-2 hover:text-blue-deep transition-colors">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>Back
+  </a>
+  <div class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 pointer-events-none select-none">
+    <div class="w-7 h-7 rounded-xl bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow"><span class="jp text-white font-bold text-sm">識</span></div>
+    <span class="font-extrabold text-base t-ink">download App</span>
+  </div>
+  <button onclick="toggleDark()" class="ml-auto w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center t-muted" style="background:#f8fafc;">
+    <svg id="theme-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+</header>
+
+<main class="max-w-lg mx-auto px-5 py-6 pb-24">
+
+  <!-- Hero -->
+  <div class="text-center mb-7 fu">
+    <div class="w-20 h-20 rounded-xl4 bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow-lg2 mx-auto mb-4">
+      <span class="jp text-white font-bold" style="font-size:2.2rem;line-height:1;">識</span>
+    </div>
+    <h1 class="text-2xl font-extrabold t-ink mb-1">download Sakura</h1>
+    <p class="text-sm t-muted">Add to your home screen — works like a native app, completely free.</p>
+    <div class="flex items-center justify-center gap-3 mt-3">
+      <span class="text-[11px] font-semibold px-3 py-1 rounded-full t-ink2" style="background:#eef2f7;">📶 Works offline</span>
+      <span class="text-[11px] font-semibold px-3 py-1 rounded-full t-ink2" style="background:#eef2f7;">🆓 Free</span>
+      <span class="text-[11px] font-semibold px-3 py-1 rounded-full t-ink2" style="background:#eef2f7;">🔔 Notifications</span>
+    </div>
+  </div>
+
+  <!-- ── Android ── -->
+  <div class="card-lift bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 p-5 mb-4 fu d1">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#a8d5a2,#34a853);">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M6.18 15.64a2.18 2.18 0 0 1-2.18 2.18C2.98 17.82 2 16.84 2 15.64V9.18A2.18 2.18 0 0 1 4 7a2.18 2.18 0 0 1 2.18 2.18v6.46zM14.91 19.81A2.19 2.19 0 0 1 12.73 22a2.19 2.19 0 0 1-2.18-2.19v-.73H9.82v.73A2.19 2.19 0 0 1 7.64 22a2.19 2.19 0 0 1-2.19-2.19V8.18h9.46v11.63zM7.59 2.42l-1.32-1.33a.5.5 0 0 0-.7 0 .5.5 0 0 0 0 .71L7 3.17c-.85.55-1.44 1.35-1.44 2.3h9.09c0-.95-.6-1.75-1.44-2.3L15.43 1.8a.5.5 0 0 0 0-.71.5.5 0 0 0-.71 0L13.4 2.42A5.14 5.14 0 0 0 12 2.18a5.14 5.14 0 0 0-4.41 1.5v-1.26zM17.82 7a2.18 2.18 0 0 0-2.18 2.18v6.46a2.18 2.18 0 0 0 4.36 0V9.18A2.18 2.18 0 0 0 17.82 7z"/></svg>
+      </div>
+      <div>
+        <div class="font-extrabold text-base t-ink">Android</div>
+        <div class="text-xs t-muted">Chrome browser · Add to Home Screen</div>
+      </div>
+    </div>
+    <div class="space-y-2.5 mb-4">
+      <div class="flex items-start gap-3"><div class="step-num mt-0.5">1</div><div class="text-sm t-ink2">Open this site in <strong class="t-ink">Chrome</strong></div></div>
+      <div class="flex items-start gap-3"><div class="step-num mt-0.5">2</div><div class="text-sm t-ink2">Tap the <strong class="t-ink">⋮ menu</strong> (top right)</div></div>
+      <div class="flex items-start gap-3"><div class="step-num mt-0.5">3</div><div class="text-sm t-ink2">Tap <strong class="t-ink">"Add to Home screen"</strong></div></div>
+      <div class="flex items-start gap-3"><div class="step-num mt-0.5">4</div><div class="text-sm t-ink2">Tap <strong class="t-ink">Add</strong> — Sakura icon appears on your home screen 🎉</div></div>
+    </div>
+    <button onclick="downloadPWA()" id="pwa-android"
+      class="w-full py-3 rounded-xl font-bold text-sm text-white flex items-center justify-center gap-2 active:scale-95 transition-all"
+      style="background:linear-gradient(135deg,#34a853,#27ae72);">
+      <svg width="18" height="18" fill="none" stroke="white" stroke-width="2.2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      download on Android
+    </button>
+    <!-- Video box -->
+    <div class="video-box">
+      <div class="play-btn" id="vplay-android">
+        <div style="width:48px;height:48px;border-radius:50%;background:rgba(220,0,0,.9);display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="loadVideo('android')">
+          <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <span style="color:rgba(255,255,255,.75);font-size:11px;font-weight:600;">Watch Tutorial</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── iPhone ── -->
+  <div class="card-lift bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 p-5 mb-4 fu d2">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#b0b0b0,#555);">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      </div>
+      <div>
+        <div class="font-extrabold text-base t-ink">iPhone / iOS</div>
+        <div class="text-xs t-muted">Safari browser · Add to Home Screen</div>
+      </div>
+    </div>
+    <div class="space-y-2.5 mb-4">
+      <div class="flex items-start gap-3"><div class="step-num mt-0.5">1</div><div class="text-sm t-ink2">Open this site in <strong class="t-ink">Safari</strong> (not Chrome)</div></div>
+      <div class="flex items-start gap-3"><div class="step-num mt-0.5">2</div><div class="text-sm t-ink2">Tap the <strong class="t-ink">Share button</strong> <span class="font-mono text-xs px-1 rounded" style="background:#eef2f7;">⬆</span> at the bottom</div></div>
+      <div class="flex items-start gap-3"><div class="step-num mt-0.5">3</div><div class="text-sm t-ink2">Scroll down and tap <strong class="t-ink">"Add to Home Screen"</strong></div></div>
+      <div class="flex items-start gap-3"><div class="step-num mt-0.5">4</div><div class="text-sm t-ink2">Tap <strong class="t-ink">Add</strong> — Sakura icon appears on your home screen 🎉</div></div>
+    </div>
+    <div class="video-box">
+      <div class="play-btn" id="vplay-ios">
+        <div style="width:48px;height:48px;border-radius:50%;background:rgba(220,0,0,.9);display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="loadVideo('ios')">
+          <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <span style="color:rgba(255,255,255,.75);font-size:11px;font-weight:600;">Watch Tutorial</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PC ── -->
+  <div class="card-lift bg-bg-surface surface rounded-xl3 shadow-card border border-slate-100 p-5 mb-6 fu d3">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#7eb8e4,#3a7cbf);">
+        <svg width="20" height="20" fill="none" stroke="white" stroke-width="2.2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <div>
+        <div class="font-extrabold text-base t-ink">PC / Desktop</div>
+        <div class="text-xs t-muted">Chrome or Edge browser</div>
+      </div>
+    </div>
+    <div class="space-y-2.5 mb-4">
+      <div class="flex items-start gap-3"><div class="step-num mt-0.5">1</div><div class="text-sm t-ink2">Open this site in <strong class="t-ink">Chrome or Edge</strong></div></div>
+      <div class="flex items-start gap-3"><div class="step-num mt-0.5">2</div><div class="text-sm t-ink2">Click the <strong class="t-ink">download icon ⊕</strong> in the address bar (right side)</div></div>
+      <div class="flex items-start gap-3"><div class="step-num mt-0.5">3</div><div class="text-sm t-ink2">Click <strong class="t-ink">"download"</strong> in the popup</div></div>
+      <div class="flex items-start gap-3"><div class="step-num mt-0.5">4</div><div class="text-sm t-ink2">Sakura opens as a <strong class="t-ink">standalone app</strong> on your desktop 🎉</div></div>
+    </div>
+    <button onclick="downloadPWA()" id="pwa-pc"
+      class="w-full py-3 rounded-xl font-bold text-sm text-white flex items-center justify-center gap-2 active:scale-95 transition-all"
+      style="background:linear-gradient(135deg,#3a7cbf,#2a9d8f);">
+      <svg width="18" height="18" fill="none" stroke="white" stroke-width="2.2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      download on PC
+    </button>
+    <div class="video-box">
+      <div class="play-btn" id="vplay-pc">
+        <div style="width:48px;height:48px;border-radius:50%;background:rgba(220,0,0,.9);display:flex;align-items:center;justify-content:center;cursor:pointer;" onclick="loadVideo('pc')">
+          <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <span style="color:rgba(255,255,255,.75);font-size:11px;font-weight:600;">Watch Tutorial</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features strip -->
+  <div class="rounded-xl3 p-5 border border-slate-100 shadow-card bg-bg-surface surface fu d4">
+    <div class="grid grid-cols-2 gap-3">
+      <div class="flex items-center gap-2"><span class="text-lg">📶</span><span class="text-xs font-semibold t-ink2">Works offline</span></div>
+      <div class="flex items-center gap-2"><span class="text-lg">🔔</span><span class="text-xs font-semibold t-ink2">Push notifications</span></div>
+      <div class="flex items-center gap-2"><span class="text-lg">🆓</span><span class="text-xs font-semibold t-ink2">Always free</span></div>
+      <div class="flex items-center gap-2"><span class="text-lg">⚡</span><span class="text-xs font-semibold t-ink2">Fast & lightweight</span></div>
+    </div>
+  </div>
+
+</main>
+
+<!-- BOTTOM NAV -->
+<nav class="lg:hidden fixed bottom-0 left-0 right-0 z-40" style="background:rgba(255,255,255,.98);backdrop-filter:blur(20px);box-shadow:0 -1px 0 rgba(0,0,0,.07),0 -6px 24px rgba(15,23,42,.08);">
+  <div class="flex items-center" style="height:60px;">
+    <a href="index.html" class="flex-1 flex flex-col items-center gap-1 py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:36px;height:26px;background:#eef2f7;"><svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2.2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg></div>
+      <span style="font-size:9px;font-weight:600;color:#94a3b8;">Home</span>
+    </a>
+    <a href="jlpt.html" class="flex-1 flex flex-col items-center gap-1 py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:36px;height:26px;background:#eef2f7;"><span style="font-size:9px;font-weight:800;color:#475569;">JLPT</span></div>
+      <span style="font-size:9px;font-weight:600;color:#94a3b8;">JLPT</span>
+    </a>
+    <a href="ssw.html" class="flex-1 flex flex-col items-center gap-0.5 py-1" style="margin-top:-16px;">
+      <div class="flex items-center justify-center rounded-xl2" style="width:46px;height:46px;background:linear-gradient(135deg,#6ecec8,#2a9d8f);box-shadow:0 5px 16px rgba(42,157,143,.32);"><span class="jp text-white font-bold" style="font-size:20px;line-height:1;">特</span></div>
+      <span style="font-size:8px;font-weight:700;color:#2a9d8f;margin-top:2px;">SSW</span>
+    </a>
+    <a href="bjt.html" class="flex-1 flex flex-col items-center gap-1 py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:36px;height:26px;background:#eef2f7;"><span style="font-size:9px;font-weight:800;color:#d4a017;">BJT</span></div>
+      <span style="font-size:9px;font-weight:600;color:#94a3b8;">BJT</span>
+    </a>
+    <a href="other.html" class="flex-1 flex flex-col items-center gap-1 py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:36px;height:26px;background:#eef2f7;"><svg width="14" height="14" fill="none" stroke="#94a3b8" stroke-width="2" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg></div>
+      <span style="font-size:9px;font-weight:600;color:#94a3b8;">Other</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+/* ── YouTube video IDs — replace with your actual IDs ── */
+const VIDEO_IDS = {
+  android: 'YOUR_ANDROID_VIDEO_ID',
+  ios:     'YOUR_IOS_VIDEO_ID',
+  pc:      'YOUR_PC_VIDEO_ID',
+};
+
+function loadVideo(platform) {
+  const id = VIDEO_IDS[platform];
+  const box = document.getElementById('vplay-' + platform).parentElement;
+  if(!id || id.includes('YOUR_')) {
+    alert('YouTube Video ID यहाँ राख्नुस्:\nVIDEO_IDS.' + platform + ' = "your_video_id"');
+    return;
+  }
+  box.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>`;
+}
+
+/* ── PWA download prompt ── */
+let deferredPrompt = null;
+window.addEventListener('beforedownloadprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  // Highlight download buttons
+  ['pwa-android','pwa-pc'].forEach(id => {
+    const btn = document.getElementById(id);
+    if(btn) btn.style.boxShadow = '0 0 0 3px rgba(58,124,191,.3)';
+  });
+});
+
+function downloadPWA() {
+  if(deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(r => {
+      if(r.outcome === 'accepted') {
+        ['pwa-android','pwa-pc'].forEach(id => {
+          const btn = document.getElementById(id);
+          if(btn) btn.innerHTML = '✅ Sakura downloaded!';
+        });
+      }
+      deferredPrompt = null;
+    });
+  } else {
+    alert('Browser मा download prompt आएको छैन।\nChrome वा Edge मा open गर्नुस् र address bar मा ⊕ icon click गर्नुस्।');
+  }
+}
+
+/* ── Dark mode ── */
+let isDark = false;
+const MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+const SUN  = '<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/>';
+function toggleDark() {
+  isDark = !isDark;
+  document.body.className = isDark ? 'mesh-dark min-h-screen text-slate-100 dark' : 'mesh-light min-h-screen text-ink';
+  document.getElementById('theme-icon').innerHTML = isDark ? SUN : MOON;
+}
+</script>
+  <script>
+    if('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .catch(e => console.log('SW error:', e));
+      });
+    }
+  </script>
+</body>
+</html>

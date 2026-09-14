@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz — Shikaku</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans:['Outfit','sans-serif'], jp:['"Noto Sans JP"','sans-serif'] },
+          colors: {
+            blue:   { DEFAULT:'#7eb8e4', deep:'#3a7cbf' },
+            teal:   { DEFAULT:'#6ecec8', deep:'#2a9d8f' },
+            mint:   { DEFAULT:'#80d4a8', deep:'#27ae72' },
+            coral:  { DEFAULT:'#f4a57a', deep:'#e0693a' },
+            butter: { DEFAULT:'#f5da8a', deep:'#d4a017' },
+            lilac:  { DEFAULT:'#c4a8e0', deep:'#8b5cf6' },
+            ink:    { DEFAULT:'#1f2937', 2:'#475569', muted:'#94a3b8' },
+            bg:     { DEFAULT:'#f5f8fc', surface:'#ffffff', s2:'#eef2f7' },
+          },
+          borderRadius: { xl2:'1.25rem', xl3:'1.75rem', xl4:'2.25rem' },
+          boxShadow: {
+            card: '0 2px 16px rgba(15,23,42,.07)',
+            md2:  '0 4px 24px rgba(15,23,42,.12)',
+            lg2:  '0 8px 40px rgba(15,23,42,.16)',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family:'Outfit',sans-serif; transition:background .3s,color .3s; }
+    .jp  { font-family:'"Noto Sans JP"',sans-serif; }
+
+    .mesh-light {
+      background: radial-gradient(ellipse at 18% 12%,#d8edf8 0%,transparent 52%),
+                  radial-gradient(ellipse at 82% 88%,#d2f1ec 0%,transparent 52%),
+                  radial-gradient(ellipse at 58% 32%,#e6e2f6 0%,transparent 38%),
+                  #f4f7fb;
+    }
+    .mesh-dark {
+      background: radial-gradient(ellipse at 18% 12%,#0f2236 0%,transparent 52%),
+                  radial-gradient(ellipse at 82% 88%,#0b2120 0%,transparent 52%),
+                  #0c1220;
+    }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:none} }
+    .fu  { animation:fadeUp .5s ease both; }
+    .d1  { animation-delay:.07s; } .d2 { animation-delay:.14s; }
+    .d3  { animation-delay:.21s; } .d4 { animation-delay:.28s; }
+    .d5  { animation-delay:.35s; } .d6 { animation-delay:.42s; }
+
+    .card-lift { transition:transform .18s ease,box-shadow .18s ease; }
+    .card-lift:hover { transform:translateY(-3px); box-shadow:0 10px 32px rgba(15,23,42,.13); }
+
+    .s-act { background:#eef5fc; color:#3a7cbf; font-weight:600; }
+
+    .drop { transition:opacity .15s ease,transform .15s ease; }
+    .drop.closed { opacity:0; transform:translateY(-6px); pointer-events:none; }
+    .drop.open   { opacity:1; transform:translateY(0);    pointer-events:all; }
+
+    /* Level button active state */
+    .level-btn { transition:all .2s ease; }
+    .level-btn.active { transform:translateY(-2px); }
+
+    /* Dark mode */
+    body.dark #topbar,
+    body.dark #botnav,
+    body.dark #sidebar-el { background:rgba(14,19,32,.96) !important; border-color:#1d2740 !important; }
+    body.dark .surface  { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark .surface2 { background:#1d2740 !important; }
+    body.dark .t-ink    { color:#e8eef6 !important; }
+    body.dark .t-ink2   { color:#8da4c0 !important; }
+    body.dark .t-muted  { color:#4a607a !important; }
+    body.dark .divider  { border-color:#1d2740 !important; }
+    body.dark #desk-lang-drop { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark #desk-lang-drop button { color:#8da4c0 !important; }
+    body.dark #lang-drop { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark #lang-drop button { color:#8da4c0 !important; }
+
+    ::-webkit-scrollbar { width:4px; }
+    ::-webkit-scrollbar-thumb { background:#c2d3e3; border-radius:99px; }
+  </style>
+</head>
+
+<body class="mesh-light min-h-screen text-ink" id="body">
+
+<!-- ═══════════ DESKTOP SIDEBAR ═══════════ -->
+<aside id="sidebar-el" class="hidden lg:flex flex-col fixed top-0 left-0 h-full w-60 bg-bg-surface surface border-r border-slate-100 divider z-30 shadow-card">
+
+  <!-- Logo + lang -->
+  <div class="px-4 py-4 flex items-center gap-3 border-b border-slate-100 divider">
+    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow-md flex-shrink-0">
+      <span class="jp text-white font-bold text-base">識</span>
+    </div>
+    <div class="flex-1 min-w-0">
+      <div class="font-bold text-base tracking-tight t-ink leading-tight">Shikaku</div>
+      <div class="text-xs t-muted">日本語 Learning</div>
+    </div>
+    <div class="relative flex-shrink-0" id="desk-lang-wrap">
+      <button onclick="toggleDeskLang()" class="flex items-center gap-1 px-2 py-1.5 rounded-lg border border-slate-200 divider text-xs font-bold t-ink2 hover:border-blue/60 transition-all" style="background:#f8fafc;">
+        <span id="desk-lang-flag">🇳🇵</span>
+        <span id="desk-lang-code" class="ml-0.5">NP</span>
+        <svg id="desk-lang-chev" class="w-3 h-3 t-muted transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div id="desk-lang-drop" class="drop closed absolute right-0 top-full mt-1.5 w-32 bg-white surface rounded-xl shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+        <button onclick="setDeskLang('NP','🇳🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors">🇳🇵 नेपाली</button>
+        <button onclick="setDeskLang('EN','🇬🇧')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇬🇧 English</button>
+        <button onclick="setDeskLang('JP','🇯🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇯🇵 日本語</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- User -->
+  <div class="px-5 py-3.5 flex items-center gap-3 border-b border-slate-100 divider">
+    <div class="w-9 h-9 rounded-full bg-gradient-to-br from-blue to-teal flex items-center justify-center text-white font-bold text-sm flex-shrink-0">S</div>
+    <div>
+      <div class="font-semibold text-sm t-ink">सुष्मा श्रेष्ठ</div>
+      <div class="text-xs t-muted">JLPT N5 · Level 12</div>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <nav class="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
+    <a href="index.html"  class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg>Dashboard
+    </a>
+    <a href="learn.html"  class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Learn
+    </a>
+    <a href="study.html"  class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 4v16M2 12h6"/></svg>Study
+    </a>
+    <a href="quiz.html"   class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg>Quiz
+    </a>
+    <a href="quiz.html" class="s-act flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg>Quiz
+    </a>
+    <div class="pt-4 pb-1 px-3 text-[10px] font-bold tracking-widest t-muted uppercase">Quiz Sections</div>
+    <a href="#jlpt" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-blue/20 text-blue-deep font-bold text-[10px] flex items-center justify-center">N</span> JLPT</a>
+    <a href="#ssw"  class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="text-sm leading-none">🏭</span> SSW</a>
+  </nav>
+
+  <!-- Footer -->
+  <div class="px-4 py-4 border-t border-slate-100 divider flex items-center justify-between">
+    <button onclick="toggleDark()" class="flex items-center gap-2 text-xs t-muted hover:text-ink transition-colors">
+      <svg id="desk-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span id="desk-lbl">Dark mode</span>
+    </button>
+  </div>
+</aside>
+
+
+<!-- ═══════════ MOBILE TOPBAR ═══════════ -->
+<header id="topbar" class="lg:hidden sticky top-0 z-40 bg-white/93 backdrop-blur-md border-b border-slate-100 shadow-sm px-4 py-2.5 flex items-center">
+  <a href="index.html" class="flex-shrink-0 mr-2 t-ink2">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+  </a>
+  <div class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 pointer-events-none select-none">
+    <span class="text-lg">🎯</span>
+    <span class="font-extrabold text-base t-ink tracking-tight">Quiz</span>
+  </div>
+  <div class="ml-auto flex items-center gap-2 flex-shrink-0">
+    <div class="relative" id="lang-wrap">
+      <button onclick="toggleDrop('lang')" class="flex items-center gap-1 pl-2 pr-1.5 py-1.5 rounded-lg bg-bg-s2 border border-slate-200 text-xs font-bold t-ink2 hover:border-blue/60 transition-all">
+        <span id="lang-flag">🇳🇵</span><span id="lang-code" class="ml-0.5">NP</span>
+        <svg id="lang-chev" class="w-3 h-3 t-muted ml-0.5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div id="lang-drop" class="drop closed absolute right-0 top-full mt-1.5 w-32 bg-white surface rounded-xl shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+        <button onclick="setLang('NP','🇳🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors">🇳🇵 नेपाली</button>
+        <button onclick="setLang('EN','🇬🇧')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇬🇧 English</button>
+        <button onclick="setLang('JP','🇯🇵')" class="w-full flex items-center gap-2 px-3.5 py-2.5 text-xs font-medium t-ink hover:bg-blue/5 transition-colors border-t border-slate-100 divider">🇯🇵 日本語</button>
+      </div>
+    </div>
+    <button onclick="toggleDark()" class="w-8 h-8 rounded-lg bg-bg-s2 border border-slate-200 flex items-center justify-center t-muted hover:text-blue-deep hover:border-blue/50 transition-all">
+      <svg id="mob-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+
+<!-- ═══════════ MAIN CONTENT ═══════════ -->
+<main class="lg:ml-60 min-h-screen pb-28 lg:pb-10">
+
+  <!-- Hero -->
+  <div class="px-5 lg:px-8 pt-6 lg:pt-8 pb-2 fu">
+    <p class="text-xs font-bold tracking-widest t-muted uppercase mb-1">クイズ Arena</p>
+    <h1 class="text-2xl lg:text-3xl font-extrabold t-ink tracking-tight leading-tight">Choose Your Quiz</h1>
+    <p class="text-sm t-muted mt-1">Pick a level and topic to start quizzing.</p>
+  </div>
+
+  <!-- JLPT header -->
+  <div id="jlpt" class="px-5 lg:px-8 mt-6 fu d1">
+    <div class="flex items-center gap-3">
+      <div class="flex-1 h-px" style="background:#e2e8f0;"></div>
+      <span class="text-xs font-extrabold tracking-widest t-muted uppercase px-3">JLPT Levels</span>
+      <div class="flex-1 h-px" style="background:#e2e8f0;"></div>
+    </div>
+  </div>
+  <!-- ── JLPT N5 ── -->
+  <section id="n5" class="px-5 lg:px-8 mt-5 fu d1">
+    <div class="flex items-center gap-3 mb-3">
+      <span class="w-8 h-8 rounded-xl flex items-center justify-center font-extrabold text-sm text-white shadow" style="background:linear-gradient(135deg,#7eb8e4,#3a7cbf);">N5</span>
+      <h2 class="text-base font-extrabold t-ink">JLPT N5 Quiz</h2>
+    </div>
+    <!-- Mobile: 3 compact buttons -->
+    <div class="grid grid-cols-3 gap-2 lg:hidden">
+      <a href="quiz-n5-vocab.html" class="card-lift flex flex-col items-center gap-2 py-4 px-2 rounded-xl2 border text-center" style="background:rgba(126,184,228,.10);border-color:rgba(126,184,228,.28);">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(126,184,228,.22);">📚</div>
+        <span class="text-xs font-bold t-ink leading-tight">Vocab</span>
+      </a>
+      <a href="quiz-n5-grammar.html" class="card-lift flex flex-col items-center gap-2 py-4 px-2 rounded-xl2 border text-center" style="background:rgba(128,212,168,.10);border-color:rgba(128,212,168,.28);">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(128,212,168,.22);">📝</div>
+        <span class="text-xs font-bold t-ink leading-tight">Grammar</span>
+      </a>
+      <a href="quiz-n5-kanji.html" class="card-lift flex flex-col items-center gap-2 py-4 px-2 rounded-xl2 border text-center" style="background:rgba(196,168,224,.10);border-color:rgba(196,168,224,.28);">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background:rgba(196,168,224,.22);"><span class="jp font-bold text-2xl t-ink">漢</span></div>
+        <span class="text-xs font-bold t-ink leading-tight">Kanji</span>
+      </a>
+    </div>
+    <!-- Desktop: full row -->
+    <div class="hidden lg:flex gap-3">
+      <a href="quiz-n5-vocab.html" class="card-lift flex-1 flex items-center gap-3 p-4 rounded-xl3 border shadow-card group" style="background:rgba(126,184,228,.10);border-color:rgba(126,184,228,.28);">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-xl" style="background:rgba(126,184,228,.22);">📚</div>
+        <div><div class="font-bold text-sm t-ink">Vocabulary</div><div class="text-xs t-muted">Words & meanings</div></div>
+        <svg class="w-4 h-4 t-muted ml-auto group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="quiz-n5-grammar.html" class="card-lift flex-1 flex items-center gap-3 p-4 rounded-xl3 border shadow-card group" style="background:rgba(128,212,168,.10);border-color:rgba(128,212,168,.28);">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-xl" style="background:rgba(128,212,168,.22);">📝</div>
+        <div><div class="font-bold text-sm t-ink">Grammar</div><div class="text-xs t-muted">Patterns & usage</div></div>
+        <svg class="w-4 h-4 t-muted ml-auto group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="quiz-n5-kanji.html" class="card-lift flex-1 flex items-center gap-3 p-4 rounded-xl3 border shadow-card group" style="background:rgba(196,168,224,.10);border-color:rgba(196,168,224,.28);">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(196,168,224,.22);"><span class="jp font-bold text-2xl t-ink">漢</span></div>
+        <div><div class="font-bold text-sm t-ink">Kanji</div><div class="text-xs t-muted">Characters & readings</div></div>
+        <svg class="w-4 h-4 t-muted ml-auto group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+  </section>
+  <!-- ── JLPT N4 ── -->
+  <section id="n4" class="px-5 lg:px-8 mt-5 fu d2">
+    <div class="flex items-center gap-3 mb-3">
+      <span class="w-8 h-8 rounded-xl flex items-center justify-center font-extrabold text-sm text-white shadow" style="background:linear-gradient(135deg,#6ecec8,#2a9d8f);">N4</span>
+      <h2 class="text-base font-extrabold t-ink">JLPT N4 Quiz</h2>
+    </div>
+    <!-- Mobile: 3 compact buttons -->
+    <div class="grid grid-cols-3 gap-2 lg:hidden">
+      <a href="quiz-n4-vocab.html" class="card-lift flex flex-col items-center gap-2 py-4 px-2 rounded-xl2 border text-center" style="background:rgba(110,206,200,.10);border-color:rgba(110,206,200,.28);">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(110,206,200,.22);">📚</div>
+        <span class="text-xs font-bold t-ink leading-tight">Vocab</span>
+      </a>
+      <a href="quiz-n4-grammar.html" class="card-lift flex flex-col items-center gap-2 py-4 px-2 rounded-xl2 border text-center" style="background:rgba(128,212,168,.10);border-color:rgba(128,212,168,.28);">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(128,212,168,.22);">📝</div>
+        <span class="text-xs font-bold t-ink leading-tight">Grammar</span>
+      </a>
+      <a href="quiz-n4-kanji.html" class="card-lift flex flex-col items-center gap-2 py-4 px-2 rounded-xl2 border text-center" style="background:rgba(196,168,224,.10);border-color:rgba(196,168,224,.28);">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background:rgba(196,168,224,.22);"><span class="jp font-bold text-2xl t-ink">漢</span></div>
+        <span class="text-xs font-bold t-ink leading-tight">Kanji</span>
+      </a>
+    </div>
+    <!-- Desktop: full row -->
+    <div class="hidden lg:flex gap-3">
+      <a href="quiz-n4-vocab.html" class="card-lift flex-1 flex items-center gap-3 p-4 rounded-xl3 border shadow-card group" style="background:rgba(110,206,200,.10);border-color:rgba(110,206,200,.28);">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-xl" style="background:rgba(110,206,200,.22);">📚</div>
+        <div><div class="font-bold text-sm t-ink">Vocabulary</div><div class="text-xs t-muted">Words & meanings</div></div>
+        <svg class="w-4 h-4 t-muted ml-auto group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="quiz-n4-grammar.html" class="card-lift flex-1 flex items-center gap-3 p-4 rounded-xl3 border shadow-card group" style="background:rgba(128,212,168,.10);border-color:rgba(128,212,168,.28);">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-xl" style="background:rgba(128,212,168,.22);">📝</div>
+        <div><div class="font-bold text-sm t-ink">Grammar</div><div class="text-xs t-muted">Patterns & usage</div></div>
+        <svg class="w-4 h-4 t-muted ml-auto group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="quiz-n4-kanji.html" class="card-lift flex-1 flex items-center gap-3 p-4 rounded-xl3 border shadow-card group" style="background:rgba(196,168,224,.10);border-color:rgba(196,168,224,.28);">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(196,168,224,.22);"><span class="jp font-bold text-2xl t-ink">漢</span></div>
+        <div><div class="font-bold text-sm t-ink">Kanji</div><div class="text-xs t-muted">Characters & readings</div></div>
+        <svg class="w-4 h-4 t-muted ml-auto group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+  </section>
+  <!-- ── JLPT N3 ── -->
+  <section id="n3" class="px-5 lg:px-8 mt-5 fu d3">
+    <div class="flex items-center gap-3 mb-3">
+      <span class="w-8 h-8 rounded-xl flex items-center justify-center font-extrabold text-sm text-white shadow" style="background:linear-gradient(135deg,#80d4a8,#27ae72);">N3</span>
+      <h2 class="text-base font-extrabold t-ink">JLPT N3 Quiz</h2>
+    </div>
+    <!-- Mobile: 3 compact buttons -->
+    <div class="grid grid-cols-3 gap-2 lg:hidden">
+      <a href="quiz-n3-vocab.html" class="card-lift flex flex-col items-center gap-2 py-4 px-2 rounded-xl2 border text-center" style="background:rgba(128,212,168,.10);border-color:rgba(128,212,168,.28);">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(128,212,168,.22);">📚</div>
+        <span class="text-xs font-bold t-ink leading-tight">Vocab</span>
+      </a>
+      <a href="quiz-n3-grammar.html" class="card-lift flex flex-col items-center gap-2 py-4 px-2 rounded-xl2 border text-center" style="background:rgba(128,212,168,.10);border-color:rgba(128,212,168,.28);">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(128,212,168,.22);">📝</div>
+        <span class="text-xs font-bold t-ink leading-tight">Grammar</span>
+      </a>
+      <a href="quiz-n3-kanji.html" class="card-lift flex flex-col items-center gap-2 py-4 px-2 rounded-xl2 border text-center" style="background:rgba(196,168,224,.10);border-color:rgba(196,168,224,.28);">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background:rgba(196,168,224,.22);"><span class="jp font-bold text-2xl t-ink">漢</span></div>
+        <span class="text-xs font-bold t-ink leading-tight">Kanji</span>
+      </a>
+    </div>
+    <!-- Desktop: full row -->
+    <div class="hidden lg:flex gap-3">
+      <a href="quiz-n3-vocab.html" class="card-lift flex-1 flex items-center gap-3 p-4 rounded-xl3 border shadow-card group" style="background:rgba(128,212,168,.10);border-color:rgba(128,212,168,.28);">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-xl" style="background:rgba(128,212,168,.22);">📚</div>
+        <div><div class="font-bold text-sm t-ink">Vocabulary</div><div class="text-xs t-muted">Words & meanings</div></div>
+        <svg class="w-4 h-4 t-muted ml-auto group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="quiz-n3-grammar.html" class="card-lift flex-1 flex items-center gap-3 p-4 rounded-xl3 border shadow-card group" style="background:rgba(128,212,168,.10);border-color:rgba(128,212,168,.28);">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-xl" style="background:rgba(128,212,168,.22);">📝</div>
+        <div><div class="font-bold text-sm t-ink">Grammar</div><div class="text-xs t-muted">Patterns & usage</div></div>
+        <svg class="w-4 h-4 t-muted ml-auto group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="quiz-n3-kanji.html" class="card-lift flex-1 flex items-center gap-3 p-4 rounded-xl3 border shadow-card group" style="background:rgba(196,168,224,.10);border-color:rgba(196,168,224,.28);">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(196,168,224,.22);"><span class="jp font-bold text-2xl t-ink">漢</span></div>
+        <div><div class="font-bold text-sm t-ink">Kanji</div><div class="text-xs t-muted">Characters & readings</div></div>
+        <svg class="w-4 h-4 t-muted ml-auto group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+  </section>
+  <!-- ── JLPT N2 ── -->
+  <section id="n2" class="px-5 lg:px-8 mt-5 fu d4">
+    <div class="flex items-center gap-3 mb-3">
+      <span class="w-8 h-8 rounded-xl flex items-center justify-center font-extrabold text-sm text-white shadow" style="background:linear-gradient(135deg,#f5da8a,#d4a017);">N2</span>
+      <h2 class="text-base font-extrabold t-ink">JLPT N2 Quiz</h2>
+    </div>
+    <!-- Mobile: 3 compact buttons -->
+    <div class="grid grid-cols-3 gap-2 lg:hidden">
+      <a href="quiz-n2-vocab.html" class="card-lift flex flex-col items-center gap-2 py-4 px-2 rounded-xl2 border text-center" style="background:rgba(245,218,138,.14);border-color:rgba(245,218,138,.45);">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(245,218,138,.25);">📚</div>
+        <span class="text-xs font-bold t-ink leading-tight">Vocab</span>
+      </a>
+      <a href="quiz-n2-grammar.html" class="card-lift flex flex-col items-center gap-2 py-4 px-2 rounded-xl2 border text-center" style="background:rgba(128,212,168,.10);border-color:rgba(128,212,168,.28);">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(128,212,168,.22);">📝</div>
+        <span class="text-xs font-bold t-ink leading-tight">Grammar</span>
+      </a>
+      <a href="quiz-n2-kanji.html" class="card-lift flex flex-col items-center gap-2 py-4 px-2 rounded-xl2 border text-center" style="background:rgba(196,168,224,.10);border-color:rgba(196,168,224,.28);">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background:rgba(196,168,224,.22);"><span class="jp font-bold text-2xl t-ink">漢</span></div>
+        <span class="text-xs font-bold t-ink leading-tight">Kanji</span>
+      </a>
+    </div>
+    <!-- Desktop: full row -->
+    <div class="hidden lg:flex gap-3">
+      <a href="quiz-n2-vocab.html" class="card-lift flex-1 flex items-center gap-3 p-4 rounded-xl3 border shadow-card group" style="background:rgba(245,218,138,.14);border-color:rgba(245,218,138,.45);">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-xl" style="background:rgba(245,218,138,.25);">📚</div>
+        <div><div class="font-bold text-sm t-ink">Vocabulary</div><div class="text-xs t-muted">Words & meanings</div></div>
+        <svg class="w-4 h-4 t-muted ml-auto group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="quiz-n2-grammar.html" class="card-lift flex-1 flex items-center gap-3 p-4 rounded-xl3 border shadow-card group" style="background:rgba(128,212,168,.10);border-color:rgba(128,212,168,.28);">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-xl" style="background:rgba(128,212,168,.22);">📝</div>
+        <div><div class="font-bold text-sm t-ink">Grammar</div><div class="text-xs t-muted">Patterns & usage</div></div>
+        <svg class="w-4 h-4 t-muted ml-auto group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="quiz-n2-kanji.html" class="card-lift flex-1 flex items-center gap-3 p-4 rounded-xl3 border shadow-card group" style="background:rgba(196,168,224,.10);border-color:rgba(196,168,224,.28);">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(196,168,224,.22);"><span class="jp font-bold text-2xl t-ink">漢</span></div>
+        <div><div class="font-bold text-sm t-ink">Kanji</div><div class="text-xs t-muted">Characters & readings</div></div>
+        <svg class="w-4 h-4 t-muted ml-auto group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+  </section>
+  <!-- ── JLPT N1 ── -->
+  <section id="n1" class="px-5 lg:px-8 mt-5 fu d5">
+    <div class="flex items-center gap-3 mb-3">
+      <span class="w-8 h-8 rounded-xl flex items-center justify-center font-extrabold text-sm text-white shadow" style="background:linear-gradient(135deg,#f4a57a,#e0693a);">N1</span>
+      <h2 class="text-base font-extrabold t-ink">JLPT N1 Quiz</h2>
+    </div>
+    <!-- Mobile: 3 compact buttons -->
+    <div class="grid grid-cols-3 gap-2 lg:hidden">
+      <a href="quiz-n1-vocab.html" class="card-lift flex flex-col items-center gap-2 py-4 px-2 rounded-xl2 border text-center" style="background:rgba(244,165,122,.12);border-color:rgba(244,165,122,.35);">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(244,165,122,.22);">📚</div>
+        <span class="text-xs font-bold t-ink leading-tight">Vocab</span>
+      </a>
+      <a href="quiz-n1-grammar.html" class="card-lift flex flex-col items-center gap-2 py-4 px-2 rounded-xl2 border text-center" style="background:rgba(128,212,168,.10);border-color:rgba(128,212,168,.28);">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(128,212,168,.22);">📝</div>
+        <span class="text-xs font-bold t-ink leading-tight">Grammar</span>
+      </a>
+      <a href="quiz-n1-kanji.html" class="card-lift flex flex-col items-center gap-2 py-4 px-2 rounded-xl2 border text-center" style="background:rgba(196,168,224,.10);border-color:rgba(196,168,224,.28);">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background:rgba(196,168,224,.22);"><span class="jp font-bold text-2xl t-ink">漢</span></div>
+        <span class="text-xs font-bold t-ink leading-tight">Kanji</span>
+      </a>
+    </div>
+    <!-- Desktop: full row -->
+    <div class="hidden lg:flex gap-3">
+      <a href="quiz-n1-vocab.html" class="card-lift flex-1 flex items-center gap-3 p-4 rounded-xl3 border shadow-card group" style="background:rgba(244,165,122,.12);border-color:rgba(244,165,122,.35);">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-xl" style="background:rgba(244,165,122,.22);">📚</div>
+        <div><div class="font-bold text-sm t-ink">Vocabulary</div><div class="text-xs t-muted">Words & meanings</div></div>
+        <svg class="w-4 h-4 t-muted ml-auto group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="quiz-n1-grammar.html" class="card-lift flex-1 flex items-center gap-3 p-4 rounded-xl3 border shadow-card group" style="background:rgba(128,212,168,.10);border-color:rgba(128,212,168,.28);">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-xl" style="background:rgba(128,212,168,.22);">📝</div>
+        <div><div class="font-bold text-sm t-ink">Grammar</div><div class="text-xs t-muted">Patterns & usage</div></div>
+        <svg class="w-4 h-4 t-muted ml-auto group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="quiz-n1-kanji.html" class="card-lift flex-1 flex items-center gap-3 p-4 rounded-xl3 border shadow-card group" style="background:rgba(196,168,224,.10);border-color:rgba(196,168,224,.28);">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(196,168,224,.22);"><span class="jp font-bold text-2xl t-ink">漢</span></div>
+        <div><div class="font-bold text-sm t-ink">Kanji</div><div class="text-xs t-muted">Characters & readings</div></div>
+        <svg class="w-4 h-4 t-muted ml-auto group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+  </section>
+  <!-- ── SSW ── -->
+  <section id="ssw" class="px-5 lg:px-8 mt-8 fu d6">
+    <!-- Section header -->
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-8 h-8 rounded-xl flex items-center justify-center text-lg shadow" style="background:linear-gradient(135deg,#6ecec8,#2a9d8f);">🏭</div>
+      <h2 class="text-base font-extrabold t-ink">SSW Quiz <span class="jp font-medium text-sm t-muted">(特定技能)</span></h2>
+    </div>
+    <!-- 5-button grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+      <a href="ssw-caregiver-quiz.html" class="card-lift flex flex-col items-center gap-2 py-4 px-3 rounded-xl2 border text-center" style="background:rgba(126,184,228,.10);border-color:rgba(126,184,228,.28);">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(126,184,228,.22);">👴</div>
+        <span class="text-xs font-bold t-ink leading-tight">Caregiver</span>
+        <span class="jp text-[10px] t-muted">介護</span>
+      </a>
+      <a href="ssw-food-service-quiz.html" class="card-lift flex flex-col items-center gap-2 py-4 px-3 rounded-xl2 border text-center" style="background:rgba(110,206,200,.10);border-color:rgba(110,206,200,.28);">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(110,206,200,.22);">🍜</div>
+        <span class="text-xs font-bold t-ink leading-tight">Food Service</span>
+        <span class="jp text-[10px] t-muted">飲食</span>
+      </a>
+      <a href="ssw-agriculture-quiz.html" class="card-lift flex flex-col items-center gap-2 py-4 px-3 rounded-xl2 border text-center" style="background:rgba(128,212,168,.10);border-color:rgba(128,212,168,.28);">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(128,212,168,.22);">🌾</div>
+        <span class="text-xs font-bold t-ink leading-tight">Agriculture</span>
+        <span class="jp text-[10px] t-muted">農業</span>
+      </a>
+      <a href="ssw-food-beverage-quiz.html" class="card-lift flex flex-col items-center gap-2 py-4 px-3 rounded-xl2 border text-center" style="background:rgba(245,218,138,.14);border-color:rgba(245,218,138,.45);">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(245,218,138,.25);">🥤</div>
+        <span class="text-xs font-bold t-ink leading-tight">Food & Beverage</span>
+        <span class="jp text-[10px] t-muted">食品</span>
+      </a>
+      <a href="ssw-hospitality-quiz.html" class="card-lift flex flex-col items-center gap-2 py-4 px-3 rounded-xl2 border text-center" style="background:rgba(244,165,122,.12);border-color:rgba(244,165,122,.35);">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:rgba(244,165,122,.22);">🏨</div>
+        <span class="text-xs font-bold t-ink leading-tight">Hospitality</span>
+        <span class="jp text-[10px] t-muted">宿泊</span>
+      </a>
+    </div>
+  </section>
+  <!-- Final Ad slot -->
+  <div class="px-5 lg:px-8 mt-5 mb-2 fu d6">
+    <div class="rounded-xl border border-dashed border-slate-200 text-center py-4 text-xs t-muted" style="background:#f8fafc;">
+      <span class="block font-semibold">Sponsored</span>
+      728×90 · Leaderboard Ad
+    </div>
+  </div>
+
+</main>
+
+
+<!-- ═══════════ MOBILE BOTTOM NAV ═══════════ -->
+<nav id="botnav" class="lg:hidden fixed bottom-0 left-0 right-0 z-40 border-t border-slate-100"
+     style="background:rgba(255,255,255,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 -4px 24px rgba(15,23,42,.08);">
+  <!-- SSW FAB background patch -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-1 rounded-b-full" style="background:rgba(255,255,255,.97);"></div>
+  <div class="flex items-center" style="height:64px;">
+    <a href="index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:40px;height:30px;background:#eef2f7;">
+        <svg width="18" height="18" fill="none" stroke="#94a3b8" stroke-width="2.3" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg>
+      </div>
+      <span style="font-size:10px;font-weight:600;color:#94a3b8;line-height:1;">Home</span>
+    </a>
+    <a href="jlpt.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:40px;height:30px;background:#eef2f7;">
+        <span style="font-size:10px;font-weight:800;color:#475569;">JLPT</span>
+      </div>
+      <span style="font-size:10px;font-weight:600;color:#94a3b8;line-height:1;">JLPT</span>
+    </a>
+    <a href="ssw.html" class="flex-1 flex flex-col items-center justify-center gap-1 py-1" style="margin-top:-20px;">
+      <div class="flex items-center justify-center rounded-xl2 shadow-md2" style="width:52px;height:52px;background:linear-gradient(135deg,#6ecec8,#2a9d8f);">
+        <span class="jp text-white font-bold" style="font-size:22px;line-height:1;">特</span>
+      </div>
+      <span style="font-size:9px;font-weight:700;color:#2a9d8f;line-height:1;margin-top:2px;">SSW</span>
+    </a>
+    <a href="other.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 py-2">
+      <div class="flex items-center justify-center rounded-xl" style="width:40px;height:30px;background:#eef2f7;">
+        <svg width="16" height="16" fill="none" stroke="#94a3b8" stroke-width="2" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg>
+      </div>
+      <span style="font-size:10px;font-weight:600;color:#94a3b8;line-height:1;">Other</span>
+    </a>
+  </div>
+</nav>
+
+
+<!-- ═══════════ SCRIPTS ═══════════ -->
+<script>
+let isDark = false;
+const MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+const SUN  = '<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/>';
+
+function toggleDark() {
+  isDark = !isDark;
+  document.body.className = isDark
+    ? 'mesh-dark min-h-screen text-slate-100 dark'
+    : 'mesh-light min-h-screen text-ink';
+  ['mob-icon','desk-icon'].forEach(id => { const el = document.getElementById(id); if(el) el.innerHTML = isDark ? SUN : MOON; });
+  const l = document.getElementById('desk-lbl'); if(l) l.textContent = isDark ? 'Light mode' : 'Dark mode';
+}
+
+/* Lang mobile */
+const drops = { lang: false };
+function toggleDrop(name) {
+  drops[name] = !drops[name];
+  const el = document.getElementById(name + '-drop');
+  if(el) el.className = el.className.replace(/\b(open|closed)\b/, drops[name] ? 'open' : 'closed');
+  if(name === 'lang') { const c = document.getElementById('lang-chev'); if(c) c.style.transform = drops.lang ? 'rotate(180deg)' : ''; }
+}
+function setLang(code, flag) {
+  document.getElementById('lang-code').textContent = code;
+  document.getElementById('lang-flag').textContent = flag;
+  drops.lang = false;
+  const el = document.getElementById('lang-drop'); if(el) el.className = el.className.replace(/\b(open|closed)\b/, 'closed');
+  const c = document.getElementById('lang-chev'); if(c) c.style.transform = '';
+}
+
+/* Lang desktop */
+let deskLangOpen = false;
+function toggleDeskLang() {
+  deskLangOpen = !deskLangOpen;
+  const m = document.getElementById('desk-lang-drop');
+  const c = document.getElementById('desk-lang-chev');
+  m.className = m.className.replace(/\b(open|closed)\b/, deskLangOpen ? 'open' : 'closed');
+  c.style.transform = deskLangOpen ? 'rotate(180deg)' : '';
+}
+function setDeskLang(code, flag) {
+  document.getElementById('desk-lang-code').textContent = code;
+  document.getElementById('desk-lang-flag').textContent = flag;
+  const mc = document.getElementById('lang-code'); if(mc) mc.textContent = code;
+  const mf = document.getElementById('lang-flag'); if(mf) mf.textContent = flag;
+  deskLangOpen = false;
+  document.getElementById('desk-lang-drop').className = document.getElementById('desk-lang-drop').className.replace(/\b(open|closed)\b/, 'closed');
+  document.getElementById('desk-lang-chev').style.transform = '';
+}
+
+/* Outside click */
+document.addEventListener('click', e => {
+  const lw = document.getElementById('lang-wrap');
+  if(lw && !lw.contains(e.target) && drops.lang) {
+    drops.lang = false;
+    const el = document.getElementById('lang-drop'); if(el) el.className = el.className.replace(/\b(open|closed)\b/, 'closed');
+    const c = document.getElementById('lang-chev'); if(c) c.style.transform = '';
+  }
+  const dlw = document.getElementById('desk-lang-wrap');
+  if(dlw && !dlw.contains(e.target) && deskLangOpen) {
+    deskLangOpen = false;
+    document.getElementById('desk-lang-drop').className = document.getElementById('desk-lang-drop').className.replace(/\b(open|closed)\b/, 'closed');
+    document.getElementById('desk-lang-chev').style.transform = '';
+  }
+});
+</script>
+
+<script>
+(function(){
+  var PAGE='quiz.html'; var PROG=55;
+  try {
+    var list = JSON.parse(localStorage.getItem('shikaku_recent') || '[]');
+    list = list.filter(function(x){ return x.url !== PAGE; });
+    list.unshift({ url: PAGE, ts: Date.now(), prog: PROG });
+    if(list.length > 10) list = list.slice(0, 10);
+    localStorage.setItem('shikaku_recent', JSON.stringify(list));
+  } catch(e) {}
+})();
+</script>
+
+</body>
+</html>

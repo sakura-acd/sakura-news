@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learn — Shikaku</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Outfit','sans-serif'], jp: ['"Noto Sans JP"','sans-serif'] },
+          colors: {
+            blue:  { DEFAULT:'#7eb8e4', deep:'#3a7cbf' },
+            teal:  { DEFAULT:'#6ecec8', deep:'#2a9d8f' },
+            mint:  { DEFAULT:'#80d4a8', deep:'#27ae72' },
+            coral: { DEFAULT:'#f4a57a', deep:'#e0693a' },
+            butter:{ DEFAULT:'#f5da8a', deep:'#d4a017' },
+            lilac: { DEFAULT:'#c4a8e0', deep:'#8b5cf6' },
+            ink:   { DEFAULT:'#1f2937', 2:'#475569', muted:'#94a3b8' },
+            bg:    { DEFAULT:'#f5f8fc', surface:'#ffffff', s2:'#eef2f7' },
+          },
+          borderRadius: { xl2:'1.25rem', xl3:'1.75rem', xl4:'2.25rem' },
+          boxShadow: { card:'0 2px 16px rgba(15,23,42,.07)', md2:'0 4px 24px rgba(15,23,42,.11)' },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Outfit', sans-serif; }
+    .jp  { font-family: 'Noto Sans JP', sans-serif; }
+    .mesh-light {
+      background: radial-gradient(ellipse at 20% 10%, #daeef8 0%, transparent 55%),
+                  radial-gradient(ellipse at 80% 90%, #d5f2ec 0%, transparent 55%), #f5f8fc;
+    }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
+    .fade-up { animation: fadeUp .5s ease both; }
+    .delay-1 { animation-delay:.07s; } .delay-2 { animation-delay:.14s; }
+    .delay-3 { animation-delay:.21s; } .delay-4 { animation-delay:.28s; }
+
+    .card-hover { transition: transform .15s ease, box-shadow .15s ease; }
+    .card-hover:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(15,23,42,.12); }
+
+    /* Tile states */
+    .tile-new    { background: #fff; border: 2px solid #e2e8f0; }
+    .tile-learn  { background: #eaf5ff; border: 2px solid #7eb8e4; }
+    .tile-master { background: #e6f9f0; border: 2px solid #80d4a8; }
+    .tile-new:hover    { border-color: #7eb8e4; background: #f0f8ff; }
+    .tile-learn:hover  { background: #d8effc; }
+    .tile-master:hover { background: #d4f5e6; }
+
+    /* Active tab */
+    .tab-pill-active { background: #3a7cbf; color: #fff; }
+
+    /* Sidebar nav */
+    .nav-item { transition: all .15s; }
+    .nav-active { background: #eef5fc; color: #3a7cbf; font-weight: 600; }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-thumb { background: #c2d3e3; border-radius: 99px; }
+
+    /* Modal */
+    #detail-modal { transition: opacity .2s ease; }
+    #detail-modal.hidden { opacity:0; pointer-events:none; }
+    .modal-card { animation: fadeUp .3s ease; }
+  </style>
+</head>
+<body class="mesh-light min-h-screen text-ink" id="body">
+
+<!-- Desktop sidebar -->
+<aside class="hidden lg:flex flex-col fixed top-0 left-0 h-full w-60 bg-bg-surface border-r border-slate-100 z-30 shadow-card">
+  <div class="px-6 py-5 flex items-center gap-3 border-b border-slate-100">
+    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue to-teal flex items-center justify-center shadow-md"><span class="jp text-white font-bold text-base">識</span></div>
+    <div><div class="font-bold text-ink text-base tracking-tight">Shikaku</div><div class="text-xs text-ink-muted">日本語 Learning</div></div>
+  </div>
+  <div class="px-5 py-4 flex items-center gap-3 border-b border-slate-100">
+    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue to-teal flex items-center justify-center text-white font-bold text-sm">S</div>
+    <div><div class="font-semibold text-sm text-ink">सुष्मा श्रेष्ठ</div><div class="text-xs text-ink-muted">JLPT N5 · Level 12</div></div>
+  </div>
+  <nav class="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
+    <a href="index.html" class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-ink-2 hover:bg-bg-s2"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg> Dashboard</a>
+    <a href="learn.html"  class="nav-item nav-active flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Learn</a>
+    <a href="study.html"  class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-ink-2 hover:bg-bg-s2"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 4v16M2 12h6"/></svg> Study</a>
+    <a href="quiz.html"   class="nav-item flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-ink-2 hover:bg-bg-s2"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg> Quiz</a>
+  </nav>
+</aside>
+
+<!-- Main -->
+<main class="lg:ml-60 min-h-screen pb-24 lg:pb-8">
+
+  <!-- Mobile topbar -->
+  <header class="lg:hidden sticky top-0 z-20 bg-bg-surface/90 backdrop-blur-md border-b border-slate-100 px-5 py-3.5 flex items-center justify-between">
+    <div class="flex items-center gap-2.5">
+      <a href="index.html" class="text-ink-muted mr-1"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></a>
+      <span class="font-bold text-base text-ink">Learn</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="text-xs bg-blue/10 text-blue-deep font-semibold px-2.5 py-1 rounded-full">N5</span>
+    </div>
+  </header>
+
+  <!-- Desktop page header -->
+  <div class="hidden lg:flex items-center justify-between px-8 pt-8 pb-0 fade-up">
+    <div>
+      <p class="text-xs font-bold tracking-widest text-ink-muted uppercase mb-1">Learn Mode</p>
+      <h1 class="text-2xl font-bold text-ink tracking-tight">Alphabet & Kanji</h1>
+      <p class="text-sm text-ink-2 mt-0.5">Tap any tile to see details · Study to add to flashcard deck</p>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="px-3 py-1.5 rounded-full bg-blue/10 text-blue-deep text-xs font-bold">N5</span>
+      <button onclick="history.back()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-bg-surface border border-slate-200 text-xs font-medium text-ink-2 hover:border-blue hover:text-blue-deep transition-all">
+        ← Dashboard
+      </button>
+    </div>
+  </div>
+
+  <!-- Tabs: Hiragana / Katakana / Kanji -->
+  <div class="px-5 lg:px-8 mt-5 fade-up delay-1">
+    <div class="flex gap-2">
+      <button onclick="switchTab('hiragana',this)" class="tab-pill-active px-5 py-2 rounded-full text-sm font-semibold transition-all">ひらがな Hiragana</button>
+      <button onclick="switchTab('katakana',this)" class="px-5 py-2 rounded-full text-sm font-medium bg-bg-surface border border-slate-200 text-ink-2 hover:border-blue transition-all">カタカナ Katakana</button>
+      <button onclick="switchTab('kanji',this)" class="px-5 py-2 rounded-full text-sm font-medium bg-bg-surface border border-slate-200 text-ink-2 hover:border-blue transition-all">漢字 Kanji</button>
+    </div>
+  </div>
+
+  <!-- Stats row -->
+  <div class="px-5 lg:px-8 mt-4 fade-up delay-2">
+    <div class="grid grid-cols-3 lg:grid-cols-4 gap-3">
+      <div class="bg-bg-surface rounded-xl2 px-4 py-3 shadow-card border border-slate-100 text-center">
+        <div class="text-xl font-bold text-ink">46</div>
+        <div class="text-[10px] text-ink-muted mt-0.5 font-medium">Total</div>
+      </div>
+      <div class="bg-mint/10 rounded-xl2 px-4 py-3 border border-mint/20 text-center">
+        <div class="text-xl font-bold text-mint-deep">28</div>
+        <div class="text-[10px] text-mint-deep mt-0.5 font-medium">Mastered</div>
+      </div>
+      <div class="bg-blue/10 rounded-xl2 px-4 py-3 border border-blue/20 text-center">
+        <div class="text-xl font-bold text-blue-deep">10</div>
+        <div class="text-[10px] text-blue-deep mt-0.5 font-medium">Learning</div>
+      </div>
+      <div class="hidden lg:block bg-bg-s2 rounded-xl2 px-4 py-3 border border-slate-100 text-center">
+        <div class="text-xl font-bold text-ink-muted">8</div>
+        <div class="text-[10px] text-ink-muted mt-0.5 font-medium">New</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="px-5 lg:px-8 mt-3 fade-up delay-2 flex items-center gap-4 text-[11px] text-ink-muted">
+    <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded border-2 border-slate-200 inline-block"></span>New</span>
+    <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded border-2 border-blue inline-block bg-blue/10"></span>Learning</span>
+    <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded border-2 border-mint inline-block bg-mint/10"></span>Mastered</span>
+  </div>
+
+  <!-- Hiragana grid (default visible) -->
+  <div id="tab-hiragana" class="px-5 lg:px-8 mt-4 fade-up delay-3">
+    <div id="grid-hiragana" class="grid grid-cols-5 sm:grid-cols-8 lg:grid-cols-10 gap-2">
+      <!-- Rendered by JS -->
+    </div>
+    <div class="mt-6 flex justify-center">
+      <a href="study.html" class="flex items-center gap-2 px-6 py-3 rounded-xl2 bg-blue-deep text-white font-semibold text-sm shadow-md2 hover:bg-blue transition-all">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 4v16M2 12h6"/></svg>
+        Study with Flashcards →
+      </a>
+    </div>
+  </div>
+
+  <!-- Katakana grid -->
+  <div id="tab-katakana" class="hidden px-5 lg:px-8 mt-4">
+    <div id="grid-katakana" class="grid grid-cols-5 sm:grid-cols-8 lg:grid-cols-10 gap-2"></div>
+    <div class="mt-6 flex justify-center">
+      <a href="study.html" class="flex items-center gap-2 px-6 py-3 rounded-xl2 bg-blue-deep text-white font-semibold text-sm shadow-md2 hover:bg-blue transition-all">
+        Study with Flashcards →
+      </a>
+    </div>
+  </div>
+
+  <!-- Kanji grid -->
+  <div id="tab-kanji" class="hidden px-5 lg:px-8 mt-4">
+    <div id="grid-kanji" class="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-2"></div>
+    <div class="mt-6 flex justify-center">
+      <a href="study.html" class="flex items-center gap-2 px-6 py-3 rounded-xl2 bg-blue-deep text-white font-semibold text-sm shadow-md2 hover:bg-blue transition-all">
+        Study with Flashcards →
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- Mobile bottom nav -->
+<nav class="lg:hidden fixed bottom-0 left-0 right-0 z-30 bg-bg-surface/95 backdrop-blur-md border-t border-slate-100 flex items-center justify-around px-2 py-2 shadow-md2">
+  <a href="index.html" class="flex flex-col items-center gap-0.5 px-3 py-1.5 text-ink-muted"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="text-[10px] font-medium">Home</span></a>
+  <a href="learn.html"  class="flex flex-col items-center gap-0.5 px-3 py-1.5 text-blue-deep"><svg class="w-5 h-5 stroke-blue-deep" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span class="text-[10px] font-semibold">Learn</span></a>
+  <a href="study.html"  class="flex flex-col items-center gap-0.5 px-3 py-1.5 text-ink-muted"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 4v16M2 12h6"/></svg><span class="text-[10px] font-medium">Study</span></a>
+  <a href="quiz.html"   class="flex flex-col items-center gap-0.5 px-3 py-1.5 text-ink-muted"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg><span class="text-[10px] font-medium">Quiz</span></a>
+  <a href="#"           class="flex flex-col items-center gap-0.5 px-3 py-1.5 text-ink-muted"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="text-[10px] font-medium">Profile</span></a>
+</nav>
+
+<!-- Detail modal -->
+<div id="detail-modal" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-end sm:items-center justify-center hidden" onclick="closeModal(event)">
+  <div id="modal-card" class="modal-card bg-bg-surface rounded-t-xl4 sm:rounded-xl4 w-full max-w-sm mx-0 sm:mx-4 p-6 pb-10 sm:pb-6 shadow-md2">
+    <div class="flex items-start justify-between mb-4">
+      <div>
+        <div id="m-char" class="jp text-7xl font-bold text-ink leading-none"></div>
+        <div id="m-romaji" class="text-xl font-semibold text-blue-deep mt-1"></div>
+        <div id="m-mean"   class="text-sm text-ink-muted mt-0.5"></div>
+      </div>
+      <button onclick="document.getElementById('detail-modal').classList.add('hidden')" class="text-ink-muted hover:text-ink p-1"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div class="mt-4 space-y-3">
+      <div class="bg-bg-s2 rounded-xl2 p-3">
+        <div class="text-[11px] font-bold text-ink-muted uppercase tracking-wider mb-1.5">Example words</div>
+        <div id="m-examples" class="space-y-1 text-sm text-ink-2"></div>
+      </div>
+      <div class="flex gap-2 mt-4">
+        <button onclick="document.getElementById('detail-modal').classList.add('hidden')" class="flex-1 py-2.5 rounded-xl bg-bg-s2 text-ink-2 font-semibold text-sm hover:bg-blue/10 transition-all">Close</button>
+        <a href="study.html" class="flex-1 py-2.5 rounded-xl bg-blue-deep text-white font-semibold text-sm text-center hover:bg-blue transition-all">Study This →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const hiragana = [
+  {c:'あ',r:'a',  st:'master', ex:['あめ (ame) — rain','あか (aka) — red']},
+  {c:'い',r:'i',  st:'master', ex:['いぬ (inu) — dog','いえ (ie) — house']},
+  {c:'う',r:'u',  st:'master', ex:['うみ (umi) — sea']},
+  {c:'え',r:'e',  st:'learn',  ex:['えき (eki) — station']},
+  {c:'お',r:'o',  st:'master', ex:['おかし (okashi) — snack']},
+  {c:'か',r:'ka', st:'master', ex:['かさ (kasa) — umbrella']},
+  {c:'き',r:'ki', st:'learn',  ex:['きく (kiku) — chrysanthemum']},
+  {c:'く',r:'ku', st:'master', ex:['くるま (kuruma) — car']},
+  {c:'け',r:'ke', st:'learn',  ex:['けいさつ (keisatsu) — police']},
+  {c:'こ',r:'ko', st:'master', ex:['こども (kodomo) — child']},
+  {c:'さ',r:'sa', st:'master', ex:['さかな (sakana) — fish']},
+  {c:'し',r:'shi',st:'master', ex:['しろ (shiro) — white']},
+  {c:'す',r:'su', st:'learn',  ex:['すし (sushi) — sushi']},
+  {c:'せ',r:'se', st:'new',    ex:['せんせい (sensei) — teacher']},
+  {c:'そ',r:'so', st:'new',    ex:['そら (sora) — sky']},
+  {c:'た',r:'ta', st:'master', ex:['たべる (taberu) — to eat']},
+  {c:'ち',r:'chi',st:'master', ex:['ちいさい (chiisai) — small']},
+  {c:'つ',r:'tsu',st:'learn',  ex:['つき (tsuki) — moon']},
+  {c:'て',r:'te', st:'master', ex:['てがみ (tegami) — letter']},
+  {c:'と',r:'to', st:'master', ex:['とり (tori) — bird']},
+  {c:'な',r:'na', st:'new',    ex:['なまえ (namae) — name']},
+  {c:'に',r:'ni', st:'new',    ex:['にほん (nihon) — Japan']},
+  {c:'ぬ',r:'nu', st:'new',    ex:['ぬの (nuno) — cloth']},
+  {c:'ね',r:'ne', st:'new',    ex:['ねこ (neko) — cat']},
+  {c:'の',r:'no', st:'learn',  ex:['のみもの (nomimono) — drink']},
+  {c:'は',r:'ha', st:'master', ex:['はな (hana) — flower']},
+  {c:'ひ',r:'hi', st:'learn',  ex:['ひと (hito) — person']},
+  {c:'ふ',r:'fu', st:'new',    ex:['ふゆ (fuyu) — winter']},
+  {c:'へ',r:'he', st:'new',    ex:['へや (heya) — room']},
+  {c:'ほ',r:'ho', st:'new',    ex:['ほし (hoshi) — star']},
+  {c:'ま',r:'ma', st:'master', ex:['まち (machi) — town']},
+  {c:'み',r:'mi', st:'learn',  ex:['みず (mizu) — water']},
+  {c:'む',r:'mu', st:'new',    ex:['むし (mushi) — insect']},
+  {c:'め',r:'me', st:'new',    ex:['めがね (megane) — glasses']},
+  {c:'も',r:'mo', st:'master', ex:['もの (mono) — thing']},
+  {c:'や',r:'ya', st:'master', ex:['やま (yama) — mountain']},
+  {c:'ゆ',r:'yu', st:'learn',  ex:['ゆき (yuki) — snow']},
+  {c:'よ',r:'yo', st:'new',    ex:['よる (yoru) — night']},
+  {c:'ら',r:'ra', st:'new',    ex:['らいねん (rainen) — next year']},
+  {c:'り',r:'ri', st:'new',    ex:['りんご (ringo) — apple']},
+  {c:'る',r:'ru', st:'new',    ex:['るすばん (rusuban) — house-sitting']},
+  {c:'れ',r:'re', st:'new',    ex:['れいぞうこ (reizouko) — fridge']},
+  {c:'ろ',r:'ro', st:'new',    ex:['ろうか (rouka) — hallway']},
+  {c:'わ',r:'wa', st:'master', ex:['わたし (watashi) — I/me']},
+  {c:'を',r:'wo', st:'learn',  ex:['Object marker particle']},
+  {c:'ん',r:'n',  st:'master', ex:['Nasal consonant — always solo']},
+];
+
+const katakana = [
+  {c:'ア',r:'a', st:'master'},{c:'イ',r:'i', st:'master'},{c:'ウ',r:'u', st:'learn'},
+  {c:'エ',r:'e', st:'learn'},{c:'オ',r:'o', st:'new'},{c:'カ',r:'ka',st:'master'},
+  {c:'キ',r:'ki',st:'learn'},{c:'ク',r:'ku',st:'new'},{c:'ケ',r:'ke',st:'new'},
+  {c:'コ',r:'ko',st:'new'},{c:'サ',r:'sa',st:'new'},{c:'シ',r:'shi',st:'new'},
+  {c:'ス',r:'su',st:'new'},{c:'セ',r:'se',st:'new'},{c:'ソ',r:'so',st:'new'},
+  {c:'タ',r:'ta',st:'new'},{c:'チ',r:'chi',st:'new'},{c:'ツ',r:'tsu',st:'new'},
+  {c:'テ',r:'te',st:'new'},{c:'ト',r:'to',st:'new'},{c:'ナ',r:'na',st:'new'},
+  {c:'ニ',r:'ni',st:'new'},{c:'ヌ',r:'nu',st:'new'},{c:'ネ',r:'ne',st:'new'},
+  {c:'ノ',r:'no',st:'new'},{c:'ハ',r:'ha',st:'new'},{c:'ヒ',r:'hi',st:'new'},
+  {c:'フ',r:'fu',st:'new'},{c:'ヘ',r:'he',st:'new'},{c:'ホ',r:'ho',st:'new'},
+];
+
+const kanji = [
+  {c:'日',r:'nichi/hi', st:'master', ex:['日本 (nihon) — Japan','今日 (kyou) — today']},
+  {c:'本',r:'hon',      st:'master', ex:['本 (hon) — book','日本 (nihon) — Japan']},
+  {c:'人',r:'hito/jin', st:'master', ex:['人 (hito) — person','日本人 (nihonjin) — Japanese person']},
+  {c:'山',r:'yama',     st:'learn',  ex:['山 (yama) — mountain','富士山 (fujisan) — Mt. Fuji']},
+  {c:'川',r:'kawa',     st:'learn',  ex:['川 (kawa) — river']},
+  {c:'田',r:'ta/da',    st:'new',    ex:['田んぼ (tanbo) — rice paddy']},
+  {c:'水',r:'mizu',     st:'master', ex:['水 (mizu) — water','水曜日 — Wednesday']},
+  {c:'火',r:'hi/ka',    st:'learn',  ex:['火 (hi) — fire','火曜日 — Tuesday']},
+  {c:'木',r:'ki/moku',  st:'new',    ex:['木 (ki) — tree','木曜日 — Thursday']},
+  {c:'金',r:'kin/kane', st:'new',    ex:['金 (kane) — money','金曜日 — Friday']},
+  {c:'土',r:'tsuchi',   st:'new',    ex:['土 (tsuchi) — soil','土曜日 — Saturday']},
+  {c:'月',r:'tsuki/getsu',st:'master',ex:['月 (tsuki) — moon/month','月曜日 — Monday']},
+  {c:'大',r:'oo/dai',   st:'master', ex:['大きい (ookii) — big','大学 (daigaku) — university']},
+  {c:'小',r:'ko/shou',  st:'learn',  ex:['小さい (chiisai) — small','小学校 — elementary school']},
+  {c:'上',r:'ue/jou',   st:'new',    ex:['上 (ue) — above']},
+  {c:'下',r:'shita/ka', st:'new',    ex:['下 (shita) — below']},
+];
+
+function buildGrid(data, containerId) {
+  const grid = document.getElementById(containerId);
+  grid.innerHTML = '';
+  data.forEach(item => {
+    const stClass = item.st === 'master' ? 'tile-master' : item.st === 'learn' ? 'tile-learn' : 'tile-new';
+    const badge = item.st === 'master' ? '<span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-mint-deep"></span>'
+                : item.st === 'learn'  ? '<span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-blue"></span>' : '';
+    const div = document.createElement('div');
+    div.className = `relative card-hover ${stClass} rounded-xl2 p-2.5 cursor-pointer flex flex-col items-center gap-1`;
+    div.innerHTML = `
+      ${badge}
+      <span class="jp text-2xl sm:text-3xl font-bold leading-none">${item.c}</span>
+      <span class="text-[10px] font-medium text-ink-muted">${item.r}</span>
+    `;
+    div.onclick = () => showDetail(item);
+    grid.appendChild(div);
+  });
+}
+
+function showDetail(item) {
+  document.getElementById('m-char').textContent = item.c;
+  document.getElementById('m-romaji').textContent = item.r;
+  document.getElementById('m-mean').textContent = item.st === 'master' ? '✅ Mastered' : item.st === 'learn' ? '📖 Learning' : '🆕 New';
+  document.getElementById('m-examples').innerHTML = (item.ex||[]).map(e => `<div class="jp">${e}</div>`).join('');
+  document.getElementById('detail-modal').classList.remove('hidden');
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('detail-modal')) {
+    document.getElementById('detail-modal').classList.add('hidden');
+  }
+}
+
+let currentTab = 'hiragana';
+function switchTab(tab, btn) {
+  ['hiragana','katakana','kanji'].forEach(t => {
+    document.getElementById('tab-'+t).classList.add('hidden');
+  });
+  document.getElementById('tab-'+tab).classList.remove('hidden');
+  document.querySelectorAll('[onclick^="switchTab"]').forEach(b => {
+    b.className = 'px-5 py-2 rounded-full text-sm font-medium bg-bg-surface border border-slate-200 text-ink-2 hover:border-blue transition-all';
+  });
+  btn.className = 'tab-pill-active px-5 py-2 rounded-full text-sm font-semibold transition-all';
+  currentTab = tab;
+}
+
+buildGrid(hiragana, 'grid-hiragana');
+buildGrid(katakana, 'grid-katakana');
+buildGrid(kanji,    'grid-kanji');
+</script>
+</body>
+</html>

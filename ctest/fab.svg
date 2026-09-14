@@ -1,0 +1,20 @@
+<svg viewBox="130 170 340 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sGradBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a8dcf0"/>
+      <stop offset="100%" stop-color="#5fb8e0"/>
+    </linearGradient>
+    <linearGradient id="aGradBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3d9bc9"/>
+      <stop offset="100%" stop-color="#1f6f99"/>
+    </linearGradient>
+  </defs>
+  <!-- Interlocked S + A monogram only -->
+  <g transform="translate(300,300)">
+    <text x="-38" y="80" font-family="Georgia, 'Times New Roman', serif" font-size="320"
+          font-weight="700" text-anchor="middle" fill="url(#sGradBlue)" opacity="0.85">S</text>
+    <text x="42" y="80" font-family="Georgia, 'Times New Roman', serif" font-size="320"
+          font-weight="700" text-anchor="middle" fill="url(#aGradBlue)" opacity="0.85"
+          style="mix-blend-mode:multiply">A</text>
+  </g>
+</svg>

@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/fab.svg"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SSW — Sakura</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans:['Outfit','sans-serif'], jp:['"Noto Sans JP"','sans-serif'] },
+          colors: {
+            blue:   { DEFAULT:'#7eb8e4', deep:'#3a7cbf' },
+            teal:   { DEFAULT:'#6ecec8', deep:'#2a9d8f' },
+            mint:   { DEFAULT:'#80d4a8', deep:'#27ae72' },
+            coral:  { DEFAULT:'#f4a57a', deep:'#e0693a' },
+            butter: { DEFAULT:'#f5da8a', deep:'#d4a017' },
+            lilac:  { DEFAULT:'#c4a8e0', deep:'#8b5cf6' },
+            ink:    { DEFAULT:'#1f2937', 2:'#475569', muted:'#94a3b8' },
+            bg:     { DEFAULT:'#f5f8fc', surface:'#ffffff', s2:'#eef2f7' },
+          },
+          borderRadius: { xl2:'1.25rem', xl3:'1.75rem', xl4:'2.25rem' },
+          boxShadow: {
+            card: '0 2px 16px rgba(15,23,42,.07)',
+            md2:  '0 4px 24px rgba(15,23,42,.12)',
+            lg2:  '0 8px 40px rgba(15,23,42,.16)',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family:'Outfit',sans-serif; transition:background .3s,color .3s; }
+    .jp  { font-family:'"Noto Sans JP"',sans-serif; }
+
+    .mesh-light {
+      background: radial-gradient(ellipse at 18% 12%,#d8edf8 0%,transparent 52%),
+                  radial-gradient(ellipse at 82% 88%,#d2f1ec 0%,transparent 52%),
+                  radial-gradient(ellipse at 58% 32%,#e6e2f6 0%,transparent 38%),
+                  #f4f7fb;
+    }
+    .mesh-dark {
+      background: radial-gradient(ellipse at 18% 12%,#0f2236 0%,transparent 52%),
+                  radial-gradient(ellipse at 82% 88%,#0b2120 0%,transparent 52%),
+                  #0c1220;
+    }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:none} }
+    .fu  { animation:fadeUp .5s ease both; }
+    .d1  { animation-delay:.07s; } .d2 { animation-delay:.14s; }
+    .d3  { animation-delay:.21s; } .d4 { animation-delay:.28s; }
+    .d5  { animation-delay:.35s; } .d6 { animation-delay:.42s; }
+
+    .card-lift { transition:transform .18s ease,box-shadow .18s ease; }
+    .card-lift:hover { transform:translateY(-3px); box-shadow:0 10px 32px rgba(15,23,42,.13); }
+
+    .ring-track { stroke:#e2e8f0; }
+    .ring-fill  { stroke:#2a9d8f; stroke-linecap:round;
+                  transition:stroke-dashoffset .9s cubic-bezier(.4,0,.2,1); }
+
+    .s-act { background:#eafaf1; color:#27ae72; font-weight:600; }
+
+    .drop { transition:opacity .15s ease,transform .15s ease; }
+    .drop.closed { opacity:0; transform:translateY(-6px); pointer-events:none; }
+    .drop.open   { opacity:1; transform:translateY(0);    pointer-events:all; }
+
+    .level-btn { transition:all .2s ease; }
+    .level-btn.active { transform:translateY(-2px); }
+
+    @keyframes ring-pulse {
+      0%,100% { box-shadow:0 0 0 0 rgba(42,157,143,.55); }
+      50%      { box-shadow:0 0 0 6px rgba(42,157,143,0); }
+    }
+    .avatar-ring {
+      background: conic-gradient(#2a9d8f 0% 65%,#e2e8f0 65% 100%);
+      border-radius:9999px; padding:2.5px;
+      animation:ring-pulse 2.4s ease infinite;
+      display:inline-block; flex-shrink:0;
+    }
+
+    /* Dark mode */
+    body.dark #sidebar-el { background:rgba(14,19,32,.96) !important; border-color:#1d2740 !important; }
+    body.dark #topbar,
+    body.dark #botnav { background:rgba(12,18,32,.68) !important; border-color:rgba(255,255,255,.08) !important; }
+    body.dark .surface  { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark .surface2 { background:#1d2740 !important; }
+    body.dark .t-ink    { color:#e8eef6 !important; }
+    body.dark .t-ink2   { color:#8da4c0 !important; }
+    body.dark .t-muted  { color:#4a607a !important; }
+    body.dark .divider  { border-color:#1d2740 !important; }
+    body.dark .ring-track { stroke:#1d2740; }
+    body.dark .avatar-ring { background:conic-gradient(#2a9d8f 0% 65%,#1d2740 65% 100%); }
+    body.dark #prof-drop, body.dark #desk-prof-drop { background:#151d2e !important; border-color:#1d2740 !important; }
+    body.dark #prof-drop a, body.dark #desk-prof-drop a { color:#8da4c0 !important; }
+    body.dark #prof-drop a:hover, body.dark #desk-prof-drop a:hover { background:rgba(126,184,228,.08) !important; }
+
+    ::-webkit-scrollbar { width:4px; }
+    ::-webkit-scrollbar-thumb { background:#c2d3e3; border-radius:99px; }
+
+    .prog-bar { height:5px; border-radius:99px; background:#eef2f7; overflow:hidden; }
+    body.dark .prog-bar { background:#1d2740; }
+    .prog-bar > span { display:block; height:100%; border-radius:99px; }
+    .pill-btn { transition:transform .15s ease, box-shadow .15s ease; }
+    .pill-btn:hover { transform:translateY(-1px); }
+    .badge-check { box-shadow:0 0 0 3px #fff; }
+    body.dark .badge-check { box-shadow:0 0 0 3px #151d2e; }
+
+    .hero-banner {
+      background-image: url('/english/Gemini_Generated_Image_ssw_hero.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #d3f0ec;
+      background-blend-mode: normal;
+    }
+    .hero-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg,rgba(211,240,236,.88) 0%,rgba(220,240,232,.72) 45%,rgba(228,242,220,.55) 100%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .level-card-bg { position:absolute; inset:0; border-radius:inherit; }
+    .level-btn { position:relative; overflow:hidden; }
+
+    .subj-ic { width:2.75rem; height:2.75rem; border-radius:1rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  </style>
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#e8799a"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="Sakura"/>
+  <link rel="apple-touch-icon" href="icons/icon-192.png"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VK64G24LYX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VK64G24LYX');
+  </script>
+</head>
+
+<body class="mesh-light min-h-screen text-ink" id="body">
+
+<!-- ═══════════ DESKTOP SIDEBAR ═══════════ -->
+<aside id="sidebar-el" class="hidden lg:flex flex-col fixed top-0 left-0 h-full w-60 bg-bg-surface surface border-r border-slate-100 divider z-30 shadow-card">
+
+  <!-- Logo -->
+  <div class="px-4 py-4 flex items-center gap-3 border-b border-slate-100 divider">
+    <div class="w-9 h-9 rounded-xl flex items-center justify-center shadow-md flex-shrink-0" style="background:linear-gradient(135deg,#6ecec8,#2a9d8f);">
+      <span class="jp text-white font-bold text-base">識</span>
+    </div>
+    <div class="min-w-0 flex-1">
+      <div class="font-bold text-base tracking-tight t-ink leading-tight">Sakura</div>
+      <div class="text-xs t-muted">日本語 Learning</div>
+    </div>
+  </div>
+
+  <!-- Profile -->
+  <div class="px-5 py-4 flex items-center gap-3 border-b border-slate-100 divider relative" id="desk-prof-wrap">
+    <button onclick="toggleDeskProf()" class="flex items-center gap-3 flex-1 min-w-0 focus:outline-none" aria-label="Profile">
+      <div class="avatar-ring flex-shrink-0">
+        <div id="sb-avatar" class="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm overflow-hidden" style="background:linear-gradient(135deg,#6ecec8,#2a9d8f);">S</div>
+      </div>
+      <div class="flex-1 min-w-0 text-left">
+        <div class="font-semibold text-sm t-ink leading-tight" id="sb-name">Learner</div>
+      </div>
+      <svg id="desk-prof-chev" class="w-3.5 h-3.5 t-muted transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div id="desk-prof-drop" class="drop closed absolute left-3 right-3 top-full mt-1 bg-white surface rounded-xl2 shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+      <div class="px-4 py-3 bg-gradient-to-r from-blue/6 to-teal/6 border-b border-slate-100 divider">
+        <div class="font-bold text-sm t-ink" id="desk-drop-name">Learner</div>
+      </div>
+      <a href="../profile/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        My Profile
+      </a>
+      <a href="../download/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors border-t border-slate-100 divider">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16l-4-4h3V4h2v8h3l-4 4z"/><path d="M4 20h16"/></svg>
+        Download App
+      </a>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <nav class="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
+    <a href="../index.html"  class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg>home
+    </a>
+    <a href="../learn.html"  class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Learn
+    </a>
+    <a href="../study.html"  class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 4v16M2 12h6"/></svg>Study
+    </a>
+    <a href="../quiz/index.html"   class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg>practice
+    </a>
+    <div class="pt-4 pb-1 px-3 text-[10px] font-bold tracking-widest t-muted uppercase">Courses</div>
+    <a href="../jlpt/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>JLPT
+    </a>
+    <a href="index.html" class="s-act flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 4.5-3.2 7.9-8 9-4.8-1.1-8-4.5-8-9V6l8-3Z"/></svg>SSW
+    </a>
+
+    <div class="pt-4 pb-1 px-3 text-[10px] font-bold tracking-widest t-muted uppercase">SSW Industries</div>
+    <a href="#caregiver"  class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-mint/20 text-mint-deep font-bold text-[10px] flex items-center justify-center jp">介</span> Caregiver</a>
+    <a href="#food" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-coral/20 text-coral-deep font-bold text-[10px] flex items-center justify-center jp">外</span> Food Service</a>
+    <a href="#agriculture" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-butter/20 text-butter-deep font-bold text-[10px] flex items-center justify-center jp">農</span> Agriculture</a>
+    <a href="#construction" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-blue/20 text-blue-deep font-bold text-[10px] flex items-center justify-center jp">建</span> Construction</a>
+    <a href="#manufacturing" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm t-ink2 hover:bg-bg-s2 transition-all"><span class="w-5 h-5 rounded bg-lilac/20 text-lilac-deep font-bold text-[10px] flex items-center justify-center jp">製</span> Manufacturing</a>
+  </nav>
+
+  <!-- Footer -->
+  <div class="px-4 py-4 border-t border-slate-100 divider flex items-center justify-between">
+    <button onclick="toggleDark()" class="flex items-center gap-2 text-xs t-muted hover:text-ink transition-colors">
+      <svg id="desk-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span id="desk-lbl">Dark mode</span>
+    </button>
+  </div>
+</aside>
+
+
+<!-- ═══════════ MOBILE TOPBAR ═══════════ -->
+<header id="topbar" class="lg:hidden fixed top-0 left-0 right-0 z-40 px-4 py-2.5 flex items-center transition-transform duration-300"
+        style="background:rgba(255,255,255,.72);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:0.5px solid rgba(0,0,0,.08);">
+  <div class="relative flex-shrink-0" id="prof-wrap">
+    <button id="prof-btn" onclick="toggleDrop('prof')" class="block focus:outline-none" aria-label="Profile">
+      <div class="avatar-ring">
+        <div id="mob-avatar" class="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm select-none overflow-hidden" style="background:linear-gradient(135deg,#6ecec8,#2a9d8f);">S</div>
+      </div>
+    </button>
+    <div id="prof-drop" class="drop closed absolute top-full left-0 mt-2 w-52 bg-white surface rounded-xl2 shadow-lg2 border border-slate-100 divider overflow-hidden z-50">
+      <div class="px-4 py-3 bg-gradient-to-r from-blue/6 to-teal/6 border-b border-slate-100 divider">
+        <div class="font-bold text-sm t-ink" id="mob-drop-name">Learner</div>
+      </div>
+      <a href="../profile/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        My Profile
+      </a>
+      <a href="../download/index.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm t-ink2 hover:bg-blue/5 transition-colors border-t border-slate-100 divider">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16l-4-4h3V4h2v8h3l-4 4z"/><path d="M4 20h16"/></svg>
+        Download App
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 pointer-events-none select-none">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2a9d8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v6c0 4.5-3.2 7.9-8 9-4.8-1.1-8-4.5-8-9V6l8-3Z"/></svg>
+    <span class="font-extrabold text-base t-ink tracking-tight">SSW</span>
+  </div>
+
+  <div class="ml-auto flex items-center gap-2 flex-shrink-0">
+    <button onclick="toggleDark()" class="w-8 h-8 rounded-lg bg-bg-s2 surface2 border border-slate-200 divider flex items-center justify-center t-muted hover:text-blue-deep hover:border-blue/50 transition-all">
+      <svg id="mob-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+
+<!-- ═══════════ MAIN CONTENT ═══════════ -->
+<main id="main-content" class="lg:ml-60 min-h-screen pb-28 lg:pb-10 pt-14 lg:pt-8 lg:px-8">
+
+
+  <!-- Hero -->
+  <section class="px-5 lg:px-0 pt-5 lg:pt-0 fu">
+    <div class="hero-banner relative overflow-hidden rounded-xl4 lg:rounded-xl3 px-6 lg:px-8 py-7 lg:py-10 shadow-card border border-slate-100 divider">
+      <div class="relative z-10 max-w-[60%] lg:max-w-[50%]">
+        <div class="text-[10px] font-extrabold tracking-widest uppercase text-teal-deep mb-1.5">Specified Skilled Worker</div>
+        <h1 class="text-2xl lg:text-[38px] font-extrabold t-ink leading-[1.05] tracking-tight">SSW<br class="hidden lg:block"/> Industries</h1>
+        <p class="mt-2 text-xs lg:text-sm t-ink2 leading-relaxed jp">特定技能の日本語学習を始めましょう</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Your Progress -->
+  <section class="px-5 lg:px-0 mt-5 lg:mt-6 fu d1">
+    <div class="bg-bg-surface surface rounded-xl4 lg:rounded-xl3 shadow-card border border-slate-100 divider p-6 lg:py-6 lg:px-8">
+
+      <!-- Mobile heading -->
+      <div class="flex items-center justify-between mb-5 lg:hidden">
+        <h3 class="text-sm font-bold t-ink">Your Progress</h3>
+        <a href="#" class="text-xs font-bold" style="color:#2a9d8f;">See Details</a>
+      </div>
+
+      <div class="flex items-center gap-5 lg:gap-8 mb-6 lg:mb-0">
+        <div class="relative w-28 h-28 lg:w-24 lg:h-24 flex-shrink-0">
+          <svg class="w-28 h-28 lg:w-24 lg:h-24 -rotate-90" viewBox="0 0 112 112">
+            <circle class="ring-track" cx="56" cy="56" r="48" fill="none" stroke-width="10"/>
+            <circle class="ring-fill" id="ov-ring-fill" cx="56" cy="56" r="48" fill="none" stroke-width="10"
+              stroke-dasharray="301.6" stroke-dashoffset="301.6"/>
+          </svg>
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <span class="text-2xl lg:text-xl font-extrabold t-ink leading-none" id="ov-ring-pct">0%</span>
+            <span class="hidden lg:block text-[10px] t-muted font-semibold mt-1">Overall Progress</span>
+            <span class="text-[10px] lg:hidden t-muted font-semibold mt-1">Completed</span>
+          </div>
+        </div>
+
+        <div class="flex-1 flex flex-col lg:flex-row lg:items-center gap-3.5 lg:gap-10">
+          <div class="flex items-center gap-3 lg:gap-2.5">
+            <div class="w-8 h-8 lg:w-9 lg:h-9 rounded-full flex items-center justify-center text-xs lg:text-sm text-white flex-shrink-0" style="background:#27ae72;">✓</div>
+            <div><div class="font-extrabold text-base lg:text-lg t-ink leading-tight" id="ov-lessons">0</div><div class="text-[11px] t-muted whitespace-nowrap">Lessons Completed</div></div>
+          </div>
+          <div class="flex items-center gap-3 lg:gap-2.5">
+            <div class="w-8 h-8 lg:w-9 lg:h-9 rounded-full flex items-center justify-center text-xs lg:text-sm text-white flex-shrink-0" style="background:#d4a017;">★</div>
+            <div><div class="font-extrabold text-base lg:text-lg t-ink leading-tight" id="ov-points">0 / 0</div><div class="text-[11px] t-muted whitespace-nowrap">Points</div></div>
+          </div>
+          <div class="flex items-center gap-3 lg:gap-2.5">
+            <div class="w-8 h-8 lg:w-9 lg:h-9 rounded-full flex items-center justify-center text-xs lg:text-sm text-white flex-shrink-0" style="background:#8b5cf6;">🔥</div>
+            <div><div class="font-extrabold text-base lg:text-lg t-ink leading-tight" id="ov-streak">0</div><div class="text-[11px] t-muted whitespace-nowrap">Day Streak</div></div>
+          </div>
+
+          <button class="pill-btn hidden lg:flex items-center justify-center gap-2 rounded-full py-3 px-7 text-white text-sm font-bold shadow-md2 ml-auto flex-shrink-0" style="background:linear-gradient(90deg,#6ecec8,#2a9d8f);">
+            Continue Learning
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <button class="w-full lg:hidden flex items-center justify-center gap-2 rounded-xl2 py-3.5 text-white text-sm font-bold shadow-md2 hover:brightness-105 transition-all mt-6 mb-5" style="background:linear-gradient(90deg,#6ecec8,#2a9d8f);">
+        Continue Learning
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- Industry Selector (illustrated cards) -->
+  <div class="px-5 lg:px-0 mt-6 lg:mt-8 fu">
+    <h2 class="text-sm lg:text-base font-bold t-ink mb-3 lg:mb-3">Choose Your Industry</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 lg:gap-4">
+      <button onclick="showIndustry('caregiver')" data-industry-btn="caregiver" class="level-btn active card-lift relative flex flex-col items-center justify-end gap-1.5 py-7 lg:py-6 rounded-xl3 lg:rounded-xl2 border-2 transition-all bg-bg-surface surface" style="border-color:#2a9d8f;background:#2a9d8f14;min-height:150px;">
+        <div class="level-card-bg" style="background:linear-gradient(150deg,#6ecec833,#2a9d8f1a);"></div>
+        <span data-check class="badge-check absolute top-2.5 right-2.5 w-5 h-5 rounded-full items-center justify-center text-white z-10" style="background:#2a9d8f;font-size:10px;display:flex;">✓</span>
+        <span class="relative z-10 w-14 h-14 lg:w-12 lg:h-12 rounded-full flex items-center justify-center text-lg lg:text-base text-white font-extrabold shadow-md2 jp" style="background:linear-gradient(135deg,#6ecec8,#2a9d8f);">介</span>
+        <span data-lvl-label class="relative z-10 text-sm lg:text-xs font-bold t-ink">Caregiver</span>
+      </button>
+      <button onclick="showIndustry('food')" data-industry-btn="food" class="level-btn card-lift relative flex flex-col items-center justify-end gap-1.5 py-7 lg:py-6 rounded-xl3 lg:rounded-xl2 border-2 transition-all bg-bg-surface surface" style="border-color:transparent;min-height:150px;">
+        <div class="level-card-bg" style="background:linear-gradient(150deg,#f4a57a33,#e0693a1a);"></div>
+        <span data-check class="badge-check absolute top-2.5 right-2.5 w-5 h-5 rounded-full items-center justify-center text-white z-10" style="background:#e0693a;font-size:10px;display:none;">✓</span>
+        <span class="relative z-10 w-14 h-14 lg:w-12 lg:h-12 rounded-full flex items-center justify-center text-lg lg:text-base text-white font-extrabold shadow-md2 jp" style="background:linear-gradient(135deg,#f4a57a,#e0693a);">外</span>
+        <span data-lvl-label class="relative z-10 text-sm lg:text-xs font-bold t-ink2">Food Service</span>
+      </button>
+      <button onclick="showIndustry('agriculture')" data-industry-btn="agriculture" class="level-btn card-lift relative flex flex-col items-center justify-end gap-1.5 py-7 lg:py-6 rounded-xl3 lg:rounded-xl2 border-2 transition-all bg-bg-surface surface" style="border-color:transparent;min-height:150px;">
+        <div class="level-card-bg" style="background:linear-gradient(150deg,#f5da8a33,#d4a0171a);"></div>
+        <span data-check class="badge-check absolute top-2.5 right-2.5 w-5 h-5 rounded-full items-center justify-center text-white z-10" style="background:#d4a017;font-size:10px;display:none;">✓</span>
+        <span class="relative z-10 w-14 h-14 lg:w-12 lg:h-12 rounded-full flex items-center justify-center text-lg lg:text-base text-white font-extrabold shadow-md2 jp" style="background:linear-gradient(135deg,#f5da8a,#d4a017);">農</span>
+        <span data-lvl-label class="relative z-10 text-sm lg:text-xs font-bold t-ink2">Agriculture</span>
+      </button>
+      <button onclick="showIndustry('construction')" data-industry-btn="construction" class="level-btn card-lift relative flex flex-col items-center justify-end gap-1.5 py-7 lg:py-6 rounded-xl3 lg:rounded-xl2 border-2 transition-all bg-bg-surface surface" style="border-color:transparent;min-height:150px;">
+        <div class="level-card-bg" style="background:linear-gradient(150deg,#7eb8e433,#3a7cbf1a);"></div>
+        <span data-check class="badge-check absolute top-2.5 right-2.5 w-5 h-5 rounded-full items-center justify-center text-white z-10" style="background:#3a7cbf;font-size:10px;display:none;">✓</span>
+        <span class="relative z-10 w-14 h-14 lg:w-12 lg:h-12 rounded-full flex items-center justify-center text-lg lg:text-base text-white font-extrabold shadow-md2 jp" style="background:linear-gradient(135deg,#7eb8e4,#3a7cbf);">建</span>
+        <span data-lvl-label class="relative z-10 text-sm lg:text-xs font-bold t-ink2">Construction</span>
+      </button>
+      <button onclick="showIndustry('manufacturing')" data-industry-btn="manufacturing" class="level-btn card-lift relative flex flex-col items-center justify-end gap-1.5 py-7 lg:py-6 rounded-xl3 lg:rounded-xl2 border-2 transition-all bg-bg-surface surface" style="border-color:transparent;min-height:150px;">
+        <div class="level-card-bg" style="background:linear-gradient(150deg,#c4a8e033,#8b5cf61a);"></div>
+        <span data-check class="badge-check absolute top-2.5 right-2.5 w-5 h-5 rounded-full items-center justify-center text-white z-10" style="background:#8b5cf6;font-size:10px;display:none;">✓</span>
+        <span class="relative z-10 w-14 h-14 lg:w-12 lg:h-12 rounded-full flex items-center justify-center text-lg lg:text-base text-white font-extrabold shadow-md2 jp" style="background:linear-gradient(135deg,#c4a8e0,#8b5cf6);">製</span>
+        <span data-lvl-label class="relative z-10 text-sm lg:text-xs font-bold t-ink2">Manufacturing</span>
+      </button>
+
+    </div>
+  </div>
+
+  <section id="caregiver" data-industry-panel="caregiver" class="px-5 lg:px-0 mt-5 lg:mt-8 fu" style="display:block;--accent:#2a9d8f;--tint:#2a9d8f14;--tintB:#2a9d8f4d;">
+    <div class="relative overflow-hidden flex items-center gap-4 rounded-xl3 lg:rounded-xl3 p-5 lg:p-6 mb-4 lg:mb-5" style="background:linear-gradient(120deg,var(--tint),transparent);border:1px solid var(--tintB);">
+      <span class="w-14 h-14 lg:w-12 lg:h-12 rounded-xl2 flex items-center justify-center font-extrabold text-lg lg:text-base text-white shadow-md2 flex-shrink-0 jp" style="background:linear-gradient(135deg,#6ecec8,#2a9d8f);">介</span>
+      <div class="flex-1 min-w-0">
+        <h2 class="text-lg lg:text-xl font-extrabold t-ink">Caregiver <span class="text-sm lg:text-sm font-medium t-muted">— Kaigo</span></h2>
+        <p class="text-xs lg:text-[12px] t-muted mt-0.5">90+ Terms · 120+ Words</p>
+        <p class="text-xs lg:text-[13px] t-ink2 mt-2 leading-relaxed">Caregiver training covers the everyday Japanese used in elderly care and nursing facilities.</p>
+      </div>
+      <div class="hidden lg:flex w-16 h-16 rounded-2xl items-center justify-center flex-shrink-0" style="background:var(--tint);">
+        <span class="jp font-bold text-2xl" style="color:#2a9d8f;">介</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 lg:gap-4">
+      <a href="../vocab/caregiver/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#2a9d8f22;">
+        <div class="subj-ic" style="background:#2a9d8f14;">
+          <span class="subj-ic-icon"><span class="text-2xl">📚</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Vocabulary</span>
+        <span class="text-[11px] t-muted -mt-1.5">120+ Words</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-caregiver-vocab-bar" style="width:0%;background:#2a9d8f;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-caregiver-vocab-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#2a9d8f14;color:#2a9d8f;">Study Now</span>
+      </a>
+      <a href="../phrases/caregiver/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#2a9d8f22;">
+        <div class="subj-ic" style="background:#2a9d8f14;">
+          <span class="subj-ic-icon"><span class="text-2xl">💬</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Key Phrases</span>
+        <span class="text-[11px] t-muted -mt-1.5">60+ Phrases</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-caregiver-phrases-bar" style="width:0%;background:#2a9d8f;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-caregiver-phrases-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#2a9d8f14;color:#2a9d8f;">Study Now</span>
+      </a>
+      <a href="../terms/caregiver/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#2a9d8f22;">
+        <div class="subj-ic" style="background:#2a9d8f14;">
+          <span class="subj-ic-icon"><span class="jp font-bold text-xl" style="color:#2a9d8f;">語</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Terminology</span>
+        <span class="text-[11px] t-muted -mt-1.5">90+ Terms</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-caregiver-terms-bar" style="width:0%;background:#2a9d8f;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-caregiver-terms-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#2a9d8f14;color:#2a9d8f;">Study Now</span>
+      </a>
+      <a href="../scenarios/caregiver/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#2a9d8f22;">
+        <div class="subj-ic" style="background:#2a9d8f14;">
+          <span class="subj-ic-icon"><span class="text-2xl">🎯</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Scenarios</span>
+        <span class="text-[11px] t-muted -mt-1.5">Combined</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-caregiver-scenarios-bar" style="width:0%;background:#2a9d8f;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-caregiver-scenarios-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#2a9d8f14;color:#2a9d8f;">Practice Now</span>
+      </a>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-4 mt-5 lg:mt-6">
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-5 lg:p-6 shadow-card">
+        <h3 class="text-sm lg:text-base font-extrabold t-ink mb-3">What you will learn</h3>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center text-white text-[10px] flex-shrink-0 mt-0.5" style="background:#2a9d8f;">✓</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Understand basic care-related instructions and reports</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center text-white text-[10px] flex-shrink-0 mt-0.5" style="background:#2a9d8f;">✓</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Communicate politely and clearly with residents and staff</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center text-white text-[10px] flex-shrink-0 mt-0.5" style="background:#2a9d8f;">✓</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Recognize key terminology used in care facilities</span>
+          </li>
+        </ul>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-5 lg:p-6 shadow-card">
+        <h3 class="text-sm lg:text-base font-extrabold t-ink mb-3">Study Tips</h3>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#eef2f7;">📅</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Study a little every day to build consistency</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#eef2f7;">🔊</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Practice phrases out loud to build fluency</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#eef2f7;">📄</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Run through real-world scenarios to build confidence</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-3 lg:gap-4 mt-5 lg:mt-6">
+      <a href="../quiz/caregiver/index.html" class="card-lift flex items-center justify-between gap-4 rounded-xl3 p-5 lg:p-6" style="background:var(--tint);border:1px solid var(--tintB);">
+        <div>
+          <div class="font-extrabold text-base lg:text-lg t-ink">Start Quiz</div>
+          <p class="text-xs t-ink2 mt-1">Test your knowledge with practice questions</p>
+          <span class="pill-btn inline-flex items-center gap-2 mt-3 py-2 px-4 rounded-full text-xs font-bold text-white" style="background:#2a9d8f;">Start Quiz
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#2a9d8f" stroke-width="1.6" class="flex-shrink-0 opacity-70"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg>
+      </a>
+      <a href="../fulltest/caregiver/index.html" class="card-lift flex items-center justify-between gap-4 rounded-xl3 p-5 lg:p-6" style="background:#fdeaf0;border:1px solid #f7c9d8;">
+        <div>
+          <div class="font-extrabold text-base lg:text-lg t-ink">Full Test</div>
+          <p class="text-xs t-ink2 mt-1">Check your ability with a full skills assessment</p>
+          <span class="pill-btn inline-flex items-center gap-2 mt-3 py-2 px-4 rounded-full text-xs font-bold text-white" style="background:#e8517a;">Start Test
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="1.6" class="flex-shrink-0 opacity-70"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </a>
+    </div>
+  </section>
+  <section id="food" data-industry-panel="food" class="px-5 lg:px-0 mt-5 lg:mt-8 fu" style="display:none;--accent:#e0693a;--tint:#e0693a14;--tintB:#e0693a4d;">
+    <div class="relative overflow-hidden flex items-center gap-4 rounded-xl3 lg:rounded-xl3 p-5 lg:p-6 mb-4 lg:mb-5" style="background:linear-gradient(120deg,var(--tint),transparent);border:1px solid var(--tintB);">
+      <span class="w-14 h-14 lg:w-12 lg:h-12 rounded-xl2 flex items-center justify-center font-extrabold text-lg lg:text-base text-white shadow-md2 flex-shrink-0 jp" style="background:linear-gradient(135deg,#f4a57a,#e0693a);">外</span>
+      <div class="flex-1 min-w-0">
+        <h2 class="text-lg lg:text-xl font-extrabold t-ink">Food Service <span class="text-sm lg:text-sm font-medium t-muted">— Gaishokugyō</span></h2>
+        <p class="text-xs lg:text-[12px] t-muted mt-0.5">70+ Terms · 100+ Words</p>
+        <p class="text-xs lg:text-[13px] t-ink2 mt-2 leading-relaxed">Food service training covers the Japanese used in restaurants, kitchens, and customer service.</p>
+      </div>
+      <div class="hidden lg:flex w-16 h-16 rounded-2xl items-center justify-center flex-shrink-0" style="background:var(--tint);">
+        <span class="jp font-bold text-2xl" style="color:#e0693a;">外</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 lg:gap-4">
+      <a href="../vocab/food/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#e0693a22;">
+        <div class="subj-ic" style="background:#e0693a14;">
+          <span class="subj-ic-icon"><span class="text-2xl">📚</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Vocabulary</span>
+        <span class="text-[11px] t-muted -mt-1.5">100+ Words</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-food-vocab-bar" style="width:0%;background:#e0693a;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-food-vocab-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#e0693a14;color:#e0693a;">Study Now</span>
+      </a>
+      <a href="../phrases/food/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#e0693a22;">
+        <div class="subj-ic" style="background:#e0693a14;">
+          <span class="subj-ic-icon"><span class="text-2xl">💬</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Key Phrases</span>
+        <span class="text-[11px] t-muted -mt-1.5">55+ Phrases</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-food-phrases-bar" style="width:0%;background:#e0693a;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-food-phrases-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#e0693a14;color:#e0693a;">Study Now</span>
+      </a>
+      <a href="../terms/food/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#e0693a22;">
+        <div class="subj-ic" style="background:#e0693a14;">
+          <span class="subj-ic-icon"><span class="jp font-bold text-xl" style="color:#e0693a;">語</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Terminology</span>
+        <span class="text-[11px] t-muted -mt-1.5">70+ Terms</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-food-terms-bar" style="width:0%;background:#e0693a;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-food-terms-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#e0693a14;color:#e0693a;">Study Now</span>
+      </a>
+      <a href="../scenarios/food/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#e0693a22;">
+        <div class="subj-ic" style="background:#e0693a14;">
+          <span class="subj-ic-icon"><span class="text-2xl">🎯</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Scenarios</span>
+        <span class="text-[11px] t-muted -mt-1.5">Combined</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-food-scenarios-bar" style="width:0%;background:#e0693a;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-food-scenarios-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#e0693a14;color:#e0693a;">Practice Now</span>
+      </a>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-4 mt-5 lg:mt-6">
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-5 lg:p-6 shadow-card">
+        <h3 class="text-sm lg:text-base font-extrabold t-ink mb-3">What you will learn</h3>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center text-white text-[10px] flex-shrink-0 mt-0.5" style="background:#e0693a;">✓</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Take orders and handle customer requests smoothly</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center text-white text-[10px] flex-shrink-0 mt-0.5" style="background:#e0693a;">✓</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Understand kitchen and hygiene-related instructions</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center text-white text-[10px] flex-shrink-0 mt-0.5" style="background:#e0693a;">✓</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Communicate about menu items and allergies</span>
+          </li>
+        </ul>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-5 lg:p-6 shadow-card">
+        <h3 class="text-sm lg:text-base font-extrabold t-ink mb-3">Study Tips</h3>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#eef2f7;">📅</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Study a little every day to build consistency</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#eef2f7;">🔊</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Practice phrases out loud to build fluency</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#eef2f7;">📄</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Run through real-world scenarios to build confidence</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-3 lg:gap-4 mt-5 lg:mt-6">
+      <a href="../quiz/food/index.html" class="card-lift flex items-center justify-between gap-4 rounded-xl3 p-5 lg:p-6" style="background:var(--tint);border:1px solid var(--tintB);">
+        <div>
+          <div class="font-extrabold text-base lg:text-lg t-ink">Start Quiz</div>
+          <p class="text-xs t-ink2 mt-1">Test your knowledge with practice questions</p>
+          <span class="pill-btn inline-flex items-center gap-2 mt-3 py-2 px-4 rounded-full text-xs font-bold text-white" style="background:#e0693a;">Start Quiz
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#e0693a" stroke-width="1.6" class="flex-shrink-0 opacity-70"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg>
+      </a>
+      <a href="../fulltest/food/index.html" class="card-lift flex items-center justify-between gap-4 rounded-xl3 p-5 lg:p-6" style="background:#fdeaf0;border:1px solid #f7c9d8;">
+        <div>
+          <div class="font-extrabold text-base lg:text-lg t-ink">Full Test</div>
+          <p class="text-xs t-ink2 mt-1">Check your ability with a full skills assessment</p>
+          <span class="pill-btn inline-flex items-center gap-2 mt-3 py-2 px-4 rounded-full text-xs font-bold text-white" style="background:#e8517a;">Start Test
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="1.6" class="flex-shrink-0 opacity-70"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </a>
+    </div>
+  </section>
+  <section id="agriculture" data-industry-panel="agriculture" class="px-5 lg:px-0 mt-5 lg:mt-8 fu" style="display:none;--accent:#d4a017;--tint:#d4a01714;--tintB:#d4a0174d;">
+    <div class="relative overflow-hidden flex items-center gap-4 rounded-xl3 lg:rounded-xl3 p-5 lg:p-6 mb-4 lg:mb-5" style="background:linear-gradient(120deg,var(--tint),transparent);border:1px solid var(--tintB);">
+      <span class="w-14 h-14 lg:w-12 lg:h-12 rounded-xl2 flex items-center justify-center font-extrabold text-lg lg:text-base text-white shadow-md2 flex-shrink-0 jp" style="background:linear-gradient(135deg,#f5da8a,#d4a017);">農</span>
+      <div class="flex-1 min-w-0">
+        <h2 class="text-lg lg:text-xl font-extrabold t-ink">Agriculture <span class="text-sm lg:text-sm font-medium t-muted">— Nōgyō</span></h2>
+        <p class="text-xs lg:text-[12px] t-muted mt-0.5">60+ Terms · 90+ Words</p>
+        <p class="text-xs lg:text-[13px] t-ink2 mt-2 leading-relaxed">Agriculture training covers the Japanese used on farms, in greenhouses, and with equipment.</p>
+      </div>
+      <div class="hidden lg:flex w-16 h-16 rounded-2xl items-center justify-center flex-shrink-0" style="background:var(--tint);">
+        <span class="jp font-bold text-2xl" style="color:#d4a017;">農</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 lg:gap-4">
+      <a href="../vocab/agriculture/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#d4a01722;">
+        <div class="subj-ic" style="background:#d4a01714;">
+          <span class="subj-ic-icon"><span class="text-2xl">📚</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Vocabulary</span>
+        <span class="text-[11px] t-muted -mt-1.5">90+ Words</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-agriculture-vocab-bar" style="width:0%;background:#d4a017;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-agriculture-vocab-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#d4a01714;color:#d4a017;">Study Now</span>
+      </a>
+      <a href="../phrases/agriculture/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#d4a01722;">
+        <div class="subj-ic" style="background:#d4a01714;">
+          <span class="subj-ic-icon"><span class="text-2xl">💬</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Key Phrases</span>
+        <span class="text-[11px] t-muted -mt-1.5">45+ Phrases</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-agriculture-phrases-bar" style="width:0%;background:#d4a017;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-agriculture-phrases-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#d4a01714;color:#d4a017;">Study Now</span>
+      </a>
+      <a href="../terms/agriculture/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#d4a01722;">
+        <div class="subj-ic" style="background:#d4a01714;">
+          <span class="subj-ic-icon"><span class="jp font-bold text-xl" style="color:#d4a017;">語</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Terminology</span>
+        <span class="text-[11px] t-muted -mt-1.5">60+ Terms</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-agriculture-terms-bar" style="width:0%;background:#d4a017;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-agriculture-terms-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#d4a01714;color:#d4a017;">Study Now</span>
+      </a>
+      <a href="../scenarios/agriculture/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#d4a01722;">
+        <div class="subj-ic" style="background:#d4a01714;">
+          <span class="subj-ic-icon"><span class="text-2xl">🎯</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Scenarios</span>
+        <span class="text-[11px] t-muted -mt-1.5">Combined</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-agriculture-scenarios-bar" style="width:0%;background:#d4a017;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-agriculture-scenarios-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#d4a01714;color:#d4a017;">Practice Now</span>
+      </a>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-4 mt-5 lg:mt-6">
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-5 lg:p-6 shadow-card">
+        <h3 class="text-sm lg:text-base font-extrabold t-ink mb-3">What you will learn</h3>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center text-white text-[10px] flex-shrink-0 mt-0.5" style="background:#d4a017;">✓</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Understand instructions for planting, harvesting, and equipment</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center text-white text-[10px] flex-shrink-0 mt-0.5" style="background:#d4a017;">✓</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Recognize common crop and tool vocabulary</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center text-white text-[10px] flex-shrink-0 mt-0.5" style="background:#d4a017;">✓</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Communicate about weather and seasonal work</span>
+          </li>
+        </ul>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-5 lg:p-6 shadow-card">
+        <h3 class="text-sm lg:text-base font-extrabold t-ink mb-3">Study Tips</h3>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#eef2f7;">📅</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Study a little every day to build consistency</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#eef2f7;">🔊</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Practice phrases out loud to build fluency</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#eef2f7;">📄</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Run through real-world scenarios to build confidence</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-3 lg:gap-4 mt-5 lg:mt-6">
+      <a href="../quiz/agriculture/index.html" class="card-lift flex items-center justify-between gap-4 rounded-xl3 p-5 lg:p-6" style="background:var(--tint);border:1px solid var(--tintB);">
+        <div>
+          <div class="font-extrabold text-base lg:text-lg t-ink">Start Quiz</div>
+          <p class="text-xs t-ink2 mt-1">Test your knowledge with practice questions</p>
+          <span class="pill-btn inline-flex items-center gap-2 mt-3 py-2 px-4 rounded-full text-xs font-bold text-white" style="background:#d4a017;">Start Quiz
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#d4a017" stroke-width="1.6" class="flex-shrink-0 opacity-70"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg>
+      </a>
+      <a href="../fulltest/agriculture/index.html" class="card-lift flex items-center justify-between gap-4 rounded-xl3 p-5 lg:p-6" style="background:#fdeaf0;border:1px solid #f7c9d8;">
+        <div>
+          <div class="font-extrabold text-base lg:text-lg t-ink">Full Test</div>
+          <p class="text-xs t-ink2 mt-1">Check your ability with a full skills assessment</p>
+          <span class="pill-btn inline-flex items-center gap-2 mt-3 py-2 px-4 rounded-full text-xs font-bold text-white" style="background:#e8517a;">Start Test
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="1.6" class="flex-shrink-0 opacity-70"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </a>
+    </div>
+  </section>
+  <section id="construction" data-industry-panel="construction" class="px-5 lg:px-0 mt-5 lg:mt-8 fu" style="display:none;--accent:#3a7cbf;--tint:#3a7cbf14;--tintB:#3a7cbf4d;">
+    <div class="relative overflow-hidden flex items-center gap-4 rounded-xl3 lg:rounded-xl3 p-5 lg:p-6 mb-4 lg:mb-5" style="background:linear-gradient(120deg,var(--tint),transparent);border:1px solid var(--tintB);">
+      <span class="w-14 h-14 lg:w-12 lg:h-12 rounded-xl2 flex items-center justify-center font-extrabold text-lg lg:text-base text-white shadow-md2 flex-shrink-0 jp" style="background:linear-gradient(135deg,#7eb8e4,#3a7cbf);">建</span>
+      <div class="flex-1 min-w-0">
+        <h2 class="text-lg lg:text-xl font-extrabold t-ink">Construction <span class="text-sm lg:text-sm font-medium t-muted">— Kensetsu</span></h2>
+        <p class="text-xs lg:text-[12px] t-muted mt-0.5">85+ Terms · 110+ Words</p>
+        <p class="text-xs lg:text-[13px] t-ink2 mt-2 leading-relaxed">Construction training covers the Japanese used on-site for safety, tools, and instructions.</p>
+      </div>
+      <div class="hidden lg:flex w-16 h-16 rounded-2xl items-center justify-center flex-shrink-0" style="background:var(--tint);">
+        <span class="jp font-bold text-2xl" style="color:#3a7cbf;">建</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 lg:gap-4">
+      <a href="../vocab/construction/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#3a7cbf22;">
+        <div class="subj-ic" style="background:#3a7cbf14;">
+          <span class="subj-ic-icon"><span class="text-2xl">📚</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Vocabulary</span>
+        <span class="text-[11px] t-muted -mt-1.5">110+ Words</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-construction-vocab-bar" style="width:0%;background:#3a7cbf;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-construction-vocab-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#3a7cbf14;color:#3a7cbf;">Study Now</span>
+      </a>
+      <a href="../phrases/construction/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#3a7cbf22;">
+        <div class="subj-ic" style="background:#3a7cbf14;">
+          <span class="subj-ic-icon"><span class="text-2xl">💬</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Key Phrases</span>
+        <span class="text-[11px] t-muted -mt-1.5">50+ Phrases</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-construction-phrases-bar" style="width:0%;background:#3a7cbf;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-construction-phrases-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#3a7cbf14;color:#3a7cbf;">Study Now</span>
+      </a>
+      <a href="../terms/construction/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#3a7cbf22;">
+        <div class="subj-ic" style="background:#3a7cbf14;">
+          <span class="subj-ic-icon"><span class="jp font-bold text-xl" style="color:#3a7cbf;">語</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Terminology</span>
+        <span class="text-[11px] t-muted -mt-1.5">85+ Terms</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-construction-terms-bar" style="width:0%;background:#3a7cbf;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-construction-terms-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#3a7cbf14;color:#3a7cbf;">Study Now</span>
+      </a>
+      <a href="../scenarios/construction/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#3a7cbf22;">
+        <div class="subj-ic" style="background:#3a7cbf14;">
+          <span class="subj-ic-icon"><span class="text-2xl">🎯</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Scenarios</span>
+        <span class="text-[11px] t-muted -mt-1.5">Combined</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-construction-scenarios-bar" style="width:0%;background:#3a7cbf;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-construction-scenarios-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#3a7cbf14;color:#3a7cbf;">Practice Now</span>
+      </a>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-4 mt-5 lg:mt-6">
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-5 lg:p-6 shadow-card">
+        <h3 class="text-sm lg:text-base font-extrabold t-ink mb-3">What you will learn</h3>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center text-white text-[10px] flex-shrink-0 mt-0.5" style="background:#3a7cbf;">✓</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Understand safety instructions and site terminology</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center text-white text-[10px] flex-shrink-0 mt-0.5" style="background:#3a7cbf;">✓</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Recognize tool and material names</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center text-white text-[10px] flex-shrink-0 mt-0.5" style="background:#3a7cbf;">✓</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Communicate clearly with supervisors and coworkers</span>
+          </li>
+        </ul>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-5 lg:p-6 shadow-card">
+        <h3 class="text-sm lg:text-base font-extrabold t-ink mb-3">Study Tips</h3>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#eef2f7;">📅</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Study a little every day to build consistency</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#eef2f7;">🔊</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Practice phrases out loud to build fluency</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#eef2f7;">📄</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Run through real-world scenarios to build confidence</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-3 lg:gap-4 mt-5 lg:mt-6">
+      <a href="../quiz/construction/index.html" class="card-lift flex items-center justify-between gap-4 rounded-xl3 p-5 lg:p-6" style="background:var(--tint);border:1px solid var(--tintB);">
+        <div>
+          <div class="font-extrabold text-base lg:text-lg t-ink">Start Quiz</div>
+          <p class="text-xs t-ink2 mt-1">Test your knowledge with practice questions</p>
+          <span class="pill-btn inline-flex items-center gap-2 mt-3 py-2 px-4 rounded-full text-xs font-bold text-white" style="background:#3a7cbf;">Start Quiz
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#3a7cbf" stroke-width="1.6" class="flex-shrink-0 opacity-70"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg>
+      </a>
+      <a href="../fulltest/construction/index.html" class="card-lift flex items-center justify-between gap-4 rounded-xl3 p-5 lg:p-6" style="background:#fdeaf0;border:1px solid #f7c9d8;">
+        <div>
+          <div class="font-extrabold text-base lg:text-lg t-ink">Full Test</div>
+          <p class="text-xs t-ink2 mt-1">Check your ability with a full skills assessment</p>
+          <span class="pill-btn inline-flex items-center gap-2 mt-3 py-2 px-4 rounded-full text-xs font-bold text-white" style="background:#e8517a;">Start Test
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="1.6" class="flex-shrink-0 opacity-70"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </a>
+    </div>
+  </section>
+  <section id="manufacturing" data-industry-panel="manufacturing" class="px-5 lg:px-0 mt-5 lg:mt-8 fu" style="display:none;--accent:#8b5cf6;--tint:#8b5cf614;--tintB:#8b5cf64d;">
+    <div class="relative overflow-hidden flex items-center gap-4 rounded-xl3 lg:rounded-xl3 p-5 lg:p-6 mb-4 lg:mb-5" style="background:linear-gradient(120deg,var(--tint),transparent);border:1px solid var(--tintB);">
+      <span class="w-14 h-14 lg:w-12 lg:h-12 rounded-xl2 flex items-center justify-center font-extrabold text-lg lg:text-base text-white shadow-md2 flex-shrink-0 jp" style="background:linear-gradient(135deg,#c4a8e0,#8b5cf6);">製</span>
+      <div class="flex-1 min-w-0">
+        <h2 class="text-lg lg:text-xl font-extrabold t-ink">Manufacturing <span class="text-sm lg:text-sm font-medium t-muted">— Seizōgyō</span></h2>
+        <p class="text-xs lg:text-[12px] t-muted mt-0.5">75+ Terms · 95+ Words</p>
+        <p class="text-xs lg:text-[13px] t-ink2 mt-2 leading-relaxed">Manufacturing training covers the Japanese used on factory floors, with machines and quality checks.</p>
+      </div>
+      <div class="hidden lg:flex w-16 h-16 rounded-2xl items-center justify-center flex-shrink-0" style="background:var(--tint);">
+        <span class="jp font-bold text-2xl" style="color:#8b5cf6;">製</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 lg:gap-4">
+      <a href="../vocab/manufacturing/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#8b5cf622;">
+        <div class="subj-ic" style="background:#8b5cf614;">
+          <span class="subj-ic-icon"><span class="text-2xl">📚</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Vocabulary</span>
+        <span class="text-[11px] t-muted -mt-1.5">95+ Words</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-manufacturing-vocab-bar" style="width:0%;background:#8b5cf6;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-manufacturing-vocab-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#8b5cf614;color:#8b5cf6;">Study Now</span>
+      </a>
+      <a href="../phrases/manufacturing/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#8b5cf622;">
+        <div class="subj-ic" style="background:#8b5cf614;">
+          <span class="subj-ic-icon"><span class="text-2xl">💬</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Key Phrases</span>
+        <span class="text-[11px] t-muted -mt-1.5">48+ Phrases</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-manufacturing-phrases-bar" style="width:0%;background:#8b5cf6;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-manufacturing-phrases-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#8b5cf614;color:#8b5cf6;">Study Now</span>
+      </a>
+      <a href="../terms/manufacturing/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#8b5cf622;">
+        <div class="subj-ic" style="background:#8b5cf614;">
+          <span class="subj-ic-icon"><span class="jp font-bold text-xl" style="color:#8b5cf6;">語</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Terminology</span>
+        <span class="text-[11px] t-muted -mt-1.5">75+ Terms</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-manufacturing-terms-bar" style="width:0%;background:#8b5cf6;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-manufacturing-terms-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#8b5cf614;color:#8b5cf6;">Study Now</span>
+      </a>
+      <a href="../scenarios/manufacturing/index.html" class="card-lift flex flex-col items-center gap-2.5 py-6 lg:py-5 px-3 rounded-xl2 lg:rounded-xl2 border text-center bg-bg-surface surface" style="border-color:#8b5cf622;">
+        <div class="subj-ic" style="background:#8b5cf614;">
+          <span class="subj-ic-icon"><span class="text-2xl">🎯</span></span>
+        </div>
+        <span class="text-sm lg:text-[13px] font-bold t-ink leading-tight">Scenarios</span>
+        <span class="text-[11px] t-muted -mt-1.5">Combined</span>
+        <div class="prog-bar w-full mt-0.5"><span id="pb-manufacturing-scenarios-bar" style="width:0%;background:#8b5cf6;"></span></div>
+        <span class="text-[10px] t-muted -mt-1" id="pb-manufacturing-scenarios-txt">0 / 0</span>
+        <span class="pill-btn mt-1 w-full py-2 rounded-full text-xs font-bold" style="background:#8b5cf614;color:#8b5cf6;">Practice Now</span>
+      </a>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-4 mt-5 lg:mt-6">
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-5 lg:p-6 shadow-card">
+        <h3 class="text-sm lg:text-base font-extrabold t-ink mb-3">What you will learn</h3>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center text-white text-[10px] flex-shrink-0 mt-0.5" style="background:#8b5cf6;">✓</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Understand machine operation and safety instructions</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center text-white text-[10px] flex-shrink-0 mt-0.5" style="background:#8b5cf6;">✓</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Recognize quality-control and process terminology</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center text-white text-[10px] flex-shrink-0 mt-0.5" style="background:#8b5cf6;">✓</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Communicate about production targets and issues</span>
+          </li>
+        </ul>
+      </div>
+      <div class="bg-bg-surface surface rounded-xl3 border border-slate-100 divider p-5 lg:p-6 shadow-card">
+        <h3 class="text-sm lg:text-base font-extrabold t-ink mb-3">Study Tips</h3>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#eef2f7;">📅</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Study a little every day to build consistency</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#eef2f7;">🔊</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Practice phrases out loud to build fluency</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-5 h-5 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#eef2f7;">📄</span>
+            <span class="text-xs lg:text-[13px] t-ink2 leading-relaxed">Run through real-world scenarios to build confidence</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-3 lg:gap-4 mt-5 lg:mt-6">
+      <a href="../quiz/manufacturing/index.html" class="card-lift flex items-center justify-between gap-4 rounded-xl3 p-5 lg:p-6" style="background:var(--tint);border:1px solid var(--tintB);">
+        <div>
+          <div class="font-extrabold text-base lg:text-lg t-ink">Start Quiz</div>
+          <p class="text-xs t-ink2 mt-1">Test your knowledge with practice questions</p>
+          <span class="pill-btn inline-flex items-center gap-2 mt-3 py-2 px-4 rounded-full text-xs font-bold text-white" style="background:#8b5cf6;">Start Quiz
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="1.6" class="flex-shrink-0 opacity-70"><path d="M9 12l2 2 4-4M7.8 3.6A9 9 0 1 0 20.4 16.2"/></svg>
+      </a>
+      <a href="../fulltest/manufacturing/index.html" class="card-lift flex items-center justify-between gap-4 rounded-xl3 p-5 lg:p-6" style="background:#fdeaf0;border:1px solid #f7c9d8;">
+        <div>
+          <div class="font-extrabold text-base lg:text-lg t-ink">Full Test</div>
+          <p class="text-xs t-ink2 mt-1">Check your ability with a full skills assessment</p>
+          <span class="pill-btn inline-flex items-center gap-2 mt-3 py-2 px-4 rounded-full text-xs font-bold text-white" style="background:#e8517a;">Start Test
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#e8517a" stroke-width="1.6" class="flex-shrink-0 opacity-70"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </a>
+    </div>
+  </section>
+
+
+</main>
+
+
+
+<!-- ═══════════ MOBILE BOTTOM NAV ═══════════ -->
+<nav id="botnav" class="lg:hidden fixed bottom-3 left-3 right-3 z-40 transition-transform duration-300 rounded-full shadow-lg2"
+     style="background:rgba(255,255,255,.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);">
+  <div class="flex items-center" style="height:66px;">
+    <a href="../index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Home</span>
+    </a>
+    <a href="../jlpt/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 4h6a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2z"/><path d="M22 4h-6a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">JLPT</span>
+    </a>
+    <a href="index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5 relative">
+      <svg width="24" height="24" fill="none" stroke="#2a9d8f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3 10 5.5-10 5.5L2 8.5 12 3Z"/><path d="M6 11v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5"/></svg>
+      <span class="text-[11px] font-bold" style="color:#2a9d8f;">SSW</span>
+      <span class="absolute -bottom-1.5 w-5 h-[3px] rounded-full" style="background:#2a9d8f;"></span>
+    </a>
+    <a href="../quiz/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M4 20h2.5L18 8.5a1.8 1.8 0 0 0-2.5-2.5L4 17.5V20Z"/></svg>
+      <span class="text-[11px] font-semibold t-muted">Quiz</span>
+    </a>
+    <a href="../other/index.html" class="flex-1 flex flex-col items-center justify-center gap-1.5">
+      <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+      <span class="text-[11px] font-semibold t-muted">More</span>
+    </a>
+  </div>
+</nav>
+
+
+<!-- ═══════════ SCRIPTS ═══════════ -->
+<script>
+let isDark = false;
+const MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+const SUN  = '<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/>';
+
+function toggleDark() {
+  isDark = !isDark;
+  document.body.className = isDark
+    ? 'mesh-dark min-h-screen text-slate-100 dark'
+    : 'mesh-light min-h-screen text-ink';
+  ['mob-icon','desk-icon'].forEach(id => { const el = document.getElementById(id); if(el) el.innerHTML = isDark ? SUN : MOON; });
+  const l = document.getElementById('desk-lbl'); if(l) l.textContent = isDark ? 'Light mode' : 'Dark mode';
+}
+
+/* ── Scroll-direction nav show/hide (mobile only) ──
+   Scrolling down: bottom nav hides, top nav stays visible.
+   Scrolling up: top nav hides, bottom nav stays visible. */
+(function(){
+  let lastY = window.scrollY;
+  const topbar = document.getElementById('topbar');
+  const botnav = document.getElementById('botnav');
+  window.addEventListener('scroll', function(){
+    const y = window.scrollY;
+    const goingDown = y > lastY;
+    if (y < 10) {
+      if (topbar) topbar.style.transform = 'translateY(0)';
+      if (botnav) botnav.style.transform = 'translateY(0)';
+    } else if (goingDown) {
+      if (botnav) botnav.style.transform = 'translateY(100%)';
+      if (topbar) topbar.style.transform = 'translateY(0)';
+    } else {
+      if (topbar) topbar.style.transform = 'translateY(-100%)';
+      if (botnav) botnav.style.transform = 'translateY(0)';
+    }
+    lastY = y;
+  }, { passive: true });
+})();
+
+/* ── Industry selector ── */
+const INDUSTRY_COLORS = {
+  caregiver: '#2a9d8f', food: '#e0693a', agriculture: '#d4a017', construction: '#3a7cbf', manufacturing: '#8b5cf6'
+};
+const INDUSTRY_TINTS = {
+  caregiver: '#eafaf5', food: '#fdf0ea', agriculture: '#fdf7e6', construction: '#eef5fc', manufacturing: '#f4f0fc'
+};
+function showIndustry(industry) {
+  document.querySelectorAll('[data-industry-panel]').forEach(function(panel){
+    panel.style.display = (panel.getAttribute('data-industry-panel') === industry) ? 'block' : 'none';
+  });
+  document.querySelectorAll('[data-industry-btn]').forEach(function(btn){
+    const isActive = btn.getAttribute('data-industry-btn') === industry;
+    const key = btn.getAttribute('data-industry-btn');
+    const label = btn.querySelector('[data-lvl-label]');
+    const check = btn.querySelector('[data-check]');
+    if (isActive) {
+      btn.classList.add('active');
+      btn.style.borderColor = INDUSTRY_COLORS[key];
+      btn.style.background = INDUSTRY_TINTS[key];
+      if (label) { label.classList.remove('t-ink2'); label.classList.add('t-ink'); }
+      if (check) check.style.display = 'flex';
+    } else {
+      btn.classList.remove('active');
+      btn.style.borderColor = 'transparent';
+      btn.style.background = '';
+      if (label) { label.classList.remove('t-ink'); label.classList.add('t-ink2'); }
+      if (check) check.style.display = 'none';
+    }
+  });
+  const target = document.getElementById(industry);
+  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+/* Sidebar quick-links (desktop) also switch the panel instead of relying on anchor alone */
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    const key = a.getAttribute('href').substring(1);
+    if (!['caregiver','food','agriculture','construction','manufacturing'].includes(key)) return;
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      showIndustry(key);
+    });
+  });
+});
+
+/* ── Desktop profile dropdown ── */
+let deskProfOpen = false;
+function toggleDeskProf() {
+  deskProfOpen = !deskProfOpen;
+  const drop = document.getElementById('desk-prof-drop');
+  const chev = document.getElementById('desk-prof-chev');
+  drop.className = drop.className.replace(/\b(open|closed)\b/, deskProfOpen ? 'open' : 'closed');
+  if(chev) chev.style.transform = deskProfOpen ? 'rotate(180deg)' : '';
+}
+
+const drops = { prof: false };
+function toggleDrop(name) {
+  drops[name] = !drops[name];
+  const el = document.getElementById('prof-drop');
+  if(el) el.className = el.className.replace(/\b(open|closed)\b/, drops[name] ? 'open' : 'closed');
+}
+
+/* ── Outside click ── */
+document.addEventListener('click', e => {
+  const deskProfWrap = document.getElementById('desk-prof-wrap');
+  if(deskProfWrap && !deskProfWrap.contains(e.target) && deskProfOpen) {
+    deskProfOpen = false;
+    const drop = document.getElementById('desk-prof-drop'), chev = document.getElementById('desk-prof-chev');
+    if(drop) drop.className = drop.className.replace(/\b(open|closed)\b/,'closed');
+    if(chev) chev.style.transform = '';
+  }
+  const pb = document.getElementById('prof-wrap');
+  if(pb && !pb.contains(e.target) && drops.prof) { drops.prof = false; document.getElementById('prof-drop').className = document.getElementById('prof-drop').className.replace(/\b(open|closed)\b/,'closed'); }
+});
+
+/* ── Firebase dynamic name/avatar + REAL progress tracking ──
+   Reads the same "engagement/{uid}/monthly/{month}" node the homepage uses
+   for overall stats, and a "progress/{uid}/ssw/{industry}/{subject}" node
+   ({ completed, total }) for each subject's bar on this page. Nothing here
+   is hardcoded — every number starts at 0 and only fills in once real data
+   comes back from the database. If your actual DB uses different field
+   names/paths, just adjust the strings marked below. */
+(function(){
+  var cachedName=localStorage.getItem('sakura_user_name');
+  if(cachedName){ ['sb-name','mob-drop-name','desk-drop-name'].forEach(function(id){ var el=document.getElementById(id); if(el) el.textContent=cachedName; }); }
+  function applyUser(user){
+    if(!user) return;
+    var name=user.displayName||cachedName||'Learner', localPic=localStorage.getItem('sakura-avatar-'+user.uid), photo=localPic||user.photoURL||'';
+    localStorage.setItem('sakura_user_name',name);
+    ['sb-name','mob-drop-name','desk-drop-name'].forEach(function(id){ var el=document.getElementById(id); if(el) el.textContent=name; });
+    ['sb-avatar','mob-avatar'].forEach(function(id){ var el=document.getElementById(id); if(!el) return; if(photo){ el.innerHTML='<img src="'+photo+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt=""/>'; } else { el.textContent=(name[0]||'S').toUpperCase(); } });
+    loadProgress(user);
+  }
+
+  function setBar(id, completed, total){
+    var bar = document.getElementById(id+'-bar'), txt = document.getElementById(id+'-txt');
+    var pct = total > 0 ? Math.min(100, Math.round(completed/total*100)) : 0;
+    if(bar) bar.style.width = pct+'%';
+    if(txt) txt.textContent = completed+' / '+total;
+  }
+
+  function loadProgress(user){
+    var db = firebase.database();
+    var month = (function(){ var d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'); })();
+
+    /* Overall card: Lessons Completed / Points / Day Streak / ring % */
+    db.ref('engagement/'+user.uid).once('value').then(function(snap){
+      var e = snap.val() || {};
+      var streak = e.streak || e.dayStreak || 0;
+      var points = e.totalPoints || e.points || 0;
+      var pointsMax = e.pointsGoal || 0;
+      var lessons = e.lessonsCompleted || 0;
+
+      db.ref('engagement/'+user.uid+'/monthly/'+month).once('value').then(function(mSnap){
+        var m = mSnap.val() || {};
+        var qs = m.quizStats || {};
+        var acc = qs.accuracyPct || 0;
+        var quizzes = m.quizzesCompleted || 0;
+        lessons = lessons || quizzes;
+
+        var ringPct = Math.round((acc)||0);
+        var offset = 301.6 - (ringPct/100)*301.6;
+        var ringEl = document.getElementById('ov-ring-fill');
+        if(ringEl) setTimeout(function(){ ringEl.style.strokeDashoffset = offset; }, 200);
+        var pctEl = document.getElementById('ov-ring-pct'); if(pctEl) pctEl.textContent = ringPct+'%';
+
+        var lEl = document.getElementById('ov-lessons'); if(lEl) lEl.textContent = lessons;
+        var pEl = document.getElementById('ov-points'); if(pEl) pEl.textContent = points+(pointsMax?(' / '+pointsMax):'');
+        var sEl = document.getElementById('ov-streak'); if(sEl) sEl.textContent = streak;
+      }).catch(function(){});
+    }).catch(function(){});
+
+    /* Per-industry, per-subject bars: progress/{uid}/ssw/{industry}/{subject} = { completed, total } */
+    var industries = ['caregiver','food','agriculture','construction','manufacturing'];
+    var subjects = ['vocab','phrases','terms','scenarios'];
+    industries.forEach(function(industry){
+      db.ref('progress/'+user.uid+'/ssw/'+industry).once('value').then(function(snap){
+        var data = snap.val() || {};
+        subjects.forEach(function(subject){
+          var s = data[subject] || {};
+          setBar('pb-'+industry+'-'+subject, s.completed||0, s.total||0);
+        });
+      }).catch(function(){});
+    });
+  }
+
+  function loadScript(src,cb){ var s=document.createElement('script'); s.src=src; s.onload=cb; document.head.appendChild(s); }
+  function initFirebase(){
+    if(!firebase.apps.length){ firebase.initializeApp({apiKey:"AIzaSyB-5EgDmpPYpdYoRpX9pXst5fPr2ICOai4",authDomain:"learnwith-sakura.firebaseapp.com",databaseURL:"https://learnwith-sakura-default-rtdb.firebaseio.com",projectId:"learnwith-sakura",storageBucket:"learnwith-sakura.firebasestorage.app",messagingSenderId:"524809202868",appId:"1:524809202868:web:8d4f47a122d542e285bbe1"}); }
+    firebase.auth().onAuthStateChanged(applyUser);
+  }
+  loadScript('https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js',function(){ loadScript('https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js',function(){ loadScript('https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js',initFirebase); }); });
+})();
+</script>
+
+<script>
+(function(){
+  var PAGE='ssw/index.html'; var PROG=18;
+  try {
+    var list = JSON.parse(localStorage.getItem('Sakura_recent') || '[]');
+    list = list.filter(function(x){ return x.url !== PAGE; });
+    list.unshift({ url: PAGE, ts: Date.now(), prog: PROG });
+    if(list.length > 10) list = list.slice(0, 10);
+    localStorage.setItem('Sakura_recent', JSON.stringify(list));
+  } catch(e) {}
+})();
+</script>
+
+  <script>
+    if('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .catch(e => console.log('SW error:', e));
+      });
+    }
+  </script>
+</body>
+</html>
